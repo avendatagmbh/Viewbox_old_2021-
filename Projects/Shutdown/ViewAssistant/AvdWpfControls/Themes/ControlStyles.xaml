@@ -1,0 +1,880 @@
+﻿<ResourceDictionary 
+    x:Class="AvdWpfControls.Themes.ControlStyles"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Converters="clr-namespace:AvdWpfControls.Converters"
+    xmlns:Controls="clr-namespace:AvdWpfControls"
+    xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base">
+
+    <!-- Brushes -->
+
+    <SolidColorBrush x:Key="AvdMenuBackground" Color="#F5F5F5"/>
+    <SolidColorBrush x:Key="AvdMenuTextEnabled" Color="#465570" /> 
+    <SolidColorBrush x:Key="AvdMenuTextDisabled" Color="Gray" />
+    <SolidColorBrush x:Key="AvdMenuTextMouseOver" Color="#009c00" />
+    <SolidColorBrush x:Key="AvdMenuSplitter" Color="#D0A4A4A4" />
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE"/>
+    <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA"/>
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888"/>
+    <SolidColorBrush x:Key="HeaderTextBrush" Color="#ffffff"/>
+    <SolidColorBrush x:Key="NormalBorderBrush" Color="Silver" />
+    <SolidColorBrush x:Key="NewDesignBlueBrush" Color="#637493" />
+    <SolidColorBrush x:Key="NewDesignLightGreyBrush" Color="#F5F5F5"/>
+    <SolidColorBrush x:Key="NewDesignDeepBlueBrush" Color="#243553"/>
+    <SolidColorBrush x:Key="SearchTextBox_LabelTextColor" Color="Gray" />
+    <SolidColorBrush x:Key="BorderBrush" Color="Gray" />
+
+    <LinearGradientBrush x:Key="AvdMenuButtonBackground" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#F0F0F0" Offset="0" />
+        <GradientStop Color="#DADADA" Offset="0.8" />
+        <GradientStop Color="#DADADA" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="AvdMenuButtonPressedBrush" StartPoint="0,0" EndPoint="0,1" >
+        <GradientStop Color="#FFFFFF" Offset="0"/>
+        <GradientStop Color="#F0F0F0" Offset="0.5"/>
+        <GradientStop Color="#F0F0F0" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="AvdMenuButtonBorder" EndPoint="0.5,1" StartPoint="0.5,0">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5" />
+                <SkewTransform CenterY="0.5" CenterX="0.5" />
+                <RotateTransform CenterY="0.5" CenterX="0.5" />
+                <TranslateTransform />
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#F5F5F5" Offset="0" />
+        <GradientStop Color="#D0A4A4A4" Offset="0.2" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="AvdMenuButtonMouseOverBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#FFFFFF" Offset="0" />
+        <GradientStop Color="#F0F0F0" Offset="0.5" />
+        <GradientStop Color="#F0F0F0" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="AvdMenuItemBorder" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#DADADA" Offset="0" />
+        <GradientStop Color="#D0A4A4A4" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="DarkBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#FFF" Offset="0.0" />
+                <GradientStop Color="#AAA" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GreyGradientBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#EDEDED" Offset="0" />
+        <GradientStop Color="#C9C9C9" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GroupBoxBorderBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#F8F8F8" Offset="0" />
+        <GradientStop Color="#E8E8E8" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GroupBoxBorderBorderBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#D0909090" Offset="0" />
+        <GradientStop Color="#D0A4A4A4" Offset="0.35" />
+        <GradientStop Color="#D0B7B5B5" Offset="0.4" />
+        <GradientStop Color="#D0A0A0A0" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="NormalBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#FFF" Offset="0.0" />
+                <GradientStop Color="#CCC" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="PressedBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#BBB" Offset="0.0" />
+                <GradientStop Color="#EEE" Offset="0.1" />
+                <GradientStop Color="#EEE" Offset="0.9" />
+                <GradientStop Color="#FFF" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="PressedBorderBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#444" Offset="0.0" />
+                <GradientStop Color="#888" Offset="1.0" />
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <!-- Converters -->
+
+    <Converters:BoolInverter x:Key="BoolInverter" />
+    <Converters:ObjectToTypeStringConverter x:Key="ObjectToTypeStringConverter" />
+    <Converters:ValueExistsToBoolConverter x:Key="ValueExistsToBoolConverter" />
+    <Converters:ValueExistsToVisibilityConverter x:Key="ValueExistsToVisibilityConverter" />
+    <Converters:BoolToVisibilityConverter x:Key="trueToVisibilityConverter" VisibleValue="True" HiddenState="Collapsed"/>
+
+    <!-- Styles -->
+    <Style x:Key="AvdMenuText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#465570" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"></Setter>
+            </Trigger>
+
+            <Trigger Property="Text" Value="{x:Null}">
+                <Setter Property="Visibility" Value="Collapsed" />
+            </Trigger>
+
+            <Trigger Property="Text" Value="">
+                <Setter Property="Visibility" Value="Collapsed" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="{x:Type Controls:AvdMenuExpander}">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Margin" Value="2,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:AvdMenuExpander}">
+                    <Grid VerticalAlignment="Center">
+                        <ToggleButton x:Name="Btn" Height="{Binding RelativeSource={RelativeSource AncestorType=Controls:AvdMenuExpander}, Path=Height}" IsHitTestVisible="{Binding ElementName=Popup, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverter}}">
+                            <ToggleButton.Style>
+                                <Style TargetType="ToggleButton">
+                                    <Setter Property="Focusable" Value="False"/>
+                                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                                </Style>
+                            </ToggleButton.Style>
+                            <ToggleButton.Template>
+                                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                    <Border Name="border" BorderThickness="1" Padding="3,3,3,1" BorderBrush="{StaticResource AvdMenuButtonBorder}" CornerRadius="2" Background="{StaticResource AvdMenuButtonBackground}">
+                                        <Grid VerticalAlignment="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Image Grid.Row="0" x:Name="image" Height="{Binding RelativeSource={RelativeSource AncestorType=Controls:AvdMenuExpander}, Path=ImageHeight}"
+                                                   Source="{Binding RelativeSource={RelativeSource AncestorType=Controls:AvdMenuExpander}, Path=ImageSource}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <Image.Style>
+                                                    <Style TargetType="Image">
+                                                        <Style.Triggers>
+                                                            <Trigger Property="IsEnabled" Value="False">
+                                                                <Setter Property="Opacity" Value="0.5"></Setter>
+                                                            </Trigger>
+                                                        </Style.Triggers>
+                                                    </Style>    
+                                                </Image.Style>
+                                            </Image>
+                                            <StackPanel Grid.Row="1" MaxWidth="130" HorizontalAlignment="Center" Orientation="Horizontal">
+                                                <TextBlock Name="menuText" Text="{Binding RelativeSource={RelativeSource AncestorType=Controls:AvdMenuExpander}, Path=Caption}" 
+                                                       Style="{StaticResource AvdMenuText}" VerticalAlignment="Center" TextWrapping="Wrap"  />
+                                                <Path Name="menuArrow" Margin="5,2,0,0" Fill="{StaticResource AvdMenuTextEnabled}" Data="M 0 0 H 8 L 4 4 Z" VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Grid>
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="1" Opacity="0.2" BlurRadius="2" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </Border.Style>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsFocused" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="{StaticResource AvdMenuButtonMouseOverBrush}" />
+                                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                                            <Setter TargetName="menuArrow" Property="Fill" Value="{StaticResource AvdMenuTextMouseOver}" />
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="{StaticResource AvdMenuButtonMouseOverBrush}" />
+                                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                                            <Setter TargetName="menuArrow" Property="Fill" Value="{StaticResource AvdMenuTextMouseOver}" />
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="{StaticResource AvdMenuButtonPressedBrush}" />
+                                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                                            <Setter TargetName="menuArrow" Property="Fill" Value="{StaticResource AvdMenuTextMouseOver}" />
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter TargetName="border" Property="Opacity" Value="0.5" />
+                                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextDisabled}" />
+                                            <Setter TargetName="menuArrow" Property="Fill" Value="{StaticResource AvdMenuTextDisabled}" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </ToggleButton.Template>
+                        </ToggleButton>
+
+                        <Popup x:Name="Popup" IsOpen="{Binding IsChecked, ElementName=Btn}" StaysOpen="False"
+                               AllowsTransparency="True" PopupAnimation="Slide" Placement="Bottom" PlacementTarget="{Binding ElementName=Btn}" VerticalOffset="5">
+                            <Border>
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect ShadowDepth="1" Opacity="0.2" BlurRadius="2" />
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="Background" Value="{StaticResource GroupBoxBorderBackgroundBrush}" />
+                                        <Setter Property="BorderBrush" Value="{StaticResource GroupBoxBorderBorderBrush}" />
+                                        <Setter Property="CornerRadius" Value="2"/>
+                                        <Setter Property="BorderThickness" Value="1"/>
+                                        <Setter Property="Margin" Value="0,0,5,5"/>
+                                        <Setter Property="Padding" Value="5"/>
+                                    </Style>
+                                </Border.Style>
+                                <StackPanel IsItemsHost="True" />
+                            </Border>
+                        </Popup>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Controls:AvdMenuExpanderItem}">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:AvdMenuExpanderItem}">
+                    <Border Name="border" BorderThickness="1" BorderBrush="Transparent" CornerRadius="0" Background="Transparent" Padding="5" Margin="5,0,5,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image Grid.RowSpan="2" Source="{TemplateBinding ImageSource}" Height="{TemplateBinding ImageHeight}" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                            <TextBlock Name="menuText" Grid.Column="1" Text="{TemplateBinding Caption}" FontWeight="Bold" VerticalAlignment="Center">
+                            </TextBlock>
+                            <TextBlock Name="menuDescription" Visibility="Collapsed" Grid.Column="1" Grid.Row="1" Text="{TemplateBinding Description}" Margin="0,-2,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource AvdMenuItemBorder}" />
+                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                            <Setter TargetName="menuDescription" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource AvdMenuItemBorder}" />
+                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                            <Setter TargetName="menuDescription" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource AvdMenuItemBorder}" />
+                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                            <Setter TargetName="menuDescription" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                        </Trigger>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextDisabled}" />
+                            <Setter TargetName="menuDescription" Property="Foreground" Value="{StaticResource AvdMenuTextDisabled}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Controls:AvdMenuButton}">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Margin" Value="2,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Controls:AvdMenuButton">
+                    <Border Name="border" BorderThickness="1" Padding="3,3,3,1" BorderBrush="{StaticResource AvdMenuButtonBorder}" CornerRadius="2" Background="{StaticResource AvdMenuButtonBackground}">
+                        <Grid VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" x:Name="content" Source="{TemplateBinding ImageSource}" Height="{TemplateBinding ImageHeight}" Margin="2,0,2,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image.Style>
+                                    <Style TargetType="Image">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter Property="Opacity" Value="0.5"></Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                            <TextBlock Grid.Row="1" Name="menuText" Text="{TemplateBinding Caption}" VerticalAlignment="Center" Margin="0,0,2,0" 
+                                       TextWrapping="Wrap" MaxWidth="130" HorizontalAlignment="Center">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AvdMenuText}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding TextAllignment, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                                                <DataTrigger.Value>
+                                                    <Controls:TextAllignments>Top</Controls:TextAllignments>
+                                                </DataTrigger.Value>
+                                                <Setter Property="Grid.Row" Value="0" />
+                                                <Setter Property="Grid.Column" Value="1" />
+                                                <Setter Property="TextAlignment" Value="Center" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding TextAllignment, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                                                <DataTrigger.Value>
+                                                    <Controls:TextAllignments>Bottom</Controls:TextAllignments>
+                                                </DataTrigger.Value>
+                                                <Setter Property="Grid.Row" Value="2" />
+                                                <Setter Property="Grid.Column" Value="1" />
+                                                <Setter Property="TextAlignment" Value="Center" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding TextAllignment, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                                                <DataTrigger.Value>
+                                                    <Controls:TextAllignments>Left</Controls:TextAllignments>
+                                                </DataTrigger.Value>
+                                                <Setter Property="Grid.Row" Value="1" />
+                                                <Setter Property="Grid.Column" Value="0" />
+                                                <Setter Property="TextAlignment" Value="Right" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding TextAllignment, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                                                <DataTrigger.Value>
+                                                    <Controls:TextAllignments>Right</Controls:TextAllignments>
+                                                </DataTrigger.Value>
+                                                <Setter Property="Grid.Row" Value="1" />
+                                                <Setter Property="Grid.Column" Value="2" />
+                                                <Setter Property="TextAlignment" Value="Left" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect ShadowDepth="1" Opacity="0.2" BlurRadius="2" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Border.Style>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource AvdMenuButtonMouseOverBrush}" />
+                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource AvdMenuButtonMouseOverBrush}" />
+                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource AvdMenuButtonPressedBrush}" />
+                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextMouseOver}" />
+                        </Trigger>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Opacity" Value="0.5" />
+                            <Setter TargetName="menuText" Property="Foreground" Value="{StaticResource AvdMenuTextDisabled}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Controls:AvdMenuSeparator}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:AvdMenuSeparator}">
+                    <Border BorderBrush="{StaticResource AvdMenuSplitter}" BorderThickness="0.5" Margin="-5,5,-5,5"></Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Controls:AvdTabItem}">
+      <Style.BasedOn>
+        <StaticResource ResourceKey="{x:Type TabItem}" />
+      </Style.BasedOn>
+      <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:AvdTabItem}">
+                    <Grid>
+                        <Border Name="Border" Background="{StaticResource NewDesignLightGreyBrush}" BorderBrush="{StaticResource NewDesignLightGreyBrush}" Padding="5,2" Width="{TemplateBinding TabWidth}">
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding HeaderHorizontalAlignment}" Orientation="Horizontal">
+                                <Image Source="{TemplateBinding ImageSource}" Height="16" Margin="0,0,2,0">
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Style.Triggers>
+                                                <Trigger Property="Source" Value="{x:Null}">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                                <TextBlock VerticalAlignment="Center" x:Name="ContentSite" Foreground="{StaticResource AvdMenuTextEnabled}" Text="{TemplateBinding Caption}" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Panel.ZIndex" Value="100" />
+                            <Setter TargetName="ContentSite" Property="Foreground" Value="{StaticResource HeaderTextBrush}" />
+                            <Setter TargetName="Border" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#243553" Offset="0" />
+                                        <GradientStop Color="#243553" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#243553" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource NewDesignDeepBlueBrush}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource AvdMenuSplitter}" />
+                            <Setter TargetName="ContentSite" Property="Foreground" Value="{StaticResource HeaderTextBrush}" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Top">
+                            <Setter TargetName="Border" Property="Margin" Value="1,0,1,0" />
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Left">
+                            <Setter TargetName="Border" Property="Margin" Value="0,1,0,1" />
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,0,1" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Right">
+                            <Setter TargetName="Border" Property="Margin" Value="0,1,0,1" />
+                            <Setter TargetName="Border" Property="BorderThickness" Value="0,1,1,1" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Bottom">
+                            <Setter TargetName="Border" Property="Margin" Value="1,0,1,0" />
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,0,1,1" />
+                        </DataTrigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Controls:ImageButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Controls:ImageButton" xmlns:s="clr-namespace:System;assembly=mscorlib" 
+                                 xmlns:mwt="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+                    <mwt:ButtonChrome Name="Chrome" BorderBrush="Silver" RenderDefaulted="{TemplateBinding Button.IsDefaulted}" 
+                                      RenderMouseOver="{TemplateBinding UIElement.IsMouseOver}" RenderPressed="{TemplateBinding ButtonBase.IsPressed}" SnapsToDevicePixels="True">
+                        <mwt:ButtonChrome.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientBrush.GradientStops>
+                                    <GradientStopCollection>
+                                        <GradientStop Color="#FFF" Offset="0.0"/>
+                                        <GradientStop Color="#CCC" Offset="1.0"/>
+                                    </GradientStopCollection>
+                                </GradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </mwt:ButtonChrome.Background>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="content" Source="{TemplateBinding ImageSource}" Height="{TemplateBinding ImageHeight}" Margin="2,0,2,0" >
+                                <Image.Style>
+                                    <Style TargetType="Image">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter Property="Opacity" Value="0.5"></Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                            <TextBlock Grid.Column="1" Text="{TemplateBinding Caption}" VerticalAlignment="Center" Margin="0,0,2,0">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <Trigger Property="Text" Value="{x:Null}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </Trigger>
+                                        <Trigger Property="Text" Value="">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mwt:ButtonChrome>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="UIElement.IsKeyboardFocused">
+                            <Setter Property="mwt:ButtonChrome.RenderDefaulted" TargetName="Chrome">
+                                <Setter.Value>
+                                    <s:Boolean>True</s:Boolean>
+                                </Setter.Value>
+                            </Setter>
+                            <Trigger.Value>
+                                <s:Boolean>True</s:Boolean>
+                            </Trigger.Value>
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked">
+                            <Setter Property="mwt:ButtonChrome.RenderPressed" TargetName="Chrome">
+                                <Setter.Value>
+                                    <s:Boolean>True</s:Boolean>
+                                </Setter.Value>
+                            </Setter>
+                            <Trigger.Value>
+                                <s:Boolean>True</s:Boolean>
+                            </Trigger.Value>
+                        </Trigger>
+                        <Trigger Property="UIElement.IsEnabled">
+                            <Setter Property="TextElement.Foreground">
+                                <Setter.Value>
+                                    <SolidColorBrush>#FFADADAD</SolidColorBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Trigger.Value>
+                                <s:Boolean>False</s:Boolean>
+                            </Trigger.Value>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{x:Type Controls:SearchTextBox}" TargetType="{x:Type Controls:SearchTextBox}">
+        <Setter Property="LabelTextColor" Value="{StaticResource SearchTextBox_LabelTextColor}" />
+        <Setter Property="LabelText" Value="{x:Static Localisation:ResourcesCommon.SearchBox_LabelText}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:SearchTextBox}">
+                    <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+                        <Grid x:Name="LayoutGrid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}" />
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer Margin="2" x:Name="PART_ContentHost" Grid.Column="0" />
+                            <Label x:Name="LabelText" Foreground="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=LabelTextColor}"  
+                                   Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=LabelText}" Grid.Column="0" 
+                                   Margin="2" Padding="2,0,0,0" FontStyle="Italic"/>
+                            <Border x:Name="PART_SearchIconBorder" Grid.Column="1" BorderThickness="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Image x:Name="SearchIcon" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       Source="/AvdWpfControls;component/Resources/icon_search.png"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasText" Value="True">
+                            <Setter Property="Visibility" TargetName="LabelText" Value="Hidden" />
+                        </Trigger>
+                        <Trigger SourceName="PART_SearchIconBorder" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="SearchIcon" Property="Source" 
+                                    Value="/AvdWpfControls;component/Resources/icon_search_hover.png" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Controls:AssistantControlTabPanel}">
+        <Setter Property="SelectedIndex" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:AssistantControlTabPanel}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Border>
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#edb75f" Offset="0" />
+                                        <GradientStop Color="#b77401" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <StackPanel.Resources>
+                                        <Style TargetType="Label">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="FontSize" Value="16" />
+                                            <Setter Property="FontStyle" Value="Italic" />
+                                            <Setter Property="Padding" Value="0" />
+                                        </Style>
+                                    </StackPanel.Resources>
+                                    <Label Content="{x:Static Localisation:ResourcesCommon.Step}" Margin="0,0,5,0"/>
+                                    <Label Content="{TemplateBinding CurrentStep}"/>
+                                    <Label Content="{x:Static Localisation:ResourcesCommon.Of}" Margin="5,0"/>
+                                    <Label Content="{TemplateBinding StepCount}"/>
+                                    <Label Content=": "/>
+                                    <Label Content="{Binding SelectedItem.Header, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="1" Padding="{TemplateBinding Padding}">
+                                <ContentPresenter ContentSource="SelectedContent" />
+                            </Border>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Controls:AssistantControl}">
+        <Setter Property="SelectedIndex" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:AssistantControl}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- caption -->
+                            <Border  Height="0" Style="{TemplateBinding HeaderBorderStyle}">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#edb75f" Offset="0" />
+                                        <GradientStop Color="#b77401" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Horizontal" Margin="5">
+                                        <StackPanel.Resources>
+                                            <Style TargetType="Label">
+                                                <Setter Property="VerticalAlignment" Value="Center" />
+                                                <Setter Property="FontSize" Value="16" />
+                                                <Setter Property="FontStyle" Value="Italic" />
+                                                <Setter Property="Padding" Value="0" />
+                                                <Setter Property="FontWeight" Value="Bold" />
+                                            </Style>
+                                        </StackPanel.Resources>
+                                        <StackPanel Orientation="Horizontal" Visibility="{TemplateBinding ShowSteps, Converter={StaticResource trueToVisibilityConverter}}">
+                                            <Label Content="{x:Static Localisation:ResourcesCommon.Step}" Margin="0,0,5,0"/>
+                                            <Label Content="{TemplateBinding CurrentStep}"/>
+                                            <Label Content="{x:Static Localisation:ResourcesCommon.Of}" Margin="5,0"/>
+                                            <Label Content="{TemplateBinding StepCount}"/>
+                                            <Label Content=": "/>
+                                        </StackPanel>
+                                        <Label Content="{Binding SelectedItem.Header, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                        <ContentPresenter Content="{TemplateBinding AdditionalHeaderContent}" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <!-- detail caption -->
+                            <Border Grid.Row="1" Background="{TemplateBinding DetailHeaderBackground}">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding SelectedItem, Converter={StaticResource ObjectToTypeStringConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="AssistantTabItem" />
+                                                    <Condition Binding="{Binding SelectedItem.DetailHeader, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource ValueExistsToBoolConverter}}" Value="True" />
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </MultiDataTrigger>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding SelectedItem, Converter={StaticResource ObjectToTypeStringConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="AssistantTabItem" />
+                                                    <Condition Binding="{Binding SelectedItem.DetailHeaderImageSource, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource ValueExistsToBoolConverter}}" Value="True" />
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+
+                                <StackPanel Orientation="Horizontal" Margin="5,2">
+                                    <Image VerticalAlignment="Center" Margin="0,0,5,0">
+                                        <Image.Style>
+                                            <Style TargetType="Image">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                <Style.Triggers>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Binding SelectedItem, Converter={StaticResource ObjectToTypeStringConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="AssistantTabItem" />
+                                                            <Condition Binding="{Binding SelectedItem.DetailHeaderImageSource, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource ValueExistsToBoolConverter}}" Value="True" />
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Setter Property="Source" Value="{Binding SelectedItem.DetailHeaderImageSource, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                                        <Setter Property="Height" Value="{Binding SelectedItem.DetailHeaderImageHeight, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                                    </MultiDataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
+                                    <TextBlock Grid.Row="0" TextWrapping="Wrap" FontSize="16" Foreground="#333" FontStyle="Italic" VerticalAlignment="Center">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                <Style.Triggers>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Binding SelectedItem, Converter={StaticResource ObjectToTypeStringConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="AssistantTabItem" />
+                                                            <Condition Binding="{Binding SelectedItem.DetailHeader, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource ValueExistsToBoolConverter}}" Value="True" />
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Setter Property="Text" Value="{Binding SelectedItem.DetailHeader, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                                    </MultiDataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- content -->
+                            <Border Grid.Row="2" Padding="{TemplateBinding Padding}">
+                                <ContentPresenter ContentSource="SelectedContent" />
+                            </Border>
+
+                            <!-- button bar -->
+                            <Border Grid.Row="3" Background="{StaticResource NewDesignBlueBrush}" Style="{TemplateBinding ButtonBorderStyle}" Visibility="{Binding IsButtonBorderVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Controls:AssistantControl}}, Converter={StaticResource trueToVisibilityConverter}}" >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Orientation="Horizontal" Margin="5" Grid.Column="1">
+                                        <StackPanel.Style>
+                                            <Style TargetType="StackPanel">
+                                                <Style.Triggers>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Binding SelectedItem, Converter={StaticResource ObjectToTypeStringConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="AssistantTabItem" />
+                                                            <Condition Binding="{Binding SelectedItem.IsSummaryPage, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="True" />
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </MultiDataTrigger>
+                                                    <DataTrigger Binding="{Binding IsNavigationButtonVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Controls:AssistantControl}}}" Value="False">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </StackPanel.Style>
+                                        <Button Content="{x:Static Localisation:ResourcesCommon.Back}" MinWidth="75" Click="AssistantControlLast_OnClick" 
+                                                Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Controls:AssistantControl}}}">
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding BackAllowed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Controls:AssistantControl}}}" Value="False" >
+                                                            <Setter Property="IsEnabled" Value="False" />
+                                                        </DataTrigger>
+                                                        <MultiDataTrigger>
+                                                            <MultiDataTrigger.Conditions>
+                                                                <Condition Binding="{Binding SelectedItem, Converter={StaticResource ObjectToTypeStringConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="AssistantTabItem" />
+                                                                <Condition Binding="{Binding SelectedItem.BackAllowed, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="False" />
+                                                            </MultiDataTrigger.Conditions>
+                                                            <Setter Property="IsEnabled" Value="False" />
+                                                        </MultiDataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+
+                                        <Button Content="{x:Static Localisation:ResourcesCommon.Next}" Margin="5,0,0,0" MinWidth="75" Click="AssistantControlNext_OnClick"
+                                                Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Controls:AssistantControl}}}">
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding NextAllowed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Controls:AssistantControl}}}" Value="False" >
+                                                            <Setter Property="IsEnabled" Value="False" />
+                                                        </DataTrigger>
+                                                        <MultiDataTrigger>
+                                                            <MultiDataTrigger.Conditions>
+                                                                <Condition Binding="{Binding SelectedItem, Converter={StaticResource ObjectToTypeStringConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="AssistantTabItem" />
+                                                                <Condition Binding="{Binding SelectedItem.NextAllowed, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="False" />
+                                                            </MultiDataTrigger.Conditions>
+                                                            <Setter Property="IsEnabled" Value="False" />
+                                                        </MultiDataTrigger>
+                                                        <!-- If NextButtonCaptionLastPage is not null, then the next button will be converted to a finish button-->
+                                                        <MultiDataTrigger>
+                                                            <MultiDataTrigger.Conditions>
+                                                                <Condition Binding="{Binding NextAllowed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Controls:AssistantControl}}}" Value="False" />
+                                                                <Condition Binding="{Binding NextButtonCaptionLastPage, Converter={StaticResource ValueExistsToBoolConverter}, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Controls:AssistantControl}}}" Value="True" />
+                                                            </MultiDataTrigger.Conditions>
+                                                            <Setter Property="IsEnabled" Value="True" />
+                                                            <Setter Property="ContentTemplate" >
+                                                                <Setter.Value>
+                                                                    <DataTemplate DataType="Button">
+                                                                        <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Controls:AssistantControl}},Path=NextButtonCaptionLastPage}" />
+                                                                    </DataTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </MultiDataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="5" HorizontalAlignment="Left">
+                                        <Button Content="{TemplateBinding OkButtonCaption}" IsEnabled="{TemplateBinding OkButtonEnabled}" Margin="5,0,0,0" MinWidth="75" Click="AssistantControlOk_OnClick"
+                                                Visibility="{Binding OkButtonCaption, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource ValueExistsToVisibilityConverter}}" Height="23"/>
+                                        <ItemsControl ItemsSource="{TemplateBinding Buttons}">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <StackPanel Orientation="Horizontal" />
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                        </ItemsControl>
+                                        <Button Content="{x:Static Localisation:ResourcesCommon.Cancel}" Visibility="{TemplateBinding CancelButtonVisibility}" Height="23"
+                                                IsEnabled="{TemplateBinding CancelButtonEnabled}" Margin="5,0,0,0" MinWidth="75" Click="AssistantControlCancel_OnClick" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <Grid Grid.Row="3">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ReplaceFooter, RelativeSource={RelativeSource Mode=TemplatedParent},Converter={StaticResource ValueExistsToBoolConverter}}" Value="True">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <ItemsControl ItemsSource="{Binding ReplaceFooter, RelativeSource={RelativeSource Mode=TemplatedParent}}" >
+                                </ItemsControl>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

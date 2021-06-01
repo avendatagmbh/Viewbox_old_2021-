@@ -1,0 +1,409 @@
+﻿@model Viewbox.Models.DocumentsModel
+@using System.Globalization
+@using SystemDb
+@using Viewbox
+@using ViewboxMdConverter
+@using ViewboxDb.Filters
+@if (Model.Table != null)
+{
+    var columns = Model.Table.Columns.OrderBy((c) => c.Ordinal);
+    var hasUrl = Model.Table.Columns.Contains("url");
+    var filteredColumns = new List<string>();
+    var reverseOrder = -1;
+    <div class="table-header">
+    <table class="belegHeader">
+        <thead id="belegHeaderHead">
+            <tr>
+                @if (Model.IsZipArchive)
+                {
+                    <th class="filename">
+                        <div class="sort-column">Filename</div>
+                        <div class="sorting">
+                            <a href="@Url.Action("Search", new { sortColumnId = columns.ElementAt(0).Id, direction = ViewboxDb.SortDirection.Ascending })" class="ascending"></a>
+                            <a href="@Url.Action("Search", new { sortColumnId = columns.ElementAt(0).Id, direction = ViewboxDb.SortDirection.Descending })" class="descending"></a>
+                        </div>
+                    </th>
+                    <th class="filesize">
+                        <div class="sort-column">Size</div>
+                        <div class="sorting">
+                            <a href="@Url.Action("Search", new { sortColumnId = columns.ElementAt(1).Id, direction = ViewboxDb.SortDirection.Ascending })" class="ascending"></a>
+                            <a href="@Url.Action("Search", new { sortColumnId = columns.ElementAt(1).Id, direction = ViewboxDb.SortDirection.Descending })" class="descending"></a>
+                        </div>
+                    </th>
+                    <th class="download"><div class="sort-column">Aktion</div></th>
+                }
+                else
+                {
+                    var table = ViewboxSession.TempTableObjects[Model.TempId];
+                    var filterParameters = new List<Tuple<IFilter, IColumn, string, object, string>>();
+                    if (table != null && table.Filter != null)
+                    {
+                        filterParameters = table.Filter.GetParameters(new List<Tuple<IFilter, IColumn, string, object, string>>());
+                    }
+
+                    
+					int ord = 0;
+                    foreach (var Column in Model.Table.Columns)
+                    {
+                        if(Column.Name.ToLower() == "reverse")
+                        {
+                            reverseOrder = ord;
+                        }
+                        ++ord;
+                        String filterValueInput = String.Empty;
+                        var exact = true;
+                        if (filterParameters.Count(s => (s.Item1 != null && Column != null && s.Item2.Name == Column.Name)) == 1)
+                        {
+                            var filterParameter = filterParameters.First(s => (s.Item1 != null && Column != null && s.Item2.Name == Column.Name));
+                            if (String.CompareOrdinal(filterParameter.Item5, "=") == 0)
+                            {
+                                filterValueInput = filterParameter.Item4.ToString();
+                            }
+                            if (String.CompareOrdinal(filterParameter.Item5, "≈") == 0)
+                            {
+                                filterValueInput = filterParameter.Item4.ToString();
+                                filterValueInput = filterValueInput.Replace("\\%", "%");
+                                filterValueInput = filterValueInput.Remove(filterValueInput.Length - 1);
+                                filterValueInput = filterValueInput.Substring(1, filterValueInput.Length - 1);
+                                filterValueInput = filterValueInput.Replace(@"\", "");
+                            }
+                            if (filterParameter.Item2 != null && filterParameter.Item4 != null)
+                            {
+                                if (ViewboxSession.Language.CountryCode != null && ViewboxSession.Language.CountryCode.Contains("de") &&
+                                    (filterParameter.Item2.DataType == SqlType.Decimal ||
+                                     filterParameter.Item2.DataType == SqlType.Numeric))
+                                {
+                                    if (!filterValueInput.Contains('.'))
+                                    {
+                                        filterValueInput = filterValueInput.Replace(',', '.');
+                                    }
+                                    else if (!filterValueInput.Contains(','))
+                                    {
+                                        filterValueInput = filterValueInput.Replace('.', ',');
+                                    }
+                                    else if (filterValueInput.Contains('.') && filterValueInput.Contains(','))
+                                    {
+                                        filterValueInput = filterValueInput.Replace('.', ' ').Replace(',', '.').Replace(' ', ',');
+                                    }
+                                }
+
+                                if (filterParameter.Item2.DataType == SqlType.Date || filterParameter.Item2.DataType == SqlType.DateTime)
+                                {
+                                    if (ViewboxSession.Language.CountryCode != null)
+                                    {
+                                        DateTime dateValue;
+                                        if ((!filterValueInput.Contains(".")) && DateTime.TryParseExact(filterValueInput, "yyyyMMddHHmmss", new CultureInfo(ViewboxSession.Language.CountryCode), DateTimeStyles.None, out dateValue))
+                                        {
+                                            filterValueInput = dateValue.ToString("dd-MM-yyyy");
+                                        }
+                                    }
+                                    if (ViewboxSession.Language.CountryCode.Contains("de"))
+                                    {
+                                        filterValueInput = filterValueInput.Replace("-", ".");
+                                    }
+                                    else if (ViewboxSession.Language.CountryCode.Contains("en"))
+                                    {
+                                        filterValueInput = filterValueInput.Replace("-", "/");
+                                    }
+                                    if (filterValueInput.Length == 14)
+                                    {
+                                        var sign = (ViewboxSession.Language.CountryCode != null && ViewboxSession.Language.CountryCode.Contains("de")) ? "." : "/";
+                                        filterValueInput = filterValueInput.Substring(6, 2) + sign + filterValueInput.Substring(4, 2) + sign + filterValueInput.Substring(0, 4);
+                                    }
+                                }
+                                if (String.CompareOrdinal(filterParameter.Item5, "≈") == 0)
+                                {
+                                    exact = false;
+                                }
+                            }
+                        }
+
+                        var Class = "col_" + Column.Ordinal;
+                        if (!Column.IsVisible) { Class += " hide"; }
+                        if (!string.IsNullOrEmpty(filterValueInput))
+                        {
+                            Class += " belegGreen";
+                            filteredColumns.Add(Column.Name.ToLower());
+                        }
+                        
+                        bool ascending = false;
+                        bool descending = false;
+                        if (table != null && table.Sort != null)
+                        {
+                            var sort = table.Sort.FirstOrDefault(s => ViewboxSession.Columns[s.cid].Name.ToLower() == Column.Name.ToLower());
+                            if (sort != null)
+                            {
+                                if (sort.dir == ViewboxDb.SortDirection.Ascending)
+                                {
+                                    ascending = true;
+                                }
+                                if (sort.dir == ViewboxDb.SortDirection.Descending)
+                                {
+                                    descending = true;
+                                }
+                            }
+                        }
+                        <th class='@Class datagrid-value'>
+                            <div class="sort-column">@Column.GetDescription(ViewboxSession.Language)</div>
+                            <div class="sorting">
+                                <a href="@Url.Action("Sort", new { parameterValues = String.Join("#", Model.ParameterValues), Model.ExactMatch, sortColumnId = Column.Id, direction = ViewboxDb.SortDirection.Ascending })" class="ascending @(ascending ? "active" : "")"></a>
+                                <a href="@Url.Action("Sort", new { parameterValues = String.Join("#", Model.ParameterValues), Model.ExactMatch, sortColumnId = Column.Id, direction = ViewboxDb.SortDirection.Descending })" class="descending @(descending ? "active" : "")"></a>
+                            </div>
+                            <div class="item-id">@Column.Id</div>
+                            <input type="hidden" class="item-filter" value="@(filterValueInput == null ? "" : filterValueInput)" />
+                            <input type="hidden" class="item-exact-match" value="@exact" />
+                        </th>
+                    }
+                }             
+            </tr>
+        </thead>
+        </table>
+        </div>
+        <div class="table-body" style="background-color: white;">
+        <table class="belegBody">
+        @if (Model.Documents != null)
+        {
+            <tbody>
+                @{
+                    ViewboxSession.ClearSavedDocumentSettings("Documents");
+                    var filePathId = 0;
+                }
+                
+                @foreach (System.Data.DataRow Row in Model.Documents.Rows)
+                {
+                    <tr class="belegTableRow @(hasUrl ? "remote" : "")">
+                        @{
+                    
+                    int ord;
+                    if(Model.Table.Columns.Contains("_row_no_"))
+                    {
+                        ord = 0;
+                    }
+                    else
+                    {
+                        ord = 1;
+                    }
+                    foreach (var Column in Model.Table.Columns)
+                    {
+                        var Class = "col_" + Column.Ordinal;
+                        if (filteredColumns.Contains(Column.Name.ToLower())) { Class += " belegGreen"; }
+                        string value = Row[ord].ToString();
+                        if (!Column.IsVisible) { Class += " hide"; }
+                        if (Column.Name.ToLower() == "path") { Class += " path"; }
+                        if (Column.Name.ToLower() == "thumbnail" || Column.Name.ToLower() == "thumbnail_path") { Class += " thumbnail"; }
+                        if (Row[ord] == System.DBNull.Value)
+                        {
+                            Class += " null";
+                            value = "";
+                        }
+                        else if (Row[ord].GetType() == typeof(byte[]))
+                        {
+                            var array = Row[ord] as byte[];
+                            value = "";
+                            for (int j = 0; j < array.Length; j++)
+                            {
+                                if (j > 0)
+                                {
+                                    value += (j % 16) > 0 ? " " : Environment.NewLine;
+                                }
+                                value += String.Format("{0:X2}", array[j]);
+                            }
+                        }
+                        else if (0 < (Column.DataType & SqlType.Numeric))
+                        {
+                            Class += " number";
+                            if (value.StartsWith("-")) { Class += " negative"; }
+                            if (Column.DataType == SqlType.Decimal)
+                            {
+                                IProperty property = Viewbox.ViewboxApplication.FindProperty("thousand");
+                                string decimals = new String('0', Column.MaxLength);
+                                string format = "{0:0,0." + decimals + "}";
+                                if (property != null && property.Value == "false")
+                                {
+                                    format = "{0:#0." + decimals + "}";
+                                }
+                                else
+                                {
+                                    if (Row[ord].ToString().Length < 3)
+                                    {
+                                        format = "{0}";
+                                    }
+                                }
+                                decimal realNumber;
+                                if (decimal.TryParse(Row[ord].ToString(), out realNumber))
+                                {
+                                    value = realNumber.ToString();
+                                }
+                                else
+                                {
+                                    value = String.Format(format, Row[ord]);
+                                }
+                            }
+                        }
+                        ord++;
+                        if (hasUrl)
+                        {
+                                    <td class='@Class datagrid-value'><a href="@Row["url"]" target="_blank">@value</a></td>
+                        }
+                        else if (Column.Name.ToLower() == "path")
+                        {
+                                    <td class='@Class datagrid-value'>
+                                        <div>@filePathId</div>
+                                        <input type="hidden" name="belegpath" value="@value" />
+                                        @{
+                                        	string reverse = null;
+                                            if(reverseOrder != -1)
+                                            {
+                                                reverse = Row[reverseOrder].ToString();
+                                            }
+                                            ViewboxSession.UpdateSavedDocumentSettings(value, reverse);
+                                            ++filePathId;
+                                        }
+                                    </td>
+                        }
+                        else if (Column.Name.ToLower() == "thumbnail" || Column.Name.ToLower() == "thumbnail_path")
+                        {
+                            string path = null;
+                            int pathColOrdinal = 1;
+                            foreach (var column in Model.Table.Columns)
+                            {
+                                if (column.Name.ToLower() == "path")
+                                {
+                                    path = Row[pathColOrdinal].ToString();
+                                    break;
+                                }
+                                pathColOrdinal++;
+                            }
+                            if (!string.IsNullOrWhiteSpace(path) && !path.StartsWith("http:") && !path.StartsWith("https:"))
+                            {
+                                FileInfo file = new FileInfo(path);
+                                if (ViewboxApplication.ThumbnailsDirectory != null && File.Exists(ViewboxApplication.ThumbnailsDirectory + value))
+                                {
+                                            <td class='@Class datagrid-value'>@ViewboxApplication.ThumbnailsDirectory@value</td>
+                                }
+                                else if (ViewboxApplication.ThumbnailsDirectory1 != null && File.Exists(ViewboxApplication.ThumbnailsDirectory1 + value))
+                                {
+                                            <td class='@Class datagrid-value'>@ViewboxApplication.ThumbnailsDirectory1@value</td>
+                                }
+                                else if (ViewboxApplication.ThumbnailsDirectory2 != null && File.Exists(ViewboxApplication.ThumbnailsDirectory2 + value))
+                                {
+                                            <td class='@Class datagrid-value'>@ViewboxApplication.ThumbnailsDirectory2@value</td>
+                                }
+                                else if (ViewboxApplication.ThumbnailsDirectory3 != null && File.Exists(ViewboxApplication.ThumbnailsDirectory3 + value))
+                                {
+                                            <td class='@Class datagrid-value'>@ViewboxApplication.ThumbnailsDirectory3@value</td>
+                                }
+                                else if ((ViewboxApplication.DocumentsDirectory != null || ViewboxApplication.DocumentsDirectory1 != null ||
+                                          ViewboxApplication.DocumentsDirectory2 != null || ViewboxApplication.DocumentsDirectory3 != null) && ViewboxApplication.ThumbnailsDirectory != null)
+                                {
+                                    string tumbPath = String.Concat(@ViewboxApplication.ThumbnailsDirectory, @value);
+                                    string reverse = null;
+                                    if (ViewboxApplication.BelegUseExtensionByTheExtesionColumnNotByFile && Model.Table.Columns.FirstOrDefault(c => c.Name.ToLower() == "reverse") != null)
+                                    {
+                                        reverse = Row["reverse"].ToString();
+                                    }
+                                    @*if (OnTheFlyConverter.CreateThumbnailFromMD(ViewboxApplication.DocumentsConfigDirectory, tumbPath, path) ||
+                                        OnTheFlyConverter.CreateThumbnailFromMD(ViewboxApplication.DocumentsConfigDirectory1, tumbPath, path) ||
+                                        OnTheFlyConverter.CreateThumbnailFromMD(ViewboxApplication.DocumentsConfigDirectory2, tumbPath, path) ||
+                                        (ViewboxApplication.IsOnTheFlyConvertion && OnTheFlyConverter.CreateThumbnail(String.Concat(@ViewboxApplication.DocumentsDirectory, path), tumbPath, ViewboxApplication.BelegUseExtensionByTheExtesionColumnNotByFile && !String.IsNullOrEmpty(reverse) ? reverse : file.Extension)) ||
+                                        (ViewboxApplication.IsOnTheFlyConvertion && OnTheFlyConverter.CreateThumbnail(String.Concat(@ViewboxApplication.DocumentsDirectory1, path), tumbPath, ViewboxApplication.BelegUseExtensionByTheExtesionColumnNotByFile && !String.IsNullOrEmpty(reverse) ? reverse : file.Extension)) ||
+                                        (ViewboxApplication.IsOnTheFlyConvertion && OnTheFlyConverter.CreateThumbnail(String.Concat(@ViewboxApplication.DocumentsDirectory2, path), tumbPath, ViewboxApplication.BelegUseExtensionByTheExtesionColumnNotByFile && !String.IsNullOrEmpty(reverse) ? reverse : file.Extension)) ||
+                                        (ViewboxApplication.IsOnTheFlyConvertion && OnTheFlyConverter.CreateThumbnail(String.Concat(@ViewboxApplication.DocumentsDirectory3, path), tumbPath, ViewboxApplication.BelegUseExtensionByTheExtesionColumnNotByFile && !String.IsNullOrEmpty(reverse) ? reverse : file.Extension)))
+                                    {
+                                                <td class='@Class datagrid-value'>@tumbPath</td>
+                                    }
+                                    else
+                                    {*@
+                                        switch (file.Extension.ToLower())
+                                        {
+                                            case ".pdf":
+                                            case ".fax":
+                                                if (ViewboxApplication.DocumentsDirectory != null && ViewboxApplication.ThumbnailsDirectory != null && File.Exists(ViewboxApplication.ThumbnailsDirectory + value))
+                                                {
+                                                            <td class='@Class datagrid-value'>@ViewboxApplication.ThumbnailsDirectory@value</td>
+                                                }
+                                                else if (ViewboxApplication.DocumentsDirectory1 != null && ViewboxApplication.ThumbnailsDirectory1 != null && File.Exists(ViewboxApplication.ThumbnailsDirectory1 + value))
+                                                {
+                                                            <td class='@Class datagrid-value'>@ViewboxApplication.ThumbnailsDirectory1@value</td>
+                                                }
+                                                else if (ViewboxApplication.DocumentsDirectory2 != null && ViewboxApplication.ThumbnailsDirectory2 != null && File.Exists(ViewboxApplication.ThumbnailsDirectory2 + value))
+                                                {
+                                                            <td class='@Class datagrid-value'>@ViewboxApplication.ThumbnailsDirectory2@value</td>
+                                                }
+                                                else if (ViewboxApplication.DocumentsDirectory3 != null && ViewboxApplication.ThumbnailsDirectory3 != null && File.Exists(ViewboxApplication.ThumbnailsDirectory3 + value))
+                                                {
+                                                    <td class='@Class datagrid-value'>@ViewboxApplication.ThumbnailsDirectory3@value</td>
+                                                }
+                                                else
+                                                {
+                                                     <td class='@Class datagrid-value'>@HttpContextFactory.Current.Server.MapPath("~/Content/img/archive/no_preview.png")</td>
+                                                }
+                                                break;
+                                            case ".xls":
+                                            case ".xlsx":
+                                                        <td class='@Class datagrid-value'>@HttpContextFactory.Current.Server.MapPath("~/Content/img/archive/no_preview_xls.png")</td>
+                                                                                     break;
+                                            case ".doc":
+                                            case ".docx":
+                                                        <td class='@Class datagrid-value'>@HttpContextFactory.Current.Server.MapPath("~/Content/img/archive/no_preview_doc.png")</td>
+                                                                                     break;
+                                            case ".txt":
+                                                        <td class='@Class datagrid-value'>@HttpContextFactory.Current.Server.MapPath("~/Content/img/archive/no_preview_txt.png")</td>
+                                                                                     break;
+                                            case ".xml":
+                                                        <td class='@Class datagrid-value'>@HttpContextFactory.Current.Server.MapPath("~/Content/img/archive/no_preview_xml.png")</td>
+                                                                                     break;
+                                            default:
+                                                                                     // DEVNOTE: the preview not available image should be visible here 
+                                                        <td class='@Class datagrid-value'>@HttpContextFactory.Current.Server.MapPath("~/Content/img/archive/no_preview.png")</td>
+                                                                                     break;
+                                        }
+                                    //}
+                                }
+                                else
+                                {
+                                            <td class='@Class datagrid-value'>@HttpContextFactory.Current.Server.MapPath("~/Content/img/archive/no_preview.png")</td>
+                                }
+                            }
+                            else
+                            {
+                                        <td class='@Class datagrid-value'>@HttpContextFactory.Current.Server.MapPath("~/Content/img/archive/no_preview.png")</td>
+                            }
+                        }
+                        else
+                        {
+                                    <td class='@Class datagrid-value'>@value</td>
+                        }
+                    }
+                        }
+                    </tr>
+                }
+            </tbody>
+        }
+        else if (Model.IsZipArchive && Model.Files.Count > 0)
+        {
+            <tbody>
+                @foreach (var f in Model.Files)
+                {
+                    var filename = f.FileName.Split('/');
+                    <tr class="belegTableRow">
+                        <td class="filename">@(filename != null ? filename.Last() : f.FileName)</td>
+                        <td class="filesize">@(f.UncompressedSize / 1024) KB</td>
+                        <td class="download">
+                            @using (Html.BeginForm("Download", "Documents",
+                                         new
+                                         {
+                                             filename = Viewbox.ViewboxApplication.TemporaryDirectory + f.FileName.Replace("/", "\\"),
+                                             downloadName = filename != null ? filename.Last() : f.FileName
+                                         }))
+                            {
+                                <input type="submit" class="submit cancel" value="Download" />
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        }				
+    </table>
+        </div>
+}

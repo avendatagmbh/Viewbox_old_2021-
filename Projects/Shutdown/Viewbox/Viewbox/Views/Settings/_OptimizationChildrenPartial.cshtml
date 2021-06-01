@@ -1,0 +1,16 @@
+﻿@model  SystemDb.IOptimization
+@using Viewbox
+
+@if (Model.Children.Count > 0)
+{
+    <ul class="children level@(Model.Level)">
+        @foreach (var opt in Model.Children)
+        {
+            <li class="element@(Model.Level)">
+                @Html.Hidden("settings[" + opt.Id + "].Key", opt.Id, new { @class = "opt-id" })
+                <a class="expand-optimization">@String.Format("({0}) {1}", opt.Value, opt.GetDescription())</a>
+                <input type="checkbox" @(opt.IsAllowedInRightsMode() ? "checked" : "") name="@String.Format("settings[" + opt.Id + "].Value")" class="optimization-visibility" />
+            </li>
+        }
+    </ul>
+}

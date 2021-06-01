@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="eBalanceKitBusiness.ISplittedAccount">
+    <Position X="8.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>_interfaces\BalanceList\ISplittedAccount.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.ISplitAccountGroup" Collapsed="true">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAgIBAAAAACAAAAAAABAAAQAAABAAAAAAAAAQAAEA=</HashCode>
+      <FileName>_interfaces\BalanceList\ISplitAccountGroup.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.IAccountGroup">
+    <Position X="11" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>_interfaces\BalanceList\IAccountGroup.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.IBalanceList">
+    <Position X="7.5" Y="3.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAoCgAAEgkkIjAEBUACEkAYAkBAAMAiCAAAAAAAAhAA=</HashCode>
+      <FileName>_interfaces\BalanceList\IBalanceList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.IBalanceListEntry">
+    <Position X="10.75" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAAAAAAAEAAAASAAAQABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>_interfaces\BalanceList\IBalanceListEntry.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.IAccount" Collapsed="true">
+    <Position X="13.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>_interfaces\BalanceList\IAccount.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

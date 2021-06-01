@@ -1,0 +1,16 @@
+E:\Aakash\Refactor_v2\Libraries\DbAccess\bin\Debug\net452\DbAccess.dll.config
+E:\Aakash\Refactor_v2\Libraries\DbAccess\bin\Debug\net452\DbAccess.dll
+E:\Aakash\Refactor_v2\Libraries\DbAccess\bin\Debug\net452\DbAccess.pdb
+E:\Aakash\Refactor_v2\Libraries\DbAccess\bin\Debug\net452\AV.Log.LogHelper.dll
+E:\Aakash\Refactor_v2\Libraries\DbAccess\bin\Debug\net452\log4net.dll
+E:\Aakash\Refactor_v2\Libraries\DbAccess\bin\Debug\net452\MySql.Data.dll
+E:\Aakash\Refactor_v2\Libraries\DbAccess\bin\Debug\net452\Utils.dll
+E:\Aakash\Refactor_v2\Libraries\DbAccess\bin\Debug\net452\AV.Log.LogHelper.pdb
+E:\Aakash\Refactor_v2\Libraries\DbAccess\bin\Debug\net452\Utils.pdb
+E:\Aakash\Refactor_v2\Libraries\DbAccess\obj\Debug\net452\DbAccess.csprojAssemblyReference.cache
+E:\Aakash\Refactor_v2\Libraries\DbAccess\obj\Debug\net452\Localisation.ResourcesLocal.resources
+E:\Aakash\Refactor_v2\Libraries\DbAccess\obj\Debug\net452\DbAccess.csproj.GenerateResource.cache
+E:\Aakash\Refactor_v2\Libraries\DbAccess\obj\Debug\net452\DbAccess.csproj.CoreCompileInputs.cache
+E:\Aakash\Refactor_v2\Libraries\DbAccess\obj\Debug\net452\DbAccess.csproj.CopyComplete
+E:\Aakash\Refactor_v2\Libraries\DbAccess\obj\Debug\net452\DbAccess.dll
+E:\Aakash\Refactor_v2\Libraries\DbAccess\obj\Debug\net452\DbAccess.pdb

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<schema targetNamespace="http://www.xbrl.de/de/fi/2008-02-19" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:de-fi="http://www.xbrl.de/de/fi/2008-02-19" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="de-fi-2008-02-19-label-de.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="de-fi-2008-02-19-guv-kontoform-label-de.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      
+      <link:linkbaseRef xlink:type="simple" xlink:href="de-fi-2008-02-19-presentation-bilanz.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="de-fi-2008-02-19-calculation-bilanz.xml" xlink:title="Calculation Links, all" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="de-fi-2008-02-19-guv-kontoform-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="de-fi-2008-02-19-guv-kontoform-calculation.xml" xlink:title="Calculation Links, all" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      
+      <link:linkbaseRef xlink:type="simple" xlink:href="../de-gaap-ci-2008-02-24/de-gaap-ci-2007-12-01-presentation-changesEquityStatement.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="../de-gaap-ci-2008-02-24/de-gaap-ci-2007-12-01-calculation-changesEquityStatement.xml" xlink:title="Calculation Links, all" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="../de-gaap-ci-2008-02-24/de-gaap-ci-2007-12-01-presentation-cashFlowStatement.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="../de-gaap-ci-2008-02-24/de-gaap-ci-2007-12-01-calculation-cashFlowStatement.xml" xlink:title="Calculation Links, all" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      
+      <link:linkbaseRef xlink:type="simple" xlink:href="de-fi-2008-02-19-presentation-anhang.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      
+      <link:linkbaseRef xlink:type="simple" xlink:href="../de-gaap-ci-2008-02-24/de-gaap-ci-2007-12-01-presentation-notes.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="../de-gaap-ci-2008-02-24/de-gaap-ci-2007-12-01-calculation-notes.xml" xlink:title="Calculation Links, all" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="../de-gaap-ci-2008-02-24/de-gaap-ci-2007-12-01-presentation-managementReport.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="../de-gaap-ci-2008-02-24/de-gaap-ci-2007-12-01-presentation-otherReportElements.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.de/de/fr/gaap/ci/2007-12-01" schemaLocation="../de-gaap-ci-2008-02-24/de-gaap-ci-2007-12-01.xsd"/>
+  <include schemaLocation="de-fi-2008-02-19.xsd"/>
+</schema>

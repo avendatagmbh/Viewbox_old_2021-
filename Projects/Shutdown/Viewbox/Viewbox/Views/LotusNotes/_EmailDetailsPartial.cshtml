@@ -1,0 +1,37 @@
+﻿@model Viewbox.Models.LotusEmailDetails
+
+<div class="lotus-details-container" style="padding: 100px;">
+    <div class="details-table">
+        <div class="details-title-row">
+            <div class="empty-cell"></div>
+            <div class="details-title"><div>@Model.Attributes["Name"]</div></div>
+        </div>
+        <div class="details-subtitle-row">
+            <div class="memo-cell">MEMO</div>
+            <div class="details-subtitle">Lorem ipsum dolor sit amet.</div>
+        </div>
+        @foreach (KeyValuePair<string, string> attribute in Model.Attributes)
+        {
+            <div class="details-row">
+                <div class="attribute-name">@attribute.Key</div>
+                <div class="attribute-value">@attribute.Value</div>
+            </div>
+        }
+        <div class="details-row">
+            <div class="attribute-name">Attachments</div>
+            <div class="attribute-value">
+                <ul>
+                    @foreach (Viewbox.Models.LotusAttachment attachment in Model.Attachments)
+                    {
+                        <li>
+                            <form action="/Documents/DownloadByFileName" method="post">
+                                <input type="hidden" name="downloadName" value="@attachment.Path" />
+                            </form>
+                            <a id="downloadAttachment">@attachment.Path</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

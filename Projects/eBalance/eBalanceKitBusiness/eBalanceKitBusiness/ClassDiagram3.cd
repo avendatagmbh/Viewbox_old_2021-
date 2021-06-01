@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CQASZggAKIKQskMkKUnBYCCQxFhAIAAAgVRgBBBKBAk=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValueBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Boolean">
+    <Position X="4.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAIAAAAgAAAAAAAAAABAAAAAAAAAAAAABQAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Boolean.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Date">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAggAAAIAAAAgAAAAAAAAAABAAAAAAAAAAAAABAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Date.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Int">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAIAAAAgAEAAAAAAAABAAAAAAAAAAAAABAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Int.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_List">
+    <Position X="21.75" Y="7.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAABgAAAAAAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_List.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Monetary">
+    <Position X="7.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAIAAAAgAAAAAAAAAABAAAAAAAAAAAAABAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Monetary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_MultipleChoice">
+    <Position X="19.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAICAAAgAAAAAQAAAABAAAAAQAgAAgAABAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_MultipleChoice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Numeric">
+    <Position X="1.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAIAAAAgAAAAAAAAAABAAAAAAAAAAAAEBAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Numeric.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_SingleChoice">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAiAACIAAAAgAAAAAQAAgABAAAAAAAAAAAAABAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_SingleChoice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_String">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAIAAAAgAAAAAAAAAABAAAAAAgAAAAAABAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_String.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Tuple">
+    <Position X="21.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAIAAACsAAAQEQAAAAhBAAAAAAAAAGAABAEAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Tuple.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.ValueTree.ValueTreeNode">
+    <Position X="7.75" Y="8.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAACAAAkAQEJAAQAACAgAAAAIAAAAEiABAAAAA=</HashCode>
+      <FileName>Structures\ValueTree\ValueTreeNode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Elements" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.ValueTree.ValueTree">
+    <Position X="7.5" Y="16.5" Width="2.25" />
+    <NestedTypes>
+      <Enum Name="eBalanceKitBusiness.Structures.ValueTree.ValueTree.ValueMappingClasses" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Structures\ValueTree\ValueTree.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAMAAAAAAACAAAAAAAEEAAAgAAAQCAAAEBAAAAAA=</HashCode>
+      <FileName>Structures\ValueTree\ValueTree.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Root" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Taxonomy.Element">
+    <Position X="14.5" Y="5.75" Width="2" />
+    <NestedTypes>
+      <Class Name="Taxonomy.Element.SummationItem" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

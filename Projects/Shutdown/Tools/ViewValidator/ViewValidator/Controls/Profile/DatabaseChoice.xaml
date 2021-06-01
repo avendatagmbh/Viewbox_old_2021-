@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="ViewValidator.Controls.Profile.DatabaseChoice"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="700" DataContextChanged="UserControl_DataContextChanged">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Image Source="/ViewValidator;component/Resources/ViewDatabase.png" Width="24" Height="24" />
+            <Label Name="Viewdatenbank" Grid.Column="0" Grid.Row="0" 
+                   Content="Viewdatenbank" Width="Auto" 
+                   Margin="3"/>
+        </StackPanel>
+        
+        <!-- SourceDb -->
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Host -->
+            <StackPanel Grid.Row="0">
+                <Label Name="host" Grid.Column="0" Grid.Row="0" Content="Host" Margin="5,3,0,0"/>
+                <TextBox Name="hostText" Height="23" Grid.Row="0" HorizontalAlignment="Stretch" Margin="5,0,0,0" Text="{Binding ConfigDest.Hostname, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <!-- User -->
+            <StackPanel Grid.Row="2">
+                <Label Name="user" Grid.Column="0" Grid.Row="2" Content="Nutzer" Margin="5,3"/>
+                <TextBox  Name="userText" Height="23" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Text="{Binding Path=ConfigDest.Username, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0"/>
+            </StackPanel>
+            <!-- Password -->
+            <StackPanel Grid.Row="3">
+                <Label Name="pass" Grid.Column="0" Grid.Row="3" Content="Passwort" Width="Auto" HorizontalContentAlignment="Left" Margin="5,3,0,0"/>
+                <PasswordBox Height="23" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" Name="tbPassword" PasswordChar="*" Margin="5,0,0,0" PasswordChanged="tbPassword_PasswordChanged"/>
+            </StackPanel>
+            <!-- Database -->
+            <StackPanel Grid.Row="4">
+                <Label Name="databases" Grid.Column="0" Grid.Row="4" Content="Datenbanken" Width="Auto" HorizontalContentAlignment="Left" Margin="5,3,0,0"/>
+                <ComboBox Name ="cbDatabase" Grid.Column="2" Grid.Row="4" Margin="5,0,0,0" DropDownOpened="cbDatabase_DropDownOpened" SelectionChanged="cbDatabase_SelectionChanged" IsEditable="True"
+                      Text="{Binding Path=ConfigDest.DbName}"/>
+            </StackPanel>
+            <!-- Port -->
+            <StackPanel Grid.Row="5">
+                <Label Name="port" Grid.Column="0" Grid.Row="4" Content="Port" Width="Auto" HorizontalContentAlignment="Left" Margin="5,3,0,0"/>
+                <TextBox Name="portText" Height="23" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Text="{Binding Path=ConfigDest.Port, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0"/>
+            </StackPanel>
+            
+            <Button Name="btnTestViewConnection" Content="Teste MySQL Verbindung" Grid.Row="6" Margin="5,13,0,0" Width="200" Click="btnTestViewConnection_Click" />
+        </Grid>
+
+    </Grid>
+</UserControl>

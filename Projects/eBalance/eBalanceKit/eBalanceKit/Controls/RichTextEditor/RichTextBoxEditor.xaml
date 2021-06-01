@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.RichTextEditor.RichTextBoxEditor" x:Name="CltRichText"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:RichTextEditor="clr-namespace:eBalanceKit.Controls.RichTextEditor" mc:Ignorable="d"
+             xmlns:st="clr-namespace:eBalanceKit.Controls"
+             d:DesignHeight="300" d:DesignWidth="500">
+
+    <Grid>
+        <!-- Set the styles for the tool bar. -->
+        <Grid.Resources>
+            <Style TargetType="{x:Type Button}" x:Key="formatTextStyle">
+                <Setter Property="FontFamily" Value="Palatino Linotype"></Setter>
+                <Setter Property="Width" Value="30"></Setter>
+                <Setter Property="FontSize" Value ="14"></Setter>
+                <Setter Property="CommandTarget" Value="{Binding ElementName=mainRTB}"></Setter>
+            </Style>
+
+            <Style TargetType="{x:Type Button}" x:Key="formatImageStyle">
+                <Setter Property="Width" Value="30"></Setter>
+                <Setter Property="CommandTarget" Value="{Binding ElementName=mainRTB}"></Setter>
+            </Style>
+        </Grid.Resources>
+
+        <DockPanel Name="mainPanel">
+
+            <!-- This tool bar contains all the editing buttons. -->
+            <ToolBar Height="30" DockPanel.Dock="Top" ToolBarTray.IsLocked="True" >
+                <Button Style="{StaticResource formatImageStyle}" Command="ApplicationCommands.Cut" ToolTip="Cut">
+                    <Image Source="Images\editcut.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}" Command="ApplicationCommands.Copy" ToolTip="Copy">
+                    <Image Source="Images\EditCopy.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}" Command="ApplicationCommands.Paste" ToolTip="Paste">
+                    <Image Source="Images\EditPaste.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}" Command="ApplicationCommands.Undo" ToolTip="Undo">
+                    <Image Source="Images\EditUndo.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}" Command="ApplicationCommands.Redo" ToolTip="Redo">
+                    <Image Source="Images\EditRedo.png"></Image>
+                </Button>
+
+                <Button Style="{StaticResource formatTextStyle}" Command="EditingCommands.ToggleBold" ToolTip="Bold">
+                    <TextBlock FontWeight="Bold">B</TextBlock>
+                </Button>
+                <Button Style="{StaticResource formatTextStyle}" Command="EditingCommands.ToggleItalic" ToolTip="Italic">
+                    <TextBlock FontStyle="Italic" FontWeight="Bold">I</TextBlock>
+                </Button>
+                <Button Style="{StaticResource formatTextStyle}" Command="EditingCommands.ToggleUnderline" ToolTip="Underline">
+                    <TextBlock TextDecorations="Underline" FontWeight="Bold">U</TextBlock>
+                </Button>
+
+                <Button Style="{StaticResource formatImageStyle}" Command="EditingCommands.ToggleBullets" ToolTip="Bullets">
+                    <Image Source="Images\ListBullets.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}" Command="EditingCommands.ToggleNumbering" ToolTip="Numbering">
+                    <Image Source="Images/ListNumbering.png"></Image>
+                </Button>
+
+                <Button x:Name="_btnSelectAll" Content="Select All"
+                                     Command="ApplicationCommands.SelectAll"/>
+
+                <Button Style="{StaticResource formatImageStyle}" ToolTip="Import" Command="RichTextEditor:RichTextboxAssistant.CommandLoading" CommandParameter="{Binding ElementName=mainRTB}">
+                    <Image Source="Images/fileopen.png"></Image>
+                </Button>
+            </ToolBar>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <RichTextBox Name="mainRTB" AcceptsTab="True"  MinHeight="160"
+                             RichTextEditor:RichTextboxAssistant.BoundDocument="{Binding Path=HtmlContent, ElementName=CltRichText}"
+                             VerticalScrollBarVisibility="Visible" PreviewKeyDown="rtbPreviewKeyDown" >
+                    <RichTextBox.Resources>
+                        <Style TargetType="{x:Type Paragraph}">
+                            <Setter Property="Margin" Value="0"/>
+                        </Style>
+                    </RichTextBox.Resources>
+                </RichTextBox>
+                <st:DeletableTextBox Text="{Binding Path=HtmlContent, ElementName=CltRichText}" Grid.Row="1" />
+            </Grid>
+
+        </DockPanel>
+    </Grid>
+</UserControl>

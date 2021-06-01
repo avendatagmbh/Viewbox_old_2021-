@@ -1,0 +1,14 @@
+Developer notes (documentation) :
+
+    Notes about taxonomy anomalies :
+        In the Kapitalflussrechnung, in the Cash Flow statement, only the "Cash funds at end of period" is there. The other cfs.cashEqu have the name of "Cash funds at begin of period". In the xml (Taxonomy\Taxonomy\Taxonomy\base\de-gaap-ci-2012-06-01.xml) the root have 2 PresentationLink. Same root, but different branche. That is the way the 2 different element with same id under the same parent are defined.
+
+        If we change the Legal form of a company to GKG, than the Steuerliche Gewinnermittlung BEI Personengesellschaften will be visible, but the FUR's de-gaap-ci_DeterminationOfTaxableIncomeSpec.forProfitOrganization. Will be lost. Most likely it's intentional.
+        MUN with other choice is better choice, if we want to see both of them.
+
+        The Detailinformationen zu Positionen presentation tree root is not presented in the navigation tree. Most likely it's the balance list, and stored different way. Most likely it's not handled with care. The xbrl should contain that presentation tree, but the export doesn't follow the scheme.
+
+        The value tree's creation loads automatically the values_gaap, values_gaap_fg, values_gcd, values_gcd_company. The constructor is private. The tuple's item's have the same value tree with their parent/adjacent.
+
+    Notes about refreshing :
+        The lost focus is not fired if we change navigation tree entry, or click somewhere else, or quit. It fires only if we choose other element from the same type. Because of that we have to fire it for the last selected element if we want to run a function/process that needs updated value tree. That needs managed code. Now the GlobalResources.LastSelectedTextBox stores the reference for the last selected text box. The lost focus is fired now if we quit, switch in navigation tree, or ColoredTabItem is clicked.

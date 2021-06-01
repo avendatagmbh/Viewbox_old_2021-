@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/interfaces/blconfig.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/interfaces/blmetadata.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/interfaces/blueline.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/interfaces/bluelineimpl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/interfaces/bluelineutil.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/interfaces/bpmline.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/interfaces/foldermanager.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/bcmail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/bcpg.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/bcprov.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/bctsp.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/cwf.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/iText.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/jai_codec.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/jai_core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/jdom.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/jug.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/log4j.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/mlibwrapper_jai.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/pdfint3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/pdfint5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/pdfint6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/pdfint7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/resolver.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs/xml-apis.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs_fm/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs_fm/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs_fm/jaxrpc-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs_fm/jaxrpc-impl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs_fm/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs_fm/saaj-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs_fm/saaj-impl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/Belegarchiv Otto/blueline_v05.04/libs_fm/xsdlib.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

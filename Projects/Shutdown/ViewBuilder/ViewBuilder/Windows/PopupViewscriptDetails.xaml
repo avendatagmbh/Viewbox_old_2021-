@@ -1,0 +1,18 @@
+﻿<Window x:Class="ViewBuilder.Windows.PopupViewscriptDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:ViewBuilder.Windows.Controls" Title="" 
+        ResizeMode="NoResize" 
+        SizeToContent="WidthAndHeight"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        MinHeight="250" MinWidth="578"
+        Background="Transparent"
+        Focusable="False"
+        ShowInTaskbar="False" 
+        WindowStartupLocation="Manual" 
+        Closing="Window_Closing"
+        Topmost="True">
+
+    <Controls:CtlViewscriptDetails />
+</Window>

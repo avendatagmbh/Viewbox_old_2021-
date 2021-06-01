@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<xsd:schema targetNamespace="http://www.xbrl.de/de/vis/2011-02-28" xmlns:vis="http://www.xbrl.de/de/vis/2011-02-28" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:hgbref="http://www.xbrl.de/2006/ref" xmlns:ref="http://www.xbrl.org/2004/ref" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:roleType roleURI="http://www.xbrl.de/visualisationAnnotations/numberingSchema" id="numschema">
+        <link:definition>Nummerierungsschema für die generische Nummerierung bei Visualisierungsannotationen</link:definition>
+        <link:usedOn>link:label</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.de/visualisationAnnotations/excludeFromNumbering" id="excludenum">
+        <link:definition>Ausschließen von der generischen Nummerierung durch eine Visualisierungsannotation</link:definition>
+        <link:usedOn>link:label</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.de/visualisationAnnotations/subCategorizationOnSingleLevel" id="singlelevelnum">
+        <link:definition>Nummerierung auf einer Ebene durch Visualisierungsannotationen</link:definition>
+        <link:usedOn>link:label</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.de/visualisationAnnotations/columnID" id="columnid">
+        <link:definition>Spalteneingabe bei Visualisierungsannotationen</link:definition>
+        <link:usedOn>link:label</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.de/visualisationAnnotations/viewAsSubTotal" id="viewassubtotal">
+        <link:definition>Darstellung als Summenposition nach den Unterpositionen</link:definition>
+        <link:usedOn>link:label</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.de/visualisationAnnotations/viewValueAsSubTotal" id="viewvalueassubtotal">
+        <link:definition>Darstellung des Wertes nach den Unterpositionen</link:definition>
+        <link:usedOn>link:label</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.de/visualisationAnnotations/enableMovingUpToEmptyFacts" id="enablemovingup">
+        <link:definition>Aktivierung der Aufrückung an die Stelle leerer Fakten</link:definition>
+        <link:usedOn>link:label</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.de/visualisationAnnotations/attachToSubtotal" id="attachtosubtotal">
+        <link:definition>Position wird bei der Umstrukturierung zur Darstellung von Summenpositionen zusammen mit der Summenposition umstrukturiert</link:definition>
+        <link:usedOn>link:label</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+</xsd:schema>

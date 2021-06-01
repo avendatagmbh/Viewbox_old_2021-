@@ -1,0 +1,246 @@
+﻿<UserControl x:Class="DbSearch.Controls.Keys.CtlKeyResults"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:TemplateSelectors="clr-namespace:DbSearch.TemplateSelectors"
+             xmlns:Converters="clr-namespace:DbSearch.Converter"
+             xmlns:KeySearch="clr-namespace:DbSearchLogic.SearchCore.KeySearch;assembly=DbSearchLogic"
+             xmlns:ForeignKeySearch="clr-namespace:DbSearchLogic.SearchCore.ForeignKeySearch;assembly=DbSearchLogic"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:Keys="clr-namespace:DbSearchLogic.SearchCore.Keys;assembly=DbSearchLogic" mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="700" >
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/DetailViews.xaml" />
+                <ResourceDictionary Source="/ResourceDictionaries/KeyResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Border Grid.Row="0">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding KeysInitialized}" Value="False">
+                            <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <TextBlock Text="Loading keys in progress..."></TextBlock>
+        </Border>
+        
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="200" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" MinWidth="300" />
+            </Grid.ColumnDefinitions>
+        
+            <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource GroupBoxBorderKeyDetails}" Padding="5,2" >
+                <AvdWpfControls:AvdTreeView Margin="5" Name="treeView" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ItemsSource="{Binding KeyTables}" Background="Transparent" BorderThickness="0" 
+                ItemTemplateSelector="{StaticResource keyTemplateSelector}">
+                    <AvdWpfControls:AvdTreeView.Resources>
+                        <Style TargetType="{x:Type TreeViewItem}">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Padding" Value="0,2,4,2"/>
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                            <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Setter Property="Visibility" Value="{Binding Path=IsVisible, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource boolToVisibilityConverter}}"/>
+                        </Style>
+                    </AvdWpfControls:AvdTreeView.Resources>
+                </AvdWpfControls:AvdTreeView>
+            </Border>
+
+            <GridSplitter Grid.Column="1" Width="2" Margin="0,5,0,5" ResizeBehavior="PreviousAndNext"></GridSplitter>
+
+            <Border Grid.Column="2" Style="{StaticResource GroupBoxBorderKeyDetails}" Padding="5,2" >
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--Filter-->
+                    <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Left">
+                        <TextBlock Text="Key result filter" Style="{StaticResource KeyTitle}" />
+                        <Border Style="{StaticResource ListDetailBorder}" Padding="5" Margin="0,10,0,10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <ItemsControl Grid.Row="0" Name="icColumnTypes" ItemsSource="{Binding ResultFilter.ColumnTypesToShow}" IsTabStop="False">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <CheckBox Content="{Binding DbType}" IsChecked="{Binding IsSelected, Mode=TwoWay}"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <Label Grid.Row="1">Blacklist: except the columns listed here (delimited by ";")</Label>
+                                <TextBox Grid.Row="2" Text="{Binding ResultFilter.ColumnBlackList}"/>
+                                <Label Grid.Row="3">Whitelist: only the columns listed here (delimited by ";")</Label>
+                                <TextBox Grid.Row="4" Text="{Binding ResultFilter.ColumnWhiteList}"/>
+                                <Label Grid.Row="5" Foreground="Red">When at least one field name is in the Whitelist the Blacklist will be ignored.</Label>
+                                <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Click="Button_Click">Apply Filter</Button>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                    <!--Key-->
+                    <Grid Grid.Row="1">
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SelectedKey.Key, Converter={StaticResource dataTypeConverter}}" Value="{x:Type Keys:DisplayPrimaryKey}">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Grid.Column="0" Source="..\..\Resources\key16.png"></Image>
+                                <TextBlock Text="Primary key" Style="{StaticResource KeyTitle}"/>
+                                <TextBlock Text="{Binding SelectedKey.Key.DisplayString}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Style="{StaticResource ListDetailBorder}" Padding="5" Margin="0,10,10,10">
+                                    <StackPanel>
+                                        <TextBlock Text="Primary key"/>
+                                        <Border Grid.Column="0" Style="{StaticResource GroupBoxBorderKeyDelimiter}" />
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Table:" Style="{StaticResource KeyDescriptionTitle}"/>
+                                            <TextBlock Text="{Binding SelectedKey.Key.TableName}" Style="{StaticResource KeyDescriptionTableName}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Columns:" Style="{StaticResource KeyDescriptionTitle}"/>
+                                            
+                                            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Path=SelectedKey.Key.Columns}" Style="{StaticResource KeyDescriptionColumnData}">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="Column Name" Binding="{Binding ColumnName}" />
+                                                    <DataGridTextColumn Header="Type" Binding="{Binding ColumnType}" />
+                                                    <DataGridTemplateColumn Header="">
+                                                        <DataGridTemplateColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <Image Source="{Binding ColumnType, Converter={StaticResource columnTypeToImageSourceConverter}}"/>
+                                                            </DataTemplate>
+                                                        </DataGridTemplateColumn.CellTemplate>
+                                                    </DataGridTemplateColumn>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </Grid>
+
+                    <!--ForeignKey-->
+                    <Grid Grid.Row="2">
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SelectedKey.Key, Converter={StaticResource dataTypeConverter}}" Value="{x:Type Keys:DisplayForeignKey}">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Grid.Column="0" Source="..\..\Resources\foreign_key16.png"></Image>
+                                <TextBlock Text="Foreign key" Style="{StaticResource KeyTitle}" />
+                                <TextBlock Text="{Binding SelectedKey.Key.DisplayString}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <!--Foreign key table-->
+                                <Border Style="{StaticResource ListDetailBorder}" Padding="5" Margin="0,10,10,10">
+                                    <StackPanel>
+                                        <TextBlock Text="Foreign key"/>
+                                        <Border Grid.Column="0" Style="{StaticResource GroupBoxBorderKeyDelimiter}" />
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Table:" Style="{StaticResource KeyDescriptionTitle}"/>
+                                            <TextBlock Text="{Binding SelectedKey.Key.ForeignKeyTableName}" Style="{StaticResource KeyDescriptionTableName}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Columns:" Style="{StaticResource KeyDescriptionTitle}"/>
+                                            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Path=SelectedKey.Key.ForeignKeyColumns}" Style="{StaticResource KeyDescriptionColumnData}">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="Column Name" Binding="{Binding ColumnName}" />
+                                                    <DataGridTextColumn Header="Type" Binding="{Binding ColumnType}" />
+                                                    <DataGridTemplateColumn Header="">
+                                                        <DataGridTemplateColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <Image Source="{Binding ColumnType, Converter={StaticResource columnTypeToImageSourceConverter}}"/>
+                                                            </DataTemplate>
+                                                        </DataGridTemplateColumn.CellTemplate>
+                                                    </DataGridTemplateColumn>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                                <!--Primary key table-->
+                                <Border Style="{StaticResource ListDetailBorder}" Padding="5" Margin="0,10,10,10">
+                                    <StackPanel>
+                                        <TextBlock Text="Primary key"/>
+                                        <Border Grid.Column="0" Style="{StaticResource GroupBoxBorderKeyDelimiter}" />
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Table:" Style="{StaticResource KeyDescriptionTitle}"/>
+                                            <TextBlock Text="{Binding SelectedKey.Key.PrimaryKeyTableName}" Style="{StaticResource KeyDescriptionTableName}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Columns:" Style="{StaticResource KeyDescriptionTitle}"/>
+                                            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Path=SelectedKey.Key.PrimaryKeyColumns}" Style="{StaticResource KeyDescriptionColumnData}">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="Column Name" Binding="{Binding ColumnName}" />
+                                                    <DataGridTextColumn Header="Type" Binding="{Binding ColumnType}" />
+                                                    <DataGridTemplateColumn Header="">
+                                                        <DataGridTemplateColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <Image Source="{Binding ColumnType, Converter={StaticResource columnTypeToImageSourceConverter}}"/>
+                                                            </DataTemplate>
+                                                        </DataGridTemplateColumn.CellTemplate>
+                                                    </DataGridTemplateColumn>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

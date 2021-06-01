@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="ViewAssistant.Controls.CtlDatabaseConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base"
+             xmlns:Controls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:DbAccess="clr-namespace:DbAccess;assembly=DbAccess"
+             Loaded="UserControl_Loaded">
+    <Grid Margin="0,0,10,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_DatasourceType}" Padding="0" Margin="10,15,0,0"/>
+        <ComboBox Grid.Row="1" Margin="10,0,0,0" Width="290" Height="25" HorizontalAlignment="Left" Name="DataTypeList" ItemsSource="{x:Static DbAccess:ConnectionManager.DbTypeNames}" SelectedValue="{Binding DbType, Mode=TwoWay}" SelectionChanged="DataTypeList_SelectionChanged"></ComboBox>
+
+        <Grid Grid.Row="2" Name="HostNameField">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Server}" Padding="0" Margin="10,15,0,0"/>
+
+            <TextBox Grid.Row="1" Grid.Column="0" Name="HostName" Margin="10,0,0,0" Width="290" Height="25" HorizontalAlignment="Left" Text="{Binding Hostname}"></TextBox>
+            <Button Grid.Row="1" Grid.Column="1" Content="{x:Static Localisation:ResourcesCommon.Browse}" Height="25" Width="80" Name="BrowseButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Click="BrowseButtonClick"/>
+        </Grid>
+
+        <Grid Grid.Row="3" Name="UsernameField">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Username}" Padding="0" Margin="10,15,0,0"/>
+            <TextBox Grid.Row="1" Name="UsernameTextBox" Margin="10,0,0,0" Width="290" Height="25" HorizontalAlignment="Left" Text="{Binding Username}"/>
+        </Grid>
+
+        <Grid Grid.Row="4" Name="PasswordField">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Password}" Padding="0" Margin="10,15,0,0"/>
+            <PasswordBox Grid.Row="1" Name="PasswordTextBox" Margin="10,0,0,0" Width="290" Height="25" HorizontalAlignment="Left"
+                         Controls:PasswordHelper.Attach="True" Controls:PasswordHelper.Password="{Binding Password, Mode=TwoWay}"/>
+        </Grid>
+
+        <Grid Grid.Row="5" Name="DatabaseField">
+            <Grid.RowDefinitions>
+                <RowDefinition Name="Col1" Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Database}" Width="{Binding Height, ElementName=Col1}" Padding="0" Margin="10,15,0,0"/>
+            <TextBox Grid.Row="1" Name="DatabaseTextBox" Margin="10,0,0,0" Width="290" Height="25" HorizontalAlignment="Left" Text="{Binding DbName}"/>
+        </Grid>
+
+        <Grid Grid.Row="6" Name="PortField">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Port}" Padding="0" Margin="10,15,0,0"/>
+            <TextBox Grid.Row="1" Name="PortTextBox" Margin="10,0,0,0" Width="290" Height="25" HorizontalAlignment="Left" Text="{Binding Port}"/>
+        </Grid>
+
+        <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,15,0,0">
+            <Controls:ImageButton ImageHeight="14" Height="25" ImageSource="/Resources/Database.png" Click="TestButtonClick" Caption="{x:Static Localisation:ResourcesCommon.BtnTestConnectionCaption}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

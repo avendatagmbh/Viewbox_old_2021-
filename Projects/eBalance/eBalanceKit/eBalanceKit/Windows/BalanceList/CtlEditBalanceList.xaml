@@ -1,0 +1,300 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.BalanceList.CtlEditBalanceList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:ebkb="clr-namespace:eBalanceKitBusiness;assembly=eBalanceKitBusiness"
+             xmlns:ebkc="clr-namespace:eBalanceKitControls;assembly=eBalanceKitControls"
+             xmlns:my="clr-namespace:eBalanceKit.Windows.BalanceList"
+             xmlns:cb="clr-namespace:eBalanceKit.Controls.BalanceList"
+             xmlns:loc="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800" GiveFeedback="dragItem_GiveFeedback" DragOver="Window_DragOver" >
+
+    <Control.Resources>
+        <ResourceDictionary Source="/ResourceDictionaries/DlgEditBalanceListResources.xaml" />
+    </Control.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Popup DataContext="{Binding BalanceList.AccountsFilter}" x:Name="AccountFilterPopup"
+               IsHitTestVisible="False"
+               Placement="MousePoint" StaysOpen="False"
+               AllowsTransparency="True" PopupAnimation="Slide">
+            <Border Background="Transparent">
+                <Border Style="{StaticResource GroupBoxBorder}"
+                    Margin="10,0,15,15" Padding="5">
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="5" Direction="315" Opacity="0.9"/>
+                    </Border.Effect>
+                    <cb:BalanceListFilter Width="275" />
+                </Border>
+            </Border>
+        </Popup>
+
+        <Popup DataContext="{Binding BalanceList.AccountGroupsFilter}" x:Name="AccountGroupsFilterPopup"
+               IsHitTestVisible="False"
+               Placement="MousePoint" StaysOpen="False"
+               AllowsTransparency="True" PopupAnimation="Slide">
+            <Border Background="Transparent">
+                <Border Style="{StaticResource GroupBoxBorder}"
+                    Margin="10,0,15,15" Padding="5">
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="5" Direction="315" Opacity="0.9"/>
+                    </Border.Effect>
+                    <cb:BalanceListFilter Width="275" />
+                </Border>
+            </Border>
+        </Popup>
+
+        <Popup DataContext="{Binding BalanceList.SplitAccountGroupsFilter}" x:Name="SplitAccountGroupsFilterPopup"
+               IsHitTestVisible="False"
+               Placement="MousePoint" StaysOpen="False"
+               AllowsTransparency="True" PopupAnimation="Slide">
+            <Border Background="Transparent">
+                <Border Style="{StaticResource GroupBoxBorder}"
+                    Margin="10,0,15,15" Padding="5">
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="5" Direction="315" Opacity="0.9"/>
+                    </Border.Effect>
+                    <cb:BalanceListFilter Width="275" />
+                </Border>
+            </Border>
+        </Popup>
+
+        <Popup DataContext="{Binding BalanceList.SortOptions}" x:Name="SortConfigPopup"
+               IsHitTestVisible="False"
+               Placement="MousePoint" StaysOpen="False"
+               AllowsTransparency="True" PopupAnimation="Slide">
+            <Border Background="Transparent">
+                <Border Style="{StaticResource GroupBoxBorder}"
+                    Margin="10,0,15,15" Padding="5">
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="5" Direction="315" Opacity="0.9"/>
+                    </Border.Effect>
+                    <cb:CtlSortBalanceList />
+                </Border>
+            </Border>
+        </Popup>
+        
+        <Popup DataContext="{x:Null}" x:Name="DragDropPopup"
+            IsHitTestVisible="False"
+            Placement="RelativePoint"
+            AllowsTransparency="True">
+            <Border Background="Transparent">
+                <Border
+                Name="popupBorder"
+                Margin="10,0,15,15" >
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="5" Direction="315" Opacity="0.9"/>
+                    </Border.Effect>
+
+                    <ListBox SelectionMode="Single"
+                                Grid.Row="1" Margin="0"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                ItemsSource="{Binding Path=Accounts}"
+                                ItemTemplateSelector="{StaticResource balanceListDragDropTemplateSelector}">
+
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                </Style.Resources>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+                </Border>
+            </Border>
+        </Popup>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="0,0,5,5" HorizontalAlignment="Right">
+                <wpfc:ImageButton2 VerticalAlignment="Center" ImageSource="/eBalanceKitResources;component/Resources/Filter16.png" 
+                                   ToolTip="Kontenliste filtern" Click="btnFilterAccountList" Margin="5,0,0,0"/>
+
+                <wpfc:ImageButton2 VerticalAlignment="Center" ImageSource="/eBalanceKitResources;component/Resources/Sort16.png" 
+                                   ToolTip="Kontenliste sortieren" Click="btnSortAccountList" Margin="5,0,0,0"/>
+            </StackPanel>
+
+            <Border Grid.Row="1" Style="{StaticResource GroupBoxBorder}" Padding="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <ListBox SelectionMode="Extended" BorderBrush="Transparent" BorderThickness="0" Padding="0"
+                                x:Name="accountList" Background="Transparent"
+                                ItemsSource="{Binding Path=BalanceList.AccountsDisplayed}"
+                                ItemTemplate="{StaticResource AccountWithSplitButton}"
+                                PreviewMouseMove="accountList_PreviewMouseMove"
+                                PreviewMouseLeftButtonDown="accountList_PreviewMouseLeftButtonDown"
+                                PreviewMouseLeftButtonUp="accountList_PreviewMouseLeftButtonUp"
+                                PreviewKeyDown="accountList_PreviewKeyDown"
+                                PreviewKeyUp="accountList_PreviewKeyUp"
+                                DragOver="accountList_DragOver"
+                                DragEnter="accountList_DragEnter"
+                                DragLeave="accountList_DragLeave"
+                                Drop="accountList_Drop"
+                                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                ScrollViewer.VerticalScrollBarVisibility="Visible">
+
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Setter Property="Padding" Value="0"/>
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                </Style.Resources>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+
+                    <Separator Grid.Row="1" VerticalAlignment="Top" Margin="0,2"/>
+                    <TextBlock Grid.Row="2" Text="{Binding BalanceList.AccountsInfo}" Foreground="#444" Margin="2,0,5,0" />
+
+                    <Separator Grid.Row="3" VerticalAlignment="Top" Margin="0,2" Visibility="Collapsed"/>
+                    <StackPanel Grid.Row="4" Orientation="Horizontal" Visibility="Collapsed">
+                        <wpfc:ImageButton2 ImageSource="/eBalanceKitResources;component/Resources/Replace.png" ToolTip="{x:Static loc:ResourcesBalanceList.BtnReimportBalanceListTooltip}" 
+                                       Click="btnReimportBalanceList_Click" Caption="{x:Static loc:ResourcesBalanceList.BtnReimportBalanceList}" />
+
+                        <wpfc:ImageButton2 ImageSource="/eBalanceKitResources;component/Resources/templates.png" ToolTip="{x:Static loc:ResourcesCommon.BtnTemplatesTooltip}" 
+                                       Click="btnTemplates_Click" Caption="{x:Static loc:ResourcesCommon.BtnTemplates}" Margin="5,0,0,0" />
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+
+        </Grid>
+
+        <TabControl Grid.Column="2">
+
+            <!-- account groups -->
+            <ebkc:EbkTabItem Caption="{x:Static loc:ResourcesBalanceList.AccountGroupsCaption}" ImageSource="/eBalanceKitResources;component/Resources/GroupAccount.png">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="0,0,5,5" HorizontalAlignment="Right">
+                        <wpfc:ImageButton2 VerticalAlignment="Center" ImageSource="/eBalanceKitResources;component/Resources/Filter16.png" 
+                                ToolTip="Kontenliste filtern" Click="btnFilterAccountGroupList" Margin="5,0,0,0"/>
+
+                        <wpfc:ImageButton2 VerticalAlignment="Center" ImageSource="/eBalanceKitResources;component/Resources/Sort16.png" 
+                                ToolTip="Kontenliste sortieren" Click="btnSortAccountList" Margin="5,0,0,0"/>
+                    </StackPanel>
+
+                    <Border Grid.Row="1" Padding="5" Style="{StaticResource GroupBoxBorder}" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TreeView x:Name="tvAccountGroups" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                ItemsSource="{Binding Path=BalanceList.AccountGroupsDisplayed}"
+                                Background="Transparent" BorderThickness="0" AllowDrop="True"
+                                PreviewMouseMove="tvAccountGroups_PreviewMouseMove"
+                                PreviewMouseLeftButtonDown="tvAccountGroups_PreviewMouseLeftButtonDown"
+                                DragOver="tvAccountGroups_DragOver"
+                                Drop="tvAccountGroups_Drop"
+                                DragEnter="tvAccountGroups_DragEnter"
+                                DragLeave="tvAccountGroups_DragLeave"
+                                KeyDown="tvAccountGroups_KeyDown" 
+                                ItemTemplateSelector="{StaticResource AccountGroupTemplateSelector}" />
+
+                            <Separator Grid.Row="1" VerticalAlignment="Top" Margin="0,2"/>
+                            <TextBlock Grid.Row="2" Text="{Binding BalanceList.AccountGroupsInfo}" Foreground="#444" Margin="2,0,0,0" />
+                            <Separator Grid.Row="3" VerticalAlignment="Top" Margin="0,2,0,5"/>
+                            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                                <!-- add new account group -->
+                                <wpfc:ImageButton2 x:Name="btnCreateAccountGroup" ImageSource="/eBalanceKitResources;component/Resources/add.png" 
+                                            ToolTip="{x:Static loc:ResourcesBalanceList.BtnCreateAccountGroupTooltip}" 
+                                            Click="btnCreateAccountGroup_Click" Caption="{x:Static loc:ResourcesCommon.New}" />
+
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ebkc:EbkTabItem>
+
+            <!-- account splittings -->
+            <ebkc:EbkTabItem Caption="{x:Static loc:ResourcesBalanceList.SplittedAccountsCaption}" ImageSource="/eBalanceKitResources;component/Resources/SplitAccount.png">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="0,0,5,5" HorizontalAlignment="Right">
+                        <wpfc:ImageButton2 VerticalAlignment="Center" ImageSource="/eBalanceKitResources;component/Resources/Filter16.png" 
+                                   ToolTip="Kontenliste filtern" Click="btnFilterSplitAccountGroupList" Margin="5,0,0,0"/>
+
+                        <wpfc:ImageButton2 VerticalAlignment="Center" ImageSource="/eBalanceKitResources;component/Resources/Sort16.png" 
+                                   ToolTip="Kontenliste sortieren" Click="btnSortAccountList" Margin="5,0,0,0"/>
+                    </StackPanel>
+                    <Border Padding="5" Grid.Row="1" Style="{StaticResource GroupBoxBorder}">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <ListBox SelectionMode="Extended" BorderBrush="Transparent" BorderThickness="0" x:Name="splitGroupList" Background="Transparent"
+                                ItemsSource="{Binding Path=BalanceList.SplitAccountGroupsDisplayed}"
+                                ItemTemplate="{StaticResource SplitAccountGroup}"
+                                ScrollViewer.CanContentScroll="False"
+                                ScrollViewer.HorizontalScrollBarVisibility="Disabled"                 
+                                ScrollViewer.VerticalScrollBarVisibility="Visible">
+
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="ListBoxItem">
+                                        <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                        <Setter Property="Padding" Value="0"/>
+                                        <Style.Resources>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                        </Style.Resources>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                            </ListBox>
+
+                            <Separator Grid.Row="1" VerticalAlignment="Top" Margin="0,2"/>
+                            <TextBlock Grid.Row="2" Text="{Binding BalanceList.SplitAccountGroupsInfo}" Foreground="#444" Margin="2,0,5,0" />
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ebkc:EbkTabItem>
+
+        </TabControl>
+
+    </Grid>
+</UserControl>

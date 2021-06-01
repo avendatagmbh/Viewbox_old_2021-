@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.MappingTemplates.CtlEditPropertiesGCDTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             xmlns:st="clr-namespace:eBalanceKit.Controls"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Name" FontWeight="Bold"/>
+            <st:DeletableTextBox x:Name="txtName" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="0,5,0,0"/>
+
+            <TextBlock Text="Kommentar" Margin="0,10,0,0" FontWeight="Bold"/>
+            <st:DeletableTextBox x:Name="txtComment" Text="{Binding Path=Comment, UpdateSourceTrigger=LostFocus}" Margin="0,5,0,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="AvdWpfDbControls.ControlConfigDatabase"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="360" d:DesignWidth="468">
+    
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label  Grid.Row="0" Content="Datenbanktyp" Padding="1"  Margin="0" />
+                <ComboBox 
+                        Grid.Row="1" 
+                        Name="txtDatabaseType" Margin="0"
+                        SelectedItem="{Binding Path=DbType, Mode=TwoWay, UpdateSourceTrigger=Explicit}" IsEditable="False" />
+
+                <Label Grid.Row="2" Content="DSN" Padding="1"  Margin="0,0,0,0" />
+                <ComboBox 
+                    Grid.Row="3" 
+                    Name="txtDSN" Margin="0,2,0,2"
+                    SelectedItem="{Binding Path=DSN, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="75" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label VerticalAlignment="Center" Content="Hostname" Padding="1"  Margin="3,0,3,0" />
+                    <TextBox Name="txtHost" Grid.Row="1" GotFocus="textbox_GotFocus" Text="{Binding Path=Hostname, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Margin="3"/>
+
+                    <Label Grid.Column="1" Content="Port" Padding="1"  Margin="3,0,3,0" />
+                    <TextBox Name="txtPort" Grid.Row="1" Grid.Column="1" GotFocus="textbox_GotFocus"  Text="{Binding Path=Port, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Margin="3"/>
+
+                    <Label Grid.Row="2" Grid.ColumnSpan="2" Content="Benutzername" Padding="1"  Margin="3,0,3,0" />
+                    <TextBox Grid.Row="3" Grid.ColumnSpan="2" Name="txtUsername"  GotFocus="textbox_GotFocus" Text="{Binding Path=Username, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Margin="3,0,0,0" />
+
+                    <Label Grid.Row="4" Grid.ColumnSpan="2" Content="Passwort" Padding="1"  Margin="3,0,3,0" />
+                    <PasswordBox Grid.Row="5" Grid.ColumnSpan="2" Name="txtPassword" GotFocus="txtPassword_GotFocus" Margin="3"/>
+
+                    <Label  Grid.Row="6"  Grid.ColumnSpan="2" Content="Datenbank" Padding="1"  Margin="3,0,3,0" />
+
+                    <Grid Grid.ColumnSpan="2" Grid.Row="9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox Name="txtDatabase" Text="{Binding Path=DbName, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Margin="3" GotFocus="textbox_GotFocus" />
+                    <Button Grid.Column="1" Name="btnRefreshDatabaseList"  Width="20" Height="Auto" Margin="3" Click="btnRefreshDatabaseList_Click" Style="{StaticResource ImageButtonStyle1}">
+                        <Image Opacity="0.9" VerticalAlignment="Center" Height="Auto" Width="21" Source="/TransDATA;component/Resources/Reload16.png" />
+                    </Button>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="5,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="4*" />
+                    </Grid.RowDefinitions>
+
+                    <Label Content="Suchen" Padding="1" Margin="3,0,3,0" />
+                    <TextBox Name="txtSearch" Grid.Row="1" TextChanged="txtSearch_TextChanged" Margin="3"/>
+                    <Label Grid.Row="2" Content="Datenbank" Padding="1" Margin="3,0,3,0" />
+                    <ListBox Name="lstDatabases" Grid.Row="3" SelectedItem="{Binding ElementName=txtDatabase, Mode=TwoWay, UpdateSourceTrigger=Explicit, Path=Text}" SelectionChanged="lstDatabases_SelectionChanged" Margin="3,0,3,0" />
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Content="Benutzerdefinierte Parameter" Padding="1" Margin="3,0,3,0"/>
+                <TextBox Grid.Row="1" Name="txtUserParameter" Text="{Binding Path=UserParameter, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Margin="3,0,3,0"/>
+                <Label Grid.Row="2" Content="ConnectionString" Padding="1" Margin="3,0,0,0" />
+                <TextBox Grid.Row="3" Name="txtConnectionString" Text="{Binding Path=ConnectionString, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Margin="3,0,3,0" />
+
+            </Grid>
+        </Grid>
+
+</UserControl>

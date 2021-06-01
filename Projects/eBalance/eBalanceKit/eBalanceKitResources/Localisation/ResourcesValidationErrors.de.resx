@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="gcd_genInfo_report_id_accountingStandard" xml:space="preserve">
+    <value>Es wurde noch kein Bilanzierungsstandard festgelegt.</value>
+  </data>
+  <data name="GcdFiscalYearBeginNotExists">
+    <value xml:space="preserve">Bei einem endgültigen Jahresabschluss muss ein Datum angegeben werden.</value>
+  </data>
+  <data name="GcdFiscalYearEndNotExists">
+    <value xml:space="preserve">Bei einem endgültigen Jahresabschluss muss ein Datum angegeben werden.</value>
+  </data>
+  <data name="balSheetClosingDate_not_equals_fiscalYearEnd">
+    <value xml:space="preserve">Bei einem endgültigen Jahresabschluss muss der Bilanzstichtag mit dem Ende des Wirtschaftsjahres übereinstimmen.</value>
+  </data>
+  <data name="GKV_and_operatingCOGS" xml:space="preserve">
+    <value>Bei Nutzung des Gesamtkostenverfahrens dürfen die Umsatzkosten nicht werthaltig sein.</value>
+  </data>
+  <data name="ValidatorGCD_Validate_Bei_einem_endgültigen_Jahresabschluss_muss_ein_Datum_angegeben_werden_" xml:space="preserve">
+    <value>Bei einem endgültigen Jahresabschluss muss ein Datum angegeben werden.</value>
+  </data>
+  <data name="unallowedIncomeStatementFormat" xml:space="preserve">
+    <value>Bei Angabe der GuV muss entweder Gesamtkostenverfahren oder Umsatzkostenverfahren ausgewählt werden.</value>
+  </data>
+  <data name="UKV_and_operatingTC" xml:space="preserve">
+    <value>Bei Nutzung des Umsatzkostenverfahrens darf das Betriebsergebnis nicht werthaltig sein.</value>
+  </data>
+  <data name="legalStatusNotAllowed">
+    <value xml:space="preserve">Die ausgewählte Rechtsform ist nicht zulässig.</value>
+  </data>
+  <data name="Aktiva_differs_Passiva">
+    <value xml:space="preserve">Aktiva und Passiva stimmen nicht überein.</value>
+  </data>
+  <data name="profitLoss_unequal_gainLoss">
+    <value xml:space="preserve">Bilanzgewinn / Bilanzverlust in Ergebnisverwendung und Bilanz stimmt nicht überein.</value>
+  </data>
+  <data name="netIncome_GuV_differs_IncomeUse">
+    <value xml:space="preserve">Jahresüberschuss/-fehlbetrag in Ergebnisverwendung und GuV stimmt nicht überein.</value>
+  </data>
+  <data name="HasToBeEqual">
+    <value xml:space="preserve">{0} muss mit {1} übereinstimmen</value>
+  </data>
+  <data name="IfThenRequired">
+    <value xml:space="preserve">Bei Angabe von {0} muss {1} angegeben werden</value>
+  </data>
+  <data name="NotPermittedForFinancial">
+    <value xml:space="preserve">Diese Information ist bei Einreichung an die Finanzverwaltung nicht erlaubt.</value>
+  </data>
+  <data name="NotPermittedForFinancial_Selection">
+    <value xml:space="preserve">Diese Auswahl ist bei Einreichung an die Finanzverwaltung nicht erlaubt.</value>
+  </data>
+  <data name="EmptyReportPart">
+    <value xml:space="preserve">Leere Berichtsbestandteil dürfen nicht übermittelt werden.</value>
+  </data>
+  <data name="NoAccountAssigned">
+    <value xml:space="preserve">Keine Konten zugeordnet oder für keine Position die Funktion "Kontennachweis senden" aktiviert.</value>
+  </data>
+  <data name="SendAccountDetailsInconsistency">
+    <value xml:space="preserve">Es wurden Taxonomiepositionen mit "Kontennachweis senden versehen, aber nicht der entsprechende Berichtsbestandteil gewählt</value>
+  </data>
+  <data name="ReportPartFilledButNotSelected">
+    <value xml:space="preserve">Dieser Berichtsbestandteil wurde mit Werten gefüllt, aber nicht zum Senden ausgewählt.</value>
+  </data>
+  <data name="ReconciliationNotAllowed">
+    <value xml:space="preserve">Überleitung an dieser Stelle nicht erlaubt, da bereits eine Überleitung an einem Ober-/Unterpunkt eingegeben wurde.</value>
+  </data>
+  <data name="CommercialBalanceSheetWithoutReconciliations">
+    <value xml:space="preserve">Es wurde eine Handelsbilanz ausgewählt, aber kein Überleitungswert eingetragen.</value>
+  </data>
+  <data name="NotAllowedForTax">
+    <value xml:space="preserve">Bei steuerlich unzulässigen Positionen darf kein Wert berichtet werden bei Einreichung einer Steuerbilanz.</value>
+  </data>
+  <data name="NotAllowedForTaxCommercialBalanceSheet">
+    <value xml:space="preserve">Bei steuerlich unzulässigen Positionen muss der Steuerbilanzwert 0,00€ ergeben.</value>
+  </data>
+  <data name="Aktiva_differs_Passiva_Recon">
+    <value xml:space="preserve">Aktiva und Passiva stimmen nach Anwendung der Überleitungsrechnung nicht überein.</value>
+  </data>
+  <data name="IndustrySectorAllOrNone">
+    <value xml:space="preserve">Es müssen alle oder keine Informationen zum Wirtschaftszweig angegeben werden.</value>
+  </data>
+</root>

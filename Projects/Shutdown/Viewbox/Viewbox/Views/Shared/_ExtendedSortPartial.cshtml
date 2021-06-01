@@ -1,0 +1,197 @@
+﻿@using SystemDb
+@using Viewbox.Properties
+@using Viewbox
+@using Viewbox.Models
+
+@{
+    var DataGridModel = Model as DataGridModel;
+    var TableInfo = DataGridModel != null ? DataGridModel.TableObject : Model as ViewboxDb.TableObject;
+    var TableObject = DataGridModel != null ? DataGridModel.TableInfo : (TableInfo == null) ? Model as ITableObject : TableInfo.Table;
+    var show_placeholder = true;
+    var placeholder = String.Empty;
+    var issue = TableObject as IIssue;
+    int[] ColumnId = null;
+}
+<!-- _ExtendedSortPartial.cshtml -->
+@if (TableObject != null)
+{
+    <ul class="dropdown big view" id="extsortoptions">
+        <li class="panel">
+            @Html.Partial("_TooltipPartial", Resources.Sort)
+            <a class="icon process right dropdown-btn @(TableInfo != null && TableInfo.Sort != null && TableInfo.Sort.Count > 0 ? "active" : "") @(((TableInfo != null && TableInfo.Sum != null && TableInfo.Sum.Count > 0)
+                                                                                                                                                        || (TableInfo != null && TableInfo.GroupSubTotal != null && TableInfo.GroupSubTotal.GroupList != null && TableInfo.GroupSubTotal.GroupList.Count > 0)
+                                                                                                                                                        ? "disabled" : ""))"></a>
+            <ul class="dropdown-menu">
+                <li class="column-view-props visible">
+                    <div class="box">
+                        <div class="top">
+                            <h4>@Resources.Sort</h4>
+                            <div class="close-popup" style="right: 20px; top: 32px;"></div>
+                            @if (issue == null || issue.Flag == 0)
+                            {
+                                <div class="tabbar">
+                                    <div class="search-viewoptions-panel">
+                                        <div class="bg-left"></div>
+                                        @using (Html.BeginForm(null, null, FormMethod.Get, new Dictionary<string, object> { { "id", "searchoverview-extsortoptions" } }))
+                                        {
+                                            <input class="field bg-middle placeholder" autocomplete="off" name="search_viewoptions" type="text"
+                                                   value="@(DataGridModel != null && !String.IsNullOrWhiteSpace(DataGridModel.Search) ? DataGridModel.Search : Resources.SearchPhrase)"
+                                                   placeholder="@Resources.SearchPhrase" />
+                                            <input type="hidden" class="table-object-id" value="@TableObject.Id" />
+                                            <input type="submit" class="submit" value="" />
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="middle sort" id="extsort">
+                            
+                            @if (issue == null || issue.Flag == 0)
+                            {
+                                <div class="sorting-columns">
+                                    <div class="droparea" style="cursor: move;">
+                                        <table class="top-sort">
+                                            <tbody>    
+                                                                                       
+                                                @if (TableInfo != null && TableInfo.Sort != null)
+                                                {
+                                                    var columnsInSort = TableObject.Columns.Join(TableInfo.Sort,
+                                                        c => c.Id,
+                                                        s => s.cid,
+                                                        (c, s) => new
+                                                    {
+                                                        Id = c.Id,
+                                                        Ordinal = c.Ordinal,
+                                                        Description = c.GetDescription(),
+                                                    });
+                                                    ColumnId = new int[TableObject.ColumnCount];
+                                                    int i = 0;
+                                                    foreach (var sortColumn in TableInfo.Sort)
+                                                    {
+                                                        var Column = TableObject.Columns.FirstOrDefault(c => c.Id == sortColumn.cid);
+                                                        show_placeholder = false;
+                                                        ColumnId[i] = Column.Id;
+                                                        <tr>
+                                                            <td class="item-id">@Column.Id</td>
+                                                            <td class="colnumber">@(Column.Ordinal + 1)</td>
+                                                            <td class="colname">
+                                                                <div class="description">@Column.GetDescription()</div>
+                                                                <div class="from-sort"></div>
+                                                            </td>                       
+                                                            <td class="remove-attr"><a href='#' class='sortdirection@(TableInfo.Sort[i].dir == ViewboxDb.SortDirection.Ascending ? " asc" : TableInfo.Sort[i].dir == ViewboxDb.SortDirection.Descending ? " desc" : "")' style='float:left'></a></td>
+                                                         </tr>
+                                                    i++;
+                                                    }
+                                                }
+                                                @if (DataGridModel != null && DataGridModel.SortAlreadyAddedColumns != null)
+                                                {
+                                                    var columnsInSort = TableObject.Columns.Join(DataGridModel.SortAlreadyAddedColumns,
+                                                        c => c.Id,
+                                                        s => s.cid,
+                                                        (c, s) => new
+                                                        {
+                                                            Id = c.Id,
+                                                            Ordinal = c.Ordinal,
+                                                            Description = c.GetDescription(),
+                                                        });
+                                                    if (ColumnId == null)
+                                                    {
+                                                        ColumnId = new int[TableObject.ColumnCount];
+                                                    }
+                                                    int i = 0;
+                                                    int both = 0;
+                                                    for (int j = 0; j < ColumnId.Count(); j++)
+                                                    {
+                                                        if (ColumnId[j] != 0)
+                                                        { both++; }
+                                                        else
+                                                        { break; }
+                                                    }
+                                                    foreach (var sortColumn in TableInfo.Sort)
+                                                    {
+                                                        var Column = TableObject.Columns.FirstOrDefault(c => c.Id == sortColumn.cid);
+                                                        show_placeholder = false;
+                                                        ColumnId[both] = Column.Id;
+                                                        <tr>
+                                                            <td class="item-id">@Column.Id</td>
+                                                            <td class="colnumber">@(Column.Ordinal + 1)</td>
+                                                            <td class="colname">
+                                                                <div class="description">@Column.GetDescription()</div>
+                                                                <div class="from-sort"></div>
+                                                            </td>                       
+                                                            <td class="remove-attr"><a href='#' class='sortdirection@(DataGridModel.SortAlreadyAddedColumns[i].dir == ViewboxDb.SortDirection.Ascending ? "" : DataGridModel.SortAlreadyAddedColumns[i].dir == ViewboxDb.SortDirection.Descending ? " desc" : "")' style='float:left'></a></td>
+                                                        </tr>
+                                                    i++;
+                                                    both++;
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    @{ placeholder = "placeholder" + (show_placeholder ? String.Empty : " hide"); }
+                                    <div class="@placeholder">
+                                        @Resources.SortText
+                                    </div>
+                                </div>
+                                <div class="sortable-columns1 ">
+                                    <table class="bot-sort">
+                                        <tbody>
+                                            @foreach (var Column in TableObject.Columns)
+                                            {
+                                                if (DataGridModel != null && DataGridModel.AlreadyAddedColumns != null && DataGridModel.AlreadyAddedColumns.Contains(Column.Id.ToString()) ||
+                                                    (DataGridModel != null && !Column.GetDescription(ViewboxSession.Language).ToLower().Contains((DataGridModel.Search ?? "").ToLower())) ||
+                                                    (TableInfo != null && TableInfo.Sum != null && (Column.IsVisible || !Column.IsTempedHidden)) ||
+                                                    ((TableInfo == null || TableInfo.Sum == null) && !Column.IsVisible))
+                                                {
+                                                    continue;
+                                                }
+
+                                                if (ColumnId != null && ColumnId.Contains(Column.Id))
+                                                {
+                                                    continue;
+                                                }
+                                                <tr>
+                                                    <td class="item-id">@Column.Id</td>
+                                                    <td class="colnumber">@(Column.Ordinal + 1)</td>
+                                                    <td class="colname"><div class="description">@Column.GetDescription()</div></td>
+                                                    <td class="to-sort"></td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="buttons">
+                                    @using (Html.BeginForm("SortAndFilter", "DataGrid", new {id = TableObject.Id, size = 25}))
+                                    {
+                                        if (TableInfo != null)
+                                        {
+                                            if (TableInfo.Filter != null)
+                                            {
+                                                <input type="hidden" name="filter" id="filter" value="@TableInfo.Filter.ToOriginalString()"/>
+                                            }
+                                            if (TableInfo.Sum != null)
+                                            {
+                                                for (int i = 0; i < TableInfo.Sum.Count; ++i)
+                                                {
+                                                    <input type="hidden" name="summaList[@i]" value="@TableInfo.Sum[i].Id" />
+                                                }
+                                            }
+                                        }
+                                        <input type="submit" class="submit button" value="@Resources.Submit" />
+                                        <input type="button" class="button" value="@Resources.Reset" id="resetsort" style="margin-right: 10px" />
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <a class="no-action">@String.Format(Resources.NoAction, Resources.Sort)</a>
+                            }
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+}

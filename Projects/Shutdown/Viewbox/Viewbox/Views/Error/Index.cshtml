@@ -1,0 +1,22 @@
+﻿@model HandleErrorInfo
+@{
+    Layout = "~/Views/Shared/_LayoutError.cshtml";
+}
+@if (Model != null)
+{
+    <h2>@Model.Exception.Message</h2>
+}
+<a href="#" id="reLog" style="color: white">Please Re-log</a>
+<script type="text/javascript">
+//    calls the account.logoff function and redirect the user to the Logon page
+    $(document).ready(function() {
+        $("#reLog").click(function() {
+            $.ajax({
+                url: "Account/BackgroundLogOff",
+                type: "GET"
+            }).done(function() {
+                window.location.href = "Account/Logon";
+            });
+        });
+    });
+</script>

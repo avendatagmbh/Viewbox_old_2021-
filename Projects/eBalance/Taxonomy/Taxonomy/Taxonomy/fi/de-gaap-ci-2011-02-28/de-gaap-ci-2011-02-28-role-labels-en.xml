@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<link:linkbase xmlns:label="http://xbrl.org/2008/label"
+ xmlns:link="http://www.xbrl.org/2003/linkbase"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://www.w3.org/1999/xlink http://www.xbrl.org/2003/xlink-2003-12-31.xsd">
+ <link:arcroleRef xmlns:xlink="http://www.w3.org/1999/xlink"
+  xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+  arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple"/>
+ <gen:link xmlns:gen="http://xbrl.org/2008/generic" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xlink:role="http://www.xbrl.org/2003/role/link" xlink:type="extended">
+  <link:loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#role_balanceSheet"
+   xlink:label="arc_1"/>
+  <gen:arc xlink:type="arc" xlink:from="arc_1" xlink:to="src_1"
+   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"/>
+  <label:label xlink:type="resource" xlink:label="src_1" xml:lang="en">Balance sheet</label:label>
+  <link:loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#role_contingentLiabilities"
+   xlink:label="arc_2"/>
+  <gen:arc xlink:type="arc" xlink:from="arc_2" xlink:to="src_2"
+   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"/>
+  <label:label xlink:type="resource" xlink:label="src_2" xml:lang="en">Contingent liabilities</label:label>
+  <link:loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#role_incomeStatement"
+   xlink:label="arc_3"/>
+  <gen:arc xlink:type="arc" xlink:from="arc_3" xlink:to="src_3"
+   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"/>
+  <label:label xlink:type="resource" xlink:label="src_3" xml:lang="en">Income statement</label:label>
+  <link:loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#role_appropriationProfits"
+   xlink:label="arc_4"/>
+  <gen:arc xlink:type="arc" xlink:from="arc_4" xlink:to="src_4"
+   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"/>
+  <label:label xlink:type="resource" xlink:label="src_4" xml:lang="en">Appropriation of net profit</label:label>
+  <link:loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#role_changesEquityAccounts"
+   xlink:label="arc_5"/>
+  <gen:arc xlink:type="arc" xlink:from="arc_5" xlink:to="src_5"
+   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"/>
+  <label:label xlink:type="resource" xlink:label="src_5" xml:lang="en">Statement of changes in capital accounts of commercial partnerships</label:label>
+  <link:loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#role_changesEquityStatement"
+   xlink:label="arc_6"/>
+  <gen:arc xlink:type="arc" xlink:from="arc_6" xlink:to="src_6"
+   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"/>
+  <label:label xlink:type="resource" xlink:label="src_6" xml:lang="en">Statement of changes in equity</label:label>
+  <link:loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#role_cashFlowStatement"
+   xlink:label="arc_7"/>
+  <gen:arc xlink:type="arc" xlink:from="arc_7" xlink:to="src_7"
+   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"/>
+  <label:label xlink:type="resource" xlink:label="src_7" xml:lang="en">Cash flow statement</label:label>
+  <link:loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#role_notes"
+   xlink:label="arc_8"/>
+  <gen:arc xlink:type="arc" xlink:from="arc_8" xlink:to="src_8"
+   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"/>
+  <label:label xlink:type="resource" xlink:label="src_8" xml:lang="en">Notes</label:label>
+  <link:loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#role_managementReport"
+   xlink:label="arc_9"/>
+  <gen:arc xlink:type="arc" xlink:from="arc_9" xlink:to="src_9"
+   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"/>
+  <label:label xlink:type="resource" xlink:label="src_9" xml:lang="en">Management report</label:label>
+  <link:loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#role_transfersCommercialCodeToTax"
+   xlink:label="arc_10"/>
+  <gen:arc xlink:type="arc" xlink:from="arc_10" xlink:to="src_10"
+   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"/>
+  <label:label xlink:type="resource" xlink:label="src_10" xml:lang="en">Reconciliation of carrying amounts in financial statements to tax accounts</label:label>
+  <link:loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#role_OtherReportElements"
+   xlink:label="arc_11"/>
+  <gen:arc xlink:type="arc" xlink:from="arc_11" xlink:to="src_11"
+   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"/>
+  <label:label xlink:type="resource" xlink:label="src_11" xml:lang="en">Other report elements</label:label>
+ </gen:link>
+</link:linkbase>

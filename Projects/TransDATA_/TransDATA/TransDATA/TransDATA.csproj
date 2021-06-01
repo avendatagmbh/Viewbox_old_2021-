@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F100AAE4-D43A-4EC2-ADD9-E21B13B322DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TransDATA</RootNamespace>
+    <AssemblyName>TransDATA</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.40729.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary, Version=3.5.40729.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Models\MainWindowModel.cs" />
+    <Compile Include="Windows\DlgDatabase.xaml.cs">
+      <DependentUpon>DlgDatabase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgEditProfile.xaml.cs">
+      <DependentUpon>DlgEditProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Windows\DlgDatabase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgEditProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Resources\Qute\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdWpfControls\AvdWpfControls.csproj">
+      <Project>{E3B12F3F-E420-48FA-B991-FA1FF8D603F2}</Project>
+      <Name>AvdWpfControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdWpfDbControls\AvdWpfDbControls.csproj">
+      <Project>{DD87CD3D-512C-4137-BF3B-4817C19B89F5}</Project>
+      <Name>AvdWpfDbControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransDATABusiness\TransDATABusiness.csproj">
+      <Project>{A34DB37D-7F0E-4D25-9DD4-811BB86D93CD}</Project>
+      <Name>TransDATABusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\database16.png" />
+    <Resource Include="Resources\database32.png" />
+    <Resource Include="Resources\database64.png" />
+    <Resource Include="Resources\shutdown16.png" />
+    <Resource Include="Resources\shutdown24.png" />
+    <Resource Include="Resources\shutdown36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
+    <Resource Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AvenDATA.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Qute\Address-book-open16.png" />
+    <Resource Include="Resources\Qute\Address-book-open24.png" />
+    <Resource Include="Resources\Qute\Address-book-open30.png" />
+    <Resource Include="Resources\Qute\Address-book16.png" />
+    <Resource Include="Resources\Qute\Address-book24.png" />
+    <Resource Include="Resources\Qute\Address-book30.png" />
+    <Resource Include="Resources\Qute\Advanced16.png" />
+    <Resource Include="Resources\Qute\Advanced24.png" />
+    <Resource Include="Resources\Qute\Advanced30.png" />
+    <Resource Include="Resources\Qute\Apply16.png" />
+    <Resource Include="Resources\Qute\Apply24.png" />
+    <Resource Include="Resources\Qute\Apply30.png" />
+    <Resource Include="Resources\Qute\Attach16.png" />
+    <Resource Include="Resources\Qute\Attach24.png" />
+    <Resource Include="Resources\Qute\Attach30.png" />
+    <Resource Include="Resources\Qute\Back16.png" />
+    <Resource Include="Resources\Qute\Back24.png" />
+    <Resource Include="Resources\Qute\Back30.png" />
+    <Resource Include="Resources\Qute\Balloon16.png" />
+    <Resource Include="Resources\Qute\Balloon24.png" />
+    <Resource Include="Resources\Qute\Balloon30.png" />
+    <Resource Include="Resources\Qute\Clock16.png" />
+    <Resource Include="Resources\Qute\Clock24.png" />
+    <Resource Include="Resources\Qute\Clock30.png" />
+    <Resource Include="Resources\Qute\Copy16.png" />
+    <Resource Include="Resources\Qute\Copy24.png" />
+    <Resource Include="Resources\Qute\Copy30.png" />
+    <Resource Include="Resources\Qute\Cut16.png" />
+    <Resource Include="Resources\Qute\Cut24.png" />
+    <Resource Include="Resources\Qute\Cut30.png" />
+    <Resource Include="Resources\Qute\Delete16.png" />
+    <Resource Include="Resources\Qute\Delete24.png" />
+    <Resource Include="Resources\Qute\Delete30.png" />
+    <Resource Include="Resources\Qute\Document16.png" />
+    <Resource Include="Resources\Qute\Document24.png" />
+    <Resource Include="Resources\Qute\Document30.png" />
+    <Resource Include="Resources\Qute\Downloads16.png" />
+    <Resource Include="Resources\Qute\Downloads24.png" />
+    <Resource Include="Resources\Qute\Downloads30.png" />
+    <Resource Include="Resources\Qute\Envelope-front16.png" />
+    <Resource Include="Resources\Qute\Envelope-front24.png" />
+    <Resource Include="Resources\Qute\Envelope-front30.png" />
+    <Resource Include="Resources\Qute\Envelope-open16.png" />
+    <Resource Include="Resources\Qute\Envelope-open24.png" />
+    <Resource Include="Resources\Qute\Envelope-open30.png" />
+    <Resource Include="Resources\Qute\Envelope16.png" />
+    <Resource Include="Resources\Qute\Envelope24.png" />
+    <Resource Include="Resources\Qute\Envelope30.png" />
+    <Resource Include="Resources\Qute\Error16.png" />
+    <Resource Include="Resources\Qute\Error24.png" />
+    <Resource Include="Resources\Qute\Error30.png" />
+    <Resource Include="Resources\Qute\Folder16.png" />
+    <Resource Include="Resources\Qute\Folder24.png" />
+    <Resource Include="Resources\Qute\Folder30.png" />
+    <Resource Include="Resources\Qute\Fonts16.png" />
+    <Resource Include="Resources\Qute\Fonts24.png" />
+    <Resource Include="Resources\Qute\Fonts30.png" />
+    <Resource Include="Resources\Qute\Forward16.png" />
+    <Resource Include="Resources\Qute\Forward24.png" />
+    <Resource Include="Resources\Qute\Forward30.png" />
+    <Resource Include="Resources\Qute\Get mail16.png" />
+    <Resource Include="Resources\Qute\Get mail24.png" />
+    <Resource Include="Resources\Qute\Get mail30.png" />
+    <Resource Include="Resources\Qute\Glasses16.png" />
+    <Resource Include="Resources\Qute\Glasses24.png" />
+    <Resource Include="Resources\Qute\Glasses30.png" />
+    <Resource Include="Resources\Qute\Globe16.png" />
+    <Resource Include="Resources\Qute\Globe24.png" />
+    <Resource Include="Resources\Qute\Globe30.png" />
+    <Resource Include="Resources\Qute\Help16.png" />
+    <Resource Include="Resources\Qute\Help24.png" />
+    <Resource Include="Resources\Qute\Help30.png" />
+    <Resource Include="Resources\Qute\History16.png" />
+    <Resource Include="Resources\Qute\History24.png" />
+    <Resource Include="Resources\Qute\History30.png" />
+    <Resource Include="Resources\Qute\Home16.png" />
+    <Resource Include="Resources\Qute\Home24.png" />
+    <Resource Include="Resources\Qute\Home30.png" />
+    <Resource Include="Resources\Qute\Junk16.png" />
+    <Resource Include="Resources\Qute\Junk24.png" />
+    <Resource Include="Resources\Qute\Junk30.png" />
+    <Resource Include="Resources\Qute\Key16.png" />
+    <Resource Include="Resources\Qute\Key24.png" />
+    <Resource Include="Resources\Qute\Key30.png" />
+    <Resource Include="Resources\Qute\Landscape-orientation16.png" />
+    <Resource Include="Resources\Qute\Landscape-orientation24.png" />
+    <Resource Include="Resources\Qute\Landscape-orientation30.png" />
+    <Resource Include="Resources\Qute\Lock16.png" />
+    <Resource Include="Resources\Qute\Lock24.png" />
+    <Resource Include="Resources\Qute\Lock30.png" />
+    <Resource Include="Resources\Qute\Message16.png" />
+    <Resource Include="Resources\Qute\Message24.png" />
+    <Resource Include="Resources\Qute\Message30.png" />
+    <Resource Include="Resources\Qute\Monitor16.png" />
+    <Resource Include="Resources\Qute\Monitor24.png" />
+    <Resource Include="Resources\Qute\Monitor30.png" />
+    <Resource Include="Resources\Qute\Move16.png" />
+    <Resource Include="Resources\Qute\Move24.png" />
+    <Resource Include="Resources\Qute\Move30.png" />
+    <Resource Include="Resources\Qute\New folder16.png" />
+    <Resource Include="Resources\Qute\New folder24.png" />
+    <Resource Include="Resources\Qute\New folder30.png" />
+    <Resource Include="Resources\Qute\Note16.png" />
+    <Resource Include="Resources\Qute\Note24.png" />
+    <Resource Include="Resources\Qute\Note30.png" />
+    <Resource Include="Resources\Qute\Options16.png" />
+    <Resource Include="Resources\Qute\Options24.png" />
+    <Resource Include="Resources\Qute\Options30.png" />
+    <Resource Include="Resources\Qute\Paste16.png" />
+    <Resource Include="Resources\Qute\Paste24.png" />
+    <Resource Include="Resources\Qute\Paste30.png" />
+    <Resource Include="Resources\Qute\Pen16.png" />
+    <Resource Include="Resources\Qute\Pen24.png" />
+    <Resource Include="Resources\Qute\Pen30.png" />
+    <Resource Include="Resources\Qute\Person16.png" />
+    <Resource Include="Resources\Qute\Person24.png" />
+    <Resource Include="Resources\Qute\Person30.png" />
+    <Resource Include="Resources\Qute\Portrait-orientation16.png" />
+    <Resource Include="Resources\Qute\Portrait-orientation24.png" />
+    <Resource Include="Resources\Qute\Portrait-orientation30.png" />
+    <Resource Include="Resources\Qute\Print16.png" />
+    <Resource Include="Resources\Qute\Print24.png" />
+    <Resource Include="Resources\Qute\Print30.png" />
+    <Resource Include="Resources\Qute\Privacy16.png" />
+    <Resource Include="Resources\Qute\Privacy24.png" />
+    <Resource Include="Resources\Qute\Privacy30.png" />
+    <Resource Include="Resources\Qute\Properties16.png" />
+    <Resource Include="Resources\Qute\Properties24.png" />
+    <Resource Include="Resources\Qute\Properties30.png" />
+    <Resource Include="Resources\Qute\Question16.png" />
+    <Resource Include="Resources\Qute\Question24.png" />
+    <Resource Include="Resources\Qute\Question30.png" />
+    <Resource Include="Resources\Qute\Quote16.png" />
+    <Resource Include="Resources\Qute\Quote24.png" />
+    <Resource Include="Resources\Qute\Quote30.png" />
+    <Resource Include="Resources\Qute\Reload16.png" />
+    <Resource Include="Resources\Qute\Reload24.png" />
+    <Resource Include="Resources\Qute\Reload30.png" />
+    <Resource Include="Resources\Qute\Rename16.png" />
+    <Resource Include="Resources\Qute\Rename24.png" />
+    <Resource Include="Resources\Qute\Rename30.png" />
+    <Resource Include="Resources\Qute\Search document16.png" />
+    <Resource Include="Resources\Qute\Search document24.png" />
+    <Resource Include="Resources\Qute\Search document30.png" />
+    <Resource Include="Resources\Qute\Search16.png" />
+    <Resource Include="Resources\Qute\Search24.png" />
+    <Resource Include="Resources\Qute\Search30.png" />
+    <Resource Include="Resources\Qute\Send16.png" />
+    <Resource Include="Resources\Qute\Send24.png" />
+    <Resource Include="Resources\Qute\Send30.png" />
+    <Resource Include="Resources\Qute\Spell-check16.png" />
+    <Resource Include="Resources\Qute\Spell-check24.png" />
+    <Resource Include="Resources\Qute\Spell-check30.png" />
+    <Resource Include="Resources\Qute\Star-gold16.png" />
+    <Resource Include="Resources\Qute\Star-gold24.png" />
+    <Resource Include="Resources\Qute\Star-gold30.png" />
+    <Resource Include="Resources\Qute\Star-silver16.png" />
+    <Resource Include="Resources\Qute\Star-silver24.png" />
+    <Resource Include="Resources\Qute\Star-silver30.png" />
+    <Resource Include="Resources\Qute\Star16.png" />
+    <Resource Include="Resources\Qute\Star24.png" />
+    <Resource Include="Resources\Qute\Star30.png" />
+    <Resource Include="Resources\Qute\Stop16.png" />
+    <Resource Include="Resources\Qute\Stop24.png" />
+    <Resource Include="Resources\Qute\Stop30.png" />
+    <Resource Include="Resources\Qute\Theme16.png" />
+    <Resource Include="Resources\Qute\Theme24.png" />
+    <Resource Include="Resources\Qute\Theme30.png" />
+    <Resource Include="Resources\Qute\Trash16.png" />
+    <Resource Include="Resources\Qute\Trash24.png" />
+    <Resource Include="Resources\Qute\Trash30.png" />
+    <Resource Include="Resources\Qute\Wand16.png" />
+    <Resource Include="Resources\Qute\Wand24.png" />
+    <Resource Include="Resources\Qute\Wand30.png" />
+    <Resource Include="Resources\Qute\Warning16.png" />
+    <Resource Include="Resources\Qute\Warning24.png" />
+    <Resource Include="Resources\Qute\Warning30.png" />
+    <Resource Include="Resources\Qute\Write16.png" />
+    <Resource Include="Resources\Qute\Write24.png" />
+    <Resource Include="Resources\Qute\Write30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libraries\AvdUtils.dll" />
+    <Content Include="Libraries\DbAccess.dll" />
+    <Content Include="Libraries\Microsoft.Windows.Shell.dll" />
+    <Content Include="Libraries\MySql.Data.dll" />
+    <Content Include="Libraries\RibbonControlsLibrary.dll" />
+    <Content Include="Libraries\System.Data.SQLite.dll" />
+    <Resource Include="Resources\Folder16.png" />
+    <Resource Include="Resources\Reload16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

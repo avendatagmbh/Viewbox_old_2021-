@@ -1,0 +1,10 @@
+﻿<Window x:Class="eBalanceKit.Windows.Import.DlgAssignment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="" Height="437" Width="488" xmlns:my="clr-namespace:eBalanceKit.Controls.BalanceList" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow">
+    <Grid>
+        <ListBox Height="327" HorizontalAlignment="Left" Margin="12,30,0,0" Name="listEntries" VerticalAlignment="Top" Width="442"  ItemsSource="{Binding}"/>
+        <Label Content="Row" Height="24" HorizontalAlignment="Left" Margin="33,0,0,0" Name="lbRow" VerticalAlignment="Top" Width="92" />
+        <Button Content="Übernehmen" Height="23" HorizontalAlignment="Left" Margin="379,363,0,0" Name="btOK" VerticalAlignment="Top" Width="75" Click="btOK_Click" />
+    </Grid>
+</Window>

@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB053792-31B8-4549-AD9F-C52671738385}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutomationWPF</RootNamespace>
+    <AssemblyName>AutomationWPF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AvdWpfControls">
+      <HintPath>..\AvdWpfControls\bin\Debug\AvdWpfControls.dll</HintPath>
+    </Reference>
+    <Reference Include="AvdWpfStyles">
+      <HintPath>..\AvdWpfStyles\bin\Debug\AvdWpfStyles.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\CtlEventConfigTreeView.xaml.cs">
+      <DependentUpon>CtlEventConfigTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlInfo.xaml.cs">
+      <DependentUpon>CtlInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlMain.xaml.cs">
+      <DependentUpon>CtlMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlSettings.xaml.cs">
+      <DependentUpon>CtlSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Events\AutomatedEventBase.cs" />
+    <Compile Include="Events\AutomatedEventClick.cs" />
+    <Compile Include="Events\AutomatedEventEnterText.cs" />
+    <Compile Include="Events\AutomatedEventIteration.cs" />
+    <Compile Include="Events\AutomatedEventWait.cs" />
+    <Compile Include="Events\IIteration.cs" />
+    <Compile Include="Events\IPosition.cs" />
+    <Compile Include="Events\IText.cs" />
+    <Compile Include="Events\IWait.cs" />
+    <Compile Include="Helpers\Enums.cs" />
+    <Compile Include="Localisation\ResourcesCommon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesCommon.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventConfigModel.cs" />
+    <Compile Include="Models\InfoModel.cs" />
+    <Compile Include="Structures\NavigationTreeEntry.cs" />
+    <Compile Include="ViewModels\EventConfigViewModel.cs" />
+    <Compile Include="ViewModels\InfoViewModel.cs" />
+    <Compile Include="Windows\DlgInfo.xaml.cs">
+      <DependentUpon>DlgInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgMain.xaml.cs">
+      <DependentUpon>DlgMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgSettings.xaml.cs">
+      <DependentUpon>DlgSettings.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\CtlEventConfigTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\AppResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\IconsResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\ImplicitStylesResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\NavigationResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\StylesResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\IsBiggerThanConverter.cs" />
+    <Compile Include="Helpers\DelegateCommand.cs" />
+    <Compile Include="Helpers\NotificationObject.cs" />
+    <Compile Include="Helpers\RandomHelper.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\DlgInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Localisation\ResourcesCommon.de.resx" />
+    <EmbeddedResource Include="Localisation\ResourcesCommon.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesCommon.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BlueDesign\icon_main_configurations.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BlueDesign\icon_main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BlueDesign\icon_new_configuration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BlueDesign\icon_main_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BlueDesign\icon_about_automation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BlueDesign\icon_summary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BlueDesign\icon_run.png" />
+    <Resource Include="Resources\BlueDesign\icon_runall.png" />
+    <Resource Include="Resources\BlueDesign\icon_runselecteds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BlueDesign\icon_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BlueDesign\icon_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BlueDesign\validation_error.png" />
+    <Resource Include="Resources\BlueDesign\validation_warn.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

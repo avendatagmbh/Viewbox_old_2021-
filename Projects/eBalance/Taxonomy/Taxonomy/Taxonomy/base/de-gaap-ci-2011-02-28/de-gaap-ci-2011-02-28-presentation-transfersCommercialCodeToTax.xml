@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://www.xbrl.de/de/fr/gaap/ci/role/transfersCommercialCodeToTax" xlink:type="simple" xlink:href="de-gaap-ci-2011-02-28.xsd#role_transfersCommercialCodeToTax"/>
+  <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/transfersCommercialCodeToTax">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_hbst" xlink:label="hbst" xlink:title="hbst"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_hbst_removed" xlink:label="hbst_removed" xlink:title="hbst_removed"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst" xlink:to="hbst_removed" xlink:title="presentation: hbst to hbst_removed" use="optional" priority="0" order="1.0"/>
+  </presentationLink>
+</linkbase>

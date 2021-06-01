@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<style>
+  <roles>
+
+    <!-- Bilanz-->
+    <role name="role_balanceSheet" />
+
+    <!-- Gewinn- und Verlustrechnung -->
+    <role name="role_incomeStatement" />
+
+    <!-- Haftungsverhältnisse-->
+    <role name="role_contingentLiabilities" />
+
+    <!-- Ergebnisverwendung -->
+    <role name="role_appropriationProfits" />
+
+    <!-- Kapitalkontenentwicklung für Personenhandelsgesellschaften (special gui style) -->
+    <role name="role_changesEquityAccounts" showBalanceList="false"/>
+
+    <!-- Eigenkapitalspiegel -->
+    <role name="role_changesEquityStatement" showBalanceList="false"/>
+
+    <!-- Kapitalflussrechnung-->
+    <role name="role_cashFlowStatement" />
+
+    <!-- Anhang -->
+    <role name="role_notes" />
+
+    <!-- Lagebericht -->
+    <role name="role_managementReport" showBalanceList="false" />
+
+    <!-- Steuerliche Modifikationen (special gui style) -->
+    <role name="role_transfersCommercialCodeToTax" showBalanceList="false" />
+
+    <!-- andere Berichtsbestandteile -->
+    <role name="role_OtherReportElements" showBalanceList="false" />
+
+    <!-- Berichtigung des Gewinns bei Wechsel der Gewinnermittlungsart -->
+    <role name="role_adjustmentOfIncome" />
+
+    <!-- Steuerliche Gewinnermittlung -->
+    <role name="role_determinationOfTaxableIncome" />
+
+    <!-- Steuerliche Gewinnermittlung bei Personengesellschaften -->
+    <role name="role_determinationOfTaxableIncomeBusinessPartnership" />
+
+    <!-- Steuerliche Gewinnermittlung für besondere Fälle -->
+    <role name="role_determinationOfTaxableIncomeSpecialCases" />
+
+    <role name="role_fiscalCalculations" isVisible="false" showBalanceList="false" />
+
+    <!-- Verbindlichkeitenspiegel -->
+    <role name="role_liabilities" isVisible="false" showBalanceList="false"/>
+
+    <!-- Detailinformationen zu Positionen -->
+    <role name="role_detailedInformation" isVisible="false" />
+
+  </roles>
+</style>

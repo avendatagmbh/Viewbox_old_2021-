@@ -1,0 +1,140 @@
+﻿<UserControl x:Class="AutomationWPF.Controls.CtlMain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:Controls="clr-namespace:AutomationWPF.Controls"
+             xmlns:loc="clr-namespace:AutomationWPF.Localisation"
+             mc:Ignorable="d" d:DesignHeight="500" d:DesignWidth="800" >
+    <Border Background="{StaticResource NewDesignBlueBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <!-- header navigation -->
+            <Border Grid.Row="0" Padding="10" Background="{StaticResource RibbonHeaderBrush}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Column="0">
+                        <StackPanel.Resources>
+                            <Style TargetType="wpfc:ImageButton" BasedOn="{StaticResource HeaderImageButton}" />
+                        </StackPanel.Resources>
+                        <Control x:Name="FocusDummyButton" />
+
+                        <wpfc:AvdMenuExpander Name="profileExpander"
+                                    Margin="0, 0, 10, 0" VerticalAlignment="Center" Width="100"
+                                    ImageSource="/AutomationWPF;component/Resources/BlueDesign/icon_main_configurations.png"
+                                    Caption="{x:Static loc:ResourcesCommon.CaptionConfigs}">
+                            
+                            <wpfc:AvdMenuExpanderItem
+									        Name="btnMenuNewConfig"
+                                            Click="btnMenuNewConfig_Click"
+									        ImageSource="/AutomationWPF;component/Resources/BlueDesign/icon_new_configuration.png" 
+                                            ImageHeight="21"
+									        Caption="{x:Static loc:ResourcesCommon.CaptionNewConfig}"/>
+                            
+                            <wpfc:AvdMenuSeparator></wpfc:AvdMenuSeparator>
+                            
+                        </wpfc:AvdMenuExpander>
+
+                        <wpfc:AvdMenuExpander Name="infoExpander"
+                                    Margin="0,0,10,0" VerticalAlignment="Center" Width="100"
+                                    ImageSource="/AutomationWPF;component/Resources/BlueDesign/icon_main_info.png"
+                                    Caption="{x:Static loc:ResourcesCommon.CaptionInfo}">
+                            
+                            <wpfc:AvdMenuExpanderItem
+                                            Name="btnInfo"
+									        Click="btnInfo_Click"
+									        ImageSource="/AutomationWPF;component/Resources/BlueDesign/icon_about_automation.png" 
+                                            ImageHeight="21"
+									        Caption="{x:Static loc:ResourcesCommon.CaptionInfo}"/>
+                            
+                            <wpfc:AvdMenuSeparator></wpfc:AvdMenuSeparator>
+                            
+                            <wpfc:AvdMenuExpanderItem
+                                            Name="btnSummary"
+									        Click="btnSummary_Click"
+									        ImageSource="/AutomationWPF;component/Resources/BlueDesign/icon_summary.png" 
+                                            ImageHeight="21"
+									        Caption="{x:Static loc:ResourcesCommon.CaptionSummary}"/>
+                           
+                        </wpfc:AvdMenuExpander>
+
+                        <wpfc:AvdMenuExpander Name="runExpander"
+                                    Margin="0,0,10,0" VerticalAlignment="Center" Width="100"
+                                    ImageSource="/AutomationWPF;component/Resources/BlueDesign/icon_run.png"
+                                    Caption="{x:Static loc:ResourcesCommon.CaptionRun}">
+                            
+                            <wpfc:AvdMenuExpanderItem
+                                            Name="btnRunAll"
+									        Click="btnRunAll_Click"
+									        ImageSource="/AutomationWPF;component/Resources/BlueDesign/icon_runall.png" 
+                                            ImageHeight="21"
+									        Caption="{x:Static loc:ResourcesCommon.CaptionRunAll}"/>
+
+                            <wpfc:AvdMenuSeparator></wpfc:AvdMenuSeparator>
+                            
+                            <wpfc:AvdMenuExpanderItem
+                                            Name="btnRunSelecteds"
+									        Click="btnRunSelecteds_Click"
+									        ImageSource="/AutomationWPF;component/Resources/BlueDesign/icon_runselecteds.png" 
+                                            ImageHeight="21"
+									        Caption="{x:Static loc:ResourcesCommon.CaptionRunSelecteds}"/>
+                           
+                        </wpfc:AvdMenuExpander>
+
+                        <wpfc:AvdMenuExpander Name="settingsExpander"
+                                    Margin="0,0,10,0" VerticalAlignment="Center" Width="100"
+                                    ImageSource="/AutomationWPF;component/Resources/BlueDesign/icon_settings.png"
+                                    Caption="{x:Static loc:ResourcesCommon.CaptionSettings}">
+                            
+                            <wpfc:AvdMenuExpanderItem
+                                            Name="btnSettings"
+									        Click="btnSettings_Click"
+									        ImageSource="/AutomationWPF;component/Resources/BlueDesign/icon_settings.png" 
+                                            ImageHeight="21"
+									        Caption="{x:Static loc:ResourcesCommon.CaptionSettings}"/>
+                            
+                        </wpfc:AvdMenuExpander>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Padding="10">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="500" MinWidth="500" MaxWidth="600" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Border Grid.Column="0" Padding="0">
+                        <Controls:CtlEventConfigTreeView x:Name="ctlEventConfigTreeView" ></Controls:CtlEventConfigTreeView>
+                    </Border>
+                    
+                    <GridSplitter x:Name="splitter" Padding="5,0,5,0" Width="10" Background="{StaticResource NewDesignBlueBrush}" />
+                    
+                    <Border Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Padding="5" Height="30" Style="{StaticResource HeadlineBorder}" Background="{StaticResource NewDesignDeepBlueBrush}"
+                                    BorderBrush="{StaticResource NewDesignDeepBlueBrush}" BorderThickness="0,1,0,0">
+                                <TextBlock Text="{x:Static loc:ResourcesCommon.CaptionConfigs}" Margin="2,0,0,0" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0"/>
+                            </Border>
+                            <!--<my:CtlColumnList DataContext="{Binding SelectedProfileModel}" Grid.Row="1"/>-->
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+            
+        </Grid>
+    </Border>
+</UserControl>

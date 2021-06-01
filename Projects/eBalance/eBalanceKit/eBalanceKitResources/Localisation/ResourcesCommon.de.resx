@@ -1,0 +1,906 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChanges" xml:space="preserve">
+    <value>Übernehmen</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="ActiveDirectory" xml:space="preserve">
+    <value>Active Directory</value>
+  </data>
+  <data name="AddRoleTooltip" xml:space="preserve">
+    <value>Neue Rolle hinzufügen (EINFG)</value>
+  </data>
+  <data name="AddUserTooltip" xml:space="preserve">
+    <value>Neuen Benutzer hinzufügen (EINFG)</value>
+  </data>
+  <data name="Administrator" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Zurück</value>
+  </data>
+  <data name="BtnApplyTemplateTooltip" xml:space="preserve">
+    <value>ausgewählte Vorlage anwenden</value>
+  </data>
+  <data name="BtnCreateTemplateTooltip" xml:space="preserve">
+    <value>neue Vorlage erzeugen</value>
+  </data>
+  <data name="BtnDeleteTemplateTooltip" xml:space="preserve">
+    <value>ausgewählte Vorlage löschen</value>
+  </data>
+  <data name="BtnEditTemplateTooltip" xml:space="preserve">
+    <value>ausgewählte Vorlage bearbeiten</value>
+  </data>
+  <data name="BtnTemplates" xml:space="preserve">
+    <value>Vorlagen</value>
+  </data>
+  <data name="BtnTemplatesTooltip" xml:space="preserve">
+    <value>Vorlagen anzeigen</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="ChangeRoleRights" xml:space="preserve">
+    <value>Berechtigungen</value>
+  </data>
+  <data name="ChangeUserRights" xml:space="preserve">
+    <value>Berechtigungen</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="Companies" xml:space="preserve">
+    <value>Unternehmen</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="DeleteRoleTooltip" xml:space="preserve">
+    <value>Berechtigungsrolle entfernen (ENTF)</value>
+  </data>
+  <data name="DeleteUserTooltip" xml:space="preserve">
+    <value>Benutzer entfernen (ENTF)</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="EditRoleCaption" xml:space="preserve">
+    <value>Rolle bearbeiten</value>
+  </data>
+  <data name="EditRoleRightsTooltip" xml:space="preserve">
+    <value>Rollenberechtigungen bearbeiten (F3)</value>
+  </data>
+  <data name="EditRoleTooltip" xml:space="preserve">
+    <value>Rolle bearbeiten (F2)</value>
+  </data>
+  <data name="EditUserCaption" xml:space="preserve">
+    <value>Benutzer bearbeiten</value>
+  </data>
+  <data name="EditUserRightsTooltip" xml:space="preserve">
+    <value>Benutzerberechtigungen bearbeiten (F3)</value>
+  </data>
+  <data name="EditUserTooltip" xml:space="preserve">
+    <value>Benutzer bearbeiten (F2)</value>
+  </data>
+  <data name="Grant" xml:space="preserve">
+    <value>Berechtigungen erteilen</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Verwaltung</value>
+  </data>
+  <data name="MissingPasswordError" xml:space="preserve">
+    <value>Es muss ein Passwort eingegeben werden.</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importieren</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="Password1" xml:space="preserve">
+    <value>Passwort (Wiederholung)</value>
+  </data>
+  <data name="PaswordsNotEqualError" xml:space="preserve">
+    <value>Die eingegebenen Passwörter stimmen nicht überein.</value>
+  </data>
+  <data name="Read" xml:space="preserve">
+    <value>Lesen</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Bericht</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="Rights" xml:space="preserve">
+    <value>Berechtigungen</value>
+  </data>
+  <data name="RightsForRole" xml:space="preserve">
+    <value>Berechtigungen für Rolle</value>
+  </data>
+  <data name="RightsForUser" xml:space="preserve">
+    <value>Berechtigungen für Benutzer</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Rolle</value>
+  </data>
+  <data name="RoleNameErrorEmpty" xml:space="preserve">
+    <value>Name darf nicht leer sein.</value>
+  </data>
+  <data name="RoleNameErrorUsed" xml:space="preserve">
+    <value>Name ist bereits vergeben.</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Rollen</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Sicherheit</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Senden</value>
+  </data>
+  <data name="Systems" xml:space="preserve">
+    <value>Systeme</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Benutzer</value>
+  </data>
+  <data name="UserManagement" xml:space="preserve">
+    <value>Benutzerverwaltung</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Benutzer</value>
+  </data>
+  <data name="UserShortname" xml:space="preserve">
+    <value>Kürzel</value>
+  </data>
+  <data name="UserShortnameErrorEmpty" xml:space="preserve">
+    <value>Benutzerkürzel darf nicht leer sein.</value>
+  </data>
+  <data name="UserShortnameErrorUsed" xml:space="preserve">
+    <value>Benutzerkürzel ist bereits vergeben.</value>
+  </data>
+  <data name="Write" xml:space="preserve">
+    <value>Schreiben</value>
+  </data>
+  <data name="ModifyRightNotAllowed" xml:space="preserve">
+    <value>Sie besitzen keine Berechtigung zum Durchführen der gewünschten Aktion.</value>
+  </data>
+  <data name="DeleteUserRequest" xml:space="preserve">
+    <value>Soll der Benutzer {0} wirklich gelöscht werden?</value>
+  </data>
+  <data name="DeleteUserRequestTitle" xml:space="preserve">
+    <value>Benutzer Löschen?</value>
+  </data>
+  <data name="EffectiveRightsCaption" xml:space="preserve">
+    <value>effektive Berechtigungen für Benutzer</value>
+  </data>
+  <data name="ShowEffectiveRights" xml:space="preserve">
+    <value>Effektive Berechtigungen</value>
+  </data>
+  <data name="ShowEffectiveRightsTooltip" xml:space="preserve">
+    <value>Effektive Berechtigungen anzeigen (F4)</value>
+  </data>
+  <data name="DeleteRoleRequest" xml:space="preserve">
+    <value>Soll die Rolle {0} wirklich gelöscht werden?</value>
+  </data>
+  <data name="DeleteRoleRequestTitle" xml:space="preserve">
+    <value>Rolle Löschen?</value>
+  </data>
+  <data name="ModifyRightNotPossible" xml:space="preserve">
+    <value>Das Ändern der Berechtigung auf dieser Berechtigungsebene ist nicht möglich.</value>
+  </data>
+  <data name="DeleteCurrentUserNotAllowed" xml:space="preserve">
+    <value>Der gewählte Nutzer kann nicht gelöscht werden, da dieser aktuell am System angemeldet ist.</value>
+  </data>
+  <data name="DeleteCurrentUserNotAllowedCaption" xml:space="preserve">
+    <value>Löschen des Benutzers nicht möglich</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Passwort ändern</value>
+  </data>
+  <data name="UserImportActiveDirectory" xml:space="preserve">
+    <value>Active Directory Import</value>
+  </data>
+  <data name="ImportActiveDirectoryUserCaption" xml:space="preserve">
+    <value>Benutzer Importieren</value>
+  </data>
+  <data name="LoadingActiveDirectoryUsers" xml:space="preserve">
+    <value>Active Directory Benutzer werden geladen...</value>
+  </data>
+  <data name="AddUserADTooltip" xml:space="preserve">
+    <value>Neuen Benutzer aus Active Directory importieren (F5)</value>
+  </data>
+  <data name="DlgTemplateDetailsCaption" xml:space="preserve">
+    <value>Vorlagen für Kontozuordnungen (Details)</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="AccountStructure" xml:space="preserve">
+    <value>Kontenplan</value>
+  </data>
+  <data name="ApplyTemplate" xml:space="preserve">
+    <value>Vorlage anwenden</value>
+  </data>
+  <data name="BtnImportTemplateCaption" xml:space="preserve">
+    <value>Importieren</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Kommentar</value>
+  </data>
+  <data name="DlgExportTemplateCaption" xml:space="preserve">
+    <value>Vorlage exportieren</value>
+  </data>
+  <data name="DlgImportTemplateCaption" xml:space="preserve">
+    <value>Vorlage importieren</value>
+  </data>
+  <data name="DlgTemplatesCaption" xml:space="preserve">
+    <value>Vorlagen für Kontozuordnungen</value>
+  </data>
+  <data name="Filename" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Dateien</value>
+  </data>
+  <data name="ExtendTemplate" xml:space="preserve">
+    <value>Vorlage erweitern</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="TemplateExportSucceed" xml:space="preserve">
+    <value>Der Export wurde erfolgreich abgeschlossen.</value>
+  </data>
+  <data name="TemplateHasNoAssignedTaxonomy" xml:space="preserve">
+    <value>Die gewählte Vorlage ist keiner gültigen Taxonomie zugeordnet.</value>
+  </data>
+  <data name="TemplateHasNoName" xml:space="preserve">
+    <value>Bitte geben Sie einen Namen für die Vorlage ein.</value>
+  </data>
+  <data name="UpdateTemplate" xml:space="preserve">
+    <value>Vorlage auf aktuelle Taxonomieversion aktualisieren</value>
+  </data>
+  <data name="ChkReplaceAutoComputeEnabledFlagCaption" xml:space="preserve">
+    <value>Auswahl "davon Positionen aufsummieren" überschreiben?</value>
+  </data>
+  <data name="ChkReplaceIgnoreWarningMessageFlagCaption" xml:space="preserve">
+    <value>Auswahl "Warnmeldung ignorieren" überschreiben?</value>
+  </data>
+  <data name="ChkReplaceSendAccountBalanceFlagCaption" xml:space="preserve">
+    <value>Auswahl "Kontensalden senden" überschreiben?</value>
+  </data>
+  <data name="DlgExportTemplateDeletedElementsCaption" xml:space="preserve">
+    <value>Gelöschte Elemente als PDF-Datei exportieren</value>
+  </data>
+  <data name="CreateNewTemplate" xml:space="preserve">
+    <value>Neue Vorlage anlegen</value>
+  </data>
+  <data name="DlgShowReportChanges" xml:space="preserve">
+    <value>Änderungen</value>
+  </data>
+  <data name="SelectedTemplate" xml:space="preserve">
+    <value>ausgewählte Vorlage: </value>
+  </data>
+  <data name="SaveAsPdf" xml:space="preserve">
+    <value>Als PDF Datei speichern</value>
+  </data>
+  <data name="DlgShowTemplateTaxonomyUpdateResults" xml:space="preserve">
+    <value>Ergebnisse des Taxonomieupdates</value>
+  </data>
+  <data name="CashFlowStatement" xml:space="preserve">
+    <value>Kapitalflussrechnung</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Weiter</value>
+  </data>
+  <data name="Config" xml:space="preserve">
+    <value>Konfiguration</value>
+  </data>
+  <data name="FileExistsWarning" xml:space="preserve">
+    <value>Die Datei ist bereits vorhanden und wird überschrieben.</value>
+  </data>
+  <data name="btHelp" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="BalanceAssets" xml:space="preserve">
+    <value>Bilanz - Aktiva</value>
+  </data>
+  <data name="BalanceLiabilities" xml:space="preserve">
+    <value>Bilanz - Passiva</value>
+  </data>
+  <data name="BtnFinishCaption" xml:space="preserve">
+    <value>Abschließen</value>
+  </data>
+  <data name="DefaultReportName" xml:space="preserve">
+    <value>Standardbericht</value>
+  </data>
+  <data name="EmptyName" xml:space="preserve">
+    <value>kein Name</value>
+  </data>
+  <data name="FileFilterCsv" xml:space="preserve">
+    <value>CSV-Dateien (*.csv)|*.csv</value>
+  </data>
+  <data name="FileFilterPdf" xml:space="preserve">
+    <value>PDF-Dateien (*.pdf)|*.pdf</value>
+  </data>
+  <data name="FileFilterXbrl" xml:space="preserve">
+    <value>XML-Dateien (*.xml)|*.xml</value>
+  </data>
+  <data name="IncomeStatement" xml:space="preserve">
+    <value>Gewinn- und Verlustrechnung</value>
+  </data>
+  <data name="NotSpecified" xml:space="preserve">
+    <value>Keine Angabe</value>
+  </data>
+  <data name="SelectDestination" xml:space="preserve">
+    <value>Ziel wählen</value>
+  </data>
+  <data name="SelectFilename" xml:space="preserve">
+    <value>Dateiname wählen</value>
+  </data>
+  <data name="SelectFolder" xml:space="preserve">
+    <value>Ordner wählen</value>
+  </data>
+  <data name="ValueIsComputed" xml:space="preserve">
+    <value>Wert ist berechnet</value>
+  </data>
+  <data name="ValueIsLocked" xml:space="preserve">
+    <value>Werteingabe ist aufgrund widersprüchlicher Berechnungen durch andere Werteingaben nicht möglich</value>
+  </data>
+  <data name="ValueMustBeNumeric" xml:space="preserve">
+    <value>Der Wert muss numerisch sein.</value>
+  </data>
+  <data name="ValueSumNegative" xml:space="preserve">
+    <value>Wert wird negativ aufsummiert</value>
+  </data>
+  <data name="ValueSumPositive" xml:space="preserve">
+    <value>Wert wird positiv aufsummiert</value>
+  </data>
+  <data name="HideAllNodes" xml:space="preserve">
+    <value>Alle Positionen verbergen</value>
+  </data>
+  <data name="ShowAllNodes" xml:space="preserve">
+    <value>Alle Positionen anzeigen</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="ProgressCopyReport" xml:space="preserve">
+    <value>Bericht wird kopiert ...</value>
+  </data>
+  <data name="validationProgressMsg" xml:space="preserve">
+    <value>Report wird plausibilisiert...</value>
+  </data>
+  <data name="HintUsageVereinheitlichtesBundesschema" xml:space="preserve">
+    <value>Als Eingabe wird das 'Vereinheitlichte Bundesschema' erwartet.</value>
+  </data>
+  <data name="NoProfile" xml:space="preserve">
+    <value>keine Vorlage</value>
+  </data>
+  <data name="MandatoryFieldProofOfAccountsWished" xml:space="preserve">
+    <value>Mussfeld, Kontennachweis erwünscht</value>
+  </data>
+  <data name="ProhibitedAccordingToCommercialLaw" xml:space="preserve">
+    <value>Handelsrechtlich unzulässig</value>
+  </data>
+  <data name="ProhibitedAccordingToTaxLaw" xml:space="preserve">
+    <value>Steuerlich unzulässig</value>
+  </data>
+  <data name="CompanyAdministrator" xml:space="preserve">
+    <value>Unternehmens-Administrator</value>
+  </data>
+  <data name="CompanyAdminNoCompanySelectedError" xml:space="preserve">
+    <value>Mindestens ein Unternehmen muss ausgewählt werden.</value>
+  </data>
+  <data name="LoadingPositions" xml:space="preserve">
+    <value>Lade Positionen...</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="ReferenceList" xml:space="preserve">
+    <value>Referenzliste</value>
+  </data>
+  <data name="ImportAddFile" xml:space="preserve">
+    <value>Dateien hinzufügen</value>
+  </data>
+  <data name="ImportDeleteFile" xml:space="preserve">
+    <value>Ausgewählte Dateien löschen</value>
+  </data>
+  <data name="ImportDialogTitle" xml:space="preserve">
+    <value>Datenimport</value>
+  </data>
+  <data name="ImportDialogDescription" xml:space="preserve">
+    <value>Bitte wählen Sie die zu importierenden CSV-Dateien aus.</value>
+  </data>
+  <data name="ImportSampleDataExport" xml:space="preserve">
+    <value>Positionen auswählen, CSV-Datei erstellen</value>
+  </data>
+  <data name="ImportToImportCsvFiles" xml:space="preserve">
+    <value>Zu importierende CSV-Dateien</value>
+  </data>
+  <data name="AddCsvFileButton" xml:space="preserve">
+    <value>Dateien hinzufügen</value>
+  </data>
+  <data name="CompanyDataImport" xml:space="preserve">
+    <value>Stammdatenimport</value>
+  </data>
+  <data name="CompanyDataImportInfo" xml:space="preserve">
+    <value>Bitte wählen Sie die CSV-Dateien mit den Firmenstammdaten, wobei jede CSV-Datei die Stammdaten von einer Firma enthält. Sie können sich beispielhaft eine Firma im CSV Format exportieren, um das benötigte Format herzustellen.</value>
+  </data>
+  <data name="CsvFileListToImport" xml:space="preserve">
+    <value>Zu imporierende CSV-Dateien</value>
+  </data>
+  <data name="DeleteRowsButton" xml:space="preserve">
+    <value>Ausgewählte Dateien löschen</value>
+  </data>
+  <data name="Encoding" xml:space="preserve">
+    <value>Zeichensatz</value>
+  </data>
+  <data name="ExampleCsvFile" xml:space="preserve">
+    <value>Beispiel CSV-Datei exportieren</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>Trennzeichen</value>
+  </data>
+  <data name="TextDelimiter" xml:space="preserve">
+    <value>Textbegrenzungszeichen</value>
+  </data>
+  <data name="HasManualValue" xml:space="preserve">
+    <value>Für diese Position wurde ein manueller Korrekturwert eingegeben.</value>
+  </data>
+  <data name="TaxonomyIdNotFoundCaption" xml:space="preserve">
+    <value>Folgende Taxonomie Ids wurden nicht erkannt</value>
+  </data>
+  <data name="TaxonomyIdValueInvalidCaption" xml:space="preserve">
+    <value>Die folgenden Werte sind ungültig</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Zeilennummer</value>
+  </data>
+  <data name="TaxonomyId" xml:space="preserve">
+    <value>Taxonomie Id</value>
+  </data>
+  <data name="IgnoreAllIncorrectEntries" xml:space="preserve">
+    <value>Alle Fehleingaben ignorieren</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Wert</value>
+  </data>
+  <data name="ImportNoErrorsFound" xml:space="preserve">
+    <value>Zu importierenden Daten wurden validiert und keine Fehler gefunden</value>
+  </data>
+  <data name="NewValueLabel" xml:space="preserve">
+    <value>Neuer Wert</value>
+  </data>
+  <data name="OldValueLabel" xml:space="preserve">
+    <value>Alter Wert</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Allgemein</value>
+  </data>
+  <data name="AssignedCompanies" xml:space="preserve">
+    <value>Administrierte Firmen</value>
+  </data>
+  <data name="SaveFileEror" xml:space="preserve">
+    <value>Fehler beim Speichern der Datei</value>
+  </data>
+  <data name="FileSaved" xml:space="preserve">
+    <value>Datei speichern erfolgreich</value>
+  </data>
+  <data name="FileSaveSuccessfulOpen" xml:space="preserve">
+    <value>Datei wurde erfolgreich gespeichert. Soll die Datei jetzt geöffnet werden?</value>
+  </data>
+  <data name="ImportRowErrorCaption" xml:space="preserve">
+    <value>Die folgenden Zeilen waren ungültig</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="AccountsReferenceList" xml:space="preserve">
+    <value>Konten Referenzliste</value>
+  </data>
+  <data name="PositionsReferenceList" xml:space="preserve">
+    <value>Positionen Referenzliste</value>
+  </data>
+  <data name="AccountIsSelectedForReferenceListTooltip" xml:space="preserve">
+    <value>Konto wird für die Erstellung von Referenz-Liste ausgewählt</value>
+  </data>
+  <data name="OpenFileEror" xml:space="preserve">
+    <value>Die Datei kann nicht geöffnet werden</value>
+  </data>
+  <data name="RightTreeNodeAllCaption" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="RightTreeNodeOtherReportsCaption" xml:space="preserve">
+    <value>sonstige Berichtsbestandteile</value>
+  </data>
+  <data name="RightTreeNodeReconciliationCaption" xml:space="preserve">
+    <value>Überleitungsrechnung</value>
+  </data>
+  <data name="ImportDetailedMessage" xml:space="preserve">
+    <value>{0} Wert(e) und {3} Vorjahr Werte in {1} Transaktion(en) werden von {2} Datei(en) importiert.</value>
+  </data>
+  <data name="Denied" xml:space="preserve">
+    <value>aufgrund der Rolle "{0}" verweigert</value>
+  </data>
+  <data name="Granted" xml:space="preserve">
+    <value>aufgrund der Rolle "{0}" erlaubt</value>
+  </data>
+  <data name="InheritedFrom" xml:space="preserve">
+    <value>die Rechte werden von "{0}" geerbt</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>nicht eingestellt</value>
+  </data>
+  <data name="Self" xml:space="preserve">
+    <value>selbst</value>
+  </data>
+  <data name="Positions" xml:space="preserve">
+    <value>Positionen</value>
+  </data>
+  <data name="DeniedUser" xml:space="preserve">
+    <value>aufgrund explizit gesetzter Benutzerrechte des Benutzers “{0}” verweigert</value>
+  </data>
+  <data name="GrantedUser" xml:space="preserve">
+    <value>aufgrund explizit gesetzter Benutzerrechte des Benutzers “{0}” erlaubt</value>
+  </data>
+  <data name="GrantOwnerCompany" xml:space="preserve">
+    <value>Der Benutzer “{0}” ist Besitzer des Unternehmens und hat damit volle Rechte</value>
+  </data>
+  <data name="GrantOwnerDocument" xml:space="preserve">
+    <value>Der Benutzer “{0}” ist Besitzer des Berichtes und hat damit volle Rechte. Der Besitzer kann unter Verwaltung/Reports geändert werden</value>
+  </data>
+  <data name="PleaseSelect" xml:space="preserve">
+    <value>Bitte auswählen...</value>
+  </data>
+  <data name="ProgressReportLoading" xml:space="preserve">
+    <value>Bericht wird geladen...</value>
+  </data>
+  <data name="SpecialAccountingStandardChangedHeadline" xml:space="preserve">
+    <value>Branche ändern</value>
+  </data>
+  <data name="SpecialAccountingStandardChanged" xml:space="preserve">
+    <value>Ändern der aktuell verwendeten Branche führt unter Umständen zu einer Änderung der verwendeten Taxonomie. Hierbei werden die Werte aller Positionen gelöscht, die in der neuen Taxonomie nicht enthalten sind.
+
+Darüber hinaus werden hierbei auch alle Kontozuordnungen und alle Tabellenelemente (Anlagespiegel, Eigenkapitalspiegel) in dem Report gelöscht.
+
+Soll die aktuell verwendete Branche wirklich geändert werden?</value>
+  </data>
+  <data name="BalanceSheetSaldoDifferenceString" xml:space="preserve">
+    <value>Die Differenz zwischen Aktiva und Passiva beträgt</value>
+  </data>
+  <data name="ContainsHiddenValueMessage" xml:space="preserve">
+    <value>Eine werthaltige Position wird aufgrund der Filtereinstellungen nicht angezeigt.</value>
+  </data>
+  <data name="ConflictsCaption" xml:space="preserve">
+    <value>Konflikte</value>
+  </data>
+  <data name="CreateAcceptanceAccount" xml:space="preserve">
+    <value>in Wechselkonto umwandeln</value>
+  </data>
+  <data name="CurrentTaxonomyPosition" xml:space="preserve">
+    <value>Aktuelle Taxonomieposition:</value>
+  </data>
+  <data name="ErrorsCaption" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="OverwriteMapping" xml:space="preserve">
+    <value>Zuordnung ersetzen</value>
+  </data>
+  <data name="PreviousTaxonomyPosition" xml:space="preserve">
+    <value>Vorherige Taxonomieposition:</value>
+  </data>
+  <data name="RetainPreviousMapping" xml:space="preserve">
+    <value>aktuelle Zuordnung beibehalten</value>
+  </data>
+  <data name="TaxonomyPosition" xml:space="preserve">
+    <value>Taxonomieposition:</value>
+  </data>
+  <data name="FollowingPositionsNotFound" xml:space="preserve">
+    <value>Die folgenden Positionen wurden nicht gefunden: {0}</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>und</value>
+  </data>
+  <data name="ChangeTemplate1" xml:space="preserve">
+    <value>Wende Vorlage an (Schritt 1: Löschen der aktuellen Zuordnungen)</value>
+  </data>
+  <data name="ChangeTemplate2" xml:space="preserve">
+    <value>Wende Vorlage an (Schritt 2: Zuweisen der neuen Zuordnungen)</value>
+  </data>
+  <data name="ChangeTemplate3" xml:space="preserve">
+    <value>Wende Vorlage an (Schritt 3: Speichern der neuen Zuordnungen)</value>
+  </data>
+  <data name="ChangeTemplate4" xml:space="preserve">
+    <value>Wende Vorlage an (Schritt 4: Übernahme der</value>
+  </data>
+  <data name="ColudNotAddTaxonomyCalculated" xml:space="preserve">
+    <value>Das Konto Konnte nicht zur Vorlage hinzugefügt werden, da die Ziel-Position in der Vorlage berechnet ist.</value>
+  </data>
+  <data name="ColudNotAddTaxonomyNotActive" xml:space="preserve">
+    <value>Das Konto Konnte nicht zur Vorlage hinzugefügt werden, da die Ziel-Position in der Vorlage nicht aktiv ist.</value>
+  </data>
+  <data name="ColudNotAssignTaxonomyCalculated" xml:space="preserve">
+    <value>Das Konto Konnte nicht zugeordnet werden, da die Ziel-Position in der Taxonomie berechnet ist.</value>
+  </data>
+  <data name="ColudNotAssignTaxonomyNotActive" xml:space="preserve">
+    <value>Das Konto Konnte nicht zugeordnet werden, da die Ziel-Position in der Taxonomie nicht aktiv ist.</value>
+  </data>
+  <data name="CouldNotFindNodePresentationTree" xml:space="preserve">
+    <value>Konnte nicht gefunden werden Knoten im presentation tree.</value>
+  </data>
+  <data name="eBalanceKit" xml:space="preserve">
+    <value>eBilanz-Kit</value>
+  </data>
+  <data name="eBalanceKitErrorReport" xml:space="preserve">
+    <value>eBilanz-Kit Fehlerreport</value>
+  </data>
+  <data name="IgnoreWarning" xml:space="preserve">
+    <value>Warnmeldung ignorieren</value>
+  </data>
+  <data name="Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="PositionSumUp" xml:space="preserve">
+    <value>davon Positionen aufsummieren</value>
+  </data>
+  <data name="SendAccountBalance" xml:space="preserve">
+    <value>Kontensalden senden</value>
+  </data>
+  <data name="TemplateIsApplied" xml:space="preserve">
+    <value>Die Vorlage wurde übernommen.</value>
+  </data>
+  <data name="UpdatingTaxonomyVersion" xml:space="preserve">
+    <value>Aktualisierung der Taxonomie-Version</value>
+  </data>
+  <data name="WouldYouLikeApplyTemplateCurrentReport" xml:space="preserve">
+    <value>Soll die Vorlage auf den aktuell geladenen Report angewendet werden?
+
+Hinweis: Beim Anwenden der Vorlage werden alle existierenden Zuordnungen der gewählten Summen- und Saldenliste durch die in der Vorlage definierten Zuordnungen ersetzt.</value>
+  </data>
+  <data name="WouldYouLikeUpdateTemplateTaxonomy" xml:space="preserve">
+    <value>Soll die Vorlage auf die aktuelle Taxonomieversion aktualisiert werden?</value>
+  </data>
+  <data name="NoConflictsFound" xml:space="preserve">
+    <value>Keine Konflikte gefunden</value>
+  </data>
+  <data name="NoErrorsFound" xml:space="preserve">
+    <value>Keine Fehler gefunden</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Schritt </value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Vorschau (es werden nur die ersten 200 Zeilen angezeigt)</value>
+  </data>
+  <data name="ActiveDirectioryUserTooltip" xml:space="preserve">
+    <value>Active-Directory Benutzer (Benutzer aus Windows-Anmeldung)</value>
+  </data>
+  <data name="DeleteTemplateRequest" xml:space="preserve">
+    <value>Soll die Vorlage {0} wirklich gelöscht werden?</value>
+  </data>
+  <data name="DeleteTemplateRequestTitle" xml:space="preserve">
+    <value>Vorlage Löschen?</value>
+  </data>
+  <data name="Initialization" xml:space="preserve">
+    <value>Initialisierung</value>
+  </data>
+  <data name="InitializingDatabase" xml:space="preserve">
+    <value>Initiiere Datenbank</value>
+  </data>
+  <data name="DeleteAll" xml:space="preserve">
+    <value>Alle löschen</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="MissingUpgradeReadme" xml:space="preserve">
+    <value>Die Pdf Datei für das Changelog kann leider nicht gefunden werden.</value>
+  </data>
+  <data name="SystemNameTooltip" xml:space="preserve">
+    <value>Eindeutiger Name zur Identifizierung des Systems.</value>
+  </data>
+  <data name="ApplyFilterToolTip" xml:space="preserve">
+    <value>Filter anwenden</value>
+  </data>
+  <data name="ClearFilterToolTip" xml:space="preserve">
+    <value>Filter löschen</value>
+  </data>
+  <data name="HideEmptyPositions" xml:space="preserve">
+    <value>Leere Positionen ausblenden</value>
+  </data>
+  <data name="HideNonManualFields" xml:space="preserve">
+    <value>Nur manuelle Eingaben anzeigen</value>
+  </data>
+  <data name="ShowOnlyMandatoryPostions" xml:space="preserve">
+    <value>Nur Pflichtfelder anzeigen</value>
+  </data>
+  <data name="ShowOnlyPositionsForSelectedLegalStatus" xml:space="preserve">
+    <value>Nur Felder für ausgewählte Rechtsform anzeigen</value>
+  </data>
+  <data name="FilterCaption" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="IsKeepNextOpen" xml:space="preserve">
+    <value>Dialog beim nächsten Start erneut öffnen?</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Öffnen</value>
+  </data>
+  <data name="FilterOptionsToolTip" xml:space="preserve">
+    <value>Filteroptionen</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Ändern</value>
+  </data>
+  <data name="DeleteSelectedItems" xml:space="preserve">
+    <value>Ausgewählte Einträge löschen</value>
+  </data>
+  <data name="ProgressCreatingReport" xml:space="preserve">
+    <value>Bericht wird erstellt...</value>
+  </data>
+  <data name="Installation" xml:space="preserve">
+    <value>Installation</value>
+  </data>
+  <data name="InstallService" xml:space="preserve">
+    <value>Dienst installieren</value>
+  </data>
+  <data name="InsufficientRights" xml:space="preserve">
+    <value>Unzureichende Berechtigungen</value>
+  </data>
+  <data name="EnterFilterText" xml:space="preserve">
+    <value>Filter eingeben</value>
+  </data>
+  <data name="InputMode" xml:space="preserve">
+    <value>Eingabe-Modus</value>
+  </data>
+  <data name="DifferenceBetweenTradeBalanceAndFiscalBalance" xml:space="preserve">
+    <value>Differenzwerte zwischen Handelsbilanz und Steuerbilanz</value>
+  </data>
+  <data name="TaxBalanceSheetValues" xml:space="preserve">
+    <value>Steuerbilanzwerte</value>
+  </data>
+  <data name="AllowedDueToAdminRights" xml:space="preserve">
+    <value>erlaubt aufgrund der Administrator-Rechte</value>
+  </data>
+</root>

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DbTemplate ServerName="Ingres">
+  <Enquote>
+    <Left> </Left>
+    <Right> </Right>
+  </Enquote>
+  <ConnectionStringParameter>
+    <Param Caption="Username" Caption_de="Benutzername" Name="Uid"/>
+    <Param Caption="Password" Caption_de="Passwort" Name="Pwd"/>    
+  </ConnectionStringParameter>
+  <Syntax>
+    <!--
+    
+    public override void SetConnectionString(string host, string user, string password)
+        {
+            //ConnectionString =
+            //    "Server=" + host + ";" +
+            //    "UID=" + user + ";" +
+            //    (password.Length > 0 ? "PWD=" + password + ";" : string.Empty) +
+            //    "LONGDATACOMPAT=1;BitData=1;MapXMLDescribe=-99;";
+        }
+    
+    Einlesen von Tabellen Struktur:
+    
+    List<SchemaTable> lSchemas = sourceDb.GetSchemaTableList();
+    List<DbFieldInfo> lColumnInfos = sourceDb.GetFieldInfos(oSchemaTable.Schema, oSchemaTable.Table);
+    
+    public override List<SchemaTable> GetSchemaTableList()
+        {
+            List<SchemaTable> oResult = new List<SchemaTable>();
+
+            DataTable oSchemaTable = this.mDbCommand.Connection.GetSchema("Tables");
+            foreach (DataRow oRow in oSchemaTable.Rows)
+            {
+
+                if (oRow.Field<object>(2) != null)
+                {
+                    oResult.Add(new SchemaTable(string.Empty,
+                                                oRow.Field<object>(2).ToString()));
+                }
+            }
+
+            return oResult.Distinct().ToList();
+        }
+    
+    GetFieldInfos(oSchemaTable.Schema, oSchemaTable.Table) ruft auf ReadFieldInfos("SELECT * FROM " + GetTableName(this.Database, tableName));
+    
+    protected override List<DbFieldInfo> ReadFieldInfos(string sql) {
+      oReader = mDbCommand.ExecuteReader(CommandBehavior.SchemaOnly);
+      DataTable oDataTable = oReader.GetSchemaTable();
+      
+      for (Int32 n = 0; n < oReader.FieldCount; n++) {
+                    String sColumn = oReader.GetName(n);
+                    sColumn = ReplaceSpecialChars(sColumn);
+
+                    DbFieldInfo oFieldInfo = null;
+
+                    string sType = oReader.GetDataTypeName(n).ToUpper();
+
+                    switch (sType) {
+
+                        case "DOUBLE":
+                        case "DECIMAL":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbNumeric);
+                            break;
+
+                        case "SMALLINT":
+                        case "INT":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbInt);
+                            break;
+
+                        case "CHARACTER":
+                        case "VARCHAR":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbText);
+                            break;
+
+                        case "DATE":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbDate);
+                            break;
+
+                        case "DATETIME":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbDateTime);
+                            break;
+
+                        default:
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbText);
+                            break;
+                    }
+
+                    /*  ODBC
+                        [0]  {ColumnName}
+                        [1]  {ColumnOrdinal}
+                        [2]  {ColumnSize}
+                        [3]  {NumericPrecision}
+                        [4]  {NumericScale}
+                        [5]  {DataType}
+                        [6]  {ProviderType}
+                        [7]  {IsLong}
+                        [8]  {AllowDBNull}
+                        [9]  {IsReadOnly}
+                        [10] {IsRowVersion}
+                        [11] {IsUnique}
+                        [12] {IsKey}
+                        [13] {IsAutoIncrement}
+                        [14] {BaseSchemaName}
+                        [15] {BaseCatalogName}
+                        [16] {BaseTableName}
+                        [17] {BaseColumnName}                     * */
+
+                    DataRow oRow = oDataTable.Rows[n];
+                    oFieldInfo.AutoIncrement = (bool)oRow[13];
+                    oFieldInfo.MaxLength = (int)oRow[2];
+                    oFieldInfo.AllowDBNull = (bool)oRow[8];
+                    oFieldInfo.IsPrimaryKey = (bool)oRow[12];
+                    oFieldInfo.OriginalType = sType;
+
+                    lFieldInfos.Add(oFieldInfo);
+    
+    Datenabzug:
+    
+    public DbDataReader GetTextReaderFromTable(string database, string tableName, List<string> fieldNames) {
+            string sOutput = "SELECT ";
+            
+            foreach (string field in fieldNames)
+            {
+                if (field.Trim().Equals(string.Empty))
+                {
+                    sOutput = "SELECT *  ";
+                    break;
+                }
+                //sOutput += "CAST(" + field + " AS CHAR) AS " + field + ", ";
+                sOutput += field + ", ";
+            }
+            sOutput = sOutput.Remove(sOutput.Length - 2);
+
+            return ExecuteReader(sOutput + " FROM " + Enquote(tableName));
+        }
+      -->
+  </Syntax>
+</DbTemplate>

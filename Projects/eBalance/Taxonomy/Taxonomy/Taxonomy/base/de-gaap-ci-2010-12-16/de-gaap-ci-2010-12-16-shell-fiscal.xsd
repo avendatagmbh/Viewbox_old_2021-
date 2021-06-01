@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(c) XBRL Deutschland e.V. - see http://www.xbrl.de-->
+
+
+<xs:schema xmlns="http://www.w3.org/2001/XMLSchema"
+           xmlns:de-gaap-ci="http://www.xbrl.de/taxonomies/de-gaap-ci-2010-12-16"
+           xmlns:link="http://www.xbrl.org/2003/linkbase"
+           xmlns:xbrli="http://www.xbrl.org/2003/instance"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.xbrl.de/taxonomies/de-gaap-ci-2010-12-16">
+  <annotation>
+      <appinfo>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-gaap-ci-2010-12-16-shell-fiscal-presentation.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"
+                           xlink:type="simple"/>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-gaap-ci-2010-12-16-calculation-fiscal.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef"
+                           xlink:title="Calculation Links, all"
+                           xlink:type="simple"/>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-gaap-ci-2010-12-16-shell-fiscal-label.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"
+                           xlink:type="simple"/>
+         <link:roleType id="role_fiscalCalculations"
+                        roleURI="http://www.xbrl.de/taxonomies/de-gaap-ci/role/fiscalCalculations">
+            <link:definition>Steuerliche Rechenregeln</link:definition>
+            <link:usedOn>link:calculationLink</link:usedOn>
+         </link:roleType>
+      </appinfo>
+  </annotation>
+  <include schemaLocation="de-gaap-ci-2010-12-16-shell.xsd"/>
+</xs:schema>

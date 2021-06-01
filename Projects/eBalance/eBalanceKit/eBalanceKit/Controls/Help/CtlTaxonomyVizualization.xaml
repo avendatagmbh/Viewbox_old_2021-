@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.Help.CtlTaxonomyVizualization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Help="clr-namespace:eBalanceKit.Controls.Help"
+             xmlns:Enums="clr-namespace:Taxonomy.Enums;assembly=Taxonomy" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel>
+        <ComboBox ItemsSource="{Binding AvailableVersions}" SelectedItem="{Binding SelectedVersion}"/>
+        <Help:CtlTaxonomyDescription DataContext="{Binding AvailableTaxonomies[GCD]}" MouseDown="CtlTaxonomyDescription_MouseDown" Tag="{x:Static Enums:TaxonomyType.GCD}"/>
+        <Help:CtlTaxonomyDescription DataContext="{Binding AvailableTaxonomies[GAAP]}"  MouseDown="CtlTaxonomyDescription_MouseDown" Tag="{x:Static Enums:TaxonomyType.GAAP}"/>
+        <Help:CtlTaxonomyDescription DataContext="{Binding AvailableTaxonomies[OtherBusinessClass]}"  MouseDown="CtlTaxonomyDescription_MouseDown" Tag="{x:Static Enums:TaxonomyType.OtherBusinessClass}"/>
+        <Help:CtlTaxonomyDescription DataContext="{Binding AvailableTaxonomies[Financial]}"  MouseDown="CtlTaxonomyDescription_MouseDown" Tag="{x:Static Enums:TaxonomyType.Financial}"/>
+        <Help:CtlTaxonomyDescription DataContext="{Binding AvailableTaxonomies[Insurance]}"  MouseDown="CtlTaxonomyDescription_MouseDown" Tag="{x:Static Enums:TaxonomyType.Insurance}"/>
+    </StackPanel>
+</UserControl>

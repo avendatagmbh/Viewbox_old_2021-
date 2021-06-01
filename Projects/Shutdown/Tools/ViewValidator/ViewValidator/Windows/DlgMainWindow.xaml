@@ -1,0 +1,233 @@
+﻿<Window x:Class="ViewValidator.Windows.DlgMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:ViewValidator.Controls"
+        xmlns:resultControls="clr-namespace:ViewValidator.Controls.Result"
+        xmlns:avd="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        Title="ViewValidator" 
+        Height="800" 
+        Width="800"
+        Background="{StaticResource WindowsBgBrush}"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="SingleBorderWindow" Icon="/Resources\viewvalidator.ico" ShowInTaskbar="True" Closed="Window_Closed" WindowState="Maximized" Closing="Window_Closing">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/MainWindowResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="New" CanExecute="ValidateCommand_CanExecute" Executed="ValidateCommand_Executed"/>
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Command="New" Gesture="ALT+V" />
+    </Window.InputBindings>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"  x:Name="SettingsGridRow" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Height="65" Grid.ColumnSpan="2">
+            <Border Padding="2" Background="{StaticResource headerBgBrush}">
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+
+                    <!-- gets focus after button click -->
+                    <Control x:Name="dummyButtonControl" />
+
+                    <Button Style="{StaticResource ImageButtonStyle1}" Margin="1,0" x:Name="btnStartValidation" Click="btnStartValidation_Click" >
+                        <StackPanel>
+                            <Image Height="24" Width="24" Source="/ViewValidator;component/Resources/validate.png" />
+                            <TextBlock Style="{StaticResource ImageButtonText}" >
+                                <Underline>V</Underline>alidieren
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Style="{StaticResource ImageButtonStyle1}" Margin="1,0" x:Name="btnStartValidationInMemory" Click="btnStartValidationInMemory_Click" 
+                            ToolTip="Läd die beiden Tabellen erst komplett in den Speicher, wendet die Regeln an und sortiert dann.">
+                        <StackPanel>
+                            <Image Height="24" Width="24" Source="/ViewValidator;component/Resources/validate.png" />
+                            <TextBlock Style="{StaticResource ImageButtonText}" TextWrapping="Wrap">
+                                Validieren (im Speicher)
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+
+
+                    <Button x:Name="btnAddView" Style="{StaticResource ImageButtonStyle1}" Margin="1,0" Click="btnAddView_Click">
+                        <StackPanel>
+                            <Image Height="24" Width="24" Source="/ViewValidator;component/Resources/AddDocument.png" />
+                            <TextBlock Text="Neue View" Style="{StaticResource ImageButtonText}" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button Style="{StaticResource ImageButtonStyle1}" Margin="1,0" x:Name="btnRuleWindow" Click="btnRuleWindow_Click" IsEnabled="{Binding RuleAssignmentWindowVisibility, Converter={StaticResource visibleToFalseConverter}}">
+                        <StackPanel>
+                            <Image Height="24" Width="24" Source="/Resources\Qute\Advanced16.png" />
+                            <TextBlock Text="Regelfenster" Style="{StaticResource ImageButtonText}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="btnExportExcel" Style="{StaticResource ImageButtonStyle1}" Margin="1,0" Click="btnExportExcel_Click" IsEnabled="{Binding ResultsModel.ResultsCalculated}">
+                        <StackPanel>
+                            <Image Height="24" Width="24" Source="/ViewValidator;component/Resources/pdf.png" />
+                            <TextBlock Text="Excel Export" Style="{StaticResource ImageButtonText}" />
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Style="{StaticResource ImageButtonStyle1}" Margin="1,0" x:Name="btnExit" Click="btnExit_Click">
+                        <StackPanel>
+                            <Image Height="24" Width="24" Source="/ViewValidator;component/Resources/shutdown16.png" />
+                            <TextBlock Text="Beenden" Style="{StaticResource ImageButtonText}"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Padding="2" Style="{StaticResource ButtonBorder}" BorderBrush="#fcd48e" BorderThickness="0,1,0,0">
+
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+
+                    <!-- profile selection -->
+                    <StackPanel Margin="2" Visibility="{Binding ProfileSelectionVisibility, Converter={StaticResource TrueToVisibilityConverter}}" >
+                        <TextBlock Text="Profil" Margin="2,0,0,0" Foreground="#222"/>
+                        <avd:AvdComboBox x:Name="cboProfile" MinWidth="150" ItemsSource="{Binding Profiles}"
+                                              SelectedItem="{Binding Path=SelectedProfile}"
+                                              DisplayMemberPath="Name"
+                                              SelectValueMessage="Bitte auswählen..." />
+                    </StackPanel>
+
+                    <!-- tables selection -->
+                    <StackPanel Margin="2" Visibility="{Binding TableMappingSelectionVisibility, Converter={StaticResource TrueToVisibilityConverter}}">
+                        <TextBlock Text="Tabellen auswählen" Margin="2,0,0,0" Foreground="#222"/>
+                        <avd:AvdComboBox x:Name="cboTableMapping" MinWidth="150" ItemsSource="{Binding TableMappings}"
+                                              SelectedItem="{Binding Path=SelectedTableMapping}"
+                                              DisplayMemberPath="DisplayString" SelectValueMessage="Bitte auswählen..."/>
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- navigation / content -->
+        <avd:HierarchicalTabControl Grid.Column="0" Grid.Row="2" 
+                x:Name="nav" ItemsSource="{Binding Path=NavigationTree}"
+                ContentMemberPath="Content" NavAreaWidth="300"
+                ItemContainerStyle="{StaticResource NavigationTreeItemContainerStyle}"
+                ItemTemplate="{StaticResource NavigationTreeItemTemplate}">
+            
+        </avd:HierarchicalTabControl>
+
+        <GridSplitter Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"  Width="3" Margin="0,24,0,0" />
+
+        <!-- info panel -->
+        <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource GroupBoxBorder}" Margin="3,0,0,0">
+            <Grid Width="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Image Margin="5,5,5,0" Height="40" HorizontalAlignment="Left" Width="Auto" Source="/ViewValidator;component/Resources/logo.png" />
+                <ScrollViewer Margin="5,0,5,5" Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel>
+
+                        <Border Style="{StaticResource GroupBoxBorderNoShadow}" Margin="0,5,0,0" Padding="2">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <Border Grid.Row="0" Padding="2" Margin="0,2,0,0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                            <Image Height="16" VerticalAlignment="Center" Source="/Resources\Qute\Address-book16.png" />
+                                            <TextBlock Grid.Row="0" Text="Profil" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri"/>
+                                        </StackPanel>
+                                        <TextBlock TextWrapping="Wrap"  Grid.Row="1" Grid.Column="0" Text="{Binding Path=SelectedProfile.Name}" Padding="1" FontSize="12" FontFamily="Calibri"/>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Row="1" Padding="2" Margin="0,2,0,0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                            <Image Height="16" VerticalAlignment="Center" Source="/ViewValidator;component/Resources/Qute/Person16.png" />
+                                            <TextBlock Text="Benutzer" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri"/>
+                                        </StackPanel>
+                                        <TextBlock TextWrapping="Wrap" Grid.Row="1" Grid.Column="0" Text="{Binding Path=CurrentUser}" Margin="0,0,0,0" Padding="1" FontSize="12" FontFamily="Calibri"/>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Row="2" Padding="2" Margin="0,2,0,0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                            <Image Height="16" VerticalAlignment="Center" Source="/Resources/database16.png" />
+                                            <TextBlock Text="Datenbank" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri" />
+                                        </StackPanel>
+                                        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=SelectedProfile.DbConfig}" Margin="0,0,0,0" Padding="1" FontSize="12" FontFamily="Calibri" TextWrapping="Wrap" />
+                                    </Grid>
+                                </Border>
+
+                            </Grid>
+
+                        </Border>
+
+                        <Border Style="{StaticResource GroupBoxBorderNoShadow}" Margin="0,5,0,0" Padding="2" Visibility="{Binding ResultsModel.ResultsCalculated, Converter={StaticResource TrueToVisibilityConverter}}">
+                            <resultControls:ResultOverviewTableDetails x:Name="resultOverviewTableDetails" DataContext="{Binding ResultsModel.ResultTableDetailsModel}"/>
+                        </Border>
+
+
+                    </StackPanel>
+                </ScrollViewer>
+
+            </Grid>
+        </Border>
+
+        <Expander Margin="0,0,0,0" Grid.Row="4" Grid.ColumnSpan="2" IsExpanded="True" x:Name="detailExpander" Style="{StaticResource ExpanderDown}"
+                  ExpandDirection="Down" Background="#ccc"
+                  Visibility="{Binding SelectedTableMapping, Converter={StaticResource valueExistsToVisibilityConverter}}"
+                  >
+            <Expander.Header>
+                Einstellungen für aktuell ausgewählte View
+            </Expander.Header>
+            <controls:TableMappingSettings x:Name="tableMappingSettings" DataContext="{Binding SelectedRuleSelectionDetailsModel}"/>
+        </Expander>
+
+    </Grid>
+</Window>

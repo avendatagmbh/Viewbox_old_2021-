@@ -1,0 +1,75 @@
+﻿<Window x:Class="SAP_ClusterHelper.Windows.DlgGenerateSourceData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="generate source files" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="Height">
+
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource GroupBoxBorder}" Padding="5" CornerRadius="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="1" >
+                    <CheckBox Content="STXL (long texts)" IsChecked="{Binding GenerateSTXL}"/>
+
+                    <Separator Margin="0,5" />
+
+                    <CheckBox Content="all PCLx tables" IsChecked="{Binding GeneratePCLAll}"/>
+                    <CheckBox Content="PCL1" IsChecked="{Binding GeneratePCL1}"/>
+                    <CheckBox Content="PCL2" IsChecked="{Binding GeneratePCL2}"/>
+                    <CheckBox Content="PCL3" IsChecked="{Binding GeneratePCL3}"/>
+                    <CheckBox Content="PCL4" IsChecked="{Binding GeneratePCL4}"/>
+
+                    <Separator Margin="0,5" />
+                </StackPanel>
+
+                <GroupBox Header="Database config" Padding="5" Margin="0,5,5,0">
+                    <StackPanel>
+                        <TextBlock Text="Hostname" />
+                        <TextBox Text="{Binding DbHostname}" />
+
+                        <TextBlock Text="Username" Margin="0,5,0,0"/>
+                        <TextBox Text="{Binding DbUser}" />
+
+                        <TextBlock Text="Password" Margin="0,5,0,0"/>
+                        <TextBox Text="{Binding DbPassword}" />
+
+                        <TextBlock Text="Database" Margin="0,5,0,0"/>
+                        <TextBox Text="{Binding DbDatabase}" />
+                    </StackPanel>
+                </GroupBox>
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                    <TextBlock Text="Export folder" Margin="0,5,0,0"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox Text="{Binding ExportFolder}" />
+                        <Button x:Name="btnSelectFolder" Grid.Column="1" Content="..." Margin="5,0,0,0" Width="20" Click="BtnSelectFolderClick" />
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border Style="{StaticResource ButtonBorder}" Grid.Row="1" Padding="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="BtnCancel" Content="Cancel" Width="75" Click="BtnCancelClick"/>
+                    <Button x:Name="BtnOk" Content="Generate" Width="75" Click="BtnOkClick" Margin="5,0,0,0"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+</Window>

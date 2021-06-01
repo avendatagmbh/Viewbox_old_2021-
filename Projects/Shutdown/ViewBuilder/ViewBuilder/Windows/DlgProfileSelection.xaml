@@ -1,0 +1,69 @@
+﻿<Window x:Class="ViewBuilder.Windows.DlgProfileSelection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vbs="clr-namespace:ViewBuilderBusiness.Structures.Config;assembly=ViewBuilderBusiness"
+        Title="Profilauswahl" 
+        Height="600" 
+        Width="442" 
+        Icon="/ViewBuilder;component/Resources/AvenDATA.ico"
+        Background="{StaticResource WindowsBgBrush}" 
+        ResizeMode="CanMinimize" 
+        WindowStartupLocation="CenterScreen" 
+        ShowInTaskbar="True" Closed="Window_Closed" 
+        PreviewKeyDown="Window_PreviewKeyDown"
+        xmlns:my="clr-namespace:ViewBuilder.Windows.Controls" 
+        Loaded="Window_Loaded">
+
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- logo -->
+            <Border Style="{StaticResource GroupBoxBorder}">
+                <Grid Height="65">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image Height="Auto" Grid.Column="0" Width="Auto" HorizontalAlignment="Right" Margin="5" Name="image1" Stretch="Uniform" VerticalAlignment="Top" Source="/ViewBuilder;component/Resources/logo.png" Grid.RowSpan="2" />
+                    <Label Opacity="0.95" Padding="0" Content="View Builder" Grid.Row="0" Grid.Column="1" Height="Auto" HorizontalAlignment="Left" Margin="5,14,0,0" Name="lblAppname" VerticalAlignment="Bottom" FontSize="24" FontFamily="Arial" Foreground="#E0000000" FontWeight="Bold" />
+                    <Label Opacity="0.95" Padding="0" Content="Version ?.?.?" Grid.Row="1"  Grid.Column="1" Height="Auto" HorizontalAlignment="Left" Margin="7,0,7,3" Name="lblVersion" VerticalAlignment="Top" FontSize="11" FontFamily="Arial" FontStyle="Italic" />
+                    <Label Opacity="0.95" Padding="0" Content="Date: 01.02.2013" Grid.Row="1"  Grid.Column="2" Height="Auto" HorizontalAlignment="Right" Margin="7,0,7,3" Name="lblAssemblyDate" VerticalAlignment="Top" FontSize="11" FontFamily="Arial" FontStyle="Italic" />
+                </Grid>
+            </Border>
+
+            <my:ProfileSelector Grid.Row="1" x:Name="profileSelector" Margin="0,2,0,0" />
+
+            <!-- button bar -->
+            <StackPanel Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,5,5,0" Orientation="Horizontal" >
+                <Button Margin="5,5,0,0" Content="_Profil öffnen" Height="23" Name="btnOk" Width="90" Click="btnOk_Click">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}" >
+                            <Setter Property="IsEnabled" Value="True" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SelectedIndex,ElementName=profileSelector}" Value="-1">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                <Label Grid.Row="3" VerticalAlignment="Center" Content="Benutzer: " Padding="1" />
+                <Label Grid.Row="3" VerticalAlignment="Center" Name="txtCurrentUser" Padding="1" />
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>

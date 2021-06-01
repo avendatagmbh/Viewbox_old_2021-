@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.FederalGazette.CtlFederalGazetteClientList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:FederalGazette="clr-namespace:eBalanceKit.Models.FederalGazette"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:st="clr-namespace:eBalanceKit.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <DataTemplate x:Key="lstBxTemplate">
+            <Border Margin="0,0,5,5" Padding="5,2" x:Name="Bd">
+                <Border.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding Path=DataContext.CmdClose, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" CommandParameter="True" />
+                </Border.InputBindings>
+                <Border.Style>
+                    <Style TargetType="Border" BasedOn="{StaticResource GroupBoxBorder}">
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                        </Style.Resources>
+                        <!--<Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=lstCompanies, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" Value="True" >
+                                <Setter Property="Background" Value="{StaticResource TransparentOrangeGradientBrush}"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>-->
+                    </Style>
+                </Border.Style>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="1" Margin="2" >
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Name: " Foreground="Black"></TextBlock>
+                                <TextBlock Text="{Binding Path=Value}" Foreground="Black"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                                <TextBlock Text="Id: " Foreground="Black"></TextBlock>
+                                <TextBlock Text="{Binding Path=Key}"  Foreground="Black" Padding="3,0,0,0"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <DataTemplate.Triggers>
+                <DataTrigger Value="True"
+                 Binding="{Binding 
+                              IsSelected, 
+                              RelativeSource={RelativeSource 
+                                  AncestorType={x:Type ListBoxItem}}}">
+                    <!-- everybody loves HotPink -->
+                    <Setter TargetName="Bd" Property="Background" Value="{StaticResource TransparentOrangeGradientBrush}"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Border Style="{StaticResource GroupBoxBorder}" CornerRadius="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- main part -->
+            <Border Grid.Row="0" Style="{StaticResource GroupBoxBorder}" Padding="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{x:Static Localisation:ResourcesCommon.FilterCaption}" VerticalAlignment="Center" Margin="0,0,0,0"></TextBlock>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <st:DeletableTextBox Grid.Column="0" Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Content="{x:Static Localisation:ResourcesFederalGazette.ReadCompanies}" Height="23" Name="button1" Grid.Column="1" Margin="5, 0, 0, 0" Command="{Binding CmdGetCompanies}"/>
+                            </Grid>
+
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="8,0,0,0">
+                            <TextBlock Text="{x:Static Localisation:ResourcesCommon.SortBy}" Margin="0,0,0,3"></TextBlock>
+
+                            <RadioButton IsChecked="{Binding SortDirection, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter={x:Static FederalGazette:SortDirection.Original}, UpdateSourceTrigger=PropertyChanged}" 
+                                     Content="default"/>
+                            <RadioButton IsChecked="{Binding SortDirection, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter={x:Static FederalGazette:SortDirection.Name}, UpdateSourceTrigger=PropertyChanged}" 
+                                     Content="{x:Static Localisation:ResourcesCommon.Name}"/>
+                            <RadioButton IsChecked="{Binding SortDirection, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter={x:Static FederalGazette:SortDirection.Id}, UpdateSourceTrigger=PropertyChanged}" 
+                                     Content="Id"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Separator Margin="-5,5" Grid.Row="1" />
+
+                    <ListBox Grid.Row="2" x:Name="lstCompanies" ItemsSource="{Binding CompaniesListed}" ItemTemplate="{StaticResource lstBxTemplate}" 
+                         SelectionMode="Single" BorderBrush="Transparent" Padding="0" Background="Transparent" SelectedItem="{Binding SelectedEntry}"
+                             Margin="-5,0,0,0">
+                        <!--<ListBox.InputBindings>
+                            <MouseBinding Gesture="LeftDoubleClick" Command="{Binding CmdClose}" CommandParameter="True" />
+                        </ListBox.InputBindings>-->
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <!--<Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                    <Style.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                </Style.Resources>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+                    <!--</ScrollViewer>-->
+                </Grid>
+            </Border>
+
+            <!-- button bar -->
+            <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <Button Content="{x:Static Localisation:ResourcesCommon.Ok}" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Command="{Binding CmdClose}" CommandParameter="True"/>
+                    <!--<Button Content="A_bbrechen" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnCancel" VerticalAlignment="Top" Width="75" IsCancel="True" />-->
+                    <Button Content="{x:Static Localisation:ResourcesCommon.Cancel}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnCancel" VerticalAlignment="Top" Width="75" Command="{Binding CmdClose}" CommandParameter="False" />
+
+                </StackPanel>
+            </Border>
+
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,7 @@
+﻿<Window x:Class="ViewValidator.Windows.DlgRuleConfiguration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:rules="clr-namespace:ViewValidator.Controls.Rules"
+        xmlns:Controls="clr-namespace:AvdCommon.Rules.Gui.Controls;assembly=AvdCommon" Title="Parameter der Regel" Height="300" Width="300">
+    <Controls:CtlEditRule></Controls:CtlEditRule>
+</Window>

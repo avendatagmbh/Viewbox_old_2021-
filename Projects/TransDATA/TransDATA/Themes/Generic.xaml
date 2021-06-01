@@ -1,0 +1,10 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:TransDATA" xmlns:Config="clr-namespace:TransDATA.Controls.Config"
+    xmlns:Enums="clr-namespace:Config.Enums;assembly=Config"
+    xmlns:DbStructure="clr-namespace:Config.Interfaces.DbStructure;assembly=Config">
+
+
+
+</ResourceDictionary>

@@ -1,0 +1,26 @@
+<UserControl x:Class="eBalanceKit.Windows.Management.Edit.CtlEditSystem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:my="clr-namespace:eBalanceKit.Controls" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock VerticalAlignment="Center" ToolTip="{x:Static Localisation:ResourcesCommon.SystemNameTooltip}" Text="{x:Static Localisation:ResourcesCommon.Name}" />
+        <TextBox Grid.Row="1" x:Name="txtName" Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="128" TextChanged="TxtNameTextChanged"/>
+        <my:CtlErrorListViewer Grid.Row="2" DataContext="{Binding ValidationErrorMessages}" />
+
+        <TextBlock Grid.Row="3" Margin="0,5,0,0" VerticalAlignment="Center" Text="{x:Static Localisation:ResourcesCommon.Comment}" />
+        <TextBox Grid.Row="4" x:Name="txtComment" Text="{Binding Path=Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="256" TextWrapping="Wrap" AcceptsReturn="True" 
+                 VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"/>
+    </Grid>
+</UserControl>

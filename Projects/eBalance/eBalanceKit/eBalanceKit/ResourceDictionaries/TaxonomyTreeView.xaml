@@ -1,0 +1,1426 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:Class="eBalanceKit.ResourceDictionaries.TaxonomyTreeView"
+                    xmlns:ts="clr-namespace:eBalanceKit.TemplateSelectors"
+                    xmlns:c1="clr-namespace:eBalanceKit.Converters"
+                    xmlns:xbrlPre="clr-namespace:Taxonomy.PresentationTree;assembly=Taxonomy"
+                    xmlns:c3="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+                    xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+                    xmlns:Controls="clr-namespace:eBalanceKit.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/TaxonomyAndBalanceListBase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <c1:XbrlElementValueTypeToImageConverter x:Key="treeNodeImgConverter" />
+    <c1:MandatoryTypeAccountBalancesToVisibilityConverter x:Key="MandatoryTypeAccountBalancesToVisibilityConverter" />
+    <ts:BalanceTreeTemplateSelector x:Key="balanceTreeTemplateSelector" />
+    <ts:BalanceListTemplateSelector x:Key="balanceListTemplateSelector" />
+    <ts:BalanceListAssignedTemplateSelector x:Key="balanceListAssignedTemplateSelector" />
+    <ts:BalanceTreeReferenceListTemplateSelector x:Key="balanceTreeReferenceListTemplateSelector" />
+    
+    <!--******************************************************************************************************************************************************
+        account
+        *******************************************************************************************************************************************************-->
+   
+
+    <!-- ********************************************************************** -->
+
+    <Style x:Key="TreeViewItemFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border>
+                        <Rectangle Margin="0,0,0,0" StrokeThickness="5" Stroke="Black" StrokeDashArray="1 2" Opacity="0"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>   
+
+    <Style x:Key="BalanceTreeViewItem" TargetType="{x:Type TreeViewItem}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="1,0,0,0"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource TreeViewItemFocusVisual}"/>
+        <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Setter Property="Visibility" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsVisible, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource TrueToVisibilityConverter}}"/>
+        <Setter Property="Template" Value="{StaticResource ExpandedTreeViewItem}" />
+    </Style>
+    
+    <Style x:Key="CheckBoxFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border>
+                        <Rectangle Margin="15,0,0,0" StrokeThickness="1" Stroke="#60000000" StrokeDashArray="1 2"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type CheckBox}" x:Key="AutoSumItemCheckbox">
+        <Setter Property="IsEnabled" Value="{Binding Value.ReportRights.ReadRestAllowed}"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="FocusVisualStyle"	Value="{StaticResource CheckBoxFocusVisual}"/>
+        <Setter Property="Visibility" Value="Collapsed" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Grid>
+                                <Border x:Name="Border" Height="16" Width="16" CornerRadius="3" />
+                                <Image x:Name="Image" Width="16" Source="/eBalanceKitResources;component/Resources/sumManualComputedD.png" Visibility="Hidden" Opacity="0.8"/>
+                                <Image x:Name="CheckMark" Width="16" Source="/eBalanceKitResources;component/Resources/sumManualComputed.png" Visibility="Hidden" />
+                                <Image x:Name="ImageLocked" Width="16" Source="/eBalanceKitResources;component/Resources/sumManualComputedL.png" Visibility="Hidden"/>
+                            </Grid>
+                        </BulletDecorator.Bullet>
+
+                        <ContentPresenter x:Name="content"
+                                              Margin="4,0,0,0"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Stretch"
+                                              RecognizesAccessKey="True"/>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Value.AutoComputeAllowed}" Value="False">
+                            <Setter TargetName="ImageLocked" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Hidden"/>
+                            <Setter TargetName="Image" Property="Visibility" Value="Hidden"/>
+                        </DataTrigger>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter TargetName="Image" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#40000000" />
+                        </Trigger>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter TargetName="content" Property="Margin" Value="0,0,0,0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding Value.AutoComputeEnabled}" Value="True"/>
+                    <Condition Binding="{Binding Value.AutoComputeAllowed}" Value="True"/>
+                </MultiDataTrigger.Conditions>
+                <Setter Property="ToolTip" Value="Wert wird in übergeordneten Knoten aufsummiert (deaktivieren durch Linksklick)" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding Value.AutoComputeEnabled}" Value="False"/>
+                    <Condition Binding="{Binding Value.AutoComputeAllowed}" Value="True"/>
+                </MultiDataTrigger.Conditions>
+                <Setter Property="ToolTip" Value="Aufsummierung des Wertes in übergeordneten Knoten ist deaktiviert (aktivieren durch Linksklick)" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding Value.AutoComputeAllowed}" Value="False"/>
+                </MultiDataTrigger.Conditions>
+                <Setter Property="ToolTip" Value="Aufsummierung nicht möglich, da die übergeordnete Position deaktiviert oder automatisch gemäß Taxnomie berechnet ist" />
+            </MultiDataTrigger>
+            
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding Value.IsComputationOrphanedNode}" Value="True" />
+                    <Condition Binding="{Binding Value.HasMonetaryParent}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Visibility" Value="Visible" />
+            </MultiDataTrigger>           
+            
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type CheckBox}" x:Key="SendBalanceCheckBox">
+        <Setter Property="IsEnabled" Value="{Binding Value.ReportRights.ReadRestAllowed}"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="FocusVisualStyle"	Value="{StaticResource CheckBoxFocusVisual}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Grid>
+                                <Border x:Name="Border" Height="16" Width="16" CornerRadius="3" />
+                                <Image x:Name="Image" Width="16" Source="/eBalanceKitResources;component/Resources/SendAccountsD.png" Visibility="Hidden" Opacity="0.8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <Image x:Name="CheckMark" Width="16" Source="/eBalanceKitResources;component/Resources/SendAccounts.png" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </BulletDecorator.Bullet>
+
+                        <ContentPresenter x:Name="content"
+                                              Margin="4,0,0,0"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Stretch"
+                                              RecognizesAccessKey="True"/>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter TargetName="Image" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#40000000" />
+                        </Trigger>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter TargetName="content" Property="Margin" Value="0,0,0,0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Value.SendAccountBalances}" Value="True">
+                <Setter Property="ToolTip" Value="Kontennachweise zu dieser Position beim Senden mit übertragen (deaktivieren durch Linksklick)" />
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding Value.SendAccountBalances}" Value="False">
+                <Setter Property="ToolTip" Value="Kontennachweise zu dieser Position beim Senden nicht übertragen (aktivieren durch Linksklick)" />
+            </DataTrigger>
+            
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="TreeViewImage" TargetType="{x:Type Image}">
+        <Setter Property="Width" Value="12" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.4"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+        
+    <!-- default nodes -->
+    <LinearGradientBrush x:Key="BalanceTreeNodeDefaultBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#E0E0E0" Offset="0.0" />
+        <GradientStop Color="#C0C0C0" Offset="1.0" />
+    </LinearGradientBrush>
+    
+    <!-- monatary computed nodes -->
+    <LinearGradientBrush x:Key="BalanceTreeNodeMonetaryDefaultBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#E0E0E0" Offset="0.0" />
+        <GradientStop Color="#C0C0C0" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- tuple nodes -->
+    <LinearGradientBrush x:Key="BalanceTreeNodeTupleDefaultBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#f6deae" Offset="0.0" />
+        <GradientStop Color="#deb84b" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- leaf nodes -->
+    <LinearGradientBrush x:Key="BalanceTreeLeafNodeBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#f6deae" Offset="0.0" />
+        <GradientStop Color="#deb84b" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- manual input nodes -->
+    <LinearGradientBrush x:Key="BalanceTreeManualInputNodeBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#f4ee88" Offset="0.0" />
+        <GradientStop Color="#FFFFFCC4" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- balance tree background -->
+    <Style x:Key="BalanceTreeNodeBackground" TargetType="{x:Type Border}" BasedOn="{StaticResource ListBoxItemBaseBorder}">
+        <Setter Property="BorderBrush" Value="Silver" />
+        <Setter Property="Background" Value="{StaticResource BalanceTreeNodeDefaultBrush}" />
+
+        <Style.Triggers>
+
+            <!-- all monetary nodes -->
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding ="{Binding Path=Element.ValueType}" Value="Monetary" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource BalanceTreeNodeMonetaryDefaultBrush}" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding ="{Binding Path=Element.ValueType}" Value="SingleChoice" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource BalanceTreeNodeTupleDefaultBrush}" />
+            </MultiDataTrigger>
+
+            <!-- disabled node -->
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding ="{Binding Path=Value.IsEnabled}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource DisabledBackgroundBrush}" />                
+            </MultiDataTrigger>
+
+            <!-- manual value input node -->
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding ="{Binding Path=IsValueEditingAllowed}" Value="True" />
+                    <Condition Binding ="{Binding Path=Value.HasManualValue}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource BalanceTreeManualInputNodeBackgroundBrush}" />
+            </MultiDataTrigger>
+
+            <!-- drop target node -->
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding ="{Binding Path=IsValueEditingAllowed}" Value="True" />
+                    <Condition Binding ="{Binding Path=Value.HasManualValue}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource BalanceTreeLeafNodeBackgroundBrush}" />
+            </MultiDataTrigger>
+
+        </Style.Triggers>
+    </Style>
+
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeDefault" DataType="{x:Type xbrlPre:PresentationTreeNode}" ItemsSource="{Binding Path=Children}">
+        <Grid>
+            <Border Style="{StaticResource BalanceTreeNodeBackground}" x:Name="border" />
+            <Border Style="{StaticResource SelectionOverlayBorder}">
+                <Grid Height="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Style="{StaticResource TreeViewImage}" Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationError.png" 
+                               Visibility="{Binding ValidationError, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationErrorMessage}" />
+                        <Image Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" 
+                               Visibility="{Binding ValidationWarning, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationWarningMessage}" PreviewMouseLeftButtonUp="Image_MouseLeftButtonUp" >
+                            <Image.Style>
+                                <Style TargetType="Image" BasedOn="{StaticResource TreeViewImage}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Value.SupressWarningMessages}" Value="True">
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideAllWarnings}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideWarning}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <Image Style="{StaticResource TreeViewImage}" Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/sumPos.png"
+                               Visibility="{Binding IsPositiveComputationSource, Converter={StaticResource TrueToVisibilityConverter}}" />
+                        <Image Style="{StaticResource TreeViewImage}" Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/sumNeg.png"
+                               Visibility="{Binding IsNegativeComputationSource, Converter={StaticResource TrueToVisibilityConverter}}" />
+                    </StackPanel>
+
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Path=Element.MandatoryLabel}" Style="{StaticResource TreeViewTextStyle}" />
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Stretch" Text="{Binding Path=Value.DisplayString}" Style="{StaticResource TreeViewTextStyle}" />
+
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeMonetary" DataType="{x:Type xbrlPre:PresentationTreeNode}" ItemsSource="{Binding Path=Children}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="1" Style="{StaticResource BalanceTreeNodeBackground}" x:Name="border" />
+            <Border Grid.Column="1" Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <!-- placeholder -->
+                        <Border Grid.ColumnSpan="3" MinWidth="250" />
+
+                        <!-- assignment buttons -->
+                        <StackPanel Grid.RowSpan="3" Orientation="Horizontal" VerticalAlignment="Top">
+                            <c3:ImageButton Margin="-2,0,2,0" ImageHeight="16" Click="BtnAssignPositionClick" ToolTip="{x:Static Localisation:ResourcesAuditCorrections.AddKorrektionValue}" 
+                                            ImageSource="/eBalanceKitResources;component/Resources/AssignPosition.png" VerticalAlignment="Center" IsTabStop="False" >
+                                <c3:ImageButton.Style>
+                                    <Style TargetType="c3:ImageButton">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding Value.Parent.ValueTree.Document.AuditCorrectionManager.ShowAssignButton}" Value="True" />
+                                                    <Condition Binding="{Binding Value.IsEnabled}" Value="True" />
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </MultiDataTrigger>                                            
+                                        </Style.Triggers>
+                                    </Style>
+                                </c3:ImageButton.Style>
+                            </c3:ImageButton>
+
+                            <CheckBox IsChecked="{Binding Value.AutoComputeEnabled}" Margin="0,0,2,0" VerticalAlignment="Center" 
+                                      Style="{StaticResource AutoSumItemCheckbox}" IsTabStop="False"/>
+                            <Controls:MonetaryNodeInfoIcons VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Path=Element.MandatoryLabel}" Style="{StaticResource TreeViewTextStyle}" />
+
+                        <!-- value -->
+                        <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" Visibility="{Binding Value.IsEnabled, Converter={StaticResource TrueToVisibilityConverter}}">
+                            <Image Source="/eBalanceKitResources;component/Resources/PenDoc.png" Height="12" ToolTip="{x:Static Localisation:ResourcesCommon.HasManualValue}">
+                                <Image.Style>
+                                    <Style TargetType="Image">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding ="{Binding Path=IsValueEditingAllowed}" Value="True" />
+                                                    <Condition Binding ="{Binding Path=Value.HasManualValue}" Value="True" />
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                            <TextBlock Text="{Binding Path=Value.DisplayString}" Style="{StaticResource TreeViewTextStyle}" />
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal" Grid.Column="3" VerticalAlignment="Center" >
+                           
+                            <c3:ImageButton IsTabStop="False" ImageSource="/eBalanceKitResources;component/Resources/EditPen.png"
+                                            ToolTip="Elementdetails bearbeiten (F2)" Click="BtnEditDetails_Click" Margin="5,0,0,0" />
+
+                            <CheckBox IsChecked="{Binding Value.SendAccountBalancesRecursive}" Margin="5,0,0,0" 
+                                      Style="{StaticResource SendBalanceCheckBox}" IsTabStop="False" IsEnabled="{Binding Value.ReportRights.WriteRestAllowed}" 
+                                      Visibility="{Binding Value.ReportRights.ReadRestAllowed, Converter={StaticResource TrueToVisibilityConverter}}"/>
+
+                            <TextBlock Width="12" HorizontalAlignment="Center" Text="{x:Static Localisation:ResourcesBalanceList.DebitAbbreviation}" Visibility="{Binding Element.IsDebitBalance, Converter={StaticResource TrueToVisibilityConverter}}" ToolTip="{x:Static Localisation:ResourcesBalanceList.DebitSide}" Margin="5,0,0,0"/>
+                            <TextBlock Width="12" HorizontalAlignment="Center" Text="{x:Static Localisation:ResourcesBalanceList.CreditAbbreviation}" Visibility="{Binding Element.IsCreditBalance, Converter={StaticResource TrueToVisibilityConverter}}" ToolTip="{x:Static Localisation:ResourcesBalanceList.CreditSide}" Margin="5,0,0,0"/>
+                        </StackPanel>
+
+                        <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Text="{Binding Path=Value.Comment}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding Value.Comment, Converter={StaticResource ValueExistsToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <!-- template for PresentationTreeNode objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeAbstract" DataType="{x:Type xbrlPre:PresentationTreeNode}" ItemsSource="{Binding Path=Children}">
+        <Grid>
+            <Border Style="{StaticResource BalanceTreeNodeBackground}" />
+            <Border Style="{StaticResource SelectionOverlayBorder}">
+                <Grid Height="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Path=Element.MandatoryLabel}" Style="{StaticResource TreeViewTextStyle}" />
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Stretch" Text="{Binding Path=Value.DisplayString}" Style="{StaticResource TreeViewTextStyle}" />
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <!-- template for PresentationTreeNode boolean objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeBoolean" DataType="{x:Type xbrlPre:PresentationTreeNode}" ItemsSource="{Binding Path=Children}">
+        <Grid>
+            <Border Style="{StaticResource BalanceTreeNodeBackground}"  />
+            <Border Style="{StaticResource SelectionOverlayBorder}">
+                <Grid Height="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Style="{StaticResource TreeViewImage}" Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationError.png" 
+                               Visibility="{Binding ValidationError, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationErrorMessage}" />
+                        <Image Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" 
+                               Visibility="{Binding ValidationWarning, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationWarningMessage}" PreviewMouseLeftButtonUp="Image_MouseLeftButtonUp" >
+                            <Image.Style>
+                                <Style TargetType="Image" BasedOn="{StaticResource TreeViewImage}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Value.SupressWarningMessages}" Value="True">
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideAllWarnings}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideWarning}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </StackPanel>
+                    <CheckBox Grid.Column="1" 
+                              HorizontalAlignment="Center" 
+                              VerticalAlignment="Center" 
+                              Margin="0,0,2,0" 
+                              IsChecked="{Binding Path=Element.Value.BoolValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                              IsEnabled="{Binding Value.ReportRights.WriteRestAllowed}"/>
+                    <TextBlock Margin="10,0,0,0" Grid.Column="2" TextWrapping="Wrap" HorizontalAlignment="Stretch" Text="{Binding Path=Element.MandatoryLabel}" Style="{StaticResource TreeViewTextStyle}" />
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <!-- template for PresentationTreeNode text objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeText" DataType="{x:Type xbrlPre:PresentationTreeNode}" ItemsSource="{Binding Path=Children}">
+        <Grid>
+            <Border Style="{StaticResource BalanceTreeNodeBackground}" />
+            <Border Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,5,0">
+                        <Image Style="{StaticResource TreeViewImage}" Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationError.png" 
+                               Visibility="{Binding ValidationError, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationErrorMessage}" />
+                        <Image Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" 
+                               Visibility="{Binding ValidationWarning, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationWarningMessage}" PreviewMouseLeftButtonUp="Image_MouseLeftButtonUp" >
+                            <Image.Style>
+                                <Style TargetType="Image" BasedOn="{StaticResource TreeViewImage}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Value.SupressWarningMessages}" Value="True">
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideAllWarnings}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideWarning}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <Image Source="/eBalanceKitResources;component/Resources/PenDoc.png" Height="12" ToolTip="{Binding Value.Value}">
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                    <Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Value.Value}" Value="{x:Null}" />
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </MultiDataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </StackPanel>
+                    
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Text="{Binding Path=Element.MandatoryLabel}" Style="{StaticResource TreeViewTextStyle}" 
+                               TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,1,0,1"/>
+                    <!--<TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Value.Value}"
+                               Visibility="{Binding Value.Value, Converter={StaticResource ValueExistsToVisibilityConverter}}"/>-->
+                    
+                    <StackPanel Orientation="Horizontal" Grid.Column="2">
+                        <c3:ImageButton IsTabStop="False" ImageSource="/eBalanceKitResources;component/Resources/EditPen.png"
+                                        ToolTip="Elementdetails bearbeiten (F2)" Click="BtnEditDetails_Click" />
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Path=Value.Comment}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"
+                               Visibility="{Binding Value.Comment, Converter={StaticResource ValueExistsToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" 
+                               IsEnabled="{Binding Value.ReportRights.WriteRestAllowed}"/>
+
+                    <!--<TextBox Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Value.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                             AcceptsReturn="True" Height="300" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,0,0,1" IsTabStop="False" IsEnabled="{Binding Value.ReportRights.ReadRestAllowed}">
+                        <TextBox.Style>
+                            <Style TargetType="{x:Type TextBox}">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>-->
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <!-- template for PresentationTreeNode numeric objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeNumeric" DataType="{x:Type xbrlPre:PresentationTreeNode}" ItemsSource="{Binding Path=Children}">
+        <Grid>
+            <Border Style="{StaticResource BalanceTreeNodeBackground}" />
+            <Border Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Image Style="{StaticResource TreeViewImage}" Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationError.png" 
+                               Visibility="{Binding ValidationError, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationErrorMessage}" />
+                        <Image Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" 
+                               Visibility="{Binding ValidationWarning, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationWarningMessage}" PreviewMouseLeftButtonUp="Image_MouseLeftButtonUp" >
+                            <Image.Style>
+                                <Style TargetType="Image" BasedOn="{StaticResource TreeViewImage}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Value.SupressWarningMessages}" Value="True">
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideAllWarnings}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideWarning}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </StackPanel>
+
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Text="{Binding Path=Element.MandatoryLabel}" Style="{StaticResource TreeViewTextStyle}" 
+                               TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,1,0,1"/>
+                    <c3:NumericTextbox Text="{Binding Value.Value, Mode=TwoWay, UpdateSourceTrigger=LostFocus, Converter = {StaticResource StringToNullableDecimalConverter}}" Width="200" IsTabStop="False"
+                                       Grid.Row="1" Grid.ColumnSpan="2" KeyDown="ManualValueTextbox_KeyDown"
+                                       HorizontalAlignment="Left" Margin="5,0,0,0" IsEnabled="{Binding Value.ReportRights.WriteRestAllowed}"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <!-- template for PresentationTreeNode date objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeDate" DataType="{x:Type xbrlPre:PresentationTreeNode}" ItemsSource="{Binding Path=Children}">
+        <Grid>
+            <Border Style="{StaticResource BalanceTreeNodeBackground}" />
+            <Border Style="{StaticResource SelectionOverlayBorder}">
+                <Grid Height="Auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Style="{StaticResource TreeViewImage}" Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationError.png" 
+                            Visibility="{Binding ValidationError, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationErrorMessage}" />
+                        <Image Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" 
+                            Visibility="{Binding ValidationWarning, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationWarningMessage}" PreviewMouseLeftButtonUp="Image_MouseLeftButtonUp" >
+                            <Image.Style>
+                                <Style TargetType="Image" BasedOn="{StaticResource TreeViewImage}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Value.SupressWarningMessages}" Value="True">
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideAllWarnings}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideWarning}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </StackPanel>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Path=Element.MandatoryLabel}" Style="{StaticResource TreeViewTextStyle}" Margin="5,1,0,1"/>
+                    <TextBlock Margin="10,0,0,0" Grid.Column="2" HorizontalAlignment="Stretch" Text="{Binding Path=Value.DisplayString}" Style="{StaticResource TreeViewTextStyle}" />
+
+                    <DatePicker Grid.Row="1" Grid.ColumnSpan="3" SelectedDate="{Binding Value.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0" IsTabStop="False">
+                        <DatePicker.Style>
+                            <Style TargetType="{x:Type DatePicker}">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DatePicker.Style>
+                    </DatePicker>
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <!-- template for account objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeAccount" DataType="{x:Type TreeViewItem}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Height="12" Source="/eBalanceKitResources;component/Resources/IsSelectedBalanceListItem.png" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                               Visibility="{Binding IsDocumentSelectedBalanceList, Converter={StaticResource TrueIsVisibleConverter1}}"
+                               ToolTip="{x:Static Localisation:ResourcesBalanceList.AccountBelongsToCurrentlySelectedTooltip}"/>
+
+            <Border Grid.Column="1" Style="{StaticResource AccountBorder}" />
+            <Border Grid.Column="1" Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Stretch" Style="{StaticResource AccountTextStyle}" TextWrapping="Wrap" Text="{Binding Path=Label}" />
+
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource AccountTextStyle}" Text="{Binding Path=ValueDisplayString}" />
+
+                    <c3:ImageButton Grid.Column="2" Grid.RowSpan="2" Margin="5,0,0,0" VerticalAlignment="Center" IsTabStop="False"
+                                    ImageSource="/eBalanceKitResources;component/Resources/delete.png" Click="BtnDeleteAccount_OnClick" 
+                                    Visibility="{Binding Document.ReportRights.WriteRestAllowed, Converter={StaticResource TrueToVisibilityConverter}}"/>
+
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <!-- template for account objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeAccountGroup" DataType="{x:Type TreeViewItem}">
+        <Grid MinHeight="36">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Height="12" Source="/eBalanceKitResources;component/Resources/IsSelectedBalanceListItem.png" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                               Visibility="{Binding IsDocumentSelectedBalanceList, Converter={StaticResource TrueIsVisibleConverter1}}"
+                               ToolTip="{x:Static Localisation:ResourcesBalanceList.AccountBelongsToCurrentlySelectedTooltip}"/>
+
+            <Border Grid.Column="1" Style="{StaticResource AccountGroupBorder}"/>
+            <Border Grid.Column="1" Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Path=Label}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Style="{StaticResource AccountTextStyle}"/>
+
+                    <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                        <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.NumberOfAssignedAccounts}" Style="{StaticResource AccountTextStyle}"/>
+                        <TextBlock Text="{Binding Path=ItemsCount}" Style="{StaticResource AccountTextStyle}" />
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                    <c3:ImageButton Grid.Column="2" Grid.RowSpan="3" Margin="5,0,0,0" VerticalAlignment="Center" IsTabStop="False"
+                                    ImageSource="/eBalanceKitResources;component/Resources/delete.png" Click="BtnDeleteAccount_OnClick"
+                                    Visibility="{Binding Document.ReportRights.WriteRestAllowed, Converter={StaticResource TrueToVisibilityConverter}}"/>
+
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+    
+    <!-- template for splitted account objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeSplittedAccount" DataType="{x:Type TreeViewItem}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Height="12" Source="/eBalanceKitResources;component/Resources/IsSelectedBalanceListItem.png" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                               Visibility="{Binding IsDocumentSelectedBalanceList, Converter={StaticResource TrueIsVisibleConverter1}}"
+                               ToolTip="{x:Static Localisation:ResourcesBalanceList.AccountBelongsToCurrentlySelectedTooltip}"/>
+
+            <Border Grid.Column="1" Style="{StaticResource SplittedAccountBorder}" />
+            <Border Grid.Column="1" Style="{StaticResource SelectionOverlayBorder}" Cursor="Hand" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Stretch" Style="{StaticResource AccountTextStyle}" TextWrapping="Wrap" Text="{Binding Path=Label}" />
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource AccountTextStyle}" Text="{Binding Path=ValueDisplayString}" />
+
+                    <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                        <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.MainAccount}" Style="{StaticResource AccountTextStyle}"/>
+                        <TextBlock Text="{Binding Path=BaseAccount.Label}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                    <c3:ImageButton Margin="5,0,0,0" VerticalAlignment="Center" IsTabStop="False"
+                                    ImageSource="/eBalanceKitResources;component/Resources/delete.png" Click="BtnDeleteAccount_OnClick" Grid.Column="2" Grid.RowSpan="3" 
+                                    Visibility="{Binding Document.ReportRights.WriteRestAllowed, Converter={StaticResource TrueToVisibilityConverter}}"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <!-- template for tuple objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeTuple" DataType="{x:Type TreeViewItem}" ItemsSource="{Binding Path=Children}">
+        <Grid>
+            <Border Style="{StaticResource BalanceTreeNodeBackground}" />
+            <Border Style="{StaticResource SelectionOverlayBorder}" Cursor="Hand" >
+                <Grid Height="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Style="{StaticResource TreeViewImage}" Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationError.png" 
+                            Visibility="{Binding ValidationError, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationErrorMessage}" />
+                        <Image Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" 
+                            Visibility="{Binding ValidationWarning, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationWarningMessage}" PreviewMouseLeftButtonUp="Image_MouseLeftButtonUp" >
+                            <Image.Style>
+                                <Style TargetType="Image" BasedOn="{StaticResource TreeViewImage}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Value.SupressWarningMessages}" Value="True">
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideAllWarnings}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideWarning}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Style="{StaticResource TreeViewTextStyle}" TextWrapping="Wrap" Text="{Binding Path=Element.MandatoryLabel}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <!-- template for PresentationTreeNodeSingleChoice objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeSingleChoice" DataType="{x:Type TreeViewItem}">
+        <Grid>
+            <Border Style="{StaticResource BalanceTreeNodeBackground}" />
+            <Border Style="{StaticResource SelectionOverlayBorder}" Cursor="Hand" >
+                <Grid Height="Auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <Image Style="{StaticResource TreeViewImage}" Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationError.png" 
+                            Visibility="{Binding ValidationError, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationErrorMessage}" />
+                        <Image Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" 
+                            Visibility="{Binding ValidationWarning, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationWarningMessage}" PreviewMouseLeftButtonUp="Image_MouseLeftButtonUp" >
+                            <Image.Style>
+                                <Style TargetType="Image" BasedOn="{StaticResource TreeViewImage}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Value.SupressWarningMessages}" Value="True">
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideAllWarnings}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideWarning}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </StackPanel>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Style="{StaticResource TreeViewTextStyle}" TextWrapping="Wrap" Text="{Binding Path=Element.MandatoryLabel}" />
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <c3:AvdComboBox ItemsSource="{Binding Value.Elements}" 
+                                                SelectedItem="{Binding Value.SelectedValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                DisplayMemberPath="{Binding Value.ComboBoxLabel}"
+                                                SelectValueMessage="Kein Eintrag ausgewählt..."
+                                                IsEnabled="{Binding Value.ReportRights.WriteRestAllowed}">
+                            </c3:AvdComboBox>
+                            <Button Grid.Column="1" Width="18" Height="18" Margin="3,0,0,0" Style="{StaticResource ImageButtonStyle}"
+                                        IsEnabled="{Binding Value.ReportRights.WriteRestAllowed}"
+                                        Click="BtnResetClick">
+                                <Image Source="/eBalanceKitResources;component/Resources/delete.png" />
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+    
+    <!-- template for list objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeList" DataType="{x:Type TreeViewItem}">
+        <Grid>
+            <Border Style="{StaticResource BalanceTreeNodeBackground}" />
+            <Border Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,5,0">
+                        <Image Style="{StaticResource TreeViewImage}" Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationError.png" 
+                               Visibility="{Binding ValidationError, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationErrorMessage}" />
+                        <Image Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" 
+                               Visibility="{Binding ValidationWarning, Converter={StaticResource TrueToVisibilityConverter}}"
+                               ToolTip="{Binding ValidationWarningMessage}" PreviewMouseLeftButtonUp="Image_MouseLeftButtonUp" >
+                            <Image.Style>
+                                <Style TargetType="Image" BasedOn="{StaticResource TreeViewImage}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Value.SupressWarningMessages}" Value="True">
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideAllWarnings}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Value.HideWarning}" Value="True">
+                                            <Setter Property="Opacity" Value="0"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <Image Source="/eBalanceKitResources;component/Resources/PenDoc.png" Height="12" ToolTip="{Binding Value.Value}">
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                    <Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Value.Value}" Value="{x:Null}" />
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </MultiDataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </StackPanel>
+
+                    <Border Width="16" Height="16" CornerRadius="9" Background="#720000" BorderThickness="0" VerticalAlignment="Center" Margin="0,1,5,1">
+                        <TextBlock Text="{Binding Value.Items.Count}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="10" 
+                                   ToolTip="{Binding Value.ItemsCountDisplayString}"/>
+                    </Border>
+
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Text="{Binding Path=Element.MandatoryLabel}" Style="{StaticResource TreeViewTextStyle}" 
+                               TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,1,0,1"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="2">
+                        <c3:ImageButton IsTabStop="False" ImageSource="/eBalanceKitResources;component/Resources/EditPen.png"
+                                        ToolTip="Elementdetails bearbeiten (F2)" Click="BtnEditDetails_Click" />
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Path=Value.Comment}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"
+                               Visibility="{Binding Value.Comment, Converter={StaticResource ValueExistsToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <!-- template for PresentationTreeNode hypercube text objects -->
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeHyperCube" DataType="{x:Type xbrlPre:PresentationTreeNode}" ItemsSource="{Binding Path=Children}">
+        <Grid>
+            <Border Style="{StaticResource BalanceTreeNodeBackground}" />
+            <Border Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Text="{Binding Path=Element.MandatoryLabel}" Style="{StaticResource TreeViewTextStyle}" 
+                               TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,1,0,1"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="2">
+                        <c3:ImageButton IsTabStop="False" ImageSource="/eBalanceKitResources;component/Resources/EditPen.png" Margin="5,0,0,0"
+                                        ToolTip="Tabellendetails bearbeiten (F2)" Click="BtnEditDetails_Click" 
+                                        Visibility="{Binding Value.Value, Converter={StaticResource ValueExistsToVisibilityConverter}}"
+                                        IsEnabled="{Binding Value.ReportRights.ReadRestAllowed}"/>
+
+                        <c3:ImageButton IsTabStop="False" ImageSource="/eBalanceKitResources;component/Resources/Add.png" Margin="5,0,0,0"
+                                        ToolTip="Neue Tabelle anlegen" Click="BtnAddHypercubeClick" 
+                                        Visibility="{Binding Value.Value, Converter={StaticResource ValueNotExistsToVisibilityConverter}}"
+                                        IsEnabled="{Binding Value.ReportRights.WriteRestAllowed}"/>
+                        
+                        <c3:ImageButton IsTabStop="False" ImageSource="/eBalanceKitResources;component/Resources/Delete.png" Margin="5,0,0,0"
+                                        ToolTip="Tabelle Löschen" Click="BtnDeleteHypercubeClick" 
+                                        Visibility="{Binding Value.Value, Converter={StaticResource ValueExistsToVisibilityConverter}}"
+                                        IsEnabled="{Binding Value.ReportRights.WriteRestAllowed}"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Path=Value.Value.Comment}" TextWrapping="Wrap"
+                               FontSize="10" FontStyle="Italic" Foreground="#444">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock" BasedOn="{StaticResource AccountTextStyle}">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding Value.Value, Converter={StaticResource ValueExistsToBoolConverter}}" Value="True" />
+                                            <Condition Binding="{Binding Value.Value.Comment, Converter={StaticResource ValueExistsToBoolConverter}}" Value="True" />
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </MultiDataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <DataTemplate x:Key="PresentationTreeNodeAuditCorrection" DataType="{x:Type TreeViewItem}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Height="12" Source="/eBalanceKitResources;component/Resources/TreeItemAssignedToSelectedIcon.png" HorizontalAlignment="Left" VerticalAlignment="Center"
+                   ToolTip="{x:Static Localisation:ResourcesAuditCorrections.AssignedCorrectionIsSelectedIconTooltip}"
+                   Visibility="{Binding Parent.IsSelected, Converter={StaticResource TrueToVisibilityConverter}}"/>
+
+            <Border Grid.Column="1" Style="{StaticResource AuditCorrectionBorder}"/>
+            <Border Grid.Column="1" Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="1" Text="{Binding Label}" ToolTip="{Binding Label}" VerticalAlignment="Center" Grid.RowSpan="2" Margin="5,0,0,0" TextTrimming="CharacterEllipsis"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="2">
+
+                        <TextBlock Text="{Binding ValueDisplayString}" Width="120" Margin="5,0,0,0" TextAlignment="Right"/>
+                        <!--<c3:MonetaryTextBox Text="{Binding Value, Converter={StaticResource StringToNullableMonetaryConverter}}" Width="120" 
+                                                Background="White" VerticalAlignment="Top" Margin="5,0,0,0" IsEnabled="{Binding  Document.ReportRights.WriteRestAllowed}" IsTabStop="False" />-->
+
+                        <c3:ImageButton Margin="5,0,0,0" VerticalAlignment="Center" IsTabStop="False" IsEnabled="{Binding  Document.ReportRights.WriteRestAllowed}"
+                                                    ImageSource="/eBalanceKitResources;component/Resources/delete.png" Click="BtnDeleteAuditValue_OnClick">
+                            <c3:ImageButton.Style>
+                                <Style TargetType="c3:ImageButton">
+                                    <Setter Property="Visibility" Value="{Binding Document.ReportRights.WriteRestAllowed, Converter={StaticResource TrueToVisibilityConverter}}" />
+                                </Style>
+                            </c3:ImageButton.Style>
+                        </c3:ImageButton>
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+    
+    <!-- template for PresentationTreeNode objects in reference list -->
+    <Style x:Key="BalanceReferenceListTreeViewItem" TargetType="{x:Type TreeViewItem}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="1,0,0,0"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource TreeViewItemFocusVisual}"/>
+        <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Setter Property="IsSelected" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsSelected, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="19" Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <ToggleButton 
+                                x:Name="Expander" 
+                                Style="{StaticResource ExpandCollapseToggleStyle}" 
+                                IsChecked="{Binding Path=IsExpanded, 
+                                RelativeSource={RelativeSource TemplatedParent}}"
+                                ClickMode="Press"/>
+                        <Border Name="Bd"
+                                  Grid.Column="1"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  Padding="{TemplateBinding Padding}">
+                            <ContentPresenter x:Name="PART_Header"
+                                    ContentSource="Header"
+                                    HorizontalAlignment="Stretch"/>
+                        </Border>
+                        <ItemsPresenter x:Name="ItemsHost"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="2"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded" Value="false">
+                            <Setter TargetName="ItemsHost" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter TargetName="Expander" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasHeader" Value="false"/>
+                                <Condition Property="Width" Value="Auto"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Header" Property="MinWidth" Value="75"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasHeader" Value="false"/>
+                                <Condition Property="Height" Value="Auto"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Header" Property="MinHeight" Value="19"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter TargetName="Bd" Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="IsSelectionActive" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeMonetaryReferenceList" DataType="{x:Type xbrlPre:PresentationTreeNode}" ItemsSource="{Binding Path=Children}">
+        <Grid>
+            <Border Style="{StaticResource BalanceTreeNodeBackground}" x:Name="border" />
+            <Border Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding Value.AutoComputeEnabled}" Grid.Column="4" Margin="0,0,2,0" 
+                                      VerticalAlignment="Center" Style="{StaticResource AutoSumItemCheckbox}"
+                                      IsTabStop="False" IsEnabled="False" />
+
+                            <Controls:MonetaryNodeInfoIcons/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Path=Element.MandatoryLabel}" Style="{StaticResource TreeViewTextStyle}" />
+
+                        <!-- value -->
+                        <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" Visibility="{Binding Value.IsEnabled, Converter={StaticResource TrueToVisibilityConverter}}">
+                            <Image Source="/eBalanceKitResources;component/Resources/PenDoc.png" Height="12" ToolTip="{x:Static Localisation:ResourcesCommon.HasManualValue}">
+                                <Image.Style>
+                                    <Style TargetType="Image">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding ="{Binding Path=IsValueEditingAllowed}" Value="True" />
+                                                    <Condition Binding ="{Binding Path=Value.HasManualValue}" Value="True" />
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                            <TextBlock Text="{Binding Path=Value.DisplayString}" Style="{StaticResource TreeViewTextStyle}" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Column="3" VerticalAlignment="Center" >
+                            <TextBlock Width="12" HorizontalAlignment="Center" Text="{x:Static Localisation:ResourcesBalanceList.DebitAbbreviation}" Visibility="{Binding Element.IsDebitBalance, Converter={StaticResource TrueToVisibilityConverter}}" ToolTip="{x:Static Localisation:ResourcesBalanceList.DebitSide}" Margin="5,0,0,0"/>
+                            <TextBlock Width="12" HorizontalAlignment="Center" Text="{x:Static Localisation:ResourcesBalanceList.CreditAbbreviation}" Visibility="{Binding Element.IsCreditBalance, Converter={StaticResource TrueToVisibilityConverter}}" ToolTip="{x:Static Localisation:ResourcesBalanceList.CreditSide}" Margin="5,0,0,0"/>
+                        </StackPanel>
+
+                        <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Text="{Binding Path=Value.Comment}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding Value.Comment, Converter={StaticResource ValueExistsToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+    
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeAccountSimple" DataType="{x:Type TreeViewItem}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,5,0" ToolTip="{x:Static Localisation:ResourcesCommon.AccountIsSelectedForReferenceListTooltip}"
+                IsChecked="{Binding IsAssignedToReferenceList, Mode=OneWay}" Checked="ChkSelectedChanged" Unchecked="ChkSelectedChanged" />
+
+            <Border Grid.Column="1" Style="{StaticResource AccountBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="115"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Border>
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding BalanceList.Document.BalanceLists.Count}" Value="1">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <Image Source="/eBalanceKitResources;component/Resources/IsSelectedBalanceListItem.png" Width="14" VerticalAlignment="Center" Margin="0,0,5,0"
+                               Visibility="{Binding IsDocumentSelectedBalanceList, Converter={StaticResource TrueIsVisibleConverter1}}"
+                               ToolTip="{x:Static Localisation:ResourcesBalanceList.AccountBelongsToCurrentlySelectedTooltip}"/>
+                    </Border>
+
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Style="{StaticResource AccountTextStyle}" TextWrapping="Wrap" Text="{Binding Path=Label}" />
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource AccountTextStyle}" Text="{Binding Path=ValueDisplayString}" />
+
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeAccountGroupSimple" DataType="{x:Type TreeViewItem}">
+        <Grid MinHeight="36">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,5,0" ToolTip="{x:Static Localisation:ResourcesCommon.AccountIsSelectedForReferenceListTooltip}"
+                IsChecked="{Binding IsAssignedToReferenceList, Mode=OneWay}" Checked="ChkSelectedChanged" Unchecked="ChkSelectedChanged" />
+
+            <Border Grid.Column="1" Style="{StaticResource AccountGroupBorder}"/>
+            <Border Grid.Column="1" Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="140"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Border>
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding BalanceList.Document.BalanceLists.Count}" Value="1">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <Image Source="/eBalanceKitResources;component/Resources/IsSelectedBalanceListItem.png" Width="14" VerticalAlignment="Center" Margin="0,0,5,0"
+                               Visibility="{Binding IsDocumentSelectedBalanceList, Converter={StaticResource TrueIsVisibleConverter1}}"
+                               ToolTip="{x:Static Localisation:ResourcesBalanceList.AccountBelongsToCurrentlySelectedTooltip}"/>
+                    </Border>
+
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Label}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Style="{StaticResource AccountTextStyle}"/>
+
+                    <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                        <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.NumberOfAssignedAccounts}" Style="{StaticResource AccountTextStyle}"/>
+                        <TextBlock Text="{Binding Path=ItemsCount}" Style="{StaticResource AccountTextStyle}" />
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate x:Key="PresentationTreeNodeSplittedAccountSimple" DataType="{x:Type TreeViewItem}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,5,0" ToolTip="{x:Static Localisation:ResourcesCommon.AccountIsSelectedForReferenceListTooltip}"
+                IsChecked="{Binding IsAssignedToReferenceList, Mode=OneWay}" Checked="ChkSelectedChanged" Unchecked="ChkSelectedChanged" />
+
+            <Border Grid.Column="1" Style="{StaticResource SplittedAccountBorder}" />
+            <Border Grid.Column="1" Style="{StaticResource SelectionOverlayBorder}" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="115"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Border>
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding BalanceList.Document.BalanceLists.Count}" Value="1">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <Image Source="/eBalanceKitResources;component/Resources/IsSelectedBalanceListItem.png" Width="14" VerticalAlignment="Center" Margin="0,0,5,0"
+                               Visibility="{Binding IsDocumentSelectedBalanceList, Converter={StaticResource TrueIsVisibleConverter1}}"
+                               ToolTip="{x:Static Localisation:ResourcesBalanceList.AccountBelongsToCurrentlySelectedTooltip}"/>
+                    </Border>
+
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" Style="{StaticResource AccountTextStyle}" TextWrapping="Wrap" Text="{Binding Path=Label}" />
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource AccountTextStyle}" Text="{Binding Path=ValueDisplayString}" />
+
+                    <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                        <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.MainAccount}" Style="{StaticResource AccountTextStyle}"/>
+                        <TextBlock Text="{Binding Path=BaseAccount.Label}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                </Grid>
+            </Border>
+        </Grid>
+    </HierarchicalDataTemplate>
+
+</ResourceDictionary>
+    

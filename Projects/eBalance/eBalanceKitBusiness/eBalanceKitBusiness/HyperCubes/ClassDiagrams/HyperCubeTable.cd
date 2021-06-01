@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="eBalanceKitBusiness.HyperCubes.ViewModel.HyperCubeTable">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAgAAAAAECAQAAAAAAAAAAAAAAAAACAAAgAAAA=</HashCode>
+      <FileName>HyperCubes\ViewModel\HyperCubeTable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.HyperCubes.ViewModel.HyperCubeRow">
+    <Position X="4" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>JAAQAQgABAiCUAoACAgEQQCAgAAAAAAFAAAAAAAAAAA=</HashCode>
+      <FileName>HyperCubes\ViewModel\HyperCubeRow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.HyperCubes.ViewModel.HyperCubeColumn">
+    <Position X="7" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAQEQgABAgAEAIAAAwEQQCAAAAAAAABAAAAIAAAAAA=</HashCode>
+      <FileName>HyperCubes\ViewModel\HyperCubeColumn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.HyperCubes.ViewModel.HyperCubeItemTreeNode">
+    <Position X="0.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BAAQAAgAAAAAAAAAAAgEAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HyperCubes\ViewModel\HyperCubeItemTreeNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

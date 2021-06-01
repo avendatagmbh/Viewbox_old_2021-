@@ -1,0 +1,116 @@
++*DJDE FORMS=AOP103,FORMAT=EAPP18,BFORM=NONE,MODIFY=NONE,;
++*DJDE SHIFT=NO,DATA=(1,80),FONTINDEX=0,;
++*DJDE TOF=1,BOF=65,ASSIGN=(1,1),ASSIGN=(2,17),;
++*DJDE SIDE=(NUFRONT,NOFFSET),END;
+11TENP - Allotment Procedure
+-3                      Kontrollausgabe der Eingabedaten
+01
+01          st}ndliche Empfangsmenge Bocholtz .................      83156
+ 1          st}ndliche Empfangsmenge Stolberg .................     113436
+ 1          st}ndliche Empfangsmenge Mittelbrunn ..............     248200
+ 1          st}ndliche !bergabemenge Wallbach .................     199000
+01          st}ndliche Abschnittsdurchflu~raten   - (in m3/h):
+ 1                                   Bocholtz - Anfang ........      83156
+ 1                                   Stolberg -  Ende .........      15027
+ 1                                   Stolberg - Anfang ........     128463
+ 1                                Mittelbrunn -  Ende .........     112232
+ 1                                Mittelbrunn - Anfang ........     360432
+ 1                                 Schwarzach -  Ende .........     327622
+ 1                                 Schwarzach - Anfang ........     327622
+ 1                                  H}gelheim -  Ende .........     217322
+ 1                                  H}gelheim - Anfang ........     217322
+ 1                                   Wallbach -  Ende .........     199000
+01          st}ndliche Ausspeisemenge Bocholtz ................          0
+ 1          st}ndliche Ausspeisemenge Verlautenheide ..........          0
+ 1          st}ndliche Ausspeisemenge Stolberg ......... ......          0
+ 1          st}ndliche Ausspeisemenge Vossenack ........ ......          0
+ 1          st}ndliche Ausspeisemenge Wallenthaler H多e .......          0
+ 1          st}ndliche Ausspeisemenge Hirschberg ..............          0
+ 1          st}ndliche Ausspeisemenge Sch好bach ...............          0
+ 1          st}ndliche Ausspeisemenge Weiler ..................          0
+ 1          st}ndliche Ausspeisemenge Alf .....................          0
+ 1          st}ndliche Ausspeisemenge Sohren ..................          0
+ 1          st}ndliche Ausspeisemenge Sienhachenbach ..........          0
+01          st}ndliche Ausspeisemenge Mittelbrunn S}d..........          0
+ 1          st}ndliche Ausspeisemenge Donsieders ..............          0
+ 1          st}ndliche Ausspeisemenge Merzalben ...............          0
+ 1          st}ndliche Ausspeisemenge Klingenm}nster ..........          0
+ 1          st}ndliche Ausspeisemenge Minfeld .................          0
+ 1          st}ndliche Ausspeisemenge B}chelberg ..............          0
+ 1          st}ndliche Ausspeisemenge Willst{tt ...............          0
+ 1          st}ndliche Ausspeisemenge Tunsel ..................          0
+ 1          st}ndliche Ausspeisemenge H}gelheim ...............          0
+ 1          st}ndliche Ausspeisemenge Nordschwaben ............          0
+01          monatliche Empfangsmenge Bocholtz .................  104266869
+ 1          monatliche Empfangsmenge Stolberg .................   86534809
+ 1          monatliche Empfangsmenge Mittelbrunn ..............  211637300
+ 1          monatliche !bergabemenge Wallbach .................  171839258
+ 1          monatliche Eigenverbrauch Stolberg ................      10502
+ 1          monatliche Eigenverbrauch Stolberg Turbo-Expander       994321
+ 1          monatliche Eigenverbrauch Mittelbrunn .............      11011
+ 1          monatliche Eigenverbrauch Schwarzach ..............      35641
+01          monatliche Ausspeisemenge Bocholtz ................          0
+ 1          monatliche Ausspeisemenge Verlautenheide ..........   56514735
+ 1          monatliche Ausspeisemenge Stolberg ................          0
+ 1          monatliche Ausspeisemenge Vossenack ...............     262627
+ 1          monatliche Ausspeisemenge Wallenthaler H多e .......    2561473
+11          monatliche Ausspeisemenge Hirschberg ..............     184120
+ 1          monatliche Ausspeisemenge Sch好bach ...............    3192632
+ 1          monatliche Ausspeisemenge Weiler ..................    1017659
+ 1          monatliche Ausspeisemenge Alf .....................    5215194
+ 1          monatliche Ausspeisemenge Sohren ..................    1896325
+ 1          monatliche Ausspeisemenge Sienhachenbach ..........    3941304
+01          monatliche Ausspeisemenge Mittelbrunn S}d..........      13805
+ 1          monatliche Ausspeisemenge Donsieders ..............     413204
+ 1          monatliche Ausspeisemenge Merzalben ...............    4656829
+ 1          monatliche Ausspeisemenge Klingenm}nster ..........    4716060
+ 1          monatliche Ausspeisemenge Minfeld .................    4054048
+ 1          monatliche Ausspeisemenge B}chelberg ..............   19989477
+ 1          monatliche Ausspeisemenge Willst{tt ...............   96250994
+ 1          monatliche Ausspeisemenge Tunsel ..................    5201430
+ 1          monatliche Ausspeisemenge H}gelheim (70% RG) ......       2228
+ 1          monatliche Ausspeisemenge Nordschwaben ............   15662002
+01
+ 1                                             Berechnungsmonat    10/1998
+ 1          Gasbeschaffenheit - Bocholtz :      Brennwert .....       9905
+ 1                                             Mol. % CO2 .....       1.35
+ 1                                       Dichteverh{ltnis .....     0.6285
+ 1                                              Mol. % H2 .....          0
+ 1          Gasbeschaffenheit - Mittelbrunn:    Brennwert .....       9830
+ 1          von Bocholtz/Stolberg              Mol. % CO2 .....       1.06
+ 1                                       Dichteverh{ltnis .....     0.6179
+ 1                                              Mol. % H2 .....          0
+ 2Fehler ---Gasbeschaffenheit - Wallbach :      Brennwert .. 9685______ ( ------
+ 1                                             Mol. % CO2 .....       0.48
+ 1                                       Dichteverh{ltnis .....     0.5892
+ 1                                              Mol. % H2 .....          0
+01          Brennwert der Einspeisung Stolberg ................       9819
+ 1          Brennwert des Eigenverbrauchs Stolberg ............       9830
+ 1          Brennwert der Einspeisung Mittelbrunn .............       9574
+ 1          Brennwert der Eigenverbrauchs Mittelbrunn .........       9685
+ 1          Verluste bezogen auf den Brennwert Bocholtz (in m3)          0
+ 1          Lieferung von Ruhrgas an Swissgas (ja/nein) .......         ja
+ 1          H2-Wert }bernehmen oder berechnen (ja/nein) .......       nein
+01                   Abschnittstemperaturen (in Kelvin) :
+ 1                                   Bocholtz - Anfang ........      283.3
+ 1                                   Stolberg -  Ende .........      283.3
+ 1                                   Stolberg - Anfang ........      283.3
+ 1                                Mittelbrunn -  Ende .........      284.1
+ 1                                Mittelbrunn - Anfang ........      300.1
+ 1                                 Schwarzach -  Ende .........      282.2
+ 1                                 Schwarzach - Anfang ........      282.2
+ 1                                  H}gelheim -  Ende .........      285.0
+ 1                                  H}gelheim - Anfang ........      285.0
+ 1                                   Wallbach -  Ende .........      285.6
+01          Einspeiseanteil Ruhrgas in Bocholtz ...............   52325523
+01                Abschnittsdr}cke - Absolut - (in Bar) :
+ 1                                   Bocholtz - Anfang ........       55.4
+ 1                                   Stolberg -  Ende .........       52.5
+ 1                                   Stolberg - Anfang ........       52.5
+ 1                                Mittelbrunn -  Ende .........       50.8
+ 1                                Mittelbrunn - Anfang ........       63.0
+ 1                                 Schwarzach -  Ende .........       64.0
+11                                 Schwarzach - Anfang ........       64.0
+ 1                                  H}gelheim -  Ende .........       63.0
+ 1                                  H}gelheim - Anfang ........       63.0
+ 1                                   Wallbach -  Ende .........       62.5

@@ -1,0 +1,43 @@
+namespace ViewboxDb
+{
+	public enum NewLogActionControllers
+	{
+		AccountLogOn,
+		DataGridExecuteIssue,
+		DataGridGroup,
+		DataGridIndex,
+		DataGridJoin,
+		DataGridSortAndFilter,
+		DataGridUpdateColumn,
+		DocumentsIndex,
+		ExportIndex,
+		ExportStart,
+		ExportDownload,
+		ExportCancelJob,
+		ExportMassExport,
+		HelpIndex,
+		HelpTableList,
+		HelpIssueList,
+		HelpViewList,
+		HelpDocuments,
+		HelpControlCenter,
+		HelpExport,
+		HelpSettings,
+		HelpAbout,
+		HelpFaq,
+		IssueListIndex,
+		SettingsIndex,
+		SettingsPersonal,
+		SettingsRights,
+		TableListIndex,
+		ViewListIndex,
+		DataGridFilter,
+		ExportTableObjects,
+		DataGridSort,
+		DataGridUpdateColumnOrder,
+		DataGridSaveColumnSizes,
+		DataGridTransactionNumberChange,
+		DataGridRelations,
+		DataGridDeleteRelations
+	}
+}

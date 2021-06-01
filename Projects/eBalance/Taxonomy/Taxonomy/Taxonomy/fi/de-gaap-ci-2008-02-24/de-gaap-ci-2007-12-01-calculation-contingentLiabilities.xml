@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://www.xbrl.de/de/fr/gaap/ci/role/contingentLiabilities" xlink:type="simple" xlink:href="de-gaap-ci-2007-12-01.xsd#role_contingentLiabilities"/>
+  <calculationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/contingentLiabilities">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_bs.contingLiab" xlink:label="bs.contingLiab"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_bs.contingLiab.notes" xlink:label="bs.contingLiab.notes"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.notes" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_bs.contingLiab.guarantees" xlink:label="bs.contingLiab.guarantees"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.guarantees" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_bs.contingLiab.guaranteesNotes" xlink:label="bs.contingLiab.guaranteesNotes"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.guaranteesNotes" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_bs.contingLiab.warranty" xlink:label="bs.contingLiab.warranty"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.warranty" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_bs.contingLiab.collateralisation" xlink:label="bs.contingLiab.collateralisation"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.collateralisation" use="optional" order="5.0" weight="1"/>
+  </calculationLink>
+</linkbase>

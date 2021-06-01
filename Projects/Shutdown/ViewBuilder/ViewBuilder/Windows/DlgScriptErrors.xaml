@@ -1,0 +1,105 @@
+﻿<Window x:Class="ViewBuilder.Windows.DlgScriptErrors"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:EventArgs="clr-namespace:ViewBuilderBusiness.EventArgs;assembly=ViewBuilderBusiness"
+        Title="Fehler in Viewscripten" Height="600" Width="800"
+        WindowStartupLocation="CenterOwner"
+        Background="{StaticResource WindowsBgBrush}"
+        WindowStyle="SingleBorderWindow" Icon="/ViewBuilder;component/Resources/Qute/Warning16.png" KeyDown="Window_KeyDown">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45*" />
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource GroupBoxBorder}">
+            
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <Label Content="Fehler" Padding="1" />
+                <Border Grid.Row="1" Style="{StaticResource GroupBoxBorderNoShadow}">
+                    <Grid>
+                        <Border x:Name="BDRounded" CornerRadius="5" Background="White"/>
+                        <ListBox 
+                            Background="{StaticResource DefaultBorderBg}"
+                            BorderBrush="Transparent"
+                            ItemsSource="{Binding ScriptParseErrors}" 
+                            x:Name="lstErrors"
+                            ItemContainerStyle="{StaticResource ListboxItemNoSelection}">
+
+                            <ListBox.OpacityMask>
+                                <VisualBrush  Visual="{Binding ElementName=BDRounded}" />
+                            </ListBox.OpacityMask>
+
+                            <ListBox.ItemTemplate>
+                                <DataTemplate DataType="{x:Type EventArgs:ScriptParseErrorArgs}">
+                                    <Border>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Grid.Row="0"  Padding="1" Text="{Binding Path=Scriptfile}" Margin="5,5,0,0" />
+                                            <TextBlock Grid.Row="1" Padding="1" Text="{Binding Path=Message}" Foreground="Red" Margin="5,0,0,5"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Style="{StaticResource GroupBoxBorder}" Margin="0,2,0,0">
+            <Grid Margin="5">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Label Content="Doppelte Views" Padding="1" />
+                
+                <Border Style="{StaticResource GroupBoxBorderNoShadow}" Grid.Row="1">
+                    <Grid>
+                        
+                        <Border x:Name="BDRounded1" CornerRadius="5" Background="White"/>
+                        <TreeView ItemsSource="{Binding MultipleViewError}" x:Name="tvMultipleViewError" Background="{StaticResource DefaultBorderBg}" BorderBrush="Transparent">
+                            <TreeView.OpacityMask>
+                                <VisualBrush Visual="{Binding ElementName=BDRounded1}"/>
+                            </TreeView.OpacityMask>
+
+                            <TreeView.Resources>
+                                <HierarchicalDataTemplate DataType="{x:Type EventArgs:MultipleViewErrorArgs}" ItemsSource="{Binding Path=Scriptfiles}">
+                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Padding="1" Text="{Binding Path=ViewDisplayString}" />
+                                    </Grid>
+                                </HierarchicalDataTemplate>
+                            </TreeView.Resources>
+                        </TreeView>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- button bar -->
+        <StackPanel Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="5,5,5,5" Orientation="Horizontal">
+            <Button Content="_OK" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="btnOk_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
+

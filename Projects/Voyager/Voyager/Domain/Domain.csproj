@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF6E206F-C8AE-431F-AC03-6893717ECA43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="Entities\ITable.cs" />
+    <Compile Include="Entities\Tables\Address.cs" />
+    <Compile Include="Entities\AddressType.cs" />
+    <Compile Include="Entities\Tables\Airport.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Tables\Client.cs" />
+    <Compile Include="Entities\Tables\ContactPerson.cs" />
+    <Compile Include="Entities\Tables\Date.cs" />
+    <Compile Include="Entities\Tables\Datelist.cs" />
+    <Compile Include="Entities\Tables\DrivingCompany.cs" />
+    <Compile Include="Entities\DrivingType.cs" />
+    <Compile Include="Entities\Tables\Employee.cs" />
+    <Compile Include="Entities\Tables\EmployeeDatelist.cs" />
+    <Compile Include="Entities\Tables\GetTour.cs" />
+    <Compile Include="Entities\Tables\Hotel.cs" />
+    <Compile Include="Entities\Tables\SixtStation.cs" />
+    <Compile Include="Entities\Tables\Tour.cs" />
+    <Compile Include="Entities\Tables\TourStep.cs" />
+    <Compile Include="Entities\Tables\TrainStation.cs" />
+    <Compile Include="Entities\Tables\UserFirm.cs" />
+    <Compile Include="Manager\Manager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextDaten\Test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,36 @@
+<mockup version="1.0" skin="sketch" measuredW="1012" measuredH="547" mockupW="910" mockupH="509">
+  <controls>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::TitleWindow" x="102" y="38" w="910" h="509" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Stammdatenimport%20Assistent</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Button" x="834" y="477" w="-1" h="-1" measuredW="65" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Zur%FCck</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Button" x="914" y="477" w="-1" h="-1" measuredW="90" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Importieren</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Label" x="117" y="82" w="-1" h="-1" measuredW="74" measuredH="24" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>%DCbersicht</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Paragraph" x="120" y="131" w="586" h="80" measuredW="200" measuredH="80" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Es%20werden%20insgesamt%20131%20Firmen%20importiert%2C%20dabei%20wurden%2010%20Fehler%20ignoriert.</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Label" x="126" y="164" w="-1" h="-1" measuredW="389" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <text>131%20companies%20will%20be%20imported%2C%2010%20inccorect%20entries%20will%20be%20ignoriert</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,1563 @@
+
+ GKR Handelsbilanz
+  |
+  |--   1000000 A K T I V A                   Aktiva
+  |   |
+  |   |--   1010000 Ausstehende Kapital-Einlagen
+  |   |   |
+  |   |   |--   1011000 Eingefordert
+  |   |   |   |
+  |   |   |   ------GKR 0000050100 - 0000050100 X|X Eingeforderte Kapital-Einlagen
+  |   |   |
+  |   |   ---   1012000 Nicht eingefordert
+  |   |       |
+  |   |       ------GKR 0000050200 - 0000050200 X|X Nicht eingeforderte Kapital-Einlagen
+  |   |
+  |   |--   1020000 Aufwendungen für die Ingangsetzung und
+  |   |   |
+  |   |   |--   1021000 Anschaffungswert
+  |   |   |   |
+  |   |   |   |-----GKR 0000051100 - 0000051100 X|X Aktivierte Geschäftsbetriebs-Ingangsetzungskosten
+  |   |   |   ------GKR 0000051200 - 0000051200 X|X Aktivierte Geschäftsbetriebs-Erweiterungskosten
+  |   |   |
+  |   |   ---   1022000 Wertberichtigung
+  |   |       |
+  |   |       |-----GKR 0000051110 - 0000051110 X|X WB aktivierte Geschäftsbetr.-Ingangsetzungskosten
+  |   |       ------GKR 0000051210 - 0000051210 X|X WB aktivierte Geschäftsbetriebs-Erweiterungskosten
+  |   |
+  |   |--   1030000 Anlagevermögen
+  |   |   |
+  |   |   |--   1031000 Immaterielle Vermögens-Gegenstände
+  |   |   |   |
+  |   |   |   |--   1031010 Konzessionen, gewerbliche Schutzrechte
+  |   |   |   |   |
+  |   |   |   |   |--   1031011 Anschaffungswert
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----GKR 0000052100 - 0000052100 X|X Konzessionen
+  |   |   |   |   |   |-----GKR 0000052200 - 0000052200 X|X Gewerbliche Schutzrechte und ähnliche Rechte
+  |   |   |   |   |   |-----GKR 0000052300 - 0000052300 X|X EDV-Software
+  |   |   |   |   |   ------GKR 0000052400 - 0000052400 X|X Lizenzen
+  |   |   |   |   |
+  |   |   |   |   ---   1031012 Wertberichtigung
+  |   |   |   |       |
+  |   |   |   |       |-----GKR 0000052110 - 0000052110 X|X WB Konzessionen
+  |   |   |   |       |-----GKR 0000052210 - 0000052210 X|X WB gewerbliche Schutzrechte und ähnliche Rechte
+  |   |   |   |       |-----GKR 0000052310 - 0000052310 X|X WB EDV-Software
+  |   |   |   |       ------GKR 0000052410 - 0000052410 X|X WB Lizenzen
+  |   |   |   |
+  |   |   |   |--   1031020 Geschäfts- oder Firmen-Wert
+  |   |   |   |   |
+  |   |   |   |   |--   1031021 Anschaffungswert
+  |   |   |   |   |   |
+  |   |   |   |   |   ------GKR 0000052500 - 0000052500 X|X Geschäfts- oder Firmen-Wert
+  |   |   |   |   |
+  |   |   |   |   ---   1031022 Wertberichtigung
+  |   |   |   |       |
+  |   |   |   |       ------GKR 0000052510 - 0000052510 X|X WB Geschäfts- oder Firmenwert
+  |   |   |   |
+  |   |   |   ---   1031030 Geleistete Anzahlungen
+  |   |   |       |
+  |   |   |       |--   1031031 Anschaffungswert
+  |   |   |       |   |
+  |   |   |       |   |--   GKR 0000052800 - 0000052890 X|X
+  |   |   |       |   |   |
+  |   |   |       |   |   |-----0000052800 Geleistete Anzahlungen auf immaterielle Anlagen
+  |   |   |       |   |   ------0000052890 Vorsteuer-Verrechnung auf Anz. für immat. Anlagen
+  |   |   |       |   |
+  |   |   |       |   |-----GKR 0000052900 - 0000052900 X|X Aktivierte Anzahlungen auf immaterielle Anlagen
+  |   |   |       |   ------GKR 0000052990 - 0000052990 X|X Verrechnung akt. Anzahl. auf immaterielle Anlagen
+  |   |   |       |
+  |   |   |       ---   1031032 Wertberichtigung
+  |   |   |           |
+  |   |   |           ------GKR 0000052910 - 0000052910 X|X WB Geleistete Anzahlungen auf immaterielle Anlagen
+  |   |   |
+  |   |   |--   1032000 Sachanlagen
+  |   |   |   |
+  |   |   |   |--   1032010 Grundstücke, grundstücksgleiche Rechte und
+  |   |   |   |   |
+  |   |   |   |   |--   1032011 Anschaffungswert                         0500
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----GKR 0000001000 - 0000001000 X|X Grundstücke, grundstücksgleiche Rechte
+  |   |   |   |   |   |-----GKR 0000003000 - 0000003000 X|X Bauten
+  |   |   |   |   |   ------GKR 0000004000 - 0000004000 X|X Gebäudeeinrichtungen
+  |   |   |   |   |
+  |   |   |   |   ---   1032012 Wertberichtigung
+  |   |   |   |       |
+  |   |   |   |       |-----GKR 0000001010 - 0000001010 X|X WB Grundstücke, grundstücksgleiche Rechte
+  |   |   |   |       |-----GKR 0000003010 - 0000003010 X|X WB Bauten
+  |   |   |   |       ------GKR 0000004010 - 0000004010 X|X WB Gebäudeeinrichtungen
+  |   |   |   |
+  |   |   |   |--   1032020 Technische Anlagen und Maschinen
+  |   |   |   |   |
+  |   |   |   |   |--   1032021 Anschaffungswert                         1000
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----GKR 0000011000 - 0000011000 X|X Technische Anlagen und Maschinen
+  |   |   |   |   |   ------GKR 0000012000 - 0000012000 X|X Geringwertige Wirtschaftsgüter (Maschinen)
+  |   |   |   |   |
+  |   |   |   |   ---   1032022 Wertberichtigung
+  |   |   |   |       |
+  |   |   |   |       |-----GKR 0000011010 - 0000011010 X|X WB Technische Anlagen und Maschinen
+  |   |   |   |       ------GKR 0000012010 - 0000012010 X|X WB Geringwertige Wirtschaftsgüter (Maschinen)
+  |   |   |   |
+  |   |   |   |--   1032030 Andere Anlagen sowie
+  |   |   |   |   |
+  |   |   |   |   |--   1032031 Anschaffungswert                         2000
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----GKR 0000037000 - 0000037000 X|X Betriebs- und Geschäfts-Ausstattung
+  |   |   |   |   |   ------GKR 0000038000 - 0000038000 X|X Geringwertige Wirtschaftsgüter (B/G.-Aust.)
+  |   |   |   |   |
+  |   |   |   |   ---   1032032 Wertberichtigung
+  |   |   |   |       |
+  |   |   |   |       |-----GKR 0000037010 - 0000037010 X|X WB Betriebs- und Geschäfts-Ausstattung
+  |   |   |   |       ------GKR 0000038010 - 0000038010 X|X WB Geringwertige Wirtschaftsgüter (B/G.-Ausst.)
+  |   |   |   |
+  |   |   |   ---   1032040 Geleistete Anzahlungen und
+  |   |   |       |
+  |   |   |       |--   1032041 Anschaffungswert                         3000
+  |   |   |       |   |
+  |   |   |       |   |-----GKR 0000028000 - 0000028000 X|X Anlagen im Bau
+  |   |   |       |   ---   GKR 0000029000 - 0000029200 X|X
+  |   |   |       |       |
+  |   |   |       |       |-----0000029000 Geleistete Anzahlungen auf Sachanlagen
+  |   |   |       |       |-----0000029010 Vorsteuer-Verrechnung auf Anzahl. für Sachanlagen
+  |   |   |       |       |-----0000029100 Aktivierte Anzahlungen auf Sachanlagen
+  |   |   |       |       ------0000029200 Verrechnung aktivierte Anzahlungen auf Sachanlagen
+  |   |   |       |
+  |   |   |       ---   1032042 Wertberichtigung
+  |   |   |           |
+  |   |   |           ------GKR 0000028010 - 0000028010 X|X WB Anlagen im Bau
+  |   |   |
+  |   |   ---   1033000 Finanzanlagen
+  |   |       |
+  |   |       |--   1033010 Anteile an verbundenen Unternehmen
+  |   |       |   |
+  |   |       |   ------GKR 0000055100 - 0000055100 X|X Anteile an verbundenen Unternehmen
+  |   |       |
+  |   |       |--   1033020 Ausleihungen an verbundene Unternehmen
+  |   |       |   |
+  |   |       |   |--   1033021 mit einer Restlaufzeit bis zu einem Jahr
+  |   |       |   |   |
+  |   |       |   |   ------GKR 0000057000 - 0000057000 X|X Ausleihungen an verbundene Unternehmen
+  |   |       |   |
+  |   |       |   ---   1033022 mit einer Restlaufzeit über einem Jahr
+  |   |       |       |
+  |   |       |       ------GKR 0000057020 - 0000057020 X|X Ausleihungen an verb. Unternehmen, RLZ > 1 Jahr
+  |   |       |
+  |   |       |--   1033030 Beteiligungen
+  |   |       |   |
+  |   |       |   ------GKR 0000054000 - 0000054000 X|X Beteiligungen
+  |   |       |
+  |   |       |--   1033040 Ausleihungen an Unternehmen, mit denen ein
+  |   |       |   |
+  |   |       |   |--   1033041 mit einer Restlaufzeit bis zu einem Jahr
+  |   |       |   |   |
+  |   |       |   |   ------GKR 0000057500 - 0000057500 X|X Ausleihungen an nahestehende Unternehmen
+  |   |       |   |
+  |   |       |   ---   1033042 mit einer Restlaufzeit über einem Jahr
+  |   |       |       |
+  |   |       |       ------GKR 0000057520 - 0000057520 X|X Ausleihungen an nahestehende Untern., RLZ > 1 Jahr
+  |   |       |
+  |   |       |--   1033050 Wertpapiere des Anlagevermögens
+  |   |       |   |
+  |   |       |   ---   GKR 0000055000 - 0000055020 X|X
+  |   |       |       |
+  |   |       |       |-----0000055000 Wertpapiere des Anlagevermögens
+  |   |       |       |-----0000055010 Festverzinsliche Wertpapiere
+  |   |       |       ------0000055020 Aktien
+  |   |       |
+  |   |       |--   1033060 Sonstige Ausleihungen
+  |   |       |   |
+  |   |       |   |--   1033061 mit einer Restlaufzeit bis zu einem Jahr
+  |   |       |   |   |
+  |   |       |   |   ------GKR 0000056000 - 0000056000 X|X Sonstige Ausleihungen
+  |   |       |   |
+  |   |       |   ---   1033062 mit einer Restlaufzeit über einem Jahr
+  |   |       |       |
+  |   |       |       ---   GKR 0000056020 - 0000056030 X|X
+  |   |       |           |
+  |   |       |           |-----0000056020 Sonstige Ausleihungen, Restlaufzeit > 1 Jahr
+  |   |       |           ------0000056030 TR-LO WB sonst. Ausleihungen
+  |   |       |
+  |   |       ---   1033070 Geleistete Anzahlungen auf Finanzanlagen
+  |   |           |
+  |   |           ---   GKR 0000055900 - 0000055910 X|X
+  |   |               |
+  |   |               |-----0000055900 Geleistete Anzahlungen auf Finanzanlagen
+  |   |               ------0000055910 Vorsteuer-Verrechnung auf Anz. für Finanzanlagen
+  |   |
+  |   |--   1040000 Umlaufvermögen
+  |   |   |
+  |   |   |--   1041000 Vorräte
+  |   |   |   |
+  |   |   |   |--   1041010 Roh-, Hilfs- und Betriebsstoffe
+  |   |   |   |   |
+  |   |   |   |   |--   GKR 0000300000 - 0000340000 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000300000 Rohstoffe 1
+  |   |   |   |   |   |-----0000300010 Rohstoffe 2
+  |   |   |   |   |   |-----0000330000 Hilfsstoffe
+  |   |   |   |   |   |-----0000330100 Ersatzteile
+  |   |   |   |   |   ------0000340000 Betriebsstoffe
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000380000 - 0000380000 X|X Umlagerungs-Bestand
+  |   |   |   |   |--   GKR 0000390200 - 0000390300 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000390200 Verpackungsmaterial
+  |   |   |   |   |   ------0000390300 Bestand Leergut
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000399999 - 0000399999 X|X Bestandsaufnahme (Gegenbuchung)
+  |   |   |   |
+  |   |   |   |--   1041020 Unfertige Erzeugnisse, unfertige Leistungen
+  |   |   |   |   |
+  |   |   |   |   |--   GKR 0000381000 - 0000382000 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000381000 Nicht abgerechnete Leistungen
+  |   |   |   |   |   ------0000382000 Bestände bei Lohnverarbeitern
+  |   |   |   |   |
+  |   |   |   |   ---   GKR 0000780000 - 0000781000 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000780000 Unfertige Erzeugnisse
+  |   |   |   |       ------0000781000 In Arbeit befindliche Erzeugnisse
+  |   |   |   |
+  |   |   |   |--   1041030 Fertige Erzeugnisse und Waren
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000390100 - 0000390100 X|X Handelswaren
+  |   |   |   |   ---   GKR 0000790000 - 0000799999 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000790000 Fertige Erzeugnisse
+  |   |   |   |       ------0000799999 Bestandsaufnahme (Eigenerzeugnisse)
+  |   |   |   |
+  |   |   |   ---   1041040 Geleistete Anzahlungen für Vorräte
+  |   |   |       |
+  |   |   |       ---   GKR 0000151000 - 0000151010 X|X
+  |   |   |           |
+  |   |   |           |-----0000151000 Geleistete Anzahlungen auf Vorräte
+  |   |   |           ------0000151010 Vorsteuer-Verrechnung gel. Anzahlung Vorräte
+  |   |   |
+  |   |   |--   1042000 Forderungen und
+  |   |   |   |
+  |   |   |   |--   1042010 Forderungen aus Lieferungen und
+  |   |   |   |   |
+  |   |   |   |   |--   1042011 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   GKR 0000084000 - 0000084100 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000084000 Pauschalwertberichtigungen zu Forderungen
+  |   |   |   |   |   |   ------0000084100 Einzelwertberichtigungen zu Forderungen
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   GKR 0000125000 - 0000126000 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000125000 Besitzwechsel (bundesbankfähig)
+  |   |   |   |   |   |   ------0000126000 Besitzwechsel (nicht bundesbankfähig)
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   GKR 0000140000 - 0000140010 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000140000 Forderungen Inland
+  |   |   |   |   |   |   ------0000140010 Forderungen Inland CPD-Konten
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----GKR 0000140099 - 0000140099 X|X Korrekturkonto Forderungen Inland
+  |   |   |   |   |   |--   GKR 0000141000 - 0000141010 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000141000 Forderungen Ausland
+  |   |   |   |   |   |   ------0000141010 Forderungen Ausland CPD-Konten
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----GKR 0000141099 - 0000141099 X|X Korrekturkonto Forderungen Ausland
+  |   |   |   |   |   ------GKR 0000143200 - 0000143200 X|X Korr.-Debitoren nicht realisierte Kursdifferenzen
+  |   |   |   |   |
+  |   |   |   |   ---   1042012 mit einer Restlaufzeit über einem Jahr
+  |   |   |   |       |
+  |   |   |   |       |-----GKR 0000140020 - 0000140020 X|X Forderungen Inland, Restlaufzeit > 1 Jahr
+  |   |   |   |       ------GKR 0000141020 - 0000141020 X|X Forderungen Ausland, Restlaufzeit > 1 Jahr
+  |   |   |   |
+  |   |   |   |--   1042020 Forderungen aus Lieferungen und
+  |   |   |   |   |
+  |   |   |   |   |--   1042021 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----GKR 0000152000 - 0000152000 X|X Forderungen gegen verbundene Unternehmen
+  |   |   |   |   |   ------GKR 0000152099 - 0000152099 X|X Korrekturkonto Forderungen verbund. Unternehmen
+  |   |   |   |   |
+  |   |   |   |   ---   1042022 mit einer Restlaufzeit über einem Jahr
+  |   |   |   |       |
+  |   |   |   |       ------GKR 0000152020 - 0000152020 X|X Forderungen verb. Unternehmen Restlaufz. > 1 Jahr
+  |   |   |   |
+  |   |   |   |--   1042030 Forderungen gegen Unternehmen, mit denen ein
+  |   |   |   |   |
+  |   |   |   |   |--   1042031 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----GKR 0000152500 - 0000152500 X|X Forderungen an nahestehende Unternehmen
+  |   |   |   |   |   ------GKR 0000152599 - 0000152599 X|X Korrektur Forderungen an nahestehende Unternehmen
+  |   |   |   |   |
+  |   |   |   |   ---   1042032 mit einer Restlaufzeit über einem Jahr
+  |   |   |   |       |
+  |   |   |   |       ------GKR 0000152520 - 0000152520 X|X Forderungen an nahestehende Unternehmen, RLZ > 1J.
+  |   |   |   |
+  |   |   |   ---   1042040 Sonstige Vermögens-Gegenstände
+  |   |   |       |
+  |   |   |       |--   1042041 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |       |   |
+  |   |   |       |   |--   1042041/00 sonstige Forderungen
+  |   |   |       |   |   |
+  |   |   |       |   |   |--   GKR 0000142000 - 0000142850 X|X
+  |   |   |       |   |   |   |
+  |   |   |       |   |   |   |-----0000142000 Zins-Forderungen
+  |   |   |       |   |   |   |-----0000142100 TR-LO Abstimmkonto Forderungen
+  |   |   |       |   |   |   |-----0000142199 TR-LO Abstimmkonto (Korrekturkonto)
+  |   |   |       |   |   |   |-----0000142200 TR-LO Abstimmkonto Tilgungsforderungen
+  |   |   |       |   |   |   |-----0000142210 TR-LO WB sonst. Forderungen (Kosten/Tilg./Zinsen)
+  |   |   |       |   |   |   |-----0000142250 TR-LO Forderung Tilgung (Darlehen) RLZ < 1 Jahr
+  |   |   |       |   |   |   |-----0000142255 TR-TM/LO Forderung Tilgung (WP) u. Verkäufe (SSD)
+  |   |   |       |   |   |   |-----0000142300 TR-LO Abstimmkonto Zinsforderungen
+  |   |   |       |   |   |   |-----0000142350 TR-TM/LO Zins-Forderungen
+  |   |   |       |   |   |   |-----0000142400 TR-LO Abstimmkonto Disagioforderungen
+  |   |   |       |   |   |   |-----0000142450 TR-LO Forderung Disagio RLZ < 1 Jahr
+  |   |   |       |   |   |   |-----0000142500 TR-LO Abstimmkonto sonstige Forderungen
+  |   |   |       |   |   |   |-----0000142600 TR-LO Abstimmkonto Zahlungskorrekturen
+  |   |   |       |   |   |   |-----0000142700 TR-LO Abstimmkonto Auszahlungsverpflicht. Darl.
+  |   |   |       |   |   |   |-----0000142750 TR-LO Auszahlungsverpflichtung Darlehen
+  |   |   |       |   |   |   |-----0000142800 TR-LO Abstimmkonto Agio
+  |   |   |       |   |   |   ------0000142850 TR-LO Agio
+  |   |   |       |   |   |
+  |   |   |       |   |   |-----GKR 0000143100 - 0000143100 X|X Debitorische Kreditoren
+  |   |   |       |   |   |--   GKR 0000150100 - 0000150900 X|X
+  |   |   |       |   |   |   |
+  |   |   |       |   |   |   |-----0000150100 Forderungen an Gesellschafter
+  |   |   |       |   |   |   |-----0000150200 Mitarbeiter-Darlehen
+  |   |   |       |   |   |   |-----0000150300 Lohn- und Gehaltsvorschüsse
+  |   |   |       |   |   |   |-----0000150400 Reisekosten Vorschuß
+  |   |   |       |   |   |   |-----0000150450 Reisekosten Kassenvorschuß
+  |   |   |       |   |   |   |-----0000150500 Forderungen an Mitarbeiter (Überzahlung)
+  |   |   |       |   |   |   |-----0000150600 Forderungen aus Zahlungskarten
+  |   |   |       |   |   |   ------0000150900 Sonstige Forderungen
+  |   |   |       |   |   |
+  |   |   |       |   |   |--   GKR 0000151100 - 0000151110 X|X
+  |   |   |       |   |   |   |
+  |   |   |       |   |   |   |-----0000151100 Sonstige geleistete Anzahlungen Umlaufvermögen
+  |   |   |       |   |   |   ------0000151110 Vorsteuer-Verr. sonst. gel. Anzahlung Umlaufverm.
+  |   |   |       |   |   |
+  |   |   |       |   |   |--   GKR 0000158760 - 0000158900 X|X
+  |   |   |       |   |   |   |
+  |   |   |       |   |   |   |-----0000158760 TR-TM Optionsprämien Forderungen
+  |   |   |       |   |   |   ------0000158900 TR-LO Stornovorgänge
+  |   |   |       |   |   |
+  |   |   |       |   |   |-----GKR 0000196010 - 0000196010 X|X Verrechnung Zins-Forderungen
+  |   |   |       |   |   |-----GKR 0000196800 - 0000196800 X|X RE Vorauszahlungsforderung
+  |   |   |       |   |   ------GKR 0000196900 - 0000196900 X|X Sicherheitseinbehalt (Debitoren)
+  |   |   |       |   |
+  |   |   |       |   ---   1042041/10 Ford. Umsatzsteuer      X|_  --> 2048031/10 Umsatzsteuer
+  |   |   |       |       |
+  |   |   |       |       |-----GKR 0000154000 - 0000154000 X|_ Vorsteuer (Deutschland)
+  |   |   |       |       |-----GKR 0000154100 - 0000154100 X|_ Einfuhr-Umsatzsteuer (Deutschland)
+  |   |   |       |       |--   GKR 0000175000 - 0000175050 X|_
+  |   |   |       |       |   |
+  |   |   |       |       |   |-----0000175000 Mehrwertsteuer (Ausgangssteuer Deutschland)
+  |   |   |       |       |   ------0000175050 Erwerbssteuer (Ausgangssteuercharakter)
+  |   |   |       |       |
+  |   |   |       |       ------GKR 0000195000 - 0000195000 X|_ Ford./-Verb. gegenüber Finanzamt
+  |   |   |       |
+  |   |   |       ---   1042042 mit einer Restlaufzeit über einem Jahr
+  |   |   |           |
+  |   |   |           ------GKR 0000150950 - 0000150950 X|X Sonstige Forderungen, Restlaufzeit > 1 Jahr
+  |   |   |
+  |   |   |--   1043000 Wertpapiere
+  |   |   |   |
+  |   |   |   |--   1043010 Anteile an verbundenen Unternehmen
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000131000 - 0000131000 X|X Anteile an verbundenen Unternehmen
+  |   |   |   |
+  |   |   |   |--   1043020 Eigene Anteile
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000137000 - 0000137000 X|X Eigene Anteile
+  |   |   |   |
+  |   |   |   ---   1043030 Sonstige Wertpapiere
+  |   |   |       |
+  |   |   |       ------GKR 0000136000 - 0000136000 X|X Sonstige Wertpapiere
+  |   |   |
+  |   |   ---   1044000 Schecks, Kassenbestand, Bundesbank- und Post-
+  |   |       |
+  |   |       |--   1044000/00 Sonstige
+  |   |       |   |
+  |   |       |   |--   GKR 0000100000 - 0000105000 X|X
+  |   |       |   |   |
+  |   |       |   |   |-----0000100000 Kasse
+  |   |       |   |   ------0000105000 Frachtkasse
+  |   |       |   |
+  |   |       |   |-----GKR 0000113113 - 0000113113 X|X TR-TM Forderung Festgeld
+  |   |       |   |-----GKR 0000113115 - 0000113115 X|X TR-TM Forderung Kündigungsgeld
+  |   |       |   |-----GKR 0000113117 - 0000113117 X|X TR-TM Forderung Commercial Paper
+  |   |       |   ---   GKR 0000114000 - 0000115000 X|X
+  |   |       |       |
+  |   |       |       |-----0000114000 Ausländische Bank 1
+  |   |       |       ------0000115000 Ausländische Bank 2
+  |   |       |
+  |   |       |--   1044000/21 Postgiro    X|_  --> 2042010/21 Postgiro
+  |   |       |   |
+  |   |       |   ---   GKR 0000110000 - 0000110005 X|_
+  |   |       |       |
+  |   |       |       |-----0000110000 Postgirokonto
+  |   |       |       |-----0000110002 Postgirokonto (Ausgangszahlung)
+  |   |       |       ------0000110005 Postgirokonto (Sonstige Zwischenbuchungen)
+  |   |       |
+  |   |       |--   1044000/22 Bank 1      X|_  --> 2042010/22 Bank 1
+  |   |       |   |
+  |   |       |   |--   GKR 0000113100 - 0000113105 X|_
+  |   |       |   |   |
+  |   |       |   |   |-----0000113100 Bank 1 (Inland)
+  |   |       |   |   |-----0000113101 Bank 1 (Ausgangs-Schecks)
+  |   |       |   |   |-----0000113102 Bank 1 (Ausgangs-Überweisungen Inland)
+  |   |       |   |   |-----0000113103 Bank 1 (Ausgangs-Überweisungen Ausland)
+  |   |       |   |   |-----0000113104 Bank 1 (Bankeinzug)
+  |   |       |   |   ------0000113105 Bank 1 (Sonstige Zwischenbuchungen)
+  |   |       |   |
+  |   |       |   |-----GKR 0000113108 - 0000113108 X|_ Bank 1 (Scheckeingang)
+  |   |       |   ---   GKR 0000113150 - 0000113165 X|_
+  |   |       |       |
+  |   |       |       |-----0000113150 Bank 1 Fremdwährung A
+  |   |       |       |-----0000113155 TR-TM Bank 1 Verrechnung Fremdwährung A
+  |   |       |       |-----0000113160 Bank 1 Fremdwährung B
+  |   |       |       ------0000113165 TR-TM Bank 1 Verrechnung Fremdwährung B
+  |   |       |
+  |   |       ---   1044000/23 Bank 2      X|_  --> 2042010/23 Bank 2
+  |   |           |
+  |   |           |--   GKR 0000113200 - 0000113205 X|_
+  |   |           |   |
+  |   |           |   |-----0000113200 Bank 2 (Inland)
+  |   |           |   |-----0000113201 Bank 2 (Ausgangs-Schecks)
+  |   |           |   |-----0000113202 Bank 2 (Ausgangs-Überweisungen Inland)
+  |   |           |   |-----0000113203 Bank 2 (Ausgangs-Überweisungen Ausland)
+  |   |           |   |-----0000113204 Bank 2 (Bankeinzug)
+  |   |           |   ------0000113205 Bank 2 (Sonstige Zwischenbuchungen)
+  |   |           |
+  |   |           |-----GKR 0000113208 - 0000113208 X|_ Bank 2 (Scheckeingang)
+  |   |           ------GKR 0000113213 - 0000113213 X|_ Bank 2 (Festgeldkonto)
+  |   |
+  |   |--   1050000 Abgrenzungs-Posten für künftige
+  |   |   |
+  |   |   ------GKR 0000091000 - 0000091000 X|X Abgrenzungsposten f. lat. Steuern § 274 Abs. 2 HGB
+  |   |
+  |   |--   1060000 Rechnungs-Abgrenzungsposten
+  |   |   |
+  |   |   |--   1061000 Disagio
+  |   |   |   |
+  |   |   |   ------GKR 0000095000 - 0000095000 X|X Disagio
+  |   |   |
+  |   |   ---   1062000 Sonstige Rechnungs-Abgrenzungsposten
+  |   |       |
+  |   |       |-----GKR 0000098000 - 0000098000 X|X Aktive Rechnungsabgrenzung
+  |   |       ------GKR 0000190990 - 0000190990 X|X Reisekostenverrg. vom Unternehmen bezahlte Belege
+  |   |
+  |   ---   1070000 Nicht durch Eigenkapital gedeckter Fehlbetrag
+  |       |
+  |       ------GKR 0000950000 - 0000950000 X|X Nicht durch Eigenkapital gedeckter Fehlbetrag
+  |
+  |--   2000000 P A S S I V A                 Passiva
+  |   |
+  |   |--   2010000 Eigenkapital
+  |   |   |
+  |   |   |--   2011000 Gezeichnetes Kapital
+  |   |   |   |
+  |   |   |   |--   GKR 0000070000 - 0000070500 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000070000 Stammkapital
+  |   |   |   |   ------0000070500 Veränderliches Kapitalkonto
+  |   |   |   |
+  |   |   |   ------GKR 0000197000 - 0000197000 X|X Privatkonto
+  |   |   |
+  |   |   |--   2012000 Kapital-Rücklage
+  |   |   |   |
+  |   |   |   ------GKR 0000071000 - 0000071000 X|X Kapital-Rücklage
+  |   |   |
+  |   |   |--   2013000 Gewinn-Rücklagen
+  |   |   |   |
+  |   |   |   |--   2013010 Gesetzliche Rücklage
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000072000 - 0000072000 X|X Gesetzliche Rücklage
+  |   |   |   |
+  |   |   |   |--   2013020 Rücklage für eigene Anteile
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000073000 - 0000073000 X|X Rücklage für eigene Anteile
+  |   |   |   |
+  |   |   |   |--   2013030 Satzungsmässige Rücklagen
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000074000 - 0000074000 X|X Satzungsmäßige Rücklagen
+  |   |   |   |
+  |   |   |   ---   2013040 Andere Gewinn-Rücklagen
+  |   |   |       |
+  |   |   |       ------GKR 0000074900 - 0000074900 X|X Andere Gewinn-Rücklagen
+  |   |   |
+  |   |   |-----2014000 Bilanzverlust         Bilanzergebnis Verlust
+  |   |   ------1       Bilanzgewinn          Bilanzergebnis Gewinn
+  |   |
+  |   |--   2020000 Sonderposten mit Rücklage-Anteil
+  |   |   |
+  |   |   |--   2021000 Steuerliche Sonder-AfA (Unterschieds-Betrag)
+  |   |   |   |
+  |   |   |   |-----GKR 0000076000 - 0000076000 X|X Bestand an Sonderposten
+  |   |   |   ---   GKR 0000076110 - 0000076150 X|X
+  |   |   |       |
+  |   |   |       |-----0000076110 Sonder-AfA gem. Par. 6b EStG.(Unterschieds-Betrag)
+  |   |   |       ------0000076150 Sonstige Sonder-AfA (Unterschieds-Betrag)
+  |   |   |
+  |   |   ---   2022000 Sonderposten mit Rücklage-Anteil
+  |   |       |
+  |   |       |-----GKR 0000076100 - 0000076100 X|X Sonderposten-Rücklage
+  |   |       ---   GKR 0000076200 - 0000076390 X|X
+  |   |           |
+  |   |           |-----0000076200 Übertragung von Rücklagen nach §6b und Abschn. 35
+  |   |           |-----0000076300 Erhaltene Investitions-Förderungen
+  |   |           ------0000076390 Verrechnung erhaltene Investitions-Förderungen
+  |   |
+  |   |--   2030000 Rückstellungen
+  |   |   |
+  |   |   |--   2031000 Rückstellungen für Pensionen und
+  |   |   |   |
+  |   |   |   ------GKR 0000085100 - 0000085100 X|X Pensions-Rückstellungen
+  |   |   |
+  |   |   |--   2032000 Rückstellungen für latente Steuern
+  |   |   |   |
+  |   |   |   ------GKR 0000087600 - 0000087600 X|X Rückstellung für latente Steuern
+  |   |   |
+  |   |   |--   2033000 Steuer-Rückstellungen
+  |   |   |   |
+  |   |   |   |--   GKR 0000087100 - 0000087500 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000087100 Rückstellung Körperschaftssteuer
+  |   |   |   |   |-----0000087200 Rückstellung Kapitalertragsteuer
+  |   |   |   |   |-----0000087300 Rückstellung ausländische Quellensteuer
+  |   |   |   |   |-----0000087400 Rückstellung anderer Steuer v. Einkommen u. Ertrag
+  |   |   |   |   ------0000087500 Rückstellung Gewerbesteuer
+  |   |   |   |
+  |   |   |   ------GKR 0000087900 - 0000087900 X|X Sonstige Steuerrückstellungen
+  |   |   |
+  |   |   ---   2034000 Sonstige Rückstellungen
+  |   |       |
+  |   |       |--   GKR 0000085200 - 0000085910 X|X
+  |   |       |   |
+  |   |       |   |-----0000085200 Rückstellungen für Gewährleistungen
+  |   |       |   |-----0000085300 Rückstellungen für ungewisse Verbindlichkeiten
+  |   |       |   |-----0000085400 Rückst.f.drohende Verluste a. schweb. Geschäften
+  |   |       |   |-----0000085500 Rückstellungen für unterlassene Instandhaltungen
+  |   |       |   |-----0000085600 Rückstellungen f.and.Aufwendungen gem. §249/2 HGB
+  |   |       |   |-----0000085900 TR-TM Rückstellungen für Kassakurs Devisen
+  |   |       |   ------0000085910 TR-TM Rückstellungen für Swapkurs Devisen
+  |   |       |
+  |   |       |--   GKR 0000086100 - 0000086900 X|X
+  |   |       |   |
+  |   |       |   |-----0000086100 Fracht-Rückstellung (MM)
+  |   |       |   |-----0000086200 Zoll-Rückstellung (MM)
+  |   |       |   |-----0000086300 Bezugskosten-Rückstellung (MM)
+  |   |       |   |-----0000086400 Bonusrückstellung (MM)
+  |   |       |   ------0000086900 Sonstige Rückstellungen
+  |   |       |
+  |   |       ---   GKR 0000191700 - 0000191800 X|X
+  |   |           |
+  |   |           |-----0000191700 Fracht-Verrechnung (MM)
+  |   |           |-----0000191750 Bezugsnebenkosten-Verrechnung (MM)
+  |   |           ------0000191800 Zoll-Verrechnung (MM)
+  |   |
+  |   |--   2040000 Verbindlichkeiten
+  |   |   |
+  |   |   |--   2041000 Anleihen
+  |   |   |   |
+  |   |   |   |--   2041010 Konvertible Anleihen
+  |   |   |   |   |
+  |   |   |   |   |--   2041011 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |   |
+  |   |   |   |   |   ------GKR 0000060110 - 0000060110 X|X Konvertible Anleihen, Restlaufzeit bis 1 Jahr
+  |   |   |   |   |
+  |   |   |   |   |--   2041012 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |   |
+  |   |   |   |   |   ------GKR 0000060120 - 0000060120 X|X Konvertible Anleihen, Restlaufzeit 1 - 5 Jahre
+  |   |   |   |   |
+  |   |   |   |   ---   2041013 mit einer Restlaufzeit von über 5 Jahren
+  |   |   |   |       |
+  |   |   |   |       ------GKR 0000060130 - 0000060130 X|X Konvertible Anleihen, Restlaufzeit über 5 Jahre
+  |   |   |   |
+  |   |   |   ---   2041020 Nicht konvertible Anleihen
+  |   |   |       |
+  |   |   |       |--   2041021 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |       |   |
+  |   |   |       |   ------GKR 0000060310 - 0000060310 X|X Nicht konvertible Anleihen, Restlaufzeit < 1 Jahr
+  |   |   |       |
+  |   |   |       |--   2041022 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |       |   |
+  |   |   |       |   ------GKR 0000060320 - 0000060320 X|X Nicht konvertible Anleihen, Restlaufzeit 1-5 Jahre
+  |   |   |       |
+  |   |   |       ---   2041023 mit einer Restlaufzeit von über 5 Jahren
+  |   |   |           |
+  |   |   |           ------GKR 0000060330 - 0000060330 X|X Nicht konvertible Anleihen, Restlaufzeit > 5 Jahre
+  |   |   |
+  |   |   |--   2042000 Verbindlichkeiten gegenüber Kreditinstituten
+  |   |   |   |
+  |   |   |   |--   2042010 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |
+  |   |   |   |   |--   2042010/00 Sonstige
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----GKR 0000062110 - 0000062110 X|X Darlehen v. Kreditinstituten, Restlaufz. < 1 Jahr
+  |   |   |   |   |   |-----GKR 0000062199 - 0000062199 X|X Korrekturkonto Darlehen von Kreditinstituten
+  |   |   |   |   |   |-----GKR 0000113114 - 0000113114 X|X TR-TM Verbindlichkeit Festgeld
+  |   |   |   |   |   |-----GKR 0000113116 - 0000113116 X|X TR-TM Verbindlichkeit Kündigungsgeld
+  |   |   |   |   |   ------GKR 0000113118 - 0000113118 X|X TR-TM Verbindlichkeit Commercial Paper
+  |   |   |   |   |
+  |   |   |   |   |--   2042010/21 Postgiro    _|X  --> 1044000/21 Postgiro
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   GKR 0000110000 - 0000110005 _|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000110000 Postgirokonto
+  |   |   |   |   |       |-----0000110002 Postgirokonto (Ausgangszahlung)
+  |   |   |   |   |       ------0000110005 Postgirokonto (Sonstige Zwischenbuchungen)
+  |   |   |   |   |
+  |   |   |   |   |--   2042010/22 Bank 1      _|X  --> 1044000/22 Bank 1
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   GKR 0000113100 - 0000113105 _|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000113100 Bank 1 (Inland)
+  |   |   |   |   |   |   |-----0000113101 Bank 1 (Ausgangs-Schecks)
+  |   |   |   |   |   |   |-----0000113102 Bank 1 (Ausgangs-Überweisungen Inland)
+  |   |   |   |   |   |   |-----0000113103 Bank 1 (Ausgangs-Überweisungen Ausland)
+  |   |   |   |   |   |   |-----0000113104 Bank 1 (Bankeinzug)
+  |   |   |   |   |   |   ------0000113105 Bank 1 (Sonstige Zwischenbuchungen)
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----GKR 0000113108 - 0000113108 _|X Bank 1 (Scheckeingang)
+  |   |   |   |   |   ---   GKR 0000113150 - 0000113165 _|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000113150 Bank 1 Fremdwährung A
+  |   |   |   |   |       |-----0000113155 TR-TM Bank 1 Verrechnung Fremdwährung A
+  |   |   |   |   |       |-----0000113160 Bank 1 Fremdwährung B
+  |   |   |   |   |       ------0000113165 TR-TM Bank 1 Verrechnung Fremdwährung B
+  |   |   |   |   |
+  |   |   |   |   ---   2042010/23 Bank 2      _|X  --> 1044000/23 Bank 2
+  |   |   |   |       |
+  |   |   |   |       |--   GKR 0000113200 - 0000113205 _|X
+  |   |   |   |       |   |
+  |   |   |   |       |   |-----0000113200 Bank 2 (Inland)
+  |   |   |   |       |   |-----0000113201 Bank 2 (Ausgangs-Schecks)
+  |   |   |   |       |   |-----0000113202 Bank 2 (Ausgangs-Überweisungen Inland)
+  |   |   |   |       |   |-----0000113203 Bank 2 (Ausgangs-Überweisungen Ausland)
+  |   |   |   |       |   |-----0000113204 Bank 2 (Bankeinzug)
+  |   |   |   |       |   ------0000113205 Bank 2 (Sonstige Zwischenbuchungen)
+  |   |   |   |       |
+  |   |   |   |       |-----GKR 0000113208 - 0000113208 _|X Bank 2 (Scheckeingang)
+  |   |   |   |       ------GKR 0000113213 - 0000113213 _|X Bank 2 (Festgeldkonto)
+  |   |   |   |
+  |   |   |   |--   2042020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000062120 - 0000062120 X|X Darlehen v. Kreditinstituten, Restlaufz. 1-5 Jahre
+  |   |   |   |
+  |   |   |   ---   2042030 mit einer Restlaufzeit von über 5 Jahren
+  |   |   |       |
+  |   |   |       ------GKR 0000062130 - 0000062130 X|X Darlehen v. Kreditinstituten, Restlaufz. > 5 Jahre
+  |   |   |
+  |   |   |--   2043000 Erhaltene Anzahlungen auf Bestellungen
+  |   |   |   |
+  |   |   |   |--   2043010 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |
+  |   |   |   |   |--   GKR 0000171000 - 0000171010 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000171000 Erhaltene Anzahlungen
+  |   |   |   |   |   ------0000171010 Mehrwertsteuer-Verrechnung auf Kundenanzahlung
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000171099 - 0000171099 X|X Korrekturkonto Erhaltene Anzahlungen
+  |   |   |   |
+  |   |   |   |--   2043020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000171020 - 0000171020 X|X Erhaltene Anzahlungen, Restlaufzeit 1-5 Jahre
+  |   |   |   |
+  |   |   |   ---   2043030 mit einer Restlaufzeit von über 5 Jahren
+  |   |   |       |
+  |   |   |       ------GKR 0000171030 - 0000171030 X|X Erhaltene Anzahlungen, Restlaufzeit > 5 Jahre
+  |   |   |
+  |   |   |--   2044000 Verbindlichkeiten aus
+  |   |   |   |
+  |   |   |   |--   2044010 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |
+  |   |   |   |   |--   GKR 0000160000 - 0000160010 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000160000 Verbindlichkeiten Inland
+  |   |   |   |   |   ------0000160010 Verbindlichkeiten Inland CPD-Konten
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000160099 - 0000160099 X|X Korrekturkonto Verbindlichkeiten Inland
+  |   |   |   |   |--   GKR 0000161000 - 0000161010 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000161000 Verbindlichkeiten Ausland
+  |   |   |   |   |   ------0000161010 Verbindlichkeiten Ausland CPD-Konten
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000161099 - 0000161099 X|X Korrekturkonto Verbindlichkeiten Ausland
+  |   |   |   |   |-----GKR 0000163200 - 0000163200 X|X Kreditoren-Korr. nicht realisierte Kursdifferenzen
+  |   |   |   |   |-----GKR 0000169900 - 0000169900 X|X Verbindlichkeiten aus Konsignationslager
+  |   |   |   |   |--   GKR 0000191101 - 0000191102 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000191101 WE/RE: Noch nicht erfolgte Lieferung und Leistung
+  |   |   |   |   |   ------0000191102 WE/RE: Noch nicht berechnete Lieferung u. Leistung
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000193000 - 0000193000 X|X Verrechnung Lieferantenskonti (Netto-Verfahren)
+  |   |   |   |
+  |   |   |   |--   2044020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000160020 - 0000160020 X|X Verbindlichkeiten Inland, Restlaufzeit 1-5 Jahre
+  |   |   |   |   ------GKR 0000161020 - 0000161020 X|X Verbindlichkeiten Ausland, Restlaufz. 1-5 Jahre
+  |   |   |   |
+  |   |   |   ---   2044030 mit einer Restlaufzeit von über 5 Jahren
+  |   |   |       |
+  |   |   |       |-----GKR 0000160030 - 0000160030 X|X Verbindlichkeiten Inland, Restlaufzeit > 5 Jahre
+  |   |   |       ------GKR 0000161030 - 0000161030 X|X Verbindlichkeiten Ausland, Restlaufz. > 5 Jahre
+  |   |   |
+  |   |   |--   2045000 Verbindlichkeiten aus der Annahme gezogener
+  |   |   |   |
+  |   |   |   |--   2045010 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000113106 - 0000113106 X|X Bank 1 (Eigenakzept-Obligo)
+  |   |   |   |   |-----GKR 0000113206 - 0000113206 X|X Bank 2 (Eigenakzept-Obligo)
+  |   |   |   |   |-----GKR 0000180000 - 0000180000 X|X Schuldwechsel
+  |   |   |   |   ------GKR 0000180099 - 0000180099 X|X Korrekturkonto Schuldwechsel
+  |   |   |   |
+  |   |   |   |--   2045020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000180020 - 0000180020 X|X Schuldwechsel, Restlaufzeit 1-5 Jahre
+  |   |   |   |
+  |   |   |   ---   2045030 mit einer Restlaufzeit von über 5 Jahren
+  |   |   |       |
+  |   |   |       ------GKR 0000180030 - 0000180030 X|X Schuldwechsel, Restlaufzeit > 5 Jahre
+  |   |   |
+  |   |   |--   2046000 Verbindlichkeiten gegenüber
+  |   |   |   |
+  |   |   |   |--   2046010 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000164000 - 0000164000 X|X Verbindlichkeiten verbundene Unternehmen
+  |   |   |   |   ------GKR 0000164099 - 0000164099 X|X Korr.Konto Verbindlichkeiten verbundene Untern.
+  |   |   |   |
+  |   |   |   |--   2046020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000164020 - 0000164020 X|X Verbindlichk. verb. Untern., Restlaufz.1-5 Jahre
+  |   |   |   |
+  |   |   |   ---   2046030 mit einer Restlaufzeit von über 5 Jahren
+  |   |   |       |
+  |   |   |       ------GKR 0000164030 - 0000164030 X|X Verbindlichk. verb. Untern., Restlaufz. > 5 Jahre
+  |   |   |
+  |   |   |--   2047000 Verbindlichkeiten gegenüber Unternehmen,
+  |   |   |   |
+  |   |   |   |--   2047010 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000165000 - 0000165000 X|X Verbindlichkeiten an nahestehende Unternehmen
+  |   |   |   |   ------GKR 0000165099 - 0000165099 X|X Korrekturkonto Verbindlichk. nahestehende Untern.
+  |   |   |   |
+  |   |   |   |--   2047020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000165020 - 0000165020 X|X Verbindlichk. an nahestehenden Untern., RLZ 1-5 J.
+  |   |   |   |
+  |   |   |   ---   2047030 mit einer Restlaufzeit von über 5 Jahren
+  |   |   |       |
+  |   |   |       ------GKR 0000165030 - 0000165030 X|X Verbindlichk. an nahestehende Untern., RLZ > 5 J.
+  |   |   |
+  |   |   ---   2048000 Sonstige Verbindlichkeiten
+  |   |       |
+  |   |       |--   2048010 Sonstige Verbindlichkeiten aus Steuern
+  |   |       |   |
+  |   |       |   ------GKR 0000176100 - 0000176100 X|X Abzuführende Lohn- und Kirchensteuer
+  |   |       |
+  |   |       |--   2048020 Sonstige Verbindlichkeiten im Rahmen
+  |   |       |   |
+  |   |       |   ---   2048021 mit einer Restlaufzeit bis zu einem Jahr
+  |   |       |       |
+  |   |       |       ------GKR 0000176200 - 0000176200 X|X Abzuführende Sozialversicherung
+  |   |       |
+  |   |       ---   2048030 Andere sonstige Verbindlichkeiten
+  |   |           |
+  |   |           |--   2048031 mit einer Restlaufzeit bis zu einem Jahr
+  |   |           |   |
+  |   |           |   |--   2048031/00 Sonstige
+  |   |           |   |   |
+  |   |           |   |   |-----GKR 0000163100 - 0000163100 X|X Kreditorische Debitoren
+  |   |           |   |   |-----GKR 0000166000 - 0000166000 X|X Vorleistungen Amortisation
+  |   |           |   |   |-----GKR 0000170100 - 0000170100 X|X Sonstige Verbindlichkeiten
+  |   |           |   |   |--   GKR 0000170399 - 0000170450 X|X
+  |   |           |   |   |   |
+  |   |           |   |   |   |-----0000170399 Korrekturkonto sonstige Verbindlichkeiten
+  |   |           |   |   |   |-----0000170400 TR-TM/LO Sonstige Verbindlichkeiten Zinsen
+  |   |           |   |   |   ------0000170450 TR-LO Nicht zuordenbare Zahlungseingänge
+  |   |           |   |   |
+  |   |           |   |   |--   GKR 0000170500 - 0000170900 X|X
+  |   |           |   |   |   |
+  |   |           |   |   |   |-----0000170500 Auszuzahlende Löhne und Gehälter
+  |   |           |   |   |   |-----0000170600 Aufrollungsdifferenz für Lohn- u.Gehaltsabrechnung
+  |   |           |   |   |   |-----0000170800 Verbindlichkeiten gegen Mitarbeiter
+  |   |           |   |   |   ------0000170900 Verbindlichkeiten gegen Finanzamt
+  |   |           |   |   |
+  |   |           |   |   |-----GKR 0000172200 - 0000172200 X|X Belegsplittkonto (Reiseko.Bukrs.verrechnung HR)
+  |   |           |   |   |--   GKR 0000176300 - 0000176500 X|X
+  |   |           |   |   |   |
+  |   |           |   |   |   |-----0000176300 Abzuführende Pfändungen
+  |   |           |   |   |   |-----0000176400 Abzuführende Vermögensbildung
+  |   |           |   |   |   ------0000176500 Verbindlichkeiten gegenüber Berufsgenossenschaft
+  |   |           |   |   |
+  |   |           |   |   |-----GKR 0000178010 - 0000178010 X|X TR-TM Optionsprämien Verbindlichkeiten
+  |   |           |   |   |-----GKR 0000195500 - 0000195500 X|X Lohn- und Gehaltsverrechnungskonto (HR)
+  |   |           |   |   |--   GKR 0000196810 - 0000196830 X|X
+  |   |           |   |   |   |
+  |   |           |   |   |   |-----0000196810 RE Vorauszahlung Nebenkosten
+  |   |           |   |   |   |-----0000196820 RE Vorauszahlung Umsatzmiete
+  |   |           |   |   |   ------0000196830 RE Mietkaution
+  |   |           |   |   |
+  |   |           |   |   ------GKR 0000196950 - 0000196950 X|X Sicherheitseinbehalt (Kreditoren)
+  |   |           |   |
+  |   |           |   ---   2048031/10 Umsatzsteuer    _|X  --> 1042041/10 Ford. Umsatzsteuer
+  |   |           |       |
+  |   |           |       |-----GKR 0000154000 - 0000154000 _|X Vorsteuer (Deutschland)
+  |   |           |       |-----GKR 0000154100 - 0000154100 _|X Einfuhr-Umsatzsteuer (Deutschland)
+  |   |           |       |--   GKR 0000175000 - 0000175050 _|X
+  |   |           |       |   |
+  |   |           |       |   |-----0000175000 Mehrwertsteuer (Ausgangssteuer Deutschland)
+  |   |           |       |   ------0000175050 Erwerbssteuer (Ausgangssteuercharakter)
+  |   |           |       |
+  |   |           |       ------GKR 0000195000 - 0000195000 _|X Ford./-Verb. gegenüber Finanzamt
+  |   |           |
+  |   |           |--   2048032 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |           |   |
+  |   |           |   ------GKR 0000170200 - 0000170200 X|X Sonstige Verbindlichkeiten, Restlaufz. 1-5 Jahre
+  |   |           |
+  |   |           ---   2048033 mit einer Restlaufzeit von über 5 Jahren
+  |   |               |
+  |   |               ------GKR 0000170300 - 0000170300 X|X Sonstige Verbindlichkeiten, Restlaufzeit > 5 Jahre
+  |   |
+  |   ---   2050000 Rechnungsabgrenzungsposten
+  |       |
+  |       ------GKR 0000099000 - 0000099000 X|X Passive Rechnungsabgrenzung
+  |
+  |--   3000000 Gewinn- und Verlust-Rechnung
+  |   |
+  |   |--   3010000 Umsatzerlöse
+  |   |   |
+  |   |   |--   3011000 Brutto-Erlöse
+  |   |   |   |
+  |   |   |   |--   3011010 Inland
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000800000 - 0000800000 X|X Umsatzerlöse Inland
+  |   |   |   |   |--   GKR 0000804000 - 0000808000 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000804000 Verrechnungskonto MWSt-Altteile (SD)
+  |   |   |   |   |   ------0000808000 Umsatzerlöse mit Kostenart
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000830000 - 0000830000 X|X Umsatzerlöse abgerechneter Aufträge
+  |   |   |   |   |-----GKR 0000840000 - 0000840000 X|X RE Ertrag Miete Fremdnutzung
+  |   |   |   |   |--   GKR 0000840680 - 0000840690 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000840680 RE Nachschüssige (antizipative) Mieten
+  |   |   |   |   |   ------0000840690 RE Vorschüssige (transitorische) Mieten
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000840800 - 0000840800 X|X RE Ertrag aus Verwaltung von Mietobjekten
+  |   |   |   |   ---   GKR 0000871000 - 0000872000 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000871000 Ergebnis abgerechneter Entwicklungs-Aufträge
+  |   |   |   |       ------0000872000 Ergebnis abgerechneter Konstruktions-Aufträge
+  |   |   |   |
+  |   |   |   ---   3011020 Ausland
+  |   |   |       |
+  |   |   |       ------GKR 0000801000 - 0000801000 X|X Umsatzerlöse Ausland
+  |   |   |
+  |   |   ---   3012000 Erlös-Schmälerungen
+  |   |       |
+  |   |       |-----GKR 0000880000 - 0000880000 X|X Kunden-Skonti (Erlösberichtigung)
+  |   |       |-----GKR 0000881000 - 0000881000 X|X Unberechtigte Kundenabzüge
+  |   |       ---   GKR 0000883000 - 0000889000 X|X
+  |   |           |
+  |   |           |-----0000883000 Nachträgliche Kundenrabatte
+  |   |           |-----0000884000 Kundenboni
+  |   |           |-----0000888000 Erlösschmälerungen mit Kostenart
+  |   |           |-----0000888900 RE Erlösschmälerung Vermietung (Fremd-/Eig.)
+  |   |           ------0000889000 Sonstige Erlös-Schmälerungen
+  |   |
+  |   |--   3020000 Bestands-Veränderung
+  |   |   |
+  |   |   ---   GKR 0000890000 - 0000896000 X|X
+  |   |       |
+  |   |       |-----0000890000 Bestandsveränderung unfertige Erzeugnisse
+  |   |       |-----0000890002 BV Verbr. Qualitätskontrolle Eigenerzeug.mit Koart
+  |   |       |-----0000891000 Bestandsveränderung in Arbeit befindl. Erzeugnisse
+  |   |       |-----0000892000 Bestandsveränderung Fertigerzeugnisse
+  |   |       |-----0000893010 Bestandsv. Verkauf Eigenerz. ohne Kostenart
+  |   |       |-----0000893015 Bestandsv. Verkauf Eigenerz. mit Kostenart
+  |   |       |-----0000893020 Bestandsveränderung Zugang Eigen-Erzeugnisse
+  |   |       |-----0000894010 Bestandsv. Verkauf Fremderz. ohne Kostenart
+  |   |       |-----0000894020 Bestandsveränderung Zugang Fremderzeugnisse
+  |   |       |-----0000894025 Bestandsv. Verkauf Fremderz. mit Kostenart
+  |   |       |-----0000895000 Fabrikleistung Fertigungs-Aufträge (BV)
+  |   |       ------0000896000 Abwertung f. drohende Wertschwankungen Fertigfabr.
+  |   |
+  |   |--   3030000 Andere aktivierte Eigenleistungen
+  |   |   |
+  |   |   ---   GKR 0000870100 - 0000870200 X|X
+  |   |       |
+  |   |       |-----0000870100 Aktivierte Eigenleistungen
+  |   |       ------0000870200 Ertrag aus Aktivierung abgerechneter Aufträge
+  |   |
+  |   |--   3040000 Sonstige betriebliche Erträge
+  |   |   |
+  |   |   |--   3041000 Ertrag aus der Auflösung des Sonderpostens
+  |   |   |   |
+  |   |   |   ---   GKR 0000252000 - 0000252301 X|X
+  |   |   |       |
+  |   |   |       |-----0000252000 Ertrag aus der Auflösung von Sonderposten
+  |   |   |       |-----0000252004 Ertrag aus Auflösung Sonder-AfA gem. Par. 6b EStG
+  |   |   |       |-----0000252009 Ertrag aus Auflösung sonstige Sonder-AfA
+  |   |   |       |-----0000252300 Ertrag aus Auflösung Sonderposten Inv.-Förderung
+  |   |   |       ------0000252301 Ertrag aus a.o. Auflösung Sonderp. Inv.-Förderung
+  |   |   |
+  |   |   ---   3042000 Übrige sonstige betriebliche Erträge
+  |   |       |
+  |   |       |-----GKR 0000200145 - 0000200145 X|X Aufwand Kursdifferenzen a. Vorstufen (Mat. Ledger)
+  |   |       |--   GKR 0000205100 - 0000205150 X|X
+  |   |       |   |
+  |   |       |   |-----0000205100 Ertrag aus Währungskurs-Differenzen
+  |   |       |   |-----0000205110 Ertrag aus Währungsbewertung
+  |   |       |   |-----0000205120 Ertrag aus Translation
+  |   |       |   |-----0000205129 Verrechnung Ertrag aus Währungskurstranslation
+  |   |       |   |-----0000205140 Ertrag aus Rundungs-Differenzen Fremdwährung (MM)
+  |   |       |   |-----0000205145 Ertrag Kursdifferenzen a. Vorstufen (Mat. Ledger)
+  |   |       |   ------0000205150 Ertrag aus nicht real. Währungskurs-Differenzen
+  |   |       |
+  |   |       |-----GKR 0000205700 - 0000205700 X|X Ertrag aus Inkasso-Gebühren
+  |   |       |--   GKR 0000208900 - 0000209100 X|X
+  |   |       |   |
+  |   |       |   |-----0000208900 Umsatz Agenturgeschäft
+  |   |       |   |-----0000208990 Umsatz Agenturgeschäft Gegenbuchung
+  |   |       |   |-----0000209000 Sonstige betriebliche Erträge
+  |   |       |   ------0000209100 TR-TM Sonstiger Ertrag aus Finanzgeschäften
+  |   |       |
+  |   |       |-----GKR 0000209900 - 0000209900 X|X TR-TM Ertrag aus Ausgleichszahl.Finanzgeschäfte
+  |   |       |-----GKR 0000226900 - 0000226900 X|X Ertrag aus Kleindifferenzen Rechnungseingang (MM)
+  |   |       |-----GKR 0000228100 - 0000228100 X|X Aufwand tolerierte Differenz/Sachkontenausgleich
+  |   |       |--   GKR 0000253000 - 0000253050 X|X
+  |   |       |   |
+  |   |       |   |-----0000253000 Ertrag aus Zuschreibungen
+  |   |       |   ------0000253050 Ertrag aus Zuschreibungen des UV gem. §280 Abs. 1
+  |   |       |
+  |   |       |--   GKR 0000255000 - 0000255500 X|X
+  |   |       |   |
+  |   |       |   |-----0000255000 Mehrerlös aus Anlagen-Abgang
+  |   |       |   ------0000255500 Ertrag aus Herabs. der Pauschal-WB zu Forderungen
+  |   |       |
+  |   |       |-----GKR 0000292000 - 0000292000 X|X Ertrag aus der Auflösung von Rückstellungen
+  |   |       |-----GKR 0000470850 - 0000470850 X|X RE Entlastung Aufwand Immobilienbewirtschaftung
+  |   |       |--   GKR 0000840050 - 0000840080 X|X
+  |   |       |   |
+  |   |       |   |-----0000840050 RE Sonstige Erträge aus Vermietung (Fremd-/Eig)
+  |   |       |   |-----0000840070 RE Ertrag aus Betriebskostenpauschale
+  |   |       |   ------0000840080 RE Ertrag Miete Eigennutzung
+  |   |       |
+  |   |       |-----GKR 0000840099 - 0000840099 X|X RE Verrechnung Vorauszahlung Betriebskosten
+  |   |       |--   GKR 0000840500 - 0000840580 X|X
+  |   |       |   |
+  |   |       |   |-----0000840500 RE Ertrag Betriebskostenabrechnung Fremdnutzung
+  |   |       |   ------0000840580 RE Ertrag Betriebskostenabrechnung Eigennutzung
+  |   |       |
+  |   |       |--   GKR 0000840900 - 0000840910 X|X
+  |   |       |   |
+  |   |       |   |-----0000840900 RE Ertrag aus nicht abzugsf. Vorsteuer BK-Abr.
+  |   |       |   ------0000840910 RE Ertrag aus abzugsfähiger Vorsteuer/Anlagen
+  |   |       |
+  |   |       ------GKR 0000841100 - 0000841100 X|X Ertrag aus Agenturgeschäft
+  |   |
+  |   |--   3050000 Materialaufwand
+  |   |   |
+  |   |   |--   3051000 Aufwendungen für Roh-, Hilfs- und
+  |   |   |   |
+  |   |   |   |--   3051010 Aufwendungen für Brennstoffe
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000425200 - 0000425200 X|X Gas
+  |   |   |   |
+  |   |   |   |--   3051020 Aufwendungen für Strom
+  |   |   |   |   |
+  |   |   |   |   ---   GKR 0000425100 - 0000425150 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000425100 Stromkosten (fixer Anteil)
+  |   |   |   |       ------0000425150 Stromkosten (variabler Anteil)
+  |   |   |   |
+  |   |   |   |--   3051030 Aufwendungen für Wasser
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000425300 - 0000425300 X|X Wasser
+  |   |   |   |
+  |   |   |   ---   3051090 Sonstige Aufwendungen für RHB-Stoffe
+  |   |   |       |
+  |   |   |       |--   GKR 0000201100 - 0000201600 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000201100 Aufwand aus Fracht-Differenzen
+  |   |   |       |   |-----0000201200 Aufwand aus Umbewertung Eigenmaterial
+  |   |   |       |   |-----0000201250 Aufwand aus Umbewertung Fremdmaterial
+  |   |   |       |   |-----0000201290 Aufwand aus Umbewertung (bewertet --> unbewertet)
+  |   |   |       |   |-----0000201300 Aufwand aus Inventur-Differenzen
+  |   |   |       |   |-----0000201350 Aufwand aus Inventur-Differenzen - Konsilager
+  |   |   |       |   |-----0000201400 Aufwand aus Umlagerung
+  |   |   |       |   |-----0000201500 Aufwand aus Verbrauch Konsignations-Material
+  |   |   |       |   ------0000201600 Aufwand a.Verbrauch Qualitätskontr. ohne Kostenart
+  |   |   |       |
+  |   |   |       |--   GKR 0000204100 - 0000204800 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000204100 Ertrag aus Fracht-Differenzen
+  |   |   |       |   |-----0000204200 Ertrag aus Umbewertung Eigenerzeugnisse
+  |   |   |       |   |-----0000204250 Ertrag aus Umbewertung Fremderzeugnisse
+  |   |   |       |   |-----0000204290 Ertrag aus Umbewertung  (bewertet --> unbewertet)
+  |   |   |       |   |-----0000204300 Ertrag aus Inventur-Differenzen
+  |   |   |       |   |-----0000204350 Ertrag aus Inventur-Differenzen - Konsilager
+  |   |   |       |   |-----0000204400 Ertrag aus Umlagerung
+  |   |   |       |   |-----0000204500 Ertrag aus Verbrauch Konsignations-Material
+  |   |   |       |   |-----0000204600 Ertrag a.Verbrauch Qualitätskontr. ohne Kostenart
+  |   |   |       |   |-----0000204700 Ertrag aus Preis-Differenzen Fremderzeugnisse
+  |   |   |       |   |-----0000204750 Ertrag Preisdifferenzen aus Material Ledger
+  |   |   |       |   ------0000204800 Ertrag aus Bonus-Differenzen
+  |   |   |       |
+  |   |   |       |--   GKR 0000221500 - 0000221750 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000221500 Aufwand aus Preisdifferenzen Eigenerzeugnisse
+  |   |   |       |   |-----0000221550 Aufw.Preisdifferenzen a.Abr. Material Ledger Eig.
+  |   |   |       |   |-----0000221555 Aufwand Preisdifferenzen a. Vorstufen Eigenmat. ML
+  |   |   |       |   |-----0000221600 Ungeplante Bezugsnebenkosten
+  |   |   |       |   |-----0000221700 Aufwand aus Preisdifferenzen Fremderzeugnisse
+  |   |   |       |   ------0000221750 Aufwand Preisdifferenzen aus Abr. Material Ledger
+  |   |   |       |
+  |   |   |       |--   GKR 0000221900 - 0000221950 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000221900 Aufwand aus Kleindifferenz Rechnungseingang (MM)
+  |   |   |       |   ------0000221950 Aufwand aus Neubewertung
+  |   |   |       |
+  |   |   |       |--   GKR 0000226500 - 0000226555 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000226500 Ertrag aus Preis-Differenzen Eigenerzeugnisse
+  |   |   |       |   |-----0000226550 Aufw.Preisdifferenzen a.Abr. Material Ledger Eig.
+  |   |   |       |   ------0000226555 Ertr.Preisdifferenzen a. Vorstufen Eigenmat. (ML)
+  |   |   |       |
+  |   |   |       |-----GKR 0000226950 - 0000226950 X|X Ertrag aus Neubewertung
+  |   |   |       |--   GKR 0000400000 - 0000401900 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000400000 Verbrauch Rohstoffe 1
+  |   |   |       |   |-----0000400001 Verschrottung Fremdbezogenes Material
+  |   |   |       |   |-----0000400002 Verbrauch Qualitätskontrolle Fremderz. mit Koart
+  |   |   |       |   |-----0000400010 Verbrauch Rohstoffe 2
+  |   |   |       |   |-----0000400020 Material Verbrauch/Handelswaren ohne Kostenart
+  |   |   |       |   ------0000401900 Verschrottung Eigenerzeugnisse
+  |   |   |       |
+  |   |   |       ---   GKR 0000410000 - 0000410400 X|X
+  |   |   |           |
+  |   |   |           |-----0000410000 Verbrauch  Handelsware
+  |   |   |           |-----0000410001 Verschrottung  Handelsware
+  |   |   |           |-----0000410100 Verbrauch Hilfsstoffe
+  |   |   |           |-----0000410200 Verbrauch Betriebsstoffe
+  |   |   |           |-----0000410300 Ersatzteile
+  |   |   |           ------0000410400 Verbrauch Verpackungsmaterial
+  |   |   |
+  |   |   ---   3052000 Aufwendungen für bezogene Leistungen
+  |   |       |
+  |   |       |-----GKR 0000228000 - 0000228000 X|X Aufwand aus Aktivierungsdifferenzen
+  |   |       |-----GKR 0000407000 - 0000407000 X|X Abrechnung Anlage im Bau auf CO-Empfänger
+  |   |       ---   GKR 0000415000 - 0000417000 X|X
+  |   |           |
+  |   |           |-----0000415000 Kosten aus Fremdbezug
+  |   |           ------0000417000 Bezogene Leistungen
+  |   |
+  |   |--   3060000 Personalaufwand
+  |   |   |
+  |   |   |--   3061000 Löhne und Gehälter
+  |   |   |   |
+  |   |   |   |--   3061010 Fertigungs-Löhne
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000431000 - 0000431000 X|X Fertigungs-Löhne
+  |   |   |   |
+  |   |   |   |--   3061020 Hilfs- und Ausfall-Löhne
+  |   |   |   |   |
+  |   |   |   |   ---   GKR 0000432000 - 0000432100 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000432000 Hilfs-Löhne
+  |   |   |   |       ------0000432100 Ausfall-Löhne
+  |   |   |   |
+  |   |   |   |--   3061030 Krankheits-Löhne und Lohnfortzahlung
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000433200 - 0000433200 X|X Krankheitslöhne, Lohnfortzahlung
+  |   |   |   |
+  |   |   |   |--   3061050 Gehälter
+  |   |   |   |   |
+  |   |   |   |   ------GKR 0000439000 - 0000439000 X|X Gehälter
+  |   |   |   |
+  |   |   |   ---   3061090 Sonstige Lohn- und Gehalts-Aufwendungen
+  |   |   |       |
+  |   |   |       |-----GKR 0000431900 - 0000431900 X|X Sonstige Aufwendungen mit Lohncharakter
+  |   |   |       |-----GKR 0000433100 - 0000433100 X|X Überstunden-Zuschläge Löhne
+  |   |   |       |-----GKR 0000434000 - 0000434000 X|X Tarifliches Urlaubsgeld
+  |   |   |       |-----GKR 0000435000 - 0000435000 X|X Tarifliche Jahresleistungen
+  |   |   |       |--   GKR 0000439100 - 0000439200 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000439100 Ausfall-Gehälter
+  |   |   |       |   ------0000439200 Überstunden-Zuschläge Gehälter
+  |   |   |       |
+  |   |   |       ------GKR 0000439900 - 0000439900 X|X Sonstige Aufwendungen mit Gehaltscharakter
+  |   |   |
+  |   |   ---   3062000 Soziale Abgaben und Aufwendungen für
+  |   |       |
+  |   |       |--   3062010 Soziale Abgaben
+  |   |       |   |
+  |   |       |   |--   GKR 0000440100 - 0000440200 X|X
+  |   |       |   |   |
+  |   |       |   |   |-----0000440100 Gesetzlich sozialer Aufwand Löhne
+  |   |       |   |   ------0000440200 Gesetzlich sozialer Aufwand Gehälter
+  |   |       |   |
+  |   |       |   ------GKR 0000446000 - 0000446000 X|X Berufsgenossenschafts-Beitrag
+  |   |       |
+  |   |       |--   3062020 Aufwendungen für Altersversorgung
+  |   |       |   |
+  |   |       |   ------GKR 0000445000 - 0000445000 X|X Aufwand für Altersversorgung
+  |   |       |
+  |   |       ---   3062030 Aufwendungen für Unterstützung
+  |   |           |
+  |   |           ------GKR 0000447000 - 0000447000 X|X Aufwand für Unterstützung
+  |   |
+  |   |--   3070000 Abschreibungen
+  |   |   |
+  |   |   |--   3071000 AfA auf immaterielle Vermögens-Gegenstände
+  |   |   |   |
+  |   |   |   |--   3071010 planmässig
+  |   |   |   |   |
+  |   |   |   |   |-----GKR 0000210100 - 0000210100 X|X Abschreibung auf Gebäude
+  |   |   |   |   |-----GKR 0000230000 - 0000230000 X|X Planmässige Abschreibung auf Sachanlagen
+  |   |   |   |   ------GKR 0000230200 - 0000230200 X|X Geringwertige Wirtschaftsgüter (Direkt-Methode)
+  |   |   |   |
+  |   |   |   ---   3071020 ausserplanmässig
+  |   |   |       |
+  |   |   |       ------GKR 0000230100 - 0000230100 X|X Ausserplanmässige Abschreibung auf Sachanlagen
+  |   |   |
+  |   |   |--   3072000 Abschreibungen auf Vermögens-Gegenstände
+  |   |   |   |
+  |   |   |   ------GKR 0000230700 - 0000230700 X|X Unübliche Abschreibungen Umlaufvermögen
+  |   |   |
+  |   |   ---   3073000 Abschreibungen auf Vermögens-Gegenstände
+  |   |       |
+  |   |       ------GKR 0000419000 - 0000419000 X|X Abwertung f. drohende Wertschwankungen RHB-Stoffe
+  |   |
+  |   ---   3080000 Sonstige betriebliche Aufwendungen
+  |       |
+  |       |--   3081000 Aufwand aus der Einstellung in den
+  |       |   |
+  |       |   |--   GKR 0000230300 - 0000230400 X|X
+  |       |   |   |
+  |       |   |   |-----0000230300 Aufwand aus der Einstellung von Sonderposten
+  |       |   |   |-----0000230350 Aufwand aus Einstellgung sonstiger Sonder-AfA
+  |       |   |   ------0000230400 Aufwand aus Auflösung Sonderposten Inv.-Förderung
+  |       |   |
+  |       |   ------GKR 0000253100 - 0000253100 X|X Aufwand a. Einstellg. Sonder-AfA gem. Par. 6b EStG
+  |       |
+  |       ---   3082000 Übrige sonstige betriebliche Aufwendungen
+  |           |
+  |           |--   3082010 Instandhaltungskosten
+  |           |   |
+  |           |   |-----GKR 0000230690 - 0000230690 X|X TR-TM Andere Abschreibungen auf Finanzgeschäfte
+  |           |   ---   GKR 0000451000 - 0000454000 X|X
+  |           |       |
+  |           |       |-----0000451000 Instandhaltungskosten Gebäude
+  |           |       |-----0000452000 Instandhaltungskosten Maschinen und Geräte
+  |           |       |-----0000453000 Instandhaltungskosten Soll = Ist
+  |           |       ------0000454000 Sonstige Instandhaltungskosten
+  |           |
+  |           |--   3082020 Versicherungen
+  |           |   |
+  |           |   ------GKR 0000469000 - 0000469000 X|X Versicherungen
+  |           |
+  |           |--   3082030 Raumkosten
+  |           |   |
+  |           |   ------GKR 0000470000 - 0000470000 X|X Raumkosten
+  |           |
+  |           |--   3082040 Maschinen-Mieten
+  |           |   |
+  |           |   ------GKR 0000471000 - 0000471000 X|X Maschinen-Mieten
+  |           |
+  |           |--   3082050 Reisekosten
+  |           |   |
+  |           |   ---   GKR 0000474100 - 0000474280 X|X
+  |           |       |
+  |           |       |-----0000474100 Reisekosten  Inland (pauschale Vorsteuer)
+  |           |       |-----0000474210 Reisekosten Unterkunft (Belege/Pauschalen)
+  |           |       |-----0000474220 Reisekosten Verpflegung (Belege/Pauschalen)
+  |           |       |-----0000474230 Reisekosten Fahrt-u.Flugkosten (Belege/Pauschalen)
+  |           |       |-----0000474240 Reisekosten sonstige Kosten
+  |           |       |-----0000474250 Reisekosten Bewirtung
+  |           |       ------0000474280 Reisekosten - pauschal zu versteuern (Lohnsteuer)
+  |           |
+  |           |--   3082060 Kraftfahrzeugkosten
+  |           |   |
+  |           |   ------GKR 0000472000 - 0000472000 X|X Kraftfahrzeugkosten
+  |           |
+  |           |--   3082070 Werbe- und Vertreterkosten
+  |           |   |
+  |           |   ------GKR 0000477000 - 0000477000 X|X Werbe- und Vertreter-Kosten
+  |           |
+  |           ---   3082090 Sonstige betriebliche Aufwendungen
+  |               |
+  |               |--   GKR 0000200100 - 0000200140 X|X
+  |               |   |
+  |               |   |-----0000200100 Aufwendungen aus Währungskurs-Differenzen
+  |               |   |-----0000200110 Aufwendungen aus Währungsbewertung
+  |               |   |-----0000200120 Aufwand aus Translation
+  |               |   |-----0000200130 Verrechnung Aufwand aus Währungskurstranslation
+  |               |   ------0000200140 Aufwand aus Rundungs-Differenzen Fremdwährung (MM)
+  |               |
+  |               |-----GKR 0000209400 - 0000209400 X|X TR-TM Verluste aus Ausgleichszahl.Finanzgeschäfte
+  |               |-----GKR 0000228600 - 0000228600 X|X Ertrag tolerierte Differenz/Sachkontenausgleich
+  |               |-----GKR 0000230610 - 0000230610 X|X TR-TM Abschreibung Swapstellenbewertung
+  |               |--   GKR 0000239000 - 0000239300 X|X
+  |               |   |
+  |               |   |-----0000239000 Aufwand aus Wertberichtigungen zu Forderungen
+  |               |   |-----0000239100 Abwertung f. drohende Wertschwankungen Forderungen
+  |               |   |-----0000239200 Abschreibung a. Forderungen wg. Uneinbringlichkeit
+  |               |   ------0000239300 TR-LO Aufwand WB sonstige Ausleihungen
+  |               |
+  |               |-----GKR 0000243100 - 0000243100 X|X TR-LO Sonstiger Aufwand aus Darlehensgeschäften
+  |               |--   GKR 0000254000 - 0000254010 X|X
+  |               |   |
+  |               |   |-----0000254000 Mindererlös aus Anlagen-Abgang
+  |               |   ------0000254010 Verlust aus verschrotteten Anlagen
+  |               |
+  |               |-----GKR 0000449000 - 0000449000 X|X Sonstige Personalkosten
+  |               |-----GKR 0000470400 - 0000470400 X|X RE Umlagefähige Betriebskosten
+  |               |--   GKR 0000470498 - 0000470520 X|X
+  |               |   |
+  |               |   |-----0000470498 RE Entlastung Rest-Betriebskosten Vorverteil-AE
+  |               |   |-----0000470499 RE Entlastung umlagefähige Betriebskosten
+  |               |   |-----0000470500 RE Abrechnung Betriebkosten Mietverträge
+  |               |   |-----0000470510 RE Abrechnung BK Mietverträge ohne Weiterverr.
+  |               |   ------0000470520 RE Abrechnung Betriebkosten Mieteinheiten
+  |               |
+  |               |--   GKR 0000470580 - 0000470590 X|X
+  |               |   |
+  |               |   |-----0000470580 RE Abrechnung Betriebskosten Eigennutzung
+  |               |   ------0000470590 RE Auflösung Vorauszahlung Betriebskosten
+  |               |
+  |               |-----GKR 0000470800 - 0000470800 X|X RE Aufwand Verwaltung von Mietobjekten
+  |               |--   GKR 0000470900 - 0000470999 X|X
+  |               |   |
+  |               |   |-----0000470900 RE Aufwand nicht abzugsfähige Vorsteuer
+  |               |   |-----0000470910 RE Aufwand nicht abzugsfähige Vorsteuer/Anlagen
+  |               |   |-----0000470950 RE Abrechnung nicht abzugsf. Vorsteuer BK-Abr.
+  |               |   ------0000470999 RE Entlastung nicht abzugsf. Vorsteuer BK-Abr.
+  |               |
+  |               |-----GKR 0000473000 - 0000473000 X|X Versandkosten
+  |               |--   GKR 0000475000 - 0000475130 X|X
+  |               |   |
+  |               |   |-----0000475000 Postkosten (ohne Telefon)
+  |               |   |-----0000475110 Telefonkosten (Grundgebühren)
+  |               |   |-----0000475120 Telefonkosten (Einheiten)
+  |               |   ------0000475130 Sonst. Kommunikationsmittel
+  |               |
+  |               |--   GKR 0000476000 - 0000476900 X|X
+  |               |   |
+  |               |   |-----0000476000 Büromaterial
+  |               |   |-----0000476100 EDV-Material
+  |               |   |-----0000476500 Sonstige allgemeine Verwaltungskosten
+  |               |   ------0000476900 Sonstige Kosten
+  |               |
+  |               |-----GKR 0000478100 - 0000478100 X|X Kosten aus Agenturgeschäft
+  |               |--   GKR 0000479000 - 0000479100 X|X
+  |               |   |
+  |               |   |-----0000479000 Nebenkosten des Geldverkehrs
+  |               |   ------0000479100 TR-TM Sonstiger Aufwand aus Finanzgeschäften
+  |               |
+  |               |-----GKR 0000499999 - 0000499999 X|X CO Umbuchungen  (Abstimmledger CO/FI)
+  |               ------GKR 0000840850 - 0000840850 X|X RE Entlastung Ertrag Immobilienbewirtschaftung
+  |
+  |--   4000000 Finanz-Ergebnis
+  |   |
+  |   |--   4011000 Erträge aus Beteiligungen
+  |   |   |
+  |   |   |--   4011010 bei nicht verbundenen Unternehmen
+  |   |   |   |
+  |   |   |   ------GKR 0000205300 - 0000205300 X|X Ertrag aus Beteiligungen (nicht verbund. Untern.)
+  |   |   |
+  |   |   ---   4011020 bei verbundenen Unternehmen
+  |   |       |
+  |   |       ------GKR 0000205350 - 0000205350 X|X Ertrag aus Beteiligungen (verbundene Unternehmen)
+  |   |
+  |   |--   4012000 Aufgrund eines Gewinnabführungs-Vetrages
+  |   |   |
+  |   |   ------GKR 0000291200 - 0000291200 X|X Ertrag aus Gewinnübernahme
+  |   |
+  |   |--   4013000 Erträge aus anderen Wertpapieren und
+  |   |   |
+  |   |   |--   4013010 aus nicht verbundenen Unternehmen
+  |   |   |   |
+  |   |   |   |-----GKR 0000205200 - 0000205200 X|X Ertrag aus Ausleihungen (nicht verbundene Untern.)
+  |   |   |   |-----GKR 0000205400 - 0000205400 X|X Ertrag aus Wertpapieren (nicht verbundene Untern.)
+  |   |   |   |--   GKR 0000209200 - 0000209300 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000209200 TR-TM Verluste aus Abgängen Finanzanlagen AV
+  |   |   |   |   ------0000209300 TR-TM Verluste aus Abgängen Wertpapieren UV
+  |   |   |   |
+  |   |   |   ---   GKR 0000209700 - 0000209800 X|X
+  |   |   |       |
+  |   |   |       |-----0000209700 TR-TM Ertrag a. Abgängen Finanzanlagen AV
+  |   |   |       ------0000209800 TR-TM Ertrag aus Abgängen Wertpapieren UV
+  |   |   |
+  |   |   ---   4013020 aus verbundenen Unternehmen
+  |   |       |
+  |   |       |-----GKR 0000205250 - 0000205250 X|X Ertrag aus Ausleihungen (verbundene Unternehmen)
+  |   |       ------GKR 0000205450 - 0000205450 X|X Ertrag aus Wertpapieren (verbundene Unternehmen)
+  |   |
+  |   |--   4014000 Sonstige Zinsen und ähnliche Erträge
+  |   |   |
+  |   |   |--   4014010 aus nicht verbundenen Unternehmen
+  |   |   |   |
+  |   |   |   |-----GKR 0000245100 - 0000245100 X|X Zinserträge (nicht verbundene Unternehmen)
+  |   |   |   |-----GKR 0000245200 - 0000245200 X|X Ertrag aus Bankzinsen
+  |   |   |   |-----GKR 0000245900 - 0000245900 X|X Sonstige Zinsen und ähnliche Erträge
+  |   |   |   ------GKR 0000247300 - 0000247300 X|X Ertrag aus Diskont-Spesen
+  |   |   |
+  |   |   ---   4014020 aus verbundenen Unternehmen
+  |   |       |
+  |   |       |-----GKR 0000245150 - 0000245150 X|X Zinserträge (verbundene Unternehmen)
+  |   |       |-----GKR 0000245950 - 0000245950 X|X Sonst. Zinsen u. ähnliche Erträge (verb. Untern.)
+  |   |       ------GKR 0000247350 - 0000247350 X|X Ertrag aus Diskont-Spesen verbundene Unternehmen
+  |   |
+  |   |--   4015000 Abschreibungen auf Finanzanlagen und auf
+  |   |   |
+  |   |   |--   4015010 Ausserplanmässige AfA auf Finanz-Anlagen
+  |   |   |   |
+  |   |   |   ------GKR 0000230550 - 0000230550 X|X Ausserplanmässige Abschreibung auf Finanzanlagen
+  |   |   |
+  |   |   |--   4015020 Abschreibung auf Wertpapiere des Umlauf-
+  |   |   |   |
+  |   |   |   ------GKR 0000230600 - 0000230600 X|X Abschreibungen auf Wertpapiere des Umlaufvermögens
+  |   |   |
+  |   |   ---   4015030 Andere Abschreibungen auf Finanzanlagen und
+  |   |       |
+  |   |       |-----GKR 0000230500 - 0000230500 X|X Andere Abschreibungen auf Finanzanlagen
+  |   |       ------GKR 0000230650 - 0000230650 X|X Andere Abschreibungen auf Wertpapiere Umlaufverm.
+  |   |
+  |   |--   4016000 Aufwendungen aus Verlust-Übernahme
+  |   |   |
+  |   |   ------GKR 0000291100 - 0000291100 X|X Aufwand aus Verlust-Übernahme
+  |   |
+  |   ---   4017000 Zinsen und ähnliche Aufwendungen
+  |       |
+  |       |--   4017010 an nicht verbundene Unternehmen
+  |       |   |
+  |       |   |--   GKR 0000240100 - 0000240140 X|X
+  |       |   |   |
+  |       |   |   |-----0000240100 Zins-Aufwendungen
+  |       |   |   ------0000240140 RE Zinsaufwand aus Mietkaution
+  |       |   |
+  |       |   |-----GKR 0000240200 - 0000240200 X|X Aufwand aus Bankzinsen
+  |       |   |-----GKR 0000240900 - 0000240900 X|X Sonstige Zinsen und ähnliche Aufwendungen
+  |       |   ------GKR 0000242300 - 0000242300 X|X Diskont-Aufwendungen
+  |       |
+  |       ---   4017020 an verbundene Unternehmen
+  |           |
+  |           |-----GKR 0000240150 - 0000240150 X|X Zins-Aufwendungen verbundene Unternehmen
+  |           |-----GKR 0000240950 - 0000240950 X|X Sonstige Zinsen u. ähnl. Aufwendungen verb. Untern
+  |           ------GKR 0000242350 - 0000242350 X|X Diskont-Aufwendungen verbundene Unternehmen
+  |
+  |--   5000000 Ausserordentliches Ergebnis
+  |   |
+  |   |--   5011000 Ausserordentliche Ertraege
+  |   |   |
+  |   |   ------GKR 0000255900 - 0000255900 X|X Ausserordentlicher Ertrag
+  |   |
+  |   ---   5012000 Ausserordentliche Aufwendungen
+  |       |
+  |       ------GKR 0000254900 - 0000254900 X|X Ausserordentlicher Aufwand
+  |
+  |--   6000000 Steuern
+  |   |
+  |   |--   6011000 Steuern vom Einkommen und vom Ertrag
+  |   |   |
+  |   |   ---   GKR 0000290100 - 0000290900 X|X
+  |   |       |
+  |   |       |-----0000290100 Körperschaft-Steuer
+  |   |       |-----0000290200 Kapitalertrag-Steuer
+  |   |       |-----0000290300 Gewerbeertrag-Steuer
+  |   |       |-----0000290400 Latente Steuern gem. Par. 274 Abs.2 HGB
+  |   |       ------0000290900 Sonstige Steuern vom Einkommen und Ertrag
+  |   |
+  |   ---   6012000 Sonstige Steuern
+  |       |
+  |       ---   GKR 0000460000 - 0000463000 X|X
+  |           |
+  |           |-----0000460000 Grundsteuer
+  |           |-----0000460100 Kraftfahrzeug-Steuer
+  |           ------0000463000 Sonstige Steuern
+  |
+  |--   7000000 Ergebnis-Verwendung
+  |   |
+  |   |--   7010000 Dummyknoten
+  |   |   |
+  |   |   |--   7011000 Auf Grund eines Gewinnabführungs-Vetrages
+  |   |   |   |
+  |   |   |   ------GKR 0000910000 - 0000910000 X|X Gewinnabführung
+  |   |   |
+  |   |   ---   7012000 Erträge aus Verlust-Übernahme
+  |   |       |
+  |   |       ------GKR 0000920000 - 0000920000 X|X Verlustausgleich
+  |   |
+  |   |--   7040000 Verlust-Vortrag aus dem Vorjahr
+  |   |   |
+  |   |   ------GKR 0000900000 - 0000900000 X|_ Ergebnis-Vortrag aus dem Vorjahr
+  |   |
+  |   |--   7050000 Gewinn-Vortrag aus dem Vorjahr
+  |   |   |
+  |   |   ------GKR 0000900000 - 0000900000 _|X Ergebnis-Vortrag aus dem Vorjahr
+  |   |
+  |   |--   7060000 Entnahmen aus der Kapital-Rücklage
+  |   |   |
+  |   |   ------GKR 0000930000 - 0000930000 X|X Entnahmen aus der Kapital-Rücklage
+  |   |
+  |   |--   7070000 Entnahmen aus Gewinn-Rücklagen
+  |   |   |
+  |   |   ---   GKR 0000940010 - 0000940040 X|_
+  |   |       |
+  |   |       |-----0000940010 Einstellungen/Entnahmen gesetzliche Rücklage
+  |   |       |-----0000940020 Einstellungen/Entnahmen Rücklage eigene Aktien
+  |   |       |-----0000940030 Einstellungen/Entnahmen satzungsmässige Rücklage
+  |   |       ------0000940040 Einstellungen/Entnahmen andere Gewinnrücklagen
+  |   |
+  |   |--   7080000 Einstellungen in Gewinn-Rücklagen
+  |   |   |
+  |   |   ---   GKR 0000940010 - 0000940040 _|X
+  |   |       |
+  |   |       |-----0000940010 Einstellungen/Entnahmen gesetzliche Rücklage
+  |   |       |-----0000940020 Einstellungen/Entnahmen Rücklage eigene Aktien
+  |   |       |-----0000940030 Einstellungen/Entnahmen satzungsmässige Rücklage
+  |   |       ------0000940040 Einstellungen/Entnahmen andere Gewinnrücklagen
+  |   |
+  |   ------7090000 Gewinn aus GuV                      GuV Ergebnis
+  |
+  |-----8000000 Nicht zugeordnete Konten      Nicht zugeordnet
+  ---   9000000 Anhang
+      |
+      |--   9010000 Haftungs-Verhältnisse
+      |   |
+      |   |--   9011000 Haftungs-Verhältnisse
+      |   |   |
+      |   |   |--   GKR 0000113110 - 0000113111 X|X
+      |   |   |   |
+      |   |   |   |-----0000113110 Bank 1 (Erhaltene Bürgschaften)
+      |   |   |   ------0000113111 Bank 1 (Lfd. Schuldwechsel)
+      |   |   |
+      |   |   |--   GKR 0000113210 - 0000113211 X|X
+      |   |   |   |
+      |   |   |   |-----0000113210 Bank 2 (Erhaltene Bürgschaften)
+      |   |   |   ------0000113211 Bank 2 (Lfd. Schuldwechsel)
+      |   |   |
+      |   |   |-----GKR 0000196100 - 0000196100 X|X Gegebene Bürgschaften (Debitoren)
+      |   |   |-----GKR 0000196200 - 0000196200 X|X Eventual-Forderungen aus SW-Zahlungen (Debitoren)
+      |   |   |-----GKR 0000196250 - 0000196250 X|X Eventual-Verbindlichk.a. SW-Zahlungen (Kreditoren)
+      |   |   ------GKR 0000196400 - 0000196400 X|X Erhaltene Bürgschaften (Kreditoren)
+      |   |
+      |   ---   9012000 Ausgleichs-Posten für Haftungs-Verhältnisse
+      |       |
+      |       |-----GKR 0000196110 - 0000196110 X|X Verrechnung gegebene Bürgschaften (Debitoren)
+      |       |-----GKR 0000196210 - 0000196210 X|X Verrechnung Eventual-Forderungen aus SW-Zahlungen
+      |       |-----GKR 0000196260 - 0000196260 X|X Verrg. Eventual-Verbindl. aus SW-Zahlungen (Kred.)
+      |       |-----GKR 0000196410 - 0000196410 X|X Verrechnung erhaltene Bürgschaften (Kreditoren)
+      |       ------GKR 0000196500 - 0000196500 X|X Verrechnung lfd. Schuldwechsel
+      |
+      |--   9020000 Verrechnung kalkulatorische Kosten
+      |   |
+      |   |--   GKR 0000280000 - 0000284000 X|X
+      |   |   |
+      |   |   |-----0000280000 Verrechnung kalkulatorische AfA auf Sachanlagen
+      |   |   |-----0000281000 Verrechnung kalkulatorische Zinsen auf Sachanlagen
+      |   |   |-----0000282000 Verrechnung kalkulatorische Wagnisse
+      |   |   ------0000284000 Verrechnung andere kalkulatorische Kosten
+      |   |
+      |   |-----GKR 0000470700 - 0000470700 X|X RE Kalulatorischer Aufwand Miete Leerstand
+      |   |--   GKR 0000480000 - 0000484000 X|X
+      |   |   |
+      |   |   |-----0000480000 Kalkulatorische Abschreibungen (Ermittlung FI-AA)
+      |   |   |-----0000480500 Kalkulatorische Abschreibungen (Ermittlung CO)
+      |   |   |-----0000481000 Kalkulatorische Zinsen
+      |   |   |-----0000482000 Kalkulatorische Wagnisse
+      |   |   ------0000484000 Andere kalkulatorische Kosten
+      |   |
+      |   ------GKR 0000840700 - 0000840700 X|X RE Kalulatorischer Ertrag Miete Leerstand
+      |
+      |--   9030000 Verrechnung Wechsel
+      |   |
+      |   |-----GKR 0000113107 - 0000113107 X|X Bank 1 (Wechseldiskont-Obligo)
+      |   |-----GKR 0000113112 - 0000113112 X|X Bank 1 (Wechsel-Inkasso)
+      |   |-----GKR 0000113207 - 0000113207 X|X Bank 2 (Wechseldiskont-Obligo)
+      |   |-----GKR 0000113212 - 0000113212 X|X Bank 2 (Wechselinkasso)
+      |   ------GKR 0000196600 - 0000196600 X|X Verrechnung Wechsel-Inkasso
+      |
+      |--   9050000 Verrechnung Anlagen-Abgang (FI-AA)
+      |   |
+      |   ---   GKR 0000820000 - 0000825000 X|X
+      |       |
+      |       |-----0000820000 Erlös aus Anlagen-Abgang (erfolgsneutral)
+      |       ------0000825000 Verrechnung Anlagen-Abgang
+      |
+      |--   9060000 Verrechnung WE/RE (MM)
+      |   |
+      |   |-----GKR 0000191000 - 0000191000 X|X WE/RE-Verrechnung  -Eigenfertigung-
+      |   |-----GKR 0000191099 - 0000191099 X|X Korrektur WE/RE-Verrechnung  -Eigenfertigung-
+      |   |-----GKR 0000191100 - 0000191100 X|X WE/RE-Verrechnung  -Fremdbezug-
+      |   |-----GKR 0000191110 - 0000191110 X|X Übernommene WE/RE Verrechnung (Material-Ledger)
+      |   ------GKR 0000191199 - 0000191199 X|X Korrektur WE/RE-Verrechnung  -Fremdbezug-
+      |
+      |--   9070000 Verrechnung Debitoren-Geldeingang
+      |   |
+      |   |-----GKR 0000110009 - 0000110009 X|X Postgirokonto (Debitoren-Geldeingang)
+      |   |-----GKR 0000113109 - 0000113109 X|X Bank 1 (Debitoren-Geldeingang)
+      |   ------GKR 0000113209 - 0000113209 X|X Bank 2 (Debitoren-Geldeingang)
+      |
+      |--   9080000 Verrechnung Konzernabschluss-Konten
+      |   |
+      |   ---   GKR 0000196700 - 0000196750 X|X
+      |       |
+      |       |-----0000196700 Verrg. nicht realisierter Kursdifferenzen (Kred.)
+      |       ------0000196750 Verrg. nicht realisierter Kursdifferenzen(Debitor)
+      |
+      ---   9130000 Konten, die Saldo Null ausweisen müssen
+          |
+          |-----GKR 0000140098 - 0000140098 X|X Nachbelastung Geschäftsbereich Forderungen Inland
+          |-----GKR 0000141098 - 0000141098 X|X Nachbelastung Geschäftsbereich Forderungen Ausland
+          |-----GKR 0000144098 - 0000144098 X|X Nachbelastung Geschäftsbereich Ford. verb. Untern.
+          |-----GKR 0000145098 - 0000145098 X|X Nachbelastung Geschäftsbereich Ford. nahest. Unt.
+          |-----GKR 0000154098 - 0000154098 X|X Nachbelastung Geschäftsbereich Steuern
+          |-----GKR 0000160098 - 0000160098 X|X Nachbelastung Geschäftsbereich Verbindl. Inland
+          |-----GKR 0000161098 - 0000161098 X|X Nachbelastung Geschäftsbereich Verbindl. Ausland
+          |-----GKR 0000164098 - 0000164098 X|X Nachbelastung Geschäftsbereich Verbindl. verb. Unt
+          |-----GKR 0000165098 - 0000165098 X|X Nachbelastung Geschäftsber. Verbindl. nahest. Unt.
+          |-----GKR 0000175098 - 0000175098 X|X Nachbelastung Geschäftsbereich Steuern
+          |-----GKR 0000191120 - 0000191120 X|X Verrechnung Rechnungskürzung  (Retail)
+          |--   GKR 0000191400 - 0000191500 X|X
+          |   |
+          |   |-----0000191400 Verrechnung Anlagenzugang aus Rechnungs-Prüfung
+          |   ------0000191500 Verrechnung Rückgabe Anlage an Lager
+          |
+          |-----GKR 0000193098 - 0000193098 X|X Nachbelastung GB Lief.skonti (Verrg.Netto-Verf.)
+          |--   GKR 0000194100 - 0000194600 X|X
+          |   |
+          |   |-----0000194100 TR-TM Verrechnung Devisen
+          |   |-----0000194200 TR-TM Technische Verrechnung
+          |   |-----0000194300 TR-TM Währungstauschkonto
+          |   |-----0000194400 TR-TM Verrechnung Zahlungsverkehr
+          |   |-----0000194500 Verrechnung Geschäftsbereich
+          |   ------0000194600 Werke im Ausland (techn. Zwischenkonto)
+          |
+          |-----GKR 0000195100 - 0000195100 X|X Umsatzsteuer (Zahllast)
+          |-----GKR 0000195800 - 0000195800 X|X Übernahmekonto Altdaten
+          |-----GKR 0000196000 - 0000196000 X|X Anzahlungsanforderungen (Debitoren)
+          |-----GKR 0000196300 - 0000196300 X|X Anzahlungsanforderungen (Kreditoren)
+          |-----GKR 0000199990 - 0000199990 X|X Verrechnungskonto Anlagenzugang
+          |-----GKR 0000200150 - 0000200150 X|X Aufwand aus nicht real. Währungskurs-Differenzen
+          |-----GKR 0000221800 - 0000221800 X|X Abgrenzungskonto Material Ledger Fremdmaterial
+          |-----GKR 0000221850 - 0000221850 X|X Abgrenzungskonto Material Ledger Eigenmaterial
+          |--   GKR 0000248000 - 0000248100 X|X
+          |   |
+          |   |-----0000248000 Lieferer-Skonti (Nachlässe)
+          |   |-----0000248098 Nachbelastung Geschäftsbereich Liefererskonti
+          |   ------0000248100 Skonto-Verlust beim Nettoverfahren
+          |
+          |-----GKR 0000399998 - 0000399998 X|X Bestandsbuchungen mit Wert Null
+          |--   GKR 0000840100 - 0000840130 X|X
+          |   |
+          |   |-----0000840100 RE VZF-Fortschreibung Betriebskosten
+          |   |-----0000840110 RE VZ-Fortschreibung Betriebskosten
+          |   |-----0000840120 RE VZ-Fortschreibung Umsatzmiete
+          |   ------0000840130 RE Fortschreibung Mietkaution
+          |
+          |-----GKR 0000880098 - 0000880098 X|X Nachbelastung Geschäftsbereich Kundenskonti
+          |-----GKR 0000881098 - 0000881098 X|X Nachbelastung GB unberechtigte Kundenabzüge
+          ------GKR 0000889098 - 0000889098 X|X Nachbelastung GB sonstige Erlösschmälerungen

@@ -1,0 +1,46 @@
+﻿@model Viewbox.Models.PropertySettingsModel
+@using Viewbox.Properties
+@using Viewbox
+@helper DisplayProperty(int index, int id, SystemDb.PropertyType type, string name, string description, string value) 
+{
+    <div class="property @type">
+        <div class="shortname">@name</div>
+        <div class="link">
+            <a class="text change" href="#">@Resources.Alter</a>
+            <a class="text cancel" href="#">@Resources.Cancel</a>
+            <a class="text update" href="#">@Resources.Save</a>
+        </div>
+        <div class="description">@description</div>
+        <div class="value">
+            <input type="hidden" name="[@index].Id" value="@id" />
+            @if (type == SystemDb.PropertyType.Bool) {
+                bool isChecked = false;
+                bool.TryParse(value, out isChecked);
+                <input type="hidden" name="[@index].Value" value="@value" class="hidden-value" />
+                <div class="display-value">@(isChecked ? Resources.Yes : Resources.No)</div>
+                <div class="changed-value">@(isChecked ? Resources.No : Resources.Yes)</div>
+            } else {
+                @Html.TextBox(String.Format("[{0}].Value", index), value, new { Class = "textbox changed-value" })
+                <div class="display-value">@value</div>
+            }
+        </div>
+    </div>
+}
+@using (Html.BeginForm("Index", "Settings"))
+{
+    int i = 0;
+    List<string> propertieKeys = new List<string>();
+    foreach (var p in Model.Properties)
+    {
+        if (!propertieKeys.Contains(p.Key) && p.Key != "enlarged_datagrid")
+        {
+            propertieKeys.Add(p.Key);
+            if (ViewboxSession.User.UserName != "avendata_admin" && p.Key == "indexerrorprop")
+            {
+                //Only avendata_admin show this setting
+                continue;
+            }
+            @DisplayProperty(i++, p.Id, p.Type, p.GetName(), p.GetDescription(), p.Value)
+        }
+    }
+}

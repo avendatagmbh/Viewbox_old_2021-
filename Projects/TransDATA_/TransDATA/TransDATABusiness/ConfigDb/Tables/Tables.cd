@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TransDATABusiness.ConfigDb.Tables.Base.TableBase">
+    <Position X="5.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAABAAAAAAAIAAAAAAAgAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConfigDb\Tables\Base\TableBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TransDATABusiness.ConfigDb.Tables.Column">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAgIAAAiAQAAoAAAAAAQQAABAAAIAAAAAEAAAAgAI=</HashCode>
+      <FileName>ConfigDb\Tables\Column.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ColumnInfo" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TransDATABusiness.ConfigDb.Tables.ColumnInfo">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAQoCggAAAhAAQFADAAAQREIBAIABAQBSAACAAQAEA=</HashCode>
+      <FileName>ConfigDb\Tables\ColumnInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TransDATABusiness.ConfigDb.Tables.Profile">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAMAgAAgAgABAEAAIARQQAQAAAACAAACAAAAAAAIA=</HashCode>
+      <FileName>ConfigDb\Tables\Profile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TransDATABusiness.ConfigDb.Tables.Table">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgYAAAiAAAAAAAAAAAQAAAAQAAAAAAABAAAgAgAA=</HashCode>
+      <FileName>ConfigDb\Tables\Table.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TableInfo" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TransDATABusiness.ConfigDb.Tables.TableInfo">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAsCBAAAAgBEANAAAAAQSkAEIAAEAAAIKACAACAEA=</HashCode>
+      <FileName>ConfigDb\Tables\TableInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TransDATABusiness.ConfigDb.Tables.Info" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAQBAAAQQIAgJBAAAAADAAAgIAAAAA=</HashCode>
+      <FileName>ConfigDb\Tables\Info.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.ObjectModel.ObservableCollection&lt;T&gt;" Collapsed="true">
+    <Position X="12.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BtnExit" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fehler: </value>
+  </data>
+  <data name="TxtEnterProfileName" xml:space="preserve">
+    <value>Bitte geben Sie den Namen des Profils ein</value>
+  </data>
+  <data name="TxtEnterProfilePath" xml:space="preserve">
+    <value>Bitte geben Sie den Pfad an indem das Profil gespeichert werden soll, bzw. aus dem das Profil importiert werden soll.</value>
+  </data>
+  <data name="ListViewProfileModel_DeleteItem_DeleteProfileQuestion">
+    <value xml:space="preserve">Möchten Sie das Profil {0} wirklich löschen?</value>
+  </data>
+  <data name="DlgMainWindow_Select">
+    <value xml:space="preserve">Bitte auswaehlen...</value>
+  </data>
+  <data name="SelectOcrAreasModel_ExtractText_NoScreenshotSelected">
+    <value xml:space="preserve">Kein Screenshot ausgewählt</value>
+  </data>
+  <data name="CorrectionAssistantModel_InfoString">
+    <value xml:space="preserve">Aktuelles Bild "{0}"
+Erkannter Text {1}/{2}</value>
+  </data>
+  <data name="CorrectionAssistantModel_NextButtonText_Ready">
+    <value xml:space="preserve">Fertig</value>
+  </data>
+  <data name="CorrectionAssistantModel_NextButtonText_Next">
+    <value xml:space="preserve">Weiter</value>
+  </data>
+  <data name="DlgCorrectionAssistant_Title">
+    <value xml:space="preserve">Text Korrektur</value>
+  </data>
+  <data name="CtlSelectOcrAreas_rbSelectAnchor_Text">
+    <value xml:space="preserve">1. Ankerpunkt selektieren</value>
+  </data>
+  <data name="CtlSelectOcrAreas_rbSelectOcrArea_Text">
+    <value xml:space="preserve">2. Text selektieren</value>
+  </data>
+  <data name="CtlSelectOcrAreas_rbSelectRectangle_Text">
+    <value xml:space="preserve">3. Rechtecke bearbeiten</value>
+  </data>
+  <data name="CtlColumnHeader_btnEditHeader_Text">
+    <value xml:space="preserve">Spaltennamen editieren</value>
+  </data>
+  <data name="SelectOcrAreasModel_ExtractText_ErrorNoScreenshotgroupSelected">
+    <value xml:space="preserve">Keine Screenshotgruppe ausgewählt</value>
+  </data>
+  <data name="ListViewTableModel_AddItem_ErrorSelectProfileFirst">
+    <value xml:space="preserve">Bitte zuerst ein Profil anlegen und auswählen</value>
+  </data>
+  <data name="CtlProfileDetails_Name">
+    <value xml:space="preserve">Name</value>
+  </data>
+  <data name="CtlProfileDetails_PathToDatabaseFile">
+    <value xml:space="preserve">Pfad zu den Einstellungen</value>
+  </data>
+  <data name="CtlProfileDetails_AccessOutputPath">
+    <value xml:space="preserve">Ausgabe Access Datenbank</value>
+  </data>
+  <data name="CtlProfileDetails_Description">
+    <value xml:space="preserve">Beschreibung (optional)</value>
+  </data>
+  <data name="CtlTableDetails_Name">
+    <value xml:space="preserve">Name</value>
+  </data>
+  <data name="CtlTableDetails_TableName">
+    <value xml:space="preserve">Tabellen Name</value>
+  </data>
+  <data name="CtlTableDetails_Description">
+    <value xml:space="preserve">Beschreibung</value>
+  </data>
+  <data name="CtlTextRecognitionResult_OverviewInfoString">
+    <value xml:space="preserve">Übersicht über die Erkennungsergebnisse</value>
+  </data>
+  <data name="CtlListView_btnAddItem_New">
+    <value xml:space="preserve">Neu</value>
+  </data>
+  <data name="CtlListView_btnDeleteItem_Delete">
+    <value xml:space="preserve">Löschen</value>
+  </data>
+  <data name="CtlListView_Details">
+    <value xml:space="preserve">Detailangaben</value>
+  </data>
+  <data name="CtlScreenshotList_LoadedImages">
+    <value xml:space="preserve">Geladene Bilder</value>
+  </data>
+  <data name="CtlScreenshotList_btnLoadImages_AddImages">
+    <value xml:space="preserve">Bilder hinzufügen</value>
+  </data>
+  <data name="CtlScreenshotList_btnDeleteImage_DeleteSelectedImage">
+    <value xml:space="preserve">Ausgewähltes Bild löschen</value>
+  </data>
+  <data name="CtlScreenshotList_btnClearImages_ClearList">
+    <value xml:space="preserve">Liste leeren</value>
+  </data>
+  <data name="CtlSelectOcrAreas_EditModes">
+    <value xml:space="preserve">Bearbeitungsmodi</value>
+  </data>
+  <data name="CtlSelectOcrAreas_AnchorRect">
+    <value xml:space="preserve">Anker Rechteck</value>
+  </data>
+  <data name="CtlSelectOcrAreas_TextRect">
+    <value xml:space="preserve">Text Rechteck</value>
+  </data>
+  <data name="CtlSelectOcrAreas_SelectedRect">
+    <value xml:space="preserve">Selektiertes Rechteck</value>
+  </data>
+  <data name="ListViewProfileModel_DeleteItem_Error_DeletingProfile">
+    <value xml:space="preserve">Fehler beim Löschen des Profils: </value>
+  </data>
+  <data name="ListViewTableModel_DeleteItem_ConfirmationMessage">
+    <value xml:space="preserve">Möchten Sie die Gruppe {0} wirklich löschen?</value>
+  </data>
+  <data name="MainWindowModel_Navigation_Management">
+    <value xml:space="preserve">Verwaltung</value>
+  </data>
+  <data name="MainWindowModel_Navigation_Profile">
+    <value xml:space="preserve">Profile</value>
+  </data>
+  <data name="MainWindowModel_Navigation_ScreenshotGroups">
+    <value xml:space="preserve">Screenshot Gruppen</value>
+  </data>
+  <data name="MainWindowModel_Navigation_Textselection">
+    <value xml:space="preserve">Textauswahl</value>
+  </data>
+  <data name="MainWindowModel_Navigation_RecognitionResult">
+    <value xml:space="preserve">Erkennungs Ergebnis</value>
+  </data>
+  <data name="MainWindowModel_SelectedProfile_Error_LoadingProfile">
+    <value xml:space="preserve">Fehler beim Laden des Profils "{0}": {1}</value>
+  </data>
+  <data name="MainWindowModel_ExportAccessDatabase_Error_NoScreenshotGroupSelected">
+    <value xml:space="preserve">Keine Screenshot Gruppe ausgewählt.</value>
+  </data>
+  <data name="MainWindowModel_ExportAccessDatabase_Error_NoRecognitionResultPresent">
+    <value xml:space="preserve">Kein zu exportierendes Ergebnis vorhanden, bitte zuerst die Texterkennung durchführen.</value>
+  </data>
+  <data name="MainWindowModel_ExportAccessDatabase_Error_NoAccessOutputPathSelected">
+    <value xml:space="preserve">Bitte zuerst im Profil einen Pfad zur Datenbank auswählen.</value>
+  </data>
+  <data name="MainWindowModel_ExportAccessDatabase_Error_NoTablenameSelected">
+    <value xml:space="preserve">Bitte zuerst einen Tabellennamen in der Screenshot Gruppe einstellen.</value>
+  </data>
+  <data name="SelectOcrAreasModel_progress_DoWork_Error">
+    <value xml:space="preserve">Fehler: </value>
+  </data>
+  <data name="DlgCorrectionAssistant_RecognitionOverview">
+    <value xml:space="preserve">Erkennungsübersicht</value>
+  </data>
+  <data name="DlgCorrectionAssistant_CorrectWords">
+    <value xml:space="preserve">Wörter korrigieren</value>
+  </data>
+  <data name="DlgInfo_Phone">
+    <value xml:space="preserve">Telefon: </value>
+  </data>
+  <data name="DlgInfo_Fax">
+    <value xml:space="preserve">Fax: </value>
+  </data>
+  <data name="DlgInfo_Support">
+    <value xml:space="preserve">Support:</value>
+  </data>
+  <data name="DlgInfo_btnClose_Close">
+    <value xml:space="preserve">Schließen</value>
+  </data>
+  <data name="DlgMainWindow_btnExtractText_Caption">
+    <value xml:space="preserve">Text extrahieren</value>
+  </data>
+  <data name="DlgMainWindow_btnExtractTextForAll_Caption">
+    <value xml:space="preserve">Text extrahieren für alle</value>
+  </data>
+  <data name="DlgMainWindow_btnUseSelectionForAll_Caption">
+    <value xml:space="preserve">Rechtecke übertragen</value>
+  </data>
+  <data name="DlgMainWindow_btnUseExportAccess_Caption">
+    <value xml:space="preserve">Access Datenbank exportieren</value>
+  </data>
+  <data name="DlgMainWindow_btnInfo_Caption">
+    <value xml:space="preserve">Info</value>
+  </data>
+  <data name="DlgMainWindow_Profile">
+    <value xml:space="preserve">Profil</value>
+  </data>
+  <data name="DlgMainWindow_btnUpdateDatabase_UpgradeDatabase">
+    <value xml:space="preserve">Datenbank upgraden</value>
+  </data>
+  <data name="DlgMainWindow_ScreenshotGroup">
+    <value xml:space="preserve">Screenshot Gruppe</value>
+  </data>
+  <data name="DlgNewProfile_Caption">
+    <value xml:space="preserve">Neues Profil erstellen</value>
+  </data>
+  <data name="btnOk_Caption">
+    <value xml:space="preserve">_OK</value>
+  </data>
+  <data name="btnCancel_Caption">
+    <value xml:space="preserve">A_bbrechen</value>
+  </data>
+  <data name="DlgPopupProgress_btnAbort_Caption">
+    <value xml:space="preserve">Abbrechen</value>
+  </data>
+  <data name="DlgTextTable_Caption">
+    <value xml:space="preserve">Extrahierte Texte</value>
+  </data>
+</root>

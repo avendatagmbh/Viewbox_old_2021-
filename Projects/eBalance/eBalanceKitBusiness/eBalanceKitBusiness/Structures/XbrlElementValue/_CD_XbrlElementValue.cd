@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Boolean" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase">
+    <Position X="11.75" Y="0.75" Width="2.5" />
+    <Members>
+      <Field Name="_autoComputeEnabled" Hidden="true" />
+      <Field Name="_computedValue" Hidden="true" />
+      <Field Name="_dbValue" Hidden="true" />
+      <Field Name="_doDbUpdate" Hidden="true" />
+      <Field Name="_isEditable" Hidden="true" />
+      <Field Name="_isEnabled" Hidden="true" />
+      <Field Name="_manualValue" Hidden="true" />
+      <Field Name="_sendAccountBalances" Hidden="true" />
+      <Field Name="_summationSources" Hidden="true" />
+      <Field Name="_summationTargets" Hidden="true" />
+      <Field Name="_supressWarningMessages" Hidden="true" />
+      <Field Name="_validationError" Hidden="true" />
+      <Field Name="_validationErrorMessage" Hidden="true" />
+      <Field Name="_validationWarning" Hidden="true" />
+      <Field Name="_validationWarningMessage" Hidden="true" />
+      <Field Name="_visualChildrenBalanceSum" Hidden="true" />
+      <Method Name="AddSummationSource" Hidden="true" />
+      <Method Name="AddSummationTarget" Hidden="true" />
+      <Method Name="AddUserSummationSource" Hidden="true" />
+      <Method Name="AddUserSummationTarget" Hidden="true" />
+      <Method Name="ComputeValueProperty" Hidden="true" />
+      <Method Name="ForceValueComputationForParents" Hidden="true" />
+      <Method Name="GetValue" Hidden="true" />
+      <Method Name="HasChildValues" Hidden="true" />
+      <Method Name="InitStates" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+      <Method Name="SaveValueToDb" Hidden="true" />
+      <Method Name="SetFlags" Hidden="true" />
+      <Method Name="SetState" Hidden="true" />
+      <Method Name="SetValue" Hidden="true" />
+      <Method Name="ToggleIsManualValue" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="UpdateComputedValue" Hidden="true" />
+      <Method Name="UpdateState" Hidden="true" />
+      <Method Name="XbrlElementValueBase" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase.SummationItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Structures\XbrlElementValue\XbrlElementValueBase.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase.SummationSource" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Structures\XbrlElementValue\XbrlElementValueBase.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CQASZggAKIKQskMkKUnBYCCQxFhAIAAAgVRgBBBKBAk=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValueBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Date" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Int" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_List">
+    <Position X="10" Y="12.5" Width="2.25" />
+    <Members>
+      <Field Name="_selectedItem" Hidden="true" />
+      <Method Name="DeleteSelectedValue" Hidden="true" />
+      <Method Name="DeleteValue" Hidden="true" />
+      <Method Name="XbrlElementValue_List" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAABgAAAAAAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_List.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Monetary" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_MultipleChoice">
+    <Position X="16.25" Y="9.5" Width="2.5" />
+    <Members>
+      <Field Name="_value" Hidden="true" />
+      <Method Name="GetValue" Hidden="true" />
+      <Method Name="newValue_PropertyChanged" Hidden="true" />
+      <Method Name="ResetValue" Hidden="true" />
+      <Method Name="SetValue" Hidden="true" />
+      <Method Name="XbrlElementValue_MultipleChoice" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAICAAAgAAAAAQAAAABAAAAAQAgAAgAAAAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_MultipleChoice.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="IsChecked" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Numeric" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_SingleChoice">
+    <Position X="13" Y="9.5" Width="2.5" />
+    <Members>
+      <Field Name="_displayString" Hidden="true" />
+      <Field Name="_selectedValue" Hidden="true" />
+      <Field Name="_value" Hidden="true" />
+      <Method Name="GetValue" Hidden="true" />
+      <Method Name="SetValue" Hidden="true" />
+      <Method Name="XbrlElementValue_SingleChoice" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAAiAACIAAAAgAAAAAQAAgABAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_SingleChoice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_String" Collapsed="true">
+    <Position X="7.25" Y="9.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAIAAAAgAAAAAAAAAABAAAAAAgAAAAAAAAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Tuple">
+    <Position X="10" Y="9.5" Width="2.25" />
+    <Members>
+      <Field Name="_items" Hidden="true" />
+      <Method Name="AddSummationTargets" Hidden="true" />
+      <Method Name="AddValue" Hidden="true" />
+      <Method Name="Clear" Hidden="true" />
+      <Method Name="DeleteSummationTargets" Hidden="true" />
+      <Method Name="DeleteValue" Hidden="true" />
+      <Method Name="GetValue" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SetValue" Hidden="true" />
+      <Method Name="Sort" Hidden="true" />
+      <Method Name="XbrlElementValue_Tuple" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAIAAACsAAAQEQAAAAhBAAAAAAAAAGAABAEAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Tuple.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.BoolWithNotifyChanged">
+    <Position X="19.5" Y="10" Width="2" />
+    <Members>
+      <Field Name="_boolValue" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAQAAAAgAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_MultipleChoice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="eBalanceKitBusiness.IValueTreeEntry" Collapsed="true">
+    <Position X="22.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACxAAAAICAEAMECUmAIACQBEAAAAAAAQQgABBAAAk=</HashCode>
+      <FileName>_interfaces\IValueEntry.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

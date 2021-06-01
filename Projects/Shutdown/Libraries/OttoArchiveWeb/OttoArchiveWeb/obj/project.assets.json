@@ -1,0 +1,117 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.0": {
+      "AV.Log.LogHelper/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.0",
+        "dependencies": {
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AV.Log.LogHelper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AV.Log.LogHelper.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "WebServiceInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.0",
+        "compile": {
+          "bin/placeholder/WebServiceInterfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebServiceInterfaces.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AV.Log.LogHelper/1.0.0": {
+      "type": "project",
+      "path": "../../../../../Libraries/LogHelper/LogHelper/AV.Log.LogHelper.csproj",
+      "msbuildProject": "../../../../../Libraries/LogHelper/LogHelper/AV.Log.LogHelper.csproj"
+    },
+    "Utils/1.0.0": {
+      "type": "project",
+      "path": "../../../Viewbox/Utils/Utils.csproj",
+      "msbuildProject": "../../../Viewbox/Utils/Utils.csproj"
+    },
+    "WebServiceInterfaces/1.0.0": {
+      "type": "project",
+      "path": "../../WebServiceInterfaces/WebServiceInterfaces.csproj",
+      "msbuildProject": "../../WebServiceInterfaces/WebServiceInterfaces.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.0": [
+      "AV.Log.LogHelper >= 1.0.0",
+      "WebServiceInterfaces >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\AakashVyas\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\OttoArchiveWeb\\OttoArchiveWeb\\OttoArchive.csproj",
+      "projectName": "OttoArchive",
+      "projectPath": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\OttoArchiveWeb\\OttoArchiveWeb\\OttoArchive.csproj",
+      "packagesPath": "C:\\Users\\AakashVyas\\.nuget\\packages\\",
+      "outputPath": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\OttoArchiveWeb\\OttoArchiveWeb\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\AakashVyas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net40"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net40": {
+          "targetAlias": "net40",
+          "projectReferences": {
+            "E:\\Aakash\\Refactor_v2\\Libraries\\LogHelper\\LogHelper\\AV.Log.LogHelper.csproj": {
+              "projectPath": "E:\\Aakash\\Refactor_v2\\Libraries\\LogHelper\\LogHelper\\AV.Log.LogHelper.csproj"
+            },
+            "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\WebServiceInterfaces\\WebServiceInterfaces.csproj": {
+              "projectPath": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\WebServiceInterfaces\\WebServiceInterfaces.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net40": {
+        "targetAlias": "net40",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

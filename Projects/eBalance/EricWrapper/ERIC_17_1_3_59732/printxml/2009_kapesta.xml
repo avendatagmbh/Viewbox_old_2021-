@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<ericprint produktversion="17, 1, 3, 59732" dateiversion="2012, 10, 05, 0" template="kapesta" er-veranlagungszeitraum="2009" er-datenart="KapEStA" er-label="9.4.3.0.3">
+  <registrierklasse klassenname="XMLHaruDruckText" elementname="HaruDruckText" />
+  <registrierklasse klassenname="XMLHaruDruckTextFrei" elementname="HaruDruckTextFrei" />
+  <registrierklasse klassenname="XMLHaruDruckZeile" elementname="HaruDruckZeile" />
+  <registrierklasse klassenname="XMLHaruLaufdatenbereich" elementname="HaruLaufdatenbereich" />
+  <registrierklasse klassenname="XMLHaruDruckRechteck" elementname="HaruDruckRechteck" />
+  <registrierklasse klassenname="XMLHaruDruckLinie" elementname="HaruDruckLinie" />
+  <registrierklasse klassenname="XMLHaruDruckTrennlinie" elementname="HaruDruckTrennlinie" />
+  <registrierklasse klassenname="XMLHaruErstelleDokument" elementname="HaruErstelleDokument" />
+  <registrierklasse klassenname="XMLHaruTabellenZeile" elementname="HaruTabellenZeile" />
+  <registrierklasse klassenname="XMLHaruDruckSpalte" elementname="HaruDruckSpalte" />
+  <registrierklasse klassenname="XMLHaruDruckSpalteDef" elementname="HaruDruckSpalteDef" />
+  <konfigurationen>
+    <konfiguration name="swhersteller" typ="pdf" klienten="swhersteller">
+      <!-- Konfiguration der zu verwendenden IteratorAttendants (Businesslogik) -->
+      <komponente name="FormatTemplateRenderer" klassenname="FormatTemplateRendererIndexed">
+        <variable varname="benutzeKomponenten" varstringwert="PropertyPublisherAttendant,MainIteratorAttendant" />
+      </komponente>
+      <komponente name="PropertyPublisherAttendant" klassenname="PropertyPublisherAttendant">
+        <variable varname="exportModus" varstringwert="MAPPING" />
+      </komponente>
+      <komponente name="MainIteratorAttendant" klassenname="EStGenericIteratorAttendant" />
+    </konfiguration>
+    <konfiguration name="server" typ="pdf" klienten="server">
+      <!-- Konfiguration der zu verwendenden IteratorAttendants (Businesslogik) -->
+      <komponente name="FormatTemplateRenderer" klassenname="FormatTemplateRendererIndexed">
+        <variable varname="benutzeKomponenten" varstringwert="PropertyPublisherAttendant,MainIteratorAttendant" />
+      </komponente>
+      <komponente name="PropertyPublisherAttendant" klassenname="PropertyPublisherAttendant">
+        <variable varname="exportModus" varstringwert="MAPPING" />
+      </komponente>
+      <komponente name="MainIteratorAttendant" klassenname="EStGenericIteratorAttendant" />
+    </konfiguration>
+  </konfigurationen>
+  <fixierungen typ="PDF">
+    <!-- AnmStVorbereitung -->
+    <fixierungsklasse klassenname="AnmStVorbereitung" exportvariablen="export.meta.finanzamtname,export.anmeldungszeitraum,export.steuernummer,export.steuernamen,export.meta.unterfallart,export.absender.1.name">
+      <!-- optionale exportvariablen: export.steuerfall.istTestfall,export.meta.datenuebermittlung.datum,export.meta.datenuebermittlung.zeit,export.hashcode,export.absender.1.strasseMitHausNr(bei-KapEStA-optional!),export.absender.1.plz(bei-KapEStA-optional!),export.absender.1.ort(bei-KapEStA-optional!),export.absender.1.telefonnr,export.absender.1.email,export.absender.2.ueberschrift,export.absender.2.name,export.absender.2.strasseMitHausNr,export.absender.2.plz,export.absender.2.ort,export.absender.2.telefonnr,export.absender.2.email,export.absender.3.ueberschrift,export.absender.3.name,export.absender.3.strasseMitHausNr,export.absender.3.plz,export.absender.3.ort,export.absender.3.telefonnr,export.absender.3.email -->
+      <variable varname="feldid.stpfl1.vorname" varstringwert="siehe-feldid.stpfl1.nachname" />
+      <variable varname="feldid.stpfl1.nachname" varstringwert="Schuldner_Name" />
+      <variable varname="prefix.steuernummer" varstringwert="Steuernummer " />
+      <variable varname="prefix.programmversion" varstringwert="gedruckt mit ELSTER:" />
+      <variable varname="prefix.feldvariablen" varstringwert="export.feld." />
+      <variable varname="absender.prefix.telefonnr" varstringwert="Tel.: " />
+      <variable varname="absender.prefix.email" varstringwert="E-Mail: " />
+      <variable varname="absender.schuldner.ueberschrift" varstringwert="Schuldner:" />
+      <variable varname="absender.berater.ueberschrift" varstringwert="Berater:" />
+    </fixierungsklasse>
+    <!-- Hier Elemente, die Variablen deklarieren und eine Ausgabe antriggern -->
+    <globalevariablen>
+      <!-- Gemeinsam: Konstante Texte -->
+      <variable varname="k_leer" varstringwert=" " />
+      <!-- Diese Variable bestimmt den Abstand von Feldern zu Bloecken. Dies betrifft nur Felder,
+        die als erstes im Block auftreten. Auf diese Weise wird der Abstand Blockueberschrift zu Feld realisiert-->
+      <variable varname="layout.pdf.zeilenabstand.erstesFeldImBlock" varstringwert="2" />
+      <variable varname="k_druckmodus_hinweis" varstringwert="${export.druckmodus.hinweis}" />
+      <variable varname="k_testfall_hinweis" varstringwert="*** Testfall ***" />
+      <variable varname="k_spiegelstrich" varstringwert="- " />
+      <variable varname="k_nichtFA_hinweis" varstringwert="Für Ihre Unterlagen" />
+      <variable varname="k_fuerFA_hinweis" varstringwert="Ein Ausdruck ist für das Finanzamt bestimmt!" />
+      <!-- Verwendung in der Fusszeile (links)-->
+      <variable varname="k_copyright" varstringwert="${export.meta.copyright} " />
+      <!-- Übertragungsprotokoll: Konstante Texte -->
+      <variable varname="k_datenuebermittlung" varstringwert="Sendedatum: ${export.meta.datenuebermittlung.datum} / ${export.meta.datenuebermittlung.zeit} Uhr" />
+      <variable varname="k_finanzamtname" varstringwert="Finanzamt ${export.meta.finanzamtname}" />
+      <variable varname="k_seite" varstringwert="Seite \${haru.seitennummer} von \${haru.seitengesamt}" />
+      <variable varname="k_uebertragungsprotokoll" varstringwert="Übertragungsprotokoll" />
+      <variable varname="k_keinedatenuebermittlung" varstringwert="Sendedatum:  keine Datenübermittlung" />
+      <variable varname="k_anmeldungszeitraum" varstringwert="Anmeldungszeitraum" />
+      <variable varname="k_nichtFA_hinweis_uebprotokoll" varstringwert="Dieser Protokollausdruck ist nicht zur Übersendung an das Finanzamt bestimmt. Die Angaben sind auf ihre Richtigkeit zu prüfen. Sofern eine Unrichtigkeit festgestellt wird, ist eine berichtigte Steueranmeldung abzugeben." />
+      <!-- AnmSt Konstante Texte -->
+      <variable varname="k_vordruckname" varstringwert="Kapitalertragsteueranmeldung" />
+      <variable varname="k_berichtigung" varstringwert="Es handelt sich um eine geänderte Anmeldung" />
+      <variable varname="k_hinweisSZ" varstringwert="Hinweis zu Säumniszuschlägen" />
+      <variable varname="k_hinweisSZText.Abs1" varstringwert="Bitte beachten Sie, das bei Zahlung der angemeldeten Steuer durch Hingabe eines Schecks erst der dritte Tag nach dem Tag des Eingangs des Schecks bei der zuständigen Finanzkasse als Einzahlung gilt (§ 224 Abs.2 Nr. 1 Abgabenordnung). Fällt der dritte Tag auf einen Samstag, einen Sonntag oder einen gesetzlichen Feiertag, gilt die Zahlung erst am nächstfolgenden Werktag als bewirkt. Gilt die Zahlung der angemeldeten Steuer durch Hingabe eines Schecks erst nach dem Fälligkeitstag als bewirkt, fallen Säumniszuschläge an (§ 240 Abs. 3 Abgabenordnung). Um diese zu vermeiden wird empfohlen, am Lastschrifteinzugsverfahren teilzunehmen." />
+      <variable varname="k_hinweisSZText.Abs2" varstringwert="Die Teilnahme am Lastschrifteinzugsverfahren ist jederzeit widerruflich und völlig risikolos. Sollte einmal ein Betrag zu Unrecht abgebucht werden, können Sie diese Abbuchung bei ihrer Bank innerhalb von 6 Wochen stornieren lassen. Zur Teilnahme am Lastschrifteinzugsverfahren setzen Sie sich bitte mit Ihrem Finanzamt in Verbindung." />
+    </globalevariablen>
+    <!-- Aufteilung in Seitenabschnitte -->
+    <ausgabe vorlageRef="vorlage_nichtFA_hinweis" />
+    <!-- Uebertragungsprotokolle: Aufruf der Erweiterung der Fusszeile um Hinweistext -->
+    <ausgabe vorlageRef="vorlagen_hinweisNichtFuerFABestimmt_uebprotokoll" />
+    <!-- Aufrufe fuer Uebertragungsprotokolle -->
+    <ausgabe vorlageRef="vorlageSeite_1_uebprotokoll_titel" />
+    <ausgabe vorlageRef="vorlageSeite_1_rechts_uebprotokoll" />
+    <ausgabe vorlageRef="Datenuebermittlung_Schluesselbereich" />
+    <ausgabe vorlageRef="vorlageSeite_1_UebProtokoll_Absender1" />
+    <ausgabe vorlageRef="vorlageSeite_1_UebProtokoll_Absender2" />
+    <ausgabe vorlageRef="vorlageSeite_1_UebProtokoll_Absender3" />
+    <ausgabe vorlageRef="vorlage_seitenraender" />
+    <ausgabe vorlageRef="vorlage_entwurfsmarkierung" />
+    <ausgabe vorlageRef="vorlage_copyright_fusstext_version" />
+    <ausgabe vorlageRef="vorlage_steuernummer_oder_ordnungsbegriff" />
+    <ausgabe vorlageRef="vorlage_Testfall_hinweis" />
+    <ausgabe vorlageRef="vorlage_kopfzeile_seitenzahlen" />
+    <ausgabe vorlageRef="vorlage_steuernamen_kopfzeile">
+      <variable varname="druckbereich" varstringwert="1-" />
+    </ausgabe>
+    <ausgabe vorlageRef="vorlage_hashcode" />
+  </fixierungen>
+  <laufdaten>
+    <!--selectVordruck-->
+    <vordruck name="KapEStA" vorlageRef="neuerVordruck">
+      <!--selectBlock-->
+      <block name="1" uid="3632" vorlageRef="blockEbene_1">
+        <!--selectFeld-->
+        <!--selectBlocktexte-->
+        <statischerinhalt vorlageRef="blockEbene_1_ueberschrift">
+          <textvariable varname="block.text">Kapitalertragsteuer-Anmeldung</textvariable>
+        </statischerinhalt>
+        <feld id="BuStNr" vorlageRef="spaltenformat_3_links" zeilennummer="27">
+          <textvariable varname="feldtext">Steuernummer</textvariable>
+        </feld>
+        <feld id="BArt" vorlageRef="spaltenformat_3_links" zeilennummer="7">
+          <textvariable varname="feldtext">Art der Anmeldung: 0 = erstmalige elektronische Anmeldung  1 = berichtigte elektronische Anmeldung 2 = manuell erfasste erstmalige Papieranmeldung 3 = manuell erfasste berichtigte Anmeldung 4 = manuell erfasste berichtigte Festsetzung</textvariable>
+        </feld>
+        <feld id="StNrVorh" vorlageRef="spaltenformat_3_links" zeilennummer="89">
+          <textvariable varname="feldtext">Abweichende Steuernummer der zu berichtigenden Anmeldung im ELSTER-Format.</textvariable>
+        </feld>
+        <block name="1010" uid="3633" vorlageRef="blockEbene_2">
+          <statischerinhalt vorlageRef="blockEbene_2_ueberschrift">
+            <textvariable varname="block.text">Allgemeine Angaben</textvariable>
+          </statischerinhalt>
+          <feld id="AnmZtr" vorlageRef="spaltenformat_3_links" zeilennummer="1">
+            <textvariable varname="feldtext">Zeitraum der Kapitalertragsteuer-Anmeldung</textvariable>
+          </feld>
+          <feld id="ArPlNr" vorlageRef="spaltenformat_3_links" zeilennummer="1">
+            <textvariable varname="feldtext">Arbeitsplatznummer</textvariable>
+          </feld>
+          <block name="1010010" uid="43033" vorlageRef="blockEbene_3">
+            <statischerinhalt vorlageRef="blockEbene_3_ueberschrift">
+              <textvariable varname="block.text">Schuldner</textvariable>
+            </statischerinhalt>
+            <feld id="Schuldner_Name" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">Name</textvariable>
+            </feld>
+            <feld id="Schuldner_Anschriftenzusatz" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">Anschriftenzusatz</textvariable>
+            </feld>
+            <feld id="Schuldner_Str" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">Straße</textvariable>
+            </feld>
+            <feld id="Schuldner_Hausnummer" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">Hausnummer</textvariable>
+            </feld>
+            <feld id="Schuldner_HNrZusatz" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">Hausnummernzusatz</textvariable>
+            </feld>
+            <feld id="Schuldner_Postfach" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">Postfach</textvariable>
+            </feld>
+            <feld id="Schuldner_PostfachPLZ" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">PLZ</textvariable>
+            </feld>
+            <feld id="Schuldner_PostfachOrt" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">Ort</textvariable>
+            </feld>
+            <feld id="Schuldner_PLZ" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">PLZ</textvariable>
+            </feld>
+            <feld id="Schuldner_GKPLZ" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">PLZ</textvariable>
+            </feld>
+            <feld id="Schuldner_AuslandsPLZ" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">PLZ</textvariable>
+            </feld>
+            <feld id="Schuldner_Ort" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">Ort</textvariable>
+            </feld>
+            <feld id="Schuldner_Land" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">Land</textvariable>
+            </feld>
+            <feld id="Schuldner_Telefon" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">Telefonnummer</textvariable>
+            </feld>
+            <feld id="Schuldner_Email" vorlageRef="spaltenformat_3_links" zeilennummer="4">
+              <textvariable varname="feldtext">E-Mail-Adresse</textvariable>
+            </feld>
+          </block>
+          <block name="1010020" uid="43034" vorlageRef="blockEbene_3">
+            <statischerinhalt vorlageRef="blockEbene_3_ueberschrift">
+              <textvariable varname="block.text">Berater</textvariable>
+            </statischerinhalt>
+            <feld id="Berater_Bezeichnung" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Bezeichnung</textvariable>
+            </feld>
+            <feld id="Berater_Titel" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Titel</textvariable>
+            </feld>
+            <feld id="Berater_Vorname" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Vorname</textvariable>
+            </feld>
+            <feld id="Berater_Namensvorsatz" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Namensvorsatz</textvariable>
+            </feld>
+            <feld id="Berater_Namenszusatz" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Namenszusatz</textvariable>
+            </feld>
+            <feld id="Berater_Name" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Name</textvariable>
+            </feld>
+            <feld id="Berater_Str" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Straße</textvariable>
+            </feld>
+            <feld id="Berater_Anschriftenzusatz" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Anschriftenzusatz</textvariable>
+            </feld>
+            <feld id="Berater_Hausnummer" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Hausnummer</textvariable>
+            </feld>
+            <feld id="Berater_HNrZusatz" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Hausnummernzusatz</textvariable>
+            </feld>
+            <feld id="Berater_Postfach" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Postfach</textvariable>
+            </feld>
+            <feld id="Berater_PostfachPLZ" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">PLZ</textvariable>
+            </feld>
+            <feld id="Berater_PostfachOrt" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Ort</textvariable>
+            </feld>
+            <feld id="Berater_PLZ" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">PLZ</textvariable>
+            </feld>
+            <feld id="Berater_GKPLZ" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">PLZ</textvariable>
+            </feld>
+            <feld id="Berater_AuslandsPLZ" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">PLZ</textvariable>
+            </feld>
+            <feld id="Berater_Ort" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Ort</textvariable>
+            </feld>
+            <feld id="Berater_Land" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Land</textvariable>
+            </feld>
+            <feld id="Berater_Telefon" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">Telefonnummer</textvariable>
+            </feld>
+            <feld id="Berater_Email" vorlageRef="spaltenformat_3_links" zeilennummer="66">
+              <textvariable varname="feldtext">E-Mail</textvariable>
+            </feld>
+          </block>
+        </block>
+        <block name="1020" uid="3634" vorlageRef="blockEbene_2">
+          <statischerinhalt vorlageRef="blockEbene_2_ueberschrift">
+            <textvariable varname="block.text">Kapitalerträge mit Steuerabzug nach § 43 a Abs. 1 Nr. 1 EStG (25%)</textvariable>
+          </statischerinhalt>
+          <block name="1020010" uid="3640" vorlageRef="blockEbene_3">
+            <statischerinhalt vorlageRef="blockEbene_3_ueberschrift">
+              <textvariable varname="block.text">Steuerabzug durch die auszuzahlende Stelle bei Kapitalerträgen i. S. d. § 32 Abs. 1 Satz 1 Nr. 6, 7 und Nr. 8 bis 12 EStG, § 7 Abs. 1 und § 8 Abs. 6 InvStG (insbesondere ausländische Dividenden, Zinsen, ausgeschüttete Investmenterträge, Erträge aus Termingeschäften, Gewinn aus Veräußerung, Rückgabe oder Einlösung von Wertpapieren) einschließlich steuerfreier Erträge nach § 43 Abs. 1 Satz 3 EStG und ggf. besonderer Entgelte und Vorteile nach § 43 Abs. 1 Satz 2 EStG, die neben den hier bezeichneten Kapitalerträgen oder an deren Stelle gewährt werden sowie Übertragungen von Kapitalanlagen auf einen anderen Gläubiger (§ 43 Abs. 1 Satz 4 EStG).</textvariable>
+            </statischerinhalt>
+            <block name="1020010010" uid="3642" vorlageRef="blockEbene_4">
+              <statischerinhalt vorlageRef="blockEbene_4_ueberschrift">
+                <textvariable varname="block.text">Kapitalerträge (nach Abstandnahme gem. § 43 Abs. 2, § 44 a EStG und Verlustverrechnung gem. § 43 a Abs. 3 EStG)</textvariable>
+              </statischerinhalt>
+              <feld id="KapE1" vorlageRef="spaltenformat_3" zeilennummer="8">
+                <textvariable varname="feldtext">Betrag</textvariable>
+              </feld>
+              <feld id="KapE1St" vorlageRef="spaltenformat_3" zeilennummer="8">
+                <textvariable varname="feldtext">Kapitalertragsteuer</textvariable>
+              </feld>
+              <feld id="KapE1Sz" vorlageRef="spaltenformat_3" zeilennummer="8">
+                <textvariable varname="feldtext">Solidaritätszuschlag</textvariable>
+              </feld>
+            </block>
+          </block>
+          <block name="1020020" uid="3641" vorlageRef="blockEbene_3">
+            <statischerinhalt vorlageRef="blockEbene_3_ueberschrift">
+              <textvariable varname="block.text">Steuerabzug durch Schuldner von Kapitalerträgen i. S. d. § 43 Abs. 1 Satz 1 Nr. 1 bis 4 und 7 a EStG (insbesondere inländische Dividenden, Erträge aus Wandelanleihen, Gewinnobligationen und Genussrechten, stille Beteiligungen oder partiarischen Darlehen, Versicherungsverträgen) einschließlich steuerfreier Erträge nach § 43 Abs. 2 Satz 3 EStG und ggf. besonderer Entgelte und Vorteile nach § 43 Abs. 1 Satz 2 EStG die neben den hier bezeichneten Kapitalerträgen oder an deren Stelle gewährt werden</textvariable>
+            </statischerinhalt>
+            <block name="1020020010" uid="3643" vorlageRef="blockEbene_4">
+              <statischerinhalt vorlageRef="blockEbene_4_ueberschrift">
+                <textvariable varname="block.text">Kapitalerträge (nach Abstandnahme gem. § 44 a Abs. 7 EStG und vollständiger Abstandnahme gem. § 50 d Abs. 2 oder Abs. 6 EStG)</textvariable>
+              </statischerinhalt>
+              <feld id="KapE2" vorlageRef="spaltenformat_3" zeilennummer="9">
+                <textvariable varname="feldtext">Betrag</textvariable>
+              </feld>
+              <feld id="KapE2St" vorlageRef="spaltenformat_3" zeilennummer="9">
+                <textvariable varname="feldtext">Kapitalertragsteuer</textvariable>
+              </feld>
+              <feld id="KapE2Sz" vorlageRef="spaltenformat_3" zeilennummer="9">
+                <textvariable varname="feldtext">Solidaritätszuschlag</textvariable>
+              </feld>
+            </block>
+          </block>
+        </block>
+        <block name="1030" uid="3635" vorlageRef="blockEbene_2">
+          <statischerinhalt vorlageRef="blockEbene_2_ueberschrift">
+            <textvariable varname="block.text">Kapitalerträge mit Steuerabzug nach § 43 a Abs. 1 Nr. 2 EStG, inländische Einkünfte mit Steuerabzug nach § 32 Abs. 3 KStG (15%)</textvariable>
+          </statischerinhalt>
+          <block name="1030010" uid="3644" vorlageRef="blockEbene_3">
+            <statischerinhalt vorlageRef="blockEbene_3_ueberschrift">
+              <textvariable varname="block.text">Steuerabzug durch den Schuldner von Kapitalerträgen i. S. d. § 43 Abs. 1 Satz 1 Nr. 7 b und 7 c EStG (insbesondere Leistungen und Gewinne von Betrieben gewerblicher Art der öffentlichen Hand) einschließlich steuerfreier Erträge nach § 43 Abs. 1 Satz 3 EStG und Entgelte i. S. d. § 32 Abs. 3 KStG (insbesondere Leihgebühr und Kompensationszahlung bei Wertpapieranleihe von juristischen Personen des öffentlichen Rechts und von Körperschaften, Personenvereinigungen oder Vermögensmassen, die von der Körperschaftsteuer befreit sind).</textvariable>
+            </statischerinhalt>
+            <block name="1030010010" uid="3645" vorlageRef="blockEbene_4">
+              <statischerinhalt vorlageRef="blockEbene_4_ueberschrift">
+                <textvariable varname="block.text">Kapitalerträge</textvariable>
+              </statischerinhalt>
+              <feld id="KapE3" vorlageRef="spaltenformat_3" zeilennummer="10">
+                <textvariable varname="feldtext">Betrag</textvariable>
+              </feld>
+              <feld id="KapE3St" vorlageRef="spaltenformat_3" zeilennummer="10">
+                <textvariable varname="feldtext">Kapitalertragsteuer</textvariable>
+              </feld>
+              <feld id="KapE3Sz" vorlageRef="spaltenformat_3" zeilennummer="10">
+                <textvariable varname="feldtext">Solidaritätszuschlag</textvariable>
+              </feld>
+            </block>
+          </block>
+        </block>
+        <block name="1040" uid="3636" vorlageRef="blockEbene_2">
+          <statischerinhalt vorlageRef="blockEbene_2_ueberschrift">
+            <textvariable varname="block.text">Summe der Zeilen 9 und 10</textvariable>
+          </statischerinhalt>
+          <feld id="KapSumE" vorlageRef="spaltenformat_3" zeilennummer="11">
+            <textvariable varname="feldtext">Summe der Kapitalerträge</textvariable>
+          </feld>
+          <feld id="KapSumESt" vorlageRef="spaltenformat_3" zeilennummer="11">
+            <textvariable varname="feldtext">Summe der Kapitalertragsteuern</textvariable>
+          </feld>
+          <feld id="KapSumSz" vorlageRef="spaltenformat_3" zeilennummer="11">
+            <textvariable varname="feldtext">Summe der Solidaritätszuschläge</textvariable>
+          </feld>
+        </block>
+        <block name="1050" uid="3637" vorlageRef="blockEbene_2">
+          <feld id="BVM" vorlageRef="spaltenformat_3" zeilennummer="12">
+            <textvariable varname="feldtext">Abschriften der den Gewinnausschüttungen zugrunde liegenden Beschlüsse wurden vorgelegt.</textvariable>
+          </feld>
+        </block>
+        <block name="1060" uid="3638" vorlageRef="blockEbene_2">
+          <statischerinhalt vorlageRef="blockEbene_2_ueberschrift">
+            <textvariable varname="block.text">Kirchensteuer zu Kapitalertragsteuer</textvariable>
+          </statischerinhalt>
+          <feld id="K01" vorlageRef="spaltenformat_3" zeilennummer="31">
+            <textvariable varname="feldtext">Evangelische Kirchensteuer</textvariable>
+          </feld>
+          <feld id="K02" vorlageRef="spaltenformat_3" zeilennummer="32">
+            <textvariable varname="feldtext">Römisch-katholische Kirchensteuer</textvariable>
+          </feld>
+          <feld id="K03" vorlageRef="spaltenformat_3" zeilennummer="33">
+            <textvariable varname="feldtext">Altkatholische Kirchensteuer</textvariable>
+          </feld>
+          <feld id="K04" vorlageRef="spaltenformat_3" zeilennummer="34">
+            <textvariable varname="feldtext">Israelitische Religionsgemeinschaft Baden</textvariable>
+          </feld>
+          <feld id="K05" vorlageRef="spaltenformat_3" zeilennummer="35">
+            <textvariable varname="feldtext">Israelitische Religionsgemeinschaft Württemberg</textvariable>
+          </feld>
+          <feld id="K06" vorlageRef="spaltenformat_3" zeilennummer="36">
+            <textvariable varname="feldtext">Israelitische Bekenntnissteuer (Bayern)</textvariable>
+          </feld>
+          <feld id="K07" vorlageRef="spaltenformat_3" zeilennummer="37">
+            <textvariable varname="feldtext">Jüdische Kultussteuer (Hamburg)</textvariable>
+          </feld>
+          <feld id="K08" vorlageRef="spaltenformat_3" zeilennummer="38">
+            <textvariable varname="feldtext">Israelitische Kultussteuer Frankfurt</textvariable>
+          </feld>
+          <feld id="K09" vorlageRef="spaltenformat_3" zeilennummer="39">
+            <textvariable varname="feldtext">Israelitische Kultussteuer der kultusberechtigten Gemeinden Hessens</textvariable>
+          </feld>
+          <feld id="K10" vorlageRef="spaltenformat_3" zeilennummer="40">
+            <textvariable varname="feldtext">Jüdische Kultussteuer (Nordrhein-Westfalen)</textvariable>
+          </feld>
+          <feld id="K11" vorlageRef="spaltenformat_3" zeilennummer="41">
+            <textvariable varname="feldtext">Jüdische Kultusgemeinden Koblenz und Bad Kreuznach</textvariable>
+          </feld>
+          <feld id="K12" vorlageRef="spaltenformat_3" zeilennummer="42">
+            <textvariable varname="feldtext">Synagogengemeinde Saar</textvariable>
+          </feld>
+          <feld id="K13" vorlageRef="spaltenformat_3" zeilennummer="43">
+            <textvariable varname="feldtext">Freireligiöse Landesgemeinde Baden</textvariable>
+          </feld>
+          <feld id="K14" vorlageRef="spaltenformat_3" zeilennummer="44">
+            <textvariable varname="feldtext">Freireligiöse Gemeinde Offenbach</textvariable>
+          </feld>
+          <feld id="K15" vorlageRef="spaltenformat_3" zeilennummer="45">
+            <textvariable varname="feldtext">Freie Religionsgemeinschaft Alzey</textvariable>
+          </feld>
+          <feld id="K16" vorlageRef="spaltenformat_3" zeilennummer="46">
+            <textvariable varname="feldtext">Freireligiöse Gemeinde Mainz</textvariable>
+          </feld>
+          <feld id="K17" vorlageRef="spaltenformat_3" zeilennummer="47">
+            <textvariable varname="feldtext">Freireligiöse Landesgemeinde Pfalz</textvariable>
+          </feld>
+          <feld id="KSum" vorlageRef="spaltenformat_3" zeilennummer="48">
+            <textvariable varname="feldtext">Summe der Kirchensteuern</textvariable>
+          </feld>
+        </block>
+        <block name="1070" uid="3639" vorlageRef="blockEbene_2">
+          <statischerinhalt vorlageRef="blockEbene_2_ueberschrift">
+            <textvariable varname="block.text">Zerlegung der Kapitalertragsteuer nach § 8 ZerlG</textvariable>
+          </statischerinhalt>
+          <block name="1070010" uid="3646" vorlageRef="blockEbene_3">
+            <statischerinhalt vorlageRef="blockEbene_3_ueberschrift">
+              <textvariable varname="block.text">Das Aufkommen der Kapitalertragsteuer aus Zeile 8 des Vordrucks ist aufzuteilen nach dem Wohnsitz oder Sitz des Gläubigers der Kapitalerträge</textvariable>
+            </statischerinhalt>
+            <feld id="ZBW" vorlageRef="spaltenformat_3" zeilennummer="49">
+              <textvariable varname="feldtext">Baden-Württemberg</textvariable>
+            </feld>
+            <feld id="ZBY" vorlageRef="spaltenformat_3" zeilennummer="50">
+              <textvariable varname="feldtext">Bayern</textvariable>
+            </feld>
+            <feld id="ZBE" vorlageRef="spaltenformat_3" zeilennummer="51">
+              <textvariable varname="feldtext">Berlin</textvariable>
+            </feld>
+            <feld id="ZBB" vorlageRef="spaltenformat_3" zeilennummer="52">
+              <textvariable varname="feldtext">Brandenburg</textvariable>
+            </feld>
+            <feld id="ZBR" vorlageRef="spaltenformat_3" zeilennummer="53">
+              <textvariable varname="feldtext">Bremen</textvariable>
+            </feld>
+            <feld id="ZHA" vorlageRef="spaltenformat_3" zeilennummer="54">
+              <textvariable varname="feldtext">Hamburg</textvariable>
+            </feld>
+            <feld id="ZHE" vorlageRef="spaltenformat_3" zeilennummer="55">
+              <textvariable varname="feldtext">Hessen</textvariable>
+            </feld>
+            <feld id="ZMV" vorlageRef="spaltenformat_3" zeilennummer="56">
+              <textvariable varname="feldtext">Mecklenburg-Vorpommern</textvariable>
+            </feld>
+            <feld id="ZNI" vorlageRef="spaltenformat_3" zeilennummer="57">
+              <textvariable varname="feldtext">Niedersachsen</textvariable>
+            </feld>
+            <feld id="ZNW" vorlageRef="spaltenformat_3" zeilennummer="58">
+              <textvariable varname="feldtext">Nordrhein-Westfalen</textvariable>
+            </feld>
+            <feld id="ZRP" vorlageRef="spaltenformat_3" zeilennummer="59">
+              <textvariable varname="feldtext">Rheinland-Pfalz</textvariable>
+            </feld>
+            <feld id="ZSL" vorlageRef="spaltenformat_3" zeilennummer="60">
+              <textvariable varname="feldtext">Saarland</textvariable>
+            </feld>
+            <feld id="ZSN" vorlageRef="spaltenformat_3" zeilennummer="61">
+              <textvariable varname="feldtext">Sachsen</textvariable>
+            </feld>
+            <feld id="ZSA" vorlageRef="spaltenformat_3" zeilennummer="62">
+              <textvariable varname="feldtext">Sachsen-Anhalt</textvariable>
+            </feld>
+            <feld id="ZSH" vorlageRef="spaltenformat_3" zeilennummer="63">
+              <textvariable varname="feldtext">Schleswig-Holstein</textvariable>
+            </feld>
+            <feld id="ZTH" vorlageRef="spaltenformat_3" zeilennummer="64">
+              <textvariable varname="feldtext">Thüringen</textvariable>
+            </feld>
+            <feld id="ZoZ" vorlageRef="spaltenformat_3" zeilennummer="65">
+              <textvariable varname="feldtext">Kapitalertragsteuer, bei der eine Zuordnung anhand dem Wohnsitz oder Sitz des Gläubigers der Kaptalerträge nicht erfolgen konnte</textvariable>
+            </feld>
+            <feld id="ZSum" vorlageRef="spaltenformat_3" zeilennummer="66">
+              <textvariable varname="feldtext">Summe der Zerlegungswerte</textvariable>
+            </feld>
+          </block>
+        </block>
+      </block>
+    </vordruck>
+  </laufdaten>
+  <formatvorlagen typ="PDF">
+    <!-- Fixierungsvorlagen -->
+    <vorlage id="vorlage_seitenraender">
+      <!-- Laufdatenraender -->
+      <HaruLaufdatenbereich randOben="25" randUnten="25" randLinks="10" randRechts="10" />
+    </vorlage>
+    <vorlage id="vorlage_entwurfsmarkierung">
+      <!-- Kopfzeile -->
+      <HaruDruckZeile druckbereich="1-" xpos="0" ypos="0" istStatischeAusgabe="true" druckAbsolut="true">
+        <HaruDruckText druckbereich="1-" inhalt="k_druckmodus_hinweis" xpos="15" ypos="5" fontgroesse="14" textumbruch="false" breite="50" fett="true" istStatischeAusgabe="true" druckAbsolut="true" rahmen="0" ausrichtung="links" />
+        <HaruDruckText druckbereich="1-" inhalt="k_druckmodus_hinweis" xpos="65" ypos="5" fontgroesse="14" textumbruch="false" breite="80" fett="true" istStatischeAusgabe="true" druckAbsolut="true" rahmen="0" ausrichtung="zentriert" />
+        <HaruDruckText druckbereich="1-" inhalt="k_druckmodus_hinweis" xpos="150" ypos="5" fontgroesse="14" textumbruch="false" breite="50" fett="true" istStatischeAusgabe="true" druckAbsolut="true" rahmen="0" ausrichtung="rechts" />
+      </HaruDruckZeile>
+      <!-- Fusszeile -->
+      <HaruDruckZeile druckbereich="1-" xpos="0" ypos="275" istStatischeAusgabe="true" druckAbsolut="true">
+        <HaruDruckText druckbereich="1-" inhalt="k_druckmodus_hinweis" xpos="15" ypos="0" fontgroesse="14" textumbruch="false" breite="50" fett="true" istStatischeAusgabe="true" rahmen="0" ausrichtung="links" />
+        <HaruDruckText druckbereich="1-" inhalt="k_druckmodus_hinweis" xpos="150" ypos="0" fontgroesse="14" textumbruch="false" breite="50" fett="true" istStatischeAusgabe="true" rahmen="0" ausrichtung="rechts" />
+      </HaruDruckZeile>
+    </vorlage>
+    <bedingtevorlage id="vorlage_kopfzeile_seitenzahlen">
+      <alternativen>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.meta.unterfallart" varstringwert="10" />
+          <vorlage>
+            <!-- ESt Steuerberaterfunktionalitaet: Seitenzahlen mit VZ erst ab Seite 2; WICHTIG: nicht in eine HaruDruckZeile verpacken! -->
+            <HaruDruckText druckbereich="2-" inhalt="k_veranlagungszeitraum_und_seite" xpos="160" ypos="10" fontgroesse="9" textumbruch="false" breite="40" istStatischeAusgabe="true" druckAbsolut="true" fett="true" rahmen="0" ausrichtung="RECHTSOBEN" ersetzeSeitenzahlen="true" />
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_istGesetzt" varname="k_veranlagungszeitraum_und_seite" />
+          <vorlage>
+            <!-- Seitenzahlen mit VZ auf allen Seiten; WICHTIG: nicht in eine HaruDruckZeile verpacken! -->
+            <HaruDruckText druckbereich="1-" inhalt="k_veranlagungszeitraum_und_seite" xpos="160" ypos="10" fontgroesse="9" textumbruch="false" breite="40" istStatischeAusgabe="true" druckAbsolut="true" fett="true" rahmen="0" ausrichtung="RECHTSOBEN" ersetzeSeitenzahlen="true" />
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_istWahr" />
+          <vorlage>
+            <!-- Seitenzahlen auf allen Seiten; WICHTIG: nicht in eine HaruDruckZeile verpacken! -->
+            <HaruDruckText druckbereich="1-" inhalt="k_seite" xpos="160" ypos="10" fontgroesse="9" textumbruch="false" breite="40" istStatischeAusgabe="true" druckAbsolut="true" fett="true" rahmen="0" ausrichtung="RECHTSOBEN" ersetzeSeitenzahlen="true" />
+          </vorlage>
+        </alternative>
+      </alternativen>
+    </bedingtevorlage>
+    <vorlage id="vorlage_copyright_fusstext_version">
+      <!-- Fusszeile -->
+      <HaruDruckZeile druckbereich="1-" xpos="0" ypos="275" istStatischeAusgabe="true" druckAbsolut="true">
+        <HaruDruckText druckbereich="1-" inhalt="export.meta.fusstext" xpos="65" ypos="0" fontgroesse="9" textumbruch="true" breite="80" ignoriereKeinInhalt="true" fett="true" istStatischeAusgabe="true" rahmen="0" ausrichtung="zentriert" />
+      </HaruDruckZeile>
+      <HaruDruckZeile druckbereich="1-" xpos="0" ypos="280" istStatischeAusgabe="true" druckAbsolut="true">
+        <HaruDruckText druckbereich="1-" inhalt="k_copyright" xpos="15" ypos="0" fontgroesse="9" textumbruch="false" breite="90" fett="true" istStatischeAusgabe="true" druckAbsolut="true" rahmen="0;0;0,1;0" ausrichtung="LINKSOBEN" />
+        <HaruDruckText druckbereich="1-" inhalt="export.meta.programmversion" xpos="105" ypos="0" fontgroesse="9" textumbruch="false" breite="90" fett="true" istStatischeAusgabe="true" druckAbsolut="true" rahmen="0;0;0,1;0" ausrichtung="RECHTSOBEN" />
+      </HaruDruckZeile>
+    </vorlage>
+    <bedingtevorlage id="vorlage_steuernummer_oder_ordnungsbegriff">
+      <alternativen>
+        <alternative>
+          <bedingung auswerten="Bedingung_istGesetzt" varname="steuernummer_oder_ordnungsbegriff_seite2ff" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="75" ypos="0" istStatischeAusgabe="true" druckAbsolut="true">
+              <HaruDruckText druckbereich="1" inhalt="steuernummer_oder_ordnungsbegriff_seite1" xpos="0" ypos="10" fontgroesse="9" textumbruch="false" breite="60" fett="true" istStatischeAusgabe="true" druckAbsolut="true" rahmen="0" ausrichtung="ZENTRIERTOBEN" />
+            </HaruDruckZeile>
+            <HaruDruckZeile druckbereich="2-" xpos="75" ypos="10" istStatischeAusgabe="true" druckAbsolut="true">
+              <HaruDruckText druckbereich="2-" inhalt="steuernummer_oder_ordnungsbegriff_seite2ff" xpos="0" ypos="0" fontgroesse="9" textumbruch="false" breite="60" fett="true" istStatischeAusgabe="true" druckAbsolut="true" rahmen="0" ausrichtung="ZENTRIERTOBEN" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_istGesetzt" varname="export.steuernummer" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1-" xpos="75" ypos="10" istStatischeAusgabe="true" druckAbsolut="true">
+              <HaruDruckText druckbereich="1-" inhalt="export.steuernummer" xpos="0" ypos="0" fontgroesse="9" textumbruch="false" breite="60" fett="true" istStatischeAusgabe="true" druckAbsolut="true" rahmen="0" ausrichtung="ZENTRIERTOBEN" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_istWahr" />
+          <vorlage />
+        </alternative>
+      </alternativen>
+    </bedingtevorlage>
+    <bedingtevorlage id="vorlage_Testfall_hinweis">
+      <alternativen>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.steuerfall.istTestfall" varstringwert="ja" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1-" xpos="0" ypos="22" istStatischeAusgabe="true" druckAbsolut="true">
+              <HaruDruckText druckbereich="1-" inhalt="k_testfall_hinweis" xpos="15" ypos="0" ausrichtung="links" breite="50" fontgroesse="14" farbe="ROT" textumbruch="false" fett="true" istStatischeAusgabe="true" druckAbsolut="true" />
+              <!-- nur bei Uebertragungsprotokollen -->
+              <HaruDruckText druckbereich="1" inhalt="k_testfall_hinweis" xpos="150" ypos="0" ausrichtung="rechts" breite="50" fontgroesse="14" farbe="ROT" textumbruch="false" fett="true" istStatischeAusgabe="true" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_istWahr" />
+          <vorlage />
+        </alternative>
+      </alternativen>
+    </bedingtevorlage>
+    <vorlage id="vorlage_steuernamen_kopfzeile">
+      <HaruDruckZeile xpos="0" ypos="0" istStatischeAusgabe="true" druckAbsolut="true">
+        <HaruDruckText inhalt="export.steuernamen" xpos="15" ypos="10" fontgroesse="9" textumbruch="true" breite="60" fett="true" istStatischeAusgabe="true" druckAbsolut="true" ignoriereKeinInhalt="true" rahmen="0" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="vorlageSeite_1_UebProtokoll_Absender1">
+      <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+        <!-- Arbeitgeber - übermitelt von: 1. Eintragung -->
+        <HaruDruckText druckbereich="1" inhalt="export.absender.1.ueberschrift" xpos="15" ypos="26" breite="70" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+        <HaruDruckText druckbereich="1" inhalt="export.absender.1.name" xpos="16" ypos="31" breite="70" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+        <HaruDruckText druckbereich="1" inhalt="export.absender.1.strasseMitHausNr" ignoriereKeinInhalt="true" xpos="16" ypos="34" breite="70" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+        <HaruDruckText druckbereich="1" inhalt="export.absender.1.plz" ignoriereKeinInhalt="true" xpos="16" ypos="37" breite="10" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+        <HaruDruckText druckbereich="1" inhalt="export.absender.1.ort" ignoriereKeinInhalt="true" xpos="26" ypos="37" breite="60" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+        <HaruDruckText druckbereich="1" inhalt="export.absender.1.telefonnr" ignoriereKeinInhalt="true" xpos="16" ypos="40" breite="60" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+        <HaruDruckText druckbereich="1" inhalt="export.absender.1.email" ignoriereKeinInhalt="true" xpos="16" ypos="43" breite="60" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <bedingtevorlage id="vorlageSeite_1_UebProtokoll_Absender2">
+      <alternativen>
+        <alternative>
+          <bedingung auswerten="Bedingung_istGesetzt" varname="export.absender.2.name" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- Arbeitgeber - im Auftrag von: 2. Eintragung -->
+              <HaruDruckText druckbereich="1" inhalt="export.absender.2.ueberschrift" xpos="15" ypos="48" breite="70" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.2.name" xpos="16" ypos="54" breite="70" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.2.strasseMitHausNr" ignoriereKeinInhalt="true" xpos="16" ypos="57" breite="70" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.2.plz" ignoriereKeinInhalt="true" xpos="16" ypos="60" breite="10" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.2.ort" ignoriereKeinInhalt="true" xpos="26" ypos="60" breite="60" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.2.telefonnr" ignoriereKeinInhalt="true" xpos="16" ypos="63" breite="60" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.2.email" ignoriereKeinInhalt="true" xpos="16" ypos="66" breite="60" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_istWahr" />
+          <vorlage />
+        </alternative>
+      </alternativen>
+    </bedingtevorlage>
+    <bedingtevorlage id="vorlageSeite_1_UebProtokoll_Absender3">
+      <alternativen>
+        <alternative>
+          <bedingung auswerten="Bedingung_istGesetzt" varname="export.absender.3.name" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- Arbeitgeber - bei Rückfagen: 3. Eintragung -->
+              <HaruDruckText druckbereich="1" inhalt="export.absender.3.ueberschrift" xpos="15" ypos="71" breite="70" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.3.name" xpos="16" ypos="76" breite="70" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.3.strasseMitHausNr" ignoriereKeinInhalt="true" xpos="16" ypos="79" breite="70" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.3.plz" ignoriereKeinInhalt="true" xpos="16" ypos="82" breite="10" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.3.ort" ignoriereKeinInhalt="true" xpos="26" ypos="82" breite="60" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.3.telefonnr" ignoriereKeinInhalt="true" xpos="16" ypos="85" breite="60" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.absender.3.email" ignoriereKeinInhalt="true" xpos="16" ypos="88" breite="60" fontgroesse="9" istStatischeAusgabe="true" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_istWahr" />
+          <vorlage />
+        </alternative>
+      </alternativen>
+    </bedingtevorlage>
+    <!-- Datenuebermittlung bei Übertragungsprotokollen -->
+    <bedingtevorlage id="Datenuebermittlung_Schluesselbereich">
+      <alternativen>
+        <alternative>
+          <bedingung auswerten="Bedingung_istGesetzt" varname="export.meta.datenuebermittlung.datum" />
+          <vorlage>
+            <!-- Datenübermittlung im Schluesselbereich -->
+            <HaruDruckZeile druckbereich="1" xpos="15" ypos="34" istStatischeAusgabe="true" druckAbsolut="true">
+              <HaruDruckRechteck druckbereich="1" xpos="0" ypos="0" breite="70" hoehe="8" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText inhalt="k_datenuebermittlung" xpos="1" ypos="1" rahmen="0" druckbereich="1" istStatischeAusgabe="true" druckAbsolut="true" fontgroesse="10" textumbruch="false" breite="68" fett="false" rand="1" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_istWahr" />
+          <vorlage>
+            <!-- Es wurden keine Sendedaten uebermittelt -->
+            <HaruDruckZeile druckbereich="1" xpos="15" ypos="34" istStatischeAusgabe="true" druckAbsolut="true">
+              <HaruDruckRechteck druckbereich="1" xpos="0" ypos="0" breite="70" hoehe="8" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText inhalt="k_keinedatenuebermittlung" xpos="1" ypos="1" rahmen="0" druckbereich="1" istStatischeAusgabe="true" druckAbsolut="true" fontgroesse="10" textumbruch="false" breite="68" fett="false" rand="1" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+      </alternativen>
+    </bedingtevorlage>
+    <vorlage id="vorlagen_hinweisNichtFuerFABestimmt_uebprotokoll">
+      <!-- Dient der Ausgabe des Hinweises, dass dieser Ausdruck nicht fuer das FA bestimmt ist. -->
+      <!-- Ausdruck auf jeder Seite, ueber der Fusszeile. -->
+      <HaruDruckZeile druckbereich="1-" xpos="0" ypos="260" istStatischeAusgabe="true" druckAbsolut="true">
+        <HaruDruckText druckbereich="1-" inhalt="k_nichtFA_hinweis_uebprotokoll" xpos="15" ypos="0" rahmen="0" istStatischeAusgabe="true" druckAbsolut="true" fontgroesse="11" textumbruch="true" breite="180" fett="true" rand="1" />
+      </HaruDruckZeile>
+    </vorlage>
+    <!-- Fixierungsvorlagen fuer Uebertragungsprotokolle -->
+    <vorlage id="vorlageSeite_1_uebprotokoll_titel">
+      <!-- Schluesselbereich (Fix positioniert) -->
+      <!-- Übertragungsprotokoll -->
+      <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+        <HaruDruckText druckbereich="1" inhalt="k_uebertragungsprotokoll" xpos="0" ypos="0" fontgroesse="24" textumbruch="false" breite="210" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" unterstrichen="true" ausrichtung="ZENTRIERTOBEN" />
+      </HaruDruckZeile>
+    </vorlage>
+    <bedingtevorlage id="vorlageSeite_1_rechts_uebprotokoll">
+      <alternativen>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.meta.unterfallart" varstringwert="ZMDO" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- rechte Seite -->
+              <!-- Anmeldungsart -->
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname_zmdo" xpos="120" ypos="16" fontgroesse="12" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname_zmdo2" xpos="120" ypos="23" fontgroesse="09" textumbruch="true" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <!-- Anmeldungszeitraum -->
+              <HaruDruckText druckbereich="1" inhalt="export.anmeldungszeitraum" xpos="120" ypos="45" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="45" breite="70" hoehe="6" istStatischeAusgabe="true" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.meta.unterfallart" varstringwert="Bilanz" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- rechte Seite -->
+              <!-- Anmeldungsart -->
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname" xpos="120" ypos="14" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="15" breite="70" hoehe="5" istStatischeAusgabe="true" druckAbsolut="true" />
+              <!-- Überschrift Finanzamtname -->
+              <HaruDruckText druckbereich="1" inhalt="k_finanzamtname" xpos="120" ypos="21" fontgroesse="10" textumbruch="true" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" />
+              <!-- Veranlagungszeitraum -->
+              <HaruDruckText druckbereich="1" inhalt="export.meta.veranlagungszeitraum" xpos="120" ypos="30" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="31" breite="70" hoehe="5" istStatischeAusgabe="true" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.meta.unterfallart" varstringwert="DUeAnmelden" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- rechte Seite -->
+              <!-- Anmeldungsart -->
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname" xpos="120" ypos="14" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="15" breite="70" hoehe="5" istStatischeAusgabe="true" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.meta.unterfallart" varstringwert="DUeAbmelden" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- rechte Seite -->
+              <!-- Anmeldungsart -->
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname" xpos="120" ypos="14" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="15" breite="70" hoehe="5" istStatischeAusgabe="true" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.meta.unterfallart" varstringwert="DUeUmmelden" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- rechte Seite -->
+              <!-- Anmeldungsart -->
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname" xpos="120" ypos="14" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="15" breite="70" hoehe="5" istStatischeAusgabe="true" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.meta.unterfallart" varstringwert="KapEStA" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- rechte Seite -->
+              <!-- Anmeldungsart -->
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname" xpos="120" ypos="16" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <!-- Anmeldungszeitraum -->
+              <HaruDruckText druckbereich="1" inhalt="export.anmeldungszeitraum" xpos="120" ypos="25" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="15" breite="70" hoehe="16" istStatischeAusgabe="true" druckAbsolut="true" />
+              <!-- Überschrift Finanzamtname -->
+              <HaruDruckText druckbereich="1" inhalt="k_finanzamtname" xpos="120" ypos="32" fontgroesse="10" textumbruch="true" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.meta.unterfallart" varstringwert="KapEStInvStG" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- rechte Seite -->
+              <!-- Anmeldungsart -->
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname" xpos="120" ypos="16" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <!-- Anmeldungszeitraum -->
+              <HaruDruckText druckbereich="1" inhalt="export.anmeldungszeitraum" xpos="120" ypos="25" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="15" breite="70" hoehe="16" istStatischeAusgabe="true" druckAbsolut="true" />
+              <!-- Überschrift Finanzamtname -->
+              <HaruDruckText druckbereich="1" inhalt="k_finanzamtname" xpos="120" ypos="32" fontgroesse="10" textumbruch="true" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.meta.unterfallart" varstringwert="57" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- rechte Seite -->
+              <!-- Anmeldungsart -->
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname_ustdv_1" xpos="120" ypos="15" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname_ustdv_3" xpos="120" ypos="22" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <!-- Anmeldungszeitraum -->
+              <HaruDruckText druckbereich="1" inhalt="export.anmeldungszeitraum" xpos="120" ypos="28" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="15" breite="70" hoehe="19" istStatischeAusgabe="true" druckAbsolut="true" />
+              <!-- Überschrift Finanzamtname -->
+              <HaruDruckText druckbereich="1" inhalt="k_finanzamtname" xpos="120" ypos="35" fontgroesse="10" textumbruch="true" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.meta.unterfallart" varstringwert="58" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- rechte Seite -->
+              <!-- Anmeldungsart -->
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname_ustva" xpos="120" ypos="14" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="15" breite="70" hoehe="5" istStatischeAusgabe="true" druckAbsolut="true" />
+              <!-- Überschrift Finanzamtname -->
+              <HaruDruckText druckbereich="1" inhalt="k_finanzamtname" xpos="120" ypos="21" fontgroesse="10" textumbruch="true" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" />
+              <!-- Überschrift Anmeldungszeitraum -->
+              <HaruDruckText druckbereich="1" inhalt="k_anmeldungszeitraum" xpos="120" ypos="29" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" />
+              <!-- Anmeldungszeitraum -->
+              <HaruDruckText druckbereich="1" inhalt="export.anmeldungszeitraum" xpos="120" ypos="34" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="35" breite="70" hoehe="5" istStatischeAusgabe="true" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_variablenWert" varname="export.meta.unterfallart" varstringwert="64" />
+          <vorlage>
+            <HaruDruckZeile druckbereich="1" xpos="0" ypos="19" istStatischeAusgabe="true" druckAbsolut="true">
+              <!-- rechte Seite -->
+              <!-- Anmeldungsart -->
+              <HaruDruckText druckbereich="1" inhalt="k_vordruckname_lsta" xpos="120" ypos="14" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="15" breite="70" hoehe="5" istStatischeAusgabe="true" druckAbsolut="true" />
+              <!-- Überschrift Finanzamtname -->
+              <HaruDruckText druckbereich="1" inhalt="k_finanzamtname" xpos="120" ypos="21" fontgroesse="10" textumbruch="true" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" />
+              <!-- Überschrift Anmeldungszeitraum -->
+              <HaruDruckText druckbereich="1" inhalt="k_anmeldungszeitraum" xpos="120" ypos="29" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" />
+              <!-- Anmeldungszeitraum -->
+              <HaruDruckText druckbereich="1" inhalt="export.anmeldungszeitraum" xpos="120" ypos="34" fontgroesse="10" textumbruch="false" breite="70" fett="true" istStatischeAusgabe="true" rahmen="0" rand="1" druckAbsolut="true" ausrichtung="ZENTRIERTOBEN" />
+              <HaruDruckRechteck druckbereich="1" xpos="120" ypos="35" breite="70" hoehe="5" istStatischeAusgabe="true" druckAbsolut="true" />
+              <!-- Kennzahl 86 -->
+              <HaruDruckText druckbereich="1" inhalt="k_zahlAN" xpos="120" ypos="53" fontgroesse="9" textumbruch="false" breite="30" fett="true" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="k_anmSt_kz86" xpos="159" ypos="52" fontgroesse="9" textumbruch="false" breite="6" fett="true" istStatischeAusgabe="true" druckAbsolut="true" ausrichtung="zentriert" rand="1" />
+              <HaruDruckRechteck druckbereich="1" xpos="159" ypos="52" breite="6" hoehe="6" istStatischeAusgabe="true" druckAbsolut="true" />
+              <HaruDruckText druckbereich="1" inhalt="export.feld.86" xpos="165" ypos="52" fontgroesse="9" textumbruch="false" breite="15" fett="true" istStatischeAusgabe="true" druckAbsolut="true" ausrichtung="rechts" rand="1" />
+              <HaruDruckRechteck druckbereich="1" xpos="165" ypos="52" breite="15" hoehe="6" istStatischeAusgabe="true" druckAbsolut="true" />
+            </HaruDruckZeile>
+          </vorlage>
+        </alternative>
+        <alternative>
+          <bedingung auswerten="Bedingung_istWahr" />
+          <vorlage />
+        </alternative>
+      </alternativen>
+    </bedingtevorlage>
+    <bedingtevorlage id="vorlage_nichtFA_hinweis">
+      <alternativen>
+        <alternative>
+          <!-- wahr wenn "nicht Servermodus" UND ("nicht LIVE-Druck" ODER "signiert") -->
+          <bedingung auswerten="Bedingung_nichtFuerFABestimmt" />
+          <vorlage>
+            <HaruDruckTextFrei inhalt="k_nichtFA_hinweis" xpos="33" ypos="240" fontgroesse="90" breite="150" winkel="55.5" fett="true" farbe="GRAU" />
+          </vorlage>
+        </alternative>
+        <alternative>
+          <!-- Diese Bedingung liefert immer true -->
+          <bedingung auswerten="Bedingung_istWahr" />
+          <vorlage />
+        </alternative>
+      </alternativen>
+    </bedingtevorlage>
+    <!-- Vorlagen fuer alle Datenarten und Ausdruckstypen -->
+    <!-- Vorlagen fuer Wiederholungskonstrukte -->
+    <vorlage id="neuerMzi" />
+    <vorlage id="neuerUntersachbereich" />
+    <!-- Trennlinie -->
+    <vorlage id="trennlinie">
+      <HaruDruckTrennlinie />
+    </vorlage>
+    <!-- Diese Vorlage erzwingt, dass ab hier mindestens Seite 2 vorliegt -->
+    <vorlage id="steuerberaterSeite2Absicherung">
+      <HaruDruckZeile xpos="0" nichtVorSeite="2" />
+    </vorlage>
+    <!-- neuer Neuer Vordruck ohne erzwungenen Seitenumbruch -->
+    <vorlage id="neuerVordruck" />
+    <!-- Formatvorlagen: auf Blockebene -->
+    <vorlage id="blockEbene_1" />
+    <vorlage id="blockEbene_2" />
+    <vorlage id="blockEbene_2_Seite2" />
+    <vorlage id="blockEbene_3" />
+    <vorlage id="blockEbene_3_Seite2" />
+    <vorlage id="blockEbene_4" />
+    <vorlage id="blockEbene_5" />
+    <vorlage id="blockEbene_6" />
+    <vorlage id="blockEbene_7" />
+    <vorlage id="blockEbene_8" />
+    <vorlage id="aufzaehlungEbene_4" />
+    <!-- Formatvorlagen: auf Blockebene -->
+    <vorlage id="blockEbene_1_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="5" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="16" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_1_neueSeite_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="5" platzDanach="0%" zusammenMit="1" neueSeite="true">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="16" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_1_ESt1A_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="1" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="16" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_1_GewSt1A_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="1" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="16" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_2_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="3" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="14" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_2_Seite2_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="3" platzDanach="0%" nichtVorSeite="2" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="14" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_3_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="2" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="12" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_3_Seite2_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="2" platzDanach="0%" nichtVorSeite="2" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="12" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_4_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="2" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="11" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_5_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="2" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="10" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_6_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="2" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="9" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_7_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="2" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="9" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="blockEbene_8_ueberschrift">
+      <HaruDruckZeile xpos="18" platzDavor="2" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="9" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="erlaeuternderText">
+      <HaruDruckZeile xpos="18" platzDavor="2" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="block.text" xpos="0" fontgroesse="9" textumbruch="true" breite="170" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="aufzaehlungspunktEbene_4">
+      <HaruDruckZeile xpos="18" platzDavor="2" platzDanach="0%" zusammenMit="1">
+        <HaruDruckText inhalt="k_spiegelstrich" xpos="0" fontgroesse="9" textumbruch="false" breite="2" fett="true" />
+        <HaruDruckText inhalt="block.text" xpos="2" fontgroesse="10" textumbruch="true" breite="168" fett="true" />
+      </HaruDruckZeile>
+    </vorlage>
+    <!-- Spaltenformat fuer KapEStA-->
+    <vorlage id="spaltenformat_1_AnmSt">
+      <HaruDruckZeile xpos="8">
+        <HaruDruckText inhalt="feldtext" xpos="10" fontgroesse="9" textumbruch="true" breite="155" ausrichtung="links" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="spaltenformat_2_xfeld">
+      <HaruDruckZeile xpos="8">
+        <HaruDruckText inhalt="zeilennummer" xpos="2" fontgroesse="6" textumbruch="false" breite="6" ausrichtung="rechts" />
+        <HaruDruckText inhalt="feldtext" xpos="10" fontgroesse="9" textumbruch="true" breite="155" ausrichtung="links" />
+      </HaruDruckZeile>
+    </vorlage>
+    <vorlage id="spaltenformat_3">
+      <HaruDruckZeile xpos="8">
+        <HaruDruckText inhalt="zeilennummer" xpos="2" fontgroesse="6" textumbruch="false" breite="6" ausrichtung="rechts" />
+        <HaruDruckText inhalt="feldtext" xpos="10" fontgroesse="9" textumbruch="true" breite="130" ausrichtung="links" />
+        <HaruDruckText inhalt="feld.wert" xpos="145" fontgroesse="10" textumbruch="true" breite="38" ausrichtung="rechts" />
+      </HaruDruckZeile>
+    </vorlage>
+    <!--bei Formatkennzeichen B, C, D, K, T, Z und E Wert linksbündig drucken-->
+    <vorlage id="spaltenformat_3_links">
+      <HaruDruckZeile xpos="8">
+        <HaruDruckText inhalt="zeilennummer" xpos="2" fontgroesse="6" textumbruch="false" breite="6" ausrichtung="rechts" />
+        <HaruDruckText inhalt="feldtext" xpos="10" fontgroesse="9" textumbruch="true" breite="130" ausrichtung="links" />
+        <HaruDruckText inhalt="feld.wert" xpos="145" fontgroesse="10" textumbruch="true" breite="38" ausrichtung="links" />
+      </HaruDruckZeile>
+    </vorlage>
+    <!-- AnmSt: Ausgabe von Hinweisen - wird angetriggert -->
+    <vorlage id="AnmStHinweise">
+      <!-- Hinweis zu Säumniszuschlägen (Ausgabe auf der letzten Seite des Übertragungsprotokolls) -->
+      <HaruDruckZeile xpos="8" platzDavor="10" platzDanach="2" zusammenMit="2">
+        <HaruDruckText inhalt="k_hinweisSZ" xpos="10" fontgroesse="12" textumbruch="false" breite="90" fett="false" unterstrichen="true" rand="1" />
+      </HaruDruckZeile>
+      <HaruDruckZeile xpos="8">
+        <HaruDruckText inhalt="k_hinweisSZText.Abs1" xpos="10" fontgroesse="10" textumbruch="true" breite="156" fett="false" unterstrichen="false" rand="1" />
+      </HaruDruckZeile>
+      <HaruDruckZeile xpos="8">
+        <HaruDruckText inhalt="k_hinweisSZText.Abs2" xpos="10" fontgroesse="10" textumbruch="true" breite="156" fett="false" unterstrichen="false" rand="1" />
+      </HaruDruckZeile>
+    </vorlage>
+    <!-- Hashcode (Ausgabe auf der letzten Seite der Erklaerung) -->
+    <!-- Unter der Bezeichnung Hashcode wird zukuenftig die ETID bzw. das Transferticket ausgegeben -->
+    <vorlage id="vorlage_hashcode">
+      <HaruDruckTextFrei inhalt="export.hashcode" druckbereich="L" xpos="8" ypos="80" fontgroesse="6" breite="5" winkel="90" fett="false" ignoriereKeinInhalt="true" />
+    </vorlage>
+  </formatvorlagen>
+</ericprint>
+

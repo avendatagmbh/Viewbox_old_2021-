@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Security.CtlRoleRightsByType"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:ebkc="clr-namespace:eBalanceKitControls;assembly=eBalanceKitControls"
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="600"
+             xmlns:Security="clr-namespace:eBalanceKit.Windows.Security">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/RoleDialogResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid>
+        <TabControl TabStripPlacement="Left" Padding="0" Background="Transparent">
+            <TabControl.Resources>
+                <Style TargetType="{x:Type ebkc:EbkTabItem}" BasedOn="{StaticResource {x:Type ebkc:EbkTabItem}}">
+                    <Setter Property="HeaderHorizontalAlignment" Value="Left" />
+                    <Setter Property="MinWidth" Value="150" />
+                </Style>
+            </TabControl.Resources>
+            <ebkc:EbkTabItem Caption="{x:Static loc:ResourcesCommon.Read}">
+                <Security:CtlRightObjectTree DataContext="{Binding CtlRoleRightsByTypeModels[Read]}" />
+            </ebkc:EbkTabItem>
+
+            <ebkc:EbkTabItem Caption="{x:Static loc:ResourcesCommon.Write}">
+                <Security:CtlRightObjectTree DataContext="{Binding CtlRoleRightsByTypeModels[Write]}" />
+            </ebkc:EbkTabItem>
+
+            <ebkc:EbkTabItem Caption="{x:Static loc:ResourcesExport.Export}">
+                <Security:CtlRightObjectTree DataContext="{Binding CtlRoleRightsByTypeModels[Export]}" />
+            </ebkc:EbkTabItem>
+
+            <ebkc:EbkTabItem Caption="{x:Static loc:ResourcesCommon.Send}">
+                <Security:CtlRightObjectTree DataContext="{Binding CtlRoleRightsByTypeModels[Send]}" />
+            </ebkc:EbkTabItem>
+
+            <!--<ebkc:EbkTabItem Caption="{x:Static loc:ResourcesCommon.Grant}">
+                <my:CtlRightObjectTree DataContext="{Binding CtlRoleRightsByTypeModels[Grant]}" />
+            </ebkc:EbkTabItem>-->
+
+        </TabControl>        
+    </Grid>
+</UserControl>

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DbTemplate ServerName="Access">
+  <Enquote>
+    <Left>[</Left>
+    <Right>]</Right>
+  </Enquote>
+  <ConnectionStringParameter>
+  </ConnectionStringParameter>
+  <Syntax>
+    <!--
+    
+    public override void SetConnectionString(string host, string user, string password) {
+            ConnectionString =
+                //"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" + host + "\"";
+                "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"" + host + "\"";
+        }
+    
+    Einlesen von Tabellen Struktur:
+    
+    List<SchemaTable> lSchemas = sourceDb.GetSchemaTableList();
+    List<DbFieldInfo> lColumnInfos = sourceDb.GetFieldInfos(oSchemaTable.Schema, oSchemaTable.Table);
+    
+    public override List<SchemaTable> GetSchemaTableList() {
+      List<string> tableList = GetTableList(); // Datenbank = Leerstring
+    
+    public override List<string> GetTableList() {
+      DataTable oSchemaTable = this.mDbCommand.Connection.GetSchema("Tables");
+      foreach (DataRow oRow in oSchemaTable.Rows)
+            {
+                if (bOnlyTables)
+                {
+                    if (oRow.Field<string>(3) != null && (oRow.Field<string>(3).Equals("Table", StringComparison.CurrentCultureIgnoreCase)
+                        || oRow.Field<string>(3).Equals("PASS-THROUGH", StringComparison.CurrentCultureIgnoreCase)) && oRow.Field<object>(2) != null)
+                    {
+                        oResult.Add(oRow.Field<object>(2).ToString());
+                    }
+                }
+                else
+                {
+                    if (oRow.Field<object>(2) != null && oRow.Field<string>(3) != null && oRow.Field<string>(3).Equals("SYNONYM", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        oResult.Add(oRow.Field<object>(2).ToString());
+                    }
+                }
+            }
+    
+    
+    GetFieldInfos(oSchemaTable.Schema, oSchemaTable.Table) ruft auf ReadFieldInfos("SELECT * FROM " + GetTableName(this.Database, tableName));
+    
+    protected override List<DbFieldInfo> ReadFieldInfos(string sql) {
+      oReader = mDbCommand.ExecuteReader(CommandBehavior.SchemaOnly);
+      DataTable oDataTable = oReader.GetSchemaTable();
+      
+      for (Int32 n = 0; n < oReader.FieldCount; n++) {
+        String sColumn = oReader.GetName(n);
+        sColumn = ReplaceSpecialChars(sColumn);
+
+        DbFieldInfo oFieldInfo = null;
+
+        string sType = oReader.GetDataTypeName(n);
+
+        switch (sType) {
+
+            case "CURRENCY":
+            case "DOUBLE":
+            case "REAL":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbNumeric);
+                break;
+
+            case "COUNTER":
+            case "INTEGER":
+            case "SMALLINT":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbInt);
+                break;
+
+            case "VARCHAR":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbText);
+                break;
+
+            case "LONGCHAR":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbLongText);
+                break;
+
+            case "VARBINARY":
+            case "LONGBINARY":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbBinary);
+                break;
+
+            case "BIT":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbBool);
+                break;
+
+            case "DATE":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbDate);
+                break;
+
+            case "DATETIME":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbDateTime);
+                break;
+
+            default:
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbText);
+                break;
+        }
+
+        /*  ODBC and direct connection (the other kind)
+              [0]  {ColumnName}
+              [1]  {ColumnOrdinal}
+              [2]  {ColumnSize}
+              [3]  {NumericPrecision}
+              [4]  {NumericScale}
+              [5]  {DataType}
+              [6]  {ProviderType}
+              [7]  {IsLong}
+              [8]  {AllowDBNull}
+              [9]  {IsReadOnly}
+              [10] {IsRowVersion}
+              [11] {IsUnique}
+              [12] {IsKey}
+              [13] {IsAutoIncrement}
+              [14] {BaseSchemaName}
+              [15] {BaseCatalogName}
+              [16] {BaseTableName}
+              [17] {BaseColumnName}                     * */
+
+        DataRow oRow = oDataTable.Rows[n];
+        oFieldInfo.AutoIncrement = !oRow.IsNull("IsAutoIncrement") && oRow.Field<bool>("IsAutoIncrement");
+        oFieldInfo.MaxLength = oRow.Field<int>("ColumnSize");
+        oFieldInfo.AllowDBNull = !oRow.IsNull("AllowDBNull") && oRow.Field<bool>("AllowDBNull");
+        oFieldInfo.IsPrimaryKey = !oRow.IsNull("IsKey") && oRow.Field<bool>("IsKey");
+        oFieldInfo.OriginalType = sType;
+
+        lFieldInfos.Add(oFieldInfo);
+    }
+      -->
+  </Syntax>
+</DbTemplate>

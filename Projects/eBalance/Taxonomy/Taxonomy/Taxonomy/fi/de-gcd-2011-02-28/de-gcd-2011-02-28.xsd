@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<schema targetNamespace="http://www.xbrl.de/de/gcd/2011-02-28" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:de-gcd="http://www.xbrl.de/de/gcd/2011-02-28" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="de-gcd-2011-02-28-label-de.xml" xlink:title="Label Links, all" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="de-gcd-2011-02-28-label-en.xml" xlink:title="Label Links, all" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:roleType roleURI="http://www.xbrl.de/de/gcd/role/gcd" id="role_gcd">
+        <link:definition>GCD (Global Common Document)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+      </link:roleType>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <element name="genInfo" id="de-gcd_genInfo" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc" id="de-gcd_genInfo.doc" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.id" id="de-gcd_genInfo.doc.id" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.id.generationDate" id="de-gcd_genInfo.doc.id.generationDate" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.id.generationReason" id="de-gcd_genInfo.doc.id.generationReason" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.id.contents" id="de-gcd_genInfo.doc.id.contents" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.id.origLanguage" id="de-gcd_genInfo.doc.id.origLanguage" type="xbrli:languageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.id.disclosable" id="de-gcd_genInfo.doc.id.disclosable" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author" id="de-gcd_genInfo.doc.author" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-gcd:genInfo.doc.author.name"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.dept"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.function"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.compName"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.street"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.houseNo"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.zipCode"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.city"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.country"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.country.isoCode"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.phone"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.fax"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.eMail"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.doc.author.mainContactPerson"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.doc.author.name" id="de-gcd_genInfo.doc.author.name" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.dept" id="de-gcd_genInfo.doc.author.dept" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.function" id="de-gcd_genInfo.doc.author.function" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.doc.author.function.fuctionType.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.doc.author.function.fuctionType.head" id="de-gcd_genInfo.doc.author.function.fuctionType.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.function.fuctionType.contactPerson" id="de-gcd_genInfo.doc.author.function.fuctionType.contactPerson" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.doc.author.function.fuctionType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.function.fuctionType.taxAdvisor" id="de-gcd_genInfo.doc.author.function.fuctionType.taxAdvisor" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.doc.author.function.fuctionType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.compName" id="de-gcd_genInfo.doc.author.compName" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.street" id="de-gcd_genInfo.doc.author.street" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.houseNo" id="de-gcd_genInfo.doc.author.houseNo" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.zipCode" id="de-gcd_genInfo.doc.author.zipCode" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.city" id="de-gcd_genInfo.doc.author.city" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.country" id="de-gcd_genInfo.doc.author.country" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.country.isoCode" id="de-gcd_genInfo.doc.author.country.isoCode" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.phone" id="de-gcd_genInfo.doc.author.phone" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.fax" id="de-gcd_genInfo.doc.author.fax" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.eMail" id="de-gcd_genInfo.doc.author.eMail" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.author.mainContactPerson" id="de-gcd_genInfo.doc.author.mainContactPerson" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.rev" id="de-gcd_genInfo.doc.rev" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.rev.date" id="de-gcd_genInfo.doc.rev.date" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.rev.versionNo" id="de-gcd_genInfo.doc.rev.versionNo" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.rev.dateOfChange" id="de-gcd_genInfo.doc.rev.dateOfChange" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.rev.changeInitiator" id="de-gcd_genInfo.doc.rev.changeInitiator" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.doc.userSpecific" id="de-gcd_genInfo.doc.userSpecific" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report" id="de-gcd_genInfo.report" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id" id="de-gcd_genInfo.report.id" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportType" id="de-gcd_genInfo.report.id.reportType" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.reportType.reportType.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.reportType.reportType.head" id="de-gcd_genInfo.report.id.reportType.reportType.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportType.reportType.GB" id="de-gcd_genInfo.report.id.reportType.reportType.GB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportType.reportType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportType.reportType.JF" id="de-gcd_genInfo.report.id.reportType.reportType.JF" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportType.reportType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportType.reportType.VP" id="de-gcd_genInfo.report.id.reportType.reportType.VP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportType.reportType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportType.reportType.PB" id="de-gcd_genInfo.report.id.reportType.reportType.PB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportType.reportType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportType.reportType.EB" id="de-gcd_genInfo.report.id.reportType.reportType.EB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportType.reportType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportType.reportType.JA" id="de-gcd_genInfo.report.id.reportType.reportType.JA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportType.reportType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportType.reportType.HF" id="de-gcd_genInfo.report.id.reportType.reportType.HF" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportType.reportType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportType.reportType.GA" id="de-gcd_genInfo.report.id.reportType.reportType.GA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportType.reportType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportType.reportType.QF" id="de-gcd_genInfo.report.id.reportType.reportType.QF" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportType.reportType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportType.reportType.S" id="de-gcd_genInfo.report.id.reportType.reportType.S" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportType.reportType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportStatus.approvalAndDisclosureDate" id="de-gcd_genInfo.report.id.reportStatus.approvalAndDisclosureDate" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportStatus" id="de-gcd_genInfo.report.id.reportStatus" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.reportStatus.reportStatus.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.reportStatus.reportStatus.head" id="de-gcd_genInfo.report.id.reportStatus.reportStatus.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportStatus.reportStatus.V" id="de-gcd_genInfo.report.id.reportStatus.reportStatus.V" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportStatus.reportStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportStatus.reportStatus.E" id="de-gcd_genInfo.report.id.reportStatus.reportStatus.E" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportStatus.reportStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportStatus.reportStatus.dateofapproval" id="de-gcd_genInfo.report.id.reportStatus.reportStatus.dateofapproval" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportStatus.reportStatus.disclosureBeforeApproval" id="de-gcd_genInfo.report.id.reportStatus.reportStatus.disclosureBeforeApproval" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportStatus.reportStatus.dateofdisclosure" id="de-gcd_genInfo.report.id.reportStatus.reportStatus.dateofdisclosure" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.revisionStatus" id="de-gcd_genInfo.report.id.revisionStatus" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.revisionStatus.revisionStatus.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.revisionStatus.revisionStatus.head" id="de-gcd_genInfo.report.id.revisionStatus.revisionStatus.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.revisionStatus.revisionStatus.E" id="de-gcd_genInfo.report.id.revisionStatus.revisionStatus.E" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.revisionStatus.revisionStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.revisionStatus.revisionStatus.B" id="de-gcd_genInfo.report.id.revisionStatus.revisionStatus.B" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.revisionStatus.revisionStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.revisionStatus.revisionStatus.G" id="de-gcd_genInfo.report.id.revisionStatus.revisionStatus.G" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.revisionStatus.revisionStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.revisionStatus.revisionStatus.BG" id="de-gcd_genInfo.report.id.revisionStatus.revisionStatus.BG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.revisionStatus.revisionStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.revisionStatus.revisionStatus.I" id="de-gcd_genInfo.report.id.revisionStatus.revisionStatus.I" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.revisionStatus.revisionStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement" id="de-gcd_genInfo.report.id.reportElement" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-gcd:genInfo.report.id.reportElement.reportElements.head"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.reportElement.reportElements.head" id="de-gcd_genInfo.report.id.reportElement.reportElements.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.L" id="de-gcd_genInfo.report.id.reportElement.reportElements.L" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.B" id="de-gcd_genInfo.report.id.reportElement.reportElements.B" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.EB" id="de-gcd_genInfo.report.id.reportElement.reportElements.EB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.ZL" id="de-gcd_genInfo.report.id.reportElement.reportElements.ZL" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.BA" id="de-gcd_genInfo.report.id.reportElement.reportElements.BA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.BP" id="de-gcd_genInfo.report.id.reportElement.reportElements.BP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.GuV" id="de-gcd_genInfo.report.id.reportElement.reportElements.GuV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.BAL" id="de-gcd_genInfo.report.id.reportElement.reportElements.BAL" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.BAK" id="de-gcd_genInfo.report.id.reportElement.reportElements.BAK" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.NA" id="de-gcd_genInfo.report.id.reportElement.reportElements.NA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.EV" id="de-gcd_genInfo.report.id.reportElement.reportElements.EV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.CFS" id="de-gcd_genInfo.report.id.reportElement.reportElements.CFS" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.EKE" id="de-gcd_genInfo.report.id.reportElement.reportElements.EKE" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.STU" id="de-gcd_genInfo.report.id.reportElement.reportElements.STU" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.BGWG" id="de-gcd_genInfo.report.id.reportElement.reportElements.BGWG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.SGE" id="de-gcd_genInfo.report.id.reportElement.reportElements.SGE" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.SGEP" id="de-gcd_genInfo.report.id.reportElement.reportElements.SGEP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.KKE" id="de-gcd_genInfo.report.id.reportElement.reportElements.KKE" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.SA" id="de-gcd_genInfo.report.id.reportElement.reportElements.SA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.SB" id="de-gcd_genInfo.report.id.reportElement.reportElements.SB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.BV" id="de-gcd_genInfo.report.id.reportElement.reportElements.BV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.ARB" id="de-gcd_genInfo.report.id.reportElement.reportElements.ARB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.reportElements.S" id="de-gcd_genInfo.report.id.reportElement.reportElements.S" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.reportElements.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.allocation.ntAss" id="de-gcd_genInfo.report.id.reportElement.allocation.ntAss" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.reportElement.allocation.ntAss.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.reportElement.allocation.ntAss.head" id="de-gcd_genInfo.report.id.reportElement.allocation.ntAss.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.allocation.reportElementsLayout.AB" id="de-gcd_genInfo.report.id.reportElement.allocation.reportElementsLayout.AB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.allocation.ntAss.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.allocation.reportElementsLayout.AA" id="de-gcd_genInfo.report.id.reportElement.allocation.reportElementsLayout.AA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.allocation.ntAss.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.allocation.incomeUse" id="de-gcd_genInfo.report.id.reportElement.allocation.incomeUse" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.reportElement.allocation.incomeUse.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.reportElement.allocation.incomeUse.head" id="de-gcd_genInfo.report.id.reportElement.allocation.incomeUse.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.allocation.reportElementsLayout.EG" id="de-gcd_genInfo.report.id.reportElement.allocation.reportElementsLayout.EG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.allocation.incomeUse.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.allocation.reportElementsLayout.EA" id="de-gcd_genInfo.report.id.reportElement.allocation.reportElementsLayout.EA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.allocation.incomeUse.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport" id="de-gcd_genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.head" id="de-gcd_genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.VAkVB" id="de-gcd_genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.VAkVB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.VAVB" id="de-gcd_genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.VAVB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.kVAVB" id="de-gcd_genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.kVAVB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.reportElement.allocation.payablesReceivablesAgeingReport.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType" id="de-gcd_genInfo.report.id.statementType" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.statementType.statementType.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.statementType.statementType.head" id="de-gcd_genInfo.report.id.statementType.statementType.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.E" id="de-gcd_genInfo.report.id.statementType.statementType.E" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.ST" id="de-gcd_genInfo.report.id.statementType.statementType.ST" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.PL" id="de-gcd_genInfo.report.id.statementType.statementType.PL" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.EB" id="de-gcd_genInfo.report.id.statementType.statementType.EB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.ZW" id="de-gcd_genInfo.report.id.statementType.statementType.ZW" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.UJ" id="de-gcd_genInfo.report.id.statementType.statementType.UJ" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.UN" id="de-gcd_genInfo.report.id.statementType.statementType.UN" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.AK" id="de-gcd_genInfo.report.id.statementType.statementType.AK" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.FK" id="de-gcd_genInfo.report.id.statementType.statementType.FK" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.UB" id="de-gcd_genInfo.report.id.statementType.statementType.UB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.LAB" id="de-gcd_genInfo.report.id.statementType.statementType.LAB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.LZB" id="de-gcd_genInfo.report.id.statementType.statementType.LZB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.LSB" id="de-gcd_genInfo.report.id.statementType.statementType.LSB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.AB" id="de-gcd_genInfo.report.id.statementType.statementType.AB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.S" id="de-gcd_genInfo.report.id.statementType.statementType.S" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.statementType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.statementType.SERL" id="de-gcd_genInfo.report.id.statementType.statementType.SERL" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.tax" id="de-gcd_genInfo.report.id.statementType.tax" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.statementType.tax.statementTypeTax.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.statementType.tax.statementTypeTax.head" id="de-gcd_genInfo.report.id.statementType.tax.statementTypeTax.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.tax.statementTypeTax.GHB" id="de-gcd_genInfo.report.id.statementType.tax.statementTypeTax.GHB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.tax.statementTypeTax.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.tax.statementTypeTax.SB" id="de-gcd_genInfo.report.id.statementType.tax.statementTypeTax.SB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.tax.statementTypeTax.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.tax.statementTypeTax.EB" id="de-gcd_genInfo.report.id.statementType.tax.statementTypeTax.EB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.statementType.tax.statementTypeTax.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.statementType.restated" id="de-gcd_genInfo.report.id.statementType.restated" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.incomeStatementendswithBalProfit" id="de-gcd_genInfo.report.id.incomeStatementendswithBalProfit" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard" id="de-gcd_genInfo.report.id.accountingStandard" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.head" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.HGB" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.HGB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.HGBM" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.HGBM" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.HAOE" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.HAOE" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.HIAS" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.HIAS" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.HUS" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.HUS" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.HKC" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.HKC" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.AO" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.AO" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.IAS" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.IAS" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.USG" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.USG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.LHR" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.LHR" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.LSR" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.LSR" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accountingStandard.accountingStandard.S" id="de-gcd_genInfo.report.id.accountingStandard.accountingStandard.S" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.accountingStandard.accountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard" id="de-gcd_genInfo.report.id.specialAccountingStandard" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.specialAccountingStandard.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.specialAccountingStandard.head" id="de-gcd_genInfo.report.id.specialAccountingStandard.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.RKV" id="de-gcd_genInfo.report.id.specialAccountingStandard.RKV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.RVVSUR" id="de-gcd_genInfo.report.id.specialAccountingStandard.RVVSUR" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.RVVR" id="de-gcd_genInfo.report.id.specialAccountingStandard.RVVR" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.RVVLK" id="de-gcd_genInfo.report.id.specialAccountingStandard.RVVLK" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.RVVPS" id="de-gcd_genInfo.report.id.specialAccountingStandard.RVVPS" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.RVVLU" id="de-gcd_genInfo.report.id.specialAccountingStandard.RVVLU" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.RVVSUK" id="de-gcd_genInfo.report.id.specialAccountingStandard.RVVSUK" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.RPV" id="de-gcd_genInfo.report.id.specialAccountingStandard.RPV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.PBV" id="de-gcd_genInfo.report.id.specialAccountingStandard.PBV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.KHBV" id="de-gcd_genInfo.report.id.specialAccountingStandard.KHBV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.EBV" id="de-gcd_genInfo.report.id.specialAccountingStandard.EBV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.WUV" id="de-gcd_genInfo.report.id.specialAccountingStandard.WUV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.VUV" id="de-gcd_genInfo.report.id.specialAccountingStandard.VUV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.LUF" id="de-gcd_genInfo.report.id.specialAccountingStandard.LUF" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.specialAccountingStandard.NEIN" id="de-gcd_genInfo.report.id.specialAccountingStandard.NEIN" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.specialAccountingStandard.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.incomeStatementFormat" id="de-gcd_genInfo.report.id.incomeStatementFormat" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.incomeStatementFormat.incomeStatementFormat.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.incomeStatementFormat.incomeStatementFormat.head" id="de-gcd_genInfo.report.id.incomeStatementFormat.incomeStatementFormat.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.incomeStatementFormat.incomeStatementFormat.GKV" id="de-gcd_genInfo.report.id.incomeStatementFormat.incomeStatementFormat.GKV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.incomeStatementFormat.incomeStatementFormat.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.incomeStatementFormat.incomeStatementFormat.UKV" id="de-gcd_genInfo.report.id.incomeStatementFormat.incomeStatementFormat.UKV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.incomeStatementFormat.incomeStatementFormat.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.incomeStatementFormat.incomeStatementFormat.S" id="de-gcd_genInfo.report.id.incomeStatementFormat.incomeStatementFormat.S" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.incomeStatementFormat.incomeStatementFormat.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consolidationRange" id="de-gcd_genInfo.report.id.consolidationRange" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.consolidationRange.consolidationRange.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.consolidationRange.consolidationRange.head" id="de-gcd_genInfo.report.id.consolidationRange.consolidationRange.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consolidationRange.consolidationRange.EA" id="de-gcd_genInfo.report.id.consolidationRange.consolidationRange.EA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consolidationRange.consolidationRange.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consolidationRange.consolidationRange.KA" id="de-gcd_genInfo.report.id.consolidationRange.consolidationRange.KA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consolidationRange.consolidationRange.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consolidationRange.consolidationRange.KAI" id="de-gcd_genInfo.report.id.consolidationRange.consolidationRange.KAI" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consolidationRange.consolidationRange.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consolidationRange.consolidationRange.KAW" id="de-gcd_genInfo.report.id.consolidationRange.consolidationRange.KAW" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consolidationRange.consolidationRange.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consolidationRange.consolidationRange.TKA" id="de-gcd_genInfo.report.id.consolidationRange.consolidationRange.TKA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consolidationRange.consolidationRange.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consolidationRange.consolidationRange.GB" id="de-gcd_genInfo.report.id.consolidationRange.consolidationRange.GB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consolidationRange.consolidationRange.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consolidationRange.consolidationRange.U" id="de-gcd_genInfo.report.id.consolidationRange.consolidationRange.U" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consolidationRange.consolidationRange.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consolidationRange.consolidationRange.S" id="de-gcd_genInfo.report.id.consolidationRange.consolidationRange.S" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consolidationRange.consolidationRange.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consideredInConsolidatedStatement" id="de-gcd_genInfo.report.id.consideredInConsolidatedStatement" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.id.consideredInConsolidatedStatement.consolidation.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.consideredInConsolidatedStatement.consolidation.head" id="de-gcd_genInfo.report.id.consideredInConsolidatedStatement.consolidation.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consideredInConsolidatedStatement.consolidation.KO" id="de-gcd_genInfo.report.id.consideredInConsolidatedStatement.consolidation.KO" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consideredInConsolidatedStatement.consolidation.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consideredInConsolidatedStatement.consolidation.KF" id="de-gcd_genInfo.report.id.consideredInConsolidatedStatement.consolidation.KF" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consideredInConsolidatedStatement.consolidation.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consideredInConsolidatedStatement.consolidation.UK" id="de-gcd_genInfo.report.id.consideredInConsolidatedStatement.consolidation.UK" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consideredInConsolidatedStatement.consolidation.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.consideredInConsolidatedStatement.consolidation.U" id="de-gcd_genInfo.report.id.consideredInConsolidatedStatement.consolidation.U" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.id.consideredInConsolidatedStatement.consolidation.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accordingTo" id="de-gcd_genInfo.report.id.accordingTo" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-gcd:genInfo.report.id.accordingTo.name"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.report.id.accordingTo.idNo"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.report.id.accordingTo.yearEnd"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.accordingTo.name" id="de-gcd_genInfo.report.id.accordingTo.name" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accordingTo.idNo" id="de-gcd_genInfo.report.id.accordingTo.idNo" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.HRN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.UID"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.ST13"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.STWID"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.BF4"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.BKN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.BUN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.IN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.EN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.SN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.S"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.accordingTo.idNo.type.companyId.HRN" id="de-gcd_genInfo.report.id.accordingTo.idNo.type.companyId.HRN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accordingTo.idNo.type.companyId.UID" id="de-gcd_genInfo.report.id.accordingTo.idNo.type.companyId.UID" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accordingTo.idNo.type.companyId.ST13" id="de-gcd_genInfo.report.id.accordingTo.idNo.type.companyId.ST13" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration">
+    <complexType>
+      <simpleContent>
+        <restriction base="xbrli:stringItemType">
+          <pattern value="\d{13}"/>
+          <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+        </restriction>
+      </simpleContent>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.accordingTo.idNo.type.companyId.STWID" id="de-gcd_genInfo.report.id.accordingTo.idNo.type.companyId.STWID" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accordingTo.idNo.type.companyId.BF4" id="de-gcd_genInfo.report.id.accordingTo.idNo.type.companyId.BF4" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration">
+    <complexType>
+      <simpleContent>
+        <restriction base="xbrli:stringItemType">
+          <pattern value="\d{4}"/>
+          <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+        </restriction>
+      </simpleContent>
+    </complexType>
+  </element>
+  <element name="genInfo.report.id.accordingTo.idNo.type.companyId.BKN" id="de-gcd_genInfo.report.id.accordingTo.idNo.type.companyId.BKN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accordingTo.idNo.type.companyId.BUN" id="de-gcd_genInfo.report.id.accordingTo.idNo.type.companyId.BUN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accordingTo.idNo.type.companyId.IN" id="de-gcd_genInfo.report.id.accordingTo.idNo.type.companyId.IN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accordingTo.idNo.type.companyId.EN" id="de-gcd_genInfo.report.id.accordingTo.idNo.type.companyId.EN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accordingTo.idNo.type.companyId.SN" id="de-gcd_genInfo.report.id.accordingTo.idNo.type.companyId.SN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accordingTo.idNo.type.companyId.S" id="de-gcd_genInfo.report.id.accordingTo.idNo.type.companyId.S" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.id.accordingTo.yearEnd" id="de-gcd_genInfo.report.id.accordingTo.yearEnd" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.period" id="de-gcd_genInfo.report.period" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="genInfo.report.period.reportPeriodBegin" id="de-gcd_genInfo.report.period.reportPeriodBegin" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.period.reportPeriodEnd" id="de-gcd_genInfo.report.period.reportPeriodEnd" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.period.fiscalYearBegin" id="de-gcd_genInfo.report.period.fiscalYearBegin" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.period.fiscalYearEnd" id="de-gcd_genInfo.report.period.fiscalYearEnd" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.period.balSheetClosingDate" id="de-gcd_genInfo.report.period.balSheetClosingDate" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.period.fiscalPreviousYearBegin" id="de-gcd_genInfo.report.period.fiscalPreviousYearBegin" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.period.fiscalPreviousYearEnd" id="de-gcd_genInfo.report.period.fiscalPreviousYearEnd" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.period.balSheetClosingDatePreviousYear" id="de-gcd_genInfo.report.period.balSheetClosingDatePreviousYear" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit" id="de-gcd_genInfo.report.audit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateHeadingToBeReplaced" id="de-gcd_genInfo.report.audit.certificateHeadingToBeReplaced" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.heading" id="de-gcd_genInfo.report.audit.certificateText.heading" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.audit.certificateText.heading.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.audit.certificateText.heading.head" id="de-gcd_genInfo.report.audit.certificateText.heading.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.heading.BV" id="de-gcd_genInfo.report.audit.certificateText.heading.BV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateText.heading.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.heading.BVA" id="de-gcd_genInfo.report.audit.certificateText.heading.BVA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateText.heading.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.heading.BVKA" id="de-gcd_genInfo.report.audit.certificateText.heading.BVKA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateText.heading.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.heading.VV" id="de-gcd_genInfo.report.audit.certificateText.heading.VV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateText.heading.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.heading.VVA" id="de-gcd_genInfo.report.audit.certificateText.heading.VVA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateText.heading.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.heading.VVKA" id="de-gcd_genInfo.report.audit.certificateText.heading.VVKA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateText.heading.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.heading.BT" id="de-gcd_genInfo.report.audit.certificateText.heading.BT" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateText.heading.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText" id="de-gcd_genInfo.report.audit.certificateText" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.pre" id="de-gcd_genInfo.report.audit.certificateText.pre" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.desc" id="de-gcd_genInfo.report.audit.certificateText.desc" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.opin" id="de-gcd_genInfo.report.audit.certificateText.opin" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.comm" id="de-gcd_genInfo.report.audit.certificateText.comm" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateText.hardcoment" id="de-gcd_genInfo.report.audit.certificateText.hardcoment" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion" id="de-gcd_genInfo.report.audit.certificateOpinion" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.head" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.BVU" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.BVU" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.BVV" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.BVV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.BVE" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.BVE" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.VS" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.VS" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.DU" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.DU" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.EUP" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.EUP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.EEP" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.EEP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.EPB" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.EPB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.NG" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.NG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.U" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.U" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.certificateOpinion.certificate.S" id="de-gcd_genInfo.report.audit.certificateOpinion.certificate.S" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.certificateOpinion.certificate.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.city" id="de-gcd_genInfo.report.audit.city" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.date" id="de-gcd_genInfo.report.audit.date" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.auditor" id="de-gcd_genInfo.report.audit.auditor" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-gcd:genInfo.report.audit.auditor.company"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.report.audit.auditor.type"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.report.audit.auditor.name"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.report.audit.auditor.electronicSignature"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.audit.auditor.company" id="de-gcd_genInfo.report.audit.auditor.company" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.auditor.type" id="de-gcd_genInfo.report.audit.auditor.type" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.audit.auditor.type.auditorType.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.audit.auditor.type.auditorType.head" id="de-gcd_genInfo.report.audit.auditor.type.auditorType.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.auditor.type.auditorType.WP" id="de-gcd_genInfo.report.audit.auditor.type.auditorType.WP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.auditor.type.auditorType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.auditor.type.auditorType.vBP" id="de-gcd_genInfo.report.audit.auditor.type.auditorType.vBP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.auditor.type.auditorType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.auditor.type.auditorType.StB" id="de-gcd_genInfo.report.audit.auditor.type.auditorType.StB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.auditor.type.auditorType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.auditor.type.auditorType.StBv" id="de-gcd_genInfo.report.audit.auditor.type.auditorType.StBv" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.auditor.type.auditorType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.auditor.type.auditorType.U" id="de-gcd_genInfo.report.audit.auditor.type.auditorType.U" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.auditor.type.auditorType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.auditor.type.auditorType.S" id="de-gcd_genInfo.report.audit.auditor.type.auditorType.S" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.audit.auditor.type.auditorType.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.auditor.name" id="de-gcd_genInfo.report.audit.auditor.name" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.audit.auditor.electronicSignature" id="de-gcd_genInfo.report.audit.auditor.electronicSignature" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation" id="de-gcd_genInfo.report.preparationAttestation" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.type" id="de-gcd_genInfo.report.preparationAttestation.type" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.report.preparationAttestation.type.head"/>
+      </choice>
+      <attributeGroup ref="xbrli:tupleAttrs"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.preparationAttestation.type.head" id="de-gcd_genInfo.report.preparationAttestation.type.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.type.EOB" id="de-gcd_genInfo.report.preparationAttestation.type.EOB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.preparationAttestation.type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.type.EPB" id="de-gcd_genInfo.report.preparationAttestation.type.EPB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.preparationAttestation.type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.type.EUB" id="de-gcd_genInfo.report.preparationAttestation.type.EUB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.preparationAttestation.type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.type.EOBVE" id="de-gcd_genInfo.report.preparationAttestation.type.EOBVE" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.preparationAttestation.type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.type.EPBUBE" id="de-gcd_genInfo.report.preparationAttestation.type.EPBUBE" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.preparationAttestation.type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.type.NB" id="de-gcd_genInfo.report.preparationAttestation.type.NB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.preparationAttestation.type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.heading" id="de-gcd_genInfo.report.preparationAttestation.heading" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.text" id="de-gcd_genInfo.report.preparationAttestation.text" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.city" id="de-gcd_genInfo.report.preparationAttestation.city" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.date" id="de-gcd_genInfo.report.preparationAttestation.date" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.attester" id="de-gcd_genInfo.report.preparationAttestation.attester" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-gcd:genInfo.report.preparationAttestation.attester.company"/>
+        <element ref="de-gcd:genInfo.report.preparationAttestation.attester.type"/>
+        <element ref="de-gcd:genInfo.report.preparationAttestation.attester.name"/>
+      </sequence>
+      <attributeGroup ref="xbrli:tupleAttrs"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.preparationAttestation.attester.company" id="de-gcd_genInfo.report.preparationAttestation.attester.company" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.attester.type" id="de-gcd_genInfo.report.preparationAttestation.attester.type" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice maxOccurs="unbounded">
+        <element ref="de-gcd:genInfo.report.preparationAttestation.attester.type.head"/>
+      </choice>
+      <attributeGroup ref="xbrli:tupleAttrs"/>
+    </complexType>
+  </element>
+  <element name="genInfo.report.preparationAttestation.attester.type.head" id="de-gcd_genInfo.report.preparationAttestation.attester.type.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.attester.type.WP" id="de-gcd_genInfo.report.preparationAttestation.attester.type.WP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.preparationAttestation.attester.type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.attester.type.vBP" id="de-gcd_genInfo.report.preparationAttestation.attester.type.vBP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.preparationAttestation.attester.type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.attester.type.StB" id="de-gcd_genInfo.report.preparationAttestation.attester.type.StB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.preparationAttestation.attester.type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.attester.type.StBv" id="de-gcd_genInfo.report.preparationAttestation.attester.type.StBv" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.preparationAttestation.attester.type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.attester.type.S" id="de-gcd_genInfo.report.preparationAttestation.attester.type.S" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.report.preparationAttestation.attester.type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.preparationAttestation.attester.name" id="de-gcd_genInfo.report.preparationAttestation.attester.name" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.userSpecific" id="de-gcd_genInfo.report.userSpecific" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company" id="de-gcd_genInfo.company" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id" id="de-gcd_genInfo.company.id" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.name" id="de-gcd_genInfo.company.id.name" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.name.formerName" id="de-gcd_genInfo.company.id.name.formerName" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.name.dateOfLastChange" id="de-gcd_genInfo.company.id.name.dateOfLastChange" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus" id="de-gcd_genInfo.company.id.legalStatus" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.company.id.legalStatus.legalStatus.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.legalStatus.legalStatus.head" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.AG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.AG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.SE" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.SE" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.GMBH" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.GMBH" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.KOG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.KOG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.OHG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.OHG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.KG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.KG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.KGAA" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.KGAA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.GKG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.GKG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.AGKG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.AGKG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.EG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.EG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.VVAG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.VVAG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.BNVA" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.BNVA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.EWI" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.EWI" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.EU" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.EU" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.EUN" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.EUN" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.GBR" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.GBR" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.EV" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.EV" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.PA" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.PA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.PG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.PG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.ST" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.ST" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.HAJP" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.HAJP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.SJPR" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.SJPR" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.BG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.BG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.SG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.SG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.VOER" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.VOER" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.KOER" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.KOER" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.LTD" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.LTD" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.RHRA" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.RHRA" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.RHRB" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.RHRB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.RAG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.RAG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.RAP" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.RAP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.FB43" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.FB43" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.G43" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.G43" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.ASG" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.ASG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.SR" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.SR" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.Other.EUN" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.Other.EUN" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.Other.KOER" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.Other.KOER" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.legalStatus.Other.MUN" id="de-gcd_genInfo.company.id.legalStatus.legalStatus.Other.MUN" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.legalStatus.formerStatus" id="de-gcd_genInfo.company.id.legalStatus.formerStatus" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.company.id.legalStatus.legalStatus.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.legalStatus.dateOfLastChange" id="de-gcd_genInfo.company.id.legalStatus.dateOfLastChange" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.FoundationDate" id="de-gcd_genInfo.company.id.FoundationDate" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation" id="de-gcd_genInfo.company.id.Incorporation" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation.Type" id="de-gcd_genInfo.company.id.Incorporation.Type" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.company.id.Incorporation.Type.Type.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.Incorporation.Type.Type.head" id="de-gcd_genInfo.company.id.Incorporation.Type.Type.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation.Type.Type.HR" id="de-gcd_genInfo.company.id.Incorporation.Type.Type.HR" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.Incorporation.Type.Type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation.Type.Type.GR" id="de-gcd_genInfo.company.id.Incorporation.Type.Type.GR" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.Incorporation.Type.Type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation.Type.Type.PR" id="de-gcd_genInfo.company.id.Incorporation.Type.Type.PR" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.Incorporation.Type.Type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation.Type.Type.VR" id="de-gcd_genInfo.company.id.Incorporation.Type.Type.VR" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.Incorporation.Type.Type.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation.prefix" id="de-gcd_genInfo.company.id.Incorporation.prefix" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation.section" id="de-gcd_genInfo.company.id.Incorporation.section" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation.number" id="de-gcd_genInfo.company.id.Incorporation.number" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation.suffix" id="de-gcd_genInfo.company.id.Incorporation.suffix" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation.court" id="de-gcd_genInfo.company.id.Incorporation.court" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.Incorporation.dateOfFirstRegistration" id="de-gcd_genInfo.company.id.Incorporation.dateOfFirstRegistration" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.lastTaxAudit" id="de-gcd_genInfo.company.id.lastTaxAudit" type="xbrli:gYearItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.sizeClass" id="de-gcd_genInfo.company.id.sizeClass" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.company.id.sizeClass.sizeClass.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.sizeClass.sizeClass.head" id="de-gcd_genInfo.company.id.sizeClass.sizeClass.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.sizeClass.sizeClass.GK" id="de-gcd_genInfo.company.id.sizeClass.sizeClass.GK" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.sizeClass.sizeClass.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.sizeClass.sizeClass.MK" id="de-gcd_genInfo.company.id.sizeClass.sizeClass.MK" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.sizeClass.sizeClass.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.sizeClass.sizeClass.KK" id="de-gcd_genInfo.company.id.sizeClass.sizeClass.KK" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.sizeClass.sizeClass.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.sizeClass.sizeClass.NK" id="de-gcd_genInfo.company.id.sizeClass.sizeClass.NK" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.sizeClass.sizeClass.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.location" id="de-gcd_genInfo.company.id.location" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.location.street" id="de-gcd_genInfo.company.id.location.street" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.location.houseNo" id="de-gcd_genInfo.company.id.location.houseNo" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.location.zipCode" id="de-gcd_genInfo.company.id.location.zipCode" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.location.city" id="de-gcd_genInfo.company.id.location.city" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.location.country" id="de-gcd_genInfo.company.id.location.country" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.location.country.isoCode" id="de-gcd_genInfo.company.id.location.country.isoCode" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.businessAddressDomestic" id="de-gcd_genInfo.company.id.businessAddressDomestic" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.businessAddressDomestic.street" id="de-gcd_genInfo.company.id.businessAddressDomestic.street" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.businessAddressDomestic.houseNo" id="de-gcd_genInfo.company.id.businessAddressDomestic.houseNo" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.businessAddressDomestic.zipCode" id="de-gcd_genInfo.company.id.businessAddressDomestic.zipCode" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.businessAddressDomestic.city" id="de-gcd_genInfo.company.id.businessAddressDomestic.city" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.businessAddressDomestic.country" id="de-gcd_genInfo.company.id.businessAddressDomestic.country" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.businessAddressDomestic.isoCode" id="de-gcd_genInfo.company.id.businessAddressDomestic.isoCode" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.idNo" id="de-gcd_genInfo.company.id.idNo" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.HRN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.UID"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.ST13"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.STID"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.STWID"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.BF4"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.BKN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.BUN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.IN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.EN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.SN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.S"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.idNo.type.companyId.HRN" id="de-gcd_genInfo.company.id.idNo.type.companyId.HRN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.idNo.type.companyId.UID" id="de-gcd_genInfo.company.id.idNo.type.companyId.UID" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.idNo.type.companyId.ST13" id="de-gcd_genInfo.company.id.idNo.type.companyId.ST13" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration">
+    <complexType>
+      <simpleContent>
+        <restriction base="xbrli:stringItemType">
+          <pattern value="\d{13}"/>
+          <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+        </restriction>
+      </simpleContent>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.idNo.type.companyId.STID" id="de-gcd_genInfo.company.id.idNo.type.companyId.STID" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.idNo.type.companyId.STWID" id="de-gcd_genInfo.company.id.idNo.type.companyId.STWID" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.idNo.type.companyId.BF4" id="de-gcd_genInfo.company.id.idNo.type.companyId.BF4" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration">
+    <complexType>
+      <simpleContent>
+        <restriction base="xbrli:stringItemType">
+          <pattern value="\d{4}"/>
+          <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+        </restriction>
+      </simpleContent>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.idNo.type.companyId.BKN" id="de-gcd_genInfo.company.id.idNo.type.companyId.BKN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.idNo.type.companyId.BUN" id="de-gcd_genInfo.company.id.idNo.type.companyId.BUN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.idNo.type.companyId.IN" id="de-gcd_genInfo.company.id.idNo.type.companyId.IN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.idNo.type.companyId.EN" id="de-gcd_genInfo.company.id.idNo.type.companyId.EN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.idNo.type.companyId.SN" id="de-gcd_genInfo.company.id.idNo.type.companyId.SN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.idNo.type.companyId.S" id="de-gcd_genInfo.company.id.idNo.type.companyId.S" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.business" id="de-gcd_genInfo.company.id.business" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry" id="de-gcd_genInfo.company.id.industry" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-gcd:genInfo.company.id.industry.keyType"/>
+        <element ref="de-gcd:genInfo.company.id.industry.keyEntry"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.industry.name"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.industry.keyType" id="de-gcd_genInfo.company.id.industry.keyType" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.company.id.industry.keyType.industryKey.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.industry.keyType.industryKey.head" id="de-gcd_genInfo.company.id.industry.keyType.industryKey.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry.keyType.industryKey.WZ93" id="de-gcd_genInfo.company.id.industry.keyType.industryKey.WZ93" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.industry.keyType.industryKey.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry.keyType.industryKey.NACE" id="de-gcd_genInfo.company.id.industry.keyType.industryKey.NACE" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.industry.keyType.industryKey.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry.keyType.industryKey.NACE1.1" id="de-gcd_genInfo.company.id.industry.keyType.industryKey.NACE1.1" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.industry.keyType.industryKey.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry.keyType.industryKey.NACE2.0" id="de-gcd_genInfo.company.id.industry.keyType.industryKey.NACE2.0" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.industry.keyType.industryKey.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry.keyType.industryKey.WZ2003" id="de-gcd_genInfo.company.id.industry.keyType.industryKey.WZ2003" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.industry.keyType.industryKey.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry.keyType.industryKey.WZ2007" id="de-gcd_genInfo.company.id.industry.keyType.industryKey.WZ2007" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.industry.keyType.industryKey.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry.keyType.industryKey.WZ2008" id="de-gcd_genInfo.company.id.industry.keyType.industryKey.WZ2008" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.industry.keyType.industryKey.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry.keyType.industryKey.SIC" id="de-gcd_genInfo.company.id.industry.keyType.industryKey.SIC" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.industry.keyType.industryKey.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry.keyType.industryKey.S" id="de-gcd_genInfo.company.id.industry.keyType.industryKey.S" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.industry.keyType.industryKey.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry.keyEntry" id="de-gcd_genInfo.company.id.industry.keyEntry" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.industry.name" id="de-gcd_genInfo.company.id.industry.name" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.CompanyStatus" id="de-gcd_genInfo.company.id.CompanyStatus" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.company.id.CompanyStatus.companyStatus.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.CompanyStatus.companyStatus.head" id="de-gcd_genInfo.company.id.CompanyStatus.companyStatus.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.CompanyStatus.companyStatus.F" id="de-gcd_genInfo.company.id.CompanyStatus.companyStatus.F" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.CompanyStatus.companyStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.CompanyStatus.companyStatus.I" id="de-gcd_genInfo.company.id.CompanyStatus.companyStatus.I" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.CompanyStatus.companyStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.CompanyStatus.companyStatus.L" id="de-gcd_genInfo.company.id.CompanyStatus.companyStatus.L" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.CompanyStatus.companyStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.CompanyStatus.companyStatus.R" id="de-gcd_genInfo.company.id.CompanyStatus.companyStatus.R" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.CompanyStatus.companyStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.CompanyStatus.companyStatus.S" id="de-gcd_genInfo.company.id.CompanyStatus.companyStatus.S" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.CompanyStatus.companyStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.stockExch" id="de-gcd_genInfo.company.id.stockExch" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-gcd:genInfo.company.id.stockExch.city"/>
+        <element ref="de-gcd:genInfo.company.id.stockExch.ticker"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.stockExch.market"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.stockExch.typeOfSecurity"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.stockExch.securityCode"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.stockExch.securityCode.entry"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.stockExch.securityCode.type"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.stockExch.city" id="de-gcd_genInfo.company.id.stockExch.city" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.stockExch.ticker" id="de-gcd_genInfo.company.id.stockExch.ticker" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.stockExch.market" id="de-gcd_genInfo.company.id.stockExch.market" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.stockExch.typeOfSecurity" id="de-gcd_genInfo.company.id.stockExch.typeOfSecurity" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.stockExch.securityCode" id="de-gcd_genInfo.company.id.stockExch.securityCode" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.stockExch.securityCode.entry" id="de-gcd_genInfo.company.id.stockExch.securityCode.entry" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.stockExch.securityCode.type" id="de-gcd_genInfo.company.id.stockExch.securityCode.type" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.taxGroupKstEst" id="de-gcd_genInfo.company.id.taxGroupKstEst" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.company.id.taxGroupKstEst.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.taxGroupKstEst.head" id="de-gcd_genInfo.company.id.taxGroupKstEst.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.taxGroupKstEst.Parent" id="de-gcd_genInfo.company.id.taxGroupKstEst.Parent" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.taxGroupKstEst.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.taxGroupKstEst.intermedParent" id="de-gcd_genInfo.company.id.taxGroupKstEst.intermedParent" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.taxGroupKstEst.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.taxGroupKstEst.subComp" id="de-gcd_genInfo.company.id.taxGroupKstEst.subComp" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.taxGroupKstEst.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent" id="de-gcd_genInfo.company.id.parent" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-gcd:genInfo.company.id.parent.name"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.name.formerName"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.name.dateOfLastChange"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.legalStatus"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.legalStatus.formerStatus"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.legalStatus.dateOfLastChange"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.location"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.location.street"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.location.houseNo"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.location.zipCode"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.location.city"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.location.country"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.location.country.isoCode"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.parent.idNo"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.parent.name" id="de-gcd_genInfo.company.id.parent.name" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.name.formerName" id="de-gcd_genInfo.company.id.parent.name.formerName" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.name.dateOfLastChange" id="de-gcd_genInfo.company.id.parent.name.dateOfLastChange" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.legalStatus" id="de-gcd_genInfo.company.id.parent.legalStatus" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.legalStatus.formerStatus" id="de-gcd_genInfo.company.id.parent.legalStatus.formerStatus" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.legalStatus.dateOfLastChange" id="de-gcd_genInfo.company.id.parent.legalStatus.dateOfLastChange" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.location" id="de-gcd_genInfo.company.id.parent.location" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.location.street" id="de-gcd_genInfo.company.id.parent.location.street" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.location.houseNo" id="de-gcd_genInfo.company.id.parent.location.houseNo" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.location.zipCode" id="de-gcd_genInfo.company.id.parent.location.zipCode" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.location.city" id="de-gcd_genInfo.company.id.parent.location.city" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.location.country" id="de-gcd_genInfo.company.id.parent.location.country" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.location.country.isoCode" id="de-gcd_genInfo.company.id.parent.location.country.isoCode" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.idNo" id="de-gcd_genInfo.company.id.parent.idNo" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.HRN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.UID"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.ST13"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.STID"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.STWID"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.BF4"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.BKN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.BUN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.IN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.EN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.SN"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.idNo.type.companyId.S"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.HRN" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.HRN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.UID" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.UID" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.ST13" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.ST13" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration">
+    <complexType>
+      <simpleContent>
+        <restriction base="xbrli:stringItemType">
+          <pattern value="\d{13}"/>
+          <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+        </restriction>
+      </simpleContent>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.STID" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.STID" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.STWID" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.STWID" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.BF4" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.BF4" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration">
+    <complexType>
+      <simpleContent>
+        <restriction base="xbrli:stringItemType">
+          <pattern value="\d{4}"/>
+          <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+        </restriction>
+      </simpleContent>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.BKN" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.BKN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.BUN" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.BUN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.IN" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.IN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.EN" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.EN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.SN" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.SN" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.parent.idNo.type.companyId.S" id="de-gcd_genInfo.company.id.parent.idNo.type.companyId.S" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder" id="de-gcd_genInfo.company.id.shareholder" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-gcd:genInfo.company.id.shareholder.name"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.shareholder.currentnumber"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.shareholder.signerId"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.shareholder.taxnumber"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.shareholder.taxid"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.shareholder.WID"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.shareholder.ProfitDivideKey"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.shareholder.ProfitDivideKey.dateOfunderyearChange"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.shareholder.ProfitDivideKey.formerkey"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.shareholder.legalStatus"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.shareholder.ShareDivideKey"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.shareholder.extensionRequired"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.shareholder.name" id="de-gcd_genInfo.company.id.shareholder.name" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.currentnumber" id="de-gcd_genInfo.company.id.shareholder.currentnumber" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.signerId" id="de-gcd_genInfo.company.id.shareholder.signerId" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.taxnumber" id="de-gcd_genInfo.company.id.shareholder.taxnumber" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration">
+    <complexType>
+      <simpleContent>
+        <restriction base="xbrli:stringItemType">
+          <pattern value="\d{13}"/>
+          <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+        </restriction>
+      </simpleContent>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.shareholder.taxid" id="de-gcd_genInfo.company.id.shareholder.taxid" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.WID" id="de-gcd_genInfo.company.id.shareholder.WID" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.ProfitDivideKey" id="de-gcd_genInfo.company.id.shareholder.ProfitDivideKey" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.ProfitDivideKey.dateOfunderyearChange" id="de-gcd_genInfo.company.id.shareholder.ProfitDivideKey.dateOfunderyearChange" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.ProfitDivideKey.formerkey" id="de-gcd_genInfo.company.id.shareholder.ProfitDivideKey.formerkey" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.legalStatus" id="de-gcd_genInfo.company.id.shareholder.legalStatus" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <choice>
+        <element ref="de-gcd:genInfo.company.id.shareholder.legalStatus.legalStatus.head"/>
+      </choice>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.shareholder.legalStatus.legalStatus.head" id="de-gcd_genInfo.company.id.shareholder.legalStatus.legalStatus.head" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.legalStatus.legalStatus.NPP" id="de-gcd_genInfo.company.id.shareholder.legalStatus.legalStatus.NPP" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.shareholder.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.legalStatus.legalStatus.NPB" id="de-gcd_genInfo.company.id.shareholder.legalStatus.legalStatus.NPB" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.shareholder.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.legalStatus.legalStatus.NPGmbH" id="de-gcd_genInfo.company.id.shareholder.legalStatus.legalStatus.NPGmbH" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.legalStatus.legalStatus.PG" id="de-gcd_genInfo.company.id.shareholder.legalStatus.legalStatus.PG" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.shareholder.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.legalStatus.legalStatus.KOER" id="de-gcd_genInfo.company.id.shareholder.legalStatus.legalStatus.KOER" type="xbrli:stringItemType" substitutionGroup="de-gcd:genInfo.company.id.shareholder.legalStatus.legalStatus.head" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.ShareDivideKey" id="de-gcd_genInfo.company.id.shareholder.ShareDivideKey" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-gcd:genInfo.company.id.shareholder.ShareDivideKey.numerator"/>
+        <element ref="de-gcd:genInfo.company.id.shareholder.ShareDivideKey.denominator"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.shareholder.ShareDivideKey.numerator" id="de-gcd_genInfo.company.id.shareholder.ShareDivideKey.numerator" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration">
+    <complexType>
+      <simpleContent>
+        <restriction base="xbrli:nonNegativeIntegerItemType">
+          <pattern value="[0-9]{1,11}"/>
+          <attributeGroup ref="xbrli:numericItemAttrs"/>
+        </restriction>
+      </simpleContent>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.shareholder.ShareDivideKey.denominator" id="de-gcd_genInfo.company.id.shareholder.ShareDivideKey.denominator" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration">
+    <complexType>
+      <simpleContent>
+        <restriction base="xbrli:positiveIntegerItemType">
+          <pattern value="[0-9]{1,11}"/>
+          <attributeGroup ref="xbrli:numericItemAttrs"/>
+        </restriction>
+      </simpleContent>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.shareholder.SpecialBalanceRequired" id="de-gcd_genInfo.company.id.shareholder.SpecialBalanceRequired" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.shareholder.extensionRequired" id="de-gcd_genInfo.company.id.shareholder.extensionRequired" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.contactAddress" id="de-gcd_genInfo.company.id.contactAddress" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-gcd:genInfo.company.id.contactAddress.person"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.contactAddress.person.name"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.contactAddress.person.dept"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.contactAddress.person.function"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.contactAddress.person.phone"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.contactAddress.person.fax"/>
+        <element minOccurs="0" ref="de-gcd:genInfo.company.id.contactAddress.person.eMail"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="genInfo.company.id.contactAddress.person" id="de-gcd_genInfo.company.id.contactAddress.person" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.contactAddress.person.name" id="de-gcd_genInfo.company.id.contactAddress.person.name" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.contactAddress.person.dept" id="de-gcd_genInfo.company.id.contactAddress.person.dept" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.contactAddress.person.function" id="de-gcd_genInfo.company.id.contactAddress.person.function" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.contactAddress.person.phone" id="de-gcd_genInfo.company.id.contactAddress.person.phone" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.contactAddress.person.fax" id="de-gcd_genInfo.company.id.contactAddress.person.fax" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.contactAddress.person.eMail" id="de-gcd_genInfo.company.id.contactAddress.person.eMail" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.internet" id="de-gcd_genInfo.company.id.internet" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.internet.description" id="de-gcd_genInfo.company.id.internet.description" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.internet.url" id="de-gcd_genInfo.company.id.internet.url" type="xbrli:anyURIItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.comingfrom" id="de-gcd_genInfo.company.id.comingfrom" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.id.companyLogo" id="de-gcd_genInfo.company.id.companyLogo" type="xbrli:anyURIItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.company.userSpecific" id="de-gcd_genInfo.company.userSpecific" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="genInfo.report.autoNumbering" id="de-gcd_genInfo.report.autoNumbering" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+</schema>

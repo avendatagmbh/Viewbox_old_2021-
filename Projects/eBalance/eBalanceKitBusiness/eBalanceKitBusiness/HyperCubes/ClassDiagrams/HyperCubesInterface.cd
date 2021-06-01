@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.Document" Collapsed="true">
+    <Position X="9.75" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>2BAaoGCcEYKkTAwEAxtEEARUEhA8BAhoYEHMFADBBFE=</HashCode>
+      <FileName>Structures\DbMapping\Document.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="eBalanceKitBusiness.HyperCubes.Interfaces.Structure.IHyperCubeDimensionSet">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <AssociationLine Name="AllDimensionItems" Type="eBalanceKitBusiness.HyperCubes.Interfaces.Structure.IHyperCubeDimension">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.305" Y="0.516" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="DimensionItems" Type="eBalanceKitBusiness.HyperCubes.Interfaces.Structure.IHyperCubeDimension">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.148" Y="0.183" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Primary" Type="eBalanceKitBusiness.HyperCubes.Interfaces.Structure.IHyperCubeDimension">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.112" Y="0.506" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAABACAAAg=</HashCode>
+      <FileName>HyperCubes\Interfaces\Structure\IHyperCubeDimensionSet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Primary" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="AllDimensionItems" />
+      <Property Name="DimensionItems" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.HyperCubes.Interfaces.Structure.IHyperCubeDimensionValue">
+    <Position X="3.75" Y="2.75" Width="2.25" />
+    <AssociationLine Name="Children" Type="eBalanceKitBusiness.HyperCubes.Interfaces.Structure.IHyperCubeDimensionValue" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="3.928" />
+        <Point X="6.375" Y="3.928" />
+        <Point X="6.375" Y="4.998" />
+        <Point X="5.625" Y="4.998" />
+        <Point X="5.625" Y="4.43" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.702" Y="0.675" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Parent" Type="eBalanceKitBusiness.HyperCubes.Interfaces.Structure.IHyperCubeDimensionValue" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="3.311" />
+        <Point X="6.375" Y="3.311" />
+        <Point X="6.375" Y="2.531" />
+        <Point X="5.75" Y="2.531" />
+        <Point X="5.75" Y="2.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.619" Y="0.268" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAgEQAAABAAAQAAAAQAAAAAAAAA=</HashCode>
+      <FileName>HyperCubes\Interfaces\Structure\IHyperCubeDimensionValue.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Parent" />
+      <Property Name="Dimension" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Children" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.HyperCubes.Interfaces.Structure.IHyperCubeDimension">
+    <Position X="0.5" Y="2.75" Width="2" />
+    <AssociationLine Name="Values" Type="eBalanceKitBusiness.HyperCubes.Interfaces.Structure.IHyperCubeDimensionValue" FixedFromPoint="true">
+      <Path>
+        <Point X="2.5" Y="3.438" />
+        <Point X="3.75" Y="3.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAACAAAAAgAAACAAA=</HashCode>
+      <FileName>HyperCubes\Interfaces\Structure\IHyperCubeDimension.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Values" />
+      <Property Name="RootValues" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.HyperCubes.Interfaces.Structure.IHyperCube">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAEAAAAACAAAAAAAAIAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>HyperCubes\Interfaces\Structure\IHyperCube.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dimensions" />
+      <Property Name="Root" />
+      <Property Name="Document" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Taxonomy.Interfaces.PresentationTree.IPresentationTreeNode" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,11 @@
+﻿<Window x:Class="eBalanceKit.Windows.MappingTemplates.DlgCreateGCDTemplate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:MappingTemplates="clr-namespace:eBalanceKit.Windows.MappingTemplates"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Title="{x:Static Localisation:ResourcesCommon.CreateNewTemplate}" SizeToContent="Height"
+        Icon="/CustomResources;component/Resources/logo1.png"
+        ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+        Width="400" MinHeight="260">
+    <MappingTemplates:CtlCreateGCDTemplate/>
+</Window>

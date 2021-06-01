@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CompanyInUse" xml:space="preserve">
+    <value>The company could not be deleted, since it is currently used from one or more reports.</value>
+  </data>
+  <data name="CompanyManagerAdd" xml:space="preserve">
+    <value>Could not add company: </value>
+  </data>
+  <data name="CompanyManagerDelete" xml:space="preserve">
+    <value>Could not delete company: </value>
+  </data>
+  <data name="CompanyManagerUpdate" xml:space="preserve">
+    <value>Could not update company: </value>
+  </data>
+  <data name="ConfigFileNotFound" xml:space="preserve">
+    <value>Could not find the application config file</value>
+  </data>
+  <data name="CreateAppConfigFailed" xml:space="preserve">
+    <value>Failed to create the application config file</value>
+  </data>
+  <data name="CreateConfigDirFailed" xml:space="preserve">
+    <value>Could not create config directory "{0}"</value>
+  </data>
+  <data name="CreateTableFailed" xml:space="preserve">
+    <value>Failed to create table {0}</value>
+  </data>
+  <data name="DatabaseOutOfDate" xml:space="preserve">
+    <value>The database is out of date. Please contact your administrator who can upgrade the database with the eBalance-Kit database management tool.</value>
+  </data>
+  <data name="DatabaseOutOfDate1" xml:space="preserve">
+    <value>Currently the database version is {0} whereas the latest version is {1}.</value>
+  </data>
+  <data name="DbInitFailed" xml:space="preserve">
+    <value>Error during database initialisation</value>
+  </data>
+  <data name="DbUpgradeFailed" xml:space="preserve">
+    <value>Failed to upgrade the database to version {0}</value>
+  </data>
+  <data name="DbUpgradeProgress" xml:space="preserve">
+    <value>Updating database to Version {0}</value>
+  </data>
+  <data name="DocumentManagerAdd" xml:space="preserve">
+    <value>Could not add document: </value>
+  </data>
+  <data name="DocumentManagerDelete" xml:space="preserve">
+    <value>Could not delete document: </value>
+  </data>
+  <data name="DocumentManagerUpdate" xml:space="preserve">
+    <value>Could not update document: </value>
+  </data>
+  <data name="DocumentPeriodManagerAdd" xml:space="preserve">
+    <value>Could not add period: </value>
+  </data>
+  <data name="DocumentPeriodManagerDelete" xml:space="preserve">
+    <value>Could not period: </value>
+  </data>
+  <data name="DocumentPeriodManagerUpdate" xml:space="preserve">
+    <value>Could not period: </value>
+  </data>
+  <data name="FailedToAddDataset" xml:space="preserve">
+    <value>Failed to add dataset: </value>
+  </data>
+  <data name="FailedToCopyData" xml:space="preserve">
+    <value>Failed to copy data for table {0} from backup table</value>
+  </data>
+  <data name="FailedToDeleteBackupTables" xml:space="preserve">
+    <value>Failed to remove backup tables</value>
+  </data>
+  <data name="FailedToDeleteDataset" xml:space="preserve">
+    <value>Failed to delete dataset: </value>
+  </data>
+  <data name="FailedToDeleteTable" xml:space="preserve">
+    <value>Failed to remove table {0}</value>
+  </data>
+  <data name="FailedToLoad.ReconciliationInfo" xml:space="preserve">
+    <value>Could not load data for value transfer of commercial to tax values: </value>
+  </data>
+  <data name="FailedToRenameTables" xml:space="preserve">
+    <value>Failed to rename tables</value>
+  </data>
+  <data name="FailedToUpdateDataset" xml:space="preserve">
+    <value>Failed to update dataset: </value>
+  </data>
+  <data name="FailedToUpdateTable" xml:space="preserve">
+    <value>Failed to update table {0}</value>
+  </data>
+  <data name="HeaderInUse" xml:space="preserve">
+    <value>The datast could not be deleted, since it is currently assigned to at least one income statements or balance sheet position.</value>
+  </data>
+  <data name="InsufficentReadRights" xml:space="preserve">
+    <value>Read not possible due to insufficient rights.</value>
+  </data>
+  <data name="InsufficentWriteRights" xml:space="preserve">
+    <value>Write not possible due to insufficient rights.</value>
+  </data>
+  <data name="InvalidUserOrPassword" xml:space="preserve">
+    <value>Invalid user or password.</value>
+  </data>
+  <data name="MustHaveValue" xml:space="preserve">
+    <value>if there is a balance list entry, the monetary parent should have value</value>
+  </data>
+  <data name="ProgramOutOfDate" xml:space="preserve">
+    <value>The eBalance-Kit database has been updated to a newer version, please install the eBalance-Kit in version {0} or higher.</value>
+  </data>
+  <data name="ProgressAddAssignments" xml:space="preserve">
+    <value>Creating new account assignments...</value>
+  </data>
+  <data name="ProgressDeleteAssignments" xml:space="preserve">
+    <value>Deleting account assignments...</value>
+  </data>
+  <data name="ReadAppConfigFailed" xml:space="preserve">
+    <value>Failed to read the application config file</value>
+  </data>
+  <data name="RoleManagerAdd" xml:space="preserve">
+    <value>Could not add roll:</value>
+  </data>
+  <data name="RoleManagerDelete" xml:space="preserve">
+    <value>Could not delete roll:</value>
+  </data>
+  <data name="RoleManagerUpdate" xml:space="preserve">
+    <value>Could not update roll:</value>
+  </data>
+  <data name="ShouldHaveElement" xml:space="preserve">
+    <value>If child is not balance list entry, than it should contain element</value>
+  </data>
+  <data name="ShouldntHaveValue" xml:space="preserve">
+    <value>There shouldn't be a value here</value>
+  </data>
+  <data name="SystemInUse" xml:space="preserve">
+    <value>The system could not be deleted, since it is currently used from one or more reports.</value>
+  </data>
+  <data name="SystemManagerAdd" xml:space="preserve">
+    <value>Could not add system: </value>
+  </data>
+  <data name="SystemManagerDelete" xml:space="preserve">
+    <value>Could not delete system: </value>
+  </data>
+  <data name="SystemManagerUpdate" xml:space="preserve">
+    <value>Could not update system: </value>
+  </data>
+  <data name="TaxonomiesLoadError" xml:space="preserve">
+    <value>Error while loading the taxonomy could not be loaded: </value>
+  </data>
+  <data name="TemplateManagerAdd" xml:space="preserve">
+    <value>Could not add template: </value>
+  </data>
+  <data name="TemplateManagerDelete" xml:space="preserve">
+    <value>Could not delete template: </value>
+  </data>
+  <data name="TemplateManagerUpdate" xml:space="preserve">
+    <value>Could not update template: </value>
+  </data>
+  <data name="UpgradeRenameColumnFailed" xml:space="preserve">
+    <value>Failed to rename column {0} in table {1}</value>
+  </data>
+  <data name="UserManagerAdd" xml:space="preserve">
+    <value>Could not add user: </value>
+  </data>
+  <data name="UserManagerDelete" xml:space="preserve">
+    <value>Could not delete user: </value>
+  </data>
+  <data name="UserManagerUpdate" xml:space="preserve">
+    <value>Could not update user: </value>
+  </data>
+  <data name="AssignmentNotAllowedExceptionMessage">
+    <value xml:space="preserve">The assignment is not allowed. The virtual account "{0}" has to be assigned to a position in {1}.</value>
+  </data>
+  <data name="AssignmentNotAllowedExceptionHeader">
+    <value xml:space="preserve">Error while attempt to assign account.</value>
+  </data>
+  <data name="ActionNotAllowedHeader">
+    <value xml:space="preserve">Operation not allowed</value>
+  </data>
+  <data name="ActionNotAllowedMessage">
+    <value xml:space="preserve">You don't have enough rights to execute this action. Please contact your administrator for further information.</value>
+  </data>
+  <data name="FinancialYearInUse">
+    <value xml:space="preserve">The financial year could not be deleted, since it is currently used from one or more reports.</value>
+  </data>
+</root>

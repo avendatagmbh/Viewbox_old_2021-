@@ -1,0 +1,2 @@
+dbdussman_temp;viewbox;\\dbdussman_temp\d$\data\viewbox_index\
+192.168.67.137;viewbox;\\dbdussman_temp\d$\temp_index\

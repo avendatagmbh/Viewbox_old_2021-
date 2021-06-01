@@ -1,0 +1,55 @@
+﻿<Window x:Class="eBalanceKit.Windows.Reconciliation.DlgDeleteReconciliation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Icon="/CustomResources;component/Resources/logo1.png"
+        xmlns:Delete="clr-namespace:eBalanceKit.Windows.Management.Delete" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" 
+        Title="{x:Static Localisation:ResourcesReconciliation.DeleteReconciliation}" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- content -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border Background="#EEE" >
+                <TextBlock x:Name="txtListCaption" Margin="5,3" Text="{x:Static Localisation:ResourcesReconciliation.ChooseTransactionsToDeleteCaption}"/>
+            </Border>
+
+            <ListBox ItemsSource="{Binding Reconciliations}" Grid.Row="1" BorderThickness="0" Background="#666" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+             SelectionMode="Multiple">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="IsSelected" Value="{Binding Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                        </Style.Resources>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Delete:CtlDeleteListItem />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <!-- button bar -->
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal" Margin="5">
+                <Button Content="{x:Static Localisation:ResourcesCommon.DeleteSelectedItems}" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" MinWidth="75" Command="{Binding DeleteSelectedCommand}" IsEnabled="{Binding DeleteButtonEnabled}" />
+                <Button Content="{x:Static Localisation:ResourcesCommon.Ok}" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding OkCommand}" Margin="5,0,0,0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

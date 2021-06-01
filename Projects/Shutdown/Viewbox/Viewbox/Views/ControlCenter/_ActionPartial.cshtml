@@ -1,0 +1,773 @@
+﻿@using SystemDb
+@using Viewbox
+@using Viewbox.Job
+@using Viewbox.Models
+@using Viewbox.Properties
+@using ViewboxDb.Filters
+@model ViewboxDb.Action
+@helper CreateContent(ViewboxDb.Action action, DateTime parentTime, int depth = 0, bool list = false)
+{
+    if (!action.Rightsmode)
+    {
+        switch (action.ActionController)
+        {
+            case ViewboxDb.ActionControllers.AccountLogOn:
+                {
+                    if (depth == 0 || action.ActionParameters.Keys.FirstOrDefault(x => x == "model") == null)
+                    {
+                        <tr>
+                            <td class="column-left">@CreateTime(action.Timestamp)</td>
+                            <td>
+                                <div class=@(action.SubActions.Count > 0 ? "extended" : "without")><a>@String.Format(Resources.Opened, "\"" + Resources.Account + "\"")</a></div>
+                                <div>
+                                    @foreach (var sub in action.SubActions)
+                                    {<text>@CreateContent(sub, action.Timestamp, depth + 1)</text>
+                                    }
+                                </div>
+                            </td>
+                            <td class="text-right delete column-right"><a href="Remove/@action.Id">@Resources.Remove</a></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        var logOnModel = action.ActionParameters["model"] as LogOnModel;
+                        var user = ViewboxApplication.ByUserName(logOnModel.UserName);
+                        if (user != null)
+                        {
+                            if (user.CheckPassword(logOnModel.Password))
+                            {
+                                <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.LoggedIn, user.Name)</a></div>
+                            }
+                            else
+                            {
+                                <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @Resources.LoginFailed</a></div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @Resources.LoginFailed</a></div>
+                        }
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.DataGridExecuteIssue:
+                {
+                    if (depth == 0)
+                    {
+                        <tr>
+                            <td class="column-left">@CreateTime(action.Timestamp)</td>
+                            <td>
+                                @if (action.ActionParameters.ContainsKey("id"))
+                                {
+                                    int id = action.ActionParameters["id"] != null ? (int) action.ActionParameters["id"] : 0;
+                                    if (ViewboxSession.TableObjects.Contains(id))
+                                    {
+                                        var table = ViewboxSession.TableObjects[id];
+                                        var tableName = table.GetDescription(ViewboxSession.Language);
+                                        <div class="without"><a>@String.Format(Resources.StartExecuteIssue, tableName)</a></div>
+                                    }
+                                    else
+                                    {
+                                        <div class="without"><a>@String.Format(Resources.ExecuteIssueFailedId, id)</a></div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="without"><a>@String.Format(Resources.ExecuteIssueFailed)</a></div>
+                                }
+                            </td>
+                            <td class="text-right delete column-right"><a href="@Url.Action("Remove", new {action.Id})">@Resources.Remove</a></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        if (action.PageChanged)
+                        {
+                            var page = (int) action.ActionParameters["page"];
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.BrowsedToPage, page + 1)</a></div>
+                        }
+                        if (action.SizeChanged)
+                        {
+                            var size = (int) action.ActionParameters["size"];
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.ChangedDisplaySize, size)</a></div>
+                        }
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.DataGridGroup:
+                {
+                    if (action.ActionParameters.ContainsKey("id"))
+                    {
+                        int id = action.ActionParameters["id"] != null ? (int) action.ActionParameters["id"] : 0;
+                        if (ViewboxSession.TableObjects.Contains(id))
+                        {
+                            var table = ViewboxSession.TableObjects[id];
+                            var aggs = action.ActionParameters["aggfunc"] as List<ViewboxDb.AggregationFunction>;
+                            var colIds = action.ActionParameters["colIds"] as List<int>;
+                            if (colIds != null)
+                            {
+                                var cols = String.Join(",", from column in colIds select table.Columns[column].GetDescription(ViewboxSession.Language));
+                                var func = aggs != null ? String.Join(",", from agg in aggs select agg.ToString()) : null;
+                                <div class="without2">
+                                    @{
+                                        var aggText = "";
+                                        if (aggs != null)
+                                        {
+                                            aggText = aggs.Count > 0 ? aggs.Count > 1 ? String.Format(Resources.WithFunctions, func) : String.Format(Resources.WithFunction, func) : "";
+                                        }
+                                    }
+                                    <a>@String.Format(Resources.StartGroup, cols, aggText)</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="without2"><a>@String.Format(Resources.GroupFailedColIds)</a></div>
+                            }
+                        }
+                        else
+                        {
+                            var temp = ViewboxSession.TempTableObjects.FirstOrDefault((t) => t.Table.Id == id);
+                            if (temp != null)
+                            {
+                                var table = temp.Table;
+                                var aggs = action.ActionParameters["aggfunc"] as List<ViewboxDb.AggregationFunction>;
+                                var colIds = action.ActionParameters["colIds"] as List<int>;
+                                if (colIds != null)
+                                {
+                                    var cols = String.Join(",", from column in colIds select table.Columns[column].GetDescription(ViewboxSession.Language));
+                                    var func = aggs != null ? String.Join(",", from agg in aggs select agg.ToString()) : null;
+                                    <div class="without2">
+                                        @{
+                                            var aggText = "";
+                                            if (aggs != null)
+                                            {
+                                                aggText = aggs.Count > 0 ? aggs.Count > 1 ? String.Format(Resources.WithFunctions, func) : String.Format(Resources.WithFunction, func) : "";
+                                            }
+                                        }
+                                        <a>@String.Format(Resources.StartGroup, cols, aggText)</a>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="without2"><a>@String.Format(Resources.GroupFailedColIds)</a></div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="without2"><a>@String.Format(Resources.GroupFailedId, id)</a></div>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <div class="without2"><a>@String.Format(Resources.GroupFailed)</a></div>
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.DataGridIndex:
+                {
+                    if (depth == 0)
+                    {
+                        <tr>
+                            <td class="column-left">@CreateTime(action.Timestamp)</td>
+                            <td>
+                                @if (action.ActionParameters.ContainsKey("id"))
+                                {
+                                    int id = action.ActionParameters["id"] != null ? (int) action.ActionParameters["id"] : 0;
+                                    if (ViewboxSession.TableObjects.Contains(id))
+                                    {
+                                        var table = ViewboxSession.TableObjects[id];
+                                        var tableName = table.GetDescription(ViewboxSession.Language);
+                                        <div class=@(action.SubActions.Count > 0 ? "extended" : "without")><a>@String.Format(Resources.Opened, Resources.Table + " " + tableName)</a></div>
+                                        <div>
+                                            @foreach (var sub in action.SubActions)
+                                            {<text>@CreateContent(sub, action.Timestamp, depth + 1)</text>
+                                            }
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        var temp = ViewboxSession.TempTableObjects.FirstOrDefault((t) => t.Table.Id == id);
+                                        if (temp != null)
+                                        {
+                            @*TODO Verbindung zum Originalnamen herstellen und Sortierung,Filterung,Gruppierung,Verbindung angeben*@
+                                            var table = temp.Table;
+                                            var tableName = table.GetDescription(ViewboxSession.Language);
+                                            var toLabel = "";
+                                            if (table.Type == TableType.Table)
+                                            {
+                                                toLabel = Resources.Table;
+                                            }
+                                            if (table.Type == TableType.Issue)
+                                            {
+                                                toLabel = Resources.Issue;
+                                            }
+                                            if (table.Type == TableType.View)
+                                            {
+                                                toLabel = Resources.View;
+                                            }
+                                            string text = "";
+                                            if (temp.Sort != null)
+                                            {
+                                                text += Resources.Sorted;
+                                            }
+                                            if (temp.Filter != null)
+                                            {
+                                                text += text.Length > 0 ? " " + Resources.And + " " + Resources.Filtered.ToLower() : Resources.Filtered;
+                                            }
+                                            toLabel = text + " " + toLabel;
+                                            <div class=@(action.SubActions.Count > 0 ? "extended" : "without")><a>@String.Format(Resources.Opened, toLabel + " " + tableName)</a></div>
+                                            <div>
+                                                @foreach (var sub in action.SubActions)
+                                                {<text>@CreateContent(sub, action.Timestamp, depth + 1)</text>
+                                                }
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="without"><a>@String.Format(Resources.OpenFailedId, id)</a></div>
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="without"><a>@String.Format(Resources.OpenFailed)</a></div>
+                                }
+                            </td>
+                            <td class="text-right delete column-right"><a href="@Url.Action("Remove", new {action.Id})">@Resources.Remove</a></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        if (action.PageChanged)
+                        {
+                            var page = (int) action.ActionParameters["page"];
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.BrowsedToPage, page + 1)</a></div>
+                        }
+                        if (action.SizeChanged)
+                        {
+                            var size = (int) action.ActionParameters["size"];
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.ChangedDisplaySize, size)</a></div>
+                        }
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.DataGridJoin:
+                {
+                    if (action.ActionParameters.ContainsKey("id"))
+                    {
+                        int id = action.ActionParameters["id"] != null ? (int) action.ActionParameters["id"] : 0;
+                        if (ViewboxSession.TableObjects.Contains(id) && action.ActionParameters["joinTableId"] != null)
+                        {
+                            var table = ViewboxSession.TableObjects[id];
+                            var tableName = table.GetDescription(ViewboxSession.Language);
+                            var table2 = ViewboxSession.TableObjects[(int) action.ActionParameters["joinTableId"]];
+                            var toLabel = "";
+                            if (table2.Type == TableType.Table)
+                            {
+                                toLabel = Resources.Table;
+                            }
+                            if (table2.Type == TableType.Issue)
+                            {
+                                toLabel = Resources.Issue;
+                            }
+                            if (table2.Type == TableType.View)
+                            {
+                                toLabel = Resources.View;
+                            }
+                            var table2Name = table2.GetDescription(ViewboxSession.Language);
+                            var cols = String.Join(",",
+                                                   from joincolumn in (action.ActionParameters["columns"] as ViewboxDb.JoinColumnsCollection)
+                                                   select tableName + "." + table.Columns[joincolumn.Column1].GetDescription(ViewboxSession.Language) + " " + Resources.And + " " + table2Name + "." + table2.Columns[joincolumn.Column2].GetDescription(ViewboxSession.Language));
+                            <div class="without2"><a>@String.Format(Resources.StartJoin, toLabel + " " + table2Name, cols)</a></div>
+                        }
+                        else
+                        {
+                            <div class="without2"><a>@String.Format(Resources.JoinFailedId, id)</a></div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="without2"><a>@Resources.JoinFailed</a></div>
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.DataGridSortAndFilter:
+                {
+                    if (depth == 0)
+                    {
+                        <tr>
+                            <td class="column-left">@CreateTime(action.Timestamp)</td>
+                            <td>
+                                @if (action.ActionParameters.ContainsKey("id"))
+                                {
+                                    int id = action.ActionParameters["id"] != null ? (int) action.ActionParameters["id"] : 0;
+                                    if (ViewboxSession.TableObjects.Contains(id))
+                                    {
+                                        var table = ViewboxSession.TableObjects[id];
+                                        var tableName = table.GetDescription(ViewboxSession.Language);
+                                        var toLabel = "";
+                                        if (table.Type == TableType.Table)
+                                        {
+                                            toLabel = Resources.Table;
+                                        }
+                                        if (table.Type == TableType.Issue)
+                                        {
+                                            toLabel = Resources.Issue;
+                                        }
+                                        if (table.Type == TableType.View)
+                                        {
+                                            toLabel = Resources.View;
+                                        }
+                                        var sort = action.ActionParameters["sortList"] as ViewboxDb.SortCollection;
+                                        IFilter filter = null;
+                                        if (!String.IsNullOrWhiteSpace(action.ActionParameters["filter"] as string))
+                                        {
+                                            filter = ViewboxSession.GetFilter(table.Id, action.ActionParameters["filter"] as string,
+                                                                              ViewboxSession.TempTableObjects, ViewboxSession.TableObjects);
+                                        }
+                                        <div class="extended"><a><span>@toLabel @tableName</span></a></div>
+                                        <div>    
+                                            <div class="without2"><a> 
+                                                                      @if (sort != null)
+                                                                      {<text>@String.Format(Resources.StartSort,
+                                                                                                                       String.Join(",", from sortItem in sort
+                                                                                                                                        select ViewboxSession.Columns[sortItem.cid].GetDescription(ViewboxSession.Language)
+                                                                                                                                               + (sortItem.dir == ViewboxDb.SortDirection.Ascending ? " " + Resources.Ascending : " " + Resources.Descending)))</text>
+                                                                      } 
+                                                                      @if (filter != null)
+                                                                      {<text>@String.Format(Resources.StartFilter, filter.ToString())</text>
+                                                                      }
+                                                                  </a></div>
+                                            @foreach (var sub in action.SubActions)
+                                            {<text>@CreateContent(sub, action.Timestamp, depth + 1)</text>
+                                            }
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="without"><a>@String.Format(Resources.OpenFailedId, id)</a></div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="without"><a>@String.Format(Resources.OpenFailed)</a></div>
+                                }
+                            </td>
+                            <td class="text-right delete column-right"><a href="@Url.Action("Remove", new {action.Id})">@Resources.Remove</a></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        if (action.ActionParameters.ContainsKey("id"))
+                        {
+                            int id = action.ActionParameters["id"] != null ? (int) action.ActionParameters["id"] : 0;
+                            if (ViewboxSession.TableObjects.Contains(id))
+                            {
+                                var table = ViewboxSession.TableObjects[id];
+                                var sort = action.ActionParameters["sortList"] as ViewboxDb.SortCollection;
+                                IFilter filter = null;
+                                if (!String.IsNullOrWhiteSpace(action.ActionParameters["filter"] as string))
+                                {
+                                    filter = ViewboxSession.GetFilter(table.Id, action.ActionParameters["filter"] as string,
+                                                                      ViewboxSession.TempTableObjects, ViewboxSession.TableObjects);
+                                }
+                                <div class="without2"><a>  
+                                                          @if (sort != null && !action.PageChanged && !action.SizeChanged)
+                                                          {<text>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.StartSort,
+                                                                                                           String.Join(",", from sortItem in sort
+                                                                                                                            select ViewboxSession.Columns[sortItem.cid].GetDescription(ViewboxSession.Language)
+                                                                                                                                   + (sortItem.dir == ViewboxDb.SortDirection.Ascending ? " " + Resources.Ascending : " " + Resources.Descending)))</text>
+                                                          } 
+                                                          @if (filter != null && !action.PageChanged && !action.SizeChanged)
+                                                          {<text>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.StartFilter, filter.ToString())</text>
+                                                          }
+                                                      </a></div>
+                            }
+                            else
+                            {
+                                var temp = ViewboxSession.TempTableObjects.FirstOrDefault((t) => t.Table.Id == id);
+                                if (temp != null)
+                                {
+                                    var table = temp.Table;
+                                    var tableName = table.GetDescription(ViewboxSession.Language);
+                                    var sort = action.ActionParameters["sortList"] as ViewboxDb.SortCollection;
+                                    IFilter filter = null;
+                                    if (!String.IsNullOrWhiteSpace(action.ActionParameters["filter"] as string))
+                                    {
+                                        filter = ViewboxSession.GetFilter(table.Id, action.ActionParameters["filter"] as string,
+                                                                          ViewboxSession.TempTableObjects, ViewboxSession.TableObjects);
+                                    }
+                                    <div class="without2"><a> 
+                                                              @if (sort != null)
+                                                              {<text>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.StartSort,
+                                                                                                               String.Join(",", from sortItem in sort
+                                                                                                                                select ViewboxSession.Columns[sortItem.cid].GetDescription(ViewboxSession.Language)
+                                                                                                                                       + (sortItem.dir == ViewboxDb.SortDirection.Ascending ? " " + Resources.Ascending : " " + Resources.Descending)))</text>
+                                                              } 
+                                                              @if (filter != null)
+                                                              {<text>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.StartFilter, filter.ToString())</text>
+                                                              }
+                                                          </a></div>
+                                }
+                                else
+                                {
+                                    <div class="without"><a>@String.Format(Resources.SortAndFilterFailedId, id)</a></div>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            <div class="without"><a>@String.Format(Resources.SortAndFilterFailed)</a></div>
+                        }
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.DataGridUpdateColumn:
+                {
+                    if (action.ActionParameters.ContainsKey("id") && action.ActionParameters.ContainsKey("is_visible"))
+                    {
+                        int id = (int) action.ActionParameters["id"];
+                        var column = ViewboxSession.Columns[id];
+                        bool is_visible = (bool) action.ActionParameters["is_visible"];
+                        if (column != null)
+                        {
+                            var table = column.Table;
+                            var tableName = table.GetDescription(ViewboxSession.Language);
+                            <div class="without2"><a>  
+                                                      @CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.SetColumnVisibility, column.Name,
+                                                                         list ? " " + String.Format(Resources.InTable, tableName) + " " : "",
+                                                                         is_visible ? Resources.Visible.ToLower() : Resources.Invisible.ToLower()) 
+                                                  </a></div>
+                        }
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.DocumentsIndex:
+                {
+                    if (depth == 0)
+                    {
+                        <tr>
+                            <td class="column-left">@CreateTime(action.Timestamp)</td>
+                            <td>
+                                <div class=@(action.SubActions.Count > 0 ? "extended" : "without")><a>@String.Format(Resources.Opened, "\"" + Resources.DocumentArchive + "\"")</a></div>
+                                @for (int i = action.SubActions.Count - 1; i >= 0; i--)
+                                {<text>@CreateContent(action.SubActions[i], action.Timestamp, depth + 1)</text>
+                                }
+                            </td>
+                            <td class="text-right delete column-right"><a href="@Url.Action("Remove", new {action.Id})">@Resources.Remove</a></td>
+                        </tr>
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.TableListIndex:
+                {
+                    if (depth == 0)
+                    {
+                        <tr>
+                            <td class="column-left">@CreateTime(action.Timestamp)</td>
+                            <td>
+                                @{
+                                    <div class=@(action.SubActions.Count > 0 ? "extended" : "without")><a>@String.Format(Resources.Opened, "\"" + Resources.Tables + "\"")</a></div>
+                                    <div>
+                                        @foreach (var sub in action.SubActions)
+                                        {<text>@CreateContent(sub, action.Timestamp, depth + 1, true)</text>
+                                        }
+                                    </div>
+                                }
+                            </td>
+                            <td class="text-right delete column-right"><a href="@Url.Action("Remove", new {action.Id})">@Resources.Remove</a></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        if (action.SearchChanged)
+                        {
+                            var search = action.ActionParameters["search"] as string;
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.SearchedFor, search)</a></div>
+                        }
+                        if (action.PageChanged)
+                        {
+                            var page = (int) action.ActionParameters["page"];
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.BrowsedToPage, page + 1)</a></div>
+                        }
+                        if (action.SizeChanged)
+                        {
+                            var size = (int) action.ActionParameters["size"];
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.ChangedDisplaySize, size)</a></div>
+                        }
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.ViewListIndex:
+                {
+                    if (depth == 0)
+                    {
+                        <tr>
+                            <td class="column-left">@CreateTime(action.Timestamp)</td>
+                            <td>
+                                @{
+                                    <div class=@(action.SubActions.Count > 0 ? "extended" : "without")><a>@String.Format(Resources.Opened, "\"" + Resources.Views + "\"")</a></div>
+                                    <div>
+                                        @foreach (var sub in action.SubActions)
+                                        {<text>@CreateContent(sub, action.Timestamp, depth + 1, true)</text>
+                                        }
+                                    </div>
+                                }
+                            </td>
+                            <td class="text-right delete column-right"><a href="@Url.Action("Remove", new {action.Id})">@Resources.Remove</a></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        if (action.SearchChanged)
+                        {
+                            var search = action.ActionParameters["search"] as string;
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.SearchedFor, search)</a></div>
+                        }
+                        if (action.PageChanged)
+                        {
+                            var page = (int) action.ActionParameters["page"];
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.BrowsedToPage, page + 1)</a></div>
+                        }
+                        if (action.SizeChanged)
+                        {
+                            var size = (int) action.ActionParameters["size"];
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.ChangedDisplaySize, size)</a></div>
+                        }
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.IssueListIndex:
+                {
+                    if (depth == 0)
+                    {
+                        <tr>
+                            <td class="column-left">@CreateTime(action.Timestamp)</td>
+                            <td>
+                                @{
+                                    <div class=@(action.SubActions.Count > 0 ? "extended" : "without")><a>@String.Format(Resources.Opened, "\"" + Resources.Issues + "\"")</a></div>
+                                    <div>
+                                        @foreach (var sub in action.SubActions)
+                                        {<text>@CreateContent(sub, action.Timestamp, depth + 1, true)</text>
+                                        }
+                                    </div>
+                                }
+                            </td>
+                            <td class="text-right delete column-right"><a href="@Url.Action("Remove", new {action.Id})">@Resources.Remove</a></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        if (action.SearchChanged)
+                        {
+                            var search = action.ActionParameters["search"] as string;
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.SearchedFor, search)</a></div>
+                        }
+                        if (action.PageChanged)
+                        {
+                            var page = (int) action.ActionParameters["page"];
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.BrowsedToPage, page + 1)</a></div>
+                        }
+                        if (action.SizeChanged)
+                        {
+                            var size = (int) action.ActionParameters["size"];
+                            <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.ChangedDisplaySize, size)</a></div>
+                        }
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.HelpIndex:
+                {
+                    if (depth == 0)
+                    {
+                        <tr>
+                            <td class="column-left">@CreateTime(action.Timestamp)</td>
+                            <td>
+                                @{
+                                    <div class=@(action.SubActions.Count > 0 ? "extended" : "without")><a>@String.Format(Resources.Opened, "\"" + Resources.Help + "\"")</a></div>
+                                    <div>
+                                        @foreach (var sub in action.SubActions)
+                                        {<text>@CreateContent(sub, action.Timestamp, depth + 1, true)</text>
+                                        }
+                                    </div>
+                                }
+                            </td>
+                            <td class="text-right delete column-right"><a href="@Url.Action("Remove", new {action.Id})">@Resources.Remove</a></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Shown, "\"" + Resources.Overview + "\"")</a></div>
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.HelpAbout:
+                {
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Shown, "\"" + Resources.AboutHelp + "\"")</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.HelpTableList:
+                {
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Shown, "\"" + Resources.Tables + "\"")</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.HelpIssueList:
+                {
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Shown, "\"" + Resources.Issues + "\"")</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.HelpViewList:
+                {
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Shown, "\"" + Resources.Views + "\"")</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.HelpDocuments:
+                {
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Shown, "\"" + Resources.DocumentArchive + "\"")</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.HelpControlCenter:
+                {
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Shown, "\"" + Resources.ControlCenter + "\"")</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.HelpExport:
+                {
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Shown, "\"" + Resources.Export + "\"")</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.HelpSettings:
+                {
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Shown, "\"" + Resources.Settings + "\"")</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.HelpFaq:
+                {
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Shown, "\"" + Resources.FAQ + "\"")</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.SettingsIndex:
+                {
+                    if (depth == 0)
+                    {
+                        <tr>
+                            <td class="column-left">@CreateTime(action.Timestamp)</td>
+                            <td>
+                                @{
+                                    <div class=@(action.SubActions.Count > 0 ? "extended" : "without")><a>@String.Format(Resources.Opened, "\"" + Resources.Settings + "\"")</a></div>
+                                    <div>
+                                        @foreach (var sub in action.SubActions)
+                                        {<text>@CreateContent(sub, action.Timestamp, depth + 1, true)</text>
+                                        }
+                                    </div>
+                                }
+                            </td>
+                            <td class="text-right delete column-right"><a href="@Url.Action("Remove", new {action.Id})">@Resources.Remove</a></td>
+                        </tr>
+                    }
+                    else if (action.ActionParameters != null && action.ActionParameters.Count > 0)
+                    {
+                        <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Changed, "\"" + Resources.Settings + "\"")</a></div>
+                    }
+                }
+                break;
+            case ViewboxDb.ActionControllers.SettingsPersonal:
+                {
+                    <div class="without2"><a>
+                                              @CreateTime2(action.Timestamp, parentTime) @String.Format(action.ActionParameters != null && action.ActionParameters.Count > 0 ? Resources.Changed : Resources.Opened, "\"" + Resources.PersonalSettings + "\"")
+                                          </a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.SettingsRights:
+                {
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.Opened, "\"" + Resources.UserManagement + "\"")</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.ExportIndex:
+                {
+                    <tr>
+                        <td class="column-left">@CreateTime(action.Timestamp)</td>
+                        <td>
+                            @{
+                                <div class=@(action.SubActions.Count > 0 ? "extended" : "without")><a>@String.Format(Resources.Opened, "\"" + Resources.Export + "\"")</a></div>
+                                <div>
+                                    @foreach (var sub in action.SubActions)
+                                    {<text>@CreateContent(sub, action.Timestamp, depth + 1, true)</text>
+                                    }
+                                </div>
+                            }
+                        </td>
+                        <td class="text-right delete column-right"><a href="@Url.Action("Remove", new {action.Id})">@Resources.Remove</a></td>
+                    </tr>
+                }
+                break;
+            case ViewboxDb.ActionControllers.ExportStart:
+                {
+                    string type = ((ViewboxDb.ExportType) action.ActionParameters["type"]).ToString();
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.ExportStart, type)</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.ExportMassExport:
+                {
+                    string type = ((ViewboxDb.ExportType) action.ActionParameters["type"]).ToString();
+                    string exports = action.ActionParameters["exports"].ToString();
+                    var objects = ViewboxSession.GetMassExportObjects(exports);
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) 
+                                              @(objects.Count > 1 ? String.Format(Resources.ExportMassExport, type, objects.Count) :
+                                                                                                                                          String.Format(Resources.ExportSingleExport, type, objects.First().GetDescription(ViewboxSession.Language)))</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.ExportDownload:
+                {
+                    string key = action.ActionParameters["key"] as string;
+                    var job = Export.Find(key);
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.ExportDownload, job.Descriptions[ViewboxSession.Language.CountryCode])</a></div>
+                }
+                break;
+            case ViewboxDb.ActionControllers.ExportCancelJob:
+                {
+                    string key = action.ActionParameters["key"] as string;
+                    var job = Export.Find(key);
+                    <div class="without2"><a>@CreateTime2(action.Timestamp, parentTime) @String.Format(Resources.ExportCancelJob, job.Descriptions[ViewboxSession.Language.CountryCode])</a></div>
+                }
+                break;
+        }
+    }
+}
+@helper CreateTime(DateTime timestamp)
+{
+    var time = DateTime.Now.Subtract(timestamp);
+
+    <div class="time">
+        @if (time < TimeSpan.FromMinutes(1))
+        {
+            <span>@Resources.Seconds</span>
+            @time.Seconds
+        }
+        else if (time < TimeSpan.FromHours(1))
+        {
+            <span>@Resources.Minutes</span>
+            @time.Minutes
+        }
+        else
+        {
+            <span>@Resources.Hours</span>
+            @time.Hours
+        }
+    </div>
+}
+@helper CreateTime2(DateTime timestamp1, DateTime timestamp2)
+{
+    var time = timestamp1.Subtract(timestamp2);
+    if (time < TimeSpan.FromMinutes(1))
+    {<text>@String.Format(Resources.Later + ":", time.Seconds + Resources.Seconds)</text>
+    }
+    else if (time < TimeSpan.FromHours(1))
+    {<text>@String.Format(Resources.Later + ":", time.Minutes + Resources.Minutes)</text>
+    }
+    else
+    {<text>@String.Format(Resources.Later + ":", time.Hours + Resources.Hours)</text>
+    }
+}
+@CreateContent(Model, Model.Timestamp)

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<style>
+  <roles>
+
+    <!-- Bilanz gemäß RechKredV-->
+    <role name="role_balanceSheet" isVisible="true" showBalanceList="true"/>
+
+    <!-- Gewinn- und Verlustrechnung-->
+    <role name="role_incomeStatement" isVisible="true" showBalanceList="true"/>
+
+    <!-- Haftungsverhältnisse-->
+    <role name="role_contingentLiabilities" isVisible="true" showBalanceList="true"/>
+
+    <!-- Ergebnisverwendung-->
+    <role name="role_appropriationProfits" isVisible="true" showBalanceList="true"/>
+
+    <!-- Kapitalkontenentwicklung für Personenhandelsgesellschaften-->
+    <role name="role_changesEquityAccounts" isVisible="true" showBalanceList="true"/>
+
+    <!-- Eigenkapitalspiegel-->
+    <role name="role_changesEquityStatement" isVisible="true" showBalanceList="false"/>
+
+    <!-- Kapitalflussrechnung-->
+    <role name="role_cashFlowStatement" isVisible="true" showBalanceList="true"/>
+
+    <!-- Anhang-->
+    <role name="role_notes" isVisible="true" showBalanceList="true"/>
+
+    <!-- Anhangsangaben gemäß RechKredV-->
+    <role name="role_notes" isVisible="true" showBalanceList="true"/>
+
+    <!-- Lagebericht-->
+    <role name="role_managementReport" isVisible="true" showBalanceList="false"/>
+
+    <!-- Steuerliche Modifikationen-->
+    <role name="role_transfersCommercialCodeToTax" isVisible="true" showBalanceList="false"/>
+
+    <!-- Andere Berichtsbestandteile-->
+    <role name="role_OtherReportElements" isVisible="true" showBalanceList="false"/>
+
+    <!-- Detailinformationen zu Positionen-->
+    <role name="role_detailedInformation" isVisible="false" showBalanceList="false"/>
+
+    <!-- Berichtigung des Gewinns bei Wechsel der Gewinnermittlungsart-->
+    <role name="role_adjustmentOfIncome" isVisible="true" showBalanceList="true"/>
+
+    <!-- Steuerliche Gewinnermittlung-->
+    <role name="role_determinationOfTaxableIncome" isVisible="true" showBalanceList="true"/>
+
+    <!-- Steuerliche Gewinnermittlung bei Personengesellschaften-->
+    <role name="role_determinationOfTaxableIncomeBusinessPartnership" isVisible="true" showBalanceList="true"/>
+
+    <!-- Steuerliche Gewinnermittlung für besondere Fälle-->
+    <role name="role_determinationOfTaxableIncomeSpecialCases" isVisible="true" showBalanceList="true"/>
+
+    <!-- Gewinn- und Verlustrechnung gemäß RechKredV Formblatt 3 in der Staffelform-->
+    <role name="role_incomeStatementStf" isVisible="true" showBalanceList="true"/>
+
+    <!-- Gewinn- und Verlustrechnung gemäß RechKredV Formblatt 2 in der Kontoform-->
+    <role name="role_incomeStatementKto" isVisible="true" showBalanceList="true"/>
+  </roles>
+</style>

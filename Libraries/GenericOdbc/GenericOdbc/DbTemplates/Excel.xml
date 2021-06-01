@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DbTemplate ServerName="Excel">
+  <Enquote>
+    <Left>[</Left>
+    <Right>]</Right>
+  </Enquote>
+  <ConnectionStringParameter>
+  </ConnectionStringParameter>
+  <Syntax>
+    <!--
+    
+    public override void SetConnectionString(string host, string user, string password) {
+            ConnectionString = "";
+        }
+    
+    Einlesen von Tabellen Struktur:
+    
+    List<SchemaTable> lSchemas = sourceDb.GetSchemaTableList();
+    List<DbFieldInfo> lColumnInfos = sourceDb.GetFieldInfos(oSchemaTable.Schema, oSchemaTable.Table);
+    
+    public override List<SchemaTable> GetSchemaTableList() {
+
+            OleDbConnection objConn = null;
+            System.Data.DataTable dt = null;
+            String[] excelSheets = null;
+
+            try {
+                // Connection String. Change the excel file to the file you
+
+                // will search.
+
+                String connString = "Provider=Microsoft.Jet.OLEDB.4.0;" +
+                    "Data Source=" + this.mDbCommand.Connection.Database + ";Extended Properties=Excel 8.0;";
+                // Create connection object by using the preceding connection string.
+
+                objConn = new OleDbConnection(connString);
+                // Open connection with the database.
+
+                objConn.Open();
+                // Get the data table containg the schema guid.
+
+                dt = objConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+
+                if (dt == null) {
+                    return null;
+                }
+
+                excelSheets = new String[dt.Rows.Count];
+                int i = 0;
+
+                // Add the sheet name to the string array.
+
+                foreach (DataRow row in dt.Rows) {
+                    excelSheets[i] = row["TABLE_NAME"].ToString();
+                    i++;
+                }
+
+                // Loop through all of the sheets if you want too...
+
+                for (int j = 0; j < excelSheets.Length; j++) {
+                    // Query each excel sheet.
+
+                }
+
+                
+            } catch (Exception ex) {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                return null;
+            }
+            finally {
+                // Clean up.
+
+                if (objConn != null) {
+                    objConn.Close();
+                    objConn.Dispose();
+                }
+                if (dt != null) {
+                    dt.Dispose();
+                }
+            }
+
+            //****
+
+            List<SchemaTable> oResult = new List<SchemaTable>();
+
+            //DataTable oSchemaTable = this.mDbCommand.Connection.GetSchema("Tables");
+
+            foreach (string oRow in excelSheets) {
+                
+                oResult.Add(new SchemaTable("", "[" + oRow.ToString() + "]"));
+                
+            }
+
+            return oResult.Distinct().ToList();
+        }
+    
+    
+    GetFieldInfos(oSchemaTable.Schema, oSchemaTable.Table) ruft auf ReadFieldInfos("SELECT * FROM " + GetTableName(this.Database, tableName));
+    
+    protected override List<DbFieldInfo> ReadFieldInfos(string sql) {
+      oReader = mDbCommand.ExecuteReader(CommandBehavior.SchemaOnly);
+      DataTable oDataTable = oReader.GetSchemaTable();
+      
+      for (Int32 n = 0; n < oReader.FieldCount; n++) {
+        String sColumn = oReader.GetName(n);
+        sColumn = ReplaceSpecialChars(sColumn);
+
+        DbFieldInfo oFieldInfo = null;
+
+        string sType = oReader.GetDataTypeName(n);
+
+        switch (sType) {
+
+            case "CURRENCY":
+            case "DOUBLE":
+            case "REAL":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbNumeric);
+                break;
+
+            case "COUNTER":
+            case "INTEGER":
+            case "SMALLINT":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbInt);
+                break;
+
+            case "VARCHAR":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbText);
+                break;
+
+            case "LONGCHAR":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbLongText);
+                break;
+
+            case "VARBINARY":
+            case "LONGBINARY":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbBinary);
+                break;
+
+            case "BIT":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbBool);
+                break;
+
+            case "DATE":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbDate);
+                break;
+
+            case "DATETIME":
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbDateTime);
+                break;
+
+            default:
+                oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbText);
+                break;
+        }
+
+        /*  ODBC and direct connection (the other kind)
+              [0]  {ColumnName}
+              [1]  {ColumnOrdinal}
+              [2]  {ColumnSize}
+              [3]  {NumericPrecision}
+              [4]  {NumericScale}
+              [5]  {DataType}
+              [6]  {ProviderType}
+              [7]  {IsLong}
+              [8]  {AllowDBNull}
+              [9]  {IsReadOnly}
+              [10] {IsRowVersion}
+              [11] {IsUnique}
+              [12] {IsKey}
+              [13] {IsAutoIncrement}
+              [14] {BaseSchemaName}
+              [15] {BaseCatalogName}
+              [16] {BaseTableName}
+              [17] {BaseColumnName}                     * */
+
+        DataRow oRow = oDataTable.Rows[n];
+        oFieldInfo.AutoIncrement = !oRow.IsNull("IsAutoIncrement") && oRow.Field<bool>("IsAutoIncrement");
+        oFieldInfo.MaxLength = oRow.Field<int>("ColumnSize");
+        oFieldInfo.AllowDBNull = !oRow.IsNull("AllowDBNull") && oRow.Field<bool>("AllowDBNull");
+        oFieldInfo.IsPrimaryKey = !oRow.IsNull("IsKey") && oRow.Field<bool>("IsKey");
+        oFieldInfo.OriginalType = sType;
+
+        lFieldInfos.Add(oFieldInfo);
+    }
+      -->
+  </Syntax>
+</DbTemplate>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="ViewBuilder.Windows.DlgLogOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls" Title="Log Optionen" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Pfad zur Pdf Datei angeben" />
+            <TextBox Grid.Row="1" Grid.Column="0" Name="tbFile" Margin="3,0,0,0" Text="{Binding FileName}"/>
+            <AvdWpfControls:ImageButton Grid.Row="1" Grid.Column="1" Name="btnSelectFile" Margin="3,0,5,0" Click="btnSelectFile_Click" ImageSource="/Resources/Folder.png" />
+        </Grid>
+        <!-- button bar -->
+        <Border Margin="0,2,0,0" Grid.Row="1">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="_OK" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="btnOk_Click" />
+                <Button Content="A_bbrechen" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

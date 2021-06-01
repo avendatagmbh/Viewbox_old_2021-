@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(c) XBRL Deutschland e.V. - see http://www.xbrl.de-->
+
+
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+   <labelLink xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:role="http://www.xbrl.org/2003/role/link"
+              xlink:type="extended">
+      <loc xlink:type="locator"
+           xlink:href="de-gaap-ci-2010-12-16-dimensions.xsd#de-gaap-ci_table.nt.ass.gross"
+           xlink:label="de-gaap-ci_table.nt.ass.gross"/>
+      <loc xlink:type="locator"
+           xlink:href="de-gaap-ci-2010-12-16-dimensions.xsd#de-gaap-ci_cube_.nt.ass.gross"
+           xlink:label="de-gaap-ci_cube_.nt.ass.gross"/>
+      <loc xlink:type="locator"
+           xlink:href="de-gaap-ci-2010-12-16-dimensions.xsd#de-gaap-ci_dim_changes.nt.ass.gross"
+           xlink:label="de-gaap-ci_dim_changes.nt.ass.gross"/>
+      <loc xlink:type="locator"
+           xlink:href="de-gaap-ci-2010-12-16-dimensions.xsd#de-gaap-ci_gross"
+           xlink:label="de-gaap-ci_gross"/>
+      <loc xlink:type="locator"
+           xlink:href="de-gaap-ci-2010-12-16-dimensions.xsd#de-gaap-ci_table.nt.ass.net"
+           xlink:label="de-gaap-ci_table.nt.ass.net"/>
+      <loc xlink:type="locator"
+           xlink:href="de-gaap-ci-2010-12-16-dimensions.xsd#de-gaap-ci_dim_changes.nt.ass.net"
+           xlink:label="de-gaap-ci_dim_changes.nt.ass.net"/>
+      <loc xlink:type="locator"
+           xlink:href="de-gaap-ci-2010-12-16-dimensions.xsd#de-gaap-ci_cube_.nt.ass.net"
+           xlink:label="de-gaap-ci_cube_.nt.ass.net"/>
+      <loc xlink:type="locator"
+           xlink:href="de-gaap-ci-2010-12-16-dimensions.xsd#de-gaap-ci_tab_eqCh"
+           xlink:label="de-gaap-ci_tab_eqCh"/>
+      <loc xlink:type="locator"
+           xlink:href="de-gaap-ci-2010-12-16-dimensions.xsd#de-gaap-ci_dim_eqCh"
+           xlink:label="de-gaap-ci_dim_eqCh"/>
+      <loc xlink:type="locator"
+           xlink:href="de-gaap-ci-2010-12-16-dimensions.xsd#de-gaap-ci_cube_.nt.ass.gross_short"
+           xlink:label="de-gaap-ci_cube_.nt.ass.gross_short"/>
+      <!--
+internal labels
+--><labelArc xlink:from="de-gaap-ci_table.nt.ass.gross"
+                xlink:to="label_de-gaap-ci_table.nt.ass.gross"
+                priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_table.nt.ass.gross"
+             id="label_de-gaap-ci_table.nt.ass.gross"
+             xlink:role="http://www.xbrl.org/2003/role/documentation"
+             xlink:type="resource"
+             xml:lang="en">table section</label>
+      <labelArc xlink:from="de-gaap-ci_cube_.nt.ass.gross"
+                xlink:to="label_de-gaap-ci_cube_.nt.ass.gross"
+                priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_cube_.nt.ass.gross"
+             id="label_de-gaap-ci_cube_.nt.ass.gross"
+             xlink:role="http://www.xbrl.org/2003/role/documentation"
+             xlink:type="resource"
+             xml:lang="en">Table</label>
+      <labelArc xlink:from="de-gaap-ci_dim_changes.nt.ass.gross"
+                xlink:to="label_de-gaap-ci_dim_changes.nt.ass.gross_2"
+                priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_dim_changes.nt.ass.gross_2"
+             id="label_de-gaap-ci_dim_changes.nt.ass.gross_2"
+             xlink:role="http://www.xbrl.org/2003/role/label"
+             xlink:type="resource"
+             xml:lang="en">Line Items of Assets, Scenario</label>
+      <labelArc xlink:from="de-gaap-ci_dim_changes.nt.ass.gross"
+                xlink:to="label_de-gaap-ci_dim_changes.nt.ass.gross_1"
+                priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_dim_changes.nt.ass.gross_1"
+             id="label_de-gaap-ci_dim_changes.nt.ass.gross_1"
+             xlink:role="http://www.xbrl.org/2003/role/documentation"
+             xlink:type="resource"
+             xml:lang="en">table axis</label>
+      <labelArc xlink:from="de-gaap-ci_gross" xlink:to="label_de-gaap-ci_gross" priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_gross" id="label_de-gaap-ci_gross"
+             xlink:role="http://www.xbrl.org/2003/role/label"
+             xlink:type="resource"
+             xml:lang="en">Cost</label>
+      <labelArc xlink:from="de-gaap-ci_table.nt.ass.net"
+                xlink:to="label_de-gaap-ci_table.nt.ass.net"
+                priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_table.nt.ass.net"
+             id="label_de-gaap-ci_table.nt.ass.net"
+             xlink:role="http://www.xbrl.org/2003/role/documentation"
+             xlink:type="resource"
+             xml:lang="en">table section</label>
+      <labelArc xlink:from="de-gaap-ci_dim_changes.nt.ass.net"
+                xlink:to="label_de-gaap-ci_dim_changes.nt.ass.net"
+                priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_dim_changes.nt.ass.net"
+             id="label_de-gaap-ci_dim_changes.nt.ass.net"
+             xlink:role="http://www.xbrl.org/2003/role/documentation"
+             xlink:type="resource"
+             xml:lang="en">table axis</label>
+      <labelArc xlink:from="de-gaap-ci_cube_.nt.ass.net"
+                xlink:to="label_de-gaap-ci_cube_.nt.ass.net"
+                priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_cube_.nt.ass.net"
+             id="label_de-gaap-ci_cube_.nt.ass.net"
+             xlink:role="http://www.xbrl.org/2003/role/label"
+             xlink:type="resource"
+             xml:lang="en">table</label>
+      <labelArc xlink:from="de-gaap-ci_tab_eqCh" xlink:to="label_de-gaap-ci_tab_eqCh_2"
+                priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_tab_eqCh_2" id="label_de-gaap-ci_tab_eqCh_2"
+             xlink:role="http://www.xbrl.org/2003/role/label"
+             xlink:type="resource"
+             xml:lang="en">Statement of changes in equity</label>
+      <labelArc xlink:from="de-gaap-ci_tab_eqCh" xlink:to="label_de-gaap-ci_tab_eqCh_1"
+                priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_tab_eqCh_1" id="label_de-gaap-ci_tab_eqCh_1"
+             xlink:role="http://www.xbrl.org/2003/role/documentation"
+             xlink:type="resource"
+             xml:lang="en">table</label>
+      <labelArc xlink:from="de-gaap-ci_dim_eqCh" xlink:to="label_de-gaap-ci_dim_eqCh_1"
+                priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_dim_eqCh_1" id="label_de-gaap-ci_dim_eqCh_1"
+             xlink:role="http://www.xbrl.org/2003/role/label"
+             xlink:type="resource"
+             xml:lang="en">Movements [table axis]</label>
+      <labelArc xlink:from="de-gaap-ci_dim_eqCh" xlink:to="label_de-gaap-ci_dim_eqCh_2"
+                priority="0"
+                use="optional"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_dim_eqCh_2" id="label_de-gaap-ci_dim_eqCh_2"
+             xlink:role="http://www.xbrl.org/2003/role/documentation"
+             xlink:type="resource"
+             xml:lang="en">table axis</label>
+      <labelArc xlink:from="de-gaap-ci_cube_.nt.ass.gross_short"
+                xlink:to="label_de-gaap-ci_cube_.nt.ass.gross_short"
+                xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+                xlink:type="arc"/>
+      <label xlink:label="label_de-gaap-ci_cube_.nt.ass.gross_short"
+             id="label_de-gaap-ci_cube_.nt.ass.gross_short"
+             xlink:role="http://www.xbrl.org/2003/role/documentation"
+             xlink:type="resource"
+             xml:lang="en">table</label>
+      <!--
+external labels
+--></labelLink>
+</linkbase>

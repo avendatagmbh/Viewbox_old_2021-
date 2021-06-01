@@ -1,0 +1,78 @@
+﻿@using Viewbox
+@using Viewbox.Properties
+@model Viewbox.Models.TableObjectList
+@{
+    var viewsExisting = ViewboxSession.ViewCount > 0;
+}
+<!-- _TableObjectListPartial.cshtml -->
+<div class="join-relation-tableobjects @(viewsExisting ? "Views" : "Tables")" style="z-index: 10" >
+    <div class="search-panel" style="margin: 3px;">
+        <div class="bg-left"></div>
+        @*<span id="searchoverview_export">*@
+        <input class="ownfield bg-middle" placeholder="@Resources.SearchPhrase" id="pkogoi" type="text" autocomplete="off">
+            <input class="ownSubmit" value="" type="button">
+            <input id="search_string" value="" type="hidden">
+        @*</span>*@
+    </div>
+    <div class="tabbar">
+        @if (viewsExisting)
+        {
+            <a href="#" class="tabheader Views selected">@Resources.Views</a>
+        }
+        <a href="#" class="tabheader Tables @(viewsExisting ? "" : "selected")">@Resources.Tables</a>
+    </div>
+    <div class="objects" style="overflow-x: auto">
+        @foreach (var Category in Model.Categories)
+        {
+            <div class="Category">
+                <div class="Description">@Category.GetName()</div>
+                <div class="TableObjects">
+                    @{
+            var to = from t in Category.TableObjects orderby t.GetDescription() select t;
+                    }
+                    @foreach (var TableObject in to)
+                    {
+                        /*
+                        var user = ViewboxSession.User;
+                        var t = TableObject;
+                        var visible = ViewboxApplication.Database.SystemDb.UserTableObjectSettings[user, t] != null ?
+                            ViewboxApplication.Database.SystemDb.UserTableObjectSettings[user, t].IsVisible : t.IsVisible;*/
+                        // if (visible && !TableObject.IsArchived){
+                        <div class="TableObject @TableObject.Type">
+                            <span class="item-id">@TableObject.Id</span>
+                            <div class="description">@TableObject.GetDescription()</div>
+                        </div>
+                        // }
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="navigation">
+        @if (Model.CurrentPage > 0)
+        {
+            <a class="iconx first"><span class="hide">0</span></a>
+            <a class="iconx back"><span class="hide">@(Model.CurrentPage - 1)</span></a>
+        }
+        else
+        {
+            <span class="iconx first"></span>
+            <span class="iconx back"></span>
+        }
+        @if (Model.Count > 0)
+        {
+            <span>@((Model.From + 1).ToString("#,0"))-@((Model.To + 1).ToString("#,0")) / @Model.Count.ToString("#,0")</span>
+        }
+        @if (Model.CurrentPage < Model.LastPage)
+        {
+            <a class="iconx next"><span class="hide">@(Model.CurrentPage + 1)</span></a>
+            <a class="iconx last"><span class="hide">@(Model.LastPage)</span></a>
+        }
+        else
+        {
+            <span class="iconx next"></span>
+            <span class="iconx last"></span>
+        }
+    </div>
+</div>

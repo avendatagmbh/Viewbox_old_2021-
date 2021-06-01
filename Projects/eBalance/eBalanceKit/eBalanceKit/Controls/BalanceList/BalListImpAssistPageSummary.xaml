@@ -1,0 +1,110 @@
+﻿<baseclass:BalListImpAssistPageBase x:Class="eBalanceKit.Controls.BalanceList.BalListImpAssistPageSummary"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:baseclass="clr-namespace:eBalanceKit.Controls.BalanceList"
+    xmlns:controlsImport="clr-namespace:eBalanceKit.Controls.BalanceList"
+    xmlns:conv="clr-namespace:eBalanceKit.Converters"
+                                    xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+                                    mc:Ignorable="d" d:DesignHeight="400" d:DesignWidth="800">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Margin="0,6,0,0" Style="{StaticResource GroupBoxBorder}" DataContext="{Binding Importer.SummaryConfig}">
+            <StackPanel Margin="5,0,0,0">
+                
+                <TextBlock TextWrapping="Wrap" Text="{x:Static Localisation:ResourcesBalanceList.Check}" />
+                <Label Padding="1" Content="{Binding ErrorString}" Foreground="Red" Visibility="{Binding ShowErrorString, Converter={StaticResource TrueToVisibilityConverter}}" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Margin="0,6,0,0" Style="{StaticResource GroupBoxBorder}" DataContext="{Binding Importer.SummaryConfig}">
+            <Grid Margin="5,0,0,0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.NumberOfAccountsCaption}" Grid.Row="0" Grid.Column="0"/>
+                <TextBlock Text="{Binding NumberOfAccounts}" Grid.Row="0" Grid.Column="1" Margin="8,0,0,0"/>
+                <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.SumOfAccountLabel}" Grid.Row="1" Grid.Column="0"/>
+                <TextBlock Text="{Binding SumOfAccounts}" Grid.Row="1" Grid.Column="1" Margin="8,0,0,0"/>
+            </Grid>
+        </Border>
+        <Border Grid.Row="2" Margin="0,6,0,0" Style="{StaticResource GroupBoxBorder}" DataContext="{Binding Importer.SummaryConfig}" >
+            <StackPanel Margin="5,0,0,0">
+                <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.ColumnMappings}"/>
+                <DataGrid Name="ColumnAssignmentsInfo" ItemsSource="{Binding ColumnAssignments}" IsEnabled="True" Background="Transparent" GridLinesVisibility="None" BorderThickness="0"
+                          ColumnHeaderHeight="0" RowHeaderWidth="0" IsReadOnly="True" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" AutoGenerateColumns="False" RowBackground="Transparent">
+                    <DataGrid.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Setter Property="Foreground" Value="Black" />
+                            <Setter Property="IsTabStop" Value="False" />
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="Transparent" />
+                                    <Setter Property="BorderBrush" Value="{x:Null}" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.CellStyle>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding ColumnName}"/>
+                                    
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Rectangle Width="10" Height="10">
+                                        <Rectangle.Fill>
+                                            <SolidColorBrush Color="{Binding Color}" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding AssignmentName}" Margin="8,0,0,0"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="3" Margin="0,6,0,0" Style="{StaticResource GroupBoxBorder}">
+            <controlsImport:ImportDataPreview x:Name="preview" Margin="5,0,2,0" DataContext="{Binding Importer}"/>
+        </Border>
+
+        <Border Grid.Row="4" Margin="0,6,0,0" Style="{StaticResource GroupBoxBorder}" DataContext="{Binding Importer.SummaryConfig}" 
+                Visibility="{Binding ShowAssignmentErrors, Converter={StaticResource TrueToVisibilityConverter}}">
+            <StackPanel Margin="5,0,0,0">
+                <TextBlock Text="{Binding AssignmentInfoString}" />
+                <ListBox ItemsSource="{Binding AssignmentInfos}" Height="80" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</baseclass:BalListImpAssistPageBase>
+
+    

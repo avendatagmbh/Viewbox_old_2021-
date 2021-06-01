@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.Company.CtlCompanyFinancialYears"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--<my1:CtlPeriodOverview Grid.Row="1" x:Name="ctlPeriodOverview" DataContext="{Binding Company}" Margin="10,2,-10,-2" />-->
+        <DataGrid Grid.Row="1" x:Name="dgOtherImportant" CanUserReorderColumns="False" AutoGenerateColumns="False" 
+                              CanUserAddRows="False" CanUserDeleteRows="False"                              
+                              ItemsSource="{Binding Path=Company.VisibleFinancialYears}"
+                              SelectedItem="{Binding Path=SelectedItem}" CanUserResizeRows="False" CanUserResizeColumns="False" GridLinesVisibility="None"
+                              Background="Transparent" RowHeaderWidth="24" HeadersVisibility="Column" IsEnabled="{Binding IsEditAllowed}">
+
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="IsTabStop" Value="False" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{x:Null}" />
+                            <Setter Property="BorderBrush" Value="{x:Null}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Width="Auto">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="Geschäftsjahr" TextWrapping="Wrap"  />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding FYear}" Margin="8,8,0,0"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="Beginn der Berichtsperiode" TextWrapping="Wrap"  />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding FiscalYearBegin, UpdateSourceTrigger=PropertyChanged}" Margin="8,8,0,0" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="Ende der Berichtsperiode" TextWrapping="Wrap" />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding FiscalYearEnd, UpdateSourceTrigger=PropertyChanged}" Margin="8,8,0,0" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="Bilanzstichtag" TextWrapping="Wrap"  />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding BalSheetClosingDate, UpdateSourceTrigger=PropertyChanged}" Margin="8,8,0,0" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="0" Margin="5">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock Text="erstes Geschäftsjahr" />
+                    <ComboBox x:Name="cboFinancialYearFrom" ItemsSource="{Binding FinancialYearValues}" IsEnabled="{Binding IsEditAllowed}"
+                              SelectedItem="{Binding SelectedFinancialYearFrom}" SelectionChanged="cboFinancialYearFrom_SelectionChanged" Width="55" HorizontalAlignment="Left" />
+                </StackPanel>
+
+                <StackPanel Margin="10,0,0,0">
+                    <TextBlock Text="letztes Geschäftsjahr" />
+                    <ComboBox x:Name="cboFinancialYearTo" ItemsSource="{Binding FinancialYearValues}" IsEnabled="{Binding IsEditAllowed}"
+                              SelectedItem="{Binding SelectedFinancialYearTo}" SelectionChanged="cboFinancialYearTo_SelectionChanged" Width="55" HorizontalAlignment="Left" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

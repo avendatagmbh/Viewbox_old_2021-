@@ -1,0 +1,82 @@
+﻿<Window x:Class="eBalanceKit.Windows.MappingTemplates.DlgExtendTemplate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Title="{x:Static Localisation:ResourcesCommon.ExtendTemplate}" SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize" Icon="/eBalanceKitResources;component/Resources/ExtendTemplate.png" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource GroupBoxBorder}" Padding="5" CornerRadius="0">
+            <StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{x:Static Localisation:ResourcesCommon.SelectedTemplate}" />
+                    <TextBlock Text="{Binding Template.Name}" />
+                </StackPanel>
+
+                <Separator Margin="0,5" />
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="/eBalanceKitResources;component/Resources/SumManualComputed.png" Height="12" HorizontalAlignment="Center"/>
+                    <CheckBox Grid.Column="1" Content="{x:Static Localisation:ResourcesCommon.ChkReplaceAutoComputeEnabledFlagCaption}" 
+                          IsChecked="{Binding ReplaceAutoComputeEnabledFlag}" VerticalAlignment="Center" Margin="2,0,0,0"/>
+
+                    <Image Grid.Row="1" Source="/eBalanceKitResources;component/Resources/SendAccounts.png" Height="12" Margin="0,4,0,0" HorizontalAlignment="Center"/>
+                    <CheckBox Grid.Row="1" Grid.Column="1" Content="{x:Static Localisation:ResourcesCommon.ChkReplaceSendAccountBalanceFlagCaption}" 
+                          IsChecked="{Binding ReplaceSendAccountBalanceFlag}" Margin="2,4,0,0" VerticalAlignment="Center"/>
+
+                    <!--<Image Grid.Row="2" Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" Height="12" Margin="0,4,0,0" HorizontalAlignment="Center"/>
+                    <CheckBox Grid.Row="2" Grid.Column="1" Content="{x:Static Localisation:ResourcesCommon.ChkReplaceIgnoreWarningMessageFlagCaption}" 
+                          IsChecked="{Binding ReplaceIgnoreWarningMessageFlag}" Margin="2,4,0,0" VerticalAlignment="Center"/>-->
+                </Grid>
+
+                <Separator Margin="0,5" />
+
+                <TextBlock Text="Vorlage auf folgende Summen- und Saldenlisten anwenden:" />
+                <Border Style="{StaticResource GroupBoxBorder}">
+                    <ListBox MaxHeight="200" Padding="0" BorderBrush="Transparent" Background="Transparent" ItemsSource="{Binding BalanceLists}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding BalanceList.Name}" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <!-- button bar -->
+        <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="{x:Static Localisation:ResourcesCommon.ExtendTemplate}" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnExtendTemlate" 
+                        VerticalAlignment="Top" MinWidth="75" Click="BtnExtendTemplatesClick">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SelectedBalanceLists.Count}" Value="0">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Content="{x:Static Localisation:ResourcesCommon.Cancel}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnCancel" VerticalAlignment="Top" MinWidth="75" Click="BtnCancelClick" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

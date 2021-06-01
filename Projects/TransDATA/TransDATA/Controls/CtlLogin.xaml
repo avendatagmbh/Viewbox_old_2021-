@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="TransDATA.Controls.CtlLogin" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:Base.Localisation;assembly=Base"
+             xmlns:Converter="clr-namespace:TransDATA.Converter" mc:Ignorable="d" Height="300" Width="380" PreviewKeyDown="UserControlPreviewKeyDown">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <!-- header -->
+    <Border Grid.Row="0">
+      <Grid>
+        <Image Source="/TransDATA;component/Resources/background_header.png" Stretch="Fill" />
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+
+          <Image Source="/TransDATA;component/Resources/logo.jpg" Margin="10,10,5,10" Width="75" />
+          <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,5">
+            <TextBlock Opacity="0.95" Padding="0" Grid.Row="0" Grid.Column="1" Height="Auto"
+                       HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="24" FontFamily="Arial" Foreground="White"
+                       FontWeight="Bold" x:Name="txtCaption" Text="TransDATA Professional" />
+            <TextBlock Opacity="0.95" Padding="0" Grid.Row="1" Grid.Column="1" Height="Auto"
+                       HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontFamily="Arial" FontStyle="Italic"
+                       Foreground="#FF7CB4C9" x:Name="txtVersion" Text="Version x.x.x" />
+          </StackPanel>
+        </Grid>
+
+      </Grid>
+    </Border>       
+        
+    <!-- main -->
+        <Border Grid.Row="1" Style="{StaticResource GroupBoxBorder1}">
+            <Grid Margin="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="13*" />
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Padding="0" Content="{x:Static loc:ResourcesCommon.Language}" 
+                       HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+                <ComboBox Grid.Row="1" x:Name="languages" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" 
+                          Height="24" Width="90"
+                          HorizontalAlignment="Left">
+                    <ComboBox.Resources>
+                        <Converter:LanguageToImageConverter x:Key="LanguageToImageConverter" />
+                    </ComboBox.Resources>
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding ., Converter={StaticResource LanguageToImageConverter}}" Width="16" HorizontalAlignment="Left" />
+                                <TextBlock Grid.Column="1" Margin="5,0,0,0" Text="{Binding DisplayName}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+
+                <Label Grid.Row="2" Padding="0" Content="{x:Static loc:ResourcesCommon.User}"
+                       Margin="0,12,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Name="lblUsername" />
+                <ComboBox Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                          Name="username" Height="23" DisplayMemberPath="DisplayString" ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}" SelectionChanged="username_SelectionChanged" />
+
+                <Label Padding="0" Content="{x:Static loc:ResourcesCommon.Password}" Grid.Column="0" Grid.Row="4"
+                       Margin="0,12,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Name="lblpassword" />
+                <PasswordBox Height="23" Padding="0" Grid.Row="5" Grid.Column="0" Name="password"
+                             HorizontalAlignment="Stretch" VerticalAlignment="Top" KeyDown="PasswordKeyDown" />
+
+            </Grid>
+        </Border>
+
+    <!-- bottom -->
+    <Border Grid.Row="2" Style="{StaticResource ButtonBorder}">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/TransDATA;component/Resources/logo.png" Height="25" HorizontalAlignment="Left"
+               Margin="3" />
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch"
+                    Orientation="Horizontal">
+          <Button Content="{x:Static loc:ResourcesCommon.BtnLogin}" Height="23" HorizontalAlignment="Left"
+                  Margin="5" Name="btnOk" VerticalAlignment="Top" Width="Auto" Padding="5,0" Click="BtnOkClick">
+            <Button.Style>
+              <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="IsEnabled" Value="True" />
+                <Style.Triggers>
+                  <DataTrigger Binding="{Binding SelectedIndex,ElementName=username}" Value="-1">
+                    <Setter Property="IsEnabled" Value="False" />
+                  </DataTrigger>
+                </Style.Triggers>
+              </Style>
+            </Button.Style>
+          </Button>
+        </StackPanel>
+      </Grid>
+
+    </Border>
+  </Grid>
+</UserControl>

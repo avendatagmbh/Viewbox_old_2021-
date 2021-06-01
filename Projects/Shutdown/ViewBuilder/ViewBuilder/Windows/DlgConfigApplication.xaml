@@ -1,0 +1,168 @@
+﻿<Window xmlns:my="clr-namespace:ViewBuilder.Windows.Controls"  x:Class="ViewBuilder.Windows.DlgConfigApplication"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:AvdWpfControls.Converters;assembly=AvdWpfControls" Title="Programmeinstellungen" 
+        Height="451" 
+        Width="644" 
+        Icon="/ViewBuilder;component/Resources/Qute/Options16.png"
+        Background="{StaticResource WindowsBgBrush}" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterOwner" 
+        ShowInTaskbar="False" 
+        Closed="Window_Closed" PreviewKeyUp="Window_PreviewKeyUp">
+    
+    <Window.Resources>
+        <c:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- main window -->
+        <Border Grid.Row="0">
+            <TabControl Margin="0" BorderBrush="{StaticResource DefaultBorderBorder}" Background="{StaticResource DefaultBorderBg}" Padding="2">
+                
+                <TabControl.BitmapEffect>
+                    <DropShadowBitmapEffect ShadowDepth="4" Opacity="0.75" Direction="315" />
+                </TabControl.BitmapEffect>
+                
+                <!-- profile location configuration-->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="18" Source="/ViewBuilder;component/Resources/Qute/Address-book24.png" />
+                        <TextBlock Text="Profilspeicherort" Margin="2,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                    </TabItem.Header>
+
+                    <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <!-- profile config source -->
+                            <Border Style="{StaticResource GroupBoxBorderNoShadow}" Grid.Row="0" Margin="5,4,5,0">
+                                <Grid Margin="5">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Label Grid.Row="0" Content="Speicherort für die Profilkonfiguration" VerticalAlignment="Center" Padding="1" />
+                                    <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,2,0,0">
+                                        <RadioButton 
+                                            Content="Lokal" 
+                                            VerticalAlignment="Center" 
+                                            Name="optDirectory" 
+                                            Checked="optDirectory_Checked" 
+                                            IsChecked="{Binding Path=ConfigLocation, 
+                                            Converter={StaticResource EnumToBooleanConverter}, 
+                                            ConverterParameter=Directory, 
+                                            Mode=TwoWay, 
+                                            UpdateSourceTrigger=Explicit}" />
+
+                                        <RadioButton 
+                                            IsEnabled="False"
+                                            Grid.Column="1" 
+                                            Margin="10,0,0,0" 
+                                            Content="Datenbank" 
+                                            VerticalAlignment="Center" 
+                                            Name="optDatabase" 
+                                            Checked="optDatabase_Checked" 
+                                            IsChecked="{Binding Path=ConfigLocation, 
+                                            Converter={StaticResource EnumToBooleanConverter}, 
+                                            ConverterParameter=Database, 
+                                            Mode=TwoWay, 
+                                            UpdateSourceTrigger=Explicit}" />
+
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <my:ConfigDatabase 
+                                Grid.Row="1" 
+                                Grid.ColumnSpan="4"
+                                Visibility="Collapsed" 
+                                x:Name="databaseConfig"
+                                Margin="0,0,0,0" 
+                                Filter="information_schema|mysql|*_login|*_system|*_transfer|*_transform|*_hash" 
+                                ShowOnlyOptimizesDbs="False"
+                                />
+
+                            <Grid Grid.Row="1" Name="localConfig" Margin="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Konfigurationsverzeichnis" Padding="1" />
+                                <TextBox Grid.Row="1" IsReadOnly="True" Background="{StaticResource ReadOnlyTextBg}" Height="23" Name="txtDirecotry" Text="{Binding Path=ConfigDirectory, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                                <Button Grid.Row="1" Style="{StaticResource ImageButtonStyle}" Name="btnSelectDirectory" Grid.Column="1" Width="23" Height="23" Margin="5,-3,0,0" Click="btnSelectDirectory_Click">
+                                    <Image Height="23" Source="/ViewBuilder;component/Resources/Qute/Folder24.png" />
+                                </Button>
+                            </Grid>
+                        </Grid>
+                </TabItem>
+
+                <!-- smtp server configuration -->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="18" Source="/ViewBuilder;component/Resources/Qute/Envelope24.png" />
+                            <TextBlock Text="SMTP-Server" Margin="2,0,0,0" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <Grid Grid.Row="1" Margin="5">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="75" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.ColumnSpan="2" Content="E-Mail" Padding="1" Margin="0,5,0,0" />
+                            <TextBox Name="txtSender" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Path=SmtpServer.Sender, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
+                            <Label Grid.Row="2" Content="Server" Padding="1" Margin="0,5,0,0" />
+                            <TextBox Name="txtServer" Grid.Row="3" Text="{Binding Path=SmtpServer.Server, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
+                            <Label Grid.Row="2" Grid.Column="1" Content="Port" Padding="1" Margin="5,5,0,0" />
+                            <TextBox Name="txtPort" Grid.Row="3" Grid.Column="1" Margin="5,0,0,0" Text="{Binding Path=SmtpServer.Port, Mode=TwoWay, UpdateSourceTrigger=Explicit}" MaxLength="5" PreviewTextInput="txtPort_PreviewTextInput" />
+                            <Label Grid.Row="4" Grid.ColumnSpan="2" Content="Benutzer" Padding="1" Margin="0,5,0,0" />
+                            <TextBox Name="txtUser" Grid.Row="5" Grid.ColumnSpan="2" Text="{Binding Path=SmtpServer.User, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="Passwort" Padding="1" Margin="0,5,0,0" />
+                            <PasswordBox Name="txtPassword" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,0"/>
+                        </Grid>
+                </TabItem>
+            </TabControl>
+        </Border>
+
+        <!-- button bar -->
+        <StackPanel Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="5,5,5,5" Orientation="Horizontal">
+            <Button Content="_OK" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="btnOk_Click"/>
+            <Button Content="Ab_brechen" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

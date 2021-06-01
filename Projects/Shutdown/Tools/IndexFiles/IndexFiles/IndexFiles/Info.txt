@@ -1,0 +1,14 @@
+﻿Select for getting table names
+
+select distinct na
+from 
+(SELECT concat(ifnull(t.database, t2.database), ';', ifnull(t.name, t2.name)) as na, v.agent, e.id
+FROM viewbox.issue_extensions e
+left join viewbox.tables t on e.obj_id = t.id
+left join viewbox.tables t2 on e.ref_id = t2.id
+left join dbdussmann_new_project.views v on v.name = ifnull(t.name, t2.name)
+where agent = 'las' or agent = 'lasadmin'
+group by v.agent, e.id
+having max(v.creationTimestamp)) t
+
+order by na;

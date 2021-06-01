@@ -1,0 +1,272 @@
+﻿@model Viewbox.Models.BoxHeaderModel
+@using Viewbox
+@using Viewbox.Properties
+@using SystemDb
+<div class="box-content">
+    <div class="boxheader">
+        <div id="topnav" class="sub">
+            <div id="logo"><a href="/" title=""></a></div>
+            <div id="notification">
+                <a class="button"></a>
+                @Html.Partial("_TooltipPartial", Resources.Notifications)
+                @Html.Partial("_NotificationPartial", new Viewbox.Models.NotificationModel())
+                <div class="count hide">
+                    <div class="count-left"></div>
+                    <div class="count-middle"></div>
+                    <div class="count-right"></div>
+                </div>
+                @if (ViewboxApplication.ShowDevelopmentProperties)
+                {
+                    <a href="#">Loading time: @ViewboxSession.GetLoadingTime() ms</a>
+                }
+            </div>
+            <div id="new-account">
+                <ul class="dropdown small position-account">
+                    <li class="account">
+                        <div class="account-left"></div>
+                        <div class="account-middle">
+
+                            @if (Model.RightsMode)
+                            {
+                                var instanceName = "";
+                                if (Model.RightsModeInstanceType == CredentialType.Role)
+                                {
+                                    instanceName += Model.RightsModeRole.Name;
+                                }
+                                else
+                                {
+                                    instanceName += String.IsNullOrWhiteSpace(Model.RightsModeUser.Name) ? Model.RightsModeUser.UserName : Model.RightsModeUser.Name;
+                                }
+                                var returnUrl = "";
+                                if (!String.IsNullOrEmpty(Model.ReturnUrl))
+                                {
+                                    returnUrl = Model.ReturnUrl.Contains("?") ? Model.ReturnUrl + "&rights_mode=False" : Model.ReturnUrl + "?rights_mode=False";
+                                }
+                                <span class="account-span">
+                                    <a class="textcenter">
+                                        @if (ViewboxApplication.Database.SystemDb.About != null && !String.IsNullOrWhiteSpace(ViewboxApplication.Database.SystemDb.About.CompanyName))
+                                        {
+                                            <text>@Resources.Company: <b>@ViewboxApplication.Database.SystemDb.About.CompanyName</b>&nbsp;&nbsp;</text>
+                                        }
+                                        @Resources.Account: <b>
+                                            @(ViewboxSession.User != null ?
+                                       ViewboxSession.User.GetName() : HttpContextFactory.Current.User.Identity.Name)
+                                        </b>&nbsp;&nbsp;@Resources.As <b>@instanceName</b>
+                                    </a>
+                                </span>
+                                <span class="close-btn"><a href="@(String.IsNullOrEmpty(returnUrl) ? this.RightsMode() : returnUrl)">x</a></span>
+                            }
+                            else
+                            {
+                                <span class="account-span">
+                                    <a class="textcenter accountname">
+                                        @if (ViewboxApplication.Database.SystemDb.About != null && !String.IsNullOrWhiteSpace(ViewboxApplication.Database.SystemDb.About.CompanyName))
+                                        {
+                                            <text>@Resources.Company: <b>@ViewboxApplication.Database.SystemDb.About.CompanyName</b>&nbsp;&nbsp;</text>
+                                        }
+                                        @Resources.Account: <b>@(ViewboxSession.User != null ? ViewboxSession.User.GetName() : HttpContextFactory.Current.User.Identity.Name)</b>
+                                    </a>
+                                </span>
+                            }
+                        </div>
+                        <div class="account-right"></div>
+
+                        @if (Model.User.CanGrant && (Model.Users.Count > 0 || Model.Roles.Count > 0))
+                        {
+                            <ul class="dropdown-menu textleft">
+                                <li>
+                                    <h4>@Resources.EditRights</h4><div class="close-popup" style="top: 38px;right: 18px;"></div>
+                                    <ul>
+                                        @foreach (var user in Model.Users)
+                                        {
+                                            var returnUrl = "";
+                                            if (!String.IsNullOrEmpty(Model.ReturnUrl))
+                                            {
+                                                returnUrl = Model.ReturnUrl.Contains("?") ? Model.ReturnUrl + "&rights_mode=True&rm_id=" + user.Id + "&rm_type=User" : Model.ReturnUrl + "?rights_mode=True&rm_id=" + user.Id + "&rm_type=User";
+                                            }
+
+                                            <li>
+                                                <a href="@(String.IsNullOrEmpty(returnUrl) ? this.RightsMode(user.Id) : returnUrl)" class="left">
+                                                    <span class="admin"></span>
+                                                    <span style="clear: left;"></span>
+                                                </a>
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="@(String.IsNullOrEmpty(returnUrl) ? this.RightsMode(user.Id) : returnUrl)" style="word-break: break-all">
+                                                                @user.GetName()<span class="details">@user.GetRoles()</span>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <div style="clear: left;"></div>
+                                            </li>
+                                        }
+                                        @foreach (var role in Model.Roles)
+                                        {
+                                            var returnUrl = "";
+                                            if (!String.IsNullOrEmpty(Model.ReturnUrl))
+                                            {
+                                                returnUrl = Model.ReturnUrl.Contains("?") ? Model.ReturnUrl + "&rights_mode=True&rm_id=" + role.Id + "&rm_type=Role" : Model.ReturnUrl + "?rights_mode=True&rm_id=" + role.Id + "&rm_type=Role";
+                                            }
+
+                                            <li>
+                                                <a href="@(String.IsNullOrEmpty(returnUrl) ? this.RightsMode(role.Id, CredentialType.Role) : returnUrl)" class="left">
+                                                    <span class="user"></span>
+                                                    <span style="clear-left;"></span>
+                                                </a>
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="@(String.IsNullOrEmpty(returnUrl) ? this.RightsMode(role.Id, CredentialType.Role) : returnUrl)" style="word-break: break-all">
+                                                                @role.Name<span class="details">@role.Users.Count @Resources.User</span>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <div style="clear: left;"></div>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+                            </ul>
+                            <input type="hidden" id="retUrl" value="@(String.IsNullOrEmpty(Model.ReturnUrl) ? this.GetUrl(new List<string> { "rights_mode", "rm_id", "rm_type" }) : Model.ReturnUrl)" />
+                        }
+                    </li>
+                </ul>
+            </div>
+            <div id="right">
+                @{
+                    var urlPath = Context.Request.Url.AbsolutePath;
+
+                    if (!urlPath.Contains("DataGrid"))
+                    {
+                        <div id="language" style="right: 125px; position: absolute;">
+                            <ul class="dropdown small position-language">
+                                <li class="language">
+                                    <a><span class="img-@Model.CurrentLanguage.CountryCode">@Model.CurrentLanguage.LanguageName</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <h4>@Model.LabelLanguageSelection</h4>
+                                            <ul>
+                                                @{
+                                                  var languages = ViewboxApplication.Application.Get("ViewboxApplication.Languages");
+                                                }
+                                                @if (ViewboxApplication.OnlyGermanLanguageEnabled)
+                                                {
+                                                    var Language = Model.Languages.FirstOrDefault(p => p.CountryCode == "de");
+                                                    ViewboxSession.Language = Language;
+                                                    <li><a href="?lang=@Language.CountryCode"><span class="@Language.CountryCode"></span>@Language.LanguageName<span class="details">@Language.LanguageMotto</span></a></li>
+                                                }
+                                                else if (ViewboxApplication.RequiredLanguages != null)
+                                                {
+                                                    List<ILanguage> reqLangs = new List<ILanguage>();
+                                                    ViewboxApplication.RequiredLanguages.ForEach(rl =>
+                                                    {
+                                                        var temp = Model.Languages.FirstOrDefault(l => l.CountryCode == rl);
+                                                        if (temp != null)
+                                                            reqLangs.Add(temp);
+                                                    });
+                                                    foreach (var Language in reqLangs)
+                                                    {
+                                                        <li><a href="?lang=@Language.CountryCode"><span class="@Language.CountryCode"></span>@Language.LanguageName<span class="details">@Language.LanguageMotto</span></a></li>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    foreach (var Language in Model.Languages.Where(Language => Language != Model.CurrentLanguage))
+                                                    {
+                                                        <li><a href="?lang=@Language.CountryCode"><span class="@Language.CountryCode"></span>@Language.LanguageName<span class="details">@Language.LanguageMotto</span></a></li>
+                                                    }
+                                                }
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                }
+                <a class="button" href="@Url.Action("Index", "Home")"><span class="home"></span></a>@Html.Partial("_TooltipPartial", Resources.Home)
+                <a class="button logoff" href="@Url.Action("LogOff", "Account")"><span class="logout"></span></a>@Html.Partial("_TooltipPartial", Resources.Logoff)
+            </div>
+            <div id="bg-top">
+                @{
+                    var table = ViewboxSession.TempTableObjects!= null && ViewboxSession.TempTableObjects.Count > 0 ? ViewboxSession.TempTableObjects.Last() : null;
+                    var dataGridLoad = Url.RequestContext.RouteData.Values.Count(t => t.Key.Contains("controller") && t.Value.ToString().Contains("DataGrid")) > 0 ? true : false;
+                    var style = "";
+                    if (table != null && table.MultiOptimization && dataGridLoad)
+                    {
+                        style = "display: none;";
+                    }
+                }
+                <div id="panel" style="@style">
+
+                    @if (ViewboxSession.Optimizations != null)
+                    {
+                        bool hideEmptyOptimization = false;
+                        bool.TryParse(System.Web.Configuration.WebConfigurationManager.AppSettings["HideEmptyOptimization"], out hideEmptyOptimization);
+                        foreach (var Optimization in ViewboxSession.Optimizations)
+                        {
+                            var optcount = Optimization.Parent.Children.Count(c => ViewboxRightsExtensions.IsAllowed(c));
+                            if (optcount == 0 || (hideEmptyOptimization && optcount < 2))
+                            {
+                                continue;
+                            }
+                            var childrenCount = Optimization.Parent.Children.Where(c => c.IsAllowed()).Count();
+                            if (Optimization.Parent.Children.Count != 0 && !ViewboxSession.IssueOptimizationFilter.Contains(Optimization.Group.Type))
+                            {
+                                <ul class="dropdown small position-@Optimization.Group.Id">
+
+                                    <li class="panel @Optimization.Group.Type">
+
+                                        @Optimization.Group.GetName():
+                                        <a class="panellink"><span class="">@Optimization.GetValue()</span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><h4>@Optimization.Group.GetName()</h4><div class="close-popup" style="top: 38px; right: 18px;"></div></li>
+                                                <li>
+                                                    <ul>
+                                                    @if (childrenCount > 5)
+                                            {
+                                                <div class="search-opt-panel">
+
+                                                    <div class="bg-left"></div>
+                                                            <input type="hidden" name="returnUrl" value="@this.GetUrl(ViewContext.RouteData.Values["controller"].ToString().ToLower() == "datagrid" || ViewContext.RouteData.Values["controller"].ToString().ToLower() == "tablelist" || ViewContext.RouteData.Values["controller"].ToString().ToLower() == "issuelist" || ViewContext.RouteData.Values["controller"].ToString().ToLower() == "viewlist" ? new List<string> {"page", "optid"} : new List<string> {"optid"})" />
+                                                    @using (Html.BeginForm(null, null, FormMethod.Get, new Dictionary<string, object> { { "id", "searchoverview-opt" } }))
+                                                    {
+                                                        <input type="hidden" name="optGroupId" value="@Optimization.Group.Id" />
+                                                        <input class="field bg-middle placeholder" autocomplete="off" name="search_opt" type="text"
+                                                               value="@(Model.OptimizationGroupId == Optimization.Group.Id && !String.IsNullOrWhiteSpace(Model.SearchPhrase) ? Model.SearchPhrase : string.Empty)" placeholder=@Model.LabelSearchPhrase>
+                                                        <input type="submit" class="submit" value="" />
+                                                        <div class="opt_count"><div class="count-left"></div><div class="count-middle"><span>@childrenCount</span></div><div class="count-right"></div></div>
+                                                    }
+                                                </div>
+                                            }
+                                                        <div class="optimizations">
+                                                        @Html.Partial("_OptimizationPartial", new Viewbox.Models.OptimizationModel { SelectedOptimization = Optimization, Optimizations = ViewboxSession.AllowedOptimizations.Where(o => o.Group.Type == Optimization.Group.Type && o.Parent.Id == Optimization.Parent.Id).ToList(), SearchPhrase = Model.SearchPhrase, ViewPage = this, ReturnUrl = Model.ReturnUrl })
+                                                        </div>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                    </li>
+                                </ul>
+                            }
+                        }
+                    }
+                </div>
+                @if (table != null && table.MultiOptimization && dataGridLoad)
+                    {
+                        <p class="slide"><a href="#" class="btn-slide active"></a></p>
+                    }
+                    else
+                    {
+                        <p class="slide"><a href="#" class="btn-slide"></a></p>
+                    }
+            </div>
+            <div class="shadow" />
+        </div>
+        <div class="hide" id="wait-dlg-rights">
+            @Html.Partial("_DialogPartial", Model.GetWaitDialog(Resources.SetRights))
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+c:\temp>ViewboxMassTableArchivingTool.exe -l -d viewbox_zsv
+
+Applicaton start 1.0.0.0
+Start viewbox database initialization
+
+Server: localhost
+Database: viewbox_zsv
+User: root
+Password: avendata
+
+
+Viewbox database initialized
+Tables found: 12580
+Is SAP: True
+
+1sap_fi08                             -1         Issue
+1sap_fi08aj                           -1         Issue
+1sap_fi09                             -1         Issue
+1sap_fi09aj                           -1         Issue
+blg_bilanz_guv                        -1         Issue
+abc_ftree_filter_2012_11_08_14_51_56        -1         Issue
+acctcr_filter_2012_11_08_16_45_51        -1         Issue
+acctcr_filter_2012_11_08_16_48_06        -1         Issue
+a002_filter_2012_11_08_16_54_28        -1         Issue
+0sap_amdep                          1991          View
+0sap_ammst                          6562          View
+0sap_ampdp                          4327          View
+0sap_amtrn                          3503          View
+0sap_anea                           1991          View
+0sap_anek                           4459          View
+0sap_anep                           8613          View
+...
+zvol_pr_seg                           67         Table
+zvol_pr_tr_kun                        12         Table
+zvol_seg                             265         Table
+zwarengruppe                        1788         Table
+zzsk                              121784         Table
+t7ie2                                 22         Table
+pd3dsme                             2332         Table
+belegarchiv                           22       Archive
+
+Application exit

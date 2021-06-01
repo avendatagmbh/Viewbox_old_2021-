@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<schema targetNamespace="http://www.xbrl.de/de/fi/2008-02-19" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:de-fi="http://www.xbrl.de/de/fi/2008-02-19" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="de-fi-2008-02-19-reference.xml" xlink:title="Reference Links, all" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:roleType roleURI="http://www.xbrl.de/de/fi/role/balanceSheet" id="role_balanceSheet">
+        <link:definition>Bilanz gemäß RechKredV</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.de/de/fi/role/incomeStatementStf" id="role_incomeStatementStf">
+        <link:definition>Gewinn- und Verlustrechnung gemäß RechKredV Formblatt 3 in der Staffelform</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.de/de/fi/role/incomeStatementKto" id="role_incomeStatementKto">
+        <link:definition>Gewinn- und Verlustrechnung gemäß RechKredV Formblatt 2 in der Kontoform</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.de/de/fi/role/notes" id="role_notes">
+        <link:definition>Anhangsangaben gemäß RechKredV</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+      </link:roleType>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <element name="banks" id="de-fi_banks" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks" id="de-fi_bsBanks" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass" id="de-fi_bsBanks.ass" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.checksums" id="de-fi_bsBanks.checksums" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.checksums.verbund" id="de-fi_bsBanks.checksums.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.checksums.beteil" id="de-fi_bsBanks.checksums.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.assHeader" id="de-fi_bsBanks.assHeader" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.1" id="de-fi_bsBanks.ass.1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.1.a" id="de-fi_bsBanks.ass.1.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.1.b" id="de-fi_bsBanks.ass.1.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.1.b.BuBa" id="de-fi_bsBanks.ass.1.b.BuBa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.1.c" id="de-fi_bsBanks.ass.1.c" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.2" id="de-fi_bsBanks.ass.2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.2.a" id="de-fi_bsBanks.ass.2.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.2.a.BuBaRef" id="de-fi_bsBanks.ass.2.a.BuBaRef" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.2.b" id="de-fi_bsBanks.ass.2.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.2.b.BuBaRef" id="de-fi_bsBanks.ass.2.b.BuBaRef" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3" id="de-fi_bsBanks.ass.3" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.verbund" id="de-fi_bsBanks.ass.3.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.beteil" id="de-fi_bsBanks.ass.3.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.a" id="de-fi_bsBanks.ass.3.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.b" id="de-fi_bsBanks.ass.3.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.a_Real" id="de-fi_bsBanks.ass.3.a_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.b_Real" id="de-fi_bsBanks.ass.3.b_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.c_Real" id="de-fi_bsBanks.ass.3.c_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.c_Real.taegl" id="de-fi_bsBanks.ass.3.c_Real.taegl" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.c_Real.BeleihWertpap" id="de-fi_bsBanks.ass.3.c_Real.BeleihWertpap" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.a_Bauspar" id="de-fi_bsBanks.ass.3.a_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.b_Bauspar" id="de-fi_bsBanks.ass.3.b_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.c_Bauspar" id="de-fi_bsBanks.ass.3.c_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.d_Bauspar" id="de-fi_bsBanks.ass.3.d_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.3.d_Bauspar.taegl" id="de-fi_bsBanks.ass.3.d_Bauspar.taegl" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4" id="de-fi_bsBanks.ass.4" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.nachrVermGegenst" id="de-fi_bsBanks.ass.4.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBank.ass.3.nachrVermGegenst" id="de-fi_bsBank.ass.3.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.a_Real.nachrVermGegenst" id="de-fi_bsBanks.ass.4.a_Real.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bs.ass.4.b_Real.nachrVermGegenst" id="de-fi_bs.ass.4.b_Real.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.c_Real.nachrVermGegenst" id="de-fi_bsBanks.ass.4.c_Real.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.a_Bauspar" id="de-fi_bsBanks.ass.a_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="baBanks.ass.b_Bauspar.nachrVermGegenst" id="de-fi_baBanks.ass.b_Bauspar.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.verbund" id="de-fi_bsBanks.ass.4.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.beteil" id="de-fi_bsBanks.ass.4.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.grundpfand" id="de-fi_bsBanks.ass.4.grundpfand" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.kommunal" id="de-fi_bsBanks.ass.4.kommunal" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.a_Real" id="de-fi_bsBanks.ass.4.a_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.a_Schiffshyp" id="de-fi_bsBanks.ass.4.a_Schiffshyp" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.b_Real" id="de-fi_bsBanks.ass.4.b_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.c_Real" id="de-fi_bsBanks.ass.4.c_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.c_Real.Beleihwertpap" id="de-fi_bsBanks.ass.4.c_Real.Beleihwertpap" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.a_Bauspar.aa" id="de-fi_bsBanks.ass.4.a_Bauspar.aa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.ab_Bauspar" id="de-fi_bsBanks.ass.4.ab_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.a_Bauspar.ac" id="de-fi_bsBanks.ass.4.a_Bauspar.ac" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.ac_Bauspar.grundpfand" id="de-fi_bsBanks.ass.4.ac_Bauspar.grundpfand" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.b_Bauspar" id="de-fi_bsBanks.ass.4.b_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.a_Bauspar" id="de-fi_bsBanks.ass.4.a_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.warenford_WarenKreditGenoss" id="de-fi_bsBanks.ass.4.warenford_WarenKreditGenoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.4.finanzdienstl_Finanzdienst" id="de-fi_bsBanks.ass.4.finanzdienstl_Finanzdienst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5" id="de-fi_bsBanks.ass.5" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.verbund" id="de-fi_bsBanks.ass.5.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.beteil" id="de-fi_bsBanks.ass.5.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.a" id="de-fi_bsBanks.ass.5.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.a.aa" id="de-fi_bsBanks.ass.5.a.aa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.a.aa.BuBa" id="de-fi_bsBanks.ass.5.a.aa.BuBa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.a.ab" id="de-fi_bsBanks.ass.5.a.ab" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.a.ab.nachrVermGegenst" id="de-fi_bsBanks.ass.5.a.ab.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.a.ab.BuBa" id="de-fi_bsBanks.ass.5.a.ab.BuBa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.b" id="de-fi_bsBanks.ass.5.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.b.ba" id="de-fi_bsBanks.ass.5.b.ba" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.b.ba.BuBa" id="de-fi_bsBanks.ass.5.b.ba.BuBa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.b.bb" id="de-fi_bsBanks.ass.5.b.bb" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.b.bb.nachrVermGegenst" id="de-fi_bsBanks.ass.5.b.bb.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.b.bb.BuBa" id="de-fi_bsBanks.ass.5.b.bb.BuBa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.c" id="de-fi_bsBanks.ass.5.c" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.5.c.nennbetrag" id="de-fi_bsBanks.ass.5.c.nennbetrag" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.6" id="de-fi_bsBanks.ass.6" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.6.nachrVermGegenst" id="de-fi_bsBanks.ass.6.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.6a_WarenKreditGenoss" id="de-fi_bsBanks.ass.6a_WarenKreditGenoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.7" id="de-fi_bsBanks.ass.7" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.7.nachrVermGegenst" id="de-fi_bsBanks.ass.7.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.7.bank" id="de-fi_bsBanks.ass.7.bank" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.7.finanzdienst" id="de-fi_bsBanks.ass.7.finanzdienst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.7.a_Genoss" id="de-fi_bsBanks.ass.7.a_Genoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.7.a_Genoss.bank" id="de-fi_bsBanks.ass.7.a_Genoss.bank" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.7.a_Genoss.finanzdienst" id="de-fi_bsBanks.ass.7.a_Genoss.finanzdienst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.7.b_Genoss" id="de-fi_bsBanks.ass.7.b_Genoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.7.b_Genoss.bank" id="de-fi_bsBanks.ass.7.b_Genoss.bank" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.7.b_Genoss.finanzdienst" id="de-fi_bsBanks.ass.7.b_Genoss.finanzdienst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.8" id="de-fi_bsBanks.ass.8" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.8.nachrVermGegenst" id="de-fi_bsBanks.ass.8.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.8.bank" id="de-fi_bsBanks.ass.8.bank" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.8.finanzdienst" id="de-fi_bsBanks.ass.8.finanzdienst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.9" id="de-fi_bsBanks.ass.9" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.9.kredit" id="de-fi_bsBanks.ass.9.kredit" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.10" id="de-fi_bsBanks.ass.10" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.11" id="de-fi_bsBanks.ass.11" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.12" id="de-fi_bsBanks.ass.12" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.13" id="de-fi_bsBanks.ass.13" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.13.eingefordert" id="de-fi_bsBanks.ass.13.eingefordert" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.14" id="de-fi_bsBanks.ass.14" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.14.nennbetrag" id="de-fi_bsBanks.ass.14.nennbetrag" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.15" id="de-fi_bsBanks.ass.15" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.15.nachrVermGegenst" id="de-fi_bsBanks.ass.15.nachrVermGegenst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.16" id="de-fi_bsBanks.ass.16" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.16.a_Real" id="de-fi_bsBanks.ass.16.a_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.16.b_Real" id="de-fi_bsBanks.ass.16.b_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.18" id="de-fi_bsBanks.ass.18" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab" id="de-fi_bsBanks.eqLiab" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiabHeader" id="de-fi_bsBanks.eqLiabHeader" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1" id="de-fi_bsBanks.eqLiab.1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.verbund" id="de-fi_bsBanks.eqLiab.1.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.beteil" id="de-fi_bsBanks.eqLiab.1.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.a" id="de-fi_bsBanks.eqLiab.1.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.b" id="de-fi_bsBanks.eqLiab.1.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.b.verbund" id="de-fi_bsBanks.eqLiab.1.b.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.b.beteil" id="de-fi_bsBanks.eqLiab.1.b.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.a_Real" id="de-fi_bsBanks.eqLiab.1.a_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.b_Real" id="de-fi_bsBanks.eqLiab.1.b_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.c_Real" id="de-fi_bsBanks.eqLiab.1.c_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.c_Real.taegl" id="de-fi_bsBanks.eqLiab.1.c_Real.taegl" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.c_Real.hypNamenspfandbr" id="de-fi_bsBanks.eqLiab.1.c_Real.hypNamenspfandbr" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.c_Real.oeffNamenspfandbr" id="de-fi_bsBanks.eqLiab.1.c_Real.oeffNamenspfandbr" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.a_Bauspar" id="de-fi_bsBanks.eqLiab.1.a_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.a_Bauspar.gekuendigt" id="de-fi_bsBanks.eqLiab.1.a_Bauspar.gekuendigt" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.a_Bauspar.zugeteilt" id="de-fi_bsBanks.eqLiab.1.a_Bauspar.zugeteilt" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.b_Bauspar" id="de-fi_bsBanks.eqLiab.1.b_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.1.b_Bauspar.taegl" id="de-fi_bsBanks.eqLiab.1.b_Bauspar.taegl" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2" id="de-fi_bsBanks.eqLiab.2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.verbund" id="de-fi_bsBanks.eqLiab.2.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.beteil" id="de-fi_bsBanks.eqLiab.2.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a" id="de-fi_bsBanks.eqLiab.2.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a.aa" id="de-fi_bsBanks.eqLiab.2.a.aa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a.aa.verbund" id="de-fi_bsBanks.eqLiab.2.a.aa.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a.aa.beteil" id="de-fi_bsBanks.eqLiab.2.a.aa.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a.ab" id="de-fi_bsBanks.eqLiab.2.a.ab" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a.ab.verbund" id="de-fi_bsBanks.eqLiab.2.a.ab.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a.ab.beteil" id="de-fi_bsBanks.eqLiab.2.a.ab.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.b" id="de-fi_bsBanks.eqLiab.2.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.b.ba" id="de-fi_bsBanks.eqLiab.2.b.ba" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.b.ba.verbund" id="de-fi_bsBanks.eqLiab.2.b.ba.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.b.ba.beteil" id="de-fi_bsBanks.eqLiab.2.b.ba.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.b.bb" id="de-fi_bsBanks.eqLiab.2.b.bb" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.b.bb.verbund" id="de-fi_bsBanks.eqLiab.2.b.bb.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.b.bb.beteil" id="de-fi_bsBanks.eqLiab.2.b.bb.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a_Real" id="de-fi_bsBanks.eqLiab.2.a_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.b_Real" id="de-fi_bsBanks.eqLiab.2.b_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.c_Real" id="de-fi_bsBanks.eqLiab.2.c_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.c_Real.ca" id="de-fi_bsBanks.eqLiab.2.c_Real.ca" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.c_Real.cb" id="de-fi_bsBanks.eqLiab.2.c_Real.cb" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.d_Real" id="de-fi_bsBanks.eqLiab.2.d_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.d_Real.taegl" id="de-fi_bsBanks.eqLiab.2.d_Real.taegl" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.d_Real.hypNamenspfandbr" id="de-fi_bsBanks.eqLiab.2.d_Real.hypNamenspfandbr" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.d_Real.oeffNamenspfandbr" id="de-fi_bsBanks.eqLiab.2.d_Real.oeffNamenspfandbr" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a_Bauspar" id="de-fi_bsBanks.eqLiab.2.a_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a_Bauspar.aa" id="de-fi_bsBanks.eqLiab.2.a_Bauspar.aa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a_Bauspar.aa.gekuendigt" id="de-fi_bsBanks.eqLiab.2.a_Bauspar.aa.gekuendigt" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a_Bauspar.aa.zugeteilt" id="de-fi_bsBanks.eqLiab.2.a_Bauspar.aa.zugeteilt" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a_Bauspar.ab" id="de-fi_bsBanks.eqLiab.2.a_Bauspar.ab" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a_Bauspar.ac" id="de-fi_bsBanks.eqLiab.2.a_Bauspar.ac" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.a_Bauspar.ad" id="de-fi_bsBanks.eqLiab.2.a_Bauspar.ad" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2.finanzdienstl_Finanzdienst" id="de-fi_bsBanks.eqLiab.2.finanzdienstl_Finanzdienst" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2a_WarenKreditGenoss" id="de-fi_bsBanks.eqLiab.2a_WarenKreditGenoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2a_WarenKreditGenoss.verbund" id="de-fi_bsBanks.eqLiab.2a_WarenKreditGenoss.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.2a_WarenKreditGenoss.beteil" id="de-fi_bsBanks.eqLiab.2a_WarenKreditGenoss.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3" id="de-fi_bsBanks.eqLiab.3" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.verbund" id="de-fi_bsBanks.eqLiab.3.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.beteil" id="de-fi_bsBanks.eqLiab.3.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.a" id="de-fi_bsBanks.eqLiab.3.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.b" id="de-fi_bsBanks.eqLiab.3.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.b.geldmarktpap" id="de-fi_bsBanks.eqLiab.3.b.geldmarktpap" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.b.eigAkzepte" id="de-fi_bsBanks.eqLiab.3.b.eigAkzepte" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.b.eigAkzepte.ausWarengesch" id="de-fi_bsBanks.eqLiab.3.b.eigAkzepte.ausWarengesch" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.a_Real" id="de-fi_bsBanks.eqLiab.3.a_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.a_Real.aa" id="de-fi_bsBanks.eqLiab.3.a_Real.aa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.a_Real.ab" id="de-fi_bsBanks.eqLiab.3.a_Real.ab" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.a_Real.ac" id="de-fi_bsBanks.eqLiab.3.a_Real.ac" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.b_Real" id="de-fi_bsBanks.eqLiab.3.b_Real" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.3.b_Real.geldmarktpap" id="de-fi_bsBanks.eqLiab.3.b_Real.geldmarktpap" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.4" id="de-fi_bsBanks.eqLiab.4" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.27.19.23_24" id="de-fi_bsBanks.27.19.23_24" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="bsBanks.eqLiab.4.kredit" id="de-fi_bsBanks.eqLiab.4.kredit" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.5" id="de-fi_bsBanks.eqLiab.5" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.6" id="de-fi_bsBanks.eqLiab.6" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.6.a" id="de-fi_bsBanks.eqLiab.6.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.6.b" id="de-fi_bsBanks.eqLiab.6.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.7" id="de-fi_bsBanks.eqLiab.7" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.7.a" id="de-fi_bsBanks.eqLiab.7.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.7.b" id="de-fi_bsBanks.eqLiab.7.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.7.c" id="de-fi_bsBanks.eqLiab.7.c" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.7a_Bauspar" id="de-fi_bsBanks.eqLiab.7a_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.8" id="de-fi_bsBanks.eqLiab.8" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.9" id="de-fi_bsBanks.eqLiab.9" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.9.verbund" id="de-fi_bsBanks.eqLiab.9.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.9.beteil" id="de-fi_bsBanks.eqLiab.9.beteil" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.10" id="de-fi_bsBanks.eqLiab.10" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.10.unter2Jahre" id="de-fi_bsBanks.eqLiab.10.unter2Jahre" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.11" id="de-fi_bsBanks.eqLiab.11" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.11a" id="de-fi_bsBanks.eqLiab.11a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12" id="de-fi_bsBanks.eqLiab.12" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.a" id="de-fi_bsBanks.eqLiab.12.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.a.text" id="de-fi_bsBanks.eqLiab.12.a.text" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.a.Guth_Genossen" id="de-fi_bsBanks.eqLiab.12.a.Guth_Genossen" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.a.Guth_Genossen.a" id="de-fi_bsBanks.eqLiab.12.a.Guth_Genossen.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.a.Guth_Genossen.b" id="de-fi_bsBanks.eqLiab.12.a.Guth_Genossen.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.a.Guth_Genossen.c" id="de-fi_bsBanks.eqLiab.12.a.Guth_Genossen.c" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.a.stilleGes_Genossen" id="de-fi_bsBanks.eqLiab.12.a.stilleGes_Genossen" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.b" id="de-fi_bsBanks.eqLiab.12.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c" id="de-fi_bsBanks.eqLiab.12.c" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c.text" id="de-fi_bsBanks.eqLiab.12.c.text" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c.ca" id="de-fi_bsBanks.eqLiab.12.c.ca" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c.cb" id="de-fi_bsBanks.eqLiab.12.c.cb" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c.cc" id="de-fi_bsBanks.eqLiab.12.c.cc" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c.cd" id="de-fi_bsBanks.eqLiab.12.c.cd" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c_Genoss" id="de-fi_bsBanks.eqLiab.12.c_Genoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c_Genoss.ca" id="de-fi_bsBanks.eqLiab.12.c_Genoss.ca" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c_Genoss.cb" id="de-fi_bsBanks.eqLiab.12.c_Genoss.cb" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c_Genoss.erwerbsWirtschGenossensch" id="de-fi_bsBanks.eqLiab.12.c_Genoss.erwerbsWirtschGenossensch" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.ass.17" id="de-fi_bsBanks.ass.17" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c_Genoss.ausgeschiedeneGenossen" id="de-fi_bsBanks.eqLiab.12.c_Genoss.ausgeschiedeneGenossen" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.c_Genoss.ausgeschiedeneGenossen.Bezeichner" id="de-fi_bsBanks.eqLiab.12.c_Genoss.ausgeschiedeneGenossen.Bezeichner" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="bsBanks.eqLiab.12.d" id="de-fi_bsBanks.eqLiab.12.d" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab" id="de-fi_bsBanks.contingLiab" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.1" id="de-fi_bsBanks.contingLiab.1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.1.a" id="de-fi_bsBanks.contingLiab.1.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.1.b" id="de-fi_bsBanks.contingLiab.1.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.1.c" id="de-fi_bsBanks.contingLiab.1.c" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.2" id="de-fi_bsBanks.contingLiab.2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.2.a" id="de-fi_bsBanks.contingLiab.2.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.2.b" id="de-fi_bsBanks.contingLiab.2.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.2.c" id="de-fi_bsBanks.contingLiab.2.c" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.2.c.LieferverpflZinsgebTermingesch" id="de-fi_bsBanks.contingLiab.2.c.LieferverpflZinsgebTermingesch" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.sondervermoeg_Kapitalanlageges" id="de-fi_bsBanks.contingLiab.sondervermoeg_Kapitalanlageges" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.sondervermoeg_Kapitalanlageges.summe" id="de-fi_bsBanks.contingLiab.sondervermoeg_Kapitalanlageges.summe" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="bsBanks.contingLiab.sondervermoeg_Kapitalanlageges.anzahl" id="de-fi_bsBanks.contingLiab.sondervermoeg_Kapitalanlageges.anzahl" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="isBanks" id="de-fi_isBanks" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="isBanks.27" id="de-fi_isBanks.27" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.28" id="de-fi_isBanks.34.28" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.Ergebnis27_28" id="de-fi_isBanks.34.Ergebnis27_28" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.29" id="de-fi_isBanks.34.29" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.27_28_29" id="de-fi_isBanks.34.27_28_29" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.27_28_29_30" id="de-fi_isBanks.34.27_28_29_30" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isbanks.34.30" id="de-fi_isbanks.34.30" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.30.a" id="de-fi_isBanks.34.30.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.30.b" id="de-fi_isBanks.34.30.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.30.c" id="de-fi_isBanks.34.30.c" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.30.d" id="de-fi_isBanks.34.30.d" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.24.31" id="de-fi_isBanks.24.31" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.24.31_32" id="de-fi_isBanks.24.31_32" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.24.30_31" id="de-fi_isBanks.24.30_31" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.32" id="de-fi_isBanks.34.32" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.32.a" id="de-fi_isBanks.34.32.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.32.b" id="de-fi_isBanks.34.32.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.32.c" id="de-fi_isBanks.34.32.c" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.32.d" id="de-fi_isBanks.34.32.d" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.34.33" id="de-fi_isBanks.34.33" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.34" id="de-fi_isBanks.34" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19" id="de-fi_isBanks.27.19" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7" id="de-fi_isBanks.27.19.7" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7a_WarenKreditGenoss" id="de-fi_isBanks.27.19.7a_WarenKreditGenoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7a_Skontrofuehrer" id="de-fi_isBanks.27.19.7a_Skontrofuehrer" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7a_Skontrofuehrer.aa" id="de-fi_isBanks.27.19.7a_Skontrofuehrer.aa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7a_Skontrofuehrer.ab" id="de-fi_isBanks.27.19.7a_Skontrofuehrer.ab" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7a_Skontrofuehrer.ac" id="de-fi_isBanks.27.19.7a_Skontrofuehrer.ac" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7a_Skontrofuehrer.ad" id="de-fi_isBanks.27.19.7a_Skontrofuehrer.ad" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7b_Skontrofuehrer" id="de-fi_isBanks.27.19.7b_Skontrofuehrer" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7b_Skontrofuehrer.ba" id="de-fi_isBanks.27.19.7b_Skontrofuehrer.ba" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7b_Skontrofuehrer.bb" id="de-fi_isBanks.27.19.7b_Skontrofuehrer.bb" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7b_Skontrofuehrer.bc" id="de-fi_isBanks.27.19.7b_Skontrofuehrer.bc" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.7b_Skontrofuehrer.bd" id="de-fi_isBanks.27.19.7b_Skontrofuehrer.bd" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.1" id="de-fi_isBanks.27.19.1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.nettoZinsergebnis" id="de-fi_isBanks.27.19.nettoZinsergebnis" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.nettoProvisionsergebnis" id="de-fi_isBanks.27.19.nettoProvisionsergebnis" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.1.a" id="de-fi_isBanks.27.19.1.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.1.a_Bauspar.aa" id="de-fi_isBanks.27.19.1.a_Bauspar.aa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.1.a_Bauspar.ab" id="de-fi_isBanks.27.19.1.a_Bauspar.ab" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.1.a_Bauspar.ac" id="de-fi_isBanks.27.19.1.a_Bauspar.ac" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.1.a_Bauspar.ad" id="de-fi_isBanks.27.19.1.a_Bauspar.ad" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.1.b" id="de-fi_isBanks.27.19.1.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.2" id="de-fi_isBanks.27.19.2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.2.a_Bauspar" id="de-fi_isBanks.27.19.2.a_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.2.b_Bauspar" id="de-fi_isBanks.27.19.2.b_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.3" id="de-fi_isBanks.27.19.3" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.3.a" id="de-fi_isBanks.27.19.3.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.3.b" id="de-fi_isBanks.27.19.3.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.3.b_Genoss" id="de-fi_isBanks.27.19.3.b_Genoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.3.c" id="de-fi_isBanks.27.19.3.c" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.4" id="de-fi_isBanks.27.19.4" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.5" id="de-fi_isBanks.27.19.5" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.5.a_Bauspar" id="de-fi_isBanks.27.19.5.a_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.5.b_Bauspar" id="de-fi_isBanks.27.19.5.b_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.5.c_Bauspar" id="de-fi_isBanks.27.19.5.c_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.5.d_Bauspar" id="de-fi_isBanks.27.19.5.d_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.5.a_Skontrofuehrer" id="de-fi_isBanks.27.19.5.a_Skontrofuehrer" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.5.b_Skontrofuehrer" id="de-fi_isBanks.27.19.5.b_Skontrofuehrer" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.6" id="de-fi_isBanks.27.19.6" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.6.a_Bauspar" id="de-fi_isBanks.27.19.6.a_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.6.b_Bauspar" id="de-fi_isBanks.27.19.6.b_Bauspar" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.6.a_Skontrofuehrer" id="de-fi_isBanks.27.19.6.a_Skontrofuehrer" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.6.b_Skontrofuehrer" id="de-fi_isBanks.27.19.6.b_Skontrofuehrer" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.8" id="de-fi_isBanks.27.19.8" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.9" id="de-fi_isBanks.27.19.9" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.10" id="de-fi_isBanks.27.19.10" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.10.a" id="de-fi_isBanks.27.19.10.a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.10.a.aa" id="de-fi_isBanks.27.19.10.a.aa" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.10.a.ab" id="de-fi_isBanks.27.19.10.a.ab" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.10.a.ab.altersversorgung" id="de-fi_isBanks.27.19.10.a.ab.altersversorgung" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.10.b" id="de-fi_isBanks.27.19.10.b" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.11" id="de-fi_isBanks.27.19.11" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.12" id="de-fi_isBanks.27.19.12" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.13" id="de-fi_isBanks.27.19.13" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.14" id="de-fi_isBanks.27.19.14" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.Ergebnis13_14" id="de-fi_isBanks.27.19.Ergebnis13_14" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.15" id="de-fi_isBanks.27.19.15" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.16" id="de-fi_isBanks.27.19.16" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.17" id="de-fi_isBanks.27.19.17" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.18" id="de-fi_isBanks.27.19.18" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.22" id="de-fi_isBanks.27.19.22" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.22.20" id="de-fi_isBanks.27.19.22.20" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.22.21" id="de-fi_isBanks.27.19.22.21" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.23" id="de-fi_isBanks.27.19.23" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.einstellungFondsBankrisiken" id="de-fi_isBanks.27.19.einstellungFondsBankrisiken" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.aufloesungFondsBankrisiken" id="de-fi_isBanks.27.19.aufloesungFondsBankrisiken" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.24" id="de-fi_isBanks.27.19.24" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.24.a1" id="de-fi_isBanks.27.19.24.a1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.24.a2" id="de-fi_isBanks.27.19.24.a2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.25" id="de-fi_isBanks.27.19.25" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.26" id="de-fi_isBanks.27.19.26" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ntBanks" id="de-fi_ntBanks" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.treuhand" id="de-fi_ntBanks.treuhand" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-fi:ntBanks.treuhand.bezeichnung"/>
+        <element minOccurs="0" ref="de-fi:ntBanks.treuhand.wert"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="ntBanks.treuhand.bezeichnung" id="de-fi_ntBanks.treuhand.bezeichnung" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.treuhand.wert" id="de-fi_ntBanks.treuhand.wert" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen" id="de-fi_ntBanks.fristen" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass3b" id="de-fi_ntBanks.fristen.ass3b" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.detailsGenussrechtskapital" id="de-fi_ntBanks.detailsGenussrechtskapital" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass3b.kat1" id="de-fi_ntBanks.fristen.ass3b.kat1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass3b.kat2" id="de-fi_ntBanks.fristen.ass3b.kat2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass3b.kat3" id="de-fi_ntBanks.fristen.ass3b.kat3" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass3b.kat4" id="de-fi_ntBanks.fristen.ass3b.kat4" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass4" id="de-fi_ntBanks.fristen.ass4" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass4.kat1" id="de-fi_ntBanks.fristen.ass4.kat1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass4.kat2" id="de-fi_ntBanks.fristen.ass4.kat2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass4.kat3" id="de-fi_ntBanks.fristen.ass4.kat3" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass4.kat4" id="de-fi_ntBanks.fristen.ass4.kat4" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass4.kat5" id="de-fi_ntBanks.fristen.ass4.kat5" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab1b" id="de-fi_ntBanks.fristen.eqLiab1b" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab1b.kat1" id="de-fi_ntBanks.fristen.eqLiab1b.kat1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab1b.kat2" id="de-fi_ntBanks.fristen.eqLiab1b.kat2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab1b.kat3" id="de-fi_ntBanks.fristen.eqLiab1b.kat3" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab1b.kat4" id="de-fi_ntBanks.fristen.eqLiab1b.kat4" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab2aaa" id="de-fi_ntBanks.fristen.eqLiab2aaa" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab2aaa.kat1" id="de-fi_ntBanks.fristen.eqLiab2aaa.kat1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab2aaa.kat2" id="de-fi_ntBanks.fristen.eqLiab2aaa.kat2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab2aaa.kat3" id="de-fi_ntBanks.fristen.eqLiab2aaa.kat3" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab2aaa.kat4" id="de-fi_ntBanks.fristen.eqLiab2aaa.kat4" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab2bbb" id="de-fi_ntBanks.fristen.eqLiab2bbb" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab2bbb.kat1" id="de-fi_ntBanks.fristen.eqLiab2bbb.kat1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab2bbb.kat2" id="de-fi_ntBanks.fristen.eqLiab2bbb.kat2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab2bbb.kat3" id="de-fi_ntBanks.fristen.eqLiab2bbb.kat3" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab2bbb.kat4" id="de-fi_ntBanks.fristen.eqLiab2bbb.kat4" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab3b" id="de-fi_ntBanks.fristen.eqLiab3b" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab3b.kat1" id="de-fi_ntBanks.fristen.eqLiab3b.kat1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab3b.kat2" id="de-fi_ntBanks.fristen.eqLiab3b.kat2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab3b.kat3" id="de-fi_ntBanks.fristen.eqLiab3b.kat3" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab3b.kat4" id="de-fi_ntBanks.fristen.eqLiab3b.kat4" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.ass5" id="de-fi_ntBanks.fristen.ass5" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab3a" id="de-fi_ntBanks.fristen.eqLiab3a" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.fristen.eqLiab3a_Schuldverschreibungen" id="de-fi_ntBanks.fristen.eqLiab3a_Schuldverschreibungen" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="ntBanks.segmGeo" id="de-fi_ntBanks.segmGeo" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-fi:ntBanks.segmGeo.name"/>
+        <element minOccurs="0" ref="de-fi:ntBanks.segmGeo.is1"/>
+        <element minOccurs="0" ref="de-fi:ntBanks.segmGeo.is3"/>
+        <element minOccurs="0" ref="de-fi:ntBanks.segmGeo.is5"/>
+        <element minOccurs="0" ref="de-fi:ntBanks.segmGeo.is7"/>
+        <element minOccurs="0" ref="de-fi:ntBanks.segmGeo.is8"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="ntBanks.segmGeo.name" id="de-fi_ntBanks.segmGeo.name" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.segmGeo.is1" id="de-fi_ntBanks.segmGeo.is1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.segmGeo.is3" id="de-fi_ntBanks.segmGeo.is3" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.segmGeo.is5" id="de-fi_ntBanks.segmGeo.is5" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.segmGeo.is7" id="de-fi_ntBanks.segmGeo.is7" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.segmGeo.is8" id="de-fi_ntBanks.segmGeo.is8" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.organe" id="de-fi_ntBanks.organe" substitutionGroup="xbrli:tuple" nillable="true">
+    <complexType>
+      <sequence>
+        <element ref="de-fi:ntBanks.organe.gruppe"/>
+        <element minOccurs="0" ref="de-fi:ntBanks.organe.kredite"/>
+        <element minOccurs="0" ref="de-fi:ntBanks.organe.haftungen"/>
+      </sequence>
+      <attribute name="id" use="optional" type="ID"/>
+    </complexType>
+  </element>
+  <element name="ntBanks.organe.gruppe" id="de-fi_ntBanks.organe.gruppe" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.organe.kredite" id="de-fi_ntBanks.organe.kredite" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="bsBanks.ass.4.a_Bauspar.verbund" id="de-fi_bsBanks.ass.4.a_Bauspar.verbund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="ntBanks.organe.haftungen" id="de-fi_ntBanks.organe.haftungen" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab" id="de-fi_ntBanks.zusaetzlPflichtangab" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_1" id="de-fi_ntBanks.zusaetzlPflichtangab.1_1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_2" id="de-fi_ntBanks.zusaetzlPflichtangab.1_2" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_3" id="de-fi_ntBanks.zusaetzlPflichtangab.1_3" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_4" id="de-fi_ntBanks.zusaetzlPflichtangab.1_4" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_5" id="de-fi_ntBanks.zusaetzlPflichtangab.1_5" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_6" id="de-fi_ntBanks.zusaetzlPflichtangab.1_6" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_7" id="de-fi_ntBanks.zusaetzlPflichtangab.1_7" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_8a" id="de-fi_ntBanks.zusaetzlPflichtangab.1_8a" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_8b" id="de-fi_ntBanks.zusaetzlPflichtangab.1_8b" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_8c" id="de-fi_ntBanks.zusaetzlPflichtangab.1_8c" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_8d" id="de-fi_ntBanks.zusaetzlPflichtangab.1_8d" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_9a" id="de-fi_ntBanks.zusaetzlPflichtangab.1_9a" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_9.b" id="de-fi_ntBanks.zusaetzlPflichtangab.1_9.b" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_10a" id="de-fi_ntBanks.zusaetzlPflichtangab.1_10a" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_10b" id="de-fi_ntBanks.zusaetzlPflichtangab.1_10b" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_11a" id="de-fi_ntBanks.zusaetzlPflichtangab.1_11a" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_11b" id="de-fi_ntBanks.zusaetzlPflichtangab.1_11b" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_12a" id="de-fi_ntBanks.zusaetzlPflichtangab.1_12a" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_12b" id="de-fi_ntBanks.zusaetzlPflichtangab.1_12b" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_13a" id="de-fi_ntBanks.zusaetzlPflichtangab.1_13a" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.1_13b" id="de-fi_ntBanks.zusaetzlPflichtangab.1_13b" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.2_1" id="de-fi_ntBanks.zusaetzlPflichtangab.2_1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.2_2" id="de-fi_ntBanks.zusaetzlPflichtangab.2_2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.3_1" id="de-fi_ntBanks.zusaetzlPflichtangab.3_1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.3_2" id="de-fi_ntBanks.zusaetzlPflichtangab.3_2" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.3_3" id="de-fi_ntBanks.zusaetzlPflichtangab.3_3" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.4" id="de-fi_ntBanks.zusaetzlPflichtangab.4" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.5" id="de-fi_ntBanks.zusaetzlPflichtangab.5" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangab.6" id="de-fi_ntBanks.zusaetzlPflichtangab.6" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.termingeschaefte" id="de-fi_ntBanks.termingeschaefte" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.termingeschaefte.1" id="de-fi_ntBanks.termingeschaefte.1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.termingeschaefte.2" id="de-fi_ntBanks.termingeschaefte.2" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.termingeschaefte.3" id="de-fi_ntBanks.termingeschaefte.3" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="isBanks.27.19.Ergebnis15_16" id="de-fi_isBanks.27.19.Ergebnis15_16" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangabPfandBG28" id="de-fi_ntBanks.zusaetzlPflichtangabPfandBG28" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangabPfandBG28.1" id="de-fi_ntBanks.zusaetzlPflichtangabPfandBG28.1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangabPfandBG28.2" id="de-fi_ntBanks.zusaetzlPflichtangabPfandBG28.2" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangabPfandBG28.3" id="de-fi_ntBanks.zusaetzlPflichtangabPfandBG28.3" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.zusaetzlPflichtangabPfandBG28.4" id="de-fi_ntBanks.zusaetzlPflichtangabPfandBG28.4" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.aufgliederungBilanzGuvAngaben" id="de-fi_ntBanks.aufgliederungBilanzGuvAngaben" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.pensionsgeschaefte" id="de-fi_ntBanks.pensionsgeschaefte" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.nichtRealisierteReserven" id="de-fi_ntBanks.nichtRealisierteReserven" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.aktivAusgleichspostenAgio" id="de-fi_ntBanks.aktivAusgleichspostenAgio" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.passivAusgleichspostenDisagio" id="de-fi_ntBanks.passivAusgleichspostenDisagio" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ntBanks.detailsAtypischeStilleEinlage" id="de-fi_ntBanks.detailsAtypischeStilleEinlage" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.Aufwendungen" id="de-fi_isBanks.Kto.Aufwendungen" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.Ertraege" id="de-fi_isBanks.Kto.Ertraege" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.Jahresueberschuss" id="de-fi_isBanks.Kto.Jahresueberschuss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.Jahresfehlbetrag" id="de-fi_isBanks.Kto.Jahresfehlbetrag" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.NettoaufwandFinanzgeschaefte" id="de-fi_isBanks.Kto.NettoaufwandFinanzgeschaefte" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.NettoertragFinanzgeschaefte" id="de-fi_isBanks.Kto.NettoertragFinanzgeschaefte" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.RohergebnisWarenverkehrUndNebenbetriebeAufwand" id="de-fi_isBanks.Kto.RohergebnisWarenverkehrUndNebenbetriebeAufwand" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.RohergebnisWarenverkehrUndNebenbetriebeErtrag" id="de-fi_isBanks.Kto.RohergebnisWarenverkehrUndNebenbetriebeErtrag" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.SummeAufwendungen" id="de-fi_isBanks.Kto.SummeAufwendungen" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.SummeErtraege" id="de-fi_isBanks.Kto.SummeErtraege" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.ErgebnisNach2" id="de-fi_isBanks.Kto.ErgebnisNach2" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.ErgebnisNach3" id="de-fi_isBanks.Kto.ErgebnisNach3" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.ErgebnisNach4" id="de-fi_isBanks.Kto.ErgebnisNach4" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.ErgebnisNach5" id="de-fi_isBanks.Kto.ErgebnisNach5" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="isBanks.Kto.ErgebnisNach6" id="de-fi_isBanks.Kto.ErgebnisNach6" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+</schema>

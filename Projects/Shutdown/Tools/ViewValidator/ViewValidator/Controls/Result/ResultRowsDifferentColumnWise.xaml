@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="ViewValidator.Controls.Result.ResultRowsDifferentColumnWise"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500"  DataContextChanged="UserControl_DataContextChanged">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Margin="5,5,5,5" Style="{StaticResource GroupBoxBorderNoShadow}" Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="Wählen Sie die Spalte aus für nähere Infos"/>
+                <ScrollViewer Grid.Row="1">
+                    <DataGrid AutoGenerateColumns="False" Grid.Column="0"
+                          Name="dgvColumnMapping" 
+                          VerticalAlignment="Top"
+                          ItemsSource="{Binding ColumnMappings}"
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False"
+                          HeadersVisibility="Column"
+                          IsReadOnly="True" SelectionChanged="dgvColumnMapping_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Verprobung" Binding="{Binding Source}" Width="Auto"/>
+                            <DataGridTextColumn Header="View" Binding="{Binding Destination}" Width="Auto"/>
+                            <DataGridTextColumn Header="Anzeigbare Fehler" Binding="{Binding ShownErrors}" Width="Auto"/>
+                            <DataGridTextColumn Header="Gesamte Fehler" Binding="{Binding Errors}" Width="Auto"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+        <Border Margin="5,5,5,5" Style="{StaticResource GroupBoxBorderNoShadow}" Grid.Column="1">
+            <DataGrid AutoGenerateColumns="False" Grid.Column="1"
+                  Name="dgvColumnResult" 
+                  VerticalAlignment="Top"
+                  ItemsSource="{Binding RowDifferences}"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  HeadersVisibility="Column"
+                  IsReadOnly="True">
+        </DataGrid>
+    </Border>
+    </Grid>
+</UserControl>

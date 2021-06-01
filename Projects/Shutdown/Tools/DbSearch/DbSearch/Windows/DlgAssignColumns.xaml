@@ -1,0 +1,8 @@
+﻿<Window x:Class="DbSearch.Windows.DlgAssignColumns"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Result="clr-namespace:DbSearch.Controls.Result"
+        Title="DlgAssignColumns" Height="300" Width="300">
+    <Grid>
+        <Result:CtlAddMappings />
+    </Grid>
+</Window>

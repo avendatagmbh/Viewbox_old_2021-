@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4AE8FAA1-CD43-472C-8542-1341E64DD23C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViewboxAdmin</RootNamespace>
+    <AssemblyName>ViewboxAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\Libraries\Autofac-2.6.3.862-NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\..\..\svn\VS2010\branches\Viewbox V1.8 release\Assemblies\64Bit\External\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Controls\ProfileRelated\CtlMysqlDatabaseChoice.xaml.cs">
+      <DependentUpon>CtlMysqlDatabaseChoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProfileRelated\CtlProfileDetails.xaml.cs">
+      <DependentUpon>CtlProfileDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BoolInversionConverter.cs" />
+    <Compile Include="Converters\DebugConverter.cs" />
+    <Compile Include="Converters\EnumToBoolConverter.cs" />
+    <Compile Include="CustomEventArgs\DataContextChangeEventArg.cs" />
+    <Compile Include="CustomEventArgs\DebugEventArgs.cs" />
+    <Compile Include="CustomEventArgs\OptimizationEventArgs.cs" />
+    <Compile Include="CustomEventArgs\ProgressEventArgs.cs" />
+    <Compile Include="Factories\IOptimizationVM_Factory.cs" />
+    <Compile Include="Factories\MainWindowFactory.cs" />
+    <Compile Include="Factories\OptimizationVM_Factory.cs" />
+    <Compile Include="IIoCResolver.cs" />
+    <Compile Include="IMessageBoxProvider.cs" />
+    <Compile Include="IoCContainerBuilder.cs" />
+    <Compile Include="IoCResolver.cs" />
+    <Compile Include="Manager\IProfileModelRepository.cs" />
+    <Compile Include="Manager\ProfileModelRepository.cs" />
+    <Compile Include="MessageBoxProvider.cs" />
+    <Compile Include="Structures\INavigationTree.cs" />
+    <Compile Include="Structures\INavigationTreeEntry.cs" />
+    <Compile Include="ViewModels\BusinessObjectLoader.cs" />
+    <Compile Include="ViewModels\Interfaces\IUnitOfWork.cs" />
+    <Compile Include="ViewModels\MergeMetaDatabaseFactory.cs" />
+    <Compile Include="ViewModels\CollectionEdit_ViewModel.cs" />
+    <Compile Include="ViewModels\Collections\CollectionModel.cs" />
+    <Compile Include="ViewModels\Collections\CollectionUnitOfWork.cs" />
+    <Compile Include="ViewModels\Collections\ICollectionModel.cs" />
+    <Compile Include="ViewModels\Collections\IParameterEditor.cs" />
+    <Compile Include="ViewModels\Collections\IParameterModel.cs" />
+    <Compile Include="ViewModels\Collections\IReportCollectionModified.cs" />
+    <Compile Include="ViewModels\Collections\ICollectionsUnitOfWork.cs" />
+    <Compile Include="ViewModels\Collections\LanguageTextModel.cs" />
+    <Compile Include="ViewModels\Collections\ParameterEditor.cs" />
+    <Compile Include="ViewModels\Collections\ParameterModel.cs" />
+    <Compile Include="ViewModels\Dispatcher.cs" />
+    <Compile Include="ViewModels\Interfaces\IBusinessObjectLoader.cs" />
+    <Compile Include="ViewModels\Interfaces\ICollectionEdit_ViewModel.cs" />
+    <Compile Include="ViewModels\Interfaces\IDispatcher.cs" />
+    <Compile Include="ViewModels\Interfaces\IMainWindow_ViewModel.cs" />
+    <Compile Include="ViewModels\Interfaces\INavigationEntriesDataContext.cs" />
+    <Compile Include="ViewModels\Interfaces\IOptimization_ViewModel.cs" />
+    <Compile Include="ViewModels\Interfaces\IParameters_ViewModel.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\IItemLoaderFactory.cs" />
+    <Compile Include="ViewModels\LocalizedText_ViewModel.cs" />
+    <Compile Include="ViewModels\MainWindow_ViewModel.cs" />
+    <Compile Include="Models\ProfileRelated\IProfileModel.cs" />
+    <Compile Include="Models\ProfileRelated\IProfilePartLoadingEnumHelper.cs" />
+    <Compile Include="Models\ProfileRelated\ProfileModel.cs" />
+    <Compile Include="Models\ProfileRelated\ProfilePartLoadingEnumHelper.cs" />
+    <Compile Include="Models\ViewboxDb\TableObjectsModel.cs" />
+    <Compile Include="Structures\MessageBoxActions.cs" />
+    <Compile Include="Structures\NavigationTree.cs" />
+    <Compile Include="Structures\NavigationTreeEntry.cs" />
+    <Compile Include="Structures\NewProfileWindowEventArg.cs" />
+    <Compile Include="ViewModels\CreateNewProfile_ViewModel.cs" />
+    <Compile Include="ViewModels\DeleteSystem\StatusReporterBase.cs" />
+    <Compile Include="ViewModels\DeleteSystem\IStatusReporter.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\CategoryLoader.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\CollectionLoader.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\ColumnLoader.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\LoaderBase.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\OptimizationGroupLoader.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\ParameterLoader.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\PropertyLoader.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\SchemeLoader.cs" />
+    <Compile Include="ViewModels\LocalizedTextWrappers\CategoryWrapperStructure.cs" />
+    <Compile Include="ViewModels\DeleteSystem\DeleteSystemReporter.cs" />
+    <Compile Include="ViewModels\EditText_ViewModel.cs" />
+    <Compile Include="ViewModels\DeleteSystem\IDeleteSystemStrategy.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\IItemLoader.cs" />
+    <Compile Include="ViewModels\LocalizedTextWrappers\CollectionWrapperStructure.cs" />
+    <Compile Include="ViewModels\LocalizedTextWrappers\ColumnWrapperStructure.cs" />
+    <Compile Include="ViewModels\LocalizedTextWrappers\OptimizationGroupTextWrapperStructure.cs" />
+    <Compile Include="ViewModels\LocalizedTextWrappers\ParameterWrapperStructure.cs" />
+    <Compile Include="ViewModels\LocalizedTextWrappers\IItemWrapperStructure.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\ItemLoaderFactory.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\OptimizationLoader.cs" />
+    <Compile Include="ViewModels\LocalizedTextWrappers\OptimizationWrapperStructure.cs" />
+    <Compile Include="ViewModels\LocalizedTextWrappers\PropertyWrapperStructure.cs" />
+    <Compile Include="ViewModels\LocalizedTextWrappers\SchemeWrapperStructure.cs" />
+    <Compile Include="ViewModels\MergeDataBase\IMergeDataBase.cs" />
+    <Compile Include="ViewModels\MergeDataBase\LoaderHack.cs" />
+    <Compile Include="ViewModels\MergeDataBase\MergeDataBase.cs" />
+    <Compile Include="ViewModels\Merger_ViewModel.cs" />
+    <Compile Include="ViewModels\NavigationEntriesDataContext.cs" />
+    <Compile Include="ViewModels\CreateParameterValue_ViewModel.cs" />
+    <Compile Include="ViewModels\OptimizationTree_ViewModel.cs" />
+    <Compile Include="ViewModels\Optimization_ViewModel.cs" />
+    <Compile Include="ViewModels\Parameters_ViewModel.cs" />
+    <Compile Include="ViewModels\Roles\RoleEditViewModel.cs" />
+    <Compile Include="ViewModels\Roles\RoleLoader.cs" />
+    <Compile Include="ViewModels\Roles\RoleModel.cs" />
+    <Compile Include="ViewModels\Roles\RoleUnitOfWork.cs" />
+    <Compile Include="ViewModels\SystemDeleteViewModel.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\TableLoader.cs" />
+    <Compile Include="ViewModels\LocalizedTextLoaders\TablesWithLocalizedTextEnum.cs" />
+    <Compile Include="ViewModels\LocalizedTextWrappers\TableWrapperStructure.cs" />
+    <Compile Include="ViewModels\LocalizedTextWrappers\WrapperStructureBase.cs" />
+    <Compile Include="ViewModels\ProfileManagement_ViewModel.cs" />
+    <Compile Include="ViewModels\TrulyObservableCollection.cs" />
+    <Compile Include="ViewModels\Users\IUserDataBaseMapper.cs" />
+    <Compile Include="ViewModels\Users\LoadUsers.cs" />
+    <Compile Include="ViewModels\Users\NewUserEventArg.cs" />
+    <Compile Include="ViewModels\Users\UserDataBaseMapper.cs" />
+    <Compile Include="ViewModels\Users\UsersViewModel.cs" />
+    <Compile Include="ViewModels\Users\UserUnitOfWork.cs" />
+    <Compile Include="ViewModels\Users\UserModel.cs" />
+    <Compile Include="ViewModels\ViewModelBaseWithDebug.cs" />
+    <Compile Include="Windows\AttilaCtlListView.xaml.cs">
+      <DependentUpon>AttilaCtlListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CollectionControl.xaml.cs">
+      <DependentUpon>CollectionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CreateNewParameterValue_View.xaml.cs">
+      <DependentUpon>CreateNewParameterValue_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Collection_View.xaml.cs">
+      <DependentUpon>Collection_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgMainWindow.xaml.cs">
+      <DependentUpon>DlgMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\DlgNewProfile.xaml.cs">
+      <DependentUpon>DlgNewProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditTextView.xaml.cs">
+      <DependentUpon>EditTextView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MergerView.xaml.cs">
+      <DependentUpon>MergerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\OptimizationView.xaml.cs">
+      <DependentUpon>OptimizationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Parameter_View.xaml.cs">
+      <DependentUpon>Parameter_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Role.xaml.cs">
+      <DependentUpon>Role.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RoleCreateDialog.xaml.cs">
+      <DependentUpon>RoleCreateDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RoleEditor.xaml.cs">
+      <DependentUpon>RoleEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SystemDeleteView.xaml.cs">
+      <DependentUpon>SystemDeleteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\User.xaml.cs">
+      <DependentUpon>User.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UserEditorWindow.xaml.cs">
+      <DependentUpon>UserEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Users_View.xaml.cs">
+      <DependentUpon>Users_View.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\ProfileRelated\CtlMysqlDatabaseChoice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ProfileRelated\CtlProfileDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\AppResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\DetailViews.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\MainWindowResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\ViewBoxAdminResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AttilaCtlListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CollectionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CreateNewParameterValue_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Collection_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgMainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DlgNewProfile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\EditTextView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MergerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\OptimizationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Parameter_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Role.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RoleCreateDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RoleEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SystemDeleteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\User.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Users_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdCommon\AvdCommon.csproj">
+      <Project>{89148742-F482-479E-8831-579F54FDF08A}</Project>
+      <Name>AvdCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdWpfControls\AvdWpfControls.csproj">
+      <Project>{E3B12F3F-E420-48FA-B991-FA1FF8D603F2}</Project>
+      <Name>AvdWpfControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdWpfStyles\AvdWpfStyles.csproj">
+      <Project>{FED8686B-7BE7-432C-B1F6-FA5900F6BAC2}</Project>
+      <Name>AvdWpfStyles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\LogHelper\LogHelper\AV.Log.LogHelper.csproj">
+      <Project>{1AFE5981-7268-4249-AFFA-77E42495886E}</Project>
+      <Name>AV.Log.LogHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\SystemDb\SystemDb.csproj">
+      <Project>{A7FA3A52-0DDD-456B-BF7A-CED14D0AE0DF}</Project>
+      <Name>SystemDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewboxAdminBusiness\ViewboxAdminBusiness.csproj">
+      <Project>{031F9B92-9903-475A-B4F5-06D8FDCE1F93}</Project>
+      <Name>ViewboxAdminBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\database16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Qute\Address-book16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Qute\Person16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\shutdown16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
+    <Resource Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ViewboxAdmin.ico" />
+    <Resource Include="Resources\ViewboxAdmin.png" />
+    <Resource Include="Resources\ViewboxAdmin16.png" />
+    <Resource Include="Resources\ViewboxAdmin24.png" />
+    <Resource Include="Resources\ViewboxAdmin32.png" />
+    <Resource Include="Resources\ViewboxAdmin48.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,16 @@
+E:\Aakash\Viewbox_old\Libraries\UniversalCharsetDetector\Library\bin\Debug\Ude.dll
+E:\Aakash\Viewbox_old\Libraries\UniversalCharsetDetector\Library\bin\Debug\Ude.pdb
+E:\Aakash\Viewbox_old\Libraries\UniversalCharsetDetector\Library\obj\Debug\Ude.csproj.CoreCompileInputs.cache
+E:\Aakash\Viewbox_old\Libraries\UniversalCharsetDetector\Library\obj\Debug\Ude.dll
+E:\Aakash\Viewbox_old\Libraries\UniversalCharsetDetector\Library\obj\Debug\Ude.pdb
+E:\Aakash\Refactor_Viewbox_old\Libraries\UniversalCharsetDetector\Library\bin\Debug\Ude.dll
+E:\Aakash\Refactor_Viewbox_old\Libraries\UniversalCharsetDetector\Library\bin\Debug\Ude.pdb
+E:\Aakash\Refactor_Viewbox_old\Libraries\UniversalCharsetDetector\Library\obj\Debug\Ude.csproj.CoreCompileInputs.cache
+E:\Aakash\Refactor_Viewbox_old\Libraries\UniversalCharsetDetector\Library\obj\Debug\Ude.dll
+E:\Aakash\Refactor_Viewbox_old\Libraries\UniversalCharsetDetector\Library\obj\Debug\Ude.pdb
+E:\Aakash\Refactor_v2\Libraries\UniversalCharsetDetector\Library\bin\Debug\Ude.dll
+E:\Aakash\Refactor_v2\Libraries\UniversalCharsetDetector\Library\bin\Debug\Ude.pdb
+E:\Aakash\Refactor_v2\Libraries\UniversalCharsetDetector\Library\obj\Debug\Ude.csprojAssemblyReference.cache
+E:\Aakash\Refactor_v2\Libraries\UniversalCharsetDetector\Library\obj\Debug\Ude.csproj.CoreCompileInputs.cache
+E:\Aakash\Refactor_v2\Libraries\UniversalCharsetDetector\Library\obj\Debug\Ude.dll
+E:\Aakash\Refactor_v2\Libraries\UniversalCharsetDetector\Library\obj\Debug\Ude.pdb

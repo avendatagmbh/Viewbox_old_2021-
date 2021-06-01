@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24D507BA-D743-4B41-B6AA-0F84581437D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Business</RootNamespace>
+    <AssemblyName>Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\..\Assemblies\32Bit\External\DotNetZip\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppController.cs" />
+    <Compile Include="CsvImporter\CsvImport.cs" />
+    <Compile Include="CsvImporter\CsvImporterBase.cs" />
+    <Compile Include="CsvImporter\Events\CsvImportMessageEventArgs.cs" />
+    <Compile Include="CsvImporter\Events\CsvImportStateEventArgs.cs" />
+    <Compile Include="CsvImporter\ExportLogs\ExportLog.cs" />
+    <Compile Include="CsvImporter\ExportLogs\ExportLogEntry.cs" />
+    <Compile Include="CsvImporter\ICsvImporter.cs" />
+    <Compile Include="CsvImporter\Specific\Default.cs" />
+    <Compile Include="CsvImporter\Specific\SapAbap.cs" />
+    <Compile Include="CsvImporter\Structures\StateCsvImport.cs" />
+    <Compile Include="CsvImporter\Structures\CsvTableInfo.cs" />
+    <Compile Include="DbImporter.cs" />
+    <Compile Include="Enums\TransferProgressSteps.cs" />
+    <Compile Include="Enums\ImportDbStructureSteps.cs" />
+    <Compile Include="Events\DataReaderEvent.cs" />
+    <Compile Include="Exporter.cs" />
+    <Compile Include="ImporterDbStructure.cs" />
+    <Compile Include="Interfaces\IDataTransferAgent.cs" />
+    <Compile Include="Interfaces\IDbImporter.cs" />
+    <Compile Include="Interfaces\IExporter.cs" />
+    <Compile Include="Interfaces\IImportDbStructureTableProgressWrapper.cs" />
+    <Compile Include="Interfaces\IMetadataAgent.cs" />
+    <Compile Include="Interfaces\ITransferProgress.cs" />
+    <Compile Include="Interfaces\IImportDbStructureProgress.cs" />
+    <Compile Include="Interfaces\IImportDbStructureTableProgress.cs" />
+    <Compile Include="Interfaces\IImporterDbStructure.cs" />
+    <Compile Include="Interfaces\IInputAgent.cs" />
+    <Compile Include="Interfaces\IOutputAgent.cs" />
+    <Compile Include="Interfaces\IDataReader.cs" />
+    <Compile Include="Interfaces\ITransferTableProgress.cs" />
+    <Compile Include="Interfaces\ITransferTableProgressWrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structures\CancelObject.cs" />
+    <Compile Include="Structures\DataTransferAgents\DataTransferAgent.cs" />
+    <Compile Include="Structures\DataTransferAgents\DataTransferAgentBase.cs" />
+    <Compile Include="Structures\DateReaders\CsvDataReader.cs" />
+    <Compile Include="Structures\DateReaders\TableDataReader.cs" />
+    <Compile Include="Structures\FileView.cs" />
+    <Compile Include="Structures\ImportDbStructureTableProgressWrapper.cs" />
+    <Compile Include="Structures\MetadataAgents\MetadataAgentCsv.cs" />
+    <Compile Include="Structures\MetadataAgents\MetadataAgentDatabase.cs" />
+    <Compile Include="Structures\MetadataAgents\MetadataAgentFactory.cs" />
+    <Compile Include="Structures\BulkDataHolder.cs" />
+    <Compile Include="Structures\Pdf\LogfileGenerator.cs" />
+    <Compile Include="Structures\TransferProgress.cs" />
+    <Compile Include="Structures\TransferTableProgress.cs" />
+    <Compile Include="Structures\ImportDbStructureProgress.cs" />
+    <Compile Include="Structures\ImportDbStructureTableProgress.cs" />
+    <Compile Include="Structures\InputAgents\InputAgentBase.cs" />
+    <Compile Include="Structures\InputAgents\InputAgentBinary.cs" />
+    <Compile Include="Structures\InputAgents\InputAgentCsv.cs" />
+    <Compile Include="Structures\InputAgents\InputAgentDatabase.cs" />
+    <Compile Include="Structures\Language.cs" />
+    <Compile Include="Structures\OutputAgents\OutputAgentGdpdu.cs" />
+    <Compile Include="Structures\OutputAgents\OutputAgentCsv.cs" />
+    <Compile Include="Structures\OutputAgents\OutputAgentBase.cs" />
+    <Compile Include="Structures\OutputAgents\OutputAgentDatabase.cs" />
+    <Compile Include="Structures\TransferTableProgressWrapper.cs" />
+    <Compile Include="Structures\UserConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\AvdCommon\AvdCommon.csproj">
+      <Project>{89148742-F482-479E-8831-579F54FDF08A}</Project>
+      <Name>AvdCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\GenericOdbc\GenericOdbc\GenericOdbc.csproj">
+      <Project>{2C488B6E-12DF-4297-B25D-1A120BF5AEEB}</Project>
+      <Name>GenericOdbc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\LogHelper\LogHelper\AV.Log.LogHelper.csproj">
+      <Project>{1AFE5981-7268-4249-AFFA-77E42495886E}</Project>
+      <Name>AV.Log.LogHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\PdfGenerator\PdfGenerator\PdfGenerator.csproj">
+      <Project>{0867E9E0-6D5D-4E8A-A42F-ED839B22707F}</Project>
+      <Name>PdfGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\UniversalCharsetDetector\Library\Ude.csproj">
+      <Project>{7BECB850-389A-44FC-8523-3EF0B2540F07}</Project>
+      <Name>Ude</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Base\Base.csproj">
+      <Project>{E01C439B-FA3F-4F2B-9643-90631A8716F8}</Project>
+      <Name>Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Config\Config.csproj">
+      <Project>{AFF0C5D2-EA00-4A91-8E6E-003E534193E0}</Project>
+      <Name>Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{0EA5B063-0CC0-48AC-BB0B-5628D7971E6C}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\gdpdu-01-08-2002.dtd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\watermark.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

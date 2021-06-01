@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.Document.CtlEditDocument"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Manager="clr-namespace:eBalanceKitBusiness.Manager;assembly=eBalanceKitBusiness" mc:Ignorable="d" 
+             d:DesignHeight="409" d:DesignWidth="759">
+    <Grid>
+        <StackPanel Grid.Row="1">
+            <!-- owner -->
+            <TextBlock VerticalAlignment="Center" Text="Besitzer" Visibility="{Binding Document.AllowEditOwner, Converter={StaticResource TrueToVisibilityConverter}}"/>
+            <ComboBox x:Name="cboOwner" Visibility="{Binding Document.AllowEditOwner, Converter={StaticResource TrueToVisibilityConverter}}"
+                      ItemsSource="{Binding Path=Document.AllowedOwners}"
+                      SelectedItem="{Binding Path=Document.Owner}"
+                      DisplayMemberPath="DisplayString" IsEnabled="{Binding ReportRights.WriteAllowed}" Margin="0,0,0,8"/>
+
+            <!-- system -->
+            <TextBlock VerticalAlignment="Center" Text="System" Margin="0,0,0,0"/>
+            <ContentControl Content="{Binding}">
+                <ContentControl.ContentTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <ComboBox x:Name="cboSystem" 
+                                          ItemsSource="{Binding Path=Systems}"
+                                          SelectedItem="{Binding Path=SelectedSystem}"
+                                          DisplayMemberPath="Name" SelectionChanged="System_changed" IsEnabled="{Binding ReportRights.WriteAllowed}"/>
+                            <TextBlock x:Name="tbSystem" Text="Bitte auswählen..." IsHitTestVisible="False" Visibility="Hidden" VerticalAlignment="Center" Margin="5,0,0,0" Foreground="#404040"/>
+                        </Grid>
+                        <DataTemplate.Triggers>
+                            <Trigger SourceName="cboSystem" Property="SelectedItem" Value="{x:Null}">
+                                <Setter TargetName="tbSystem" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ContentControl.ContentTemplate>
+            </ContentControl>
+            <Label x:Name="cboSystemWarning" Padding="1" Content="Es wurde noch kein System ausgewählt." Foreground="Red" Visibility="Collapsed" />
+
+            <!-- company -->
+            <TextBlock Margin="0,10,0,0" VerticalAlignment="Center" Text="Unternehmen" />
+            <ContentControl Content="{Binding}">
+                <ContentControl.ContentTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <ComboBox x:Name="cboCompany" 
+                                      ItemsSource="{Binding Path=Companies}"
+                                      SelectedItem="{Binding Path=SelectedCompany}"
+                                      DisplayMemberPath="Name" SelectionChanged="company_changed" IsEnabled="{Binding ReportRights.WriteAllowed}"/>
+                            <TextBlock x:Name="tbCompany" Text="Bitte auswählen..." IsHitTestVisible="False" Visibility="Hidden" VerticalAlignment="Center" Margin="5,0,0,0" Foreground="#404040"/>
+                        </Grid>
+                        <DataTemplate.Triggers>
+                            <Trigger SourceName="cboCompany" Property="SelectedItem" Value="{x:Null}">
+                                <Setter TargetName="tbCompany" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ContentControl.ContentTemplate>
+            </ContentControl>
+            <Label x:Name="cboCompanyWarning" Padding="1" Content="Es wurde noch kein Unternehmen ausgewählt." Foreground="Red" Visibility="Collapsed" />
+
+            <!-- financial year -->
+            <TextBlock Margin="0,10,0,0" VerticalAlignment="Center" Text="Geschäftsjahr" />
+            <ContentControl Content="{Binding}">
+                <ContentControl.ContentTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <ComboBox x:Name="cboFinancialYear" 
+                                      ItemsSource="{Binding Path=FinancialYears}"
+                                      SelectedItem="{Binding Path=SelectedFinancialYear}"
+                                      DisplayMemberPath="FYear" SelectionChanged="financialYear_changed" IsEnabled="{Binding ReportRights.WriteAllowed}"/>
+                            <TextBlock x:Name="tbFinancialYear" Text="Bitte auswählen..." IsHitTestVisible="False" Visibility="Hidden" VerticalAlignment="Center" Margin="5,0,0,0" Foreground="#404040"/>
+                        </Grid>
+                        <DataTemplate.Triggers>
+                            <Trigger SourceName="cboFinancialYear" Property="SelectedItem" Value="{x:Null}">
+                                <Setter TargetName="tbFinancialYear" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ContentControl.ContentTemplate>
+            </ContentControl>
+            <Label x:Name="cboPeriodWarning" Padding="1" Content="Es wurde noch kein Geschäftsjahr ausgewählt." Foreground="Red" Visibility="Collapsed" />
+
+            <!-- name -->
+            <TextBlock Margin="0,5,0,0" VerticalAlignment="Center" ToolTip="Eindeutiger Name zur Identifizierung des Dokuments." Text="Name" />
+            <TextBox x:Name="txtName" Text="{Binding Path=Document.Name, Mode=TwoWay, UpdateSourceTrigger=Explicit}" LostFocus="txtName_LostFocus"  
+                     IsEnabled="{Binding ReportRights.WriteAllowed}" TextChanged="txtName_TextChanged" />
+
+            <Label x:Name="txtNameWarning" Padding="1" Content="Es wurde noch kein Reportname angegeben." Foreground="Red" Visibility="Collapsed" />
+            <Label x:Name="txtNameWarning1" Padding="1" Content="Der angegebene Reportname ist bereits vergeben." Foreground="Red" Visibility="Collapsed" />
+
+            <!-- comment -->
+            <TextBlock Margin="0,10,0,0" VerticalAlignment="Center" Text="Kommentar"/>
+            <TextBox x:Name="txtComment" Text="{Binding Path=Document.Comment, Mode=TwoWay, UpdateSourceTrigger=Explicit}" LostFocus="txtComment_LostFocus" 
+                     IsEnabled="{Binding ReportRights.WriteAllowed}" TextChanged="txtComment_TextChanged"/>
+
+            <TextBlock Margin="0,10,0,0" VerticalAlignment="Center" Text="*Branche" />
+            <ComboBox x:Name="cbSpecialAccountingStandard"
+                      ItemsSource="{Binding Document.ValueTreeGcd.Root.Values[de-gcd_genInfo.report.id.specialAccountingStandard].Elements}"
+                      SelectedItem="{Binding Document.ValueTreeGcd.Root.Values[de-gcd_genInfo.report.id.specialAccountingStandard].SelectedValue, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                      DisplayMemberPath="ComboBoxLabel"
+                      IsEnabled="{Binding ReportRights.WriteRestAllowed}" SelectionChanged="ComboBoxSpecialAccountingStandardSelectionChanged"/>
+
+            <TextBlock Margin="0,10,0,0" VerticalAlignment="Center" Text="*Bilanzierungsstandard" />
+            <ComboBox ItemsSource="{Binding Document.ValueTreeGcd.Root.Values[de-gcd_genInfo.report.id.accountingStandard].Elements}"
+                      SelectedItem="{Binding Document.ValueTreeGcd.Root.Values[de-gcd_genInfo.report.id.accountingStandard].SelectedValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="ComboBoxLabel" IsEnabled="{Binding ReportRights.WriteRestAllowed}" />
+
+        </StackPanel>
+    </Grid>
+</UserControl>

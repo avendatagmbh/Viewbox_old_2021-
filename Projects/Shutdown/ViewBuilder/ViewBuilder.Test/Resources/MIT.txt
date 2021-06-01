@@ -1,0 +1,1884 @@
+
+ MIT MAN  IT Services GmbH Handelsrecht ( ALT )
+  |
+  |--   1000000 A K T I V A                   Aktiva
+  |   |
+  |   |--   1010000 Ausstehende Kapital-Einlagen
+  |   |   |
+  |   |   |--   1011000 Eingefordert
+  |   |   |   |
+  |   |   |   ------MIT 0000050000 - 0000050000 X|X L-Eingeford KapitalEinlagen
+  |   |   |
+  |   |   ---   1012000 Nicht eingefordert
+  |   |       |
+  |   |       ------MIT 0000051000 - 0000051000 X|X L-Nicht Eingeford KapitalEinlagen
+  |   |
+  |   |--   1020000 Aufwendungen fuer die Ingangsetzung und
+  |   |   |
+  |   |   |--   1021000 Anschaffungswert
+  |   |   |   |
+  |   |   |   |-----MIT 0000055000 - 0000055000 X|X L-AK-Aktivierte IngangsetzgKst
+  |   |   |   ------MIT 0000056000 - 0000056000 X|X L-AK-Aktivierte ErweiterungKst
+  |   |   |
+  |   |   ---   1022000 Wertberichtigung
+  |   |       |
+  |   |       |-----MIT 0000055010 - 0000055010 X|X L-WB-Aktivierte IngangsetzgKst
+  |   |       ------MIT 0000056010 - 0000056010 X|X L-WB-Aktivierte ErweiterungKst
+  |   |
+  |   |--   1030000 Anlagevermoegen
+  |   |   |
+  |   |   |--   1031000 Immaterielle Vermoegens-Gegenstaende
+  |   |   |   |
+  |   |   |   |--   1031010 Konzessionen, gewerbliche Schutzrechte
+  |   |   |   |   |
+  |   |   |   |   |--   1031011 Anschaffungswert
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----MIT 0000034000 - 0000034000 X|X H-A-AK-EDV Software
+  |   |   |   |   |   |-----MIT 0000034200 - 0000034200 X|X H-A-AK-GwG E (Software IT)
+  |   |   |   |   |   |-----MIT 0000035000 - 0000035000 X|X L-H-A-AK-Konzessionen
+  |   |   |   |   |   |-----MIT 0000036000 - 0000036000 X|X L-H-A-AK-Gewerbl SchutRe u ähnl Re
+  |   |   |   |   |   |-----MIT 0000037000 - 0000037000 X|X L-H-A-AK-Lizenzen
+  |   |   |   |   |   |-----MIT 0000037001 - 0000037001 X|X Konto nicht vorhanden
+  |   |   |   |   |   ------MIT 0000038020 - 0000038020 X|X L-H-A-AK-Mietrechte
+  |   |   |   |   |
+  |   |   |   |   ---   1031012 Wertberichtigung
+  |   |   |   |       |
+  |   |   |   |       |-----MIT 0000034010 - 0000034010 X|X H-A-WB-EDV Software
+  |   |   |   |       |-----MIT 0000034210 - 0000034210 X|X H-A-WB-GwG E (Software IT)
+  |   |   |   |       |-----MIT 0000035010 - 0000035010 X|X L-H-A-WB-Konzessionen
+  |   |   |   |       |-----MIT 0000036010 - 0000036010 X|X L-H-A-WB-Gewerbl SchutRe u ähnl Re
+  |   |   |   |       ------MIT 0000037010 - 0000037010 X|X L-H-A-WB-Lizenzen
+  |   |   |   |
+  |   |   |   |--   1031020 Geschaefts- oder Firmen-Wert
+  |   |   |   |   |
+  |   |   |   |   |--   1031021 Anschaffungswert
+  |   |   |   |   |   |
+  |   |   |   |   |   ------MIT 0000038000 - 0000038000 X|X L-H-A-AK-GoFiWert
+  |   |   |   |   |
+  |   |   |   |   ---   1031022 Wertberichtigung
+  |   |   |   |       |
+  |   |   |   |       ------MIT 0000038010 - 0000038010 X|X L-H-A-WB-GoFiWert
+  |   |   |   |
+  |   |   |   ---   1031030 Geleiste Anzahlungen
+  |   |   |       |
+  |   |   |       |--   1031031 Anschaffungswert
+  |   |   |       |   |
+  |   |   |       |   |-----MIT 0000039000 - 0000039000 X|X L-H-K-  -Geleistete Anz Immaterie AV
+  |   |   |       |   |-----MIT 0000039010 - 0000039010 X|X L-H- -  -VorsteuerVerrechng Anz Imm AV
+  |   |   |       |   |-----MIT 0000039100 - 0000039100 X|X L-H-A-  -Aktivierte Anz Immaterie AV
+  |   |   |       |   ------MIT 0000039200 - 0000039200 X|X L-H- -  -Verrech aktivierte Anz Imm AV
+  |   |   |       |
+  |   |   |       ---   1031032 Wertberichtigung
+  |   |   |           |
+  |   |   |           ------MIT 0000039110 - 0000039110 X|X L-H- -WB-Aktivierte Anz Immaterie AV
+  |   |   |
+  |   |   |--   1032000 Sachanlagen
+  |   |   |   |
+  |   |   |   |--   1032010 Grundstuecke, grundstuecksgleiche Rechte und
+  |   |   |   |   |
+  |   |   |   |   |--   1032011 Anschaffungswert                         0500
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----MIT 0000001000 - 0000001000 X|X L-H-A-AK-Grrundstücke, grundst-gl Re
+  |   |   |   |   |   |-----MIT 0000002000 - 0000002000 X|X L-H-A-AK-Bauten
+  |   |   |   |   |   ------MIT 0000004000 - 0000004000 X|X H-A-AK-Mietereinbauten
+  |   |   |   |   |
+  |   |   |   |   ---   1032012 Wertberichtigung
+  |   |   |   |       |
+  |   |   |   |       |--   MIT 0000001010 - 0000001050 X|X
+  |   |   |   |       |   |
+  |   |   |   |       |   |-----0000001010 L-H-A-WB-Grrundstücke, grundst-gl Re
+  |   |   |   |       |   ------0000001050 L-H-A-AK-Grrundstücke Umbewertung
+  |   |   |   |       |
+  |   |   |   |       |--   MIT 0000002010 - 0000002050 X|X
+  |   |   |   |       |   |
+  |   |   |   |       |   |-----0000002010 L-H-A-WB-Bauten
+  |   |   |   |       |   ------0000002050 L-H-A-AK-Bauten Umbewertung
+  |   |   |   |       |
+  |   |   |   |       ---   MIT 0000004010 - 0000004050 X|X
+  |   |   |   |           |
+  |   |   |   |           |-----0000004010 H-A-WB-Mietereinbauten
+  |   |   |   |           ------0000004050 L-H-A-AK-GebäudeEinricht Umbewertg
+  |   |   |   |
+  |   |   |   |--   1032020 Technische Anlagen und Maschinen
+  |   |   |   |   |
+  |   |   |   |   |--   1032021 Anschaffungswert                         1000
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   MIT 0000011000 - 0000011002 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000011000 L-H-A-AK-TechnAnl u Maschinen
+  |   |   |   |   |   |   ------0000011002 L-H-A-AK-Konstruktionen
+  |   |   |   |   |   |
+  |   |   |   |   |   ------MIT 0000012000 - 0000012000 X|X L-H-A-AK-GwG(Masch)
+  |   |   |   |   |
+  |   |   |   |   ---   1032022 Wertberichtigung
+  |   |   |   |       |
+  |   |   |   |       |--   MIT 0000011010 - 0000011050 X|X
+  |   |   |   |       |   |
+  |   |   |   |       |   |-----0000011010 L-H-A-WB-TechnAnl u Maschinen
+  |   |   |   |       |   |-----0000011020 L-H-A-WB-Konstruktionen
+  |   |   |   |       |   ------0000011050 L-H-A-AK-TechnAnl u Ma Umbewertg
+  |   |   |   |       |
+  |   |   |   |       ---   MIT 0000012010 - 0000012050 X|X
+  |   |   |   |           |
+  |   |   |   |           |-----0000012010 L-H-A-WB-GwG(Masch)
+  |   |   |   |           ------0000012050 L-H-A-AK-GwG Umbewertg (Masch)
+  |   |   |   |
+  |   |   |   |--   1032030 Andere Anlagen sowie B.u.G.
+  |   |   |   |   |
+  |   |   |   |   |--   1032031 Anschaffungswert                         2000
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----MIT 0000004500 - 0000004500 X|X H-A-AK-Infrastrukt/Netzwerke AG (2,5 J)
+  |   |   |   |   |   |-----MIT 0000004600 - 0000004600 X|X H-A-AK-Netzwerke (Infrastruktur)
+  |   |   |   |   |   |-----MIT 0000005000 - 0000005000 X|X H-A-AK-Anlagen IT
+  |   |   |   |   |   |-----MIT 0000010000 - 0000010000 X|X H-A-AK-Telekommunikationsanlagen
+  |   |   |   |   |   |-----MIT 0000013000 - 0000013000 X|X L-H-A-AK-Fahrzeuge
+  |   |   |   |   |   |-----MIT 0000021000 - 0000021000 X|X H-A-AK-BGA
+  |   |   |   |   |   |-----MIT 0000022000 - 0000022000 X|X H-A-AK-GwG E (BGA)
+  |   |   |   |   |   |-----MIT 0000033000 - 0000033000 X|X H-A-AK-EDV Hardware IT
+  |   |   |   |   |   ------MIT 0000033200 - 0000033200 X|X H-A-AK-GwG E (Hardware IT)
+  |   |   |   |   |
+  |   |   |   |   ---   1032032 Wertberichtigung
+  |   |   |   |       |
+  |   |   |   |       |-----MIT 0000004510 - 0000004510 X|X H-A-WB-Infrastrukt/Netzwerke AG (2,5 J)
+  |   |   |   |       |-----MIT 0000004610 - 0000004610 X|X H-A-WB-Netzwerke (Infrastruktur)
+  |   |   |   |       |-----MIT 0000005010 - 0000005010 X|X H-A-WB-Anlagen IT
+  |   |   |   |       |-----MIT 0000010010 - 0000010010 X|X H-A-WB-Telekommunikationsanlagen
+  |   |   |   |       |--   MIT 0000013010 - 0000013050 X|X
+  |   |   |   |       |   |
+  |   |   |   |       |   |-----0000013010 L-H-A-WB-Fahrzeuge
+  |   |   |   |       |   ------0000013050 L-H-A-AK-Fahrzeuge Umbewertg
+  |   |   |   |       |
+  |   |   |   |       |--   MIT 0000021010 - 0000021050 X|X
+  |   |   |   |       |   |
+  |   |   |   |       |   |-----0000021010 H-A-WB-BGA
+  |   |   |   |       |   ------0000021050 L-H-A-AK-BGA Umbewertg
+  |   |   |   |       |
+  |   |   |   |       |--   MIT 0000022010 - 0000022050 X|X
+  |   |   |   |       |   |
+  |   |   |   |       |   |-----0000022010 H-A-WB-GwG E (BGA)
+  |   |   |   |       |   ------0000022050 L-H-A-AK-GwG Um(BGA)
+  |   |   |   |       |
+  |   |   |   |       |-----MIT 0000033010 - 0000033010 X|X H-A-WB-EDV Hardware IT
+  |   |   |   |       ------MIT 0000033210 - 0000033210 X|X H-A-WB-GwG E (Hardware IT)
+  |   |   |   |
+  |   |   |   ---   1032040 Geleistete Anzahlungen und
+  |   |   |       |
+  |   |   |       |--   1032041 Anschaffungswert                         3000
+  |   |   |       |   |
+  |   |   |       |   |--   MIT 0000031000 - 0000031200 X|X
+  |   |   |       |   |   |
+  |   |   |       |   |   |-----0000031000 H-K-  -Geleistete Anz         Mat AV
+  |   |   |       |   |   |-----0000031010 H- -  -VorsteuerVerrechng Anz Mat AV
+  |   |   |       |   |   |-----0000031100 H-A-  -Aktivierte Anz         Mat AV
+  |   |   |       |   |   ------0000031200 H- -  -Verrech aktivierte Anz Mat AV
+  |   |   |       |   |
+  |   |   |       |   |-----MIT 0000032000 - 0000032000 X|X H-A-AK-AiB Software
+  |   |   |       |   ---   MIT 0000061000 - 0000061010 X|X
+  |   |   |       |       |
+  |   |   |       |       |-----0000061000 L-
+  |   |   |       |       ------0000061010 L-
+  |   |   |       |
+  |   |   |       ---   1032042 Wertberichtigung
+  |   |   |           |
+  |   |   |           ---   MIT 0000032010 - 0000032050 X|X
+  |   |   |               |
+  |   |   |               |-----0000032010 L-H-A-WB-AiB Software
+  |   |   |               ------0000032050 L-H-A-AK-AiB Softw Umbewertg
+  |   |   |
+  |   |   ---   1033000 Finanzanlagen
+  |   |       |
+  |   |       |--   1033010 Anteile an verbundenen Unternehmen
+  |   |       |   |
+  |   |       |   ------MIT 0000041000 - 0000041000 X|X L-Anteile an VU
+  |   |       |
+  |   |       |--   1033020 Ausleihungen an verbundene Unternehmen
+  |   |       |   |
+  |   |       |   |--   1033021 mit einer Restlaufzeit bis zu einem Jahr
+  |   |       |   |   |
+  |   |       |   |   ------MIT 0000042000 - 0000042000 X|X L-Ausleih an VU
+  |   |       |   |
+  |   |       |   ---   1033022 mit einer Restlaufzeit ueber einem Jahr
+  |   |       |       |
+  |   |       |       ------MIT 0000042020 - 0000042020 X|X L-Ausleih an VU  >1J
+  |   |       |
+  |   |       |--   1033030 Beteiligungen
+  |   |       |   |
+  |   |       |   ------MIT 0000043000 - 0000043000 X|X L-Beteiligungen
+  |   |       |
+  |   |       |--   1033040 Ausleihungen an Unternehmen, mit denen ein
+  |   |       |   |
+  |   |       |   |--   1033041 mit einer Restlaufzeit bis zu einem Jahr
+  |   |       |   |   |
+  |   |       |   |   ------MIT 0000044000 - 0000044000 X|X L-Ausleih an nahesteh Untern
+  |   |       |   |
+  |   |       |   ---   1033042 mit einer Restlaufzeit ueber einem Jahr
+  |   |       |       |
+  |   |       |       ------MIT 0000044020 - 0000044020 X|X L-Ausleih an nahesteh Untern  >1J
+  |   |       |
+  |   |       |--   1033050 Wertpapiere des Anlagevermoegens
+  |   |       |   |
+  |   |       |   ------MIT 0000045000 - 0000045030 X|X
+  |   |       |
+  |   |       |--   1033060 Sonstige Ausleihungen
+  |   |       |   |
+  |   |       |   |--   1033061 mit einer Restlaufzeit bis zu einem Jahr
+  |   |       |   |   |
+  |   |       |   |   ------MIT 0000046000 - 0000046000 X|X L-Sonst Ausleih
+  |   |       |   |
+  |   |       |   ---   1033062 mit einer Restlaufzeit ueber einem Jahr
+  |   |       |       |
+  |   |       |       ---   MIT 0000046020 - 0000046030 X|X
+  |   |       |           |
+  |   |       |           ------0000046020 L-Sonst Ausleih   >1J
+  |   |       |
+  |   |       ---   1033070 Geleistete Anzahlungen auf Finanzanlagen
+  |   |           |
+  |   |           ---   MIT 0000045100 - 0000045110 X|X
+  |   |               |
+  |   |               |-----0000045100 L-H-K-  -Geleistete Anz Finanzanlagen
+  |   |               ------0000045110 L-VorsteuerVerrechng Anz Finanzanl
+  |   |
+  |   |--   1040000 Umlaufvermoegen
+  |   |   |
+  |   |   |--   1041000 Vorraete
+  |   |   |   |
+  |   |   |   |--   1041010 Roh-, Hilfs- und Betriebsstoffe
+  |   |   |   |   |
+  |   |   |   |   |-----MIT 0000191101 - 0000191101 X|X L-WE/RE: Noch nicht erfolgte Lieferung und Leist
+  |   |   |   |   |-----MIT 0000191110 - 0000191110 X|X L-Übernommene WE/RE Verrechnung
+  |   |   |   |   |--   MIT 0000300000 - 0000306000 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000300000 L-Rohstoffe 1
+  |   |   |   |   |   |-----0000300001 L-WB Rohstoffe 1
+  |   |   |   |   |   |-----0000300010 L-Rohstoffe 2
+  |   |   |   |   |   |-----0000300011 L-WB Rohstoffe 2
+  |   |   |   |   |   |-----0000300100 L-Restbestand Rohstoffe 1
+  |   |   |   |   |   |-----0000300200 L-Restbestand Rohstoffe 2
+  |   |   |   |   |   |-----0000303000 L-Hilfsstoffe
+  |   |   |   |   |   |-----0000303001 L-WB Hilfs- und Betriebsstoffe
+  |   |   |   |   |   |-----0000303100 L-Restbestand Hilfs- u. Betriebsstoffe
+  |   |   |   |   |   |-----0000303500 L-Betriebsstoffe
+  |   |   |   |   |   |-----0000304000 L-Ersatzteile
+  |   |   |   |   |   |-----0000304001 L-WB Ersatzteile
+  |   |   |   |   |   |-----0000305000 L-Verpackungsmaterial
+  |   |   |   |   |   |-----0000305001 L-WB Verpackungsmaterial
+  |   |   |   |   |   ------0000306000 L-Probematerial
+  |   |   |   |   |
+  |   |   |   |   |--   MIT 0000310200 - 0000310201 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000310200 L-Bestand Leergut
+  |   |   |   |   |   ------0000310201 L-WB Bestand Leergut
+  |   |   |   |   |
+  |   |   |   |   |--   MIT 0000370010 - 0000370070 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000370010 Hardware
+  |   |   |   |   |   |-----0000370020 Hardware Zubehör
+  |   |   |   |   |   |-----0000370030 L-Software
+  |   |   |   |   |   |-----0000370040 L-BGA IT
+  |   |   |   |   |   |-----0000370050 Toner- und Druckerpatronen
+  |   |   |   |   |   |-----0000370060 Verbrauchsmaterial IT
+  |   |   |   |   |   ------0000370070 L-Sonstiges IT
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000380000 - 0000380000 X|X L-Umlagerungs-Best
+  |   |   |   |
+  |   |   |   |--   1041020 Unfertige Erzeugnisse, unfertige Leistungen
+  |   |   |   |   |
+  |   |   |   |   |-----MIT 0000381000 - 0000381000 X|X L-Nicht abgerechnete Leistungen
+  |   |   |   |   |--   MIT 0000390000 - 0000390001 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000390000 L-Bestaende bei Lohnverarbeitern
+  |   |   |   |   |   ------0000390001 L-WB Bestand bei Lohnverarbeitern
+  |   |   |   |   |
+  |   |   |   |   |--   MIT 0000790000 - 0000791001 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000790000 L-Unfertige Erzeugnisse
+  |   |   |   |   |   |-----0000790001 L-WB Unfertige Erzeugnisse
+  |   |   |   |   |   |-----0000791000 L-In Arbeit befindliche Erzeugnisse
+  |   |   |   |   |   ------0000791001 L-WB Halbfabrikate
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000799999 - 0000799999 X|X L-Bestandsaufnahme(Eigenerzeug und Handelsware)
+  |   |   |   |
+  |   |   |   |--   1041030 Fertige Erzeugnisse und Waren
+  |   |   |   |   |
+  |   |   |   |   |--   MIT 0000310000 - 0000310001 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000310000 L-Handelswaren
+  |   |   |   |   |   ------0000310001 L-WB Handelsware
+  |   |   |   |   |
+  |   |   |   |   ---   MIT 0000792000 - 0000792001 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000792000 L-Fertige Erzeugnisse
+  |   |   |   |       ------0000792001 L-WB Erzeugnisse
+  |   |   |   |
+  |   |   |   ---   1041040 Geleistete Anzahlungen fuer Vorraete
+  |   |   |       |
+  |   |   |       ---   MIT 0000151000 - 0000151010 X|X
+  |   |   |           |
+  |   |   |           |-----0000151000 L-K-Geleistete Anz Vorräte
+  |   |   |           ------0000151010 L-VorsteuerVerrechng Anz Vorräte
+  |   |   |
+  |   |   |--   1042000 Forderungen und
+  |   |   |   |
+  |   |   |   |--   1042010 Forderungen aus Lieferungen und
+  |   |   |   |   |
+  |   |   |   |   |--   1042011 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----MIT 0000080000 - 0000080000 X|X L-PWB Ford
+  |   |   |   |   |   |-----MIT 0000125000 - 0000127000 X|X
+  |   |   |   |   |   |--   MIT 0000140000 - 0000140010 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000140000 Ford. fremde Dritte Inland
+  |   |   |   |   |   |   |-----0000140001 L-Debit.-Ford. verb Untern kons.Inland / Übernahme
+  |   |   |   |   |   |   ------0000140010 L-Debitorenford Inland, Restlaufzeit > 1 Jahr
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----MIT 0000140030 - 0000140030 X|X Konto nicht vorhanden
+  |   |   |   |   |   |-----MIT 0000140099 - 0000140099 X|X L-Debitoren-Forderungen Inland (Korrekturkonto)
+  |   |   |   |   |   |--   MIT 0000141000 - 0000141010 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000141000 Ford. fremde Dritte Ausland
+  |   |   |   |   |   |   ------0000141010 L-Debitoren-Ford Ausland, Restlaufz. > 1 Jahr
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----MIT 0000141099 - 0000141099 X|X L-Debitoren-Forderungen Ausland (Korrekturkonto)
+  |   |   |   |   |   |-----MIT 0000142000 - 0000142000 X|X D-Fo VU     USt    Inl
+  |   |   |   |   |   |-----MIT 0000143100 - 0000143100 X|X L-Debitoren-Korr nicht realisierte Kursdifferenzen
+  |   |   |   |   |   |-----MIT 0000149900 - 0000149900 X|X Z-VerrKto Debi PTC
+  |   |   |   |   |   ------MIT 0000197000 - 0000197000 X|X L-Sicherheitseinbehalt
+  |   |   |   |   |
+  |   |   |   |   ---   1042012 mit einer Restlaufzeit ueber einem Jahr
+  |   |   |   |       |
+  |   |   |   |       |-----MIT 0000140020 - 0000140020 X|X Konto nicht vorhanden
+  |   |   |   |       ------MIT 0000141020 - 0000141020 X|X Konto nicht vorhanden
+  |   |   |   |
+  |   |   |   |--   1042020 Forderungen aus Lieferungen und
+  |   |   |   |   |
+  |   |   |   |   |--   1042021  mit einer Restlaufzeit bis zu
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----MIT 0000144000 - 0000144000 X|X Ford. verbund. (GK) Inland
+  |   |   |   |   |   |-----MIT 0000144099 - 0000144099 X|X L-Deb.-Ford. verb Untern kons. Inland, Korr.-Konto
+  |   |   |   |   |   ------MIT 0000146000 - 0000146000 X|X Ford. Beteiligung Inland
+  |   |   |   |   |
+  |   |   |   |   |--   10420210 Konzernverrechnung ICA                     X|_  --> 2046011 Konzernverrechnung ICA
+  |   |   |   |   |   |
+  |   |   |   |   |   ------MIT 0000113900 - 0000113900 X|_ ICA MAN-SE Konzernverrechnung
+  |   |   |   |   |
+  |   |   |   |   ---   1042022  mit einer Restlaufzeit ueber einem Jahr
+  |   |   |   |       |
+  |   |   |   |       ------MIT 0000144020 - 0000144020 X|X Konto nicht vorhanden
+  |   |   |   |
+  |   |   |   |--   1042030 Forderungen gegen Unternehmen, mit denen ein
+  |   |   |   |   |
+  |   |   |   |   |--   1042031 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----MIT 0000145000 - 0000145000 X|X Ford. assoziierte  Inland
+  |   |   |   |   |   ------MIT 0000145099 - 0000145099 X|X L-Deb.-Ford verb.Unt, nicht kons.Inland, Korr.-Kto
+  |   |   |   |   |
+  |   |   |   |   ---   1042032 mit einer Restlaufzeit ueber einem Jahr
+  |   |   |   |       |
+  |   |   |   |       ------MIT 0000145020 - 0000145020 X|X -davon uneinbringliche Forderungen
+  |   |   |   |
+  |   |   |   ---   1042040 Sonstige Vermoegens-Gegenstaende
+  |   |   |       |
+  |   |   |       |--   1042041 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |       |   |
+  |   |   |       |   |--   1042041/00 sonstige Forderungen
+  |   |   |       |   |   |
+  |   |   |       |   |   |-----MIT 0000060500 - 0000060500 X|X L-Darlehen
+  |   |   |       |   |   |-----MIT 0000120000 - 0000120000 X|X L-D-Darl an Mitarbeiter
+  |   |   |       |   |   |-----MIT 0000143000 - 0000143000 X|X L-Debitorische Kreditoren
+  |   |   |       |   |   |--   MIT 0000146100 - 0000146600 X|X
+  |   |   |       |   |   |   |
+  |   |   |       |   |   |   |-----0000146100 D-Fo Bet.    Ausland
+  |   |   |       |   |   |   |-----0000146191   Fo Bt    Kk-KredDebi Ausl
+  |   |   |       |   |   |   |-----0000146192   Fo Bt    Zk-KredDebi Ausl
+  |   |   |       |   |   |   ------0000146600 L-Ford gegenüber Gebietskrankenkassen
+  |   |   |       |   |   |
+  |   |   |       |   |   |-----MIT 0000150000 - 0000150700 X|X
+  |   |   |       |   |   |--   MIT 0000152000 - 0000152550 X|X
+  |   |   |       |   |   |   |
+  |   |   |       |   |   |   ------0000152000 L-D-Ford a Zins
+  |   |   |       |   |   |
+  |   |   |       |   |   |-----MIT 0000155000 - 0000155000 X|X L-Lohn- und Gehaltsvorschuesse
+  |   |   |       |   |   |--   MIT 0000156000 - 0000156050 X|X
+  |   |   |       |   |   |   |
+  |   |   |       |   |   |   |-----0000156000 L-Reisekst Vorschuß
+  |   |   |       |   |   |   ------0000156050 L-Reisekosten Kassenvorschuß
+  |   |   |       |   |   |
+  |   |   |       |   |   |-----MIT 0000159000 - 0000159000 X|X L-K-Geleistete Anz UV
+  |   |   |       |   |   |-----MIT 0000159010 - 0000159010 X|X L-VorsteuerVerrechng Anz UV
+  |   |   |       |   |   |--   MIT 0000159100 - 0000159110 X|X
+  |   |   |       |   |   |   |
+  |   |   |       |   |   |   ------0000159100 Z-Ford Sonstige
+  |   |   |       |   |   |
+  |   |   |       |   |   ------MIT 0000196010 - 0000196010 X|X L-Verrechnung Zins-Forderungen
+  |   |   |       |   |
+  |   |   |       |   ---   1042041/10 Ford. Umsatzsteuer      X|_  --> 2048031/10 Umsatzsteuer
+  |   |   |       |       |
+  |   |   |       |       |--   MIT 0000154000 - 0000154050 X|_
+  |   |   |       |       |   |
+  |   |   |       |       |   |-----0000154000 Vorsteuer      16%
+  |   |   |       |       |   |-----0000154010 Vorsteuer      19%
+  |   |   |       |       |   ------0000154050 Vorsteuer       7%
+  |   |   |       |       |
+  |   |   |       |       |--   MIT 0000154100 - 0000154400 X|_
+  |   |   |       |       |   |
+  |   |   |       |       |   |-----0000154100 EUSt           16%
+  |   |   |       |       |   |-----0000154110 EUSt           19%
+  |   |   |       |       |   |-----0000154150 EUSt            7%
+  |   |   |       |       |   |-----0000154200 L-Vorsteuer - Dänemark 25%
+  |   |   |       |       |   |-----0000154210 L-Vorsteuer - Dänemark 12,5%
+  |   |   |       |       |   ------0000154220 L-Vorsteuer - Dänemark 6,25%
+  |   |   |       |       |
+  |   |   |       |       |--   MIT 0000175000 - 0000175003 X|_
+  |   |   |       |       |   |
+  |   |   |       |       |   ------0000175000 MwSt           16%
+  |   |   |       |       |
+  |   |   |       |       |-----MIT 0000175050 - 0000175050 X|_ Erwerbsteuer   16% (Ausgangssteuer)
+  |   |   |       |       |--   MIT 0000175100 - 0000175300 X|_
+  |   |   |       |       |   |
+  |   |   |       |       |   |-----0000175200 L-Ausgangssteuer Dänemark 25%
+  |   |   |       |       |   ------0000175210 L-Ausgangssteuer EU 25%
+  |   |   |       |       |
+  |   |   |       |       ------MIT 0000195000 - 0000195000 X|_ Ford/Verb gg Finanzamt
+  |   |   |       |
+  |   |   |       ---   1042042 mit einer Restlaufzeit ueber einem Jahr
+  |   |   |           |
+  |   |   |           ------MIT 0000159200 - 0000159200 X|X L-Sonstige Ford, Restlaufzeit > 1 Jahr
+  |   |   |
+  |   |   |--   1043000 Wertpapiere
+  |   |   |   |
+  |   |   |   |--   1043010 Anteile an verbundenen Unternehmen
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000131000 - 0000131000 X|X L-Anteile an verbundenen Unternehmen
+  |   |   |   |
+  |   |   |   |--   1043020 Eigene Anteile
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000132000 - 0000132000 X|X L-Verr.Konto GHH-Verbindlichkeiten GLV
+  |   |   |   |
+  |   |   |   ---   1043030 Sonstige Wertpapiere
+  |   |   |       |
+  |   |   |       ------MIT 0000133000 - 0000133000 X|X Konto nicht vorhanden
+  |   |   |
+  |   |   ---   1044000 Schecks, Kassenbestand, Bundesbank- und Post-
+  |   |       |
+  |   |       |--   1044000/00 Sonstige
+  |   |       |   |
+  |   |       |   |-----MIT 0000100000 - 0000100000 X|X Kasse
+  |   |       |   |-----MIT 0000102000 - 0000102000 X|X L-Kasse Fremdwährung
+  |   |       |   ------MIT 0000114000 - 0000114000 X|X L-Ausländische Bank 1
+  |   |       |
+  |   |       |--   1044000/21 Postgiro         X|_  --> 2042010/21 Postgiro
+  |   |       |   |
+  |   |       |   ------MIT 0000110000 - 0000110005 X|_
+  |   |       |
+  |   |       |--   1044000/22 Commerzbank      X|_  --> 2042010/22 Commerzbank
+  |   |       |   |
+  |   |       |   |--   MIT 0000113100 - 0000113107 X|_
+  |   |       |   |   |
+  |   |       |   |   |-----0000113100 Bank Comba Mü KtoNr 133308700
+  |   |       |   |   |-----0000113101 Bank Comba Mü Ausgangs-Schecks
+  |   |       |   |   |-----0000113102 Verr Comba Mü Zahlweg U Inl
+  |   |       |   |   |-----0000113103 Verr Comba Mü Zahlweg L Ausl
+  |   |       |   |   |-----0000113104 Bank Comba Mü Bankeinzug
+  |   |       |   |   |-----0000113105 Bank Comba Mü ZwiBu Kred/Sonst
+  |   |       |   |   |-----0000113106 Bank Comba E-Scheck 133308700
+  |   |       |   |   ------0000113107 Bank Comba Mü ZwiBu Debi
+  |   |       |   |
+  |   |       |   ---   MIT 0000113150 - 0000113165 X|_
+  |   |       |       |
+  |   |       |       |-----0000113150 L-Bank Comba Mü ZwiBu Kred/Sonst
+  |   |       |       ------0000113155 L-Commerzbank Mü ZwiKto
+  |   |       |
+  |   |       ---   1044000/23 Deutsche Bank    X|_  --> 2042010/23 Deutsche Bank
+  |   |           |
+  |   |           ---   MIT 0000113200 - 0000113207 X|_
+  |   |               |
+  |   |               |-----0000113200 Bank Deuba Mü KtoNr 199541400
+  |   |               |-----0000113201 Bank Deuba Mü Ausgangs-Schecks
+  |   |               |-----0000113202 Verr Deuba Mü Zahlweg U Inl
+  |   |               |-----0000113203 Verr Deuba Mü Zahlweg U Ausl
+  |   |               |-----0000113204 Bank Deuba Mü Bankeinzug
+  |   |               |-----0000113205 Bank Deuba Mü ZwiBu Kred/Sonst
+  |   |               |-----0000113206 Bank Deuba E-Scheck 199541400
+  |   |               ------0000113207 Bank Deuba Mü ZwiBu Debi
+  |   |
+  |   |--   1050000 Abgrenzungs-Posten
+  |   |   |
+  |   |   |-----MIT 0000091000 - 0000091000 X|X L-Abgrenzungsposten fuer latente Steuern
+  |   |   ---   MIT 0000173000 - 0000174500 X|X
+  |   |       |
+  |   |       |-----0000173000 ARA Wartung IT
+  |   |       |-----0000173100 ARA Dienstleistung IT
+  |   |       |-----0000173200 ARA Leasing IT
+  |   |       |-----0000173300 ARA Miete IT
+  |   |       |-----0000173400 Verr HRS Sicherheit
+  |   |       |-----0000173900 ARA Sonstiges
+  |   |       ------0000174000 Sonstige Vermögensgegenstände
+  |   |
+  |   |--   1060000 Rechnungs-Abgrenzungsposten
+  |   |   |
+  |   |   |--   1061000 Disagio
+  |   |   |   |
+  |   |   |   ------MIT 0000095000 - 0000095000 X|X L-K-Disagio
+  |   |   |
+  |   |   ---   1062000 Sonstige Rechnungs-Abgrenzungsposten
+  |   |       |
+  |   |       |--   MIT 0000098000 - 0000098100 X|X
+  |   |       |   |
+  |   |       |   |-----0000098000 L-Aktive Rechnungsabgrenzung
+  |   |       |   ------0000098100 L-Zinsabgrenzung
+  |   |       |
+  |   |       ------MIT 0000190990 - 0000190990 X|X L-Reisekostenverrg. vom Untern bezahlte Belege
+  |   |
+  |   ---   1070000 Nicht durch Eigenkapital gedeckter Fehlbetrag
+  |       |
+  |       ------MIT 0000950000 - 0000950000 X|X L-Aktivierung d. n. durch EK gedeckten Fehlbetrag
+  |
+  |--   2000000 P A S S I V A                 Passiva
+  |   |
+  |   |--   2010000 Eigenkapital
+  |   |   |
+  |   |   |--   2011000 Gezeichnetes Kapital
+  |   |   |   |
+  |   |   |   ---   MIT 0000070000 - 0000070500 X|X
+  |   |   |       |
+  |   |   |       |-----0000070000 L-Stammkapital
+  |   |   |       |-----0000070100 Stammkapital
+  |   |   |       ------0000070500 L-Veränderliches Kapitalkonto
+  |   |   |
+  |   |   |--   2012000 Kapital-Ruecklage
+  |   |   |   |
+  |   |   |   ---   MIT 0000071000 - 0000071050 X|X
+  |   |   |       |
+  |   |   |       |-----0000071000 L-Kapital-Ruecklage
+  |   |   |       ------0000071050 L-Umbewertung Kapital-Rücklage
+  |   |   |
+  |   |   |--   2013000 Gewinn-Ruecklagen
+  |   |   |   |
+  |   |   |   |--   2013010 Gesetzliche Ruecklage
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000072000 - 0000072000 X|X L-Gesetzliche Ruecklage
+  |   |   |   |
+  |   |   |   |--   2013020 Ruecklage fuer eigene Anteile
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000073000 - 0000073000 X|X L-Ruecklage fuer eigene Anteile
+  |   |   |   |
+  |   |   |   |--   2013030 Satzungsmaessige Ruecklagen
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000074000 - 0000074000 X|X L-Satzungsmäßige Rücklagen
+  |   |   |   |
+  |   |   |   ---   2013040 Andere Gewinn-Ruecklagen
+  |   |   |       |
+  |   |   |       ---   MIT 0000075000 - 0000075050 X|X
+  |   |   |           |
+  |   |   |           |-----0000075000 L-H - Andere Gewinnrücklagen
+  |   |   |           ------0000075050 L-Umbewertung andere Gewinn-Rücklagen
+  |   |   |
+  |   |   |-----2014100 Bilanzgewinn                               Bilanzergebnis Gewinn
+  |   |   |-----2014200 Bilanzverlust                              Bilanzergebnis Verlust
+  |   |   ---   2015000 Umgliederung des nicht durch Eigenkapital
+  |   |       |
+  |   |       ------MIT 0000960000 - 0000960000 X|X L-Nicht durch Eigenkapital gedeckter Fehlbetrag
+  |   |
+  |   |--   2020000 Sonderposten mit Ruecklage-Anteil
+  |   |   |
+  |   |   |--   2021000 Steuerliche Sonder-AfA (Unterschieds-Betrag)
+  |   |   |   |
+  |   |   |   |--   MIT 0000078000 - 0000078009 X|X
+  |   |   |   |   |
+  |   |   |   |   ------0000078000 L-Bestand an Sonderposten
+  |   |   |   |
+  |   |   |   ------MIT 0000078200 - 0000078200 X|X L-Übertragung von Rücklagen
+  |   |   |
+  |   |   ---   2022000 Sonderposten mit Ruecklage-Anteil
+  |   |       |
+  |   |       |-----MIT 0000072090 - 0000072094 X|X
+  |   |       |-----MIT 0000078100 - 0000078100 X|X L-SoPo-Rüla
+  |   |       ---   MIT 0000078300 - 0000078310 X|X
+  |   |           |
+  |   |           |-----0000078300 L-H-A-AK-Erhaltene InvstitFördg
+  |   |           ------0000078310 L-Verrechnung erhaltene Investitions-Förderungen
+  |   |
+  |   |--   2030000 Rueckstellungen
+  |   |   |
+  |   |   |--   2031000 Rueckstellungen fuer Pensionen und
+  |   |   |   |
+  |   |   |   ------MIT 0000085000 - 0000085000 X|X L-H-RSt Pens AB        DBO (Guta)
+  |   |   |
+  |   |   |--   2032000 Rueckstellungen fuer latente Steuern
+  |   |   |   |
+  |   |   |   ------MIT 0000087000 - 0000087000 X|X L-RSt fuer latente Steuern
+  |   |   |
+  |   |   |--   2033000 Steuer-Rueckstellungen
+  |   |   |   |
+  |   |   |   ---   MIT 0000088000 - 0000088900 X|X
+  |   |   |       |
+  |   |   |       |-----0000088000 L-RSt Steuer
+  |   |   |       |-----0000088100 L-RSt KSt
+  |   |   |       |-----0000088200 L-RSt KESt
+  |   |   |       |-----0000088290 RSt ATZ Paisy  Erfüllung
+  |   |   |       |-----0000088291 RSt ATZ Paisy  Aufstockg
+  |   |   |       |-----0000088292 RSt ATZ Paisy Abfindung
+  |   |   |       |-----0000088400 L-RSt Steuer v Einkommen u Ertrag
+  |   |   |       ------0000088900 L-RSt Steuer Sonstige
+  |   |   |
+  |   |   |--   2034000 Sonstige Rueckstellungen
+  |   |   |   |
+  |   |   |   |-----MIT 0000085900 - 0000085910 X|X
+  |   |   |   |--   MIT 0000086100 - 0000086300 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000086100 L-Fracht-Rückstellung (MM)
+  |   |   |   |   |-----0000086200 L-Zoll-Rückstellung (MM)
+  |   |   |   |   ------0000086300 L-Bezugskosten-Rückstellung (MM)
+  |   |   |   |
+  |   |   |   |--   MIT 0000089000 - 0000089500 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000089000 RSt Sonstige
+  |   |   |   |   |-----0000089100 RSt übr ges Risiko
+  |   |   |   |   |-----0000089110 RSt Risiko Nachverhandlung Provider
+  |   |   |   |   |-----0000089120 Rst Risiko Software/Hardware
+  |   |   |   |   |-----0000089200 RSt Gewinnausschütt Kunden
+  |   |   |   |   |-----0000089210 RSt ERA Rest
+  |   |   |   |   |-----0000089220 Z- RSt ERA MN
+  |   |   |   |   |-----0000089230 RSt Zeitguthaben
+  |   |   |   |   |-----0000089240 RSt Sonderzahlung freiwillig
+  |   |   |   |   |-----0000089250 RSt Tantiemen
+  |   |   |   |   |-----0000089260 RSt Rest-Urlaub
+  |   |   |   |   |-----0000089270 H-RSt Jubi AB            (Guta)
+  |   |   |   |   |-----0000089280 RSt dAl               (Guta)
+  |   |   |   |   |-----0000089281 RSt dAl    HGB            (Guta)
+  |   |   |   |   |-----0000089290 H-RSt ATZ Erfüllung        (Guta)
+  |   |   |   |   |-----0000089291 H-RSt ATZ Aufstockg        (Guta)
+  |   |   |   |   |-----0000089292 H-RSt ATZ Abfindung        (Guta)
+  |   |   |   |   |-----0000089300 RSt Berufsgenossenschaft
+  |   |   |   |   |-----0000089310 RSt AusglAbgabe (Schwerbeh)
+  |   |   |   |   |-----0000089320 RSt Konjunkturbonus
+  |   |   |   |   |-----0000089330 RSt tarifliche Einmalzahlung
+  |   |   |   |   |-----0000089340 RSt Pers Umzugskosten
+  |   |   |   |   |-----0000089350 RSt Weihnachtsgeld
+  |   |   |   |   |-----0000089360 RSt Abfindung
+  |   |   |   |   |-----0000089370 RSt Projekt-Prämie
+  |   |   |   |   |-----0000089380 RSt Pers Restrukturierung
+  |   |   |   |   |-----0000089390 L-Abgrenzung Personalrückstellungen
+  |   |   |   |   |-----0000089400 L-RSt für unterlassene Instandhaltungen
+  |   |   |   |   |-----0000089410 RSt PSV-Beiträge
+  |   |   |   |   |-----0000089450 Verbindl. MEV
+  |   |   |   |   ------0000089500 L-RSt f and Aufwendungen gem  §249 Abs 2
+  |   |   |   |
+  |   |   |   |--   MIT 0000089600 - 0000089700 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000089600 RSt ausstehende Rechnungen
+  |   |   |   |   |-----0000089610 RSt gegenüber verb. Unternehmen
+  |   |   |   |   |-----0000089620 RSt SAP HR Projekt
+  |   |   |   |   |-----0000089650 RSt Prozesskosten
+  |   |   |   |   |-----0000089670 RSt Kurzarbeit
+  |   |   |   |   ------0000089700 RSt Rückbauverpflichtg
+  |   |   |   |
+  |   |   |   |-----MIT 0000191102 - 0000191102 X|X L-WE/RE: Noch nicht berechnete Lief u. Leistung
+  |   |   |   ---   MIT 0000192100 - 0000192700 X|X
+  |   |   |       |
+  |   |   |       |-----0000192100 Fracht-Verr  MM
+  |   |   |       |-----0000192200 übrige sonstige Verbindlichkeiten
+  |   |   |       |-----0000192300 L-Zoll-Verrechnung (MM)
+  |   |   |       ------0000192500 L-Bezugsnebenkosten-Verrechnung (MM)
+  |   |   |
+  |   |   ---   2039000 innerjährliche Rückstellungen
+  |   |       |
+  |   |       ---   MIT 0000090000 - 0000090500 X|X
+  |   |           |
+  |   |           |-----0000090000 H-RSt Jubi Wechsler      (Guta)
+  |   |           |-----0000090010 H-RSt Jubi ServCost      (Guta)
+  |   |           |-----0000090020 H-RSt Jubi InterCost     (Guta)
+  |   |           |-----0000090030 H-RSt Jubi SonstAufw     (Guta)
+  |   |           |-----0000090100 RSt dAl Wechsler         (Guta)
+  |   |           |-----0000090110 RSt dAl Präm              (Guta)
+  |   |           |-----0000090120 RSt dAl Zins             (Guta)
+  |   |           |-----0000090200 L-RSt Leasing IT
+  |   |           ------0000090300 L-RSt Miete IT
+  |   |
+  |   |--   2040000 Verbindlichkeiten
+  |   |   |
+  |   |   |--   2041000 Anleihen
+  |   |   |   |
+  |   |   |   |--   2041010 Konvertible Anleihen
+  |   |   |   |   |
+  |   |   |   |   |-----2041011 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |-----2041012 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   ------2041013 mit einer Restlaufzeit von ueber 5 Jahren
+  |   |   |   |
+  |   |   |   ---   2041020 Nicht konvertible Anleihen
+  |   |   |       |
+  |   |   |       |-----2041021 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |       |-----2041022 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |       ------2041023 mit einer Restlaufzeit von ueber 5 Jahren
+  |   |   |
+  |   |   |--   2042000 Verbindlichkeiten gegenueber Kreditinstituten
+  |   |   |   |
+  |   |   |   |--   2042010 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |
+  |   |   |   |   |--   2042010/00 Sonstige
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----MIT 0000062110 - 0000062110 X|X L-Darl v. Kreditinstituten, Restlaufz. < 1 Jahr
+  |   |   |   |   |   ---   MIT 0000062199 - 0000062210 X|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000062199 L-Korrekturkonto Darlehen von Kreditinstituten
+  |   |   |   |   |       ------0000062210 L-K-Darl KreditInst RLZ  <1J
+  |   |   |   |   |
+  |   |   |   |   |--   2042010/21 Postgiro         _|X  --> 1044000/21 Postgiro
+  |   |   |   |   |   |
+  |   |   |   |   |   ------MIT 0000110000 - 0000110005 _|X
+  |   |   |   |   |
+  |   |   |   |   |--   2042010/22 Commerzbank      _|X  --> 1044000/22 Commerzbank
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   MIT 0000113100 - 0000113107 _|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000113100 Bank Comba Mü KtoNr 133308700
+  |   |   |   |   |   |   |-----0000113101 Bank Comba Mü Ausgangs-Schecks
+  |   |   |   |   |   |   |-----0000113102 Verr Comba Mü Zahlweg U Inl
+  |   |   |   |   |   |   |-----0000113103 Verr Comba Mü Zahlweg L Ausl
+  |   |   |   |   |   |   |-----0000113104 Bank Comba Mü Bankeinzug
+  |   |   |   |   |   |   |-----0000113105 Bank Comba Mü ZwiBu Kred/Sonst
+  |   |   |   |   |   |   |-----0000113106 Bank Comba E-Scheck 133308700
+  |   |   |   |   |   |   ------0000113107 Bank Comba Mü ZwiBu Debi
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   MIT 0000113150 - 0000113165 _|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000113150 L-Bank Comba Mü ZwiBu Kred/Sonst
+  |   |   |   |   |       ------0000113155 L-Commerzbank Mü ZwiKto
+  |   |   |   |   |
+  |   |   |   |   ---   2042010/23 Deutsche Bank    _|X  --> 1044000/23 Deutsche Bank
+  |   |   |   |       |
+  |   |   |   |       ---   MIT 0000113200 - 0000113207 _|X
+  |   |   |   |           |
+  |   |   |   |           |-----0000113200 Bank Deuba Mü KtoNr 199541400
+  |   |   |   |           |-----0000113201 Bank Deuba Mü Ausgangs-Schecks
+  |   |   |   |           |-----0000113202 Verr Deuba Mü Zahlweg U Inl
+  |   |   |   |           |-----0000113203 Verr Deuba Mü Zahlweg U Ausl
+  |   |   |   |           |-----0000113204 Bank Deuba Mü Bankeinzug
+  |   |   |   |           |-----0000113205 Bank Deuba Mü ZwiBu Kred/Sonst
+  |   |   |   |           |-----0000113206 Bank Deuba E-Scheck 199541400
+  |   |   |   |           ------0000113207 Bank Deuba Mü ZwiBu Debi
+  |   |   |   |
+  |   |   |   |--   2042020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |
+  |   |   |   |   |-----MIT 0000062120 - 0000062120 X|X L-Darl v. Kreditinstituten, Restlaufz. 1-5 Jahre
+  |   |   |   |   ------MIT 0000062220 - 0000062220 X|X L-K-Darl KreditInst RLZ 1-5J
+  |   |   |   |
+  |   |   |   ---   2042030 mit einer Restlaufzeit von ueber 5 Jahren
+  |   |   |       |
+  |   |   |       |-----MIT 0000062130 - 0000062130 X|X L-Darl v. Kreditinstituten, Restlaufz. > 5 Jahre
+  |   |   |       ------MIT 0000062230 - 0000062230 X|X L-K-Darl KreditInst RLZ  >5J
+  |   |   |
+  |   |   |--   2043000 Erhaltene Anzahlungen auf Bestellungen
+  |   |   |   |
+  |   |   |   |--   2043010 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |
+  |   |   |   |   |--   MIT 0000170000 - 0000170010 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000170000 L-D-Erhaltene  Anz
+  |   |   |   |   |   |-----0000170001 L-Erhaltene Anz manuell
+  |   |   |   |   |   ------0000170010 L-Steuer-Verrechnung auf Kundenanzahlung
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000170099 - 0000170099 X|X L-Hilfskonto Korrektur Deb/Kred-Stämme
+  |   |   |   |
+  |   |   |   |--   2043020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000170020 - 0000170020 X|X L-Erhaltene Anzahlungen, Restlaufzeit 1-5 Jahre
+  |   |   |   |
+  |   |   |   ---   2043030 mit einer Restlaufzeit von ueber 5 Jahren
+  |   |   |       |
+  |   |   |       ------MIT 0000170030 - 0000170030 X|X L-Erhaltene Anzahlungen, Restlaufzeit > 5 Jahre
+  |   |   |
+  |   |   |--   2044000 Verbindlichkeiten aus
+  |   |   |   |
+  |   |   |   |--   2044010 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |
+  |   |   |   |   |--   MIT 0000160000 - 0000160010 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000160000 K-Vb fD                Inl
+  |   |   |   |   |   |-----0000160001 L-Kred-Verbindlichkeiten Inl. / Übernahme Kto.
+  |   |   |   |   |   ------0000160010 L-Kred Inland, Restlaufzeit 1-5 Jahre
+  |   |   |   |   |
+  |   |   |   |   |-----MIT 0000160099 - 0000160099 X|X L-Kred-Verbindlichkeit Inland (Korrekturkonto)
+  |   |   |   |   |--   MIT 0000161000 - 0000161010 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000161000 K-Vb fD                Ausl
+  |   |   |   |   |   ------0000161010 L-Kred  Ausland, Restlaufz. 1-5 Jahre
+  |   |   |   |   |
+  |   |   |   |   |-----MIT 0000161099 - 0000161099 X|X L-Kred-Verbindlichk. Ausland (Korrekturkonto)
+  |   |   |   |   |-----MIT 0000163100 - 0000163100 X|X H-Kred Korrektur KursDifferenzen
+  |   |   |   |   |-----MIT 0000169900 - 0000169900 X|X Konto nicht vorhanden
+  |   |   |   |   |-----MIT 0000191100 - 0000191100 X|X VerrKto WE/RE Fremdbezug
+  |   |   |   |   |-----MIT 0000193000 - 0000193000 X|X VerrKto AV-LiefSkto (Netto-Verfahren)
+  |   |   |   |   |-----MIT 0000194500 - 0000194500 X|X Konto nicht vorhanden
+  |   |   |   |   ------MIT 0000197100 - 0000197100 X|X L-K-Sicherheitseinbehalt
+  |   |   |   |
+  |   |   |   |--   2044020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |
+  |   |   |   |   |-----MIT 0000160020 - 0000160020 X|X L-Kred.Inland, Restlaufz. > 5 Jahre
+  |   |   |   |   ------MIT 0000161020 - 0000161020 X|X L-Kred. Ausland, Restlaufz. > 5 Jahre
+  |   |   |   |
+  |   |   |   ---   2044030 mit einer Restlaufzeit von ueber 5 Jahren
+  |   |   |       |
+  |   |   |       |-----MIT 0000160030 - 0000160030 X|X Konto nicht vorhanden
+  |   |   |       ------MIT 0000161030 - 0000161030 X|X Konto nicht vorhanden
+  |   |   |
+  |   |   |--   2045000 Verbindlichkeiten aus Annahme gezog. Wechsel
+  |   |   |   |
+  |   |   |   |-----2045010 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |-----2045020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   ------2045030 mit einer Restlaufzeit von ueber 5 Jahren
+  |   |   |
+  |   |   |--   2046000 Verbindlichkeiten gegenüber verb. Unternehmen
+  |   |   |   |
+  |   |   |   |--   2046010 mit einer Restlaufzeit bis zu
+  |   |   |   |   |
+  |   |   |   |   |-----MIT 0000164000 - 0000164000 X|X K-Vb VU Gk             Inl
+  |   |   |   |   ------MIT 0000164099 - 0000164099 X|X L-Kred-Verb. verb Untern., kons. Inland Korr.Konto
+  |   |   |   |
+  |   |   |   |--   2046011 Konzernverrechnung ICA                       _|X  --> 10420210 Konzernverrechnung ICA
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000113900 - 0000113900 _|X ICA MAN-SE Konzernverrechnung
+  |   |   |   |
+  |   |   |   |--   2046020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000164020 - 0000164020 X|X L-K-Verb VU  ko  >5J Inl
+  |   |   |   |
+  |   |   |   ---   2046030 mit einer Restlaufzeit von ueber 5 Jahren
+  |   |   |       |
+  |   |   |       ------MIT 0000164030 - 0000164030 X|X Konto nicht vorhanden
+  |   |   |
+  |   |   |--   2047000 Verbindlichkeiten gegenueber Unternehmen,
+  |   |   |   |
+  |   |   |   |--   2047010 mit einer Restlaufzeit bis zu einem Jahr
+  |   |   |   |   |
+  |   |   |   |   |-----MIT 0000165000 - 0000165000 X|X K-Vb as                Inl
+  |   |   |   |   ------MIT 0000165099 - 0000165099 X|X L-Kred-Verb.verb.Untern,nicht kons.Inland Korr.Kto
+  |   |   |   |
+  |   |   |   |--   2047020 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000165020 - 0000165020 X|X L-K-Verb VU nko  >5J Inl
+  |   |   |   |
+  |   |   |   ---   2047030 mit einer Restlaufzeit von ueber 5 Jahren
+  |   |   |       |
+  |   |   |       ------MIT 0000165030 - 0000165030 X|X Konto nicht vorhanden
+  |   |   |
+  |   |   ---   2048000 Sonstige Verbindlichkeiten
+  |   |       |
+  |   |       |--   2048010 Sonstige Verbindlichkeiten aus Steuern
+  |   |       |   |
+  |   |       |   |--   2048011 mit einer Restlaufzeit bis zu einem Jahr
+  |   |       |   |   |
+  |   |       |   |   |-----MIT 0000176100 - 0000176100 X|X Verb abzufüh Lohn-/KiSt
+  |   |       |   |   |-----MIT 0000177000 - 0000177300 X|X
+  |   |       |   |   ------MIT 0000178100 - 0000178100 X|X L-Verb aus Steuern, Restlaufz. bis 1 J.
+  |   |       |   |
+  |   |       |   |--   2048012 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |       |   |   |
+  |   |       |   |   ------MIT 0000178200 - 0000178200 X|X L-Verb aus Steuern, Restlaufzeit 1-5 J.
+  |   |       |   |
+  |   |       |   ---   2048013 mit einer Restlaufzeit von ueber 5 Jahren
+  |   |       |       |
+  |   |       |       ------MIT 0000178300 - 0000178300 X|X L-Verb aus Steuern, Restlaufzeit > 5 J.
+  |   |       |
+  |   |       |--   2048020 Sonstige Verbindlichkeiten im Rahmen
+  |   |       |   |
+  |   |       |   |--   2048021 mit einer Restlaufzeit bis zu einem Jahr
+  |   |       |   |   |
+  |   |       |   |   |-----MIT 0000176200 - 0000176200 X|X Verb abzufüh SozialVers
+  |   |       |   |   ------MIT 0000176700 - 0000176700 X|X L-SonstVerb. i. R. soz. Sich., Restlaufz. bis 1 J.
+  |   |       |   |
+  |   |       |   |--   2048022 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |       |   |   |
+  |   |       |   |   ------MIT 0000176800 - 0000176800 X|X L-SonstVerb. i. R. soz. Sich., Restlaufzeit 1-5 J.
+  |   |       |   |
+  |   |       |   ---   2048023 mit einer Restlaufzeit von ueber 5 Jahren
+  |   |       |       |
+  |   |       |       ------MIT 0000176900 - 0000176900 X|X L-SonstVerb. i. R. soz. Sich., Restlaufzeit > 5 J.
+  |   |       |
+  |   |       ---   2048030 Andere sonstige Verbindlichkeiten
+  |   |           |
+  |   |           |--   2048031 mit einer Restlaufzeit bis zu einem Jahr
+  |   |           |   |
+  |   |           |   |--   2048031/00 Sonstige Verbindlichkeiten
+  |   |           |   |   |
+  |   |           |   |   |-----MIT 0000163000 - 0000163000 X|X L-Kreditorische Debitoren
+  |   |           |   |   |--   MIT 0000170800 - 0000170900 X|X
+  |   |           |   |   |   |
+  |   |           |   |   |   |-----0000170800 L-Verbindlichkeiten gegen Mitarbeiter
+  |   |           |   |   |   ------0000170900 L-Verbindlichkeiten gegen Finanzamt
+  |   |           |   |   |
+  |   |           |   |   |--   MIT 0000172000 - 0000172210 X|X
+  |   |           |   |   |   |
+  |   |           |   |   |   |-----0000172040 L-Verbandsbeiträge
+  |   |           |   |   |   |-----0000172070 L-Krankentaggelder
+  |   |           |   |   |   |-----0000172090 Verr PensKasse
+  |   |           |   |   |   |-----0000172100 L-Krankenkassen-Abrechnung
+  |   |           |   |   |   |-----0000172110 L-Mietabzüge
+  |   |           |   |   |   |-----0000172120 Verr Kantinenabzüge
+  |   |           |   |   |   |-----0000172130 L-Darlehenszinsen
+  |   |           |   |   |   |-----0000172140 Verr DarlRückzahlg
+  |   |           |   |   |   |-----0000172150 L-Auszahlungskonto
+  |   |           |   |   |   |-----0000172160 Verr Aufrollungsdiff
+  |   |           |   |   |   |-----0000172170 Verr Essensgeldkarte
+  |   |           |   |   |   |-----0000172180 Verr Einbehaltene Kfz-Leasingraten
+  |   |           |   |   |   |-----0000172190 Verr Vorschüsse
+  |   |           |   |   |   |-----0000172200 L-Belegsplittkonto
+  |   |           |   |   |   ------0000172210 L-RSt 13 Monatsgehalt
+  |   |           |   |   |
+  |   |           |   |   |-----MIT 0000176000 - 0000176000 X|X Verb auszuzahl Löhne & Gehälter
+  |   |           |   |   |-----MIT 0000176210 - 0000176210 X|X Verb ATZ Sicherung
+  |   |           |   |   |--   MIT 0000176300 - 0000176600 X|X
+  |   |           |   |   |   |
+  |   |           |   |   |   |-----0000176300 Verb abzufüh Pfändungen
+  |   |           |   |   |   |-----0000176310 Verb abzufüh Vermögensbildung
+  |   |           |   |   |   |-----0000176320 Verb abzufüh Direktversichg
+  |   |           |   |   |   |-----0000176330 Verb Sterbekasse
+  |   |           |   |   |   |-----0000176340 Verr RestCentKasse
+  |   |           |   |   |   |-----0000176350 Verr Sammelüberweisg
+  |   |           |   |   |   |-----0000176360 Verr Einbeh Braunlag
+  |   |           |   |   |   |-----0000176370 L-Essensgeld
+  |   |           |   |   |   |-----0000176400 Verr L&G MN  München
+  |   |           |   |   |   |-----0000176410 Verr L&G MN  Nürnberg
+  |   |           |   |   |   |-----0000176420 Verr L&G MN  Salzgitt
+  |   |           |   |   |   |-----0000176430 Verr L&G MN  Gustavsbg
+  |   |           |   |   |   |-----0000176440 L-Verr L&G MN  Stuttgart
+  |   |           |   |   |   |-----0000176450 L-Verr L&G MN  Dachau
+  |   |           |   |   |   |-----0000176460 L-Verr L&G MN  Pilsting
+  |   |           |   |   |   |-----0000176470 L-Verr L&G MR  Augsburg
+  |   |           |   |   |   |-----0000176480 L-Verr L&G MR  Offenbach
+  |   |           |   |   |   |-----0000176490 L-Verr L&G MR  Plauen
+  |   |           |   |   |   |-----0000176500 Verr L&G MBD Augsburg
+  |   |           |   |   |   |-----0000176510 Verr L&G MBD Hamburg
+  |   |           |   |   |   |-----0000176520 Verr L&G MTM Oberhausen
+  |   |           |   |   |   |-----0000176530 L-Verr L&G MTM Berlin
+  |   |           |   |   |   |-----0000176540 Verr L&G MIT Karlsfeld
+  |   |           |   |   |   |-----0000176545 Verr L&G MHR Karlsfeld
+  |   |           |   |   |   |-----0000176550 Verb an Mitarbeiter
+  |   |           |   |   |   ------0000176600 Verb abzufüh Beträge an Dritte
+  |   |           |   |   |
+  |   |           |   |   |--   MIT 0000179100 - 0000179170 X|X
+  |   |           |   |   |   |
+  |   |           |   |   |   ------0000179100 Verb Sonstige
+  |   |           |   |   |
+  |   |           |   |   |-----MIT 0000179399 - 0000179399 X|X L-Verb Sonst KorrKto
+  |   |           |   |   |-----MIT 0000179500 - 0000179500 X|X K-Vb        Reisek
+  |   |           |   |   ------MIT 0000196910 - 0000196930 X|X
+  |   |           |   |
+  |   |           |   ---   2048031/10 Umsatzsteuer                  _|X  --> 1042041/10 Ford. Umsatzsteuer
+  |   |           |       |
+  |   |           |       |--   MIT 0000154000 - 0000154050 _|X
+  |   |           |       |   |
+  |   |           |       |   |-----0000154000 Vorsteuer      16%
+  |   |           |       |   |-----0000154010 Vorsteuer      19%
+  |   |           |       |   ------0000154050 Vorsteuer       7%
+  |   |           |       |
+  |   |           |       |--   MIT 0000154100 - 0000154400 _|X
+  |   |           |       |   |
+  |   |           |       |   |-----0000154100 EUSt           16%
+  |   |           |       |   |-----0000154110 EUSt           19%
+  |   |           |       |   |-----0000154150 EUSt            7%
+  |   |           |       |   |-----0000154200 L-Vorsteuer - Dänemark 25%
+  |   |           |       |   |-----0000154210 L-Vorsteuer - Dänemark 12,5%
+  |   |           |       |   ------0000154220 L-Vorsteuer - Dänemark 6,25%
+  |   |           |       |
+  |   |           |       |--   MIT 0000175000 - 0000175003 _|X
+  |   |           |       |   |
+  |   |           |       |   ------0000175000 MwSt           16%
+  |   |           |       |
+  |   |           |       |-----MIT 0000175050 - 0000175050 _|X Erwerbsteuer   16% (Ausgangssteuer)
+  |   |           |       |--   MIT 0000175100 - 0000175300 _|X
+  |   |           |       |   |
+  |   |           |       |   |-----0000175200 L-Ausgangssteuer Dänemark 25%
+  |   |           |       |   ------0000175210 L-Ausgangssteuer EU 25%
+  |   |           |       |
+  |   |           |       ------MIT 0000195000 - 0000195000 _|X Ford/Verb gg Finanzamt
+  |   |           |
+  |   |           |--   2048032 mit einer Restlaufzeit von 1 bis 5 Jahren
+  |   |           |   |
+  |   |           |   ------MIT 0000179200 - 0000179200 X|X L-Sonst Verbindlichkeiten, Restlaufz. 1-5 Jahre
+  |   |           |
+  |   |           ---   2048033 mit einer Restlaufzeit von ueber 5 Jahren
+  |   |               |
+  |   |               ------MIT 0000179300 - 0000179300 X|X L-Sonstige Verb Restlaufzeit > 5 Jahre
+  |   |
+  |   ---   2050000 Rechnungsabgrenzungsposten
+  |       |
+  |       ------MIT 0000099000 - 0000099000 X|X L-PRA
+  |
+  |--   3000000 Gewinn- und Verlust-Rechnung
+  |   |
+  |   |--   3010000 Umsatzerloese
+  |   |   |
+  |   |   |--   3011000 Brutto-Erloese
+  |   |   |   |
+  |   |   |   |--   3011010 Inland
+  |   |   |   |   |
+  |   |   |   |   |--   MIT 0000800000 - 0000800001 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   ------0000800000 Umsatzerlöse Inland ggü.Dritte
+  |   |   |   |   |
+  |   |   |   |   |--   MIT 0000804000 - 0000808000 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000804000 Z- IC UE                           Bt Inl
+  |   |   |   |   |   |-----0000805000 Z- IC UE                           Bt Ausl
+  |   |   |   |   |   |-----0000806000 Z- IC UE                           as Inl
+  |   |   |   |   |   |-----0000807000 Z- IC UE                           as Ausl
+  |   |   |   |   |   ------0000808000 Z-Erl  Sonstige
+  |   |   |   |   |
+  |   |   |   |   |-----MIT 0000830000 - 0000830000 X|X Z-Umsatzerlöse abgerechneter Aufträge
+  |   |   |   |   |-----MIT 0000841000 - 0000841000 X|X Konto nicht vorhanden
+  |   |   |   |   |-----MIT 0000841680 - 0000841690 X|X
+  |   |   |   |   |-----MIT 0000841800 - 0000841800 X|X Konto nicht vorhanden
+  |   |   |   |   ---   MIT 0000871000 - 0000872000 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000871000 Z- ES                       fD Ausl
+  |   |   |   |       ------0000872000 Erlösschmälerung VBU Inland
+  |   |   |   |
+  |   |   |   ---   3011020 Ausland
+  |   |   |       |
+  |   |   |       ------MIT 0000801000 - 0000801000 X|X Z-   UE                           fD Ausl
+  |   |   |
+  |   |   ---   3012000 Erloes-Schmaelerungen
+  |   |       |
+  |   |       |-----MIT 0000880000 - 0000880000 X|X Z-Kunden-Skonti
+  |   |       |-----MIT 0000880010 - 0000880010 X|X Konto nicht vorhanden
+  |   |       |--   MIT 0000881000 - 0000881001 X|X
+  |   |       |   |
+  |   |       |   ------0000881000 Z-ES Unberechtigte Kund-Abzüge
+  |   |       |
+  |   |       ---   MIT 0000883000 - 0000889000 X|X
+  |   |           |
+  |   |           |-----0000883000 Z-Rabatte
+  |   |           |-----0000884000 Z-Boni
+  |   |           |-----0000888000 Z-Erloesschmaelerungen mit Kostenart
+  |   |           ------0000889000 Z-Sonstige Erloes-Schmaelerungen
+  |   |
+  |   |--   3020000 Bestands-Veraenderung
+  |   |   |
+  |   |   ---   MIT 0000890000 - 0000896000 X|X
+  |   |       |
+  |   |       |-----0000890000    UE So                        fD Inl
+  |   |       |-----0000890001 Z-Bestandsveränderung Verschrottung Eigen-Material
+  |   |       |-----0000890002 Z-Bestandsverändg Qualitätskontrolle Eigen-Mat.
+  |   |       |-----0000891000    UE So                        fD Ausl
+  |   |       |-----0000892000 IC UE So                        VU Inl
+  |   |       |-----0000892100 IC UE So                        Tk Inl
+  |   |       |-----0000892200 IC UE So                        Gn Inl
+  |   |       |-----0000893000 IC UE So                        VU Ausl
+  |   |       |-----0000893010 Z-Bestandsv. Verkauf Eigenerz. ohne Kostenart
+  |   |       |-----0000893015 Z-Bestandsv. Verkauf Eigenerz. mit Kostenart
+  |   |       |-----0000893020 Z-Bestandsveränderung Zugang Eigen-Erzeugnisse
+  |   |       |-----0000893100 IC UE So                        Tk Ausl
+  |   |       |-----0000893200 IC UE So                        Gn Ausl
+  |   |       |-----0000894000 IC UE So                        Bt Inl
+  |   |       |-----0000894010 Z-Bestandsv. Verkauf Erzeugnisse ohne Kostenart
+  |   |       |-----0000894020 Z-Bestandsveränderung Zugang Fremderzeugnisse
+  |   |       |-----0000894025 Z-Bestandsv. Verkauf Fremderz. mit Kostenart
+  |   |       |-----0000894030 Z-Bestandsveränderung - Umsatzkosten
+  |   |       |-----0000895000 IC UE So                        Bt Ausl
+  |   |       ------0000896000 IC UE So                        as Inl
+  |   |
+  |   |--   3030000 Andere aktivierte Eigenleistungen
+  |   |   |
+  |   |   ---   MIT 0000810000 - 0000811000 X|X
+  |   |       |
+  |   |       |-----0000810000 Z-Aktivierte Eigenleistungen
+  |   |       ------0000811000 Z-Ertrag aus Aktivierung abgerechneter Auftraege
+  |   |
+  |   |--   3040000 Sonstige betriebliche Ertraege
+  |   |   |
+  |   |   |--   3041000 Ertrag aus der Aufloesung des Sonderpostens
+  |   |   |   |
+  |   |   |   ------MIT 0000252000 - 0000252301 X|X
+  |   |   |
+  |   |   ---   3042000 Uebrige sonstige betriebliche Ertraege
+  |   |       |
+  |   |       |-----MIT 0000235200 - 0000235250 X|X
+  |   |       |--   MIT 0000250000 - 0000250100 X|X
+  |   |       |   |
+  |   |       |   |-----0000250000 H-Ertr AV Abgang
+  |   |       |   ------0000250100 Z-H-aPl Nachaktivierung
+  |   |       |
+  |   |       |--   MIT 0000253000 - 0000253100 X|X
+  |   |       |   |
+  |   |       |   ------0000253000 H-Ertr AV Zuschreibungen
+  |   |       |
+  |   |       |-----MIT 0000260000 - 0000260000 X|X Z-Ertr PWB zu Ford
+  |   |       |--   MIT 0000275120 - 0000275300 X|X
+  |   |       |   |
+  |   |       |   |-----0000275120 Z-Ertrag aus Zinsen für überfällige Zahlungen
+  |   |       |   ------0000275300 Z-Ertrag aus Inkasso-Gebuehren
+  |   |       |
+  |   |       |--   MIT 0000280000 - 0000280100 X|X
+  |   |       |   |
+  |   |       |   |-----0000280000 Ertr Währungskurs-Differenzen
+  |   |       |   |-----0000280010 H-Ertr WährungsBewertung
+  |   |       |   |-----0000280020 Z- Ertr WährungsBewertung
+  |   |       |   |-----0000280040 Z-Ertr aus Rundungs-Differenzen Fremdwährung (MM)
+  |   |       |   |-----0000280050 Z-Ertr Kursdifferenzen a. Vorstufen (Mat. Ledger)
+  |   |       |   ------0000280100 Z-Ertrag aus nicht real. Waehrungskurs-Differenzen
+  |   |       |
+  |   |       |-----MIT 0000281900 - 0000281900 X|X Ertr Kleindifferenzen Rechnungseingang (MM)
+  |   |       |-----MIT 0000290000 - 0000290000 X|X Ertr Auflösung von RSt
+  |   |       |--   MIT 0000299000 - 0000299100 X|X
+  |   |       |   |
+  |   |       |   |-----0000299000 Ertr Sonstige betriebliche
+  |   |       |   |-----0000299001 Ertr Sonstige betriebliche FLM
+  |   |       |   |-----0000299002 Ertr Sonstige betriebliche VBU
+  |   |       |   |-----0000299050 Z-Ertr tolerierte Differenz/Sachkontenausgleich
+  |   |       |   ------0000299100 Ertr GruppVers GHH-Vertrag
+  |   |       |
+  |   |       |-----MIT 0000840000 - 0000840100 X|X
+  |   |       |-----MIT 0000841050 - 0000841099 X|X
+  |   |       |-----MIT 0000841500 - 0000841580 X|X
+  |   |       ------MIT 0000841900 - 0000841910 X|X
+  |   |
+  |   |--   3050000 Materialaufwand
+  |   |   |
+  |   |   |--   3051000 Aufwendungen fuer Roh-, Hilfs- und
+  |   |   |   |
+  |   |   |   |--   3051010 Aufwendungen fuer Brennstoffe
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000416400 - 0000416500 X|X
+  |   |   |   |
+  |   |   |   |--   3051030 Aufwendungen fuer Strom
+  |   |   |   |   |
+  |   |   |   |   ---   MIT 0000416100 - 0000416200 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000416100 Z-Fremdbezug Gas
+  |   |   |   |       ------0000416200 Z-Fremdbezug Wasser
+  |   |   |   |
+  |   |   |   |--   3051040 Aufwendungen fuer Wasser
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000416300 - 0000416300 X|X Konto nicht vorhanden
+  |   |   |   |
+  |   |   |   ---   3051090 Sonstige Aufwendungen fuer RHB-Stoffe
+  |   |   |       |
+  |   |   |       |--   MIT 0000231000 - 0000231010 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000231000 Aufw aus Preisdifferenzen Fremderzeugnisse
+  |   |   |       |   ------0000231010 Z-Aufw Preisdiff a.Abr. Material Ledger Fremd
+  |   |   |       |
+  |   |   |       |--   MIT 0000231080 - 0000231100 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000231080 Aufwand aus WB auf Vorräte
+  |   |   |       |   ------0000231100 Z-Aufwand aus Fracht-Differenzen
+  |   |   |       |
+  |   |   |       |--   MIT 0000231500 - 0000231520 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000231500 Z-Aufwand aus Preisdifferenzen Eigenerzeugnisse
+  |   |   |       |   |-----0000231510 Z-Aufw.Preisdiff a.Abr. Material Ledger Eig.
+  |   |   |       |   ------0000231520 Z-Aufw Preisdifferenzen a. Vorstufen Eigenmat. ML
+  |   |   |       |
+  |   |   |       |--   MIT 0000231600 - 0000231900 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000231600 ungeplante Bezugsnebenkosten
+  |   |   |       |   ------0000231900 Aufw aus Kleindifferenz Rechnungseingang
+  |   |   |       |
+  |   |   |       |--   MIT 0000232000 - 0000232500 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000232000 Z-Aufwand aus Umbewertung Fremdmaterial
+  |   |   |       |   ------0000232500 Z-Aufwand aus Umbewertung Eigenmaterial
+  |   |   |       |
+  |   |   |       |--   MIT 0000233000 - 0000233010 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000233000 Aufw aus  Inventur-Differenzen
+  |   |   |       |   ------0000233010 Z-Aufw aus Inventur-Differenzen - Konsilager
+  |   |   |       |
+  |   |   |       |--   MIT 0000234000 - 0000235199 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000234000 Z-Aufw aus Umbewertung (bewertet --> unbewertet)
+  |   |   |       |   |-----0000235000 Aufwand aus Umlagerung
+  |   |   |       |   ------0000235010 Z-Aufw Sonstiger
+  |   |   |       |
+  |   |   |       |--   MIT 0000235251 - 0000238000 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000235500 Bestandskorrektur aus MM (Aufwand)
+  |   |   |       |   |-----0000236000 Z-Aufw aus Verbrauch Konsignations-Material
+  |   |   |       |   |-----0000237000 Z-Aufw a.Verbrauch Qualitätskontr. ohne Kostenart
+  |   |   |       |   ------0000238000 Z-H-Aufw Aktivierungs-Differenzen
+  |   |   |       |
+  |   |   |       |-----MIT 0000276000 - 0000276000 X|X Skonto-Ertrag
+  |   |   |       |--   MIT 0000281000 - 0000281010 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000281000 Z-Ertrag aus Preis-Differenzen Fremderzeugnisse
+  |   |   |       |   ------0000281010 Z-Ertr.Preisdiff a.Abr. Material Ledger Fremd
+  |   |   |       |
+  |   |   |       |--   MIT 0000281080 - 0000281520 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000281080 Z-Ertrag aus Neubewertung
+  |   |   |       |   |-----0000281100 Z-Ertrag aus Fracht-Differenzen
+  |   |   |       |   |-----0000281500 Z-Ertrag aus Preis-Differenzen Eigenerzeugnisse
+  |   |   |       |   |-----0000281510 Z-Ertr.Preisdiff a.Abr. Material Ledger Eig.
+  |   |   |       |   ------0000281520 Z-Ertr Preisdifferenzen a. Vorstufen Eigenmat. ML
+  |   |   |       |
+  |   |   |       |--   MIT 0000282000 - 0000287000 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000282000 Z-Ertrag aus Umbewertung Fremdmaterial
+  |   |   |       |   |-----0000282500 Z-Ertrag aus Umbewertung Eigenmaterial
+  |   |   |       |   |-----0000283000 Ertr Inventur-Differenzen
+  |   |   |       |   |-----0000283010 Z-Ertrag aus Inventur-Differenzen - Konsilager
+  |   |   |       |   |-----0000284000 Z-Ertr aus Umbewertung  (bewertet --> unbewertet)
+  |   |   |       |   |-----0000285000 Z-Ertrag aus Umlagerung
+  |   |   |       |   |-----0000285500 Ertr Vorräte Bestandskorr MM
+  |   |   |       |   |-----0000286000 Z-Ertrag aus Verbrauch Konsignations-Material
+  |   |   |       |   ------0000287000 Z-Ertrag aus Verbrauch Qualitätskontrolle
+  |   |   |       |
+  |   |   |       |-----MIT 0000379998 - 0000379999 X|X
+  |   |   |       |--   MIT 0000400000 - 0000406000 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000400000 Z-Verbrauch Rohstoffe 1
+  |   |   |       |   |-----0000400001 Aufw VerbrMat Travel Management
+  |   |   |       |   |-----0000400002 Aufw VerbrMat Car Management
+  |   |   |       |   |-----0000400003 Aufw. Verbrauchsmaterial Altersversorgung
+  |   |   |       |   |-----0000400004 Z-Verbrauchsmaterial EAC
+  |   |   |       |   |-----0000400010 Z-Verbrauch Rohstoffe 2
+  |   |   |       |   |-----0000400020 Z- Aufw Nutzungsrechte (IA)
+  |   |   |       |   |-----0000400100 Z-Einkauf Rohstoffe 1
+  |   |   |       |   |-----0000400200 Z-Einkauf Rohstoffe 2
+  |   |   |       |   |-----0000403000 Z-Verbrauch Hilfsstoffe
+  |   |   |       |   |-----0000403100 Z-Einkauf Hilfs- und Betriebsstoffe
+  |   |   |       |   |-----0000403500 Z-Verbrauch Betriebsstoffe
+  |   |   |       |   |-----0000403600 Z-Abwertg f. drohende Wertschwankungen RHB-Stoffe
+  |   |   |       |   |-----0000404000 Z-Ersatzteile
+  |   |   |       |   |-----0000405000 Z-Verbrauch: Verpackungsmaterial
+  |   |   |       |   |-----0000405100 Z-Einkauf Verpackungsmaterial
+  |   |   |       |   |-----0000405200 Z-Verbrauch Bürobedarf
+  |   |   |       |   |-----0000405300 Z Aufw Verrechenbare Druckerei-Erzeugn
+  |   |   |       |   ------0000406000 Z-Verbrauch eigen Material
+  |   |   |       |
+  |   |   |       |--   MIT 0000410000 - 0000415001 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000410000 Handelsware&Nutzungsrechte
+  |   |   |       |   |-----0000410001 Verschrottung  Handelsware manuell
+  |   |   |       |   |-----0000410002 Z- Aufw Verschrottg Hd-Ware maschinell
+  |   |   |       |   |-----0000410010 Verbr Hardware (neue Ktofindung MM 463400)
+  |   |   |       |   |-----0000410020 Verbr Hardware Zubehör (neue Ktofindung MM)
+  |   |   |       |   |-----0000410030 Verbrauch Software (neue Ktofindung MM)
+  |   |   |       |   |-----0000410040 Verbr BGA IT (neue Ktofindung MM)
+  |   |   |       |   |-----0000410050 Verbr Toner-/Druckerpatronen (neue Ktofindung
+  |   |   |       |   |-----0000410060 Verbr VerbrauchsMaterial IT (neu Ktofindung M
+  |   |   |       |   |-----0000410070 Z-Verbrauch: Sonstiges IT
+  |   |   |       |   |-----0000410080 Z-Verbrauch: Telekommunikation
+  |   |   |       |   |-----0000410200 Z-Einkauf Leergut
+  |   |   |       |   |-----0000411000 Z- Aufw RSt   VerbrauchsMat
+  |   |   |       |   ------0000415000 Z-Kosten aus Fremdbezug
+  |   |   |       |
+  |   |   |       ------MIT 0000476100 - 0000476100 X|X Delivery Verbrauchsmaterial IT
+  |   |   |
+  |   |   ---   3052000 Aufwendungen fuer bezogene Leistungen
+  |   |       |
+  |   |       |--   MIT 0000417100 - 0000417400 X|X
+  |   |       |   |
+  |   |       |   |-----0000417100 RSt  übrige  geschäftsbezogene Risiken
+  |   |       |   |-----0000417200 Non-Delivery Fremddienstleistung Beratung
+  |   |       |   |-----0000417300 Non-Delivery Fremddienstl/Programm/Custom/Sonstige
+  |   |       |   ------0000417400 interne Umzugskosten MIT
+  |   |       |
+  |   |       |-----MIT 0000418100 - 0000418100 X|X Delivery Fremddienstleistung Beratung
+  |   |       |-----MIT 0000418200 - 0000418200 X|X Delivery Fremddienstleistung VBU
+  |   |       |-----MIT 0000419000 - 0000419000 X|X HR Non-Delivery Leiharbeit
+  |   |       ------MIT 0000419900 - 0000419900 X|X X MIT interne Umzüge
+  |   |
+  |   |--   3060000 Personalaufwand
+  |   |   |
+  |   |   |--   3061000 Loehne und Gehaelter
+  |   |   |   |
+  |   |   |   |--   3061010 Fertigungs-Loehne
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000420000 - 0000420000 X|X Aufw Fertigungslöhne
+  |   |   |   |
+  |   |   |   |--   3061020 Hilfs- und Ausfall-Loehne
+  |   |   |   |   |
+  |   |   |   |   ---   MIT 0000421000 - 0000422000 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000421000 Z-Hilfs-Loehne
+  |   |   |   |       ------0000422000 Aufw Löhne Krankheit/ Abwesenheit
+  |   |   |   |
+  |   |   |   |--   3061030 Krankheits-Loehne und Lohnfortzahlung
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000432000 - 0000432000 X|X Z -Aufw Löhne Fortzahlg
+  |   |   |   |
+  |   |   |   |--   3061050 Gehaelter
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000430000 - 0000430000 X|X Aufw Gehälter
+  |   |   |   |
+  |   |   |   ---   3061090 Sonstige Lohn- und Gehalts-Aufwendungen
+  |   |   |       |
+  |   |   |       |-----MIT 0000422100 - 0000422100 X|X Aufw Löhne Überstunden-Zuschläge
+  |   |   |       |--   MIT 0000430900 - 0000431900 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000430900 Z- Aufw RSt   RestUrlaub
+  |   |   |       |   |-----0000430950 Z-Aufw RSt SozVers
+  |   |   |       |   |-----0000431000 Aufw Gehäl ÜStd-Zuschläge
+  |   |   |       |   |-----0000431100 Z- Aufw Gehäl variable Arb-Zeiten
+  |   |   |       |   |-----0000431200 Aufw Tantieme
+  |   |   |       |   |-----0000431300 Aufw Vermögenswirksame Leistungen Gehälter
+  |   |   |       |   |-----0000431400 Aufw Rst Zeitguthaben
+  |   |   |       |   |-----0000431500 Z- Aufw RSt   Tantieme
+  |   |   |       |   |-----0000431600 Z- Aufw Personal  Restrukturierung
+  |   |   |       |   |-----0000431700 Aufw Umzugskosten Mitarbeiter
+  |   |   |       |   |-----0000431800 Aufw RSt   ERA (Rest)
+  |   |   |       |   |-----0000431810 Aufw RSt   ERA (MN)
+  |   |   |       |   |-----0000431850 Aufw RSt   ATZ
+  |   |   |       |   |-----0000431860 Z-Aufw RSt   ATZ     Aufstockg    >
+  |   |   |       |   |-----0000431870 Z-Aufw RSt   ATZ     Abfindg      >
+  |   |   |       |   ------0000431900 Z- Aufw Löhne Sonstige mit Lohncharakter
+  |   |   |       |
+  |   |   |       ---   MIT 0000434000 - 0000435000 X|X
+  |   |   |           |
+  |   |   |           |-----0000434000 Aufw Resturlaub
+  |   |   |           ------0000435000 Aufw Weihnachtsgeld
+  |   |   |
+  |   |   ---   3062000 Soziale Abgaben und Aufwendungen fuer
+  |   |       |
+  |   |       |--   3062010 Soziale Abgaben
+  |   |       |   |
+  |   |       |   |-----MIT 0000438000 - 0000438000 X|X Z- Aufw RSt   W-Geld               >435000
+  |   |       |   |--   MIT 0000440000 - 0000440100 X|X
+  |   |       |   |   |
+  |   |       |   |   |-----0000440000 Z-Gesetzlich sozialer Aufwand
+  |   |       |   |   ------0000440100 Z- Aufw Gehäl gesetzlich soziale
+  |   |       |   |
+  |   |       |   ------MIT 0000446000 - 0000446000 X|X Z- Aufw Pers  Berufsgenossen-Beitrag
+  |   |       |
+  |   |       |--   3062020 Aufwendungen fuer Altersversorgung
+  |   |       |   |
+  |   |       |   |--   MIT 0000439000 - 0000439200 X|X
+  |   |       |   |   |
+  |   |       |   |   |-----0000439000 Z-Rentenversicherung
+  |   |       |   |   |-----0000439100 Z-Kindergeld
+  |   |       |   |   ------0000439200 Z-Familiengeld
+  |   |       |   |
+  |   |       |   |-----MIT 0000445000 - 0000445000 X|X Aufw für Altersversorgung
+  |   |       |   ------MIT 0000446700 - 0000446700 X|X H-Aufw RSt   Pens Aufw          >
+  |   |       |
+  |   |       ---   3062030 Aufwendungen fuer Unterstuetzung
+  |   |           |
+  |   |           |-----MIT 0000447000 - 0000447000 X|X Z- Aufw für Unterstützung
+  |   |           ------MIT 0000447400 - 0000447400 X|X H-Aufw RSt   Jubi ServCost      >
+  |   |
+  |   |--   3070000 Abschreibungen
+  |   |   |
+  |   |   |--   3071000 AfA auf immaterielle Vermögensgegenstände
+  |   |   |   |
+  |   |   |   |--   3071010 planmässig
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000481100 - 0000481100 X|X H- Pl AfA EDV Software
+  |   |   |   |
+  |   |   |   ---   3071020 ausserplanmässig
+  |   |   |       |
+  |   |   |       ------MIT 0000482100 - 0000482100 X|X H-aPl AfA EDV Software
+  |   |   |
+  |   |   |--   3072000 AfA auf materielle Vermögensgegenstände
+  |   |   |   |
+  |   |   |   |--   3072010 planmässig
+  |   |   |   |   |
+  |   |   |   |   |-----MIT 0000481000 - 0000481000 X|X H- Pl AfA EDV Hardware IT
+  |   |   |   |   |--   MIT 0000481200 - 0000481600 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000481200 H- Pl AfA Anlagen IT
+  |   |   |   |   |   |-----0000481300 H- Pl AfA Telekommunikationsanlagen
+  |   |   |   |   |   |-----0000481400 H- Pl AfA BGA
+  |   |   |   |   |   |-----0000481500 H- Pl AfA Infrastr/Netzwerke AG (2,5 J)
+  |   |   |   |   |   ------0000481600 H- Pl AfA Netzwerke (Infrastruktur)
+  |   |   |   |   |
+  |   |   |   |   ------MIT 0000483000 - 0000483000 X|X H- Pl AfA GwG   (IT)
+  |   |   |   |
+  |   |   |   ---   3072020 ausserplanmässig
+  |   |   |       |
+  |   |   |       |-----MIT 0000482000 - 0000482000 X|X H-aPl AfA EDV Hardware IT
+  |   |   |       ---   MIT 0000482200 - 0000482600 X|X
+  |   |   |           |
+  |   |   |           |-----0000482200 H-aPl AfA Anlagen IT
+  |   |   |           |-----0000482300 H-aPl AfA Telekommunikationsanlagen
+  |   |   |           |-----0000482400 H-aPl AfA BGA
+  |   |   |           |-----0000482500 H-aPl AfA Infrastrukt/Netzwer AG (2,5 J)
+  |   |   |           ------0000482600 H-aPl AfA Netzwerke (Infrastruktur)
+  |   |   |
+  |   |   ------3073000 Abschreibungen auf Vermoegens-Gegenstaende
+  |   |
+  |   ---   3080000 Sonstige betriebliche Aufwendungen
+  |       |
+  |       |--   3081000 Aufwand aus der Einstellung in den
+  |       |   |
+  |       |   ------MIT 0000202000 - 0000202300 X|X
+  |       |
+  |       ---   3082000 Übrige sonstige betriebliche Aufwendungen
+  |           |
+  |           |--   3082010 Instandhaltungskosten
+  |           |   |
+  |           |   ---   MIT 0000462000 - 0000463300 X|X
+  |           |       |
+  |           |       |-----0000462000 Z- Aufw Inst/Rep Sonstige
+  |           |       |-----0000463100 Hardware Wartung Reparatur Telefon Endgeräte
+  |           |       |-----0000463140 Hardware PE;Wartungsvertrag,Telefon Endgeräte
+  |           |       |-----0000463200 Wartung Software Appl.
+  |           |       |-----0000463210 Wartung Software WPL.
+  |           |       |-----0000463240 Software/Produktentwicklung Wartung/Upgrade
+  |           |       |-----0000463250 Wartg SW Anwendung
+  |           |       ------0000463300 TK Anlage Wartung Reparatur Ersatz
+  |           |
+  |           |--   3082020 Versicherungen
+  |           |   |
+  |           |   |-----MIT 0000464700 - 0000464700 X|X Kfz-Versicherung
+  |           |   ------MIT 0000466000 - 0000466000 X|X Z- Aufw Vers Feuer (Gebäude)
+  |           |
+  |           |--   3082030 Raumkosten
+  |           |   |
+  |           |   |-----MIT 0000416000 - 0000416000 X|X Strom
+  |           |   |-----MIT 0000417000 - 0000417000 X|X Reinigung
+  |           |   |-----MIT 0000470000 - 0000470000 X|X Miete für Grundstücke und Gebäude
+  |           |   |-----MIT 0000470100 - 0000470100 X|X Miete Stellplätze
+  |           |   ------MIT 0000470200 - 0000470200 X|X Mietnebenkosten
+  |           |
+  |           |--   3082040 Maschinen-Mieten
+  |           |   |
+  |           |   ------MIT 0000471000 - 0000471000 X|X Z- Aufw VersandKSt/EingFrachten
+  |           |
+  |           |--   3082050 Reisekosten
+  |           |   |
+  |           |   ---   MIT 0000474100 - 0000474340 X|X
+  |           |       |
+  |           |       |-----0000474100 Z-Aufw Reisekosten pauschale VoSt    Ausl
+  |           |       |-----0000474210 Reisekosten, Verpflegung (Belege/Pauschal)
+  |           |       |-----0000474220 Reisekosten, Verpflegung  (Belege/Pauschalen)
+  |           |       |-----0000474230 Reisekosten Fahrt-u. Flugkosten (Belege/P)
+  |           |       |-----0000474240 Bewirtung Kunden, Lieferanten u.sonst.
+  |           |       |-----0000474245 Bewirtg Kunden,Lieferaten u.sonst.Pers. nicht ab
+  |           |       |-----0000474250 Bewirtung eigene Mitarbeiter
+  |           |       |-----0000474280 Z-Aufw ReiseKSt pauschale LSt
+  |           |       |-----0000474290 Reisekosten sonstige Kosten
+  |           |       |-----0000474310 Z- Aufw ReiseKSt Tagessatz stfrei
+  |           |       |-----0000474320 Z-Aufw ReiseKSt Tagessatz stpfl       Inl
+  |           |       |-----0000474330 Z-Aufw ReiseKSt Tagessatz stfrei      Ausl
+  |           |       ------0000474340 Z-Aufw ReiseKSt Tagessatz stpfl       Ausl
+  |           |
+  |           |--   3082060 Kraftfahrzeugkosten
+  |           |   |
+  |           |   |-----MIT 0000464000 - 0000464000 X|X Kfz-Steuer
+  |           |   ---   MIT 0000464400 - 0000464600 X|X
+  |           |       |
+  |           |       |-----0000464400 Kfz-Leasing
+  |           |       |-----0000464500 Kfz-Kosten Sonstige
+  |           |       ------0000464600 Kfz-Kraftstoffe
+  |           |
+  |           |--   3082070 Werbe- und Vertreterkosten
+  |           |   |
+  |           |   |-----MIT 0000475100 - 0000475100 X|X Z- Aufw GwG-BGA       60,01- 410,00 € netto
+  |           |   ---   MIT 0000477000 - 0000477200 X|X
+  |           |       |
+  |           |       |-----0000477000 Z- Aufw Werbe-/Druckschriften
+  |           |       |-----0000477100 Z- Aufw WerbeAnzeigen
+  |           |       ------0000477200 Z-Aufw Fachpresse
+  |           |
+  |           ---   3082090 Sonstige betriebliche Aufwendungen
+  |               |
+  |               |--   MIT 0000200000 - 0000200100 X|X
+  |               |   |
+  |               |   |-----0000200000 H-Aufw AV Abgang
+  |               |   |-----0000200010 H-Verl AV Abgang Verschrottung
+  |               |   ------0000200100 Z-Verl außerordentlich
+  |               |
+  |               |--   MIT 0000203000 - 0000204000 X|X
+  |               |   |
+  |               |   |-----0000203000 Z-Aufwand aus nicht geleisteter Zahlung
+  |               |   ------0000204000 Sonstiger Aufwand aus Wertpapier Verkauf
+  |               |
+  |               |--   MIT 0000210100 - 0000210400 X|X
+  |               |   |
+  |               |   |-----0000210100 Z-Aufw EWB
+  |               |   ------0000210200 Z-Aufw Abwertg drohende Wertschwankg Ford
+  |               |
+  |               |--   MIT 0000230000 - 0000230100 X|X
+  |               |   |
+  |               |   |-----0000230000 Aufwendungen aus Währungskurs-Differenzen
+  |               |   |-----0000230001 I-Aufwendungen aus Marktwert-Unterschieden
+  |               |   |-----0000230010 H-Aufw WährungsBewertung
+  |               |   |-----0000230040 Aufw RundDiff USt
+  |               |   |-----0000230050 Aufw sonstiger betrieblicher
+  |               |   ------0000230100 Z-Aufw aus nicht real. Waehrungskurs-Differenzen
+  |               |
+  |               |-----MIT 0000407000 - 0000407000 X|X Z-H-AV Abrechnung aiB auf CO
+  |               |--   MIT 0000436000 - 0000437000 X|X
+  |               |   |
+  |               |   |-----0000436000 Aufw freiwillige Sonderzahlung
+  |               |   ------0000437000 Aufw Konjunkturbonus
+  |               |
+  |               |--   MIT 0000449000 - 0000449001 X|X
+  |               |   |
+  |               |   ------0000449000 Aufw sonstige Personalkosten
+  |               |
+  |               |--   MIT 0000451000 - 0000459000 X|X
+  |               |   |
+  |               |   |-----0000451000 Rechtsberatungs-,Gerichts-und Notarkosten
+  |               |   |-----0000452000 Prüfungskosten
+  |               |   |-----0000452100 Z- Aufw RSt   JA-KSt Extern
+  |               |   ------0000453000 Z-Gründungskosten Tochtergesellschaften
+  |               |
+  |               |--   MIT 0000460100 - 0000460200 X|X
+  |               |   |
+  |               |   ------0000460100 RSt   Rückbauverpflichtung >460000
+  |               |
+  |               |-----MIT 0000467100 - 0000467100 X|X Hardware Leasing
+  |               |--   MIT 0000470400 - 0000470590 X|X
+  |               |   |
+  |               |   |-----0000470500 Hardware Miete
+  |               |   ------0000470540 Hardware PE Miete
+  |               |
+  |               |-----MIT 0000470700 - 0000470700 X|X Miete Anlagen IT
+  |               |-----MIT 0000470900 - 0000470999 X|X
+  |               |-----MIT 0000472000 - 0000472000 X|X Network
+  |               |--   MIT 0000473000 - 0000473130 X|X
+  |               |   |
+  |               |   |-----0000473000 Aufw Porto
+  |               |   |-----0000473100 Z- Aufw Telefon/Fax
+  |               |   ------0000473110 Aufw Kommunikationsmittel Sonstige
+  |               |
+  |               |-----MIT 0000474500 - 0000474500 X|X Bewerbungskosten
+  |               |-----MIT 0000475000 - 0000475000 X|X Z- Aufw Handy-Neuanschaffg
+  |               |--   MIT 0000475200 - 0000475500 X|X
+  |               |   |
+  |               |   |-----0000475200 Z-Software < 410€  (bis 2008)
+  |               |   |-----0000475300 Z- Hardware < 410€  (bis 2008)
+  |               |   |-----0000475400 Service Fee
+  |               |   |-----0000475410 HW Leasing
+  |               |   |-----0000475420 Data Center Leistung
+  |               |   ------0000475500 Z-Aufw EDV-Ha/Sware   0,01-410,00 €
+  |               |
+  |               |--   MIT 0000476000 - 0000476030 X|X
+  |               |   |
+  |               |   |-----0000476000 Büromaterial
+  |               |   |-----0000476010 Zeitschriften und Fachliteratur
+  |               |   |-----0000476020 Druckleistungen
+  |               |   ------0000476030 Druckerpatronen
+  |               |
+  |               |--   MIT 0000476500 - 0000476900 X|X
+  |               |   |
+  |               |   |-----0000476500 Seminargebühren
+  |               |   |-----0000476600  Z- Aufw Pers Schulung
+  |               |   |-----0000476700 Konzern Umlage MAN SE
+  |               |   |-----0000476800 Z- Aufw Vergütung/Honorare
+  |               |   ------0000476900 Sonst. allg. Verwaltungskosten
+  |               |
+  |               |-----MIT 0000476910 - 0000476910 X|X Spenden  abzugsfähig
+  |               |-----MIT 0000476950 - 0000476950 X|X Z- Aufw Sonstige Kosten
+  |               ---   MIT 0000477300 - 0000479100 X|X
+  |                   |
+  |                   |-----0000477300 Z- Aufw Öffentlichkeitsarbeit
+  |                   |-----0000477400 Z- Aufw Werbeartikel
+  |                   |-----0000477500 Z- Aufw WerbGeschenke    - 13,00 €
+  |                   |-----0000477550 Wareneinsatz
+  |                   |-----0000477600 Werbekosten Geschenke bis 35€
+  |                   |-----0000477650 Aufw WerbGeschenke 15-35 €
+  |                   |-----0000477700 Werbekosten Geschenke > 35€
+  |                   |-----0000477800 Werbekosten allgemein
+  |                   |-----0000477810 externe Events
+  |                   |-----0000477900 Z-Aufw Vertriebskosten Sonstige
+  |                   ------0000479000 Nebenkosten des Geldverkehrs
+  |
+  |--   4000000 Finanz-Ergebnis
+  |   |
+  |   |--   4011000 Ertraege aus Beteiligungen
+  |   |   |
+  |   |   |--   4011010 bei nicht verbundenen Unternehmen
+  |   |   |   |
+  |   |   |   ------MIT 0000271100 - 0000271100 X|X Z-Ertrag aus Beteiligungen (nicht verbundene Unt.)
+  |   |   |
+  |   |   ---   4011020 bei verbundenen Unternehmen
+  |   |       |
+  |   |       ------MIT 0000271200 - 0000271200 X|X Z-Ertr aus Beteiligungen (verbundene Unternehmen)
+  |   |
+  |   |--   4012000 Aufgrund eines Gewinnabfuehrungs-Vetrages
+  |   |   |
+  |   |   ------MIT 0000295000 - 0000295000 X|X Z-Ertrag aus Gewinnuebernahme
+  |   |
+  |   |--   4013000 Ertraege aus anderen Wertpapieren und
+  |   |   |
+  |   |   |--   4013010 aus nicht verbundenen Unternehmen
+  |   |   |   |
+  |   |   |   |-----MIT 0000214000 - 0000214100 X|X
+  |   |   |   |-----MIT 0000270100 - 0000270100 X|X Z-Ertr aus Ausleihungen (nicht verbundene Untern.)
+  |   |   |   ------MIT 0000272500 - 0000272600 X|X
+  |   |   |
+  |   |   ---   4013020 aus verbundenen Unternehmen
+  |   |       |
+  |   |       |-----MIT 0000270200 - 0000270200 X|X Z-Ertr aus Ausleihungen (verbundene Unternehmen)
+  |   |       ------MIT 0000272200 - 0000272200 X|X Konto nicht vorhanden
+  |   |
+  |   |--   4014000 Sonstige Zinsen und aehnliche Ertraege
+  |   |   |
+  |   |   |--   4014010 aus nicht verbundenen Unternehmen
+  |   |   |   |
+  |   |   |   |-----MIT 0000245100 - 0000245100 X|X Aufw ZASt
+  |   |   |   |-----MIT 0000245300 - 0000245300 X|X Z- Bankzinsen
+  |   |   |   ------MIT 0000273100 - 0000273100 X|X Z-Zinsertr (nicht verbundene Unternehmen)
+  |   |   |
+  |   |   ---   4014020 aus verbundenen Unternehmen
+  |   |       |
+  |   |       |-----MIT 0000245200 - 0000245200 X|X Z-Sonst. Zins u. ähnliche Erträge (verb. Untern.)
+  |   |       ------MIT 0000273200 - 0000273200 X|X Zinserträge ICA - Interest
+  |   |
+  |   |--   4015000 Abschreibungen auf Finanzanlagen und auf
+  |   |   |
+  |   |   |-----4015010 Ausserplanmaessige AfA auf Finanz-Anlagen
+  |   |   |-----4015020 Abschreibung auf Wertpapiere des Umlauf-
+  |   |   ------4015030 Andere Abschreibungen auf Finanzanlagen und
+  |   |
+  |   |--   4016000 Aufwendungen aus Verlust-Uebernahme
+  |   |   |
+  |   |   ------MIT 0000245000 - 0000245000 X|X Aufw KSt SolZ
+  |   |
+  |   ---   4017000 Zinsen und aehnliche Aufwendungen
+  |       |
+  |       |--   4017010 an nicht verbundene Unternehmen
+  |       |   |
+  |       |   |--   MIT 0000220000 - 0000220050 X|X
+  |       |   |   |
+  |       |   |   |-----0000220000 Verzugszinsen
+  |       |   |   ------0000220010 Zins-Aufwendungen aus Finance Leasing
+  |       |   |
+  |       |   |--   MIT 0000220200 - 0000220300 X|X
+  |       |   |   |
+  |       |   |   |-----0000220200 Z- Aufw Bankzinsen
+  |       |   |   ------0000220300 Sonst. Zinsen u. ähnliche Aufwendungen
+  |       |   |
+  |       |   ---   MIT 0000221000 - 0000221020 X|X
+  |       |       |
+  |       |       ------0000221020 Z-Bankinkassospesen
+  |       |
+  |       ---   4017020 an verbundene Unternehmen
+  |           |
+  |           |-----MIT 0000220100 - 0000220100 X|X ICA Interest Zinsaufwendungen
+  |           ------MIT 0000220400 - 0000220400 X|X Zinsaufw. VBU - Barkkreditlinie
+  |
+  |--   5000000 Ausserordentliches Ergebnis
+  |   |
+  |   |--   5011000 Ausserordentliche Ertraege
+  |   |   |
+  |   |   ------MIT 0000251000 - 0000251000 X|X CTA Ertr Veräußerung Aktien/Renten Fonds
+  |   |
+  |   ---   5012000 Ausserordentliche Aufwendungen
+  |       |
+  |       ------MIT 0000201000 - 0000201000 X|X CTA Verlust  Veräußerung Aktien-Fonds
+  |
+  |--   6000000 Steuern
+  |   |
+  |   |--   6011000 Steuern vom Einkommen und vom Ertrag
+  |   |   |
+  |   |   |-----MIT 0000220900 - 0000220900 X|X Z-Sonstige Steuern vom Einkommen und Ertrag
+  |   |   |--   MIT 0000240000 - 0000241000 X|X
+  |   |   |   |
+  |   |   |   |-----0000240000 Körperschaft-Steuer
+  |   |   |   ------0000241000 Gewerbeertrag-Steuer
+  |   |   |
+  |   |   ------MIT 0000249000 - 0000249000 X|X H-Aufw Latente Steuern
+  |   |
+  |   ---   6012000 Sonstige Steuern
+  |       |
+  |       |-----MIT 0000210500 - 0000210500 X|X Z-Aufw GrSt
+  |       |-----MIT 0000220600 - 0000220600 X|X Kapitalertrag-Steuer
+  |       ------MIT 0000465000 - 0000465000 X|X Z-Sonstige Steuern
+  |
+  |--   7000000 Ergebnis-Verwendung
+  |   |
+  |   |--   7010000 Dummyknoten
+  |   |   |
+  |   |   |--   7011000 Auf Grund eines Gewinnabfuehrungs-Vetrages
+  |   |   |   |
+  |   |   |   ------MIT 0000910000 - 0000910000 X|X Z-Gewinnabführung
+  |   |   |
+  |   |   ---   7012000 Ertraege aus Verlust-Uebernahme
+  |   |       |
+  |   |       ------MIT 0000920000 - 0000920000 X|X Aufw ErgAbführung
+  |   |
+  |   |--   7040000 Verlust-Vortrag aus dem Vorjahr
+  |   |   |
+  |   |   |-----MIT 0000900000 - 0000900000 X|_  -ErgVortr VJ
+  |   |   ---   MIT 0000900020 - 0000900050 X|_
+  |   |       |
+  |   |       |-----0000900020  -ErgVortr VJ HGB
+  |   |       ------0000900050 L-Umbewertg Ergebnis-Vortrag aus dem Vorjahr
+  |   |
+  |   |--   7050000 Gewinn-Vortrag aus dem Vorjahr
+  |   |   |
+  |   |   |-----MIT 0000900000 - 0000900000 _|X  -ErgVortr VJ
+  |   |   ---   MIT 0000900020 - 0000900050 _|X
+  |   |       |
+  |   |       |-----0000900020  -ErgVortr VJ HGB
+  |   |       ------0000900050 L-Umbewertg Ergebnis-Vortrag aus dem Vorjahr
+  |   |
+  |   |--   7060000 Entnahmen aus der Kapital-Ruecklage
+  |   |   |
+  |   |   ------MIT 0000930000 - 0000930000 X|X Z-Entnahmen aus der Kapital-Ruecklage
+  |   |
+  |   |--   7070000 Entnahmen aus Gewinn-Ruecklagen
+  |   |   |
+  |   |   |--   MIT 0000940010 - 0000940020 X|X
+  |   |   |   |
+  |   |   |   |-----0000940010 Z-Einstellungen/Entnahmen gesetzliche Ruecklage
+  |   |   |   ------0000940020 Z-Einstellungen/Entnahmen Ruecklage eigene Aktien
+  |   |   |
+  |   |   ------MIT 0000940040 - 0000940040 X|X Z-Einstellungen/Entnahmen andere Gewinnruecklagen
+  |   |
+  |   |--   7080000 Einstellungen in Gewinn-Ruecklagen
+  |   |   |
+  |   |   ------MIT 0000940030 - 0000940030 X|X Z-Einstellg/Entnahmen satzungsmaessige Ruecklage
+  |   |
+  |   ------7090000 Gewinn aus GuV                       GuV Ergebnis
+  |
+  |-----8000000 Nicht zugeordnete Konten      Nicht zugeordnet
+  ---   9000000 Anhang
+      |
+      |--   9010000 Haftungs-Verhältnisse
+      |   |
+      |   |--   9011000 Haftungs-Verhältnisse
+      |   |   |
+      |   |   |--   MIT 0000113110 - 0000113111 X|X
+      |   |   |   |
+      |   |   |   |-----0000113110 L-Commerzbank - Fremdwährung A
+      |   |   |   ------0000113111 Bank Comba 22464601 Unterkonto
+      |   |   |
+      |   |   ---   MIT 0000113210 - 0000113211 X|X
+      |   |       |
+      |   |       ------0000113210 L-Commerzbank - Fremdwährung A
+      |   |
+      |   ------9012000 Ausgleichs-Posten fuer Haftungs-Verhältnisse
+      |
+      |-----9020000 Verrechnung kalkulatorische Kosten
+      |-----9030000 Verrechnung Wechsel
+      |--   9050000 Verrechnung Anlagen-Abgang (AM)
+      |   |
+      |   ---   MIT 0000820000 - 0000825000 X|X
+      |       |
+      |       |-----0000820000 Erl  AV Abgang
+      |       ------0000825000 H-VerrErl  AV Abgang
+      |
+      |--   9060000 Verrechnung WE/RE (MM)
+      |   |
+      |   |--   MIT 0000191000 - 0000191099 X|X
+      |   |   |
+      |   |   |-----0000191000 L-WE/RE-Verr EigFert
+      |   |   ------0000191099 L-WE/RE-Verr EigFert (Korr)
+      |   |
+      |   ------MIT 0000191199 - 0000191199 X|X L-WE/RE-Verr Fremdbezug (Korrektur)
+      |
+      |-----9070000 Verrechnung Debitoren-Geldeingang
+      |--   9080000 Verrechnung Konzernabschluss-Konten
+      |   |
+      |   ---   MIT 0000196700 - 0000196750 X|X
+      |       |
+      |       |-----0000196700 L-Verr nicht realisierter Kursdifferenzen (Kred.)
+      |       ------0000196750 L-Verr nicht realisierter Kursdifferenzen(Debitor)
+      |
+      |--   9130000 Konten, die Saldo Null ausweisen müssen
+      |   |
+      |   |-----MIT 0000119800 - 0000119800 X|X L-Übernahme Altdaten
+      |   |--   MIT 0000191400 - 0000191600 X|X
+      |   |   |
+      |   |   ------0000191500 L-Verr Rückgabe Anlage an Lager
+      |   |
+      |   |--   MIT 0000194100 - 0000194400 X|X
+      |   |   |
+      |   |   |-----0000194100 Anpasssung Lagerbestandskonten
+      |   |   ------0000194200 VerrKto Weiterbel. Software
+      |   |
+      |   |-----MIT 0000195100 - 0000195100 X|X L-ettoumsatz-Verrechng (Umbuchung Mehrwertsteuer)
+      |   |-----MIT 0000196000 - 0000196000 X|X L -AnzAnford Debi
+      |   |-----MIT 0000196300 - 0000196300 X|X L-AnzAnford Kred
+      |   |-----MIT 0000199100 - 0000199200 X|X
+      |   |-----MIT 0000199950 - 0000199950 X|X L-HI - Verrechnungskonto Anlagenzugang aus Lager
+      |   |-----MIT 0000199990 - 0000199990 X|X H-VerrKto AV-Zugang
+      |   |-----MIT 0000231050 - 0000231050 X|X Z-Abgrenzungskto Material Ledger Fremdmaterial
+      |   |-----MIT 0000231550 - 0000231550 X|X Z-Abgrenzungskonto Material Ledger Eigenmaterial
+      |   |--   MIT 0000399998 - 0000399999 X|X
+      |   |   |
+      |   |   |-----0000399998 L-Bestandsbuchungen mit Wert Null
+      |   |   ------0000399999 L-Bestandsaufnahme (Gegenbuchung)
+      |   |
+      |   |-----MIT 0000449100 - 0000449100 X|X Aufw JA-KSt Intern
+      |   ------MIT 0000841100 - 0000841130 X|X
+      |
+      ---   9190000 IAS /IFRS
+          |
+          |-----MIT 0000900010 - 0000900010 X|X  -ErgVortr VJ IFRS
+          |--   MIT 1000I - 1001I           X|X
+          |   |
+          |   |-----1000I I- -AK-Telekommunikationsanlagen
+          |   ------1001I I- -WB-Telekommunikationsanlagen
+          |
+          |--   MIT 1300I - 1301I           X|X
+          |   |
+          |   |-----1300I L-I- -AK-Fahrzeuge
+          |   ------1301I L-I- -WB-Fahrzeuge
+          |
+          |-----MIT 19951I - 19951I         X|X J-VerrKto IFRS-Bilanz Pens
+          |-----MIT 19999I - 19999I         X|X J-VerrKto AV-Zugang
+          |--   MIT 2100I - 2101I           X|X
+          |   |
+          |   |-----2100I I- -AK-BGA
+          |   ------2101I I- -WB-BGA
+          |
+          |--   MIT 2200I - 2201I           X|X
+          |   |
+          |   |-----2200I I-A-AK-GwG E (BGA)
+          |   ------2201I I-A-WB-GwG E (BGA)
+          |
+          |--   MIT 25000I - 25300I         X|X
+          |   |
+          |   |-----25000I I-Ertr AV Abgang
+          |   |-----25010I Z-I-aPl Nachaktivierung
+          |   ------25300I I-Ertr AV Zuschreibungen
+          |
+          |--   MIT 3100I - 3201I           X|X
+          |   |
+          |   |-----3100I I-K-  -Geleistete Anz Materiell AV
+          |   |-----3101I I- -  -VorsteuerVerrechng Anz Mat AV
+          |   |-----3110I I-A-  -Aktivierte Anz         Mat AV
+          |   |-----3120I I- -  -Verrech aktivierte Anz Mat AV
+          |   |-----3200I I-A-AK-AiB Software
+          |   ------3201I L-I-A-WB-AiB Software
+          |
+          |--   MIT 3300I - 3321I           X|X
+          |   |
+          |   |-----3300I I- -AK-EDV Hardware IT
+          |   |-----3301I I- -WB-EDV Hardware IT
+          |   |-----3320I I-A-AK-GwG E (Hardware IT)
+          |   ------3321I I-A-WB-GwG E (Hardware IT)
+          |
+          |--   MIT 3400I - 3421I           X|X
+          |   |
+          |   |-----3400I I- -AK-EDV Software
+          |   |-----3401I I- -WB-EDV Software
+          |   |-----3420I I-A-AK-GwG E (Software IT)
+          |   ------3421I I-A-WB-GwG E (Software IT)
+          |
+          |--   MIT 450I - 451I             X|X
+          |   |
+          |   |-----450I I- -AK-Infrastrukt/Netzwerke AG (2,5 J)
+          |   ------451I I- -WB-Infrastrukt/Netzwerke AG (2,5 J)
+          |
+          |--   MIT 48100I - 48300I         X|X
+          |   |
+          |   |-----48100I I- Pl AfA EDV Hardware IT
+          |   |-----48110I I- Pl AfA EDV Software
+          |   |-----48120I I- Pl AfA Anlagen IT
+          |   |-----48130I I- Pl AfA Telekommunikationsanlagen
+          |   |-----48140I I- planmäßige Abschreibung  B u.G
+          |   |-----48150I I- Pl AfA Infrastr/Netzwerke AG (2,5 J)
+          |   |-----48160I I- Pl AfA Netzwerke (Infrastruktur)
+          |   |-----48170I I- Pl AfA Mietereinbauten
+          |   |-----48180I I- Pl AfA technische Ausstattung
+          |   |-----48200I I-aPl AfA EDV Hardware IT
+          |   |-----48210I I-aPl AfA EDV Software
+          |   |-----48220I I-aPl AfA Anlagen IT
+          |   |-----48230I I-aPl AfA Telekommunikationsanlagen
+          |   |-----48240I I- außerplanmäßige Abschreibung  B u.G
+          |   |-----48250I I-aPl AfA Infrastrukt/Netzwer AG (2,5 J)
+          |   |-----48260I I-aPl AfA Netzwerke (Infrastruktur)
+          |   ------48300I I- Pl AfA GwG   (IT)
+          |
+          ---   MIT 82500I - 82510I         X|X
+              |
+              |-----82500I I-VerrErl  AV Abgang
+              ------82510I I-VerrErl  AV Abgang VU

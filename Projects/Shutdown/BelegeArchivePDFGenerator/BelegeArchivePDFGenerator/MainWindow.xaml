@@ -1,0 +1,47 @@
+﻿<Window x:Class="BelegeArchivePDFGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BelegArchivePDFGenerator" Height="500" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Content="Host" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" />
+        <Label Grid.Column="0" Grid.Row="1" Content="Port" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" />
+        <Label Grid.Column="0" Grid.Row="2" Content="User" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" />
+        <Label Grid.Column="0" Grid.Row="3" Content="Password" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" />
+        <Label Grid.Column="0" Grid.Row="4" Content="Database" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" />
+        <Label Grid.Column="0" Grid.Row="5" Content="Destination" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" />
+        <Label Grid.Column="0" Grid.Row="6" Content="Logo path" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" />
+        <Label Grid.Column="0" Grid.Row="7" Content="Progress" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic" />
+
+        <TextBox Grid.Column="1" Grid.Row="0" Name="hostTb" Width="300" Height="30" Text="localhost"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Name="portTb" Width="300" Height="30" Text="3306"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Name="uidTb" Width="300" Height="30" Text="root"/>
+        <PasswordBox Grid.Column="1" Grid.Row="3" Name="passwordTb" Width="300" Height="30" Password="avendata"/>
+        <ComboBox Grid.Column="1" Grid.Row="4" Name="databaseCb" Width="300" Height="30" DropDownOpened="databaseCb_DropDownOpened" />
+        <TextBox Grid.Column="1" Grid.Row="5" Name="destTb" Width="300" Height="30" />
+        <Label Grid.Column="1" Grid.Row="6" Name="logoPathLabel" Width="300" Height="30" />
+        <ProgressBar Grid.Column="1" Grid.Row="7" Name="procPb" Width="300" Height="30"/>
+
+        <Button Grid.Column="1" Grid.Row="9" Name="browseFilePathBtn" Width="130" Height="30" Content="Browse Logo" HorizontalAlignment="Right" Click="browseFilePathBtn_Click" Margin="0,8,210,8" />
+        <Button Grid.Column="1" Grid.Row="9" Name="browseDestBtn" Width="130" Height="30" Content="Browse Destination" HorizontalAlignment="Right" Margin="0,8,30,8" Click="browseDestBtn_Click" />
+        <Button Grid.Column="2" Grid.Row="9" Name="generateBtn" Width="100" Height="30" Content="Generate" Click="generateBtn_Click" />
+
+    </Grid> 
+</Window>

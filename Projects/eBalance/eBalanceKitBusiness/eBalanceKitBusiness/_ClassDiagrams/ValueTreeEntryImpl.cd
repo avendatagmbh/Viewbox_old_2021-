@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_List" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.75" />
+    <InheritanceLine Type="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Tuple" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="2.125" />
+        <Point X="6.5" Y="2.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAQAAAAAAAQAAAAAAABgAAAAAAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_List.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Tuple" Collapsed="true">
+    <Position X="4" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAAAmAAEIAAACsAAAQEQCAAAhBAAAAAAAAAGAABQkAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Tuple.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.75" />
+    <NestedTypes>
+      <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase.SummationItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Structures\XbrlElementValue\XbrlElementValueBaseParts\XbrlElementValueBase_Computations.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase.SummationSource" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Structures\XbrlElementValue\XbrlElementValueBaseParts\XbrlElementValueBase_Computations.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>iABSxggEKIKQsxskIUmJQACQxBBAAAAAAVRkBBBIBAk=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValueBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DbValue" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XblrElementValue_NullableValueBase&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="2.75" />
+    <InheritanceLine Type="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase" FixedFromPoint="true">
+      <Path>
+        <Point X="0.625" Y="2.312" />
+        <Point X="0.625" Y="5.096" />
+        <Point X="1.875" Y="5.096" />
+        <Point X="1.875" Y="5.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAoAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Boolean" Collapsed="true">
+    <Position X="3.75" Y="6.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Int" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Numeric" Collapsed="true">
+    <Position X="0.5" Y="8" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Date" Collapsed="true">
+    <Position X="3.75" Y="8" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_String" Collapsed="true">
+    <Position X="1" Y="4.25" Width="2.25" />
+    <InheritanceLine Type="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="0.625" Y="2.312" />
+        <Point X="0.625" Y="4.562" />
+        <Point X="1" Y="4.562" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAIAAAAgAAAAAAAAAABAAAAAAgAAAAAAAAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Misc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_Monetary" Collapsed="true">
+    <Position X="1" Y="3.25" Width="2.25" />
+    <InheritanceLine Type="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="0.625" Y="2.312" />
+        <Point X="0.625" Y="3.625" />
+        <Point X="1" Y="3.625" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAIAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_Monetary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_MultipleChoice" Collapsed="true">
+    <Position X="4" Y="4.75" Width="2.5" />
+    <InheritanceLine Type="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="2.187" />
+        <Point X="3.625" Y="2.187" />
+        <Point X="3.625" Y="5.062" />
+        <Point X="4" Y="5.062" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAICAAAgAAAAAQAAAABAAAAAQAgAAgAAAAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_MultipleChoice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.119" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValue_SingleChoice" Collapsed="true">
+    <Position X="4" Y="3.5" Width="2.5" />
+    <InheritanceLine Type="eBalanceKitBusiness.Structures.XbrlElementValue.XbrlElementValueBase" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="2.25" Y="2.187" />
+        <Point X="3.625" Y="2.187" />
+        <Point X="3.625" Y="3.846" />
+        <Point X="4" Y="3.846" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABAAiAACIAAAAgAAAAAQAAgABAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Structures\XbrlElementValue\XbrlElementValue_SingleChoice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.119" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.ValueTree.ValueTreeNode" Collapsed="true">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAACAAAkAQAJAAQAAiAgAAAAIAAAAEmABAAACA=</HashCode>
+      <FileName>Structures\ValueTree\ValueTreeNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.22" Collapsed="true" />
+  </Class>
+  <Interface Name="eBalanceKitBusiness.IValueMapping" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAECAAAAAAAAAqAQAAQBAAAAAAgAAAgAAAAAAA=</HashCode>
+      <FileName>Interfaces\IValueMapping.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,287 @@
+- [Vorlagen für Summen- und Saldenlisten]
+- [Vorlagen für Kontosplittung]
+- [Vorlagen für Kontogruppierung]
+	
+	[] = noch nicht implementiert
+
+------------------------------------------------------------------------------------------------------------------------
+V1.6
+----------------------------
+- Komplette Überarbeitung der Erfassung der Überleitungsrechnung inkl. Importmöglichkeit aus CSV-Dateien
+- Vorlagen für Summen- und Saldenlisten Import (Inkl. Vorlagen für Kontogruppierung / Kontosplittung)
+- Überarbeitung des Exportdialoges, u.a. verbesserte Filtermöglichkeiten
+- Erweiterung des LogViewers (Detailansichten der Logs, Exportmöglichkeiten der Logs)
+----------------------------
+- Überarbeitung und Erweiterung der Exportmöglichkeiten, u.a.
+	- Unterstützung Filter nach Pflichtfeldern in Export
+	- Zusammenfassen der einzelnen Exportdialoge
+
+- Tabellarische Erfassung von Eigenkapitalspiegel und Anlagespiegel [inkl. Importmöglichkeit aus CSV-Dateien]
+- Anzeige ob Position Soll- oder Haben-Position ist
+- Integrierte Hilfefunktion (u.a. Verweis auf Handbuch, Informationen zu Elster-Registrierung und Servern)
+- Vervollständigung der Legende
+- Ausblenden aller nicht zur Rechtsform gehörenden Positionen (für die in Taxonomie spezifizierten Rechtsform-Zuordnungen)
+- Ausblenden von nicht relevanten Feldern in GUV: (abhängig von Auswahl GKV oder UKV)
+- Ausblenden einzelner / aller Validierungswarnungen
+- Kopieren von Reports
+- Virtuelle Konten z.B. für Zuordnung von Jahresüberschuss aus GuV in Passiva der Bilanz
+
+
+Bugfix:
+- Thüringen als Bundesland mit aufgenommen (13stellige Kennnummer)
+- zugeordnete Konten werden jetzt angezeigt, auch wenn sie vorher ausgeblendet wurden
+
+------------------------------------------------------------------------------------------------------------------------
+
+V1.5.6
+Bugfix: 
+- UNC-Pfade weisen verdoppelten Pfad-Begin auf
+- Reports werden erst gespeichert, wenn alle Informationen ordnungsgemäß geladen wurden
+- evtl. AD-Problem, dass nicht alle User angezeigt werden (ActiveDirectory-Abfrage: DirectorySearcher erweitert mit PageSize = Int32.MaxValue, SizeLimit = Int32.MaxValue)
+
+V1.5.5
+Bugfixes:
+- alte Templates, die per Upgrade an eine neue Taxonomie angepasst wurden, konnten nach einem Export nicht wieder importiert werden -> Abbruch durch nicht vorhandene Taxonomie-Position
+
+V1.5.4
+Bugfixes:
+- AD Problem (Überpüfung ob DisplayName leer ist führte dazu, dass einige Nutzer nicht angezeigt wurden)
+
+V1.5.3
+Bugfixes:
+- AD Problem (Wechsel der Domain beim User import)
+
+V1.5.2
+Bugfixes:
+- Oracle Problem (Leerstrings werden von Oracle als Nullwerte interpretiert)
+
+------------------------------------------------------------------------------------------------------------------------
+
+V1.5.1
+Features:
+- Oracle Anbindung
+
+Bugfixes:
+- Fehler beim Anlegen von zwei Systemen mit identischen Namen
+
+------------------------------------------------------------------------------------------------------------------------
+
+V1.5
+Features
+- Integration der aktualisierten Kerntaxonomie sowie der Branchentaxonomien
+- Springen zur Taxonomie-Position beim selektieren eines zugeordneten Kontos in der Summen- und Saldenliste
+- Active-Directory Anbindung
+- Überarbeitung Mapping-Vorlagen
+	- Allgemeine Überarbeitung der GUI
+	- Anzeige von Erstellungs-/Änderungsdatum
+	- Unterscheidung zwischen normalen und Wechselkonten
+	- Erstellen von Vorlagen aus mehreren Summen- und Saldenlisten
+	- Anwenden von Vorlagen aus mehreren Summen- und Saldenlisten
+	- Zusammenführen von Vorlagen aus mehreren Summen- und Saldenlisten
+- Erweiterung Filter für Taxonomieeinträge:
+	- Suche nach Taxonomy-Id
+	- Ausblenden Freiwilliger Positionen
+	- Ausblenden leerer Positionen
+	- nur Positionen mit manuellen Eingaben
+- Zusatzinfo/Hilfe über Aufbau der Steuernummer (mappen lokale Steuernummer auf Bundeseinheitliche Steuernummer)
+- Beim PDF-Export werden jetzt auch die Benutzerkommentare mit exportiert
+- CSV-Export
+
+Bugfixes:
+- Die Sortierung der Summen- und Saldenliste war fehlerhaft, wenn Kontogruppen oder aufgeteilte Konten existierten
+- Referenz auf Parent wurde bei Erstellung eines neuen Reports nicht korrekt gesetzt / Fehler wurde bislang beim Laden des Reports automatisch korrigiert, allerdings konnten die betroffenen Werte erst nach erneuten Laden gespeichert werden)
+- Value-Objekt wurde im PresentationTree nicht zugeordnet, wodurch die betroffenen Elemente nicht gespeichert wurden (betrifft vermutlich bislang lediglich einzelne Elemente in den Anhangsangaben)
+- Abbrechen-Funktionalität im Vorlagen-Editor funktionierte nicht korrekt
+
+------------------------------------------------------------------------------------------------------------------------
+V1.4	
+
+Hinweise zum Datenbankupgrade:
+	- Aufgrund umfangreicher Erweiterungen am Berechtigungssystem können die vorhandenen Reportberechtigungen für einzelne Benutzer nicht übernommen werden. 
+	  Zur erneuten Vergabe der Berechtigungen sollten von einem Benutzer mit administrativen Berechtigungen neue Benutzerrollen mit entsprechenden Rechten
+	  auf Unternehmens-, Geschäftsjahres oder Reportebene angelegt und den jeweiligen Nutzern zugewiesen werden.
+	
+	- Einbindung angepasste Logos für Port2M
+	- Sortierung der Summen- und Saldenliste nach verschiedenen Kriterien
+	- Filter nach Kontonummerbereichen
+	- Erweiterung Berechtigungskonzept (Berechtigungen auf mehreren Ebenenen, Unterscheidung verschiedener Berechtigungen, Berechtigungsrollen)
+	- Kontogruppierung
+	- Kummulierung von Überleitungswerten gemäß Taxonomie-Rechenregeln
+	- Überarbeitung Definition von Überleitungen
+	- Es besteht jetzt die Möglichkeit, den einzelnen Taxonomie-Positionen einen Kommentar hinzuzufügen
+	- Neues Dialogfenster zur Eingabe von Freitextfeldern
+	- Option "manuelle Werteingabe" und Eingabemaske für ÜBerleitungen wurden entfernt / manuelle Werte und Überleitungswerte können jetzt gemeinsam über separaten Dialog eingegeben werden
+	- nicht benötigte Konten können jetzt in der Summen- und Saldenliste ausgeblendet werden
+	- Änderung der Option "Kontosalden übermitteln" wirkt sich jetzt auch auf alle untergeordneten Positionen aus
+	- Konten können jetzt auch auf beliebige monetäre Positionen (bislang nur GuV und Bilanz) zugeordnet werden
+	- In den Baumansichten wird jetzt angezeigt, ob ein Konto positiv oder negativ auf die übergeordnete Position aufsummiert wird (+ oder - neben dem Summensymbol)
+	- Backups werden jetzt verschlüsselt gespeichert (optional)
+	- Aufsplittung des Config Tools: Datenbank Upgrade und Backups wurden in ein neues Programm integriert
+	- Erweiterung der Validierungsfunktion:
+		- Steuernummer, Bundesfinanzamtsnummer und Steueridentifikationsnummer werden überprüft (immer wenn ein Wert eingegeben wird und wenn ein Eintrag notwendig ist)
+		- Bei Auswahl einer Gesamthandsbilanz darf im Feld "Name der Gesamthand" kein Eintrag gemacht werden
+		- Gesellschafter werden überprüft (z.B. Summe der Beteiligungsschlüssel aller Gesellschafter darf nicht < 1 sein)
+		- Bei steuerlich unzulässigen Positionen darf kein Wert angegeben werden im Steuerrecht und die Position muss 0€ ergeben im Handelsrecht.
+		- Es können jetzt globale Fehlermeldungen ausgegeben werden, z.B. Das Fehlen eines Gesellschafters bei Einreichung einer Eröffnungs- oder Sonderbilanz.
+	- Pin-Eingabe erlaubt jetzt auch alphanumerische PINs
+	- neuer Info-Dialog mit Kontaktdaten und integrierter Vorlage für Support-Mails
+	- Aktualisierung ERIC (Elster Rich Client) auf 14.3.18
+	- Benutzer können jetzt ihr eigenenes Kennwort ändern
+
+	Bugfixes:
+	- Probleme in Zusmamenhang mit SQLServer 2005 behoben
+	- Fehler beim Validieren/Senden in Zusammenhang mit Sonderzeichen (z.B. €)
+	- Fehler beim Import von Summen und Saldenlisten (Probleme mit ' Zeichen, Probleme mit mehreren identisch benannten Spaltenüberschriften)
+	- Fehler beim Einspielen von Backups, wenn sich die eingestellte Systemsprache beim Einspielen von der Systemsprache beim Anlegen des Backups unterscheidet
+	- Die Option "Kontosalden übermitteln" wurde unter Umständen nicht korrekt gespeichert
+	- Ändern des Benutzerkürzels führte zu einem ungültigem Passwort
+	- Löschen einer Kontozuordnung (Entfernen-Taste oder Drag&Drop) war nur möglich, wenn die zugehörende Summen- und Saldenliste ausgewählt war
+
+------------------------------------------------------------------------------------------------------------------------
+V1.3.1
+	- Bugfix: Splitkonten wurden nicht mit gelöscht, wenn ein Dokument gelöscht wurde
+	- Bugfix: Programmabsturz, wenn versucht wurde einenn neuen Benutzer anzulegen, der dasselbe Kürzel wie ein zuvor gelöschter User besitzt
+
+------------------------------------------------------------------------------------------------------------------------
+V1.3
+	- Statusanzeige in Summen- und Saldenliste ergänzt (Anzeige Kontenanzahl, Status gefiltert/ungefiltert, Gesamtsaldo)
+	- Kontosplittung
+	- Protokollierung von Benutzeraktionen
+	- Einführung neues Tool: LogViewer
+
+------------------------------------------------------------------------------------------------------------------------
+V1.2.1
+	- Anzeige der Positionskürzel (Suffix im Taxonomienamen) bei Auswahlboxen
+	- Bugfixes
+
+------------------------------------------------------------------------------------------------------------------------
+V1.2
+	- Integration Backupfunktion
+	- Anpassung Testmerker für Sendefunktion im Rahmen der Pilotierung
+	- Behebung Problem mit abgeschnittenen Kontensalden bei SQLite Datenbanken
+	- Einführung interner Feldnummern (7-stellig) / auch für Kontozuordnung bei SUSA-Import verwendbar
+	- Erweiterung Importassistent
+		- zusätzliche Spalten: Import von Kontozuordnungen, Benutzerkommentare
+		- zusätzliche Übersicht vor dem Datenimport
+	- Einem Report können jetzt mehrerer Summen- und Saldenlisten zugeordnet werden
+	- Funktion "neuer Report" integriert in Reportverwaltung
+	- Funktion Vorlagen ist jetzt auch auswählbar, wenn kein Report geladen ist
+	- Optionen für Bilanz/GuV (darzustellende Werte, Vorauswahl für Option "Kontensalden senden")
+	- Überleitungsrechnung wird nun nur noch bei Auswahl "Handelsbilanz" angezeigt
+	- kleinere GUI-Fehler behoben
+	- Breite der Summen- und Saldenliste aus Performancegründen nun nicht mehr veränderbar
+	- Fehler bei der Funktion "Vorlage zusammenführen" wurde behoben
+
+------------------------------------------------------------------------------------------------------------------------
+V1.1.9 (verfügbar seit 09.06.2011)
+	- Integration Überleitungsrechnung in Bilanz/GuV
+	- Option Kontonachweise senden für jede Position separat auswählbar
+	- Start der Suche in Taxonomie per Button (zuvor Suche nach jedem geänderten Zeichen im Filter)
+	- Erweiterung PDF-Export um weitere Berichtsbestandteile
+
+------------------------------------------------------------------------------------------------------------------------
+V1.1.8+
+	- Optionale Aufsummierung von Positionen ohne Berechnungen in übergeordnete Position
+
+------------------------------------------------------------------------------------------------------------------------
+V1.1.8 [V1.1.7 nur Bugfix]
+	- Berechnete Felder konnten fälschlicherweise auch dann nicht mit Werten gefüllt werden, wenn alle Summanden NIL waren
+
+------------------------------------------------------------------------------------------------------------------------
+V1.1.6 (verfügbar seit 20.05.2011)
+
+	Features:
+	- Integration Verwaltung in Naviagtionsbereich
+
+	Bugfix:
+	- Beim Löschen von Listeneinträgen sind unter Umständen einzelne Elemente nicht mit gelöscht wurden (bei betroffenen Systemen werden diese verwaisten Elemente jetzt automatisch beim nächsten Öffnen des Dokuments entfernt)
+	- Darstellungsfehler beim Import Summen- und Saldenlisten (bei führenden Leerzeichen oder Punkten im Spaltennamen wurden keine Werte angezeigt)
+	- (i.B. Editieren von berechneten Feldern wenn keinem der Summenden ein Wert zugewiesen ist)
+
+------------------------------------------------------------------------------------------------------------------------
+V1.1.5 (verfügbar seit 13.05.2011)
+	Features:
+	- Erweiterung Pdf-Export
+	- Erweiterung Validierung
+	- Import: 
+		- Erweiterung neue Zeichencodierung
+
+	Bugfix:
+	- Import: 
+		- Bugfix bei Erkennung des Dezimalkommas
+		- Erweiterung der Fehlerausgaben
+		- Fehler bei Import mit getrennter S/H Spalte (Fehler, wenn in einer Spalte ein Leerstring stand)
+		- Fehler, wenn in der ersten Zeile ein Wert mehr als 2 mal vorkam, und diese als Überschrift verwendet wurde
+	- Löschen eines Systems ist nicht mehr möglich, wenn dieses noch verwendet wird
+	- Löschen eines Unternehmens ist nicht mehr möglich, wenn dieses noch verwendet wird
+	- Benutzer können nicht mehr gelöscht werden, wenn diese noch Ersteller eines Reports zugewiesen sind
+	- Programmabsturz beim Anwenden einer Vorlage unter SQLite und SQL-Server
+	- XBRL-Export: bei NIL-Werten wurde u.U. nicht die vollständige Hierarchie mit exportiert, was zu einem Validierungsfehler führte
+	- Anzeigefehler Validierung von Checkboxen (Warnung/Fehler wurde nicht angezeigt)
+
+------------------------------------------------------------------------------------------------------------------------
+V1.1.4 (verfügbar seit 09.05.2011)
+	Bugfix:
+	- [schwerer Fehler] Absturz beim Löschen wenn bei MySQL die InnoDB-Engine verwendet wurde.
+	- Bei Bearbeiter (Dokumentinformationen) wurde ein Leerstring in der Liste angezeigt, wenn noch kein Name vergeben wurde. Dies wurde durch die Bezeichnung "<keine Bezeichnung>" ersetzt.
+
+------------------------------------------------------------------------------------------------------------------------
+V1.1.3
+	Bugfixes:
+	- Beim Erzeugen/Zusammenführen von Vorlangen für Kontozuordnungen wurde für Haben-Konten fälschlicherweise eine Vorlage für Soll-Konten erzeugt
+	- Konten im Unterpunkt „Kontennachweis“ wurden bei Anwendung einer Vorlage nicht korrekt aktualisiert
+
+	Sonstiges:
+	- Combobox "Systeme" wird jetzt nicht mehr angezeigt, wenn kein erlaubter Report verfügbar ist (bislang wurde hier eine leere Kombobox angezeigt)
+	- Benutzer können sich nun nicht mehr selbst löschen (dies verhindert insbesondere, dass das letzte verfügbare Administratorkonto gelöscht werden kann)
+
+------------------------------------------------------------------------------------------------------------------------
+V1.1.2
+	Features:
+	- Nutzung eines Proxyservers
+	- Testübertragung
+
+------------------------------------------------------------------------------------------------------------------------
+V1.1.0
+	Features:
+	- Anzeige von NIL-Werten, Möglichkeit Werte zu löschen
+	- Verbesserungen bei der Validierung, insb. Integration der von der Finanzverwaltung eingesetzten Plausibilitätsprüfungen
+	- Integration Funktion zum Senden der Daten an das Finanzamt
+
+	Bugfixes:
+	- Behebung von Strukturfehlern im XBRL-Export
+	- bei manuell eingegebenen Werte wurden die abhängigen berechneten Werte beim Laden nicht korrekt initialisiert, wenn der eingegebene Wert kleiner oder gleich Null war
+	- Bei manueller Eingabe manueller numerischer Werte in Baumansicht wurde ein Komma als Punkt dargestellt, was bei erneuter Eingabe zur Interpretation als Tausenderpunkt führte
+	- Probleme mit führenden Nullen bei der Suche nach einem Konto wurden behoben
+
+------------------------------------------------------------------------------------------------------------------------
+V1.0.3
+	- Kleinere Bugfixes
+	- Anpassungen der GUI
+
+------------------------------------------------------------------------------------------------------------------------
+V1.0.2
+	Features:
+	- Zusätzliche Prüfung beim Programmstart, ob die Visual C++ 2010 Laufzeitbibliotheken installiert sind
+
+	Bugfixes:
+	- Firmenstammdaten werden jetzt beim XBRL-Export mit exportiert
+	- Behebung von Syntaxfehlern (u.a. fehlende Namespaces) beim XBRL Export
+	- Es wurde ein Fehler behoben, der bei Windows XP beim Anlegen einer Vorlage zum Programmabsturz geführt hatte, wenn zuvor ein "Datei öffnen" Dialog angezeigt wurde
+
+	Sonstiges:
+	- Überarbeitung Registrierung
+
+------------------------------------------------------------------------------------------------------------------------
+V1.0.1
+	Features:
+	- Einige fehlende Listenpositionen im Formular "Anhang" --> "Allgemeine Angaben zu Bilanzierung, Bewertung,Währungsumrechnung und Konsolidierung" wurden ergänzt.
+	- Es können nun auch SQL Server 2008 Datenbanken zur Speicherung der Daten verwendet werden-
+	- Die Kennzeichen "steuerlich unzulässig" und "handelsrechtlich unszulässig" werden nun mit angezeigt.
+	- Positionen aus der Bilanz und der Summen- und Saldenliste können nun als "relevant für die Überleitungsrechnung" markiert werden.
+	  Alle derartig markierten Positionen werden in der Überleitungsrechnung in einer Auswahlliste angezeigt. Bislang musste der korrekte
+	  Name der Position manuell eingetragen werden.
+
+	Bugfixes:
+	- Das Löschen eines Benutzers konnte unter Umständen einen Programmabsturz verursachen
+	- Abmeldung und anschließende Neuanmeldung führte zu mehrfachen Einträgen in den Auswahllisten

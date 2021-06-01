@@ -1,0 +1,28 @@
+﻿<Window x:Class="LineCounter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="Ordner (1 Pfad je Zeile)" />
+        <TextBox Grid.Row="1" AcceptsReturn="True" Height="100" Text="{Binding Folders}" VerticalScrollBarVisibility="Auto" />
+            
+        <TextBlock Grid.Row="2" Text="Ausgabe:" />
+        <TextBox Grid.Row="3" IsReadOnly="True" Text="{Binding Result}" />
+
+        <Separator Grid.Row="4" />
+        <Border Grid.Row="5" Background="#ddd">
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="5" >
+                <Button Content="Compute" x:Name="btnCompute" MinWidth="75" Click="btnCompute_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

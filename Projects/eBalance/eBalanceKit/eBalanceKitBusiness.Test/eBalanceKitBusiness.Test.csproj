@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E8C0738-9C44-4F1F-9282-B7D49F056CC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eBalanceKitBusiness.Test</RootNamespace>
+    <AssemblyName>eBalanceKitBusiness.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomResources">
+      <HintPath>..\..\..\..\Assemblies\32Bit\AvenDATA\eBalanceKit_CustomResources\AvenDATA\CustomResources.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Assemblies\32Bit\External\iTextSharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.3.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BalanceListImporterTest.cs" />
+    <Compile Include="ExportHelperTest.cs" />
+    <Compile Include="GlobalSearcherTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReconciliationImportModelTest.cs" />
+    <Compile Include="RightsManagementTest.cs" />
+    <Compile Include="SearchResultItemTest.cs" />
+    <Compile Include="TestHelper.cs" />
+    <Compile Include="TestResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdCommon\AvdCommon.csproj">
+      <Project>{89148742-F482-479E-8831-579F54FDF08A}</Project>
+      <Name>AvdCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdWpfControls\AvdWpfControls.csproj">
+      <Project>{E3B12F3F-E420-48FA-B991-FA1FF8D603F2}</Project>
+      <Name>AvdWpfControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdWpfStyles\AvdWpfStyles.csproj">
+      <Project>{FED8686B-7BE7-432C-B1F6-FA5900F6BAC2}</Project>
+      <Name>AvdWpfStyles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\PdfGenerator\PdfGenerator\PdfGenerator.csproj">
+      <Project>{0867E9E0-6D5D-4E8A-A42F-ED839B22707F}</Project>
+      <Name>PdfGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\eBalanceKitBase\eBalanceKitBase.csproj">
+      <Project>{E2CEEA3B-3845-427E-998E-08ED35B18D29}</Project>
+      <Name>eBalanceKitBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\eBalanceKitBusiness\eBalanceKitBusiness\eBalanceKitBusiness.csproj">
+      <Project>{6B330A1B-FEB4-4FD5-A3F0-0C0631F38578}</Project>
+      <Name>eBalanceKitBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\eBundesanzeiger\eBundesanzeiger.csproj">
+      <Project>{45CA0679-5E7C-4EFF-9603-F76969285E43}</Project>
+      <Name>eBundesanzeiger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EricWrapper\EricWrapper.csproj">
+      <Project>{DEB7D8F7-5F31-47A6-BFE5-EF46BD2A386D}</Project>
+      <Name>EricWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Taxonomy\Taxonomy\Taxonomy.csproj">
+      <Project>{5E4B032D-3B2E-4E6D-B2D7-88499B01604D}</Project>
+      <Name>Taxonomy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eBalanceKitControls\eBalanceKitControls.csproj">
+      <Project>{A3877D87-361A-475D-9282-BEB83EAAE924}</Project>
+      <Name>eBalanceKitControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eBalanceKitResources\eBalanceKitResources.csproj">
+      <Project>{05CDF0E9-D91A-47A7-A4E2-E46B1F489425}</Project>
+      <Name>eBalanceKitResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eBalanceKit\eBalanceKit.csproj">
+      <Project>{2D3C3FBC-CED6-4333-8611-C09F0E9DC297}</Project>
+      <Name>eBalanceKit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eFederalGazette\eFederalGazette.csproj">
+      <Project>{0A90B76A-93C6-4F12-BDC0-CC458F40A149}</Project>
+      <Name>eFederalGazette</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Test References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReconciliationImport\AccountValueImportExample.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ReconciliationImport\AccountValueImportExample_error.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ReconciliationImport\AccountValueImportExample_invalid.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ReconciliationImport\ReconciliationValueImportExample.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ReconciliationImport\ReconciliationValueImportExample_1text.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ReconciliationImport\ReconciliationValueImportExample_4text.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ReconciliationImport\ReconciliationValueImportExample_error.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

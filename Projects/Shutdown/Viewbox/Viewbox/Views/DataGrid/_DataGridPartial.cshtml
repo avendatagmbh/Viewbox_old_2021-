@@ -1,0 +1,298 @@
+﻿@using SystemDb
+@using Viewbox
+@using Viewbox.Job
+@using Viewbox.Properties
+@model Viewbox.Models.DataGridModel
+@{
+    var count = 3;
+    var opt = ViewboxSession.Optimizations.FirstOrDefault();
+    if (ViewboxSession.IssueCount == 0 || ViewboxSession.HideIssuesButton) { count--; }
+    if (ViewboxSession.ViewCount == 0 || ViewboxSession.HideViewsButton) { count--; }
+    if (ViewboxSession.TableCount == 0 || ViewboxSession.HideTablesButton) { count--; }
+    int rightCount = 3;
+    if (!ViewboxSession.User.AllowedExport && !ViewboxSession.User.IsSuper)
+    {
+        rightCount--;
+    }
+    if ((ViewboxSession.Archives.Count == 0 || opt == null || ViewboxSession.Archives.All(a => a.Database.ToLower() != opt.FindValue(OptimizationType.System).ToLower())) && ViewboxApplication.HideDocumentsMenu && !ViewboxSession.ArchiveDocuments.Any()) { rightCount--; }
+}
+
+<div class="page-header replace">
+</div>
+
+<div id="tabsleft" class="tabfunctions" style="float: left">
+    <ul>
+        @if (opt != null && ViewboxSession.GetIssueViewTableCount(TableType.Table) > 0 && !ViewboxSession.HideTablesButton && ViewboxSession.IsRoleAllowedToSeeTheTableType(TableType.Table))
+        {
+            <a class="tab @(Model.DataGridNameDescription() == Resources.Table ? " actualController" : "" )" data-id="TabTables" id="TablesTab" href="@Url.Action("Index", "TableList" )">@Resources.Tables</a>
+        }
+        @if (opt != null && ViewboxApplication.Database.SystemDb.Views.Any(v => v.Database.ToLower() == opt.FindValue(OptimizationType.System).ToLower())
+        && !ViewboxSession.HideViewsButton && ViewboxSession.GetIssueViewTableCount(TableType.View) > 0
+        && ViewboxSession.IsRoleAllowedToSeeTheTableType(TableType.View))
+        {
+            <a class="tab @(Model.DataGridNameDescription() == Resources.View ? " actualController" : "" )" href="@Url.Action("Index", "ViewList" )">@Resources.Views</a>
+        }
+        @if (opt != null && ViewboxApplication.Database.SystemDb.Issues.Any(i => i.Database.ToLower() == opt.FindValue(OptimizationType.System).ToLower())
+            && !ViewboxSession.HideIssuesButton && ViewboxSession.GetIssueViewTableCount(TableType.Issue) > 0
+            && ViewboxSession.IsRoleAllowedToSeeTheTableType(TableType.Issue))
+        {
+            <a class="tab @(Model.DataGridNameDescription() == Resources.Issue ? " actualController" :
+           "" )" href="@Url.Action("Index", "IssueList" )">@Resources.Issues</a>
+        }
+    </ul>
+
+</div>
+@{
+    var margin = Model.SelectedScheme.Id == 0 && ViewboxSession.IsRoleAllowedByRoleSetting(RoleSettingsType.FunctionTab) ? "margin-right: 140px;" : "";
+    
+}
+<div id="tabsright" class="tabfunctions" style="position: relative;@margin">
+    <ul>
+        <a class="tab" href="@Url.Action("Index", "Settings")">@Resources.Settings</a>
+        @if (ViewboxSession.User.AllowedExport || ViewboxSession.User.IsSuper)
+        {
+            <a class="tab" href="@Url.Action("Index", "Export")">@Resources.Export</a>
+        }
+        @if (ViewboxSession.ArchiveDocuments.Count > 0 && !ViewboxApplication.HideDocumentsMenu)
+        {
+            <a class="tab" href="@Url.Action("Index", "ArchiveDocuments")">@Resources.DocumentArchive</a>
+            if (ViewboxSession.RightsMode)
+            {
+                RightType typeRight;
+                String rightClass = String.Empty;
+                int leftOffset = 665;
+                if (rightCount == 2)
+                {
+                    leftOffset = 708;
+                }
+                typeRight = ViewboxSession.IsTableTypeAllowedInRightsMode(TableType.ArchiveDocument) ? RightType.None : RightType.Read;
+                rightClass = (typeRight == RightType.None) ? "readable" : "navigation-not-readable";
+                <a class="icon tabletyperight-switch @rightClass" style="left: @leftOffset.ToString()px" href="@Url.Action("UpdateTableTypeRightNavigationBar", "UserManagement", new { type = TableType.Archive, right = typeRight })">
+                </a>
+                @Html.Partial("_TooltipPartial", String.Format(Resources.ChangeRightsOnAllType, Resources.DocumentArchive, typeRight.ToString()))
+            }
+        }
+        @if (ViewboxSession.Archives.Count > 0 && !ViewboxApplication.HideDocumentsMenu && opt != null && ViewboxSession.Archives.Any(a => a.Database.ToLower() == opt.FindValue(OptimizationType.System).ToLower()))
+        {
+            <a class="tab" href="@Url.Action("Index", "Documents")">@Resources.DocumentArchive</a>
+            if (ViewboxSession.RightsMode)
+            {
+                RightType typeRight;
+                String rightClass = String.Empty;
+                int leftOffset = 665;
+                if (rightCount == 2)
+                {
+                    leftOffset = 708;
+                }
+                typeRight = ViewboxSession.IsTableTypeAllowedInRightsMode(TableType.Archive) ? RightType.None : RightType.Read;
+                rightClass = (typeRight == RightType.None) ? "readable" : "navigation-not-readable";
+                <a class="icon tabletyperight-switch @rightClass" style="left: @leftOffset.ToString()px" href="@Url.Action("UpdateTableTypeRightNavigationBar", "UserManagement", new {type = TableType.Archive, right = typeRight})">
+                </a>
+                @Html.Partial("_TooltipPartial", String.Format(Resources.ChangeRightsOnAllType, Resources.DocumentArchive, typeRight.ToString()))
+            }
+        }
+    </ul>
+</div>
+<input id="IsThereEmptyMessage" type="hidden" value="@(Model.IsThereEmptyMessage ? "true" : "false")"/>
+@if (Model.SelectedScheme.Id == 0)
+{
+    <text>@Html.Partial("_TableFunctionsPartial")</text>
+}
+<div class="content-box">
+    <div class="content-outer">
+        <div class="content-inner">
+            <div class="header main-header">
+                @if (Model.SelectedScheme.Id == 0)
+                { 
+                    <div class="functions">
+                        @{
+                    var bukrsValue = ViewboxSession.Optimizations.Last().GetOptimizationValue(OptimizationType.SplitTable);
+                    var isSumOn = Model.TableObject != null ? Model.TableObject.Sum != null && Model.TableObject.Sum.Count > 0 ? true : false : false;
+                    var aggregationParams = new List<ViewboxDb.AggregationFunction>();
+                    aggregationParams.Add(ViewboxDb.AggregationFunction.Sum);
+                        }
+                        <div class="isback" hidden="hidden">false</div>
+                        <a href="Back" class="backlink"></a>@Html.Partial("_TooltipPartial", Resources.Back)
+                        @Html.Partial("_ViewOptionsPartial", Model.TableObject != null ? Model.TableObject as object : Model.TableInfo as object)
+                        @Html.Partial("_FilterPartial", Model.TableObject != null ? Model.TableObject as ITableObject : Model.TableInfo as ITableObject)
+                        @Html.Partial("_ExtendedSortPartial", Model.TableObject != null ? Model.TableObject as object : Model.TableInfo as object)
+                        @if (ViewboxSession.User.IsSuper || ViewboxSession.User.AllowedExport)
+                        {
+
+                            if (Model.TableInfo.Database == "xal" && Model.TableInfo.TableName == "Rechnungen_view" && Model.TableInfo.Columns.All((c) => c.IsVisible))
+                            {
+                                <a href="@Url.Action("StartPdfUserDefined", "Export", new { id = Model.TableInfo.Id, project = Export.UserDefinedExportProjects.MKN })" class="iconx pdfexport  @(Model == null ? "" : (Model.GroupColumn != null && Model.SubtotalColumns != null || isSumOn ? "disabled" : ""))">
+                                </a>
+                                @Html.Partial("_TooltipPartial", Resources.PDFExport)
+                            }
+                            else if (Model.TableInfo.Database == "actebis" && Model.TableInfo.TableName.ToLower() == "rechnungsnachdruck_view" && Model.TableInfo.Columns.All((c) => c.IsVisible) && (bukrsValue == "4500" || bukrsValue == "4600" || bukrsValue == "4650" || bukrsValue == "4700" || bukrsValue == "4750"))
+                            {
+                                <a href="@Url.Action("StartPdfUserDefined", "Export", new { id = Model.TableInfo.Id, project = Export.UserDefinedExportProjects.Actebis })" class="iconx pdfexport  @(Model == null ? "" : (Model.GroupColumn != null && Model.SubtotalColumns != null || isSumOn ? "disabled" : ""))">
+                                </a>
+                                @Html.Partial("_TooltipPartial", Resources.PDFExport)
+                            }
+                            else if (Model.TableInfo.Database == "hofmeister" && Model.TableInfo.TableName.ToLower() == "2_4_rechnungen_view" && Model.TableInfo.Columns.All((c) => c.IsVisible))
+                            {
+                                <a href="@Url.Action("StartPdfUserDefined", "Export", new { id = Model.TableInfo.Id, project = Export.UserDefinedExportProjects.HofmeisterRechnung })" class="iconx pdfexport  @(Model == null ? "" : (Model.GroupColumn != null && Model.SubtotalColumns != null || isSumOn ? "disabled" : ""))">
+                                </a>
+                                @Html.Partial("_TooltipPartial", Resources.PDFExport)
+                            }
+                            else if (Model.TableInfo.Database == "hofmeister" && Model.TableInfo.TableName.ToLower() == "2_5_sofortrechnungen_view" && Model.TableInfo.Columns.All((c) => c.IsVisible))
+                            {
+                                <a href="@Url.Action("StartPdfUserDefined", "Export", new { id = Model.TableInfo.Id, project = Export.UserDefinedExportProjects.HofmeisterSofortRechnung })" class="iconx pdfexport  @(Model == null ? "" : (Model.GroupColumn != null && Model.SubtotalColumns != null || isSumOn ? "disabled" : ""))">
+                                </a>
+                                @Html.Partial("_TooltipPartial", Resources.PDFExport)
+                            }
+                            else if (Model.TableInfo.Database == "hofmeister" && Model.TableInfo.TableName.ToLower() == "2_3_lieferscheine_view" && Model.TableInfo.Columns.All((c) => c.IsVisible))
+                            {
+                                <a href="@Url.Action("StartPdfUserDefined", "Export", new { id = Model.TableInfo.Id, project = Export.UserDefinedExportProjects.HofmeisterLieferschein })" class="iconx pdfexport  @(Model == null ? "" : (Model.GroupColumn != null && Model.SubtotalColumns != null || isSumOn ? "disabled" : ""))">
+                                </a>
+                                @Html.Partial("_TooltipPartial", Resources.PDFExport)
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Start", "Export", new { id = Model.TableInfo.Id, type = ViewboxDb.ExportType.PDF, fromTab = Model.DataGridNameDescription() })" class="iconx pdfexport  @(Model == null ? "" : (isSumOn ? "disabled" : ""))">
+                                </a>
+                                @Html.Partial("_TooltipPartial", Resources.PDFExport)
+                            }
+                            <a href="@Url.Action("Start", "Export", new { id = Model.TableInfo.Id, type = ViewboxDb.ExportType.GDPdU, fromTab = Model.DataGridNameDescription() })" class="iconx ideaexport  @(Model == null ? "" : (Model.GroupColumn != null && Model.SubtotalColumns != null || isSumOn ? "disabled" : ""))">
+                            </a>
+                            @Html.Partial("_TooltipPartial", Resources.GDPdUExport)
+    <a href="@Url.Action("Start", "Export", new { id = Model.TableInfo.Id, type = ViewboxDb.ExportType.Excel, fromTab = Model.DataGridNameDescription() })" class="iconx csvexport  @(Model == null ? "" : (isSumOn ? "disabled" : ""))">
+    </a>
+                            @Html.Partial("_TooltipPartial", Resources.ExcelExport)
+                            if (Model.TableInfo.TableName.ToLower() == "eon_beleg_7019_table")
+                            {
+                                <a href="@Url.Action("Start", "Export", new { id = Model.TableInfo.Id, type = ViewboxDb.ExportType.PDFBeleg })" class="iconx pdfexport  @(Model == null ? "" : (Model.GroupColumn != null && Model.SubtotalColumns != null || isSumOn ? "disabled" : ""))">
+                                </a>
+                                 @Html.Partial("_TooltipPartial", Resources.PDFBelegExport)
+                            }
+                        }
+                        @Html.Partial("_SummaPartial", Model.TableObject != null ? Model.TableObject as ITableObject : Model.TableInfo as ITableObject)
+                        @Html.Partial("_SubtotalPartial", Model)
+                            @if (ViewboxSession.RightsMode)
+                            {
+                                @Html.Partial("_RoleBasedVisibility", Model.TableObject != null ? Model.TableObject as ITableObject : Model.TableInfo as ITableObject)
+                            }
+                            @if(Model.TableInfo.OrderAreas.Count > 0)
+                            {
+                                @Html.Partial("_MultipleOptimizationPartial", Model)                                
+                            }
+                        </div>
+                
+                    <script type="text/javascript">
+                        jQuery(function () {
+                            $(document).ready(function () {
+                                $("#startpage").css('min-width', $("#pagecount").text().length * 8);
+                            });
+                        });
+                    </script>
+                    <input type="hidden" id="thisUrl" name="thisUrl" value="@this.GetUrl(new UrlParam("start", 0))"/>
+                    <div class="nav-controls">
+                        @Html.Partial("_NavigationControlsPartial", Model)
+                    </div>
+                }
+                else
+                { 
+                    <div class="functionsBalance">
+                        <div class="isback" hidden="hidden">false</div>
+                        <a href="Back" class="backlink"></a>@Html.Partial("_TooltipPartial", Resources.Back)
+                        @if (ViewboxSession.User.IsSuper || ViewboxSession.User.AllowedExport)
+                        {
+                            <a href="@Url.Action("Start", "Export", new { id = Model.TableInfo.Id, type = ViewboxDb.ExportType.PDF, fromTab = Model.DataGridNameDescription() })" class="iconx pdfexport  @(Model == null ? "" : (Model.GroupColumn != null && Model.SubtotalColumns != null ? "disabled" : ""))">
+                            </a>@Html.Partial("_TooltipPartial", Resources.PDFExport)
+                            <a href="@Url.Action("Start", "Export", new { id = Model.TableInfo.Id, type = ViewboxDb.ExportType.GDPdU, fromTab = Model.DataGridNameDescription() })" class="iconx ideaexport  @(Model == null ? "" : (Model.GroupColumn != null && Model.SubtotalColumns != null ? "disabled" : ""))">
+                            </a>@Html.Partial("_TooltipPartial", Resources.GDPdUExport)
+                            <a href="@Url.Action("Start", "Export", new { id = Model.TableInfo.Id, type = ViewboxDb.ExportType.Excel, fromTab = Model.DataGridNameDescription() })" class="iconx csvexport  @(Model == null ? "" : (Model.GroupColumn != null && Model.SubtotalColumns != null ? "disabled" : ""))">
+                            </a>@Html.Partial("_TooltipPartial", Resources.ExcelExport)
+                            <a href="#" class="iconStructur strukturOpen"></a>@Html.Partial("_TooltipPartial", Resources.StructureOpen)
+                            <a href="#" class="iconStructur strukturClose"></a>@Html.Partial("_TooltipPartial", Resources.StructureClose)
+                        }
+                    </div>
+                }
+            </div>
+            <div class="tabbar">
+                @foreach (var scheme in Model.TableInfo.Schemes)
+                {
+                    if (scheme == Model.SelectedScheme)
+                    {
+                        <span class="tabheader selected">@scheme.GetDescription()</span>
+                    }
+                    else
+                    {
+                        <a href="@this.GetUrl(new UrlParam("scheme", scheme.Id))" class="tabheader">@scheme.GetDescription()</a>
+                    }
+                }
+            </div>
+            <div id="isEnlargedTableDesignEnabled">
+            </div>
+            @Html.Partial(Model.SelectedScheme.Partial, Model)
+            @* This whole div is deletable, because it was deleted by creating Excel-like filter. *@
+            <div id="data-grid-column-filter" class="text-filter filter-main dropdown-main">
+                <div id="triangle" class="triangleleft">
+                </div>
+                <div class="outer-container-mask">
+                    <div class="outer-container" style="height: 60px;">
+                        <h4>@Resources.Filter</h4>
+                        <div class="close-reportlist">
+                        </div>
+                        <div class="inner-container" style="height: 60px;">
+                            <form action="@Url.Action("filter", new { id=Model.TableInfo.Id })">
+                                <input type="hidden" name="scrollPosition" id="scrollPosition" />
+                                <input type="hidden" name="column" id="column" />
+                                <input type="hidden" name="exactmatch" id="exactmatch" value="true" />
+                                <input type="hidden" name="reset" id="reset" value="false" />
+                                <div style="display: block; padding: 2px;">
+                                    @*<input type="text" name="filter" id="filter" />*@
+
+                                    <textarea name="filter" id="filter"></textarea>
+                                </div>
+                                <div style="border-top: solid 1px lightgray;">
+                                    <div class="exactmatch">
+                                        <a class="checkboxon" href="#" style="float: left;"></a>
+                                        @Resources.ExactMatch
+                                        <input type="submit" class="ok-button" value="OK" style="float: right;" />
+                                        <input type="button" class="reset-button" value="@Resources.Reset" style="float: right;margin-right: 5px;" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="extended-information" class="text-filter dropdown-main" style="padding: 0;">
+                <div id="extended-triangle" class="greytriangleleft">
+                </div>
+                <div class="outer-container-mask">
+                    <div class="outer-container">
+                        <div class="close-reportlist">
+                        </div>
+                        <div class="inner-container" style="padding: 10px;">
+                            <div id="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="excell-like-filter" class="excell-like-filter dropdown-main" style="padding: 0;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 height: 46px;">
+                <div id="excell-triangle" class="triangleleft">
+                </div>
+                <div class="outer-container-mask">
+                    <div class="outer-container">
+                        <h4>@Resources.ExcelLikeFilter</h4>
+                        <div class="close-reportlist">
+                        </div>
+                        <div class="inner-container" style="padding: 10px;">
+                            <form method="post" action="@Url.Action("ExcelFilter", new { id = Model.TableInfo.Id })">
+                                <div id="excell-text">
+                                </div>
+                                <input type="submit" value="OK" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

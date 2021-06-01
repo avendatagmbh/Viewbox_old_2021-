@@ -1,0 +1,126 @@
+﻿<Window x:Class="ScreenshotAnalyzer.Windows.DlgInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:ScreenshotAnalyzer.Resources.Localisation" Title="ScreenshotAnalyzer" SizeToContent="Height"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        Icon="/Resources/logo.png" Width="400"
+        Loaded="Window_Loaded" PreviewKeyDown="Window_PreviewKeyDown">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- header -->
+        <Border Grid.Row="0">
+            <Grid>
+                <Image Source="/Resources/background_header.png" Stretch="Fill" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="/Resources/logo.png" Margin="10,10,5,10" Height="64" Width="64">
+                        <Image.Effect>
+                            <DropShadowEffect Opacity="0.4" ShadowDepth="4" Direction="300" />
+                        </Image.Effect>
+                    </Image>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,5">
+                        <TextBlock Opacity="0.95" Padding="0" Grid.Row="0" Grid.Column="1" Height="Auto" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                                       FontSize="24" FontFamily="Arial" Foreground="White" FontWeight="Bold" 
+                                       x:Name="txtCaption" Text="ScreenshotAnalyzer"/>
+                        <TextBlock Opacity="0.95" Padding="0" Grid.Row="1"  Grid.Column="1" Height="Auto" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                       FontSize="12" FontFamily="Arial" FontStyle="Italic" Foreground="#FF7CB4C9"
+                                       x:Name="txtVersion" Text="Version x.x.x"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Border>
+
+        <!-- main -->
+        <Border Grid.Row="1" Style="{StaticResource GroupBoxBorder1}" Padding="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel>
+                    <TextBlock Text="© 2011 AvenDATA GmbH" />
+                    <Separator Margin="0,3" />
+                    <TextBlock Text="AvenDATA">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <TextBlock Text="Salzufer 8" />
+                    <TextBlock Text="10587 Berlin" />
+                </StackPanel>
+
+                <Separator Margin="0,3" Grid.Row="1" Grid.ColumnSpan="2" />
+
+                <StackPanel Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="{x:Static Localisation:ResourcesGui.DlgInfo_Phone}" />
+                        <TextBlock Grid.Column="1" Text="+49 30 700 157 500" />
+                        <TextBlock Grid.Row="1" Text="{x:Static Localisation:ResourcesGui.DlgInfo_Fax}" />
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="+49 30 700 157 599" />
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <TextBlock Text="{x:Static Localisation:ResourcesGui.DlgInfo_Support}" />
+                    <TextBlock>
+                        <Hyperlink x:Name="supportMail" RequestNavigate="Hyperlink_RequestNavigate" >
+                            b.held@avendata.de
+                            </Hyperlink>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- bottom -->
+        <Border Grid.Row="2" Style="{StaticResource ButtonBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Image Source="/Resources/avendata.png" Height="25" HorizontalAlignment="Left" Margin="3" />
+
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <Button Height="23" HorizontalAlignment="Left" Margin="5" Name="btnClose" VerticalAlignment="Top" Width="Auto" Padding="5,0" Click="btnClose_Click" Content="{x:Static Localisation:ResourcesGui.DlgInfo_btnClose_Close}"/>
+                </StackPanel>
+            </Grid>
+
+        </Border>
+
+    </Grid>
+</Window>

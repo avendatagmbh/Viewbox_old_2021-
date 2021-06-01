@@ -1,0 +1,950 @@
+﻿@using System.Text
+@using SystemDb
+@using Viewbox
+@using Viewbox.Properties
+@using System.Globalization;
+@model Viewbox.Models.DataGridModel
+
+<div id="currentTableId" style="display: none;">@Model.TableInfo.Id</div>
+<div id="loading" style="z-index: 1000; text-align: center; margin-top: 250px; position: relative;">
+    <img src="../../Content/img/gif-load.gif" />
+</div>
+<div class="table-container" style="z-index: -1000; visibility: hidden; overflow: hidden;">
+    <div class="table-parameters" id="table-parameter">
+        <div class="table-parameter left">
+            <div class="table-parameter-name left">@Model.DataGridNameDescription() :</div>
+            <div class="left" id="reportName">@Model.TableInfo.GetDescription()</div>
+        </div>
+        @if (Model.SimpleTable != null)
+        {
+            foreach (var par in Model.SimpleTable.GetParameters(Model.TableObject.OriginalTable.Id))
+            {
+                <div class="table-parameter left">
+                    <div class="table-parameter-name left">@par.Item1 </div>
+                    <div class="left"><span title="@par.Item2">@par.Item2</span></div>
+                </div>
+            }
+        }
+        @if (Model != null)
+        {
+            if (Model.TableInfo != null)
+            {
+                if (Model.TableInfo.OptimizationHidden == 1)
+                {
+                    // JUSST FOR EON :DDD
+                    <script>
+                        $(document).ready(function () {
+                            $(".SplitTable").parent().hide();
+                            $(".SortColumn").parent().hide();
+                        });
+                    </script>
+                }
+            }
+        }
+        @if (ViewboxSession.User.UserName == "avendata_qs")
+        {<div class="table-parameter left">
+            <form>
+                <div class="table-parameter-name left">@Resources.EditMode </div>
+                <div class="left"><button id="editModeOn" type="button">@Resources.Edit</button></div>
+                <div class="left"><button style="display: none;" id="renameColumns" type="button">@Resources.Done</button></div>
+                <div class="left"><button style="display: none;" id="cancelRename" type="button">@Resources.Cancel</button></div>
+                <div class="toRename" style="display: none;">
+                </div>
+            </form>
+        </div>
+            <script type="text/javascript">
+                jQuery(document).ready(function ()
+                {
+                    jQuery('.datagridHeader thead tr th').each(function () {
+                        var columnId = parseInt($(this).find('.item-id').html());
+                        $(this).find('.column-rename').focusout(function () {
+                            $('.toRename').append("<div><span>" + columnId + "</span><span>" + $(this).val() + "</span></div>");
+                        });
+                    });
+                    jQuery('#editModeOn').click(function () {
+                        $('#editModeOn').hide();
+                        $('#renameColumns').show();
+                        $('#cancelRename').show();
+
+                        //var tableId = parseInt(jQuery("#currentTableId").html());
+                        jQuery('.datagridHeader thead tr th').each(function () {
+                            $(this).find('.column-name').hide();
+                            $(this).find('.column-rename').width($(this).width() - 30);
+                            $(this).find('.column-rename').show();
+                        });
+                    });
+                    jQuery('#cancelRename').click(function () {
+                        $('#renameColumns').hide();
+                        $('#cancelRename').hide();
+                        $('#editModeOn').show();
+
+                        jQuery('.datagridHeader thead tr th').each(function () {
+                            var name = $(this).find('.lastColName').val();
+                            $(this).find('.column-rename').val(name);
+                            $(this).find('.column-name').show();
+                            $(this).find('.column-rename').hide();
+                        });
+
+                        jQuery('.toRename').empty();
+                    });
+                    jQuery('#renameColumns').click(function () {
+                        $('#renameColumns').hide();
+                        $('#cancelRename').hide();
+                        $('#editModeOn').show();
+
+                        jQuery('.datagridHeader thead tr th').each(function () {
+                            var ordinal = parseInt($(this).find('.colOrdinal').val());
+                            var name = $(this).find('.column-rename').val();
+
+                            $(this).find('.lastColName').val(name);
+                            $(this).find('.column-name').html("[" + (ordinal + 1) + "] " + name);
+
+                            $(this).find('.column-name').show();
+                            $(this).find('.column-rename').hide();
+                        });
+
+                        jQuery('.toRename > div').each(function () {
+                            var columnId = $(this).find('span:first-child').text();
+                            var newName = $(this).find('span:nth-child(2)').text();
+                            var tableId = @Model.TableInfo.Id;
+                            jQuery.getJSON('/DataGrid/UpdateColumnText?tableId='+ tableId +'&columnId=' + columnId + '&newName=' + newName, function(data) 
+                            {
+                                var s = data;
+                                if (data == true)
+                                {
+                                    //Column Sort interface
+                                    var columnsToRename = $(".box .item-id");
+                                    for(var i = 0; i< columnsToRename.length; i++){
+                                        if ($(columnsToRename[i]).text() == columnId)
+                                        {
+                                            if ($(columnsToRename[i]).parent().find(".colname .description").html() != undefined) {
+                                                $(columnsToRename[i]).parent().find(".colname .description").html(newName);
+                                                $(columnsToRename[i]).parent().find(".colname").attr("title",newName);
+                                            } else {
+                                                $(columnsToRename[i]).parent().find(".colname div").html(newName);
+                                                $(columnsToRename[i]).parent().find(".colname").attr("title",newName);
+                                            }   
+                                        }
+                                    }
+
+                                    //Column Visibility interface
+                                    columnsToRename = $(".box #col-id");
+                                    for(var i = 0; i< columnsToRename.length; i++) {
+                                        if ($(columnsToRename[i]).attr("value") == columnId) {
+                                            if ($(columnsToRename[i]).parent().find(".colname .description").html() != undefined) {
+                                                $(columnsToRename[i]).parent().find(".colname .description").html(newName);
+                                                $(columnsToRename[i]).parent().find(".colname").attr("title",newName);
+                                            } else {
+                                                $(columnsToRename[i]).parent().find(".colname div").html(newName);
+                                                $(columnsToRename[i]).parent().find(".colname div").attr("title",newName);
+                                            }  
+                                        }
+                                    }
+                                    //Filter interface input fields
+                                    columnsToRename = $(".box .op-command.column");
+                                    for(var i = 0; i< columnsToRename.length; i++){
+                                        if ($(columnsToRename[i]).text() == "%" + columnId)
+                                        {
+                                            $(columnsToRename[i]).parent().find(".dropdown").text(newName);
+                                            $(columnsToRename[i]).parent().find(".dropdown").attr(newName);
+                                            $(columnsToRename[i]).parent().find(".measuringDiv").text(newName);
+                                        }
+                                    }
+
+
+                                    jQuery.getJSON('/DataGrid/GetNewColumnWidth?tableId='+ tableId +'&columnId=' + columnId, function(data2) 
+                                    {
+                                        var columns = $(".ui-resizable .item-id");
+
+                                        for(var i = 0; i< columns.length; i++)
+                                        {
+                                            if ($($(columns)[i]).text() == columnId)
+                                            {
+                                                var newWidth = parseInt(data2);
+                                                var OriginalWidth = parseInt($($(columns)[i]).parent().parent().attr("originalwidth"));
+                                                var width = $($(columns)[i]).parent().parent().width();
+
+                                                $($(columns)[i]).parent().parent().attr("originalwidth", newWidth);
+                                                if (newWidth > width)
+                                                {
+                                                    $($(columns)[i]).parent().parent().width(data2 + "px");    
+                                                    var number = $($(columns)[i]).parent().parent().attr("class").match(/col_([0-9]+)/)[1];
+                                                    $(".table-body .col_" + number).css("width", newWidth);
+                                                    $(".table-body .col_" + number + ".value-on-rights").css("width", newWidth);
+                                                    jQuery.post("/DataGrid/UpdateColumnWidth", { id: tableId, columnID: columnId, newWidth: newWidth }, function (html) {
+                                                    });
+                                                    calculateFullWidth();
+                                                }
+                                            
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                        });
+
+                        jQuery('.toRename').empty();
+                    });
+                })
+            </script>
+        }
+        <div style="clear: left;"></div>
+    </div>
+    <div class="table-scroll">
+        <div class="table-lines">
+            <div class="hide table-id">@Model.TableInfo.Id</div>
+            <div class="hide scroll-position">@((Model.TableObject != null && Model.TableObject.ScrollPosition != null) ? Model.TableObject.ScrollPosition.ToString() : "")</div>
+            <div class="outer-container">
+                <div class="inner-container">
+                    <div class="inner-container2">
+                        <div class="table-header">
+                            <table class="datagrid original-table datagridHeader">                                                                                                                                                                                                                                                                                                                                                                                                                                                   <thead>
+                                <tr>                                    
+                                    @if (Model.Crud != null)
+                                    {
+                                        <th class='col_999999' styledata="" originalWidth=""><div class='th-content'> <div class='column-name nodrop'>Commands</div> </div> </th>
+                                    } 
+                    
+                                   @{
+                                       var columns = new List<IColumn>();
+
+                                       if (Model.GroupColumn != null && Model.SubtotalColumns != null)
+                                       {
+                                           foreach (var c in Model.GroupColumn)
+                                           {
+                                               columns.Add(Model.TableInfo.Columns.FirstOrDefault(column => column == c));
+                                           }
+                                           foreach (var c in Model.SubtotalColumns)
+                                           {
+                                               columns.Add(Model.TableInfo.Columns.FirstOrDefault(column => column == c));
+                                           }
+                                       }
+                                       else
+                                       {
+                                           columns = Model.TableInfo.Columns.ToList();
+                                       }
+
+                                       foreach (var Column in columns)
+                                       {          
+                                           bool ascending = false;
+                                           bool descending = false;
+                                           if (Model.TableObject != null && Model.TableObject.Sort != null)
+                                           {
+                                               var sort = Model.TableObject.Sort.FirstOrDefault(s => s.cid == Column.Id);
+                                               if (sort != null)
+                                               {
+                                                   if (sort.dir == ViewboxDb.SortDirection.Ascending)
+                                                   {
+                                                       ascending = true;
+                                                   }
+                                                   if (sort.dir == ViewboxDb.SortDirection.Descending)
+                                                   {
+                                                       descending = true;
+                                                   }
+                                               }
+                                           }
+                                           if (Model.FilterParameters.Count(s => (s.Item2.Name.ToLower() == Column.Name.ToLower())) > 0)
+                                           {
+                                               Column.HeaderClass +=
+                                                   " filtercolor";
+                                           }
+                                           if (Model.GroupColumn != null && Model.GroupColumn.Where(x => x.Name.ToLower() == Column.Name.ToLower()).ToList().Count == 1)
+                                           {
+                                               Column.HeaderClass +=
+                                                   " subtgroup";
+                                           }
+                                           else if (Model.SubtotalColumns != null && Model.SubtotalColumns.Count(s => (s.Name.ToLower() == Column.Name.ToLower())) > 0)
+                                           {
+                                               Column.HeaderClass +=
+                                                   " subtsubtotal";
+                                           }
+                                           String filterValueInput = String.Empty;
+                                           if (Model.FilterParameters.Count(s
+                                                                      => (s.Item2.Name == Column.Name)) == 1)
+                                           {
+                                               var filterParameter = Model.FilterParameters.First(s =>
+                                                                                            (s.Item2.Name == Column.Name));
+                                               if (String.CompareOrdinal(filterParameter.Item5, "=") == 0)
+                                               {
+                                                   filterValueInput = filterParameter.Item4.ToString();
+                                               }
+                                               if (System.String.CompareOrdinal(filterParameter.Item5, "≈") == 0)
+                                               {
+                                                   filterValueInput = filterParameter.Item4.ToString();
+                                                   filterValueInput = filterValueInput.Replace("\\%", "%");
+                                                   filterValueInput = filterValueInput.Length > 0 ? filterValueInput.Remove(filterValueInput.Length - 1) : filterValueInput;
+                                                   filterValueInput = filterValueInput.Length > 0 ? filterValueInput.Substring(1, filterValueInput.Length - 1) : filterValueInput;
+                                                   filterValueInput = filterValueInput.Replace(@"\", "");
+                                               }
+                                               if (filterParameter.Item2 != null && filterParameter.Item4 != null)
+                                               {
+                                                   if (ViewboxSession.Language.CountryCode != null && ViewboxSession.Language.CountryCode.Contains("de") &&
+                                                       (filterParameter.Item2.DataType == SqlType.Decimal ||
+                                                        filterParameter.Item2.DataType == SqlType.Numeric))
+                                                   {
+                                                       if (!filterValueInput.Contains('.'))
+                                                       {
+                                                           filterValueInput = filterValueInput.Replace(',', '.');
+                                                       }
+                                                       else if (!filterValueInput.Contains(','))
+                                                       {
+                                                           filterValueInput = filterValueInput.Replace('.', ',');
+                                                       }
+                                                       else if (filterValueInput.Contains('.') && filterValueInput.Contains(','))
+                                                       {
+                                                           filterValueInput = filterValueInput.Replace('.', ' ').Replace(',', '.').Replace(' ', ',');
+                                                       }
+                                                   }
+
+                                                   if (filterParameter.Item2.DataType == SqlType.Date || filterParameter.Item2.DataType == SqlType.DateTime)
+                                                   {
+                                                       if (ViewboxSession.Language.CountryCode != null && ViewboxSession.Language.CountryCode.Contains("de"))
+                                                       {
+                                                           filterValueInput = filterValueInput.Replace("-", ".");
+                                                       }
+                                                       else
+                                                       {
+                                                           filterValueInput = filterValueInput.Replace("-", "/");
+                                                       }
+                                                       if (filterValueInput.Length == 14)
+                                                       {
+                                                           var sign = (ViewboxSession.Language.CountryCode != null && ViewboxSession.Language.CountryCode.Contains("de")) ? "." : "/";
+                                                           filterValueInput = filterValueInput.Substring(6, 2) + sign + filterValueInput.Substring(4, 2) + sign + filterValueInput.Substring(0, 4);
+                                                       }
+                                                   }
+                                               }
+                                           }
+                                           string width = String.Format("width: {0}px;", @ViewboxSession.RightsMode ? Convert.ToString(Column.OriginalWidth + 40) : Convert.ToString(Column.OriginalWidth));
+
+                                        <th class='@Column.HeaderClass' styledata="@Column.HeaderStyle" style="@width" originalwidth="@Column.OriginalWidth">
+                                            <div class='th-content @(Column.HeaderClass != null && Column.HeaderClass.Contains("filtercolor") ? "green" : "")'>
+                                                <div class="th-resize-line ui-resizable-handle ui-resizable-e" style=""></div>
+
+                                                @* after between this and the following note section is deletable to activate excel-like filter *@
+                                                @{
+                                           bool disabled = ((Model.TableObject != null && Model.TableObject.Sum != null && Model.TableObject.Sum.Count > 0)
+                                               || (Model.TableObject != null && Model.TableObject.GroupSubTotal != null && Model.TableObject.GroupSubTotal.GroupList != null && Model.TableObject.GroupSubTotal.GroupList.Count > 0)
+                                               ? true : false);
+
+                                           if (!disabled)
+                                           {
+                                            <div class='column-sort'>
+                                                <a href='@Url.Action("Sort", new { id = Column.Id, tableId = Model.TableInfo.Id, direction = ViewboxDb.SortDirection.Ascending })' class='ascending @(ascending ? "active" : "")'></a>
+                                                <a href='@Url.Action("Sort", new { id = Column.Id, tableId = Model.TableInfo.Id, direction = ViewboxDb.SortDirection.Descending })' class='descending @(descending ? "active" : "")'></a>
+                                            </div>
+                                           }
+                                                }
+
+                                                <input type="hidden" class="colOrdinal" value="@Column.Ordinal" />
+                                                <input type="hidden" class="lastColName" value="@Column.GetDescription()" />
+                                                <input class="column-rename" type="text" value="@Column.GetDescription()" style="margin: 2px 5px; height: 18px;display: none;" />
+                                                <a class="column-name">[@(Column.Ordinal + 1)] @Column.GetDescription()</a>
+                                                <div class="triangle-filter @(Column.HeaderClass != null && Column.HeaderClass.Contains("filtercolor") ? "active" : "")"></div>
+                                                <div class="item-id">@Column.Id</div>
+                                                <div class="filter-value">@filterValueInput</div>
+                                                <div id="exactCheckboxChecked" style="display: none;">@(!Column.ExactMatchUnchecked)</div>
+                                            </div>
+                                        </th>
+                                       }} <th class='full-width'><div class='th-content'></div></th>
+                                    <th class="item-id">[ROWNUMBER]</th>
+                                </tr>
+                            </thead>
+                            </table>           
+                        </div>
+                        <div class="table-body">
+                            <table class="datagrid original-table datagridFooter">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <thead>
+                                <tr>
+                                    @if (Model.Crud != null)
+                                    {
+                                        <th class='col_999999' styledata="" originalwidth=""><div class='th-content'> <div class='column-name nodrop'>Commands</div> </div> </th>
+                                    } 
+                    
+                                    @foreach (var Column in columns)
+                                    {
+                                        bool ascending = false;
+                                        bool descending = false;
+                                        if (Model.TableObject != null && Model.TableObject.Sort != null)
+                                        {
+                                            var sort = Model.TableObject.Sort.FirstOrDefault(s => s.cid == Column.Id);
+                                            if (sort != null)
+                                            {
+                                                if (sort.dir == ViewboxDb.SortDirection.Ascending)
+                                                {
+                                                    ascending = true;
+                                                }
+                                                if (sort.dir == ViewboxDb.SortDirection.Descending)
+                                                {
+                                                    descending = true;
+                                                }
+                                            }
+                                        }
+                                        if (Model.FilterParameters.Count(s => (s.Item2.Name.ToLower() == Column.Name.ToLower())) > 0)
+                                        {
+                                            Column.HeaderClass +=
+                                                " filtercolor";
+                                        }
+                                        if (Model.GroupColumn != null && Model.SubtotalColumns.Count(s => (s.Name.ToLower() == Column.Name.ToLower())) > 0)
+                                        {
+                                            Column.HeaderClass +=
+                                                " subtgroup";
+                                        }
+                                        else if (Model.SubtotalColumns != null && Model.SubtotalColumns.Count(s => (s.Name.ToLower() == Column.Name.ToLower())) > 0)
+                                        {
+                                            Column.HeaderClass +=
+                                                " subtsubtotal";
+                                        }
+                                        String filterValueInput = String.Empty;
+                                        if (Model.FilterParameters.Count(s
+                                                                   => (s.Item2.Name == Column.Name)) == 1)
+                                        {
+                                            var filterParameter = Model.FilterParameters.First(s =>
+                                                                                         (s.Item2.Name == Column.Name));
+                                            if (String.CompareOrdinal(filterParameter.Item5, "=") == 0)
+                                            {
+                                                filterValueInput = filterParameter.Item4.ToString();
+                                            }
+                                            if (System.String.CompareOrdinal(filterParameter.Item5, "≈") == 0)
+                                            {
+                                                filterValueInput = filterParameter.Item4.ToString();
+                                                filterValueInput = filterValueInput.Replace("\\%", "%");
+                                                filterValueInput = filterValueInput.Length > 0 ? filterValueInput.Remove(filterValueInput.Length - 1) : filterValueInput;
+                                                filterValueInput = filterValueInput.Length > 0 ? filterValueInput.Substring(1, filterValueInput.Length - 1) : filterValueInput;
+                                                filterValueInput = filterValueInput.Replace(@"\", "");
+                                            }
+                                            if (filterParameter.Item1 != null && filterParameter.Item3 != null)
+                                            {
+                                                if (ViewboxSession.Language.CountryCode != null && ViewboxSession.Language.CountryCode.Contains("de") &&
+                                                    (filterParameter.Item2.DataType == SqlType.Decimal ||
+                                                     filterParameter.Item2.DataType == SqlType.Numeric))
+                                                {
+                                                    if (!filterValueInput.Contains('.'))
+                                                    {
+                                                        filterValueInput = filterValueInput.Replace(',', '.');
+                                                    }
+                                                    else if (!filterValueInput.Contains(','))
+                                                    {
+                                                        filterValueInput = filterValueInput.Replace('.', ',');
+                                                    }
+                                                    else if (filterValueInput.Contains('.') && filterValueInput.Contains(','))
+                                                    {
+                                                        filterValueInput = filterValueInput.Replace('.', ' ').Replace(',', '.').Replace(' ', ',');
+                                                    }
+                                                }
+
+                                                if (filterParameter.Item2.DataType == SqlType.Date || filterParameter.Item2.DataType == SqlType.DateTime)
+                                                {
+                                                    if (ViewboxSession.Language.CountryCode != null && ViewboxSession.Language.CountryCode.Contains("de"))
+                                                    {
+                                                        filterValueInput = filterValueInput.Replace("-", ".");
+                                                    }
+                                                    else
+                                                    {
+                                                        filterValueInput = filterValueInput.Replace("-", "/");
+                                                    }
+                                                    if (filterValueInput.Length == 14)
+                                                    {
+                                                        var sign = (ViewboxSession.Language.CountryCode != null && ViewboxSession.Language.CountryCode.Contains("de")) ? "." : "/";
+                                                        filterValueInput = filterValueInput.Substring(6, 2) + sign + filterValueInput.Substring(4, 2) + sign + filterValueInput.Substring(0, 4);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        string width = String.Format("width: {0}px;", @ViewboxSession.RightsMode ? Convert.ToString(Column.OriginalWidth + 40) : Convert.ToString(Column.OriginalWidth));
+                                        <th class='@Column.HeaderClass' styledata="@Column.HeaderStyle" style="@width" originalwidth="@Column.OriginalWidth">
+                                            <div class='th-content @(Column.HeaderClass != null && Column.HeaderClass.Contains("filtercolor") ? "green" : "")'>
+                                                <div class="th-resize-line ui-resizable-handle ui-resizable-e" style=""></div>
+
+                                                @* after between this and the following note section is deletable to activate excel-like filter *@
+                                                @{
+                                                    bool disabled = ((Model.TableObject != null && Model.TableObject.Sum != null && Model.TableObject.Sum.Count > 0)
+                                                    || (Model.TableObject != null && Model.TableObject.GroupSubTotal != null
+                                                    && Model.TableObject.GroupSubTotal.GroupList != null && Model.TableObject.GroupSubTotal.GroupList.Count > 0)
+                                                    ? true : false);
+
+                                                    if (!disabled)
+                                                    {
+                                                                <div class='column-sort'>
+                                                                    <a href='@Url.Action("Sort", new { id = Column.Id, tableId = Model.TableInfo.Id, direction = ViewboxDb.SortDirection.Ascending })' class='ascending @(ascending ? "active" : "")'></a>
+                                                                    <a href='@Url.Action("Sort", new { id = Column.Id, tableId = Model.TableInfo.Id, direction = ViewboxDb.SortDirection.Descending })' class='descending @(descending ? "active" : "")'></a>
+                                                                </div>
+                                                        }
+                                                }   
+                                                <a class="column-name">[@(Column.Ordinal + 1)] @Column.GetDescription()</a>
+                                                    <div class="item-id">@Column.Id</div>
+                                                    <div class="filter-value">@filterValueInput</div>
+                                                    <div id="exactCheckboxChecked" style="display: none;">@(!Column.ExactMatchUnchecked)</div>
+                                                </div>
+                                            </th>
+
+                                                } <th class='full-width'><div class='th-content'></div></th>
+                                    <th class="item-id">[ROWNUMBER]</th>
+                                </tr>
+                            </thead>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <tbody>
+                                @{
+                                    int i = 0;
+                                    bool createLinks = false;
+                                    
+                                    if (Model.TableInfo.Relations.Count() == 1)
+                                    {
+                                        var re = Model.TableInfo.Relations.FirstOrDefault();
+                                        if (re != null)
+                                        {
+                                            var rere = re.FirstOrDefault();
+                                            if (rere != null && rere.FullLine == 1)
+                                            {
+                                                createLinks = true;
+                                            }
+                                        }
+                                    }
+                                  NumberFormatInfo numberFormat = new CultureInfo(ViewboxSession.Language.CountryCode, false).NumberFormat;
+                                }
+                                @{
+                                    int rowIdx = 0;
+                                    System.Text.RegularExpressions.Regex numberRegex = new System.Text.RegularExpressions.Regex(@"^\d+\.\d+$", System.Text.RegularExpressions.RegexOptions.Compiled);
+                                    
+                                    Dictionary<int, List<object>> roleBasedLimit = null;
+                                    if (ViewboxSession.RightsMode && ViewboxSession.RightsModeCredential.Type == CredentialType.Role)
+                                    {
+                                        var tobj = (Model.TableObject != null) ? Model.TableObject.OriginalTable : Model.TableInfo;
+                                        var rightsModes = tobj.RoleBasedFilters;
+                                        if (rightsModes != null && rightsModes.Count() > 0)
+                                        {
+                                            int roleId = ViewboxApplication.Roles[ViewboxSession.RightsModeCredential.Id].Id;
+                                            var limitsForRole = rightsModes.Where(rb => rb.Key == roleId).Select(rb => rb.Value).ToList();
+                                            if (limitsForRole != null && limitsForRole.Count() > 0)
+                                            {
+                                                var baseObject = tobj.GetBaseObject();
+                                                roleBasedLimit = new Dictionary<int, List<object>>();
+                                                foreach (var limit in limitsForRole)
+                                                {
+                                                    foreach (var item in limit)
+                                                    {
+                                                        var values = new List<object>();
+                                                        IColumn col = baseObject.Columns.Where(c => c.Id == item.Item1).First();
+                                                        foreach (var value in item.Item2)
+                                                        {
+                                                            if (col.DataType == SqlType.Date || col.DataType == SqlType.DateTime)
+                                                            {
+                                                                DateTime date;
+                                                                if (DateTime.TryParse(value, System.Globalization.CultureInfo.InvariantCulture, DateTimeStyles.None, out date))
+                                                                {
+                                                                    values.Add(new MySql.Data.Types.MySqlDateTime(date));
+                                                                    continue;
+                                                                }
+                                                            }
+                                                            else if (col.DataType == SqlType.Time)
+                                                            {
+                                                                TimeSpan time;
+                                                                if (TimeSpan.TryParse(value, System.Globalization.CultureInfo.InvariantCulture, out time))
+                                                                {
+                                                                    values.Add(time);
+                                                                    continue;
+                                                                }
+                                                            }
+                                                            else if (col.DataType == SqlType.Decimal)
+                                                            {
+                                                                decimal number;
+                                                                if (decimal.TryParse(value, NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out number))
+                                                                {
+                                                                    values.Add(number);
+                                                                    continue;
+                                }
+                                }
+                                                            else if (col.DataType == SqlType.Numeric)
+                                                            {
+                                                                double number;
+                                                                if (double.TryParse(value, NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out number))
+                                                                {
+                                                                    values.Add(number);
+                                                                    continue;
+                                                                }
+                                                            }
+
+                                                            values.Add(value);
+                                                        }
+                                                        roleBasedLimit[item.Item1] = values;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+
+                                @foreach (System.Data.DataRow Row in Model.DataTable.Rows)
+                                {
+                                    <tr class='@(++i % 2 == 0 ? "even" : "odd")@(Model.TableInfo.Columns.Count(c => !c.IsVisible) == Model.TableInfo.Columns.Count ? " hide" : "") '>
+                                        @{
+                                            int ord = 0;
+                                            if(Model.DataTable.Columns[0].ColumnName == "_row_no_" || Model.DataTable.Columns[0].ColumnName == "_ROW_NO_")
+                                            {
+                                                ord = 1;
+                                            }
+                                        }
+                                        @if (Model.Crud != null)
+                                        {
+                                            <td class='col_999999 datagrid-value'><div style="position: relative; z-index: 999; overflow: hidden;"><div><div class="button-crud-small edit left" ref-id="@Model.Crud.Id" ref-table-id='@Model.Crud.Table.Id' ref-rowno='@Row["_ROW_NO_"]'>@Resources.Edit</div><div class="button-crud-small delete left" ref-id="@Model.Crud.Id" ref-table-id='@Model.Crud.Table.Id' ref-rowno='@Row["_ROW_NO_"]'>Delete</div></div></div></td>
+                                        }
+                                        @foreach (var Column in columns)
+                                        {
+                                            int columnId = Column.Id;
+                                            try
+                                            {
+                                                if (columnId < 0)
+                                                {
+                                                    var tobj = (Model.TableObject != null) ? Model.TableObject.OriginalTable : Model.TableInfo;
+                                                    columnId = tobj.GetBaseObject().Columns.First(x => x.Name == Column.Name).Id;
+                                                }
+                                            }
+                                            catch (Exception) { }
+
+                                            var Class = "col_" + Column.Ordinal;
+                                            if (!Column.IsVisible || ((Model.GroupColumn != null && Model.SubtotalColumns != null) && !Model.GroupColumn.Contains(Column) && !Model.SubtotalColumns.Contains(Column)))
+                                            {
+                                                Class += " hide";
+                                            }
+
+                                            if (Column.HeaderClass != null && Column.HeaderClass.Contains("filtercolor"))
+                                            {
+                                                Class += i % 2 == 0 ? " lightgreen" : " darkgreen";
+                                            }
+                                            if (Column.HeaderClass != null && Column.HeaderClass.Contains("subtgroup"))
+                                            {
+                                                Class += " group-cell";
+                                            }
+                                            if (Column.HeaderClass != null && Column.HeaderClass.Contains("subtgroup") && rowIdx == 0)
+                                            {
+                                                Class += " group-cell-top";
+                                            }
+                                            if (Column.HeaderClass != null && Column.HeaderClass.Contains("subtgroup") && rowIdx == Model.DataTable.Rows.Count - 1)
+                                            {
+                                                Class += " group-cell-bottom";
+                                            }
+                                            if (Column.HeaderClass != null && Column.HeaderClass.Contains("subtsubtotal") && Model.subtotalRows != null && Model.subtotalRows.Contains(rowIdx))
+                                            {
+                                                Class = Class.Replace(" lightgreen", "");
+                                                Class = Class.Replace(" darkgreen", "");
+                                                Class += " subtotal-cell-subtotal";
+                                            }
+                                            else if (Column.HeaderClass != null && Column.HeaderClass.Contains("subtsubtotal") && Model.fulltotalRow != 0 && Model.fulltotalRow == rowIdx)
+                                            {
+                                                Class = Class.Replace(" lightgreen", "");
+                                                Class = Class.Replace(" darkgreen", "");
+                                                Class += " subtotal-cell-fulltotal";
+                                            }
+                                            else
+                                            {
+                                                if (Column.HeaderClass != null && Column.HeaderClass.Contains("subtsubtotal"))
+                                                {
+                                                    Class += " subtotal-cell";
+                                                }
+                                                if (Column.HeaderClass != null && Column.HeaderClass.Contains("subtsubtotal") && rowIdx == 0)
+                                                {
+                                                    Class += " subtotal-cell-top";
+                                                }
+                                                if (Column.HeaderClass != null && Column.HeaderClass.Contains("subtsubtotal") && rowIdx == Model.DataTable.Rows.Count - 1)
+                                                {
+                                                    Class += " subtotal-cell-bottom";
+                                                }
+                                            }
+
+                                            var value = Row[ord].ToString();
+                                            var type = Row[ord].GetType();
+                                            bool isItImage = false;
+                                            if(ViewboxApplication.MayrMelnhofBelegarchiv && Column.Name.ToLower() == "anlagen" && !String.IsNullOrEmpty(Row[ord].ToString()))
+                                            {
+												isItImage = true;
+											}
+										
+                                            List<object> hiddenValues = null;
+                                            if (roleBasedLimit == null || !roleBasedLimit.TryGetValue(columnId, out hiddenValues))
+                                            {
+                                                hiddenValues = new List<object>();
+                                            }
+
+                                            bool isHiddenValue = false;
+                                            if (Row[ord] == System.DBNull.Value) {
+                                                isHiddenValue = hiddenValues.Contains(string.Empty) || hiddenValues.Contains("∅");
+                                            }
+                                            if (Row[ord].GetType() == typeof(MySql.Data.Types.MySqlDateTime)) {
+                                                var compareValue = (MySql.Data.Types.MySqlDateTime)(Row[ord]);
+                                                isHiddenValue = hiddenValues.Any(v => v.GetType() == typeof(MySql.Data.Types.MySqlDateTime) && ((MySql.Data.Types.MySqlDateTime)v).Value == compareValue.Value);
+                                            }
+                                            else if (Row[ord].GetType() == typeof(decimal) || Row[ord].GetType() == typeof(TimeSpan)) {
+                                                isHiddenValue = hiddenValues.Contains(Row[ord]);                                                
+                                            }
+                                            else {
+                                                isHiddenValue = hiddenValues.Contains(value);
+                                            }
+                                            if (Row[ord] == System.DBNull.Value)
+                                            {
+                                                Class += " null";
+                                                //
+                                                var currentProp = ViewboxApplication.FindProperty(ViewboxSession.User, "shownullvalue");
+                                                bool ShowNullValue = false;
+                                                Boolean.TryParse(currentProp.Value, out ShowNullValue);
+                                                if (ShowNullValue)
+                                                { value = "∅"; }
+                                                else
+                                                { value = ""; }
+                                            }
+                                            else if (Row[ord].GetType() == typeof(byte[]))
+                                            {
+                                                var array = Row[ord] as byte[];
+                                                StringBuilder valueBuilder = new StringBuilder();
+                                                for (int j = 0; j < array.Length; j++)
+                                                {
+                                                    if (j > 0)
+                                                    {
+                                                        valueBuilder.Append((j % 16) > 0 ? " " : Environment.NewLine);
+                                                    }
+                                                    valueBuilder.Append(String.Format("{0:X2}", array[j]));
+                                                }
+                                                value = valueBuilder.ToString();
+                                            }
+                                            else if (0 < (Column.DataType & SqlType.Numeric))
+                                            {
+                                                Class += " number";
+                                                if (value.StartsWith("-")) { Class += " negative"; }
+                                                if (Column.DataType == SqlType.Decimal)
+                                                {
+                                                    value = Viewbox.Helper.GetDecimalFormat(Column.MaxLength, Row[ord].ToString());
+                                                }
+                                            }
+                                            else if (Column.DataType == SqlType.Date)
+                                            {
+                                                if (Row[ord] is DateTime)
+                                                {
+                                                    value = ((DateTime)Row[ord]).ToString("d");
+                                                }
+                                            }
+                                            var relations = (Model.SubtotalColumns != null && Model.SubtotalColumns.Any()) ? new List<IRelation>() : new List<IRelation>(Model.TableInfo.Relations[Column]);
+
+                                            Boolean hasExtendedInformation = false;
+                                            int childColumnList = 0;
+                                            String informationColumnList = String.Empty;
+                                            if (Model.TableInfo != null && Model.TableInfo.ExtendedColumnInformations.ContainsKey(Column.Name) && value != null && !String.IsNullOrEmpty(value.Trim()))
+                                            {
+                                                value = String.Format("{0}  ", value);
+                                                hasExtendedInformation = true;
+                                                childColumnList = Model.TableInfo.ExtendedColumnInformations[Column.Name].ElementAt(0).Source.Id;
+                                                informationColumnList = String.Join(",", Model.TableInfo.ExtendedColumnInformations[Column.Name].Select(t => t.Target.Id));
+                                            }
+
+                                            string eyeOrientation = Column.DataType == SqlType.Decimal || Column.DataType == SqlType.Integer ? "eye-left" : "eye-right";
+                                            bool needFill = false;
+                                            if (Column.HeaderClass != null && Column.HeaderClass.Contains("filtercolor"))
+                                            {
+                                                needFill = true;
+                                            }
+                                            if ((Model.TableObject == null || Model.TableObject.Sum == null) && relations.Count > 0)
+                                            {
+                                                if (relations.Count == 1 && relations[0].ElementAt(0).RelationType == RelationType.Belegarchive)
+                                                { /* Just Belegarchive relation is available !!!!!!!!!!!Please do not format your source code!!!!!!!!!!!*/
+                                                    <td class='@Class'>
+                                                        @if (needFill)
+                                                        {  <div class="left">&nbsp;</div>
+                                                        }@if (hasExtendedInformation)
+                                                        {
+                                                            <a href="@Url.Action("ReadExtendedData", new {value = value, parent = Column.Id, child = childColumnList, information = informationColumnList})"
+                                                               class="extended-info" style="position: relative; z-index: 1000; overflow: hidden;"></a>
+                                                        }
+                                                        <div class='clicknclick' style="position: relative; z-index: 999; overflow: hidden;">
+                                                            <a href='#' class='datagrid-value clicknclick-line-link@(Row["_row_no_"])' style="position:relative; z-index: 999; overflow: hidden;">@if (ViewboxSession.RightsMode && ViewboxSession.RightsModeCredential.Type == CredentialType.Role)
+                                                                {
+                                                                    if (isHiddenValue)
+                                                                    { <a class="icon @eyeOrientation row-rights-off"></a><span class="value value-on-rights" style="@string.Format("width:{0}px", Column.OriginalWidth)">@value</span> }
+                                                                    else
+                                                                    { <a class="icon @eyeOrientation row-rights-on"></a><span class="value value-on-rights" style="@string.Format("width:{0}px", Column.OriginalWidth)">@value</span> }
+                                                                }
+                                                                else
+                                                                {@value}
+                                                        </a>
+                                                        <div class="hide url" belegarchive="true">
+                                                            <div class="hide key">@(((IColumn)relations[0].ElementAt(0).Target).Table.Id)</div>
+                                                            @foreach (IColumnConnection cc in relations[0])
+                                                            {
+                                                                <div class="hide target" colid="@cc.Target.Id.ToString()">@Row[cc.Source.Name]</div>
+                                                            }
+                                                        </div>
+
+                                                    </div>
+                                                </td>}else{<td class='@Class'>
+                                                    @if (needFill)
+                                                    {
+                                                        <div class="left">&nbsp;</div>
+                                                    }@if (hasExtendedInformation)
+                                                    {
+                                                        <a href="@Url.Action("ReadExtendedData", new {value = value, parent = Column.Id, child = childColumnList, information = informationColumnList})"
+                                                           class="extended-info" style="position: relative; z-index: 1000; overflow: hidden;"></a>
+                                                    }
+                                                    <div class='clicknclick' style="position: relative; z-index: 999; overflow: hidden;">
+                                                        <a href='#' class='datagrid-value clicknclick-line-link@(Row["_row_no_"])' style="position:relative; z-index: 999; overflow: hidden;">@if (ViewboxSession.RightsMode && ViewboxSession.RightsModeCredential.Type == CredentialType.Role)
+                                                            {
+                                                                if (isHiddenValue)
+                                                                { <a class="icon @eyeOrientation row-rights-off"></a><span class="value value-on-rights" style="@string.Format("width:{0}px", Column.OriginalWidth)">@value</span> }
+                                                                else
+                                                                { <a class="icon @eyeOrientation row-rights-on"></a><span class="value value-on-rights" style="@string.Format("width:{0}px", Column.OriginalWidth)">@value</span> }
+                                                            }
+                                                            else
+                                                            {<span style="@string.Format("width:{0}px", Column.OriginalWidth)">@value</span>}</a><div class="hide url">@Url.Action("ShowRelationPartialNew", new {tableID = Model.TableInfo.Id, columnId = Column.Id, rowNo = Row["_row_no_"] })</div>
+                                                </div>
+                                            </td>}}else{if (createLinks){<td class='@Class datagrid-value'>@if (needFill){<div class="left">&nbsp;</div>}@if (hasExtendedInformation){<a href="@Url.Action("ReadExtendedData", new { value = value, parent = Column.Id, child = childColumnList, information = informationColumnList })"class="extended-info" style="position: relative; z-index: 1000;overflow:hidden;"></a>}<div style="position: relative; z-index: 999;overflow:hidden;"><a href='#' class='clicknclick-line' style="position: relative; z-index: 999;overflow:hidden;" refrow="@Row["_row_no_"]"><span id="value" class="@(ViewboxSession.RightsMode ? "value-on-rights" : "")" style="@string.Format("width:{0}px", Column.OriginalWidth)">@value</span></a>@if (ViewboxSession.RightsMode && ViewboxSession.RightsModeCredential.Type == CredentialType.Role && Model.TableInfo.Type != TableType.Issue){if ((roleBasedLimit != null && roleBasedLimit.Where(r => r.Value.Contains(value) && r.Key == columnId).Count() != 0) || isHiddenValue){ <a class="icon @eyeOrientation row-rights-off" /> }else{ <a class="icon @eyeOrientation row-rights-on" /> }}else{<span class="@(ViewboxSession.RightsMode ? "value-on-rights" : "")" style="@string.Format("width:{0}px", Column.OriginalWidth)">@value</span>}</div></td>}
+                                                else{<td class='@Class datagrid-value'>@if (needFill){<div class="left">&nbsp;</div>}@if (hasExtendedInformation){<a href="@Url.Action("ReadExtendedData", new { value = value, parent = Column.Id, child = childColumnList, information = informationColumnList })"class="extended-info" style="position: relative; z-index: 1000;overflow:hidden;"></a>}<div style="position: relative; z-index: 999;overflow:hidden;">@if (ViewboxSession.RightsMode && ViewboxSession.RightsModeCredential.Type == CredentialType.Role && Model.TableInfo.Type != TableType.Issue){if ((roleBasedLimit != null && roleBasedLimit.Where(r => r.Value.Contains(value) && r.Key == columnId).Count() != 0) || isHiddenValue){ <a class="icon @eyeOrientation row-rights-off"></a><span id="value" class="@(ViewboxSession.RightsMode ? "value-on-rights" : "")" style="@string.Format("width:{0}px", Column.OriginalWidth)">@value</span> }else{<a class="icon @eyeOrientation row-rights-on"></a><span id="value" class="@(ViewboxSession.RightsMode ? "value-on-rights" : "")" style="@string.Format("width:{0}px", Column.OriginalWidth)">@value</span>}}else{if(isItImage){<span class="@(ViewboxSession.RightsMode ? "value-on-rights" : "")" style="@string.Format("width:{0}px", "23")"><img id="attachment-download-icon" src="../../Content/img/download_icon.png" alt="Download" style="display:block;margin:auto;"></span>}else{<span class="@(ViewboxSession.RightsMode ? "value-on-rights" : "")" style="@string.Format("width:{0}px", Column.OriginalWidth)">@value</span>}}</div></td>}
+                                                 }/*!!!!!!!!!!!Please do not format your source code!!!!!!!!!!!*/
+                                            ord++;
+                                        }
+                                        <td class='full-width'></td><td class="item-id">@Row["_row_no_"]</td>
+                                    </tr>
+                                        rowIdx++;
+                                }
+                                @if (Model.DataTable.Rows.Count == 0)
+                                {
+                                    <tr class='no-data'>
+                                        <td class='full-width no-data' colspan='@(1 + Model.DataTable.Columns.Count)'>
+                                        </td>
+                                    </tr>
+                                }
+                                else if (Model.SubtotalColumns == null)
+                                {/*!!!!!!!!!!!Please do not format your source code!!!!!!!!!!!*/
+                                    <tr class='full-height'>@foreach (var Column in Model.TableInfo.Columns){<td class='col_@(Column.Ordinal) @(!Column.IsVisible ? "hide" : "")'></td>}<td class='full-width'></td><td class="item-id"></td></tr>
+                                }
+                            </tbody>
+                            </table>            
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <div class="no-column-container @(Model.TableInfo.Columns.Count(c => !c.IsVisible) == Model.TableInfo.Columns.Count ? "" : "hide")">
+            <div class="no-column-text">@Resources.NoColumnWarning</div>
+        </div>
+        <div class="document-preview">
+            <div class="preview">
+                <img class="loader" src="/Content/img/gif-load.gif" style="margin-top:200px;" />
+                <div class="wrapper" style="width:100%;height:100%;overflow:hidden;display:none;"></div>
+            </div>
+
+            <hr />
+
+            <div class="navigation">
+                <div class="buttons">
+                    <input type="button" value="@Resources.DocumentArchive" id="go-to-archiv" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<script>
+    // DON'T TOUCH THISS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    $(document).ready(function () {
+        var origiWitdh = ($('.datagrid.original-table.datagridFooter').width());
+        var fullWidth = 0;
+
+        $(".ui-resizable").each(function () {
+            if (!$(this).hasClass("full-width") && !$(this).hasClass("hide")) {
+                fullWidth += parseInt($(this).css("width") + 1);
+            }
+        });
+        
+        setTableBody();
+        var headerHeight = $(".table-body tr:first-child").outerHeight(true);
+        $('.table-body').css('margin-top', (-headerHeight) + "px"); // sets table header row invisible
+        $(window).resize(setTableBody);
+
+        if (fullWidth > $(".inner-container2").width())
+        {
+            $('.table-body').css("width", origiWitdh);
+            $('.datagrid.original-table.datagridHeader').css("width", origiWitdh - fullWidth);
+            $('.datagrid.original-table.datagridFooter').css("width", origiWitdh - fullWidth);
+        }
+        else
+        {
+            var offset = 4; //wonderful magicnumber 
+            $('.table-body').css("width", origiWitdh - offset);
+            $('.datagrid.original-table.datagridHeader').css("width", origiWitdh - offset);
+            $('.datagrid.original-table.datagridFooter').css("width", origiWitdh - offset);
+        }
+
+        $(".inner-container2").scroll(function () {
+            $(".table-header").css({ 'top': $(this).scrollTop() });
+        });
+        $(".table-body").scroll(function () {
+            $(".table-header").css('left', $(this).offset().left);
+        });
+    });
+
+    function setTableBody() {
+        var tableParamHeight = $('.table-container').find('.table-parameters').outerHeight(true);      	
+        $(".table-scroll").height($(".table-container").height() - tableParamHeight);
+    }
+    //----------------------------------------------------------------------------------------------------------------
+</script>
+<div class="dropdown-main" id="crud-popup" style="display: none;z-index: 999;width:420px">
+    <div class="distinct-main">
+        <div class="outer-container-mask">
+            <div class="outer-container" >
+                <div id="dropdown-title" >
+                </div>
+                <div class="close-reportlist">
+                </div>
+                <div class="inner-container">
+                    <div id="crud-popup-inner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dropdown-main" id="distinct-popup" style="display: none;z-index: 1000;width:280px">
+    <div class="distinct-main">
+        <div class="triangleleft">
+        </div>
+        <div class="triangleright">
+        </div>
+        <div class="outer-container-mask">
+            <div class="outer-container" style="height: 272px;">
+                <div class="close-reportlist">
+                </div>
+                <div class="inner-container" style="height: 272px;">
+                    <div class="report-distinct-menu">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="triangleleftdown">
+        </div>
+        <div class="trianglerightdown">
+        </div>
+    </div>
+</div>
+<div class="dropdown-main" id="preview-attachment-popup" style="display: none;z-index: 1000;width:280px">
+    <div class="distinct-main">
+        <div class="outer-container-mask">
+            <div class="outer-container" style="height: 272px;">
+                <div class="close-reportlist">
+                </div>
+                <div class="inner-container" style="height: 272px;">
+                    <div class="report-distinct-menu">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hide" id="wait-dlg">
+    @Html.Partial("_DialogPartial", Model.GetWaitDialog(Resources.ChangeOrder));
+</div>
+<div class="hide" id="wait-dlg-visibility">
+    @Html.Partial("_DialogPartial", Model.GetWaitDialog(Resources.ChangeVisibility));
+</div>
+<div class="hide" id="wait-dlg-page">
+    @Html.Partial("_DialogPartial", Model.GetWaitDialog(Resources.ChangePage));
+</div>
+<div class="hide" id="wait-dlg-counting">
+    @Html.Partial("_DialogPartial", Model.GetWaitDialog(Resources.Counting));
+</div>
+

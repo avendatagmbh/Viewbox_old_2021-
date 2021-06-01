@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.CtlValueDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="400" xmlns:my="clr-namespace:AvdWpfControls;assembly=AvdWpfControls">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+            
+        <TextBlock Grid.Row="0" Text="Manuelle Eingabe" Margin="0,5,0,0" TextWrapping="Wrap"/>
+        <my:NumericTextbox Grid.Column="1" Grid.Row="0" Margin="5,5,0,0" VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="1" Text="Berechneter Wert laut Taxonomie" Margin="0,5,0,0" TextWrapping="Wrap"/>
+        <my:NumericTextbox Grid.Column="1" Grid.Row="1" Margin="5,5,0,0" VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="2" Text="Summe zugeordneter Konten und untergeordnete Positionen" Margin="0,5,0,0" TextWrapping="Wrap"/>
+        <my:NumericTextbox Grid.Column="1" Grid.Row="2" Margin="5,5,0,0" VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="3" Text="Summe Gesamt" Margin="0,5,0,0" TextWrapping="Wrap"/>
+        <my:NumericTextbox Grid.Column="1" Grid.Row="3" Margin="5,5,0,0" VerticalAlignment="Center"/>
+    </Grid>
+</UserControl>

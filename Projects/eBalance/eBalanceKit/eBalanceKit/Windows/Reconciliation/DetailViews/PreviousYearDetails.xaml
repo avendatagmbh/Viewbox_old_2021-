@@ -1,0 +1,163 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Reconciliation.DetailViews.PreviousYearDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:Reconciliation="clr-namespace:eBalanceKit.Windows.Reconciliation"
+             xmlns:Enums="clr-namespace:eBalanceKitBusiness.Reconciliation.Enums;assembly=eBalanceKitBusiness"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/DetailViews.xaml" />
+                <ResourceDictionary Source="/Windows\Reconciliation\ReconciliationResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Setter Property="Visibility" Value="Collapsed" />
+                <Setter Property="DataContext" Value="{x:Null}" />
+
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding DataContext.DisplayedReconciliationType, RelativeSource={RelativeSource AncestorType=Reconciliation:CtlReconciliationList}}">
+                        <DataTrigger.Value>
+                            <Enums:ReconciliationTypes>PreviousYearValues</Enums:ReconciliationTypes>
+                        </DataTrigger.Value>
+                        <Setter Property="Visibility" Value="Visible" />
+                        <Setter Property="DataContext" Value="{Binding DataContext.SelectedReconciliation, RelativeSource={RelativeSource AncestorType=Reconciliation:CtlReconciliationList}}" />
+                    </DataTrigger>
+
+                    <DataTrigger Binding="{Binding DataContext.DisplayedReconciliationType, RelativeSource={RelativeSource AncestorType=Reconciliation:CtlReconciliationList}}">
+                        <DataTrigger.Value>
+                            <Enums:ReconciliationTypes>AuditCorrectionPreviousYear</Enums:ReconciliationTypes>
+                        </DataTrigger.Value>
+                        <Setter Property="Visibility" Value="Visible" />
+                        <Setter Property="DataContext" Value="{Binding DataContext.SelectedReconciliation, RelativeSource={RelativeSource AncestorType=Reconciliation:CtlReconciliationList}}" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+        
+        <Border Style="{StaticResource GroupBoxBorder}" CornerRadius="0">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <RichTextBox Background="Transparent" Foreground="#666" Visibility="{Binding HasTransaction, Converter={StaticResource FalseToVisibilityConverter}}"
+                             FontStyle="Italic" IsEnabled="False" IsReadOnly="True" Padding="0" Margin="0" BorderBrush="Transparent" BorderThickness="0">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text="{x:Static Localisation:ResourcesReconciliation.PreviousYearValueInfoPart1}" />
+                                <Image Source="/eBalanceKitResources;component/Resources/Cog.png" Height="12" Margin="-3,2,-3,-2" VerticalAlignment="Center" />
+                                <Run Text="{x:Static Localisation:ResourcesReconciliation.PreviousYearValueInfoPart2}" />
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+
+                    <StackPanel Orientation="Horizontal" Visibility="{Binding HasTransaction, Converter={StaticResource TrueToVisibilityConverter}}" Margin="5,5,5,0">
+                        <TextBlock Text="{x:Static Localisation:ResourcesReconciliation.PositionsCaption}" />
+                        <wpfc:TogglePopup Grid.Column="1" ImageSource="/eBalanceKitResources;component/Resources/Info.png" Margin="5,0,0,0" ImageHeight="14" VerticalAlignment="Center">
+                            <Border Style="{StaticResource PopupBorder}" Width="250" >
+                                <RichTextBox Background="Transparent" Foreground="#666" BorderBrush="Transparent" BorderThickness="0"
+                             FontStyle="Italic" IsEnabled="False" IsReadOnly="True" Padding="0" Margin="0">
+                                    <FlowDocument>
+                                        <Paragraph>
+                                            <Run Text="{x:Static Localisation:ResourcesReconciliation.PreviousYearValueInfoPart1}" />
+                                            <Image Source="/eBalanceKitResources;component/Resources/Cog.png" Height="12" Margin="-3,2,-3,-2" VerticalAlignment="Center" />
+                                            <Run Text="{x:Static Localisation:ResourcesReconciliation.PreviousYearValueInfoPart2}" />
+                                        </Paragraph>
+                                    </FlowDocument>
+                                </RichTextBox>
+                            </Border>
+                        </wpfc:TogglePopup>
+                    </StackPanel>
+
+                    <Border Style="{StaticResource GroupBoxBorder}" Margin="5" Visibility="{Binding HasTransaction, Converter={StaticResource TrueToVisibilityConverter}}">
+                        <wpfc:AvdTreeView x:Name="treeView" ItemsSource="{Binding TransactionGroups}" ItemTemplateSelector="{StaticResource PrevoiusYearDetailTemplateSelector}"
+                                  Background="Transparent" BorderBrush="Transparent" BorderThickness="0" PreviewMouseWheel="HandlePreviewMouseWheel"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <wpfc:AvdTreeView.Resources>
+
+                                <Style TargetType="{x:Type TreeViewItem}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Padding" Value="0"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                    <Setter Property="Visibility" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsVisible, Mode=OneWay, Converter={StaticResource TrueToVisibilityConverter}}"/>
+                                    <Setter Property="IsSelected" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Setter Property="Template" Value="{StaticResource ExpandedTreeViewItem}" />
+                                </Style>
+                            </wpfc:AvdTreeView.Resources>
+                        </wpfc:AvdTreeView>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}">
+            <StackPanel Orientation="Horizontal" Margin="5">
+
+                <!-- previous year buttons -->
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding DataContext.DisplayedReconciliationType, RelativeSource={RelativeSource AncestorType=Reconciliation:CtlReconciliationList}}">
+                                    <DataTrigger.Value>
+                                        <Enums:ReconciliationTypes>PreviousYearValues</Enums:ReconciliationTypes>
+                                    </DataTrigger.Value>
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style>
+
+                    <!-- delete all -->
+                    <wpfc:ImageButton2 Click="DeleteOnClick" IsEnabled="{Binding HasTransaction}"
+                                   ImageSource="/eBalanceKitResources;component/Resources/delete.png" 
+                                   Caption="{x:Static Localisation:ResourcesReconciliation.DeleteAllPreviousYearValuesCaption}" />
+
+                    <!-- import -->
+                    <wpfc:ImageButton2 Click="ImportOnClick" Margin="5,0,0,0" IsEnabled="{Binding HasPreviousYearReports}"
+                                   ImageSource="/eBalanceKitResources;component/Resources/import.png" 
+                                   Caption="{x:Static Localisation:ResourcesCommon.Import}" />
+
+                </StackPanel>
+
+                <!-- previous year audit correction buttons -->
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding DataContext.DisplayedReconciliationType, RelativeSource={RelativeSource AncestorType=Reconciliation:CtlReconciliationList}}">
+                                    <DataTrigger.Value>
+                                        <Enums:ReconciliationTypes>AuditCorrectionPreviousYear</Enums:ReconciliationTypes>
+                                    </DataTrigger.Value>
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style>
+
+                    <!-- delete all -->
+                    <wpfc:ImageButton2 Click="DeleteAuditCorrectionsOnClick" IsEnabled="{Binding HasTransaction}"
+                                   ImageSource="/eBalanceKitResources;component/Resources/delete.png" 
+                                   Caption="{x:Static Localisation:ResourcesReconciliation.DeleteAllPreviousYearValuesCaption}" />
+
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</UserControl>

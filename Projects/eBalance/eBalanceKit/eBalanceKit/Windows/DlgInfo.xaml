@@ -1,0 +1,125 @@
+﻿<Window x:Class="eBalanceKit.Windows.DlgInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:custom="clr-namespace:CustomResources;assembly=CustomResources"
+        Title="{x:Static custom:CustomStrings.ProductName}" SizeToContent="Height"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        Icon="/CustomResources;component/Resources/logo1.png" Width="400"
+        xmlns:p="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources" Loaded="Window_Loaded" PreviewKeyDown="Window_PreviewKeyDown">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- header -->
+        <Border Grid.Row="0">
+            <Grid>
+                <Image Source="/eBalanceKitResources;component/Resources/background_header.png" Stretch="Fill" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="/CustomResources;component/Resources/logoLogin.png" Margin="10,10,5,10" Height="64" Width="64">
+                        <Image.Effect>
+                            <DropShadowEffect Opacity="0.4" ShadowDepth="4" Direction="300" />
+                        </Image.Effect>
+                    </Image>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,5">
+                        <TextBlock Opacity="0.95" Padding="0" Grid.Row="0" Grid.Column="1" Height="Auto" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                                       FontSize="24" FontFamily="Arial" Foreground="White" FontWeight="Bold" 
+                                       x:Name="txtCaption" Text="{x:Static custom:CustomStrings.ProductName}"/>
+                        <TextBlock Opacity="0.95" Padding="0" Grid.Row="1"  Grid.Column="1" Height="Auto" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                       FontSize="12" FontFamily="Arial" FontStyle="Italic" Foreground="#FF7CB4C9"
+                                       x:Name="txtVersion" Text="Version x.x.x"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Border>
+
+        <!-- main -->
+        <Border Grid.Row="1" Style="{StaticResource GroupBoxBorder1}" Padding="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel>
+                    <TextBlock Text="© 2011 - 2012 AvenDATA GmbH" />
+                    <Separator Margin="0,3" />
+                    <TextBlock Text="{x:Static custom:CustomStrings.Company}">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <TextBlock Text="{x:Static custom:CustomStrings.Street}" />
+                    <TextBlock Text="{x:Static custom:CustomStrings.ZipTown}" />
+                </StackPanel>
+
+                <Separator Margin="0,3" Grid.Row="1" Grid.ColumnSpan="2" />
+
+                <StackPanel Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Telefon: " />
+                        <TextBlock Grid.Column="1" Text="{x:Static custom:CustomStrings.Phone}" />
+                        <TextBlock Grid.Row="1" Text="Fax: " />
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{x:Static custom:CustomStrings.Fax}" />
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <TextBlock Text="Support:" />
+                    <TextBlock>
+                        <Hyperlink x:Name="supportMail" RequestNavigate="Hyperlink_RequestNavigate" />
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- bottom -->
+        <Border Grid.Row="2" Style="{StaticResource ButtonBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Image Source="/CustomResources;component/Resources/logo.png" Height="25" HorizontalAlignment="Left" Margin="3" />
+
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <Button Content="{x:Static p:ResourcesCommon.Close}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnClose" VerticalAlignment="Top" Width="Auto" Padding="5,0" Click="btnClose_Click" />
+                </StackPanel>
+            </Grid>
+
+        </Border>
+
+    </Grid>
+</Window>

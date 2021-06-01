@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:de-fi="http://www.xbrl.de/de/fi/2008-02-19" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://www.xbrl.de/de/fi/role/balanceSheet" xlink:type="simple" xlink:href="de-fi-2008-02-19.xsd#role_balanceSheet"/>
+  <calculationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fi/role/balanceSheet">
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass" xlink:label="bsBanks.ass"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.1" xlink:label="bsBanks.ass.1"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.1" xlink:title="calculation: bsBanks.ass to bsBanks.ass.1" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.1.a" xlink:label="bsBanks.ass.1.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.1" xlink:to="bsBanks.ass.1.a" xlink:title="calculation: bsBanks.ass.1 to bsBanks.ass.1.a" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.1.b" xlink:label="bsBanks.ass.1.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.1" xlink:to="bsBanks.ass.1.b" xlink:title="calculation: bsBanks.ass.1 to bsBanks.ass.1.b" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.1.c" xlink:label="bsBanks.ass.1.c"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.1" xlink:to="bsBanks.ass.1.c" xlink:title="calculation: bsBanks.ass.1 to bsBanks.ass.1.c" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.2" xlink:label="bsBanks.ass.2"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.2" xlink:title="calculation: bsBanks.ass to bsBanks.ass.2" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.2.a" xlink:label="bsBanks.ass.2.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.2" xlink:to="bsBanks.ass.2.a" xlink:title="calculation: bsBanks.ass.2 to bsBanks.ass.2.a" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.2.b" xlink:label="bsBanks.ass.2.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.2" xlink:to="bsBanks.ass.2.b" xlink:title="calculation: bsBanks.ass.2 to bsBanks.ass.2.b" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.3" xlink:label="bsBanks.ass.3"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.3" xlink:title="calculation: bsBanks.ass to bsBanks.ass.3" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.3.a" xlink:label="bsBanks.ass.3.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.3" xlink:to="bsBanks.ass.3.a" xlink:title="calculation: bsBanks.ass.3 to bsBanks.ass.3.a" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.3.b" xlink:label="bsBanks.ass.3.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.3" xlink:to="bsBanks.ass.3.b" xlink:title="calculation: bsBanks.ass.3 to bsBanks.ass.3.b" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.3.a_Real" xlink:label="bsBanks.ass.3.a_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.3" xlink:to="bsBanks.ass.3.a_Real" xlink:title="calculation: bsBanks.ass.3 to bsBanks.ass.3.a_Real" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.3.b_Real" xlink:label="bsBanks.ass.3.b_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.3" xlink:to="bsBanks.ass.3.b_Real" xlink:title="calculation: bsBanks.ass.3 to bsBanks.ass.3.b_Real" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.3.c_Real" xlink:label="bsBanks.ass.3.c_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.3" xlink:to="bsBanks.ass.3.c_Real" xlink:title="calculation: bsBanks.ass.3 to bsBanks.ass.3.c_Real" use="optional" order="5.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.3.a_Bauspar" xlink:label="bsBanks.ass.3.a_Bauspar"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.3" xlink:to="bsBanks.ass.3.a_Bauspar" xlink:title="calculation: bsBanks.ass.3 to bsBanks.ass.3.a_Bauspar" use="optional" order="6.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.3.b_Bauspar" xlink:label="bsBanks.ass.3.b_Bauspar"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.3" xlink:to="bsBanks.ass.3.b_Bauspar" xlink:title="calculation: bsBanks.ass.3 to bsBanks.ass.3.b_Bauspar" use="optional" order="7.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.3.c_Bauspar" xlink:label="bsBanks.ass.3.c_Bauspar"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.3" xlink:to="bsBanks.ass.3.c_Bauspar" xlink:title="calculation: bsBanks.ass.3 to bsBanks.ass.3.c_Bauspar" use="optional" order="8.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.3.d_Bauspar" xlink:label="bsBanks.ass.3.d_Bauspar"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.3" xlink:to="bsBanks.ass.3.d_Bauspar" xlink:title="calculation: bsBanks.ass.3 to bsBanks.ass.3.d_Bauspar" use="optional" order="9.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBank.ass.3.nachrVermGegenst" xlink:label="bsBank.ass.3.nachrVermGegenst" xlink:title="bsBank.ass.3.nachrVermGegenst"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.3" xlink:to="bsBank.ass.3.nachrVermGegenst" xlink:title="calculation: bsBanks.ass.3 to bsBank.ass.3.nachrVermGegenst" order="10.0" weight="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.4" xlink:label="bsBanks.ass.4"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.4" xlink:title="calculation: bsBanks.ass to bsBanks.ass.4" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.4.a_Real" xlink:label="bsBanks.ass.4.a_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.4" xlink:to="bsBanks.ass.4.a_Real" xlink:title="calculation: bsBanks.ass.4 to bsBanks.ass.4.a_Real" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.4.b_Real" xlink:label="bsBanks.ass.4.b_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.4" xlink:to="bsBanks.ass.4.b_Real" xlink:title="calculation: bsBanks.ass.4 to bsBanks.ass.4.b_Real" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.4.c_Real" xlink:label="bsBanks.ass.4.c_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.4" xlink:to="bsBanks.ass.4.c_Real" xlink:title="calculation: bsBanks.ass.4 to bsBanks.ass.4.c_Real" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.4.a_Bauspar" xlink:label="bsBanks.ass.4.a_Bauspar" xlink:title="bsBanks.ass.4.a_Bauspar"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.4" xlink:to="bsBanks.ass.4.a_Bauspar" xlink:title="calculation: bsBanks.ass.4 to bsBanks.ass.4.a_Bauspar" use="optional" order="4.0" weight="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.4.a_Bauspar.aa" xlink:label="bsBanks.ass.4.a_Bauspar.aa"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.4.a_Bauspar" xlink:to="bsBanks.ass.4.a_Bauspar.aa" xlink:title="calculation: bsBanks.ass.4.a_Bauspar to bsBanks.ass.4.a_Bauspar.aa" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.4.ab_Bauspar" xlink:label="bsBanks.ass.4.ab_Bauspar"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.4.a_Bauspar" xlink:to="bsBanks.ass.4.ab_Bauspar" xlink:title="calculation: bsBanks.ass.4.a_Bauspar to bsBanks.ass.4.ab_Bauspar" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.4.a_Bauspar.ac" xlink:label="bsBanks.ass.4.a_Bauspar.ac"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.4.a_Bauspar" xlink:to="bsBanks.ass.4.a_Bauspar.ac" xlink:title="calculation: bsBanks.ass.4.a_Bauspar to bsBanks.ass.4.a_Bauspar.ac" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.4.b_Bauspar" xlink:label="bsBanks.ass.4.b_Bauspar"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.4" xlink:to="bsBanks.ass.4.b_Bauspar" xlink:title="calculation: bsBanks.ass.4 to bsBanks.ass.4.b_Bauspar" use="optional" order="5.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.5" xlink:label="bsBanks.ass.5"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.5" xlink:title="calculation: bsBanks.ass to bsBanks.ass.5" use="optional" order="5.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.5.a" xlink:label="bsBanks.ass.5.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.5" xlink:to="bsBanks.ass.5.a" xlink:title="calculation: bsBanks.ass.5 to bsBanks.ass.5.a" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.5.a.aa" xlink:label="bsBanks.ass.5.a.aa"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.5.a" xlink:to="bsBanks.ass.5.a.aa" xlink:title="calculation: bsBanks.ass.5.a to bsBanks.ass.5.a.aa" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.5.a.ab" xlink:label="bsBanks.ass.5.a.ab" xlink:title="bsBanks.ass.5.a.ab"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.5.a" xlink:to="bsBanks.ass.5.a.ab" xlink:title="calculation: bsBanks.ass.5.a to bsBanks.ass.5.a.ab" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.5.b" xlink:label="bsBanks.ass.5.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.5" xlink:to="bsBanks.ass.5.b" xlink:title="calculation: bsBanks.ass.5 to bsBanks.ass.5.b" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.5.b.ba" xlink:label="bsBanks.ass.5.b.ba"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.5.b" xlink:to="bsBanks.ass.5.b.ba" xlink:title="calculation: bsBanks.ass.5.b to bsBanks.ass.5.b.ba" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.5.b.bb" xlink:label="bsBanks.ass.5.b.bb"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.5.b" xlink:to="bsBanks.ass.5.b.bb" xlink:title="calculation: bsBanks.ass.5.b to bsBanks.ass.5.b.bb" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.5.c" xlink:label="bsBanks.ass.5.c"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.5" xlink:to="bsBanks.ass.5.c" xlink:title="calculation: bsBanks.ass.5 to bsBanks.ass.5.c" use="optional" order="5.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.5.verbund" xlink:label="bsBanks.ass.5.verbund" xlink:title="bsBanks.ass.5.verbund"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.5" xlink:to="bsBanks.ass.5.verbund" xlink:title="calculation: bsBanks.ass.5 to bsBanks.ass.5.verbund" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.5.beteil" xlink:label="bsBanks.ass.5.beteil" xlink:title="bsBanks.ass.5.beteil"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.5" xlink:to="bsBanks.ass.5.beteil" xlink:title="calculation: bsBanks.ass.5 to bsBanks.ass.5.beteil" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.6" xlink:label="bsBanks.ass.6"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.6" xlink:title="calculation: bsBanks.ass to bsBanks.ass.6" use="optional" order="6.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.6.nachrVermGegenst" xlink:label="bsBanks.ass.6.nachrVermGegenst" xlink:title="bsBanks.ass.6.nachrVermGegenst"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.6" xlink:to="bsBanks.ass.6.nachrVermGegenst" xlink:title="calculation: bsBanks.ass.6 to bsBanks.ass.6.nachrVermGegenst" order="1.0" weight="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.6a_WarenKreditGenoss" xlink:label="bsBanks.ass.6a_WarenKreditGenoss"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.6a_WarenKreditGenoss" xlink:title="calculation: bsBanks.ass to bsBanks.ass.6a_WarenKreditGenoss" use="optional" order="7.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.7" xlink:label="bsBanks.ass.7"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.7" xlink:title="calculation: bsBanks.ass to bsBanks.ass.7" use="optional" order="8.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.7.a_Genoss" xlink:label="bsBanks.ass.7.a_Genoss"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.7" xlink:to="bsBanks.ass.7.a_Genoss" xlink:title="calculation: bsBanks.ass.7 to bsBanks.ass.7.a_Genoss" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.7.b_Genoss" xlink:label="bsBanks.ass.7.b_Genoss"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.7" xlink:to="bsBanks.ass.7.b_Genoss" xlink:title="calculation: bsBanks.ass.7 to bsBanks.ass.7.b_Genoss" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.8" xlink:label="bsBanks.ass.8"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.8" xlink:title="calculation: bsBanks.ass to bsBanks.ass.8" use="optional" order="9.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.9" xlink:label="bsBanks.ass.9"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.9" xlink:title="calculation: bsBanks.ass to bsBanks.ass.9" use="optional" order="10.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.10" xlink:label="bsBanks.ass.10"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.10" xlink:title="calculation: bsBanks.ass to bsBanks.ass.10" use="optional" order="11.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.11" xlink:label="bsBanks.ass.11"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.11" xlink:title="calculation: bsBanks.ass to bsBanks.ass.11" use="optional" order="12.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.12" xlink:label="bsBanks.ass.12"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.12" xlink:title="calculation: bsBanks.ass to bsBanks.ass.12" use="optional" order="13.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.13" xlink:label="bsBanks.ass.13"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.13" xlink:title="calculation: bsBanks.ass to bsBanks.ass.13" use="optional" order="14.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.14" xlink:label="bsBanks.ass.14"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.14" xlink:title="calculation: bsBanks.ass to bsBanks.ass.14" use="optional" order="15.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.15" xlink:label="bsBanks.ass.15"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.15" xlink:title="calculation: bsBanks.ass to bsBanks.ass.15" use="optional" order="16.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.15.nachrVermGegenst" xlink:label="bsBanks.ass.15.nachrVermGegenst" xlink:title="bsBanks.ass.15.nachrVermGegenst"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.15" xlink:to="bsBanks.ass.15.nachrVermGegenst" xlink:title="calculation: bsBanks.ass.15 to bsBanks.ass.15.nachrVermGegenst" order="1.0" weight="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.16" xlink:label="bsBanks.ass.16"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.16" xlink:title="calculation: bsBanks.ass to bsBanks.ass.16" use="optional" order="17.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.16.a_Real" xlink:label="bsBanks.ass.16.a_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.16" xlink:to="bsBanks.ass.16.a_Real" xlink:title="calculation: bsBanks.ass.16 to bsBanks.ass.16.a_Real" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.16.b_Real" xlink:label="bsBanks.ass.16.b_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass.16" xlink:to="bsBanks.ass.16.b_Real" xlink:title="calculation: bsBanks.ass.16 to bsBanks.ass.16.b_Real" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.18" xlink:label="bsBanks.ass.17"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.17" xlink:title="calculation: bsBanks.ass to bsBanks.ass.17" use="optional" order="18.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.ass.17" xlink:label="bsBanks.ass.17_2" xlink:title="bsBanks.ass.17"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.ass" xlink:to="bsBanks.ass.17_2" xlink:title="calculation: bsBanks.ass to bsBanks.ass.17" order="17.5" weight="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab" xlink:label="bsBanks.eqLiab"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.1" xlink:label="bsBanks.eqLiab.1"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.1" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.1" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.1.a" xlink:label="bsBanks.eqLiab.1.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.1" xlink:to="bsBanks.eqLiab.1.a" xlink:title="calculation: bsBanks.eqLiab.1 to bsBanks.eqLiab.1.a" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.1.b" xlink:label="bsBanks.eqLiab.1.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.1" xlink:to="bsBanks.eqLiab.1.b" xlink:title="calculation: bsBanks.eqLiab.1 to bsBanks.eqLiab.1.b" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.1.a_Real" xlink:label="bsBanks.eqLiab.1.a_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.1" xlink:to="bsBanks.eqLiab.1.a_Real" xlink:title="calculation: bsBanks.eqLiab.1 to bsBanks.eqLiab.1.a_Real" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.1.b_Real" xlink:label="bsBanks.eqLiab.1.b_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.1" xlink:to="bsBanks.eqLiab.1.b_Real" xlink:title="calculation: bsBanks.eqLiab.1 to bsBanks.eqLiab.1.b_Real" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.1.c_Real" xlink:label="bsBanks.eqLiab.1.c_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.1" xlink:to="bsBanks.eqLiab.1.c_Real" xlink:title="calculation: bsBanks.eqLiab.1 to bsBanks.eqLiab.1.c_Real" use="optional" order="5.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.1.a_Bauspar" xlink:label="bsBanks.eqLiab.1.a_Bauspar"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.1" xlink:to="bsBanks.eqLiab.1.a_Bauspar" xlink:title="calculation: bsBanks.eqLiab.1 to bsBanks.eqLiab.1.a_Bauspar" use="optional" order="6.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.1.b_Bauspar" xlink:label="bsBanks.eqLiab.1.b_Bauspar"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.1" xlink:to="bsBanks.eqLiab.1.b_Bauspar" xlink:title="calculation: bsBanks.eqLiab.1 to bsBanks.eqLiab.1.b_Bauspar" use="optional" order="7.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2" xlink:label="bsBanks.eqLiab.2"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.2" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.2" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.a" xlink:label="bsBanks.eqLiab.2.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2" xlink:to="bsBanks.eqLiab.2.a" xlink:title="calculation: bsBanks.eqLiab.2 to bsBanks.eqLiab.2.a" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.a.aa" xlink:label="bsBanks.eqLiab.2.a.aa"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2.a" xlink:to="bsBanks.eqLiab.2.a.aa" xlink:title="calculation: bsBanks.eqLiab.2.a to bsBanks.eqLiab.2.a.aa" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.a.ab" xlink:label="bsBanks.eqLiab.2.a.ab"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2.a" xlink:to="bsBanks.eqLiab.2.a.ab" xlink:title="calculation: bsBanks.eqLiab.2.a to bsBanks.eqLiab.2.a.ab" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.b" xlink:label="bsBanks.eqLiab.2.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2" xlink:to="bsBanks.eqLiab.2.b" xlink:title="calculation: bsBanks.eqLiab.2 to bsBanks.eqLiab.2.b" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.b.ba" xlink:label="bsBanks.eqLiab.2.b.ba"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2.b" xlink:to="bsBanks.eqLiab.2.b.ba" xlink:title="calculation: bsBanks.eqLiab.2.b to bsBanks.eqLiab.2.b.ba" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.b.bb" xlink:label="bsBanks.eqLiab.2.b.bb"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2.b" xlink:to="bsBanks.eqLiab.2.b.bb" xlink:title="calculation: bsBanks.eqLiab.2.b to bsBanks.eqLiab.2.b.bb" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.a_Real" xlink:label="bsBanks.eqLiab.2.a_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2" xlink:to="bsBanks.eqLiab.2.a_Real" xlink:title="calculation: bsBanks.eqLiab.2 to bsBanks.eqLiab.2.a_Real" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.b_Real" xlink:label="bsBanks.eqLiab.2.b_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2" xlink:to="bsBanks.eqLiab.2.b_Real" xlink:title="calculation: bsBanks.eqLiab.2 to bsBanks.eqLiab.2.b_Real" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.c_Real" xlink:label="bsBanks.eqLiab.2.c_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2" xlink:to="bsBanks.eqLiab.2.c_Real" xlink:title="calculation: bsBanks.eqLiab.2 to bsBanks.eqLiab.2.c_Real" use="optional" order="5.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.c_Real.ca" xlink:label="bsBanks.eqLiab.2.c_Real.ca"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2.c_Real" xlink:to="bsBanks.eqLiab.2.c_Real.ca" xlink:title="calculation: bsBanks.eqLiab.2.c_Real to bsBanks.eqLiab.2.c_Real.ca" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.c_Real.cb" xlink:label="bsBanks.eqLiab.2.c_Real.cb"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2.c_Real" xlink:to="bsBanks.eqLiab.2.c_Real.cb" xlink:title="calculation: bsBanks.eqLiab.2.c_Real to bsBanks.eqLiab.2.c_Real.cb" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.d_Real" xlink:label="bsBanks.eqLiab.2.d_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2" xlink:to="bsBanks.eqLiab.2.d_Real" xlink:title="calculation: bsBanks.eqLiab.2 to bsBanks.eqLiab.2.d_Real" use="optional" order="6.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.a_Bauspar" xlink:label="bsBanks.eqLiab.2.a_Bauspar"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2" xlink:to="bsBanks.eqLiab.2.a_Bauspar" xlink:title="calculation: bsBanks.eqLiab.2 to bsBanks.eqLiab.2.a_Bauspar" use="optional" order="7.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.a_Bauspar.aa" xlink:label="bsBanks.eqLiab.2.a_Bauspar.aa"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2.a_Bauspar" xlink:to="bsBanks.eqLiab.2.a_Bauspar.aa" xlink:title="calculation: bsBanks.eqLiab.2.a_Bauspar to bsBanks.eqLiab.2.a_Bauspar.aa" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.a_Bauspar.ab" xlink:label="bsBanks.eqLiab.2.a_Bauspar.ab"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2.a_Bauspar" xlink:to="bsBanks.eqLiab.2.a_Bauspar.ab" xlink:title="calculation: bsBanks.eqLiab.2.a_Bauspar to bsBanks.eqLiab.2.a_Bauspar.ab" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.a_Bauspar.ac" xlink:label="bsBanks.eqLiab.2.a_Bauspar.ac"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2.a_Bauspar" xlink:to="bsBanks.eqLiab.2.a_Bauspar.ac" xlink:title="calculation: bsBanks.eqLiab.2.a_Bauspar to bsBanks.eqLiab.2.a_Bauspar.ac" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2.a_Bauspar.ad" xlink:label="bsBanks.eqLiab.2.a_Bauspar.ad"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.2.a_Bauspar" xlink:to="bsBanks.eqLiab.2.a_Bauspar.ad" xlink:title="calculation: bsBanks.eqLiab.2.a_Bauspar to bsBanks.eqLiab.2.a_Bauspar.ad" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.2a_WarenKreditGenoss" xlink:label="bsBanks.eqLiab.2a_WarenKreditGenoss"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.2a_WarenKreditGenoss" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.2a_WarenKreditGenoss" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.3" xlink:label="bsBanks.eqLiab.3"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.3" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.3" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.3.a" xlink:label="bsBanks.eqLiab.3.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.3" xlink:to="bsBanks.eqLiab.3.a" xlink:title="calculation: bsBanks.eqLiab.3 to bsBanks.eqLiab.3.a" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.3.b" xlink:label="bsBanks.eqLiab.3.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.3" xlink:to="bsBanks.eqLiab.3.b" xlink:title="calculation: bsBanks.eqLiab.3 to bsBanks.eqLiab.3.b" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.3.a_Real" xlink:label="bsBanks.eqLiab.3.a_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.3" xlink:to="bsBanks.eqLiab.3.a_Real" xlink:title="calculation: bsBanks.eqLiab.3 to bsBanks.eqLiab.3.a_Real" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.3.a_Real.aa" xlink:label="bsBanks.eqLiab.3.a_Real.aa"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.3.a_Real" xlink:to="bsBanks.eqLiab.3.a_Real.aa" xlink:title="calculation: bsBanks.eqLiab.3.a_Real to bsBanks.eqLiab.3.a_Real.aa" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.3.a_Real.ab" xlink:label="bsBanks.eqLiab.3.a_Real.ab"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.3.a_Real" xlink:to="bsBanks.eqLiab.3.a_Real.ab" xlink:title="calculation: bsBanks.eqLiab.3.a_Real to bsBanks.eqLiab.3.a_Real.ab" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.3.a_Real.ac" xlink:label="bsBanks.eqLiab.3.a_Real.ac"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.3.a_Real" xlink:to="bsBanks.eqLiab.3.a_Real.ac" xlink:title="calculation: bsBanks.eqLiab.3.a_Real to bsBanks.eqLiab.3.a_Real.ac" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.3.b_Real" xlink:label="bsBanks.eqLiab.3.b_Real"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.3" xlink:to="bsBanks.eqLiab.3.b_Real" xlink:title="calculation: bsBanks.eqLiab.3 to bsBanks.eqLiab.3.b_Real" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.4" xlink:label="bsBanks.eqLiab.4"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.4" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.4" use="optional" order="5.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.5" xlink:label="bsBanks.eqLiab.5"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.5" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.5" use="optional" order="6.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.6" xlink:label="bsBanks.eqLiab.6"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.6" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.6" use="optional" order="7.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.6.a" xlink:label="bsBanks.eqLiab.6.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.6" xlink:to="bsBanks.eqLiab.6.a" xlink:title="calculation: bsBanks.eqLiab.6 to bsBanks.eqLiab.6.a" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.6.b" xlink:label="bsBanks.eqLiab.6.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.6" xlink:to="bsBanks.eqLiab.6.b" xlink:title="calculation: bsBanks.eqLiab.6 to bsBanks.eqLiab.6.b" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.7" xlink:label="bsBanks.eqLiab.7"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.7" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.7" use="optional" order="8.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.7.a" xlink:label="bsBanks.eqLiab.7.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.7" xlink:to="bsBanks.eqLiab.7.a" xlink:title="calculation: bsBanks.eqLiab.7 to bsBanks.eqLiab.7.a" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.7.b" xlink:label="bsBanks.eqLiab.7.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.7" xlink:to="bsBanks.eqLiab.7.b" xlink:title="calculation: bsBanks.eqLiab.7 to bsBanks.eqLiab.7.b" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.7.c" xlink:label="bsBanks.eqLiab.7.c"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.7" xlink:to="bsBanks.eqLiab.7.c" xlink:title="calculation: bsBanks.eqLiab.7 to bsBanks.eqLiab.7.c" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.7a_Bauspar" xlink:label="bsBanks.eqLiab.7a_Bauspar"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.7a_Bauspar" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.7a_Bauspar" use="optional" order="9.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.8" xlink:label="bsBanks.eqLiab.8"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.8" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.8" use="optional" order="10.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.9" xlink:label="bsBanks.eqLiab.9"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.9" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.9" use="optional" order="11.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.10" xlink:label="bsBanks.eqLiab.10"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.10" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.10" use="optional" order="12.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.11" xlink:label="bsBanks.eqLiab.11"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.11" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.11" use="optional" order="13.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12" xlink:label="bsBanks.eqLiab.12"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab" xlink:to="bsBanks.eqLiab.12" xlink:title="calculation: bsBanks.eqLiab to bsBanks.eqLiab.12" use="optional" order="14.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.a" xlink:label="bsBanks.eqLiab.12.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12" xlink:to="bsBanks.eqLiab.12.a" xlink:title="calculation: bsBanks.eqLiab.12 to bsBanks.eqLiab.12.a" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.b" xlink:label="bsBanks.eqLiab.12.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12" xlink:to="bsBanks.eqLiab.12.b" xlink:title="calculation: bsBanks.eqLiab.12 to bsBanks.eqLiab.12.b" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.c" xlink:label="bsBanks.eqLiab.12.c"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12" xlink:to="bsBanks.eqLiab.12.c" xlink:title="calculation: bsBanks.eqLiab.12 to bsBanks.eqLiab.12.c" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.c.ca" xlink:label="bsBanks.eqLiab.12.c.ca"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12.c" xlink:to="bsBanks.eqLiab.12.c.ca" xlink:title="calculation: bsBanks.eqLiab.12.c to bsBanks.eqLiab.12.c.ca" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.c.cb" xlink:label="bsBanks.eqLiab.12.c.cb"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12.c" xlink:to="bsBanks.eqLiab.12.c.cb" xlink:title="calculation: bsBanks.eqLiab.12.c to bsBanks.eqLiab.12.c.cb" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.c.cc" xlink:label="bsBanks.eqLiab.12.c.cc"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12.c" xlink:to="bsBanks.eqLiab.12.c.cc" xlink:title="calculation: bsBanks.eqLiab.12.c to bsBanks.eqLiab.12.c.cc" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.c.cd" xlink:label="bsBanks.eqLiab.12.c.cd"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12.c" xlink:to="bsBanks.eqLiab.12.c.cd" xlink:title="calculation: bsBanks.eqLiab.12.c to bsBanks.eqLiab.12.c.cd" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.c_Genoss" xlink:label="bsBanks.eqLiab.12.c_Genoss"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12" xlink:to="bsBanks.eqLiab.12.c_Genoss" xlink:title="calculation: bsBanks.eqLiab.12 to bsBanks.eqLiab.12.c_Genoss" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.c_Genoss.ca" xlink:label="bsBanks.eqLiab.12.c_Genoss.ca"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12.c_Genoss" xlink:to="bsBanks.eqLiab.12.c_Genoss.ca" xlink:title="calculation: bsBanks.eqLiab.12.c_Genoss to bsBanks.eqLiab.12.c_Genoss.ca" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.c_Genoss.cb" xlink:label="bsBanks.eqLiab.12.c_Genoss.cb"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12.c_Genoss" xlink:to="bsBanks.eqLiab.12.c_Genoss.cb" xlink:title="calculation: bsBanks.eqLiab.12.c_Genoss to bsBanks.eqLiab.12.c_Genoss.cb" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.c_Genoss.erwerbsWirtschGenossensch" xlink:label="bsBanks.eqLiab.12.c_Genoss.erwerbsWirtschGenossensch" xlink:title="bsBanks.eqLiab.12.c_Genoss.erwerbsWirtschGenossensch"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12.c_Genoss" xlink:to="bsBanks.eqLiab.12.c_Genoss.erwerbsWirtschGenossensch" xlink:title="calculation: bsBanks.eqLiab.12.c_Genoss to bsBanks.eqLiab.12.c_Genoss.erwerbsWirtschGenossensch" order="3.0" weight="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.c_Genoss.ausgeschiedeneGenossen" xlink:label="bsBanks.eqLiab.12.c_Genoss.ausgeschiedeneGenossen" xlink:title="bsBanks.eqLiab.12.c_Genoss.ausgeschiedeneGenossen"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12.c_Genoss" xlink:to="bsBanks.eqLiab.12.c_Genoss.ausgeschiedeneGenossen" xlink:title="calculation: bsBanks.eqLiab.12.c_Genoss to bsBanks.eqLiab.12.c_Genoss.ausgeschiedeneGenossen" order="4.0" weight="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.eqLiab.12.d" xlink:label="bsBanks.eqLiab.12.d"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.eqLiab.12" xlink:to="bsBanks.eqLiab.12.d" xlink:title="calculation: bsBanks.eqLiab.12 to bsBanks.eqLiab.12.d" use="optional" order="5.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.contingLiab.1" xlink:label="bsBanks.contingLiab.1" xlink:title="bsBanks.contingLiab.1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.contingLiab.1.a" xlink:label="bsBanks.contingLiab.1.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.contingLiab.1" xlink:to="bsBanks.contingLiab.1.a" xlink:title="calculation: bsBanks.contingLiab.1 to bsBanks.contingLiab.1.a" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.contingLiab.1.b" xlink:label="bsBanks.contingLiab.1.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.contingLiab.1" xlink:to="bsBanks.contingLiab.1.b" xlink:title="calculation: bsBanks.contingLiab.1 to bsBanks.contingLiab.1.b" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.contingLiab.1.c" xlink:label="bsBanks.contingLiab.1.c"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.contingLiab.1" xlink:to="bsBanks.contingLiab.1.c" xlink:title="calculation: bsBanks.contingLiab.1 to bsBanks.contingLiab.1.c" use="optional" order="3.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.contingLiab.2" xlink:label="bsBanks.contingLiab.2" xlink:title="bsBanks.contingLiab.2"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.contingLiab.2.a" xlink:label="bsBanks.contingLiab.2.a"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.contingLiab.2" xlink:to="bsBanks.contingLiab.2.a" xlink:title="calculation: bsBanks.contingLiab.2 to bsBanks.contingLiab.2.a" use="optional" order="1.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.contingLiab.2.b" xlink:label="bsBanks.contingLiab.2.b"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.contingLiab.2" xlink:to="bsBanks.contingLiab.2.b" xlink:title="calculation: bsBanks.contingLiab.2 to bsBanks.contingLiab.2.b" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-fi-2008-02-19.xsd#de-fi_bsBanks.contingLiab.2.c" xlink:label="bsBanks.contingLiab.2.c"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bsBanks.contingLiab.2" xlink:to="bsBanks.contingLiab.2.c" xlink:title="calculation: bsBanks.contingLiab.2 to bsBanks.contingLiab.2.c" use="optional" order="3.0" weight="1"/>
+  </calculationLink>
+</linkbase>

@@ -1,0 +1,129 @@
+﻿@using Viewbox
+@using Viewbox.Properties
+@model Viewbox.Models.ListOptionsModel
+@{
+    if (Model == null)
+    {
+        return;
+    }
+}
+<!-- _ListArchiveOptionsPartial.cshtml -->
+<ul class="dropdown big view" id="listarchiveoptions">
+    <li class="panel">
+        @Html.Partial("_TooltipPartial", Resources.ViewOptions)
+        @*@if (ViewboxSession.User.IsSuper)
+        {
+            <a class="icon process right dropdown-btn"></a>
+        }*@
+        <div id="main-report-list" class="archive-dropdown-main box" style="display: none; height: 550px; right: 20px; top: 24px; width: 615px;">
+            <div class="triangleright" ></div>
+            <div class="outer-container-mask" style="height: 596px;">
+                <div class="outer-container" style="height: 550px;">
+                    <h4>@Resources.ArchiveTable</h4>
+                    <div class="close-popup" style="right: 8px; top: 10px;"></div>    
+                    <div class="inner-container" style="height: 100%;">
+                        <div class="tabbar" style="margin: 0; position: relative; top: 4px;">
+                            <a class="tabheader  @(!Model.ShowArchived ? "selected" : "")">@Resources.Table</a>
+                            <a class="tabheader showarchived @(Model.ShowArchived ? "selected" : "")" href="#">@Resources.ArchivedTable</a>
+                        </div>
+                        <div class="middle columns"  page="@Model.Page" size="@Model.Size" sortcolumn="@Model.SortColumn" direction="@Model.Direction">
+                            <div style="border-bottom: 1px solid gainsboro; height: 30px; padding-top: 10px;">
+                                <div class="search-opt-panel">
+                                    <div class="bg-left"></div>
+                                    @using (Html.BeginForm(null, null, FormMethod.Get, new Dictionary<string, object> {{"id", "searchform"}, {"name", "searchform"}}))
+                                    {
+                                        <input type="hidden" class="table-object-id" value="" />
+                                        <input class="bg-middle placeholder" autocomplete="off" name="search_viewoptions" type="text" 
+                                               value="@(!String.IsNullOrWhiteSpace(Model.Search) ? Model.Search : Resources.SearchPhrase)"  style="width: 545px;"
+                                               placeholder="@Resources.SearchPhrase" />
+
+                                        <input type="submit" class="submit" value="" />
+                                    }
+                                </div>
+                            </div>
+                            <table class="normal">
+                                <tr>
+                                    <th class="colnumber" style="">
+                                        <span class="sortbutton @(Model.SortColumn == 1 ? Model.Direction.ToString() : "Noscending")" sortcolumn="1">Id</span>
+                                    </th>
+                                    <th class="colname" style="margin-bottom: 5px">
+                                        <span class="sortbutton @(Model.SortColumn == 2 ? Model.Direction.ToString() : "Noscending")" sortcolumn="2">@Resources.Name</span>
+                                    </th>
+                                    <th class="">
+                                        <div class="">
+                                            <a href="#" class="listarchiveoptionsselectall @(Model.ListArchiveOptionsAelectAllState ? "chkbox2off" : "chkbox2on") "></a>
+                                            @{
+                                                Html.Partial("_TooltipPartial", Model.ListArchiveOptionsAelectAllState ? Resources.SelectFilteredItems : Resources.ClearselectionList);
+                                            }
+                                        </div>
+                                    </th>
+                                </tr>
+                            </table>
+                        
+                            <div class="scroll graytopbackground" style="height: 400px;">
+                                <table class="normal">
+                                    @foreach (var tobj in Model.TableObjects)
+                                    {
+                                        bool isTableObjectChecked = ViewboxSession.CheckedTableItems.ContainsKey(tobj.Id) && ViewboxSession.CheckedTableItems[tobj.Id];
+                                        <tr class=""> 
+                                            <td class="colnumber">@(tobj.TransactionNumber)</td>
+                                            <td class="colname"><div class="description">@tobj.GetDescription()</div></td>
+                                            <td class=""><a href="#" class="listarchiveoptionsselect @(isTableObjectChecked ? "chkboxon" : "chkboxoff")" uid="@tobj.Id"></a></td>
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                        
+                            <div class="controls">
+                                <div class="pagination">
+                                    <div class="nav-controls" >
+                                        @if (Model.Count > Model.Size)
+                                        {
+                                            if (Model.Page > 0)
+                                            {
+                                                <a href="#" page="0" class="iconx first2"></a>
+                                                <a href="#" page="@(Model.Page - 1)"  class="iconx back"></a>
+                                            }
+                                            else
+                                            {
+                                                <span class="iconx first2"></span>
+                                                <span class="iconx back"></span>
+                                            }
+                                            if (Model.Count > 0)
+                                            {
+                                                <span>@((Model.From + 1).ToString("#,0")) -</span>
+                                                <span>@((Model.To).ToString("#,0"))</span>
+                                                <span>/</span>
+                                                <span>@Model.Count.ToString("#,0")</span>
+                                                <span>@Model.LabelNumberOfRows</span>
+                                            }
+                                            else
+                                            {
+                                                <span>@Model.LabelNoData</span>
+                                            }
+                                            if (Model.Page < Model.LastPage)
+                                            {
+                                                <a href="#" page="@(Model.Page + 1)" class="iconx next"></a>
+                                                <a href="#" page="@Model.LastPage" class="iconx last"></a>
+                                            }
+                                            else
+                                            {
+                                                <span class="iconx next"></span>
+                                                <span class="iconx last"></span>
+                                            }
+                                            <div class="hide page">@Model.Page</div>
+                                            <div class="hide size">@Model.Size</div>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="buttons">
+                                    <div class="submitbutton button">@Resources.Submit</div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>

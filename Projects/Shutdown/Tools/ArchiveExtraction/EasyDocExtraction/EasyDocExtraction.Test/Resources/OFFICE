@@ -1,0 +1,45 @@
+@DB,$(#DEMO)\OFFICE
+@CHARSET,ANSI
+@FLDDSC,REPL,101,.Mappe,IDX,CAT,TXT
+@FLDDSC,REPL,102,.Version,IDX,CAT,TXT
+@FLDDSC,REPL,103,.Archivdatum,IDX,CAT,TXT
+@FLDDSC,REPL,104,.Änderungsdatum,IDX,CAT,TXT
+@FLDDSC,REPL,106,.Textfelder,IDX,CAT,TXT
+@FLDDSC,REPL,107,.Bilder,IDX,CAT,TXT
+@FLDDSC,REPL,110,.Titel,IDX,CAT,TXT
+@FLDDSC,REPL,801,.FileType,IDX,CAT,TXT
+@FLDDSC,REPL,802,.FormName,IDX,CAT,TXT
+@FLDDSC,REPL,803,.WorkBoxName,IDX,CAT,TXT
+@FLDDSC,REPL,804,.BatchName,IDX,CAT,TXT
+@FLDDSC,REPL,1001,Verfasser,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1002,Datum,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1003,Betreff,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1004,Bemerkungen,IDX,CAT,DEF,QRY,TXT
+@FOLDER,FT:^EASY SOFTWARE AG^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^EASY SOFTWARE AG^,^14.07.2000^,^Installions- und Produktionformationen  ^,^Beispiel einer Archivierung RTF-Dateien^,^00000001^,^001^,^04.07.2001 ^,^04.07.2001 ^,^4^,^0^,^EASY SOFTWARE AG^,^M:\EASYWARE\Export\DEMO\OFFICE.001\0.rtf^
+@FOLDER,FT:^EASY SOFTWARE AG^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^EASY SOFTWARE AG^,^07.06.2001^,^Microsoft Word Anschreiben^,^Beispiel einer Archivierung WORD-Dateien^,^00000002^,^001^,^04.07.2001 ^,^04.07.2001 ^,^4^,^0^,^EASY SOFTWARE AG^,^M:\EASYWARE\Export\DEMO\OFFICE.002\1.DOC^
+@FOLDER,FT:^EASY SOFTWARE AG^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^EASY SOFTWARE AG^,^06.06.2001^,^MS-Excel Dateien^,^Beispiel 1: Produktionsprogrammplanung mit abnehmender Gewinnspanne
+Ihr Unternehmen produziert Fernsehgeräte, Stereoanlagen und Lautsprecher und verwendet
+dafür elektronische Bauteile wie Hoch-/Tieftöner, Transistoren, etc. Die Anzahl dieser
+Bauteile ist begrenzt, und Sie möchten die effizienteste Zuordnun
+Endprodukten ermitteln. Der Gewinn pro produzierter Einheit nimmt mit steigender Anzahl
+ab, weil mengenabhängige Zusatzprämien bei der Bereitstellung anfallen.
+
+         TV-GeräteStereoanlage Lautsprecher
+Zu produzie      100      100           100
+Bauteil        Lagerbesta Benstätigte    Anz.
+Gehäuse        450        200            1          1         0
+Bildröhre      250        100            1          0         0   Abnahme
+Hoch-/Tieftö   800        500            2          2         1  des Gewinn-
+Netztransfor   450        200            1          1         0   fakfors
+Transistor     600        400            2          1         1     0,9
+                                 Gewinn:
+                      je Produkt  4.732 DM   3.155 DM  2.208 DM^,^00000003^,^001^,^04.07.2001 ^,^04.07.2001 ^,^4^,^0^,^EASY SOFTWARE AG^,^M:\EASYWARE\Export\DEMO\OFFICE.003\2.XLS^
+@FOLDER,FT:^EASY SOFTWARE AG^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^EASY SOFTWARE AG^,^06.06.2001^,^MS-Powerpoint Dateien ^,^Beispiel einer Archivierung Powerpoint-Dateien^,^00000004^,^001^,^04.07.2001 ^,^04.07.2001 ^,^4^,^0^,^EASY SOFTWARE AG^,^M:\EASYWARE\Export\DEMO\OFFICE.004\3.PPT^
+@FOLDER,FT:^EASY SOFTWARE AG^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001,BI:2002,BI:2003
+^^,^^,^^,^^,^EASY SOFTWARE AG ^,^06.06.2001^,^Windows Bitmap^,^Beispiel einer Archivierung BMP-Dateien^,^00000005^,^001^,^04.07.2001 ^,^04.07.2001 ^,^4^,^3^,^EASY SOFTWARE AG^,^M:\EASYWARE\Export\DEMO\OFFICE.005\4.BMP^,^M:\EASYWARE\Export\DEMO\OFFICE.005\5.BMP^,^M:\EASYWARE\Export\DEMO\OFFICE.005\6.BMP^
+@FOLDER,FT:^EASY SOFTWARE AG ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^EASY SOFTWARE AG ^,^06.06.2001^,^MS-Powerpoint-Präsentation^,^Beispiel einer Archvierung von Powerpoint-Folien^,^00000006^,^001^,^06.07.2001 ^,^06.07.2001 ^,^4^,^0^,^EASY SOFTWARE AG ^,^M:\EASYWARE\Export\DEMO\OFFICE.006\ausschnitt.ppt^

@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.Company.ImportCompanyDetailsAssistant.CtlImportCompany4"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:Converters="clr-namespace:AvdWpfControls.Converters;assembly=AvdWpfControls" mc:Ignorable="d" 
+             d:DesignHeight="430" d:DesignWidth="750">
+
+    <UserControl.Resources>
+        <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" VisibleValue="True" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Visibility="{Binding HasValueErrors, Converter={StaticResource BoolToVisibilityConverter}}">
+            <Label Content="{x:Static Localisation:ResourcesCompanyImport.WasValueError}" />
+            <DataGrid ItemsSource="{Binding CompanyDetailsImporter.VisibleValueErrors}" AutoGenerateColumns="False" IsReadOnly="True" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="CSV" Binding="{Binding FileName}" />
+                    <DataGridTextColumn Header="{x:Static Localisation:ResourcesCommon.Name}" Binding="{Binding TaxonomyName}" />
+                    <DataGridTextColumn Header="{x:Static Localisation:ResourcesCompanyImport.TaxonomyId}" Binding="{Binding TaxonomyId}" />
+                    <DataGridTextColumn Header="{x:Static Localisation:ResourcesCompanyImport.InputElement}" Binding="{Binding Value}" />
+                    <DataGridTemplateColumn Header="{x:Static Localisation:ResourcesCompanyImport.AssignedTo}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox ItemsSource="{Binding ValueList}" SelectedItem="{Binding SelectedValueId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Key" DisplayMemberPath="Value"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel  Grid.Row="1" Visibility="{Binding HasDateErrors, Converter={StaticResource BoolToVisibilityConverter}}">
+            <Label Content="{x:Static Localisation:ResourcesCompanyImport.WasDateError}" />
+            <DataGrid ItemsSource="{Binding CompanyDetailsImporter.DateErrors}" AutoGenerateColumns="False" IsReadOnly="True" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="CSV" Binding="{Binding FileName}" />
+                    <DataGridTextColumn Header="{x:Static Localisation:ResourcesCommon.Name}" Binding="{Binding TaxonomyName}" />
+                    <!--<DataGridTextColumn Header="{x:Static Localisation:ResourcesCompanyImport.TaxonomyId}" Binding="{Binding TaxonomyId}" />-->
+                    <DataGridTextColumn Header="{x:Static Localisation:ResourcesCompanyImport.InputElement}" Binding="{Binding Value}" />
+                    <DataGridTextColumn Header="{x:Static Localisation:ResourcesCompanyImport.LineNumberColumnName}" Binding="{Binding LineNumber}" />
+                    <DataGridTemplateColumn Header="{x:Static Localisation:ResourcesCompanyImport.AssignedTo}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker SelectedDate="{Binding SelectedValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="{x:Static Localisation:ResourcesCompanyImport.PleaseMap}" Foreground="Red" Visibility="{Binding HasErrors, Converter={StaticResource BoolToVisibilityConverter}}" x:Name="txtPleaseSelect"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,8 @@
+<Window x:Class="eBalanceKit.Windows.Security.DlgActiveDirectoryUserImport"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+    xmlns:Security="clr-namespace:eBalanceKit.Windows.Security"
+    Title="{x:Static Localisation:ResourcesCommon.ImportActiveDirectoryUserCaption}" Height="600" Width="450" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" SizeToContent="Manual" 
+    WindowStyle="SingleBorderWindow" MinHeight="300" MinWidth="350" Icon="/eBalanceKitResources;component/Resources/User1.png" Loaded="Window_Loaded">
+    <Security:CtlActiveDirectoryUserImport x:Name="ctlActiveDirectoryUserImport"/>
+</Window>

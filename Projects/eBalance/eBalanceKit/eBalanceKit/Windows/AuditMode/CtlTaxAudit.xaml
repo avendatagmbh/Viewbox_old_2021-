@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.AuditMode.CtlTaxAudit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation1="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:Models="clr-namespace:eBalanceKit.Windows.AuditMode.Models"
+             xmlns:Controls="clr-namespace:eBalanceKit.Controls" mc:Ignorable="d" KeyDown="UserControlKeyDown"
+             d:DesignHeight="400" d:DesignWidth="600">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/DetailViews.xaml" />
+                <ResourceDictionary Source="/Windows\Reconciliation\ReconciliationResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <AvdWpfControls:AssistantControl Name="tabControl"  Next="AssistantControl_Next"
+        OkButtonEnabled="{Binding OkButtonEnabled}"
+        OkButtonCaption="{x:Static Localisation1:ResourcesCommon.Ok}" Ok="AssistantControlOk" ButtonBorderStyle="{StaticResource ButtonBorder}">
+        
+        <AvdWpfControls:AssistantTabItem Header="Auswahl der zu übernehmenden Handelsbilanz-Korrekturen">
+            <Border Style="{StaticResource GroupBoxBorder}" CornerRadius="0">
+                <TreeView ItemsSource="{Binding AuditCorrections.RootNodes}" Background="Transparent" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <TreeView.Resources>
+                        <Style TargetType="{x:Type TreeViewItem}">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Padding" Value="1,0,0,0"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                            <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Setter Property="Template" Value="{StaticResource ExpandedTreeViewItem}" />
+                        </Style>
+
+                        <HierarchicalDataTemplate DataType="{x:Type Models:CheckableAuditCorrection}" ItemsSource="{Binding Transactions}">
+                            <Border Style="{StaticResource GroupBoxBorder}" Margin="0,0,0,5" Padding="5,2">
+                                <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding AuditCorrection.Name}" />
+                            </Border>
+                        </HierarchicalDataTemplate>
+
+                        <DataTemplate DataType="{x:Type Models:CheckableAuditCorrectionTransaction}">
+                            <Border Style="{StaticResource GroupBoxBorder}" Margin="0,0,0,5" Padding="5,2">
+                                <CheckBox IsChecked="{Binding IsChecked}">
+                                    <CheckBox.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock Text="{Binding Transaction.Element.Label}" TextWrapping="Wrap" />
+                                            <TextBlock Text="{Binding Transaction.ValueDisplayString}" Grid.Column="1" TextAlignment="Right" Margin="5,0,0,0" />
+                                        </Grid>
+                                    </CheckBox.Content>
+                                </CheckBox>
+                            </Border>
+                        </DataTemplate>
+                    </TreeView.Resources>
+                </TreeView>
+            </Border>
+        </AvdWpfControls:AssistantTabItem>
+
+        <AvdWpfControls:AssistantTabItem Header="Auswahl der zu übernehmenden Überleitungsrechnung-Korrekturen">
+            <Border Style="{StaticResource GroupBoxBorder}" CornerRadius="0">
+                <TreeView ItemsSource="{Binding AuditCorrectionsReconciliation.RootNodes}" Background="Transparent" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <TreeView.Resources>
+                        <Style TargetType="{x:Type TreeViewItem}">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Padding" Value="1,0,0,0"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                            <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Setter Property="Template" Value="{StaticResource ExpandedTreeViewItem}" />
+                        </Style>
+
+                        <HierarchicalDataTemplate DataType="{x:Type Models:CheckableReconciliation}" ItemsSource="{Binding Transactions}">
+                            <Border Style="{StaticResource GroupBoxBorder}" Margin="0,0,0,5" Padding="5,2">
+                                <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Reconciliation.Name}" />
+                            </Border>
+                        </HierarchicalDataTemplate>
+
+                        <DataTemplate DataType="{x:Type Models:CheckableReconciliationTransaction}">
+                            <Border Style="{StaticResource GroupBoxBorder}" Margin="0,0,0,5" Padding="5,2">
+                                <CheckBox IsChecked="{Binding IsChecked}">
+                                    <CheckBox.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />                                                
+                                            </Grid.ColumnDefinitions>
+    
+                                            <TextBlock Text="{Binding Transaction.Position.Label}" TextWrapping="Wrap" />
+                                            <TextBlock Text="{Binding Transaction.ValueDisplayString}" Grid.Column="1" TextAlignment="Right" Margin="5,0,0,0" />
+                                        </Grid>
+                                    </CheckBox.Content>
+                                </CheckBox>
+                            </Border>
+                        </DataTemplate>
+                    </TreeView.Resources>
+                </TreeView>
+            </Border>
+        </AvdWpfControls:AssistantTabItem>
+
+        <AvdWpfControls:AssistantTabItem Header="Auswahl Reports">
+            <AvdWpfControls:AssistantTabItem.Style>
+                <Style TargetType="AvdWpfControls:AssistantTabItem">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SelectNextYearTree.CheckedDocumentsCount}" Value="0">
+                            <!--<Setter Property="NextAllowed" Value="False" />-->
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </AvdWpfControls:AssistantTabItem.Style>
+            <Border Style="{StaticResource GroupBoxBorder}" CornerRadius="0">
+                <TreeView ItemsSource="{Binding SelectNextYearTree.RootNodes}" Background="Transparent" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <TreeView.Resources>
+                        <Style TargetType="{x:Type TreeViewItem}">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Padding" Value="1,0,0,0"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                            <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Setter Property="Template" Value="{StaticResource ExpandedTreeViewItem}" />
+                        </Style>
+
+                        <HierarchicalDataTemplate DataType="{x:Type Models:FinancialYearNode}" ItemsSource="{Binding Children}">
+                            <Border Style="{StaticResource GroupBoxBorder}" Margin="0,0,0,5" Padding="5,2">
+                                <CheckBox IsChecked="{Binding IsChecked}">
+                                    <CheckBox.Content>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{x:Static Localisation1:ResourcesMain.FinancialYear}" Margin="0,0,5,0" />
+                                            <TextBlock Text=": " />
+                                            <TextBlock Text="{Binding FinancialYear.FYear}"/>
+                                        </StackPanel>
+                                    </CheckBox.Content>
+                                </CheckBox>
+                            </Border>
+                        </HierarchicalDataTemplate>
+
+                        <DataTemplate DataType="{x:Type Models:DocumentNode}">
+                            <Border Style="{StaticResource GroupBoxBorder}" Margin="0,0,0,5" Padding="5,2">
+                                <StackPanel>
+                                    <CheckBox Content="{Binding Document.Name}" IsChecked="{Binding IsChecked}" />
+                                    <TextBlock Text="{Binding Document.Comment}" FontStyle="Italic" 
+                                       Visibility="{Binding Document.Comment, Converter={StaticResource ValueExistsToVisibilityConverter}}"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </TreeView.Resources>
+                </TreeView>
+            </Border>
+        </AvdWpfControls:AssistantTabItem>
+        <AvdWpfControls:AssistantTabItem Header="Resultat der Plausibilisierung" NextAllowed="False">
+            <Controls:CtlProblemOverview DataContext="{Binding .}" />
+        </AvdWpfControls:AssistantTabItem>
+        <AvdWpfControls:AssistantTabItem IsSummaryPage="True" Header="Zusammenfassung">
+            <!--<TextBlock Text="Glückwunsch!!!" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+            <Controls:CtlProblemOverview DataContext="{Binding .}" />
+        </AvdWpfControls:AssistantTabItem>
+    </AvdWpfControls:AssistantControl>
+
+</UserControl>

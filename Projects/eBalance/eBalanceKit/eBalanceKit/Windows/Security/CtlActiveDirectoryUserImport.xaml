@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Security.CtlActiveDirectoryUserImport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="400" d:DesignWidth="600">
+    
+    <UserControl.Resources>
+        <DataTemplate x:Key="lstBxTemplate">
+            <Border Margin="0,0,5,5" Padding="5,2" MouseLeftButtonUp="BorderMouseLeftButtonUp">
+                <Border.Style>
+                    <Style TargetType="Border" BasedOn="{StaticResource GroupBoxBorder}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked}" Value="True" >
+                                <Setter Property="Background" Value="{StaticResource TransparentOrangeGradientBrush}"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <CheckBox IsChecked="{Binding Path=IsChecked}" VerticalAlignment="Center"></CheckBox>
+
+                    <Border Grid.Column="1" Margin="2" >
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Name: " Foreground="Black"></TextBlock>
+                                <TextBlock Text="{Binding Path=Name}" Foreground="Black"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                                <TextBlock Text="Kürzel: " Foreground="Black"></TextBlock>
+                                <TextBlock Text="{Binding Path=LoginName}"  Foreground="Black" Padding="3,0,0,0"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Border Style="{StaticResource GroupBoxBorder}" CornerRadius="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- main part -->
+            <Border Grid.Row="0" Style="{StaticResource GroupBoxBorder}" Padding="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Domain:"/>
+                            <ComboBox Name="cmBxDomain" ItemsSource="{Binding Domains}" SelectedItem="{Binding SelectedDomain}"></ComboBox>
+                            <TextBlock Text="Filter:" VerticalAlignment="Center" Margin="0,0,0,0"></TextBlock>
+                            <TextBox Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}" />
+
+                            <CheckBox IsChecked="{Binding ShowChecked}" Margin="0,5,0,0" Content="Ausgewählte Benutzer zeigen"/>
+                            
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="8,0,0,0">
+                            <TextBlock Text="Sortieren nach" Margin="0,0,0,3"></TextBlock>
+
+                            <RadioButton IsChecked="{Binding SortDirection, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Name, UpdateSourceTrigger=PropertyChanged}" 
+                                     Content="Name"/>
+                            <RadioButton IsChecked="{Binding SortDirection, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=UserName, UpdateSourceTrigger=PropertyChanged}" 
+                                     Content="Kürzel"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Separator Margin="-5,5" Grid.Row="1" />
+
+                    <ListBox Grid.Row="2" Name="lstADuser" ItemsSource="{Binding FilteredUsers}" ItemTemplate="{StaticResource lstBxTemplate}" 
+                         SelectionMode="Single" PreviewKeyDown="LstADuserKeyDown" BorderBrush="Transparent" Padding="0" Background="Transparent"
+                             Margin="-5,0,0,0">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                </Style.Resources>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+                    <!--</ScrollViewer>-->
+                </Grid>
+            </Border>
+
+            <!-- button bar -->
+            <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <Button Content="_Importieren" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="BtnOkClick" />
+                    <Button Content="A_bbrechen" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="BtnCancelClick" />
+
+                </StackPanel>
+            </Border>
+
+        </Grid>
+    </Border>
+</UserControl>

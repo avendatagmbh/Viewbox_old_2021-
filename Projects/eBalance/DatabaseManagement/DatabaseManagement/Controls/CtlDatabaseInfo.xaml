@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="DatabaseManagement.Controls.CtlDatabaseInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Aktuell ausgewählte Datenbank:"/>
+
+            <TextBlock Grid.Row="1" Margin="5" Text="Datenbank-Typ:"/>
+            <TextBox  Grid.Row="1" Margin="5" Grid.Column="1" Text="{Binding DbType,Mode=OneWay}" Background="#ddd" IsReadOnly="True"/>
+            
+            <TextBlock Grid.Row="2" Margin="5" Text="Datenbank-Host:"/>
+            <TextBox Grid.Row="2" Margin="5" Grid.Column="1" Text="{Binding DbHostname,Mode=OneWay}" Background="#ddd" IsReadOnly="True" />
+            
+            <TextBlock Grid.Row="3" Margin="5" Text="Datenbank-Name:"/>
+            <TextBox Grid.Row="3" Margin="5" Grid.Column="1" Text="{Binding DbName,Mode=OneWay}" Background="#ddd" IsReadOnly="True" />
+            
+            <TextBlock Grid.Row="4" Margin="5" Text="Datenbank-Version:"/>
+            <TextBox Grid.Row="4" Margin="5" Grid.Column="1" Text="{Binding DbVersion,Mode=OneWay}" Background="#ddd" IsReadOnly="True" />
+
+            <TextBlock Grid.Row="5" Margin="5" Text="Aktuelle Datenbank-Version:"/>
+            <TextBox Grid.Row="5" Margin="5" Grid.Column="1" Text="{Binding CurrentDbVersion,Mode=OneWay}" Background="#ddd" IsReadOnly="True" />
+        </Grid>
+        
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <!--<Button Margin="0,5,0,5" Name="btnPreviousPage" Grid.Row="1" Content="&lt;&lt;" Click="btnPreviousPage_Click"></Button>-->
+                <Button Margin="0,5,5,5" Name="btnUpgradeDatabase" Grid.Row="1" IsEnabled="{Binding HasDatabaseUpgrade}" Click="btnUpgradeDatabase_Click">Datenbank aktualisieren</Button>
+                <!--<Button Margin="0,5,0,5" Name="btnNextPage" Grid.Row="1" Click="btnNextPage_Click">>></Button>-->
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</UserControl>

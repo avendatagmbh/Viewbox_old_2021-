@@ -1,0 +1,28 @@
+﻿<Window x:Class="TransDATA.Windows.DlgDatabase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:AvdWpfDbControls;assembly=AvdWpfDbControls"
+        Title="Datenbank Login" 
+        Height="445" 
+        Width="468" WindowStartupLocation="CenterOwner" 
+        ResizeMode="CanResize" 
+        ShowInTaskbar="False">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <my:ControlConfigDatabase Grid.Row="0" Name="ctrlConfigDb"/>
+        
+        <!-- button bar -->
+        <StackPanel Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="5,5,5,5" Orientation="Horizontal">
+            <Button Content="Ok" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="btnOk_Click" IsDefault="True" />
+            <Button Content="Ab_brechen" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" IsCancel="True" />
+        </StackPanel>
+
+    </Grid>
+</Window>
+

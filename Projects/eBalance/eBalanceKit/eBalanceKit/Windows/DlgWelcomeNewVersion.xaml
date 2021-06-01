@@ -1,0 +1,77 @@
+﻿<Window x:Class="eBalanceKit.Windows.DlgWelcomeNewVersion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        WindowStartupLocation="CenterScreen"
+        Icon="/CustomResources;component/Resources/logo1.png"
+        Title="{Binding Header}" Width="500" Height="350">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Style="{StaticResource ButtonBorder}" Height="40">
+            <TextBlock Margin="5,0,0,0" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" Text="Neue eBilanz-Kit Version"/>
+        </Border>
+
+        <Border Grid.Row="1" Padding="15">
+            <StackPanel>
+                <TextBlock Text="Herzlich Willkommen zur neuen eBilanz-Kit Version."  FontWeight="Bold"/>
+                <TextBlock Margin="0,10,0,0" Text="Sie können sich das Changelog zu dieser Version als Pdf anschauen." />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2">
+            <StackPanel>
+                <!--<ListBox ItemsSource="{Binding Rows}" BorderThickness="0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <AvdWpfControls:HyperlinkButton Content="{Binding Value}" Command="{Binding OpenCommand}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>-->
+                <DataGrid ItemsSource="{Binding Rows}" AutoGenerateColumns="False" IsReadOnly="True" x:Name="grdData" Margin="15" Background="White" HorizontalScrollBarVisibility="Disabled" RowHeaderWidth="0" MaxHeight="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Border}},Path=ActualHeight}">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="{x:Static Localisation:ResourcesLogin.VersionTextColumnTitle}" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <AvdWpfControls:HyperlinkButton Content="{Binding Value}" Command="{Binding OpenCommand}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="{x:Static Localisation:ResourcesCommon.Save}" Width="Auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="{x:Static Localisation:ResourcesCommon.Save}" Command="{Binding SaveCommand}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <!--<DataGridTemplateColumn Header="{x:Static Localisation:ResourcesCommon.Open}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="{x:Static Localisation:ResourcesCommon.Open}" Command="{Binding OpenCommand}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>-->
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="3" Padding="15">
+            <CheckBox Content="{x:Static Localisation:ResourcesCommon.IsKeepNextOpen}" x:Name="cbKeepNextOpen" />
+        </Border>
+            <!-- button bar -->
+        <Border Grid.Row="4" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="{x:Static Localisation:ResourcesCommon.Ok}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnOk" VerticalAlignment="Top" MinWidth="75" Click="BtnOkClick" />
+            </StackPanel>
+        </Border>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="TransDATA.Controls.CtlImportDbStructure"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base" mc:Ignorable="d" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Foreground="#333" Text="{x:Static Localisation:ResourcesCommon.CurrentWorkStep}" Background="Transparent" Padding="5,5,0,0" Grid.Row="0" Grid.Column="0"/>
+                <TextBlock Foreground="#333" Text="{Binding Importer.ImportProgress.StepCaption}" Background="Transparent" Padding="10,5,0,0" Grid.Row="0" Grid.Column="1"/>
+                <TextBlock Foreground="#333" Text="{x:Static Localisation:ResourcesCommon.TablesProcessed}" Background="Transparent" Padding="5,5,0,0" Grid.Row="1" Grid.Column="0"/>
+                <TextBlock Foreground="#333" Text="{Binding Importer.ImportProgress.TablesFinished}" Background="Transparent" Padding="10,5,0,0" Grid.Row="1" Grid.Column="1"/>
+                <TextBlock Foreground="#333" Text="{x:Static Localisation:ResourcesCommon.TablesTotal}" Padding="5,5,0,0" Grid.Row="2" Grid.Column="0"/>
+                <TextBlock Foreground="#333" Text="{Binding Importer.ImportProgress.TablesTotal}" Background="Transparent" Padding="10,5,0,0" Grid.Row="2" Grid.Column="1"/>
+            </Grid>
+            <ListBox ItemsSource="{Binding Importer.ImportProgress.ActualProcessedTables}" Background="Transparent" BorderThickness="0">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="Padding" Value="0"/>
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                        </Style.Resources>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border CornerRadius="5" BorderBrush="Silver" BorderThickness="1" Padding="5" Margin="0,0,0,5" Height="30">
+                            <StackPanel>
+                                <TextBlock Foreground="#333" Text="{Binding Progress.TableName}" Background="Transparent" />
+                                <!--<TextBlock Foreground="#333" Text="{Binding Progress.StartTime}" Background="Transparent" />-->
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Grid>
+                <ProgressBar Maximum="{Binding Importer.ImportProgress.TablesTotal}" Value="{Binding Importer.ImportProgress.TablesFinished, Mode=OneWay}" VerticalAlignment="Center" Height="24" Margin="5" />
+            </Grid>
+            <!--<ListBox ItemsSource="{Binding Importer.ImportProgress.ErrorMessages}"></ListBox>-->
+        </StackPanel>
+
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}" >
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="5,3">
+                <Button Content="{x:Static Localisation:ResourcesCommon.Cancel}" Height="23" Margin="0" Name="btnCancel" VerticalAlignment="Top" Width="Auto" Padding="5,0" Click="BtnCancelClick" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

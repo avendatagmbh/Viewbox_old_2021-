@@ -1,0 +1,30 @@
+﻿<Window x:Class="DatabaseManagement.Windows.DlgCreateBackup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Datenbank Backup erstellen" Height="300" Width="300" Icon="/DatabaseManagement;component/Resources/logo.png" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock  Text="Möchten Sie ein Datenbank Backup erstellen?" Margin="0,8,0,0" />
+        </StackPanel>    
+        <StackPanel Grid.Row="1">
+            <TextBlock  Text="Kommentar" Margin="0,8,0,0" />
+            <TextBox Name="textComment"  AcceptsReturn="True" 
+                             VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" TextWrapping="Wrap" Background="#ddd"
+                             Text=""/>
+        </StackPanel>
+        <CheckBox Grid.Row="2" Name="chkEncrypt" IsChecked="True">Backup verschlüsseln</CheckBox>
+        <Border Grid.Row="3" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="_Ok" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="BtnOkClick" />
+                <Button Content="A_bbrechen" Height="23" HorizontalAlignment="Left" Margin="5,5,5,5" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="BtnCancelClick" />
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>

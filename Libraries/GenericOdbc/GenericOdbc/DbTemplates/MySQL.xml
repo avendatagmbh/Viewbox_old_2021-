@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DbTemplate ServerName="MySQL">
+  <Enquote>
+    <Left>`</Left>
+    <Right>`</Right>
+  </Enquote>
+  <ConnectionStringParameter>
+    <Param Caption="Server" Caption_de="Server" Name="Server"/>
+    <Param Caption="Username" Caption_de="Benutzername" Name="Uid"/>
+    <Param Caption="Password" Caption_de="Passwort" Name="Pwd"/>
+    <Param Caption="Database" Caption_de="Datenbank" Name="Database"/>
+    <Param Caption="Port" Caption_de="Port" Name="Port" Type="Integer"/>
+  </ConnectionStringParameter>
+  <Syntax>
+    
+  </Syntax>
+</DbTemplate>

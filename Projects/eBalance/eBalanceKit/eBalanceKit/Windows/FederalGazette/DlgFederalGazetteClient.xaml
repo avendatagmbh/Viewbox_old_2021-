@@ -1,0 +1,155 @@
+﻿<Window x:Class="eBalanceKit.Windows.FederalGazette.DlgFederalGazetteClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Client" MinHeight="400" MinWidth="400" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" WindowStyle="SingleBorderWindow" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <StackPanel Margin="5">
+                <TabControl>
+                    <TabItem Header="Firma">
+                        <StackPanel Margin="5">
+                            <StackPanel Margin="5">
+                                <TextBlock Text="*Angabe zur Eintragung in Register"/>
+                                <ComboBox Name="cmbCompanyRefType" ItemsSource="{Binding Path=CompanyRegisterationType}" SelectedValue="{Binding Path=SelectedCompanyRegisterationType}" SelectionChanged="cmbCompanyRefType_SelectionChanged" />
+                            </StackPanel>
+                            <StackPanel Margin="5" Name="stplCompanyName" Visibility="Collapsed">
+                                <TextBlock Text="*Name des Unternehmens"></TextBlock>
+                                <TextBox Name="txtCompanyName" Text="{Binding Path=CompanyName}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Kennzeichen" />
+                                <TextBox Name="txtCompanySign" Text="{Binding Path=CompanySign}"/>
+                            </StackPanel>
+                            
+                            <StackPanel Margin="5" Name="stplLegalForm" Visibility="Collapsed">
+                                <TextBlock Text="*Rechtsform"/>
+                                <ComboBox Name="cmbLegalForm" ItemsSource="{Binding Path=CompanyLegalForm}" SelectedValue="{Binding Path=SelectedCompanyLegalForm}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5" Name="stplDomicile" Visibility="Collapsed">
+                                <TextBlock Text="*Firmensitz"/>
+                                <TextBox Name="txtCompanyDomicile" Text="{Binding Path=CompanyDomicile}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5" Name="stplRegisterationType" Visibility="Collapsed">
+                                <TextBlock Text="*Registerart"/>
+                                <ComboBox Name="cmbRegisteredType" ItemsSource="{Binding Path=RegisterationType}" SelectedValue="{Binding Path=SelectedRegisterationType}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5" Name="stplRegisteredCourt" Visibility="Collapsed">
+                                <TextBlock Text="*Registergericht"/>
+                                <ComboBox Name="cmbRegisteredCourt" ItemsSource="{Binding Path=RegisteredCourt}" SelectedValue="{Binding Path=SelectedRegisteredCourt}"/>
+                            </StackPanel>
+                            <StackPanel Name="stplCompanyId" Visibility="Collapsed">
+                                <StackPanel Margin="5">
+                                    <TextBlock Text="*Registernummer"/>
+                                    <TextBox Name="txtRegisterNumber" Text="{Binding Path=CompanyRegistrationNumber}"/>
+                                </StackPanel>
+                                <StackPanel Margin="5">
+                                    <TextBlock Text="*Firmen ID"/>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox Name="txtCompanyID" Text="{Binding Path=CompanyId}" IsReadOnly="True" />
+                                        <Button Grid.Column="1" Content="Get ID" Name="btnRetrieveCompanyId"></Button>
+                                    </Grid>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="*Kundennummer"/>
+                                <TextBox Name="txtClientNumber" IsReadOnly="True" Text="{Binding Path=ClientNumber}" />
+                            </StackPanel>
+
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Anschrift">
+                        <StackPanel Margin="5">
+                            <StackPanel Margin="5" Visibility="Collapsed">
+                                <TextBlock Text="*Name des Unternehmens"></TextBlock>
+                                <TextBox Name="txtCompanyNameAddress" Text="{Binding Path=CompanyNameAddress}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Abteilung"/>
+                                <TextBox Name="txtDevision" Text="{Binding Path=CompanyDevision}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="*Straße"/>
+                                <TextBox Name="txtStreet" Text="{Binding Path=CompanyStreet}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="*PLZ"/>
+                                <TextBox Name="txtPostCode" Text="{Binding Path=CompanyPostCode}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="*Ort"/>
+                                <TextBox Name="txtCity" Text="{Binding Path=CompanyCity}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="*Staat"/>
+                                <ComboBox Name="cmbCountries" ItemsSource="{Binding Path=Countries}" SelectedValue="{Binding Path=CompanySelectedCountry}" SelectionChanged="cmbCountries_SelectionChanged" />
+                            </StackPanel>
+                            <StackPanel Margin="5" Name="stplState" Visibility="Collapsed">
+                                <TextBlock Text="*Bundesland"/>
+                                <ComboBox Name="cmbState" ItemsSource="{Binding Path=States}" SelectedValue="{Binding Path=SelectedState}"/>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Kontaktperson">
+                        <StackPanel Margin="5">
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Anrede" />
+                                <ComboBox Name="cmbSalutation" ItemsSource="{Binding Path=Salutation}" SelectedValue="{Binding Path=SelectedSalutation}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Titel"/>
+                                <TextBox Name="txtTitle" Text="{Binding Path= ContactPersonTitle}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Vorname"/>
+                                <TextBox Name="txtFirstName" Text="{Binding Path= ContactPersonFirstName}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Nachname"/>
+                                <TextBox Name="txtLastName" Text="{Binding Path= ContactPersonLastName}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Telephone"/>
+                                <TextBox Name="txtPhone" Text="{Binding Path=ContactPersonPhone}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Mobile"/>
+                                <TextBox Name="txtMobile" Text="{Binding Path=ContactPersonCell}"/>
+                            </StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Email"/>
+                                <TextBox Name="txtEmail" Text="{Binding Path= ContactPersonEmail}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </TabItem>
+
+
+                </TabControl>
+
+            </StackPanel>
+        </StackPanel>
+        <!-- button bar -->
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <Button Content="Erstellen" Height="23" Margin="5" Name="btnCreateClient" Width="75" Click="btnCreateClient_Click" />
+                    <Button Content="Speichern" Height="23" Margin="5" Name="btnChangeClient" Width="75" Click="btnChangeClient_Click" /> 
+                    <Button Content="Abbrechen" Height="23" Margin="5" Name="btnCancel" Width="75" Click="btnCancel_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
+

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="eBalanceKitBusiness.Structures.ValueTree.ValueTreeNode" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <Members>
+      <Field Name="_displayString" Hidden="true" />
+      <Field Name="_isSelected" Hidden="true" />
+      <Field Name="_values" Hidden="true" />
+      <Method Name="AddSummationTargets" Hidden="true" />
+      <Method Name="BuildValueTree" Hidden="true" />
+      <Method Name="CompareTo" Hidden="true" />
+      <Method Name="ForceRecomputation" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="newEntry_PropertyChanged" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+      <Method Name="ValueTreeNode" Hidden="true" />
+    </Members>
+    <AssociationLine Name="DbValue" Type="eBalanceKitBusiness.IValueMapping">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.825" Y="0.485" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAACAAAkAQAJAAQAAiAgAAAAIAAAAEmABAAACA=</HashCode>
+      <FileName>Structures\ValueTree\ValueTreeNode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DbValue" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Values" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.ValueTree.ValueTree" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <Members>
+      <Method Name="CreateValueTree" Hidden="true" />
+      <Method Name="LoadValueMappingTree" Hidden="true" />
+      <Method Name="Save" Hidden="true" />
+      <Method Name="SaveNewEntries" Hidden="true" />
+      <Method Name="SetSendAccountBalancesFlag" Hidden="true" />
+      <Method Name="SetSendAccountBalancesFlagIfWished" Hidden="true" />
+      <Method Name="SetSendAccountBalancesFromList" Hidden="true" />
+      <Method Name="ValueTree" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <AssociationLine Name="Root" Type="eBalanceKitBusiness.Structures.ValueTree.ValueTreeNode">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.971" Y="0.318" Height="0.182" Width="0.837" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAMAAIAAAACAAAAAAAEEAAAgAAAQCAAAEBAAAAEA=</HashCode>
+      <FileName>Structures\ValueTree\ValueTree.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Root" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="eBalanceKitBusiness.IValueMapping" Collapsed="true">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <AssociationLine Name="Parent" Type="eBalanceKitBusiness.IValueMapping" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.125" Y="4.312" />
+        <Point X="1.125" Y="4.562" />
+        <Point X="1.744" Y="4.562" />
+        <Point X="1.744" Y="4.312" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.016" Y="0.289" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAECAAAAAAAAAqAQAAQBAAAAAAgAAAgAAAAAAA=</HashCode>
+      <FileName>Interfaces\IValueMapping.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Parent" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.IValueTreeEntry" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.75" />
+    <AssociationLine Name="DbValue" Type="eBalanceKitBusiness.IValueMapping">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.381" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABSxAAAAICAExskAUmIQACQRAAAAAAAAQQgABBAAAk=</HashCode>
+      <FileName>Interfaces\IValueEntry.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DbValue" />
+    </ShowAsAssociation>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

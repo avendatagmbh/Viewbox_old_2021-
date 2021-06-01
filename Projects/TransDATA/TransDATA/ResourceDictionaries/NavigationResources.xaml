@@ -1,0 +1,151 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Structures="clr-namespace:TransDATA.Structures">
+    <Style x:Key="NavigationTreeItemContainerStyle" TargetType="{x:Type TreeViewItem}">
+        <Setter Property="IsSelected" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsSelected, Mode=TwoWay}"/>
+        <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=TwoWay}"/>
+        <Setter Property="Visibility" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsVisible, Converter={StaticResource TrueToVisibilityConverter}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="19"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <ToggleButton x:Name="Expander" 
+                                      Style="{StaticResource ExpandCollapseToggleStyle}" 
+                                      IsChecked="{Binding Path=IsExpanded, 
+                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                      ClickMode="Press"/>
+                        <Border Name="Bd"
+                                Grid.Column="1"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter x:Name="PART_Header"
+                                                  ContentSource="Header"
+                                                  HorizontalAlignment="Stretch"/>
+                        </Border>
+                        <ItemsPresenter x:Name="ItemsHost"
+                                        Grid.Row="1"
+                                        Grid.Column="1">
+                        </ItemsPresenter>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded" Value="false">
+                            <Setter TargetName="ItemsHost" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter TargetName="Expander" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasHeader" Value="false"/>
+                                <Condition Property="Width" Value="Auto"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Header" Property="MinWidth" Value="75"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasHeader" Value="false"/>
+                                <Condition Property="Height" Value="Auto"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Header" Property="MinHeight" Value="19"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter TargetName="Bd" Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="IsSelectionActive" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="NavigationTreeHeaderText" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="White" />
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsSelected}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Foreground" Value="Black" />
+            </MultiDataTrigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style x:Key="NavigationTreeItemBg" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="#06597b" />
+        <Style.Triggers>
+            <!-- selected & valid -->
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsSelected}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#edb75f" Offset="0" />
+                            <GradientStop Color="#b77401" Offset="1" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </MultiDataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--<HierarchicalDataTemplate x:Key="NavigationTreeItemTemplate" DataType="{x:Type Structures:NavigationTreeEntry}" ItemsSource="{Binding Path=Children}">
+        <Border Name="Border" Style="{StaticResource NavigationTreeItemBg}"
+            Margin="0,1,4,1" 
+            BorderBrush="Transparent" 
+            BorderThickness="0" 
+            CornerRadius="5">
+            <TextBlock x:Name="Header" Style="{StaticResource NavigationTreeHeaderText}" Text="{Binding Header}" Margin="5,3" TextWrapping="Wrap"/>
+        </Border>
+    </HierarchicalDataTemplate>-->
+
+    <HierarchicalDataTemplate x:Key="NavigationTreeItemTemplate" DataType="{x:Type Structures:NavigationTreeEntry}" ItemsSource="{Binding Path=Children}">
+        <Border Name="Border" Style="{StaticResource NavigationTreeItemBg}"
+            Margin="0,1,4,1" 
+            BorderBrush="Transparent" 
+            BorderThickness="0" 
+            CornerRadius="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="14" Source="/Resources/ValidationError.png" 
+                       Visibility="{Binding ValidationError, Converter={StaticResource TrueToVisibilityConverter}}" Margin="5,3,0,3"/>
+
+                    <Image Height="14" Source="/Resources/ValidationWarn.png" 
+                       Visibility="{Binding ValidationWarning, Converter={StaticResource TrueToVisibilityConverter}}" Margin="5,3,0,3"/>
+
+                </StackPanel>
+                <TextBlock Grid.Column="1" x:Name="Header" Style="{StaticResource NavigationTreeHeaderText}" Text="{Binding Header}" Margin="5,3" TextWrapping="Wrap"/>
+            </Grid>
+        </Border>
+    </HierarchicalDataTemplate>
+
+</ResourceDictionary>

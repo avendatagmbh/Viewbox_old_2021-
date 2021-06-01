@@ -1,0 +1,527 @@
+﻿<ResourceDictionary 
+    x:Class="eBalanceKitControls.HyperCubes.HyperCubeResources"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:HyperCubes="clr-namespace:eBalanceKitControls.HyperCubes"
+    xmlns:Converters="clr-namespace:AvdWpfControls.Converters;assembly=AvdWpfControls"
+    xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+    xmlns:eBalanceKitControls="clr-namespace:eBalanceKitControls"
+    xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/AvdWpfStyles;component/Default.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/eBalanceKitControls;component/eBalanceKitResources.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Converters:BoolToVisibilityConverter x:Key="TrueToVisibilityConverter" VisibleValue="True" HiddenState="Collapsed" />
+    <Converters:BoolToVisibilityConverter x:Key="FalseToVisibilityConverter" VisibleValue="False" HiddenState="Collapsed" />
+    <HyperCubes:HyperCubeItemTemlateSelector x:Key="hyperCubeItemTemlateSelector" />
+   
+    <Style x:Key="VerticalGridSplitter" TargetType="GridSplitter">
+        <Setter Property="Width" Value="5" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/eBalanceKitResources;component/Resources/splitterH.png" TileMode="FlipXY" 
+                            Stretch="None" Viewport="0,0,5,20" ViewportUnits="Absolute" Viewbox="0,0,5,20" ViewboxUnits="Absolute"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HorizontalGridSplitter" TargetType="GridSplitter">
+        <Setter Property="Height" Value="5" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/eBalanceKitResources;component/Resources/splitterV.png" TileMode="FlipXY"
+                            Stretch="None" Viewport="0,0,20,5" ViewportUnits="Absolute" Viewbox="0,0,20,5" ViewboxUnits="Absolute"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="{x:Type HyperCubes:HyperCubeTable}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type HyperCubes:HyperCubeTable}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding RowHeaderWidth, Mode=TwoWay}" x:Name="colRowHeader" MinWidth="200" MaxWidth="400" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                       
+                        <!-- columns -->
+                        <ScrollViewer Grid.Row="0" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled"
+                                      AvdWpfControls:ScrollSynchronizer.ScrollGroup="Group1">
+                            <HyperCubes:HyperCubeColumnCollection x:Name="columnsCollection" ItemsSource="{Binding Columns}" />
+                        </ScrollViewer>
+
+                        <!-- rows -->
+                        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden"
+                                      AvdWpfControls:ScrollSynchronizer.ScrollGroup="Group1">
+                            <TreeView x:Name="rowsCollection" ItemsSource="{Binding Rows}" 
+                                      Padding="0" BorderBrush="Transparent" BorderThickness="0"
+                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                      ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                                <TreeView.Resources>
+                                    <Style TargetType="{x:Type TreeViewItem}">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="Padding" Value="1,0,0,0"/>
+                                        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                        <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Setter Property="Template" Value="{StaticResource ExpandedTreeViewItem}" />
+                                    </Style>
+                                </TreeView.Resources>
+                                <TreeView.ItemTemplate>
+                                    <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                                        <Border BorderBrush="Silver" Background="White" BorderThickness="1" Margin="-1,0,0,0" VerticalAlignment="Top" Height="60" Padding="5">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <StackPanel Grid.Column="1" VerticalAlignment="Top" >
+                                                    <Grid>
+                                                        <Image Source="/eBalanceKitResources;component/Resources/sumPos.png" 
+                                                       Visibility="{Binding IsNegativeSumItem, Converter={StaticResource ResourceKey=FalseToVisibilityConverter}}" Margin="4,4,4,0"
+                                                       ToolTip="{x:Static Localisation:ResourcesCommon.ValueSumPositive}" Height="12" />
+
+                                                        <Image Source="/eBalanceKitResources;component/Resources/sumNeg.png" 
+                                                       Visibility="{Binding IsNegativeSumItem, Converter={StaticResource ResourceKey=TrueToVisibilityConverter}}" Margin="4,4,4,0"
+                                                       ToolTip="{x:Static Localisation:ResourcesCommon.ValueSumNegative}" Height="12" />
+                                                    </Grid>
+
+                                                    <AvdWpfControls:TogglePopup ImageSource="/eBalanceKitResources;component/Resources/Info.png" Margin="0,5,0,0" DataContext="{Binding DimensionValue.Element}" >
+                                                        <eBalanceKitControls:CtlElementInfoPopup />
+                                                    </AvdWpfControls:TogglePopup>
+
+                                                </StackPanel>
+                                                <TextBlock Text="{Binding Header}" ToolTip="{Binding Header}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                                            </Grid>
+                                        </Border>
+                                    </HierarchicalDataTemplate>
+                                </TreeView.ItemTemplate>
+                            </TreeView>
+                        </ScrollViewer>
+
+                        <!-- main area -->
+                        <ScrollViewer Padding="{TemplateBinding Padding}" Focusable="false" CanContentScroll="False" Grid.Row="1" Grid.Column="1" 
+                                                                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"
+                                                                      AvdWpfControls:ScrollSynchronizer.ScrollGroup="Group1">
+                            <ListBox x:Name="lbMain" ItemsSource="{Binding AllRows}" BorderBrush="Transparent" Padding="0" BorderThickness="0" >
+                                <ListBox.Style>
+                                    <Style TargetType="ListBox">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ListBox}">
+                                                    <Border x:Name="Bd" SnapsToDevicePixels="true">
+                                                        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsGrouping" Value="true">
+                                                            <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListBox.Style>
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="ListBoxItem">
+                                        <Setter Property="SnapsToDevicePixels" Value="true"/>
+                                        <Setter Property="OverridesDefaultStyle" Value="true"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListBoxItem">
+                                                    <Border Name="Border" SnapsToDevicePixels="true">
+                                                        <ContentPresenter />
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsSelected" Value="true">
+                                                            <Setter TargetName="Border" Property="Background" Value="Transparent"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsEnabled" Value="false">
+                                                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                        <Style.Resources>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                        </Style.Resources>
+                                    </Style>
+
+                                </ListBox.ItemContainerStyle>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Margin="0" Padding="0">
+                                            <HyperCubes:HyperCubeRow
+                                            ItemsSource="{Binding .}" Height="60" 
+                                            Visibility="{Binding IsVisible, Converter={StaticResource ResourceKey=TrueToVisibilityConverter}}" />
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </ScrollViewer>
+                        
+                        <!-- horizontal scroll bar -->
+                        <ScrollViewer Grid.Row="2" Grid.Column="1" AvdWpfControls:ScrollSynchronizer.ScrollGroup="Group1"
+                                      HorizontalScrollBarVisibility="Auto" 
+                                      VerticalScrollBarVisibility="Disabled">
+                            <Border Width="{Binding ElementName=columnsCollection, Path=ActualWidth, Mode=OneWay}" Height="0"/>
+                        </ScrollViewer>
+
+                        <!-- vertical scroll bar -->
+                        <ScrollViewer Grid.Row="1" Grid.Column="2" AvdWpfControls:ScrollSynchronizer.ScrollGroup="Group1"
+                                      HorizontalScrollBarVisibility="Disabled" 
+                                      VerticalScrollBarVisibility="Visible">
+                            <Border Height="{Binding ElementName=rowsCollection, Path=ActualHeight, Mode=OneWay}" Width="0"/>
+                        </ScrollViewer>
+
+                        <!-- grid splitter -->
+                        <GridSplitter Style="{StaticResource VerticalGridSplitter}" Grid.RowSpan="3" />
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type HyperCubes:HyperCubeColumnCollection}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type HyperCubes:HyperCubeColumnCollection}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                        <StackPanel Orientation="Horizontal" IsItemsHost="True" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <HyperCubes:HyperCubeColumnItem Header="{Binding Header}" ItemsSource="{Binding Children}" IsExpanded="{Binding IsExpanded, Mode=TwoWay}"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="HyperCubeColumnToggleButton" TargetType="{x:Type ToggleButton}">
+        <Border x:Name="Border" CornerRadius="5" Margin="0,2" Background="#01000000">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CheckStates">
+                    <VisualState x:Name="Checked">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames 
+                                Storyboard.TargetProperty="(UIElement.Visibility)"
+                                Storyboard.TargetName="Collapsed">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames 
+                                Storyboard.TargetProperty="(UIElement.Visibility)"
+                                Storyboard.TargetName="Expanded">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unchecked" />
+                    <VisualState x:Name="Indeterminate" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid>
+                <Image x:Name="Expanded" Width="16" Visibility="Collapsed" Source="/eBalanceKitResources;component/Resources/up.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Image x:Name="Collapsed" Width="16" Source="/eBalanceKitResources;component/Resources/down.png" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type HyperCubes:HyperCubeColumnItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type HyperCubes:HyperCubeColumnItem}">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Border BorderBrush="Silver" BorderThickness="1" Margin="-1,-1,0,0" VerticalAlignment="Top" Width="200" Height="60" Padding="5"
+                                    Visibility="{Binding IsVisible, Converter={StaticResource ResourceKey=TrueToVisibilityConverter}}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <ToggleButton OverridesDefaultStyle="True" Template="{StaticResource HyperCubeColumnToggleButton}"
+                                                  IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <ToggleButton.Style>                                        
+                                        <Style TargetType="ToggleButton">
+                                            <Setter Property="VerticalAlignment" Value="Bottom" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Items.Count}" Value="0">
+                                                    <Setter Property="Visibility" Value="Hidden" />
+                                                </DataTrigger>
+                                                <Trigger Property="IsChecked" Value="True">
+                                                    <Setter Property="VerticalAlignment" Value="Top" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ToggleButton.Style>
+                                </ToggleButton>
+
+                                <TextBlock Grid.Column="1" Text="{TemplateBinding Header}" TextWrapping="Wrap" VerticalAlignment="Top" />
+
+                                <Grid Grid.Column="2">
+                                    
+                                    <StackPanel>
+                                        <Grid>
+                                            <Image Source="/eBalanceKitResources;component/Resources/sumPos.png" 
+                                                       Visibility="{Binding IsNegativeSumItem, Converter={StaticResource ResourceKey=FalseToVisibilityConverter}}" Margin="4,4,0,0"
+                                                       ToolTip="{x:Static Localisation:ResourcesCommon.ValueSumPositive}" Height="12" VerticalAlignment="Top"/>
+
+                                            <Image Source="/eBalanceKitResources;component/Resources/sumNeg.png" 
+                                                       Visibility="{Binding IsNegativeSumItem, Converter={StaticResource ResourceKey=TrueToVisibilityConverter}}" Margin="4,4,0,0"
+                                                       ToolTip="{x:Static Localisation:ResourcesCommon.ValueSumNegative}" Height="12" VerticalAlignment="Top"/>
+                                        </Grid>
+                                        <AvdWpfControls:TogglePopup ImageSource="/eBalanceKitResources;component/Resources/Info.png" Margin="0,5,0,0" DataContext="{Binding DimensionValue.Element}">
+                                            <eBalanceKitControls:CtlElementInfoPopup/>
+                                        </AvdWpfControls:TogglePopup>
+                                    </StackPanel>
+
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" IsItemsHost="True" VerticalAlignment="Top" Margin="0,10,0,0">
+                            <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsExpanded}" Value="False">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </StackPanel.Style>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <HyperCubes:HyperCubeColumnItem Header="{Binding Header}" ToolTip="{Binding Header}" ItemsSource="{Binding Children}" IsExpanded="{Binding IsExpanded, Mode=TwoWay}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type HyperCubes:HyperCubeRow}">
+        <Style.Resources>
+            <DataTemplate x:Key="HyperCubeTableEntryAbstract">
+                <Border BorderBrush="Silver" BorderThickness="1" Margin="-1,-1,0,0" Width="200" Background="DarkGray"
+                        Visibility="{Binding IsVisible, Converter={StaticResource ResourceKey=TrueToVisibilityConverter}}"/>
+            </DataTemplate>
+
+            <DataTemplate x:Key="HyperCubeTableEntryMonetary">
+                <Border BorderBrush="Silver" BorderThickness="1" Margin="-1,-1,0,0" Width="200" Padding="5" 
+                        Visibility="{Binding IsVisible, Converter={StaticResource ResourceKey=TrueToVisibilityConverter}}">
+                    <Grid VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Image Height="16" Source="/eBalanceKitResources;component/Resources/Calculator16.png" 
+                               Visibility="{Binding Item.IsComputed, Converter={StaticResource ResourceKey=TrueToVisibilityConverter}}" Margin="0,0,2,0"
+                               ToolTip="{x:Static Localisation:ResourcesCommon.ValueIsComputed}"/>
+                        
+                        <Image Height="16" Source="/eBalanceKitResources;component/Resources/Info.png" 
+                               Visibility="{Binding Item.IsLocked, Converter={StaticResource ResourceKey=TrueToVisibilityConverter}}" Margin="0,0,2,0"
+                               ToolTip="{x:Static Localisation:ResourcesCommon.ValueIsLocked}"/>
+
+                        <AvdWpfControls:MonetaryTextBox Grid.Column="1" Text="{Binding Item.Value, Mode=TwoWay, UpdateSourceTrigger=LostFocus}">
+                            <AvdWpfControls:MonetaryTextBox.Style>
+                                <Style TargetType="AvdWpfControls:MonetaryTextBox">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Item.IsEditable}" Value="False">
+                                            <Setter Property="IsEnabled" Value="False" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Cube.Document.ReportRights.WriteRestAllowed}" Value="False">
+                                            <Setter Property="IsEnabled" Value="False" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </AvdWpfControls:MonetaryTextBox.Style>
+                        </AvdWpfControls:MonetaryTextBox>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+
+            <DataTemplate x:Key="HyperCubeTableEntryString">
+                <Border BorderBrush="Silver" BorderThickness="1" Margin="-1,-1,0,0" Width="200" Padding="5"
+                        Visibility="{Binding IsVisible, Converter={StaticResource ResourceKey=TrueToVisibilityConverter}}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <AvdWpfControls:TogglePopup Grid.Column="1" ImageSource="/eBalanceKitResources;component/Resources/editPen.png" Margin="0,5,0,0" 
+                                                    DataContext="{Binding Item.Value}" VerticalAlignment="Center" ImageHeight="14">
+                            <Border Margin="0,0,10,10">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="6" Opacity="0.75" />
+                                </Border.Effect>
+                                <TextBox x:Name="txt" Height="300" Width="600" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" 
+                                         Text="{Binding ., UpdateSourceTrigger=LostFocus}" AcceptsReturn="True" />
+                            </Border>
+                        </AvdWpfControls:TogglePopup>
+                        <TextBlock Text="{Binding ElementName=txt, Path=Text}" TextWrapping="Wrap"/>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+
+        </Style.Resources>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type HyperCubes:HyperCubeRow}">
+                    <StackPanel Orientation="Horizontal" IsItemsHost="True" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplateSelector" Value="{StaticResource hyperCubeItemTemlateSelector}"/>
+    </Style>
+
+    <Style TargetType="{x:Type HyperCubes:HyberCube3DCube}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type HyperCubes:HyberCube3DCube}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <ListBox ItemsSource="{Binding ThirdDimension.Values}" DisplayMemberPath="Label" SelectedItem="{Binding SelectedThirdDimensionValue}"
+                                  SelectionMode="Single">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                    <Setter Property="Padding" Value="0"/>
+                                    <Setter Property="Foreground" Value="White" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListBoxItem">
+                                                <Border Name="Border" Background="#06597b" Margin="0.5,1,0.5,0" CornerRadius="6,6,0,0">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="Auto" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Text="{Binding Label}" Margin="5,2" />
+                                                        <AvdWpfControls:TogglePopup ImageSource="/eBalanceKitResources;component/Resources/Info.png" Grid.Column="1" Margin="5,0" DataContext="{Binding Element}" >
+                                                            <eBalanceKitControls:CtlElementInfoPopup/>
+                                                        </AvdWpfControls:TogglePopup>
+
+                                                    </Grid>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsSelected" Value="True">
+                                                        <Setter TargetName="Border" Property="Background">
+                                                            <Setter.Value>
+                                                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                                    <GradientStop Color="#edb75f" Offset="0" />
+                                                                    <GradientStop Color="#b77401" Offset="1" />
+                                                                </LinearGradientBrush>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                        <Setter Property="Foreground" Value="Black" />
+                                                    </Trigger>
+                                                    <Trigger Property="IsEnabled" Value="False">
+                                                        <Setter TargetName="Border" Property="Background" Value="Gray" />
+                                                        <Setter TargetName="Border" Property="BorderBrush" Value="Silver" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Resources>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                    </Style.Resources>
+                                </Style>                                
+                            </ListBox.ItemContainerStyle>
+                        </ListBox>
+
+                        <ListBox Grid.Row="1" ItemsSource="{Binding Tables}"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <ListBox.Style>
+                                <Style TargetType="ListBox">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ListBox}">
+                                                <Grid SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" IsItemsHost="True"/>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListBox.Style>
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="SnapsToDevicePixels" Value="true"/>
+                                    <Setter Property="OverridesDefaultStyle" Value="true"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListBoxItem">
+                                                <HyperCubes:HyperCubeTable />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                    <Style.Resources>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                    </Style.Resources>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                        </ListBox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,199 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/AvdWpfStyles;component/Brushes.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AvdWpfStyles;component/Styles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AvdWpfStyles;component/Templates.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+
+    <!-- ********************************************************************************
+        * Styles
+         ******************************************************************************** -->
+    
+    <Style TargetType="{x:Type TextBoxBase}">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="#AAA" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                    <Border Background="{TemplateBinding Background}" x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2">
+                        <ScrollViewer x:Name="PART_ContentHost" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                        <Trigger Property="Width" Value="Auto">
+                            <Setter Property="MinWidth" Value="40"/>
+                        </Trigger>
+                        <Trigger Property="Height" Value="Auto">
+                            <Setter Property="MinHeight" Value="20"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBoxBase}}"/>
+    <Style TargetType="{x:Type wpfc:NumericTextbox}" BasedOn="{StaticResource {x:Type TextBoxBase}}"/>
+
+    <!--<Style TargetType="{x:Type wpfc:SearchableDatePicker}" x:Key="SearchableDatePickerStyle">
+        <Setter Property="IsEnabled" Value="False" />
+    </Style>-->
+
+    <Style TargetType="PasswordBox">
+        <Setter Property="PasswordChar" Value="●"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="PasswordBox">
+                    <Border CornerRadius="2" x:Name="Bd" Background="{DynamicResource WindowBackgroundBrush}" BorderBrush="#AAA" BorderThickness="1" OpacityMask="{x:Null}">
+                        <ScrollViewer SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" x:Name="PART_ContentHost" Template="{DynamicResource ScrollViewerControlTemplate1}" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="BorderlessTextbox" TargetType="{x:Type TextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                    <Border Background="{TemplateBinding Background}" x:Name="Bd" BorderBrush="Transparent" BorderThickness="0">
+                        <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                        <Trigger Property="Width" Value="Auto">
+                            <Setter Property="MinWidth" Value="75"/>
+                        </Trigger>
+                        <Trigger Property="Height" Value="Auto">
+                            <Setter Property="MinHeight" Value="20"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
+    
+    <Style x:Key="ButtonBorder" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource OrangeGradientBrush}" />
+    </Style>
+
+    <Style x:Key="HeadlineBorder" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource GreyGradientBrush}" />
+    </Style>
+
+    <Style x:Key="InfoElementBorder" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource AvdMenuBackground}" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="Margin" Value="5,5,5,5" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Opacity="0.75" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- border style for the group boxes -->
+    <Style x:Key="GroupBoxBorder" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource GroupBoxBorderBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource GroupBoxBorderBorderBrush}" />
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+
+
+    <!-- border style for the group boxes -->
+    <Style x:Key="GroupBoxBorder1" TargetType="{x:Type Border}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,3">
+                    <GradientStop Color="White" Offset="0" />
+                    <GradientStop Color="#EEEEEE" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <Style x:Key="GroupBoxBorderNoGradient" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{StaticResource GroupBoxBorderBorderBrush}" />
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+
+
+
+    <Style x:Key="ListBoxItemBaseBorder" TargetType="{x:Type Border}">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="3" />
+        <Setter Property="Padding" Value="3,1,3,1" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+    </Style>
+
+    <Style x:Key="ListItemBorder" TargetType="{x:Type Border}" BasedOn="{StaticResource ListBoxItemBaseBorder}">
+        <Setter Property="Background" Value="#CCC" />
+        <Setter Property="BorderBrush" Value="Silver" />
+    </Style>
+
+    <SolidColorBrush x:Key="selectionOverlayBackgroundBrush" Color="#40202020" />
+<!--Definition for the Background of virtual accounts-->
+    <LinearGradientBrush x:Key="VirtualBalanceAccountBorderBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#faeacb" Offset="0.0" />
+        <GradientStop Color="#e6eb8d" Offset="1.0" />
+    </LinearGradientBrush>
+    <!--<LinearGradientBrush x:Key="selectionOverlayBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#20303030" Offset="0.0" />
+        <GradientStop Color="#40303030" Offset="0.8" />
+        <GradientStop Color="#50303030" Offset="1.0" />
+    </LinearGradientBrush>-->
+
+    <Style x:Key="SelectionOverlayBorder" TargetType="{x:Type Border}" BasedOn="{StaticResource ListBoxItemBaseBorder}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Style.Triggers>
+            <DataTrigger Binding ="{Binding Path=IsSelected}" Value="true">
+                <Setter Property="Background" Value="{StaticResource selectionOverlayBackgroundBrush}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CommentTextBlock" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontStyle" Value="Italic" />
+        <Setter Property="Foreground" Value="#666" />
+        <Style.Triggers>
+            <Trigger Property="Text" Value="">
+                <Setter Property="Visibility" Value="Collapsed" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

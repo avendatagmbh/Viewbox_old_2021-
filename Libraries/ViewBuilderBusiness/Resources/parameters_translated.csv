@@ -1,0 +1,283 @@
+﻿id;issue_name;name;table_name;column_name;database_name;English text;German text;French text;Italian text;Spanish text
+1866;am_anlagenabgaenge_filter;in_afabe;am_anlagenabgaenge;AFABE;man_mag;Valutation area;Bewertungsbereich;domaine d'évaluation;Campo di valutazione;Área de valoración
+1694;am_anlagenbestand_filter;in_afabe;am_anlagenbestand;AFABE;man_mag;Valutation area;Bewertungsbereich;domaine d'évaluation;Campo di valutazione;Área de valoración
+1722;am_anlagengitter_filter;in_afabe;am_anlagengitter;AFABE;man_mag;Valutation area;Bewertungsbereich;domaine d'évaluation;Campo di valutazione;Área de valoración
+1935;am_anlagenumbuchungen_filter;in_afabe;am_anlagenumbuchungen;AFABE;man_mag;Valutation area;Bewertungsbereich;domaine d'évaluation;Campo di valutazione;Área de valoración
+1923;am_anlagenzugaenge_filter;in_afabe;am_anlagenzugaenge;AFABE;man_mag;Valutation area;Bewertungsbereich;domaine d'évaluation;Campo di valutazione;Área de valoración
+1713;ap_lieferantenstamm_filter;in_akont;ap_lieferantenstamm;AKONT;man_mag;Reconciliation Account;Abstimmkonto;Compte de conciliation;Riconciliazione estratti conto;Conciliación de cuentas
+1706;ar_kundenstamm_filter;in_akont;ar_kundenstamm;AKONT;man_mag;Reconciliation Account;Abstimmkonto;Compte de conciliation;Riconciliazione estratti conto;Conciliación de cuentas
+1699;am_anlagenbestand_filter;in_anlbez;am_anlagenbestand;TXT50;man_mag;System code (Search string);Anlagenbezeichnung (Suchbegriff);code du système (clé de recherche);Codice di sistema (stringa di ricerca);Código del sistema (cadena de búsqueda)
+1727;am_anlagengitter_filter;in_anlbez;am_anlagengitter;TXT50;man_mag;System code (Search string);Anlagenbezeichnung (Suchbegriff);Code du système (clé de recherche);Codice di sistema (stringa di ricerca);Código del sistema (cadena de búsqueda)
+1604;am_anlagenstammsaetze_filter;in_anlbez;am_anlagenstammsaetze;TXT50;man_mag;System code (Search string);Anlagenbezeichnung (Suchbegriff);Code du système (clé de recherche);Codice di sistema (stringa di ricerca);Código del sistema (cadena de búsqueda)
+1862;am_anlagenabgaenge_filter;in_anlkl;am_anlagenabgaenge;ANLKL;man_mag;Asset category;Anlagenklasse;catégorie d'immobilisation;Categoria dei beni;Categoría del activo
+1690;am_anlagenbestand_filter;in_anlkl;am_anlagenbestand;ANLKL;man_mag;Asset category;Anlagenklasse;catégorie d'immobilisation;Categoria dei beni;Categoría del activo
+1718;am_anlagengitter_filter;in_anlkl;am_anlagengitter;ANLKL;man_mag;Asset category;Anlagenklasse;catégorie d'immobilisation;Categoria dei beni;Categoría del activo
+1601;am_anlagenstammsaetze_filter;in_anlkl;am_anlagenstammsaetze;ANLKL;man_mag;Asset category;Anlagenklasse;catégorie d'immobilisation;Categoria dei beni;Categoría del activo
+1931;am_anlagenumbuchungen_filter;in_anlkl;am_anlagenumbuchungen;ANLKL;man_mag;Asset category;Anlagenklasse;catégorie d'immobilisation;Categoria dei beni;Categoría del activo
+1919;am_anlagenzugaenge_filter;in_anlkl;am_anlagenzugaenge;ANLKL;man_mag;Asset category;Anlagenklasse;catégorie d'immobilisation;Categoria dei beni;Categoría del activo
+1855;am_anlagenabgaenge_filter;in_anln1;am_anlagenabgaenge;ANLN1;man_mag;Asset number;Anlagennummer;Numéro principal d'immobilisation;Numero dei beni;Número del activo
+1686;am_anlagenbestand_filter;in_anln1;am_anlagenbestand;ANLN1;man_mag;Asset number;Anlagennummer;Numéro principal d'immobilisation;Numero dei beni;Número del activo
+1714;am_anlagengitter_filter;in_anln1;am_anlagengitter;ANLN1;man_mag;Asset number;Anlagennummer;Numéro principal d'immobilisation;Numero dei beni;Número del activo
+1597;am_anlagenstammsaetze_filter;in_anln1;am_anlagenstammsaetze;ANLN1;man_mag;Asset number;Anlagennummer;Numéro principal d'immobilisation;Numero dei beni;Número del activo
+1924;am_anlagenumbuchungen_filter;in_anln1;am_anlagenumbuchungen;ANLN1;man_mag;Asset number;Anlagennummer;Numéro principal d'immobilisation;Numero dei beni;Número del activo
+1912;am_anlagenzugaenge_filter;in_anln1;am_anlagenzugaenge;ANLN1;man_mag;Asset number;Anlagennummer;Numéro principal d'immobilisation;Numero dei beni;Número del activo
+1856;am_anlagenabgaenge_filter;in_anln2;am_anlagenabgaenge;ANLN2;man_mag;Sub-number;Unternummer;numéro subsidiaire;Sotto numero;Subnúmero
+1687;am_anlagenbestand_filter;in_anln2;am_anlagenbestand;ANLN2;man_mag;Sub-number;Unternummer;numéro subsidiaire;Sotto numero;Subnúmero
+1715;am_anlagengitter_filter;in_anln2;am_anlagengitter;ANLN2;man_mag;Sub-number;Unternummer;numéro subsidiaire;Sotto numero;Subnúmero
+1598;am_anlagenstammsaetze_filter;in_anln2;am_anlagenstammsaetze;ANLN2;man_mag;Sub-number;Unternummer;numéro subsidiaire;Sotto numero;Subnúmero
+1925;am_anlagenumbuchungen_filter;in_anln2;am_anlagenumbuchungen;ANLN2;man_mag;Sub-number;Unternummer;numéro subsidiaire;Sotto numero;Subnúmero
+1913;am_anlagenzugaenge_filter;in_anln2;am_anlagenzugaenge;ANLN2;man_mag;Sub-number;Unternummer;numéro subsidiaire;Sotto numero;Subnúmero
+1865;am_anlagenabgaenge_filter;in_anlue;am_anlagenabgaenge;ANLUE;man_mag;Asset Super Number;Anlagenübernummer;numéro de regroupement des immobilisations;Numero superiore dei beni;Supranúmero del activo
+1693;am_anlagenbestand_filter;in_anlue;am_anlagenbestand;ANLUE;man_mag;Asset Super Number;Anlagenübernummer;numéro de regroupement des immobilisations;Numero superiore dei beni;Supranúmero del activo
+1721;am_anlagengitter_filter;in_anlue;am_anlagengitter;ANLUE;man_mag;Asset Super Number;Anlagenübernummer;numéro de regroupement des immobilisations;Numero superiore dei beni;Supranúmero del activo
+1934;am_anlagenumbuchungen_filter;in_anlue;am_anlagenumbuchungen;ANLUE;man_mag;Asset Super Number;Anlagenübernummer;numéro de regroupement des immobilisations;Numero superiore dei beni;Supranúmero del activo
+1922;am_anlagenzugaenge_filter;in_anlue;am_anlagenzugaenge;ANLUE;man_mag;Asset Super Number;Anlagenübernummer;numéro de regroupement des immobilisations;Numero superiore dei beni;Supranúmero del activo
+1780;fi_buchungsbelege_filter;in_awkey;fi_buchungsbelege;AWKEY;man_mag;Reference Key;Referenzschlüssel;clé de référence;Chiave di riferimento;Clave de referencia
+1848;ek_bestellanforderungen_filter;in_banfn_bis;ek_bestellanforderungen;BANFN;man_mag;Until Purchase Requitement Document;Anforderungsbeleg bis;jusqu' au document des conditions d'achat ;Fino al documento di richiesta acquisto;Hasta el documento de requisito de compra
+1847;ek_bestellanforderungen_filter;in_banfn_von;ek_bestellanforderungen;BANFN;man_mag;From Purchase Requirement Document;Anforderungsbeleg von bzw. Einzel;A partir du document des conditions d'achat;dal documento richiesta acquisto;A partir del documento de requisito de compra
+1825;ap_bankdatenuebersicht_kreditor_filter;in_banka;ap_bankdatenuebersicht_kreditor;BANKA;man_mag;Bank name;Bankname;Nom de la banque;Nome della banca;Nombre del banco
+1830;ar_bankdatenuebersicht_debitor_filter;in_banka;ar_bankdatenuebersicht_debitor;BANKA;man_mag;Bank name;Bankname;Nom de la banque;Nome della banca;Nombre del banco
+1818;ue_bankstammdaten_filter;in_banka;ue_bankstammdaten;BANKA;man_mag;Bank name;Geldinstitut;Nom de la banque;Nome dell'istituto bancario;Nombre del banco
+1817;ue_bankstammdaten_filter;in_bankl;ue_bankstammdaten;BANKL;man_mag;Bank Key;Bankschlüssel;Clé de la banque;Chiave bancaria;Clave de banco
+1816;ue_bankstammdaten_filter;in_banks;ue_bankstammdaten;BANKS;man_mag;Country;Bankland;Pays;nazione;País
+1810;fi_ust_voranmeldung_filter;in_belnr0;fi_ust_voranmeldung;BELNR;man_mag;or Document No.;oder Belegnr.;ou document n°;o Documento nr.;o documento nº
+1801;fi_ust_voranmeldung_filter;in_belnr1;fi_ust_voranmeldung;BELNR;man_mag;or Document No.;oder Belegnr.;ou document n°;o Documento nr.;o documento nº
+1802;fi_ust_voranmeldung_filter;in_belnr2;fi_ust_voranmeldung;BELNR;man_mag;or Document No.;oder Belegnr.;ou document n°;o Documento nr.;o documento nº
+1803;fi_ust_voranmeldung_filter;in_belnr3;fi_ust_voranmeldung;BELNR;man_mag;or Document No.;oder Belegnr.;ou document n°;o Documento nr.;o documento nº
+1804;fi_ust_voranmeldung_filter;in_belnr4;fi_ust_voranmeldung;BELNR;man_mag;or Document No.;oder Belegnr.;ou document n°;o Documento nr.;o documento nº
+1805;fi_ust_voranmeldung_filter;in_belnr5;fi_ust_voranmeldung;BELNR;man_mag;or Document No.;oder Belegnr.;ou document n°;o Documento nr.;o documento nº
+1806;fi_ust_voranmeldung_filter;in_belnr6;fi_ust_voranmeldung;BELNR;man_mag;or Document No.;oder Belegnr.;ou document n°;o Documento nr.;o documento nº
+1807;fi_ust_voranmeldung_filter;in_belnr7;fi_ust_voranmeldung;BELNR;man_mag;or Document No.;oder Belegnr.;ou document n°;o Documento nr.;o documento nº
+1808;fi_ust_voranmeldung_filter;in_belnr8;fi_ust_voranmeldung;BELNR;man_mag;or Document No.;oder Belegnr.;ou document n°;o Documento nr.;o documento nº
+1809;fi_ust_voranmeldung_filter;in_belnr9;fi_ust_voranmeldung;BELNR;man_mag;or Document No.;oder Belegnr.;ou document n°;o Documento nr.;o documento nº
+1843;ap_kreditorentransaktionen_filter;in_belnr_bis;ap_kreditorentransaktionen;BELNR;man_mag;Until Document No.;bis Belegnr.;jusqu'au document n°;Fino al documento nr.;Hasta documento nº
+1764;ar_debitorentransaktionen_filter;in_belnr_bis;ar_debitorentransaktionen;BELNR;man_mag;Until Document No.;bis Belegnr.;jusqu'au document n°;Fino al documento nr.;Hasta documento nº
+1777;fi_buchungsbelege_filter;in_belnr_bis;fi_buchungsbelege;BELNR;man_mag;Until Document No.;bis Belegnr.;jusqu'au document n°;Fino al documento nr.;Hasta documento nº
+1800;fi_ust_voranmeldung_filter;in_belnr_bis;fi_ust_voranmeldung;BELNR;man_mag;Until Document No.;bis Belegnr.;jusqu'au document n°;Fino al documento nr.;Hasta documento nº
+1946;ue_beleganzeige_filter;in_belnr_bis;ue_beleganzeige;BELNR;man_mag;Until Document No.;bis Belegnr.;jusqu'au document n°;Fino al documento nr.;Hasta documento nº
+1970;ue_dauerbuchungs_urbelege_filter;in_belnr_bis;ue_dauerbuchungs_urbelege;BELNR;man_mag;Until Document No.;bis Belegnr.;jusqu'au document n°;Fino al documento nr.;Hasta documento nº
+1842;ap_kreditorentransaktionen_filter;in_belnr_von;ap_kreditorentransaktionen;BELNR;man_mag;From Document No. Or single Document;von Belegnr. oder Einzelbeleg;à partir du document n° ou document unique;Dal documento nr. o documento singolo;A partir del documento nº o de un único documento 
+1763;ar_debitorentransaktionen_filter;in_belnr_von;ar_debitorentransaktionen;BELNR;man_mag;From Document No. Or single Document;von Belegnr. oder Einzelbeleg;à partir du document n° ou document unique;Dal documento nr. o documento singolo;A partir del documento nº o de un único documento
+1776;fi_buchungsbelege_filter;in_belnr_von;fi_buchungsbelege;BELNR;man_mag;From Document No. Or single Document;von Belegnr. oder Einzelbeleg;à partir du document n° ou document unique;Dal documento nr. o documento singolo;A partir del documento nº o de un único documento
+1799;fi_ust_voranmeldung_filter;in_belnr_von;fi_ust_voranmeldung;BELNR;man_mag;From Document No.;von Belegnr.;à partir du document n°;Dal documento nr.;A partir del documento nº
+1945;ue_beleganzeige_filter;in_belnr_von;ue_beleganzeige;BELNR;man_mag;From Document No. Or single Document;von Belegnr. oder Einzelbeleg;à partir du document n° ou document unique;Dal documento nr. o documento singolo;A partir del documento nº o de un único documento
+1969;ue_dauerbuchungs_urbelege_filter;in_belnr_von;ue_dauerbuchungs_urbelege;BELNR;man_mag;From Document No. Or single Document;von Belegnr. oder Einzelbeleg;à partir du document n° ou document unique;Dal documento nr. o documento singolo;A partir del documento nº o de un único documento
+1844;ap_kreditorentransaktionen_filter;in_betrag;ap_kreditorentransaktionen;DMBTR;man_mag;Amount;Betrag ;Montant;Importo;Importe
+1765;ar_debitorentransaktionen_filter;in_betrag;ar_debitorentransaktionen;DMBTR;man_mag;Amount;Betrag ;Montant;Importo;Importe
+1947;ue_beleganzeige_filter;in_betrag;ue_beleganzeige;DMBTR;man_mag;Amount;Betrag ;Montant;Importo;Importe
+1971;ue_dauerbuchungs_urbelege_filter;in_betrag;ue_dauerbuchungs_urbelege;DMBTR;man_mag;Amount;Betrag ;Montant;Importo;Importe
+1861;am_anlagenabgaenge_filter;in_bewart;am_anlagenabgaenge;BWASL;man_mag;Movement type;Bewegungsart;type de la transaction;Tipo di movimento;Tipo de movimiento
+1930;am_anlagenumbuchungen_filter;in_bewart;am_anlagenumbuchungen;BWASL;man_mag;Movement type;Bewegungsart;type de la transaction;Tipo di movimento;Tipo de movimiento
+1918;am_anlagenzugaenge_filter;in_bewart;am_anlagenzugaenge;BWASL;man_mag;Movement type;Bewegungsart;type de la transaction;Tipo di movimento;Tipo de movimiento
+2;fi_bilanz_guv;in_bilart;;;man_mag;Balance sheet type;Bilanzart;type du bilan;Tipologia conto profitti e perdite;Tipo de balance
+1858;am_anlagenabgaenge_filter;in_bisaktiv;am_anlagenabgaenge;AKTIV;man_mag;Activation date to;Aktivierungsdatum bis;date d'activation jusqu'à;Data di attivazione fino a ;Fecha de activación hasta
+1689;am_anlagenbestand_filter;in_bisaktiv;am_anlagenbestand;AKTIV;man_mag;Activation date to;Aktivierungsdatum bis;date d'activation jusqu'à;Data di attivazione fino a ;Fecha de activación hasta
+1717;am_anlagengitter_filter;in_bisaktiv;am_anlagengitter;AKTIV;man_mag;Activation date to;Aktivierungsdatum bis;date d'activation jusqu'à;Data di attivazione fino a ;Fecha de activación hasta
+1600;am_anlagenstammsaetze_filter;in_bisaktiv;am_anlagenstammsaetze;AKTIV;man_mag;Activation date to;Aktivierungsdatum bis;date d'activation jusqu'à;Data di attivazione fino a ;Fecha de activación hasta
+1927;am_anlagenumbuchungen_filter;in_bisaktiv;am_anlagenumbuchungen;AKTIV;man_mag;Activation date to;Aktivierungsdatum bis;date d'activation jusqu'à;Data di attivazione fino a ;Fecha de activación hasta
+1915;am_anlagenzugaenge_filter;in_bisaktiv;am_anlagenzugaenge;AKTIV;man_mag;Activation date to;Aktivierungsdatum bis;date d'activation jusqu'à;Data di attivazione fino a ;Fecha de activación hasta
+1656;sd_auftraege_liste_filter;in_bisAUDAT;sd_auftraege_liste;AUDAT;man_mag;until Ordering Date;bis Auftragsdatum;jusqu'à la date de l'ordre;Fino alla data della messa in ordine;hasta fecha de pedido
+1854;ek_bestellanforderungen_filter;in_bisbadat;ek_bestellanforderungen;BADAT;man_mag;until Posting Date;bis Auftragsdatum;jusqu'à la date d'enregistrement;Fino alla data di assegnazione;hasta fecha de contabilización
+1840;ap_kreditorentransaktionen_filter;in_bisbldat;ap_kreditorentransaktionen;BLDAT;man_mag;until Document Date;bis Belegdatum;jusqu'à  la date du document;Fino alla data del documento;hasta fecha del documento
+1761;ar_debitorentransaktionen_filter;in_bisbldat;ar_debitorentransaktionen;BLDAT;man_mag;until Document Date;bis Belegdatum;jusqu'à  la date du document;Fino alla data del documento;hasta fecha del documento
+1943;ue_beleganzeige_filter;in_bisbldat;ue_beleganzeige;BLDAT;man_mag;Booking date to;Buchungsdatum bis;date de comptabilisation jusqu'au ;Data di prenotazione fino a;Fecha de inscripción hasta
+1967;ue_dauerbuchungs_urbelege_filter;in_bisbldat;ue_dauerbuchungs_urbelege;BLDAT;man_mag;Booking date to;Buchungsdatum bis;date de comptabilisation jusqu'au ;Data di prenotazione fino a;Fecha de inscripción hasta
+1860;am_anlagenabgaenge_filter;in_bisbudat;am_anlagenabgaenge;BUDAT;man_mag;Booking date to;Buchungsdatum bis;date de comptabilisation jusqu'au ;Data di prenotazione fino a;Fecha de inscripción hasta
+1929;am_anlagenumbuchungen_filter;in_bisbudat;am_anlagenumbuchungen;BUDAT;man_mag;Booking date to;Buchungsdatum bis;date de comptabilisation jusqu'au ;Data di prenotazione fino a;Fecha de inscripción hasta
+1917;am_anlagenzugaenge_filter;in_bisbudat;am_anlagenzugaenge;BUDAT;man_mag;Booking date to;Buchungsdatum bis;date de comptabilisation jusqu'au ;Data di prenotazione fino a;Fecha de inscripción hasta
+1838;ap_kreditorentransaktionen_filter;in_bisbudat;ap_kreditorentransaktionen;BUDAT;man_mag;until Posting Date;bis Buchungsdatum;jusqu'à la date de comptabilisation;Fino alla data di assegnazione;hasta fecha de contabilización
+1759;ar_debitorentransaktionen_filter;in_bisbudat;ar_debitorentransaktionen;BUDAT;man_mag;until Posting Date;bis Buchungsdatum;jusqu'à la date de comptabilisation;Fino alla data di assegnazione;hasta fecha de contabilización
+1774;fi_buchungsbelege_filter;in_bisbudat;fi_buchungsbelege;BUDAT;man_mag;until Posting Date;bis Buchungsdatum;jusqu'à la date de comptabilisation;Fino alla data di assegnazione;hasta fecha de contabilización
+1754;fi_sachkonteneinzelposten_filter;in_bisbudat;fi_sachkonteneinzelposten;BUDAT;man_mag;until Posting Date;bis Buchungsdatum;jusqu'à la date de comptabilisation;Fino alla data di assegnazione;hasta fecha de contabilización
+1785;fi_ust_voranmeldung_filter;in_bisbudat;fi_ust_voranmeldung;BUDAT;man_mag;until Posting Date;bis Buchungsdatum;jusqu'à la date de comptabilisation;Fino alla data di assegnazione;hasta fecha de contabilización
+1671;mm_materialbeleg_filter;in_bisbudat;mm_materialbeleg;BUDAT;man_mag;Booking date to;Buchungsdatum bis;date de comptabilisation jusqu'au ;Data di prenotazione fino a;Fecha de inscripción hasta
+1941;ue_beleganzeige_filter;in_bisbudat;ue_beleganzeige;BUDAT;man_mag;Booking date to;Buchungsdatum bis;date de comptabilisation jusqu'au ;Data di prenotazione fino a;Fecha de inscripción hasta
+1965;ue_dauerbuchungs_urbelege_filter;in_bisbudat;ue_dauerbuchungs_urbelege;BUDAT;man_mag;Booking date to;Buchungsdatum bis;date de comptabilisation jusqu'au ;Data di prenotazione fino a;Fecha de inscripción hasta
+1663;sd_fakturen_liste_filter;in_bisbudat;sd_fakturen_liste;Faktura_datum;man_mag;until Posting Date; bis Rechnungsdatum;jusqu'à la date d'enregistrement;Fino alla data di assegnazione;hasta fecha de contabilización
+1812;co_kostenartenliste_filter;in_bisdat;co_kostenartenliste;DATBI;man_mag;Until Date;Betrachtungszeitraum bis;jusqu'à la date considérée;Fino alla data;Hasta fecha
+1896;co_profitcenterliste_filter;in_bisdat;co_profitcenterliste;GULTIG_bis;man_mag;Until Date;Betrachtungszeitraum bis;jusqu'à la date considérée;Fino alla data;Hasta fecha
+1868;am_anlagenabgaenge_filter;in_bisdeakt;am_anlagenabgaenge;DEAKT;man_mag;Deactivation date to;Deaktivierungsdatum bis;date de désactivation jusqu'au;Data di disattivazione fino;Fecha de desactivación hasta
+1658;sd_auftraege_liste_filter;in_biserdat;sd_auftraege_liste;ERDAT;man_mag;until Creation Date;bis Erstellungsdatum;jusqu'à la date de création;Fino alla data di creazione;hasta fecha de creación
+1814;co_kostenartenliste_filter;in_biskart;co_kostenartenliste;KSTAR;man_mag;Until Cost Type;Kostenart bis;jusqu'au type de coût;Fino alla tipologia di costo;Hasta tipo de coste
+5;fi_bilanz_guv;in_bjahr;base_gjahr;gjahr;man_mag;Reporting Year;Berichtsjahr;année considérée;Anno del rapporto;Año del informe
+1841;ap_kreditorentransaktionen_filter;in_blart;ap_kreditorentransaktionen;BLART;man_mag;Document Type;Belegart;Type du document;Tipo di documento;Tipo de documento
+1762;ar_debitorentransaktionen_filter;in_blart;ar_debitorentransaktionen;BLART;man_mag;Document Type;Belegart;Type du document;Tipo di documento;Tipo de documento
+1772;fi_belegarten_filter;in_blart;fi_belegarten;BLART;man_mag;Document Type;Belegart;Type du document;Tipo di documento;Tipo de documento
+1775;fi_buchungsbelege_filter;in_blart;fi_buchungsbelege;BLART;man_mag;Document Type;Belegart;Type du document;Tipo di documento;Tipo de documento
+1944;ue_beleganzeige_filter;in_blart;ue_beleganzeige;BLART;man_mag;Document Type;Belegart;Type du document;Tipo di documento;Tipo de documento
+1968;ue_dauerbuchungs_urbelege_filter;in_blart;ue_dauerbuchungs_urbelege;BLART;man_mag;Document Type;Belegart;Type du document;Tipo di documento;Tipo de documento
+1820;ue_bankstammdaten_filter;in_bnklz;ue_bankstammdaten;BNKLZ;man_mag;Bank Code;Bankleitzahl;Code de la banque;Codice bancario;Código de banco
+1822;ue_bankstammdaten_filter;in_brnch;ue_bankstammdaten;BRNCH;man_mag;Branch;Zweigstelle;agence;Filiale;Sucursal
+16;fi_bilanz_guv;in_curr;base_waers;waers;man_mag;Currency;Währung;devise;Valuta;Moneda
+1683;mm_materialstamm_liste_filter;in_ekgrp;mm_materialstamm_liste;EKGRP;man_mag;Purchaser Group;Einkäufergruppe;groupe d'achat;Gruppo di acquisto;Grupo de compradores
+1685;mm_materialstamm_liste_filter;in_extwg;mm_materialstamm_liste;EXTWG;man_mag;External Article group;Ext. Warengruppe;groupe externe de produits;Gruppo di merce esterno;Grupo de artículos externos
+1653;sd_auftraege_liste_filter;in_faknr_bis;sd_auftraege_liste;VBELN;man_mag;Until Invoice No.;Faktura-Nr. bis;Jusqu'à la facture n°;Fino alla fattura nr.;Hasta la factura nº
+1660;sd_fakturen_liste_filter;in_faknr_bis;sd_fakturen_liste;VBELN;man_mag;Until Invoice No.;Faktura-Nr. bis;Jusqu'à la facture n°;Fino alla fattura nr.;Hasta la factura nº
+1963;sd_fakturen_positionen_filter;in_faknr_bis;sd_fakturen_positionen;VBELN;man_mag;Until Invoice No.;Faktura-Nr. bis;Jusqu'à la facture n°;Fino alla fattura nr.;Hasta la factura nº
+1652;sd_auftraege_liste_filter;in_faknr_von;sd_auftraege_liste;VBELN;man_mag;From Invoice No.;Faktura-Nr. von bzw. Einzel;A  partir de la facture n°;Dalla fattura nr;A partir de la factura nº
+1659;sd_fakturen_liste_filter;in_faknr_von;sd_fakturen_liste;VBELN;man_mag;From Invoice No.;Faktura-Nr. von bzw. Einzel;A  partir de la facture n°;Dalla fattura nr;A partir de la factura nº
+1962;sd_fakturen_positionen_filter;in_faknr_von;sd_fakturen_positionen;VBELN;man_mag;From Invoice No.;Faktura-Nr. von bzw. Einzel;A  partir de la facture n°;Dalla fattura nr;A partir de la factura nº
+1786;fi_ust_voranmeldung_filter;in_hkont;fi_ust_voranmeldung;HKONT;man_mag;GL Account;Hauptbuchkonto;Compte général;Conto libro mastro;Cuenta de mayor
+1852;ek_bestellanforderungen_filter;in_knttp;ek_bestellanforderungen;KNTTP;man_mag;Accounting type;Kontierungstyp;catégorie d'imputation;tipo di contabilità;Tipo de contabilización
+1815;co_kostenartenliste_filter;in_kokrs;co_kostenartenliste;KOKRS;man_mag;Controlling Area;Kostenrechnungskreis;Périmètre analytique;Area di calcolo del costo;Sociedad CO
+1863;am_anlagenabgaenge_filter;in_kostl;am_anlagenabgaenge;KOSTL;man_mag;Cost Centre;Kostenstelle;Centre de coûts;Centro di costo;Centro de costes
+1691;am_anlagenbestand_filter;in_kostl;am_anlagenbestand;KOSTL;man_mag;Cost Centre;Kostenstelle;Centre de coûts;Centro di costo;Centro de costes
+1719;am_anlagengitter_filter;in_kostl;am_anlagengitter;KOSTL;man_mag;Cost Centre;Kostenstelle;Centre de coûts;Centro di costo;Centro de costes
+1602;am_anlagenstammsaetze_filter;in_kostl;am_anlagenstammsaetze;KOSTL;man_mag;Cost Centre;Kostenstelle;Centre de coûts;Centro di costo;Centro de costes
+1932;am_anlagenumbuchungen_filter;in_kostl;am_anlagenumbuchungen;KOSTL;man_mag;Cost Centre;Kostenstelle;Centre de coûts;Centro di costo;Centro de costes
+1920;am_anlagenzugaenge_filter;in_kostl;am_anlagenzugaenge;KOSTL;man_mag;Cost Centre;Kostenstelle;Centre de coûts;Campo di valutazione;Centro de costes
+1768;fi_kontenplan_filter;in_ktopl;fi_kontenplan;Kontenplan;man_mag;Chart of accounts;Kontenplan;plan comptable;Tabella dei conti;plan de cuentas
+15;fi_bilanz_guv;in_ktopl;base_ktopl;ktopl;man_mag;Chart of accounts;Kontenplan;plan comptable;Tabella dei conti;plan de cuentas
+12;fi_bilanz_guv;in_kto_excl_bis1;base_saknr;saknr;man_mag;excluding (1) to account;exkl. (1) bis Konto;excluant (1) jusqu'au compte;Escluso (1) fino al conto;excluir (1) hasta la cuenta
+14;fi_bilanz_guv;in_kto_excl_bis2;base_saknr;saknr;man_mag;excluding (2) to account;exkl. (2) bis Konto;excluant (2) jusqu'au compte;Escluso (2) fino al conto;excluir (2) hasta la cuenta
+11;fi_bilanz_guv;in_kto_excl_von1;base_saknr;saknr;man_mag;exncluding (1) from account;exkl. (1) ab Konto;excluant (1) jusqu'au compte;Escluso (1) dal conto;excluir (1) a partir de la cuenta
+13;fi_bilanz_guv;in_kto_excl_von2;base_saknr;saknr;man_mag;excluding (2) from account;exkl. (2) ab Konto;excluant (2) jusqu'au compte;Escluso (2) dal conto;excluir (2) a partir de la cuenta
+10;fi_bilanz_guv;in_kto_incl_bis1;base_saknr;saknr;man_mag;including to account;inkl. bis Konto;incluant jusqu'au compte;incluso fino al conto;incluir hasta la cuenta
+9;fi_bilanz_guv;in_kto_incl_von1;base_saknr;saknr;man_mag;including from account;inkl. ab Konto;incluant à partir du compte;incluso dal conto;incluir a partir de la cuenta
+1832;ar_debitorensalden_filter;in_kunname;ar_debitorensalden;NAME;man_mag;Customer name;Debitor-Suchname;nom du client;Nome cliente;Nombre del cliente
+1831;ar_debitorensalden_filter;in_kunnr;ar_debitorensalden;Debitornr;man_mag;Customer number;Debitornummer;client numéro;numero cliente;Número de cliente
+1829;ar_bankdatenuebersicht_debitor_filter;in_kunnr;ar_bankdatenuebersicht_debitor;KUNNR;man_mag;Customer number;Debitor-Nummer;Numéro du client;numero cliente;Número de cliente
+1755;ar_debitorentransaktionen_filter;in_kunnr;ar_debitorentransaktionen;KUNNR;man_mag;Customer Number;Kundennummer;Client Numéro;numero cliente;Número de cliente
+1661;sd_fakturen_liste_filter;in_kunnr;sd_fakturen_liste;KUNRG;man_mag;Customer number;Debitornummer;Numéro du client;numero cliente;Número de cliente
+1701;ar_kundenstamm_filter;in_kunnr_bis;ar_kundenstamm;KUNNR;man_mag;Customer No to;Kundennr bis;client n° jusqu'à ;numero cliente fino a ;Nº de cliente hasta
+1700;ar_kundenstamm_filter;in_kunnr_von;ar_kundenstamm;KUNNR;man_mag;Customer No from;Kundennr von;client n° à partir de;numero cliente da;Nº de cliente a partir de
+1667;mm_materialbeleg_filter;in_lgort;mm_materialbeleg;LGORT;man_mag;Storage location;Lagerort;lieu de stockage;Deposito di stoccaggio;Lugar de almacenamiento
+1827;ap_kreditorensalden_filter;in_lifname;ap_kreditorensalden;NAME;man_mag;Vendor name;Kreditor-Suchname;nom du vendeur;Nome fornitore;Nombre de proveedor
+1851;ek_bestellanforderungen_filter;in_lifnr;ek_bestellanforderungen;FLIEF;man_mag;Vendor Number;Lieferantennummer;Numéro du vendeur;numero fornitore;Número de proveedor
+1826;ap_kreditorensalden_filter;in_lifnr;ap_kreditorensalden;Kreditornr;man_mag;Vendor number;Kreditornummer;vendeur numéro;numero fornitore;Número de proveedor
+1824;ap_bankdatenuebersicht_kreditor_filter;in_lifnr;ap_bankdatenuebersicht_kreditor;LIFNR;man_mag;Vendor number;Kreditorennummer;vendeur numéro;numero fornitore;Número de proveedor
+1834;ap_kreditorentransaktionen_filter;in_lifnr;ap_kreditorentransaktionen;LIFNR;man_mag;Vendor Number;Lieferantennummer;Numéro du vendeur;numero fornitore;Número de proveedor
+1937;ue_beleganzeige_filter;in_lifnr_bis;ue_beleganzeige;Konto;man_mag;Account No to;Kontonr bis;Compte n° jusqu'à ;Nr conto fino;Nº de cuenta hasta
+1708;ap_lieferantenstamm_filter;in_lifnr_bis;ap_lieferantenstamm;LIFNR;man_mag;Vendor No to;Lieferantennr bis;Vendeur n° jusqu'à ;numero fornitore fino;Nº de proveedor hasta
+1669;mm_materialbeleg_filter;in_lifnr_bis;mm_materialbeleg;LIFNR;man_mag;Vendor No to;Lieferantennr bis;Vendeur n° jusqu'à ;numero fornitore;Nº de proveedor hasta
+1936;ue_beleganzeige_filter;in_lifnr_von;ue_beleganzeige;Konto;man_mag;Account No from;Kontonr von;Compte n° à partir de ;numero conto da;Nº de cuenta a partir de
+1707;ap_lieferantenstamm_filter;in_lifnr_von;ap_lieferantenstamm;LIFNR;man_mag;Vendor No from;Lieferantennr von;Vendeur n° à partir de;numero fornitore da;Nº de proveedor a partir de
+1668;mm_materialbeleg_filter;in_lifnr_von;mm_materialbeleg;LIFNR;man_mag;Vendor No from;Lieferantennr von;Vendeur n° à partir de;numero fornitore da;Nº de proveedor a partir de
+1684;mm_materialstamm_liste_filter;in_matkl;mm_materialstamm_liste;MATKL;man_mag;Article group;Warengruppe ;groupe de produits;Categoria di articolo;Grupo de artículos
+1850;ek_bestellanforderungen_filter;in_matnr_bis;ek_bestellanforderungen;MATNR;man_mag;Until Material No.;Material-Nr. bis;N° de la nomenclature jusqu'à;Fino al materiale nr;Hasta el material nº
+1665;mm_materialbeleg_filter;in_matnr_bis;mm_materialbeleg;MATNR;man_mag;Until Material No.;Material-Nr. bis;N° de la nomenclature jusqu'à;Fino al materiale nr;Hasta el material nº
+1681;mm_materialstamm_liste_filter;in_matnr_bis;mm_materialstamm_liste;MATNR;man_mag;Until Material No.;Material-Nr. bis;N° de la nomenclature jusqu'à;Fino al materiale nr;Hasta el material nº
+1849;ek_bestellanforderungen_filter;in_matnr_von;ek_bestellanforderungen;MATNR;man_mag;From Material No.;Material-Nr. von bzw. Einzel;A partir du matériel n°;Dal materiale nr.;A partir del material nº
+1664;mm_materialbeleg_filter;in_matnr_von;mm_materialbeleg;MATNR;man_mag;From Material No.;Material-Nr. von bzw. Einzel;A partir du matériel n°;Dal materiale nr.;A partir del material nº
+1680;mm_materialstamm_liste_filter;in_matnr_von;mm_materialstamm_liste;MATNR;man_mag;From Material No.;Material-Nr. von bzw. Einzel;A partir du matériel n°;Dal materiale nr.;A partir del material nº
+1828;ap_kreditorensalden_filter;in_monat;ap_kreditorensalden;Period;man_mag;until Period;bis Period;jusqu'à la période;fino al periodo;hasta el período
+1833;ar_debitorensalden_filter;in_monat;ar_debitorensalden;Period;man_mag;until Period;bis Period;jusqu'à la période;fino al periodo;hasta el período
+1783;fi_steuerkennzeichen_filter;in_mwskz;fi_steuerkennzeichen;MWSKZ;man_mag;Tax Code;Steuerkennzeichen;Code fiscal;Codice fiscale;Código fiscal
+1798;fi_ust_voranmeldung_filter;in_mwskz0;fi_ust_voranmeldung;MWSKZ;man_mag;VAT Code 10;Steuerkennzeichen 10;Code TVA 10;Codice PARTITA IVA 10;Código IVA 10
+1789;fi_ust_voranmeldung_filter;in_mwskz1;fi_ust_voranmeldung;MWSKZ;man_mag;VAT Code 1;Steuerkennzeichen 1;Code TVA 1;Codice PARTITA IVA 1;Código IVA 1
+1790;fi_ust_voranmeldung_filter;in_mwskz2;fi_ust_voranmeldung;MWSKZ;man_mag;VAT Code 2;Steuerkennzeichen 2;Code TVA 2;Codice PARTITA IVA 2;Código IVA 2
+1791;fi_ust_voranmeldung_filter;in_mwskz3;fi_ust_voranmeldung;MWSKZ;man_mag;VAT Code 3;Steuerkennzeichen 3;Code TVA 3;Codice PARTITA IVA 3;Código IVA 3
+1792;fi_ust_voranmeldung_filter;in_mwskz4;fi_ust_voranmeldung;MWSKZ;man_mag;VAT Code 4;Steuerkennzeichen 4;Code TVA 4;Codice PARTITA IVA 4;Código IVA 4
+1793;fi_ust_voranmeldung_filter;in_mwskz5;fi_ust_voranmeldung;MWSKZ;man_mag;VAT Code 5;Steuerkennzeichen 5;Code TVA 5;Codice PARTITA IVA 5;Código IVA 5
+1794;fi_ust_voranmeldung_filter;in_mwskz6;fi_ust_voranmeldung;MWSKZ;man_mag;VAT Code 6;Steuerkennzeichen 6;Code TVA 6;Codice PARTITA IVA 6;Código IVA 6
+1795;fi_ust_voranmeldung_filter;in_mwskz7;fi_ust_voranmeldung;MWSKZ;man_mag;VAT Code 7;Steuerkennzeichen 7;Code TVA 7;Codice PARTITA IVA 7;Código IVA 7
+1796;fi_ust_voranmeldung_filter;in_mwskz8;fi_ust_voranmeldung;MWSKZ;man_mag;VAT Code 8;Steuerkennzeichen 8;Code TVA 8;Codice PARTITA IVA 8;Código IVA 8
+1797;fi_ust_voranmeldung_filter;in_mwskz9;fi_ust_voranmeldung;MWSKZ;man_mag;VAT Code 9;Steuerkennzeichen 9;Code TVA 9;Codice PARTITA IVA 9;Código IVA 9
+1788;fi_ust_voranmeldung_filter;in_mwskz_bis;fi_ust_voranmeldung;MWSKZ;man_mag;until VAT Code;bis Steuerkennzeichen;jusqu'au numéro TVA;fino al codice partita iva ;hasta código IVA
+1787;fi_ust_voranmeldung_filter;in_mwskz_von;fi_ust_voranmeldung;MWSKZ;man_mag;from VAT Code;von Steuerkennzeichen;à partir du numéro TVA;dal codice partita iva;a partir del código IVA
+1938;ue_beleganzeige_filter;in_name1;ue_beleganzeige;Konto_kurztext;man_mag;Name 1 (Search string);Name1 (Suche);Nom 1 (Recherche);Nome 1 (stringa di ricerca);Nombre 1 (cadena de búsqueda)
+1835;ap_kreditorentransaktionen_filter;in_name1;ap_kreditorentransaktionen;NAME1;man_mag;Name 1 (Search string);Name1 (Suche);Nom 1 (Recherche);Nome 1 (stringa di ricerca);Nombre 1 (cadena de búsqueda)
+1709;ap_lieferantenstamm_filter;in_name1;ap_lieferantenstamm;NAME1;man_mag;Name 1 (Search string);Name1 (Suche);Nom 1 (Recherche);Nome 1 (stringa di ricerca);Nombre 1 (cadena de búsqueda)
+1756;ar_debitorentransaktionen_filter;in_name1;ar_debitorentransaktionen;NAME1;man_mag;Name 1 (Search string);Name1 (Suche);Nom 1 (Recherche);Nome 1 (stringa di ricerca);Nombre 1 (cadena de búsqueda)
+1702;ar_kundenstamm_filter;in_name1;ar_kundenstamm;NAME1;man_mag;Name 1 (Search string);Name1 (Suche);Nom 1 (Recherche);Nome 1 (stringa di ricerca);Nombre 1 (cadena de búsqueda)
+1939;ue_beleganzeige_filter;in_name2;ue_beleganzeige;Konto_kurztext;man_mag;Name 2 (Search string);Name2 (Suche);Nom 2 (Recherche);Nome 2 (stringa di ricerca);Nombre 2 (cadena de búsqueda)
+1836;ap_kreditorentransaktionen_filter;in_name2;ap_kreditorentransaktionen;NAME2;man_mag;Name 2 (Search string);Name2 (Suche);Nom 2 (Recherche);Nome 2 (stringa di ricerca);Nombre 2 (cadena de búsqueda)
+1710;ap_lieferantenstamm_filter;in_name2;ap_lieferantenstamm;NAME2;man_mag;Name 2 (Search string);Name2 (Suche);Nom 2 (Recherche);Nome 2 (stringa di ricerca);Nombre 2 (cadena de búsqueda)
+1757;ar_debitorentransaktionen_filter;in_name2;ar_debitorentransaktionen;NAME2;man_mag;Name 2 (Search string);Name2 (Suche);Nom 2 (Recherche);Nome 2 (stringa di ricerca);Nombre 2 (cadena de búsqueda)
+1703;ar_kundenstamm_filter;in_name2;ar_kundenstamm;NAME2;man_mag;Name 2 (Search string);Name2 (Suche);Nom 2 (Recherche);Nome 2 (stringa di ricerca);Nombre 2 (cadena de búsqueda)
+1695;am_anlagenbestand_filter;in_ord1;am_anlagenbestand;ORD41;man_mag;Order term 1;Ordnungsbegriff 1;clé de tri 1;termine dell'ordine 1;Criterio de pedido 1
+1723;am_anlagengitter_filter;in_ord1;am_anlagengitter;ORD41;man_mag;Order term 1;Ordnungsbegriff 1;clé de tri 1;termine dell'ordine 1;Criterio de pedido 1
+1696;am_anlagenbestand_filter;in_ord2;am_anlagenbestand;ORD42;man_mag;Order term 2;Ordnungsbegriff 2;clé de tri 2;termine dell'ordine 2;Criterio de pedido 2
+1724;am_anlagengitter_filter;in_ord2;am_anlagengitter;ORD42;man_mag;Order term 2;Ordnungsbegriff 2;clé de tri 2;termine dell'ordine 2;Criterio de pedido 2
+1697;am_anlagenbestand_filter;in_ord3;am_anlagenbestand;ORD43;man_mag;Order term 3;Ordnungsbegriff 3;clé de tri 3;termine dell'ordine 3;Criterio de pedido 3
+1725;am_anlagengitter_filter;in_ord3;am_anlagengitter;ORD43;man_mag;Order term 3;Ordnungsbegriff 3;clé de tri 3;termine dell'ordine 3;Criterio de pedido 3
+1698;am_anlagenbestand_filter;in_ord4;am_anlagenbestand;ORD44;man_mag;Order term 4;Ordnungsbegriff 4;clé de tri 4;termine dell'ordine 4;Criterio de pedido 4
+1726;am_anlagengitter_filter;in_ord4;am_anlagengitter;ORD44;man_mag;Order term 4;Ordnungsbegriff 4;clé de tri 4;termine dell'ordine 4;Criterio de pedido 4
+1711;ap_lieferantenstamm_filter;in_ort01;ap_lieferantenstamm;ORT01;man_mag;City (Search string);Ort (Suche);Ville (recherche);Luogo (stringa di ricerca);Ciudad (cadena de búsqueda)
+1704;ar_kundenstamm_filter;in_ort01;ar_kundenstamm;ORT01;man_mag;City (Search string);Ort (Suche);Ville (recherche);Luogo (stringa di ricerca);Ciudad (cadena de búsqueda)
+1819;ue_bankstammdaten_filter;in_ort01;ue_bankstammdaten;ORT01;man_mag;City;Ort;Ville;Luogo (stringa di ricerca);Ciudad
+1654;sd_auftraege_liste_filter;in_partner;sd_auftraege_liste;Partner_AG;man_mag;Customer number;Debitornummer;Numéro client;Numero del cliente;Número de cliente
+1911;blg_bilanz_guv;in_pbis;;;;cycle to;Periode bis;période jusqu'à ;periodo fino;ciclo hasta
+4;fi_bilanz_guv;in_pbis_bj;base_perio;perio;man_mag;cycle to (ref. year);Periode bis;période jusqu'à ;periodo fino (anno);ciclo hasta (año ref.)
+7;fi_bilanz_guv;in_pbis_vj;base_perio;perio;man_mag;cycle to (ref. year);Periode bis;période jusqu'à ;periodo fino (anno);ciclo hasta (año ref.)
+1392;fi_sachkontensalden_monatlich_filter;in_periode_bis;fi_sachkontensalden_monatlich;MONAT;man_mag;Reporting Period to;Berichtsperiode bis;Période concernée jusqu'à;periodo suddetto;Período del informe hasta
+1910;blg_bilanz_guv;in_pvon;;;;cycle from;Periode von;période à partir d e;periodo da;ciclo a partir de
+3;fi_bilanz_guv;in_pvon_bj;base_perio;perio;man_mag;cycle from (ref. year);Periode von;période à partir de (année concernée);periodo da (anno);ciclo a partir de (año ref.)
+6;fi_bilanz_guv;in_pvon_vj;base_perio;perio;man_mag;cycle from (ref. year);Periode von;période à partir de (année de référence);periodo da (anno);ciclo a partir de (año ref.)
+1778;fi_buchungsbelege_filter;in_refnr;fi_buchungsbelege;REFNR;man_mag;Reference No.;Referenz-Nr.;Référence n°;nr di riferimento;Nº de referencia
+1752;fi_sachkonteneinzelposten_filter;in_saknr0;fi_sachkonteneinzelposten;HKONT;man_mag;or Account No.;oder Sachkonto Nr.;ou compte n°;o numero di conto;o nº de cuenta
+1743;fi_sachkonteneinzelposten_filter;in_saknr1;fi_sachkonteneinzelposten;HKONT;man_mag;or Account No.;oder Sachkonto Nr.;ou compte n°;o numero di conto;o nº de cuenta
+1744;fi_sachkonteneinzelposten_filter;in_saknr2;fi_sachkonteneinzelposten;HKONT;man_mag;or Account No.;oder Sachkonto Nr.;ou compte n°;o numero di conto;o nº de cuenta
+1745;fi_sachkonteneinzelposten_filter;in_saknr3;fi_sachkonteneinzelposten;HKONT;man_mag;or Account No.;oder Sachkonto Nr.;ou compte n°;o numero di conto;o nº de cuenta
+1746;fi_sachkonteneinzelposten_filter;in_saknr4;fi_sachkonteneinzelposten;HKONT;man_mag;or Account No.;oder Sachkonto Nr.;ou compte n°;o numero di conto;o nº de cuenta
+1747;fi_sachkonteneinzelposten_filter;in_saknr5;fi_sachkonteneinzelposten;HKONT;man_mag;or Account No.;oder Sachkonto Nr.;ou compte n°;o numero di conto;o nº de cuenta
+1748;fi_sachkonteneinzelposten_filter;in_saknr6;fi_sachkonteneinzelposten;HKONT;man_mag;or Account No.;oder Sachkonto Nr.;ou compte n°;o numero di conto;o nº de cuenta
+1749;fi_sachkonteneinzelposten_filter;in_saknr7;fi_sachkonteneinzelposten;HKONT;man_mag;or Account No.;oder Sachkonto Nr.;ou compte n°;o numero di conto;o nº de cuenta
+1750;fi_sachkonteneinzelposten_filter;in_saknr8;fi_sachkonteneinzelposten;HKONT;man_mag;or Account No.;oder Sachkonto Nr.;ou compte n°;o numero di conto;o nº de cuenta
+1751;fi_sachkonteneinzelposten_filter;in_saknr9;fi_sachkonteneinzelposten;HKONT;man_mag;or Account No.;oder Sachkonto Nr.;ou compte n°;o numero di conto;o nº de cuenta
+1742;fi_sachkonteneinzelposten_filter;in_saknr_bis;fi_sachkonteneinzelposten;HKONT;man_mag;to Account;Sachkonto bis;ou compte n°;fino al conto;hasta la cuenta
+1391;fi_sachkontensalden_monatlich_filter;in_saknr_bis;fi_sachkontensalden_monatlich;kontonr;man_mag;Account to;Sachkonto bis;jusqu'au compte;conto fino ;Cuenta hasta
+1770;fi_kontenplan_filter;in_saknr_bis;fi_kontenplan;Sachkonto;man_mag;to Account;Sachkonto bis;compte jusqu'à ;fino al conto;hasta la cuenta
+1741;fi_sachkonteneinzelposten_filter;in_saknr_von;fi_sachkonteneinzelposten;HKONT;man_mag;from Account;Sachkonto von;à partir du compte;dal conto;a partir de la cuenta
+1390;fi_sachkontensalden_monatlich_filter;in_saknr_von;fi_sachkontensalden_monatlich;kontonr;man_mag;Account from;Sachkonto von; compte à partir de;conto dal;Cuenta a partir de
+1769;fi_kontenplan_filter;in_saknr_von;fi_kontenplan;Sachkonto;man_mag;from Account;Sachkonto von;à partir du compte;dal conto;a partir de la cuenta
+1782;fi_steuerkennzeichen_filter;in_schem;fi_steuerkennzeichen;KALSM;man_mag;Schema;Schema;schéma;schema;Esquema
+1845;ap_kreditorentransaktionen_filter;in_sgtxt;ap_kreditorentransaktionen;SGTXT;man_mag;Item text;Positionstext;texte de l'inscription;testo dell'articolo;Texto de posición
+1766;ar_debitorentransaktionen_filter;in_sgtxt;ar_debitorentransaktionen;SGTXT;man_mag;Item text;Positionstext;texte de l'inscription;testo dell'articolo;Texto de posición
+1948;ue_beleganzeige_filter;in_sgtxt;ue_beleganzeige;SGTXT;man_mag;Item text;Positionstext;texte de l'inscription;testo dell'articolo;Texto de posición
+1972;ue_dauerbuchungs_urbelege_filter;in_sgtxt;ue_dauerbuchungs_urbelege;SGTXT;man_mag;Item text;Positionstext;texte de l'inscription;testo dell'articolo;Texto de posición
+1682;mm_materialstamm_liste_filter;in_spart;mm_materialstamm_liste;SPART;man_mag;Material Type;Materialart ;Type du matériel;tipo di materiale;Tipo de material
+1771;fi_belegarten_filter;in_spras;fi_belegarten;SPRAS;man_mag;Language;Sprache;Langue;lingua;Idioma
+1781;fi_steuerkennzeichen_filter;in_spras;fi_steuerkennzeichen;SPRAS;man_mag;Language;Sprache;Langue;lingua;Idioma
+1864;am_anlagenabgaenge_filter;in_stort;am_anlagenabgaenge;STORT;man_mag;Site;Standort;Site;Luogo ;Lugar
+1692;am_anlagenbestand_filter;in_stort;am_anlagenbestand;STORT;man_mag;Site;Standort;Site;Luogo ;Lugar
+1720;am_anlagengitter_filter;in_stort;am_anlagengitter;STORT;man_mag;Site;Standort;Site;Luogo ;Lugar
+1603;am_anlagenstammsaetze_filter;in_stort;am_anlagenstammsaetze;STORT;man_mag;Site;Standort;Site;Luogo ;Lugar
+1933;am_anlagenumbuchungen_filter;in_stort;am_anlagenumbuchungen;STORT;man_mag;Site;Standort;Site;Luogo ;Lugar
+1921;am_anlagenzugaenge_filter;in_stort;am_anlagenzugaenge;STORT;man_mag;Site;Standort;Site;Luogo ;Lugar
+1712;ap_lieferantenstamm_filter;in_stras;ap_lieferantenstamm;STRAS;man_mag;Streeet (Search string);Straße (Suche);Rue (Recherche);via (stringa di ricerca);Calle (cadena de búsqueda)
+1705;ar_kundenstamm_filter;in_stras;ar_kundenstamm;STRAS;man_mag;Streeet (Search string);Straße (Suche);Rue (Recherche);via (stringa di ricerca);Calle (cadena de búsqueda)
+1823;ue_bankstammdaten_filter;in_stras;ue_bankstammdaten;STRAS;man_mag;Street;Straße / Hausnr;Rue (Recherche);via;Calle
+1821;ue_bankstammdaten_filter;in_swift;ue_bankstammdaten;SWIFT;man_mag;SWIFT Code;SWIFT-Code;Code Swift ;codice SWIFT;Código SWIFT
+1909;blg_bilanz_guv;in_type;;;;balance type;Bilanzart;type de bilan;tipo di bilancio;tipo de balance
+1;fi_bilanz_guv;in_type;;;man_mag;balance type (statement version);Bilanzart (Rahmen);type de bilan (structure du compte de résultat);tipo di bilancio (versione di estratto conto);tipo de balance (versión de balance)
+8;fi_bilanz_guv;in_vjahr;base_gjahr;gjahr;man_mag;Reference Year;Vergleichsjahr;Année de référence;Anno di riferimento;Año de referencia
+1857;am_anlagenabgaenge_filter;in_vonaktiv;am_anlagenabgaenge;AKTIV;man_mag;Activation date from;Aktivierungsdatum von;Date d'activation à partir de ;data di attivazione da;Fecha de activación a partir de
+1688;am_anlagenbestand_filter;in_vonaktiv;am_anlagenbestand;AKTIV;man_mag;Activation date from;Aktivierungsdatum von;Date d'activation à partir de ;data di attivazione da;Fecha de activación a partir de
+1716;am_anlagengitter_filter;in_vonaktiv;am_anlagengitter;AKTIV;man_mag;Activation date from;Aktivierungsdatum von;Date d'activation à partir de ;data di attivazione da;Fecha de activación a partir de
+1599;am_anlagenstammsaetze_filter;in_vonaktiv;am_anlagenstammsaetze;AKTIV;man_mag;Activation date from;Aktivierungsdatum von;Date d'activation à partir de ;Data di attivazione fino a ;Fecha de activación a partir de
+1926;am_anlagenumbuchungen_filter;in_vonaktiv;am_anlagenumbuchungen;AKTIV;man_mag;Activation date from;Aktivierungsdatum von;Date d'activation à partir de ;Data di attivazione fino a ;Fecha de activación a partir de
+1914;am_anlagenzugaenge_filter;in_vonaktiv;am_anlagenzugaenge;AKTIV;man_mag;Activation date from;Aktivierungsdatum von;Date d'activation à partir de ;Data di attivazione fino a ;Fecha de activación a partir de
+1655;sd_auftraege_liste_filter;in_vonAUDAT;sd_auftraege_liste;AUDAT;man_mag;from Ordering Date;von bzw. am Auftragsdatum;A partir de la date d'activation;dalla data della messa in ordine;a partir de la fecha del pedido
+1853;ek_bestellanforderungen_filter;in_vonbadat;ek_bestellanforderungen;BADAT;man_mag;from Posting Date;von bzw. am Auftragsdatum;A partir de la date d'activation;dalla data di assegnazione ;a partir de la fecha de contabilización
+1839;ap_kreditorentransaktionen_filter;in_vonbldat;ap_kreditorentransaktionen;BLDAT;man_mag;from Document Date;von bzw. am Belegdatum;A partir de la date du document;dalla data del documento ;a partir de la fecha del documento
+1760;ar_debitorentransaktionen_filter;in_vonbldat;ar_debitorentransaktionen;BLDAT;man_mag;from Document Date;von bzw. am Belegdatum;A partir de la date du document;dalla data del documento ;a partir de la fecha del documento
+1942;ue_beleganzeige_filter;in_vonbldat;ue_beleganzeige;BLDAT;man_mag;Booking date from;Buchungsdatum von;Date de comptabilisation à partir de;data di prenotazione da;Fecha de inscripción a partir de
+1966;ue_dauerbuchungs_urbelege_filter;in_vonbldat;ue_dauerbuchungs_urbelege;BLDAT;man_mag;Booking date from;Buchungsdatum von;Date de comptabilisation à partir de;data di prenotazione da;Fecha de inscripción a partir de
+1859;am_anlagenabgaenge_filter;in_vonbudat;am_anlagenabgaenge;BUDAT;man_mag;Booking date from;Buchungsdatum von;Date de comptabilisation à partir de;data di prenotazione da;Fecha de inscripción a partir de
+1928;am_anlagenumbuchungen_filter;in_vonbudat;am_anlagenumbuchungen;BUDAT;man_mag;Booking date from;Buchungsdatum von;Date de comptabilisation à partir de;data di prenotazione da;Fecha de inscripción a partir de
+1916;am_anlagenzugaenge_filter;in_vonbudat;am_anlagenzugaenge;BUDAT;man_mag;Booking date from;Buchungsdatum von;Date de comptabilisation à partir de;data di prenotazione da;Fecha de inscripción a partir de
+1837;ap_kreditorentransaktionen_filter;in_vonbudat;ap_kreditorentransaktionen;BUDAT;man_mag;from Posting Date;von bzw. am Buchungsdatum;A partir de la date d'enregistrement;dalla data di assegnazione;a partir de la fecha de contabilización
+1758;ar_debitorentransaktionen_filter;in_vonbudat;ar_debitorentransaktionen;BUDAT;man_mag;from Posting Date;von bzw. am Buchungsdatum;A partir de la date d'enregistrement;dalla data di assegnazione;a partir de la fecha de contabilización
+1773;fi_buchungsbelege_filter;in_vonbudat;fi_buchungsbelege;BUDAT;man_mag;from Posting Date;von bzw. am Buchungsdatum;A partir de la date d'enregistrement;dalla data di assegnazione;a partir de la fecha de contabilización
+1753;fi_sachkonteneinzelposten_filter;in_vonbudat;fi_sachkonteneinzelposten;BUDAT;man_mag;from Posting Date;von bzw. am Buchungsdatum;A partir de la date d'enregistrement;dalla data di assegnazione;a partir de la fecha de contabilización
+1784;fi_ust_voranmeldung_filter;in_vonbudat;fi_ust_voranmeldung;BUDAT;man_mag;from Posting Date;von Buchungsdatum;A partir de la date de comptabilisation;dalla data di assegnazione;a partir de la fecha de contabilización
+1670;mm_materialbeleg_filter;in_vonbudat;mm_materialbeleg;BUDAT;man_mag;Booking date from;Buchungsdatum von;Date de la comptabilisation à partir de ;data di prenotazione da;Fecha de inscripción a partir de
+1940;ue_beleganzeige_filter;in_vonbudat;ue_beleganzeige;BUDAT;man_mag;Booking date from;Buchungsdatum von;Date de la comptabilisation à partir de ;data di prenotazione da;Fecha de inscripción a partir de
+1964;ue_dauerbuchungs_urbelege_filter;in_vonbudat;ue_dauerbuchungs_urbelege;BUDAT;man_mag;Booking date from;Buchungsdatum von;Date de la comptabilisation à partir de ;data di prenotazione da;Fecha de inscripción a partir de
+1662;sd_fakturen_liste_filter;in_vonbudat;sd_fakturen_liste;Faktura_datum;man_mag;from Posting Date; von Rechnungsdatum;à partir de la date comptable;dalla data di assegnazione;a partir de la fecha de contabilización
+1811;co_kostenartenliste_filter;in_vondat;co_kostenartenliste;DATAB;man_mag;From Date;Betrachtungszeitraum von;à partir de la date considérée;dalla data del documento ;A partir de la fecha
+1895;co_profitcenterliste_filter;in_vondat;co_profitcenterliste;GULTIG_ab;man_mag;From Date;Betrachtungszeitraum von;à partir de la date considérée;dalla data del documento ;A partir de la fecha
+1867;am_anlagenabgaenge_filter;in_vondeakt;am_anlagenabgaenge;DEAKT;man_mag;Deactivation date from;Deaktivierungsdatum von;date de désactivation à partir de;Data di disattivazione da;Fecha de desactivación a partir de
+1657;sd_auftraege_liste_filter;in_vonerdat;sd_auftraege_liste;ERDAT;man_mag;from Creation Date;von bzw. am Erstellungsdatum;à partir de la date de création;dalla data di creazione;A partir de la fecha de creación
+1813;co_kostenartenliste_filter;in_vonkart;co_kostenartenliste;KSTAR;man_mag;From Cost Type;Kostenart von;à partir du type de coût;dal tipo di costo;A partir del tipo de coste
+1666;mm_materialbeleg_filter;in_werks;mm_materialbeleg;WERKS;man_mag;Plant;Werk;Usine;opera;Centro
+1779;fi_buchungsbelege_filter;in_xblnr;fi_buchungsbelege;XBLNR;man_mag;Reference (document);Referenz;Référence (document);riferimento (documento);Referencia (documento)
+1846;ap_kreditorentransaktionen_filter;in_zuonr;ap_kreditorentransaktionen;ZUONR;man_mag;Assignment number;Zuordnungsnummer;Numéro de l'affectation;numero di assegnazione;Número de asignación
+1767;ar_debitorentransaktionen_filter;in_zuonr;ar_debitorentransaktionen;ZUONR;man_mag;Assignment number;Zuordnungsnummer;Numéro de l'affectation;numero di assegnazione;Número de asignación
+1949;ue_beleganzeige_filter;in_zuonr;ue_beleganzeige;ZUONR;man_mag;Assignment number;Zuordnungsnummer;Numéro de l'affectation;numero di assegnazione;Número de asignación
+1973;ue_dauerbuchungs_urbelege_filter;in_zuonr;ue_dauerbuchungs_urbelege;ZUONR;man_mag;Assignment number;Zuordnungsnummer;Numéro de l'affectation;numero di assegnazione;Número de asignación
+1978;1sap_fi08aj;p_stichtag;1sap_fi08_basis;BUDAT;man_mag;reference date;Stichtag;date de référence;data di riferimento;fecha de la referencia
+1976;1sap_fi09aj;p_stichtag;1sap_fi09_basis;BUDAT;man_mag;reference date;Stichtag;date de référence;data di riferimento;fecha de la referencia
+1979;1sap_fi08aj;p_suchbegr;1sap_fi08_basis;SGTXT;man_mag;Vendor No or Name (optional);Lieferanten-Nr. / Name (optional);Numéro du vendeur ou Nom (optionnel);numero o nome del fornitore (opzionale);Nº de proveedor o nombre (opcional)
+1977;1sap_fi09aj;p_suchbegr;1sap_fi09_basis;SGTXT;man_mag;Customer No or Name (optional);Kunden-Nr. / Name (optional);Numéro du vendeur ou Nom (optionnel);numero o nome del cliente (opzionale);Nº de cliente o nombre (opcional)

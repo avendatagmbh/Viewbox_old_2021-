@@ -1,0 +1,2044 @@
+
+ HGB ALT HGB wird in 04 nicht mehr gepflegt
+  |
+  |--   Aktiva               Aktiva
+  |   |
+  |   |--   Anlagevermögen
+  |   |   |
+  |   |   |--   SCDE0020110000 - 0021840002 X|X
+  |   |   |   |
+  |   |   |   |-----0020110001 Aufwand Ingangsetzung
+  |   |   |   |-----0020410001 Firmenwert Conso
+  |   |   |   |-----0020710001 Immaterielle Rechte (Verträge)
+  |   |   |   |-----0020710002 Imm. Rechte (Verträge auf Zeit)
+  |   |   |   |-----0020810001 Software
+  |   |   |   |-----0020819001 Gebr. Immaterialle Wirtschaftsgüter
+  |   |   |   |-----0020860000 Sonstige immat. Wirtschaftsgüter
+  |   |   |   |-----0021100002 Grund & Boden
+  |   |   |   |-----0021300001 Gebäude
+  |   |   |   |-----0021300002 Aussenanlage
+  |   |   |   |-----0021500001 Maschinen
+  |   |   |   |-----0021500002 BGA (Küchenequipment)
+  |   |   |   |-----0021500003 Lageraustattung
+  |   |   |   |-----0021500004 Automaten
+  |   |   |   |-----0021500005 Erstausstattung Betriebsrestaurant
+  |   |   |   |-----0021509001 Gebr. Maschinen
+  |   |   |   |-----0021800001 Büromöbel
+  |   |   |   |-----0021801100 Gebrauchte Sachanlagen (BGA)
+  |   |   |   |-----0021810001 Gebäudeinst. (Elektro / Heizung / Klimaanl.)
+  |   |   |   |-----0021810002 Netzwerkverkabelung
+  |   |   |   |-----0021820001 PKW
+  |   |   |   |-----0021820002 Sonstige Transportmittel
+  |   |   |   |-----0021829001 Gebr. PKW
+  |   |   |   |-----0021830001 Büroausstattung (Fax/Kop/Telanl)
+  |   |   |   |-----0021839001 Gebr. Büroausstattung (Fax/Kop/Telanl)
+  |   |   |   |-----0021840001 PC & Drucker
+  |   |   |   ------0021840002 Server
+  |   |   |
+  |   |   |-----SCDE0023100000 - 0023100000 X|X Anlagen in Bau eigen mat.
+  |   |   |-----SCDE0023200000 - 0023200000 X|X Anlagen in Bau eigen immat.
+  |   |   |-----SCDE0029999999 - 0029999999 X|X Anlagevermögen Durchlaufende Posten (gekauft)
+  |   |   ------SCDE0048100100 - 0048100100 X|X Anschaffungskosten für Verträge
+  |   |
+  |   |--   Wertberichtigung Anlagevermögen
+  |   |   |
+  |   |   |-----SCDE0015160000 - 0015160000 X|X RS Kunden Vertrag
+  |   |   |--   SCDE0028010001 - 0028989999 X|X
+  |   |   |   |
+  |   |   |   |-----0028010001 WB Ingangsetzung
+  |   |   |   |-----0028040001 WB Firmenwert
+  |   |   |   |-----0028110001 WB Nicht benutzt!
+  |   |   |   |-----0028110002 WB Gund & Boden
+  |   |   |   |-----0028130001 WB Gebäude
+  |   |   |   |-----0028130002 WB Außenanlage
+  |   |   |   |-----0028150001 WB Maschinen
+  |   |   |   |-----0028150002 WB BGA (Küchenequipment)
+  |   |   |   |-----0028150003 WB Lagerausstattung
+  |   |   |   |-----0028150004 WB Erstausstattung Betriebsrestaurant
+  |   |   |   |-----0028150005 WB Automaten
+  |   |   |   |-----0028159001 WB Gebr. Maschinen
+  |   |   |   |-----0028180001 WB Büromöbel
+  |   |   |   |-----0028189001 WB Gebr. BGA & KEQ
+  |   |   |   |-----0028210001 WB Gebäudeinstallation
+  |   |   |   |-----0028210002 WB Netzwerkverkabelung
+  |   |   |   |-----0028220001 WB PKW
+  |   |   |   |-----0028220002 WB So.Transportmittel
+  |   |   |   |-----0028229000 WB Gebrauchte PKW
+  |   |   |   |-----0028230001 WB Büroausstattung
+  |   |   |   |-----0028239001 WB Gebr. Büroausstattung
+  |   |   |   |-----0028240001 WB PC & Drucker
+  |   |   |   |-----0028240002 WB Serverhardware
+  |   |   |   |-----0028249001 WB Gebrauchte Hardware
+  |   |   |   |-----0028710001 WB Immat. Verträge
+  |   |   |   |-----0028710002 WB Imm. Rechte (Verträge Zeit)
+  |   |   |   |-----0028710800 WB Firmenwert
+  |   |   |   |-----0028810001 WB Software
+  |   |   |   |-----0028819001 WB gebr. immat. WG
+  |   |   |   |-----0028860800 WB So. immat. WG
+  |   |   |   |-----0028980000 WB Lokale Korrektur gg. Gruppe
+  |   |   |   |-----0028982011 Afa Korrektur GP/LC Aufw. Ingangsetzung
+  |   |   |   |-----0028982041 Afa Korrektur GP/LC Firmenwert
+  |   |   |   |-----0028982071 Afa Korrektur GP/LC Imm. Rechte (Verträge)
+  |   |   |   |-----0028982081 Afa Korrektur GP/LC Software
+  |   |   |   |-----0028982086 Afa Korrektur GP/LC Sonstige immat. WG
+  |   |   |   |-----0028982089 Afa Korrektur GP/LC Geb. Immater. WG
+  |   |   |   |-----0028982110 Afa Korrektur GP/LC Grund & Boden
+  |   |   |   |-----0028982130 Afa Korrektur GP/LC Gebäude
+  |   |   |   |-----0028982150 Afa Korrektur GP/LC Maschinen
+  |   |   |   |-----0028982151 Afa Korrektur GP/LC BGA (Küchenequipment)
+  |   |   |   |-----0028982152 Afa Korrektur GP/LC Automaten
+  |   |   |   |-----0028982153 Afa Korrektur GP/LC Lageraustattung
+  |   |   |   |-----0028982154 Afa Korrektur GP/LC Erstausstattung BR
+  |   |   |   |-----0028982159 Afa Korrektur GP/LC Gebr. Maschinen
+  |   |   |   |-----0028982180 Afa Korrektur GP/LC Büromöbel
+  |   |   |   |-----0028982181 Afa Korrektur GP/LC Gebäudeinstallationen
+  |   |   |   |-----0028982182 Afa Korrektur GP/LC PKW
+  |   |   |   |-----0028982183 Afa Korrektur GP/LC Büroausstattung (Fax/Kop/Tel)
+  |   |   |   |-----0028982184 Afa Korrektur GP/LC PC & Drucker (Hardware before)
+  |   |   |   |-----0028982186 Afa Korrektur GP/LC Netzwerkverkabelung
+  |   |   |   |-----0028982187 Afa Korrektur GP/LC Sonstige Transportmittel
+  |   |   |   |-----0028982188 Afa Korrektur GP/LC Hardware (Server)
+  |   |   |   |-----0028982189 Afa Korrektur GP/LC Gebr. Sachanlagen
+  |   |   |   |-----0028982190 Afa Korrektur GP/LC Gebr. PKW
+  |   |   |   |-----0028982191 Afa Korrektur GP/LC Gebr. Büroausstat. Fax/Kop/Tel
+  |   |   |   |-----0028982192 Afa Korrektur GP/LC Gebr. PC & Drucker
+  |   |   |   ------0028984810 Afa Korrektur GP/LC Imm Verträge Zeit
+  |   |   |
+  |   |   |--   SCDE0029610000 - 0029610001 X|X
+  |   |   |   |
+  |   |   |   |-----0029610000 Wertber.Beteiligung so Unternehmen
+  |   |   |   ------0029610001 Wertber.Beteiligung so op. Unternehmen
+  |   |   |
+  |   |   |-----SCDE0029639000 - 0029639000 X|X Wertber.Beteiligung verb. Unternehmen
+  |   |   |-----SCDE0029760000 - 0029760000 X|X WB Finanzanlagen
+  |   |   ------SCDE0048900100 - 0048900100 X|X WB AHK Verträge
+  |   |
+  |   |--   Beteiligung an Sonstigen Unternehmen
+  |   |   |
+  |   |   |-----SCDE0026110000 - 0026110000 X|X Beteiligung.so.oper.Unternehmen
+  |   |   ------SCDE0026120000 - 0026120000 X|X Beteiligung sonstigen nichtop. Unternehmen
+  |   |
+  |   |--   Beteiligung an Verbundenen Unternehmen
+  |   |   |
+  |   |   ---   SCDE0026100001 - 0026100002 X|X
+  |   |       |
+  |   |       ------0026100001 Beteiligung verbundene Unternehmen
+  |   |
+  |   |--   Forderungen geg. verb. Unternehmen "Lang"
+  |   |   |
+  |   |   |-----SCDE0026280000 - 0026280000 X|X DA an vbu Unternehmen > 1 Jahr
+  |   |   |-----SCDE0026380000 - 0026380000 X|X DA an vbu Unternehmen > 5 Jahren
+  |   |   ------SCDE0026710001 - 0026710001 X|X DA an Interco
+  |   |
+  |   |--   Darlehn an Dritte > 1 Jahr
+  |   |   |
+  |   |   |-----SCDE0027000000 - 0027000000 X|X Technical account used by pgm SAPF101
+  |   |   |-----SCDE0027240001 - 0027240001 X|X Darlehen an Dritte > 1 J < 3 Jahre
+  |   |   |-----SCDE0027340000 - 0027340000 X|X DA an Dritte >3 < 5 Jahre
+  |   |   |-----SCDE0027360000 - 0027360000 X|X SO Finanz. Anlagen > 5 Jahren (Avale / Garantien)
+  |   |   |-----SCDE0027400000 - 0027400000 X|X DA an Dritte > 5 Jahre
+  |   |   ---   SCDE0027600000 - 0027600003 X|X
+  |   |       |
+  |   |       |-----0027600000 Sonst. Finanzanlagen >3 < 5 Jahre
+  |   |       ------0027600003 Forder.Sonstige Sale & Lease back
+  |   |
+  |   |--   Kassen- & Bankbestände
+  |   |   |
+  |   |   |-----SCDE0046850020 - 0046850020 X|X DP. Kasse SCS/SOD
+  |   |   |-----SCDE0050200001 - 0050200001 X|X Besitzwechsel
+  |   |   |--   SCDE0051100000 - 0051109999 X|X
+  |   |   |   |
+  |   |   |   |-----0051101002 275 DB WBN_SCHECKVERRECHNUNG
+  |   |   |   |-----0051101003 275 DB BERLIN 800_SCH
+  |   |   |   |-----0051101007 275 DB DD GIRO SCH
+  |   |   |   |-----0051101017 275 DB SALZGITTER_SCH
+  |   |   |   |-----0051101022 275 DREBA WBN SCH
+  |   |   |   |-----0051101023 275 PB FFM_SCHECKVERRECHNUNG
+  |   |   |   |-----0051101034 159 DB PLA Giro SCH
+  |   |   |   |-----0051101036 283 DB DD _GIRO SCH
+  |   |   |   |-----0051101037 283 DB DD 01 _GIRO SCH
+  |   |   |   |-----0051101040 283 DB WI GIRO SCH
+  |   |   |   |-----0051101079 472 DB WBN_SCHECKEIN
+  |   |   |   |-----0051101095 275 BAYER SCH 1312012
+  |   |   |   |-----0051101112 275 PB 112_Scheck_V
+  |   |   |   |-----0051101113 472 PB FFM_SCHECKEIN
+  |   |   |   |-----0051101183 764 PB 183_Scheck_V
+  |   |   |   |-----0051103002 275 DB WBN_ÜBERWEISUNG
+  |   |   |   |-----0051103003 275 DB BERLIN 800_ÜBW
+  |   |   |   |-----0051103004 275 DB BERLIN 801_ÜBW
+  |   |   |   |-----0051103005 275 SP LEI GIRO ÜBW
+  |   |   |   |-----0051103007 275 DB DD GIRO  ÜBW
+  |   |   |   |-----0051103009 275 DB JENA 600_ÜBW
+  |   |   |   |-----0051103010 275 DB KARLSHORST_ÜBW
+  |   |   |   |-----0051103011 275 DB LEIPZIG_ÜBW
+  |   |   |   |-----0051103017 275 DB SALZGITTER_ÜBW
+  |   |   |   |-----0051103022 275 DREBA WBN ÜBW
+  |   |   |   |-----0051103023 275 PB FFM_ÜBW
+  |   |   |   |-----0051103028 275 SP DD GIRO ÜBW
+  |   |   |   |-----0051103030 275 SP HAL GIRO ÜBW
+  |   |   |   |-----0051103032 275 SP MEI GIRO ÜBW
+  |   |   |   |-----0051103034 159 DB PLA Giro ÜBW
+  |   |   |   |-----0051103035 159 SP PLA Giro ÜBW
+  |   |   |   |-----0051103036 283 DB DD _GIRO ÜBW
+  |   |   |   |-----0051103040 283 DB WI GIRO ÜBW
+  |   |   |   |-----0051103041 283 DB DD 07 GIRO ÜBW
+  |   |   |   |-----0051103045 283 SPK DD   GIRO ÜBW
+  |   |   |   |-----0051103046 283 SP HAL GIRO ÜBW
+  |   |   |   |-----0051103047 283 SP BRB GIRO ÜBW
+  |   |   |   |-----0051103048 283 SP BRB 2 GIRO ÜBW
+  |   |   |   |-----0051103049 283 SP BRB 3   GIRO ÜBW
+  |   |   |   |-----0051103050 283 SP BRB 3   GIRO ÜBW
+  |   |   |   |-----0051103051 283 SP PIR  GIRO ÜBW
+  |   |   |   |-----0051103052 283 SP HR GIRO ÜBW
+  |   |   |   |-----0051103053 283 SP CTB  GIRO ÜBW
+  |   |   |   |-----0051103054 283 SP LPZ 1 GIRO ÜBW
+  |   |   |   |-----0051103055 283 SP LPZ 2 GIRO ÜBW
+  |   |   |   |-----0051103056 283 SP ALT  GIRO ÜBW
+  |   |   |   |-----0051103057 283 SP JEN GIRO ÜBW
+  |   |   |   |-----0051103058 283 SP RUD GIRO ÜBW
+  |   |   |   |-----0051103059 283 SP BAUT GIRO ÜBW
+  |   |   |   |-----0051103060 283 SP BLN 1 GIRO ÜBW
+  |   |   |   |-----0051103061 283 SP BLN 2 GIRO ÜBW
+  |   |   |   |-----0051103062 283 SP MIT GIRO ÜBW
+  |   |   |   |-----0051103063 283 SP ALT GIRO ÜBW
+  |   |   |   |-----0051103065 283 DR DD GIRO ÜBW
+  |   |   |   |-----0051103079 472 DB WBN GIRO ÜBW
+  |   |   |   |-----0051103086 461 DB WI BÄM AZV
+  |   |   |   |-----0051103095 275 BAYER ÜBW 1312011
+  |   |   |   |-----0051103100 283 PB DD 756100605
+  |   |   |   |-----0051103113 472 PB FFM GIRO ÜBW
+  |   |   |   |-----0051103114 159 PB DD 756114608
+  |   |   |   |-----0051103115 461 PB FFM BÄM AZV
+  |   |   |   |-----0051103118 283 TSK GIRO ÜBW
+  |   |   |   |-----0051103127 716 VOBA MW _ÜBW 124
+  |   |   |   |-----0051103129 716 VOBA MW _ÜBW 760
+  |   |   |   |-----0051103132 716 DKB_ÜBW
+  |   |   |   |-----0051103138 716 SK BF_ÜBW
+  |   |   |   |-----0051103140 716 PB FFM_ÜBW
+  |   |   |   |-----0051103157 724 PB FFR ÜBW WJC
+  |   |   |   |-----0051103183 764 PB ÜBW AZV
+  |   |   |   |-----0051103185 764 OSB ÜBW AZB
+  |   |   |   |-----0051103223 792 GT Bank G-Kanne
+  |   |   |   |-----0051104002 275 DB WBN_EINZ
+  |   |   |   |-----0051104003 275 DB BERLIN 800_EINZ
+  |   |   |   |-----0051104007 275 DB DD GIRO EINZ
+  |   |   |   |-----0051104017 275 DB SALZGITTER_EINZ
+  |   |   |   |-----0051104022 275 DREBA WBN EINZ
+  |   |   |   |-----0051104023 275 PB FFM_EINZ
+  |   |   |   |-----0051104027 275 SP ALT GIRO EINZ
+  |   |   |   |-----0051104032 275 SP MEI GIRO EINZ
+  |   |   |   |-----0051104034 159 DB PLA Giro EINZ
+  |   |   |   |-----0051104035 159 SP PLA Giro EINZ
+  |   |   |   |-----0051104036 283 DB DD _GIRO EINZ
+  |   |   |   |-----0051104045 283 SPK DD   GIRO EINZ
+  |   |   |   |-----0051104046 283 SP HAL GIRO EINZ
+  |   |   |   |-----0051104047 283 SP BRB GIRO EINZ
+  |   |   |   |-----0051104048 283 SP BRB 2 GIRO EINZ
+  |   |   |   |-----0051104049 283 SP BRB 3 GIRO EINZ
+  |   |   |   |-----0051104050 283 SP BRB 3 GIRO EINZ
+  |   |   |   |-----0051104051 283 SP PIR  GIRO EINZ
+  |   |   |   |-----0051104052 283 SP HR GIRO EINZ
+  |   |   |   |-----0051104053 283 SP CTB  GIRO EINZ
+  |   |   |   |-----0051104054 283 SP LPZ 1 GIRO EINZ
+  |   |   |   |-----0051104055 283 SP LPZ 2 GIRO EINZ
+  |   |   |   |-----0051104056 283 SP ALT  GIRO EINZ
+  |   |   |   |-----0051104057 283 SP JEN GIRO EINZ
+  |   |   |   |-----0051104058 283 SP RUD GIRO EINZ
+  |   |   |   |-----0051104059 283 SP BAUT GIRO EINZ
+  |   |   |   |-----0051104060 283 SP BLN 1 GIRO EINZ
+  |   |   |   |-----0051104061 283 SP BLN 2 GIRO EINZ
+  |   |   |   |-----0051104062 283 SP MIT GIRO EINZ
+  |   |   |   |-----0051104063 283 SP ALT GIRO EINZ
+  |   |   |   |-----0051104100 283 PB DD DEINZ
+  |   |   |   |-----0051104109 275 PB DD DEEINZ
+  |   |   |   |-----0051104114 159 PB DD DEINZ
+  |   |   |   |-----0051105002 275 DB WBN_DEB
+  |   |   |   |-----0051105007 275 DB DD GIRO DEB
+  |   |   |   |-----0051105011 275 DB LEIPZIG_DEB
+  |   |   |   |-----0051105012 275 DB MEISSEN DEB
+  |   |   |   |-----0051105014 275 DB RADEBEUL_DEB
+  |   |   |   |-----0051105015 275 DB RUDOLSTADT_DEB
+  |   |   |   |-----0051105017 275 DB SALZGITTER_DEB
+  |   |   |   |-----0051105020 275 DREBA DD_GIRO DEB
+  |   |   |   |-----0051105021 275 DREBA SCHMÖLLN DEB
+  |   |   |   |-----0051105022 275 DREBA WBN DEB
+  |   |   |   |-----0051105023 275 PB FFM_DEB
+  |   |   |   |-----0051105027 275 SP ALT GIRO DEB
+  |   |   |   |-----0051105034 159 DB PLA Giro DEB
+  |   |   |   |-----0051105035 159 SP PLA Giro DEB
+  |   |   |   |-----0051105036 283 DB DD _GIRO DEB
+  |   |   |   |-----0051105037 283 DB DD 01 _GIRO DEB
+  |   |   |   |-----0051105038 283 DB DD 04 _GIRO DEB
+  |   |   |   |-----0051105039 283 DB DD 02 _GIRO DEB
+  |   |   |   |-----0051105040 283 DB WI GIRO DEB
+  |   |   |   |-----0051105041 283 DB DD 07 GIRO DEB
+  |   |   |   |-----0051105042 283 DB DD 03 GIRO DEB
+  |   |   |   |-----0051105043 283 DB DD 06 GIRO DEB
+  |   |   |   |-----0051105044 283 DB DD 05 GIRO DEB
+  |   |   |   |-----0051105046 283 SP HAL GIRO DEB
+  |   |   |   |-----0051105051 283 SP PIR  GIRO DEB
+  |   |   |   |-----0051105056 283 SP ALT  GIRO DEB
+  |   |   |   |-----0051105059 283 SP BAUT GIRO DEB
+  |   |   |   |-----0051105060 283 SP BLN 1 GIRO DEB
+  |   |   |   |-----0051106002 275 DB WBN_VERR
+  |   |   |   |-----0051106008 275 SK REG_VERR
+  |   |   |   |-----0051106022 275 DREBA WBN_VERR
+  |   |   |   |-----0051106023 275 PB FFM_VERR
+  |   |   |   |-----0051106029 275 HH SK_VERR
+  |   |   |   |-----0051106033 275 VOBA WBN_VERR
+  |   |   |   |-----0051106071 275 DB SCC TR_VERR
+  |   |   |   |-----0051106086 275 DB BÄM_VERR
+  |   |   |   |-----0051106100 283 PB 100_VERR
+  |   |   |   |-----0051106101 283 PB 101_VERR
+  |   |   |   |-----0051106102 283 PB 102_VERR
+  |   |   |   |-----0051106103 283 PB 103_VERR
+  |   |   |   |-----0051106104 283 PB 104_VERR
+  |   |   |   |-----0051106105 283 PB 105_VERR
+  |   |   |   |-----0051106106 283 PB 106_VERR
+  |   |   |   |-----0051106109 275 PB DD_VERR
+  |   |   |   |-----0051106110 275 PB LEIP_VERR
+  |   |   |   |-----0051106111 275 PB B_VERR
+  |   |   |   |-----0051106112 275 PB SZ_VERR
+  |   |   |   |-----0051106113 472 DB WBN_VERR
+  |   |   |   |-----0051106114 159 PB 114_VERR
+  |   |   |   |-----0051106115 461 PB FFM_VERR
+  |   |   |   |-----0051106124 275 PB Cash_VERR
+  |   |   |   |-----0051106157 724 PB 157_VERR
+  |   |   |   |-----0051106162 159 TSK 162_VERR
+  |   |   |   |-----0051106166 159 TSK 166_VERR
+  |   |   |   |-----0051106167 275 TSK 167_VERR
+  |   |   |   |-----0051106183 764 PB 183_VERR
+  |   |   |   |-----0051107002 275 DB WBN_DEBI
+  |   |   |   |-----0051109002 275 DB WBN_BAR
+  |   |   |   |-----0051109003 275 DB BERLIN 800 _BAR
+  |   |   |   |-----0051109005 275 SP LEI GIRO BAR
+  |   |   |   |-----0051109007 275 DB DD GIRO BAR
+  |   |   |   |-----0051109011 275 DB LEIPZIG_BAR
+  |   |   |   |-----0051109014 275 DB RADEBEUL_BAR
+  |   |   |   |-----0051109015 275 DB RUDOLSTADT_BAR
+  |   |   |   |-----0051109017 275 DB SALZGITTER_BAR
+  |   |   |   |-----0051109020 275 DREBA DD_GIRO BAR
+  |   |   |   |-----0051109021 275 DREBA SCHMÖLLN BAR
+  |   |   |   |-----0051109022 275 DREBA WBN BAR
+  |   |   |   |-----0051109023 275 PB FFM_BAR
+  |   |   |   |-----0051109027 275 SP ALT GIRO BAR
+  |   |   |   |-----0051109028 275 SP DD GIRO BAR
+  |   |   |   |-----0051109030 275 SP HAL GIRO BAR
+  |   |   |   |-----0051109034 159 DB PLA Giro BAR
+  |   |   |   |-----0051109036 283 DB DD _GIRO BAR
+  |   |   |   |-----0051109037 283 DB DD 01 GIRO BAR
+  |   |   |   |-----0051109053 283 SP CTB  GIRO BAR
+  |   |   |   |-----0051109057 283 SP JEN GIRO BAR
+  |   |   |   ------0051109065 283 DR DD GIRO BAR
+  |   |   |
+  |   |   |--   SCDE0051200000 - 0051209999 X|X
+  |   |   |   |
+  |   |   |   |-----0051200000 FESTGELDER
+  |   |   |   |-----0051200002 275 DB WBN_GIRO
+  |   |   |   |-----0051200003 275 DB BERLIN 800
+  |   |   |   |-----0051200004 275 DB BERLIN 801
+  |   |   |   |-----0051200005 275 SP LEIPZIG
+  |   |   |   |-----0051200006 275 POSTBANK MÜNCHEN M
+  |   |   |   |-----0051200007 275 DB DD 600
+  |   |   |   |-----0051200008 275 SPARKASSE Regensburg
+  |   |   |   |-----0051200009 275 DB JENA 600
+  |   |   |   |-----0051200010 275 DB KARLSHORST
+  |   |   |   |-----0051200011 275 DB LEIPZIG
+  |   |   |   |-----0051200012 275 DB MEISSEN
+  |   |   |   |-----0051200013 275 DB WBN_PLA Cash-Pool
+  |   |   |   |-----0051200014 275 DB RADEBEUL
+  |   |   |   |-----0051200015 275 DB RUDOLSTADT
+  |   |   |   |-----0051200016 275 KREISSPARKASSE München
+  |   |   |   |-----0051200017 275 DB SALZGITTER
+  |   |   |   |-----0051200018 275 SPARKASSE STARNBERG M
+  |   |   |   |-----0051200019 275 SPARKASSE Altenburger Land
+  |   |   |   |-----0051200020 275 DREBA DD_GIRO
+  |   |   |   |-----0051200021 275 DREBA SCHMÖLLN
+  |   |   |   |-----0051200022 275 DREBA WBN_GIRO
+  |   |   |   |-----0051200023 275 POSTBANK FFM
+  |   |   |   |-----0051200024 275 RAIFFEISEN NEUENBURG
+  |   |   |   |-----0051200025 283 MITTELBR. SP POTSDAM
+  |   |   |   |-----0051200026 275 SOCIÈTÈ GENERALE
+  |   |   |   |-----0051200027 275 SPARKASSE ALTENBURG
+  |   |   |   |-----0051200028 275 STADTSPARKASSE DD
+  |   |   |   |-----0051200029 275 HH SPARKASSE
+  |   |   |   |-----0051200030 275 SPARKASSE HALLE
+  |   |   |   |-----0051200031 275 Sparkasse Erding
+  |   |   |   |-----0051200032 275 SP DD Radebeul
+  |   |   |   |-----0051200033 275 VOBA_WBN
+  |   |   |   |-----0051200034 159 DB PLA GIRO Hauptkto
+  |   |   |   |-----0051200035 159 SK Vogtland
+  |   |   |   |-----0051200036 283 DB DD Hauptkonto
+  |   |   |   |-----0051200037 283 DB DD 01 GIRO
+  |   |   |   |-----0051200038 283 DB DD 04
+  |   |   |   |-----0051200039 283 DB DD 02 _GIRO
+  |   |   |   |-----0051200040 283 DB WI SCS  015871700
+  |   |   |   |-----0051200041 283 DB DD 07
+  |   |   |   |-----0051200042 283 DB DD 03 GIRO
+  |   |   |   |-----0051200043 283 DB DD 06 GIRO DEB
+  |   |   |   |-----0051200044 283 DB DD 05 GIRO DEB
+  |   |   |   |-----0051200045 283 OSPK 3120242119
+  |   |   |   |-----0051200046 283 SP HAL 383302623
+  |   |   |   |-----0051200047 283 SP BRB1 3601117311
+  |   |   |   |-----0051200048 283 SP BRB 2  3502012848
+  |   |   |   |-----0051200049 283 SP BRB 3 3812023066
+  |   |   |   |-----0051200050 283 SP BRB 3 3812009705
+  |   |   |   |-----0051200051 283 SP PIR 3000014933
+  |   |   |   |-----0051200052 283 SP ROSTOCK
+  |   |   |   |-----0051200053 283 SP CTB 3114002004
+  |   |   |   |-----0051200054 283 SP LPZ 1 1100159530
+  |   |   |   |-----0051200055 283 SP LPZ 2 1100502145
+  |   |   |   |-----0051200056 283 SP ALT 301008601
+  |   |   |   |-----0051200057 283 SP JEN  270881
+  |   |   |   |-----0051200058 283 SP RUD 151246
+  |   |   |   |-----0051200059 283 SP BAUT 1000083574
+  |   |   |   |-----0051200060 283 SP BLN 1 1523340068
+  |   |   |   |-----0051200061 283 SP BLN 2 1773517747
+  |   |   |   |-----0051200062 283 SP MIT  3310006173
+  |   |   |   |-----0051200063 283 SP ALT 3000011136
+  |   |   |   |-----0051200064 283 DR WI GIRO ÜBW
+  |   |   |   |-----0051200065 283 DR DD 388016300
+  |   |   |   |-----0051200066 283 DR DD 1 GIRO DEB
+  |   |   |   |-----0051200067 283 WEBR DD M
+  |   |   |   |-----0051200068 461 PGA BM 37304108
+  |   |   |   |-----0051200069 461 PGA BNFB 2010109
+  |   |   |   |-----0051200070 275 HVB BM  5220116192
+  |   |   |   |-----0051200071 275 DB SCS Transit
+  |   |   |   |-----0051200072 283 DB Wiesbaden food conzept (3058) 15871701
+  |   |   |   |-----0051200073 283 DB Wiesbaden food conzept (3059) 15871702
+  |   |   |   |-----0051200074 275 DREBA FFM EUR
+  |   |   |   |-----0051200075 283 SK Spree-Neisse 3114102246
+  |   |   |   |-----0051200076 283 SP DD Radebeul
+  |   |   |   |-----0051200077 283 SP Mittwiede Giro 2
+  |   |   |   |-----0051200078 283 SP Spree-Neisse III
+  |   |   |   |-----0051200079 472 DB WBN Altys GIRO
+  |   |   |   |-----0051200080 159 DB PLA UK 02
+  |   |   |   |-----0051200081 275 DB WBN TR Altys
+  |   |   |   |-----0051200082 275 DB WBN TR SodAB
+  |   |   |   |-----0051200083 461 COBA 300
+  |   |   |   |-----0051200084 461 COBA 200
+  |   |   |   |-----0051200085 275 DB SALZGITTER
+  |   |   |   |-----0051200086 275 DB BÄRENMENÜ
+  |   |   |   |-----0051200087 283 DB WBN Food-Concept 01
+  |   |   |   |-----0051200088 283 DB WBN Food-Concept 02
+  |   |   |   |-----0051200089 461 DB WBN Food-Concept
+  |   |   |   |-----0051200090 275 Sodexho Aktien
+  |   |   |   |-----0051200091 275 Commerzbank Wuppertal
+  |   |   |   |-----0051200092 283 SK Döbeln
+  |   |   |   |-----0051200093 275 DB DD SOD 513021
+  |   |   |   |-----0051200094 275 Coba Wupperthal
+  |   |   |   |-----0051200095 275 BAYER HYPO
+  |   |   |   |-----0051200096 275 DPFA BA M
+  |   |   |   |-----0051200097 159 DB PLA UK_1 EUR
+  |   |   |   |-----0051200098 461 DB WBN BÄM II MB
+  |   |   |   |-----0051200099 283 SK Jena II
+  |   |   |   |-----0051200100 283 PB DD 756100605
+  |   |   |   |-----0051200101 283 PB DD 756101608
+  |   |   |   |-----0051200102 283 PB DD 756102601
+  |   |   |   |-----0051200103 283 PB DD 756103603
+  |   |   |   |-----0051200104 283 PB DD 756104606
+  |   |   |   |-----0051200105 283 PB DD 756105609
+  |   |   |   |-----0051200106 283 PB DD 756106602
+  |   |   |   |-----0051200107 283 PB DD 756107604
+  |   |   |   |-----0051200108 283 PB DD 756108607
+  |   |   |   |-----0051200109 275 PB DD 756109600
+  |   |   |   |-----0051200110 275 PB DD 756110607
+  |   |   |   |-----0051200111 275 PB DD 756111600
+  |   |   |   |-----0051200112 275 PB SZ 756112603
+  |   |   |   |-----0051200113 472 PB HO 756113605
+  |   |   |   |-----0051200114 159 PB DD 756114608
+  |   |   |   |-----0051200115 461 PB DD 756115601
+  |   |   |   |-----0051200117 275 TSK 112 5486
+  |   |   |   |-----0051200118 283 TSK 112 5400
+  |   |   |   |-----0051200119 283 SK MK Oderland 3000071627
+  |   |   |   |-----0051200120 283 SK SN 3059 3114102564
+  |   |   |   |-----0051200121 283 SK NB Demmin 3006 (310030994)
+  |   |   |   |-----0051200122 283 SK Neu Isenburg 1338 (2003477667)
+  |   |   |   |-----0051200123 461 SK Berlin MBS5
+  |   |   |   |-----0051200124 275 PB Cash 74008600
+  |   |   |   |-----0051200125 283 TSK Hochheim Festgeld
+  |   |   |   |-----0051200126 461 PPB Berlin Sewanstrasse
+  |   |   |   |-----0051200127 716 Voba Mittweida 184 479 206
+  |   |   |   |-----0051200128 716 SK BF 32280277 Sparkasse Bitterfeld
+  |   |   |   |-----0051200129 716 VB MW 184480760
+  |   |   |   |-----0051200130 716 VB MW 2080020298
+  |   |   |   |-----0051200131 716 VB MW 2080020298
+  |   |   |   |-----0051200132 716 Dt KB 1339290 (Dt. Kreditbank)
+  |   |   |   |-----0051200133 716 SKRR 1705005760 (Rhön-Rennsteig)
+  |   |   |   |-----0051200134 716 SKRR 1705018730
+  |   |   |   |-----0051200135 716 SK DD 341500785
+  |   |   |   |-----0051200136 716 SK HA 384307143
+  |   |   |   |-----0051200137 716 VB BI 30280240
+  |   |   |   |-----0051200138 716 VB BI 30280206
+  |   |   |   |-----0051200139 716 Dreba 109989900
+  |   |   |   |-----0051200140 283 PB 0069615600
+  |   |   |   |-----0051200141 275 Aval DBWI
+  |   |   |   |-----0051200142 275 TSK Avale
+  |   |   |   |-----0051200143 275 Sicherheit DB DD 02
+  |   |   |   |-----0051200144 283 TSK DTA 3010
+  |   |   |   |-----0051200145 283 TSK DTA 3022
+  |   |   |   |-----0051200146 283 TSK DTA 3023
+  |   |   |   |-----0051200147 283 TSK DTA 3005
+  |   |   |   |-----0051200148 283 TSK DTA 3032
+  |   |   |   |-----0051200149 283 TSK DTA 3035
+  |   |   |   |-----0051200150 283 TSK DTA 3038
+  |   |   |   |-----0051200151 283 TSK DTA 3030
+  |   |   |   |-----0051200152 283 TSK DTA 3045
+  |   |   |   |-----0051200153 283 TSK DTA 3059
+  |   |   |   |-----0051200154 283 TSK DTA 3103
+  |   |   |   |-----0051200155 283 TSK DTA 3060
+  |   |   |   |-----0051200156 275 SK Singen
+  |   |   |   |-----0051200157 724 PB FFR WJC
+  |   |   |   |-----0051200158 716 Cash 185000427
+  |   |   |   |-----0051200159 716 DKB 1319094
+  |   |   |   |-----0051200160 283 TSK 1108786
+  |   |   |   |-----0051200161 283 TSK 1109340 (3034)
+  |   |   |   |-----0051200162 159 TSK 1109910
+  |   |   |   |-----0051200163 716 DKB  2120200957
+  |   |   |   |-----0051200164 283 TSK 1110756 (3056)
+  |   |   |   |-----0051200165 461 PB 185071607
+  |   |   |   |-----0051200166 159 TSK 1109936 POOL
+  |   |   |   |-----0051200167 275 TSK 1110837
+  |   |   |   |-----0051200168 283 TSK 1095790 DTA 3002
+  |   |   |   |-----0051200169 283 TSK 1095838 DTA 3036
+  |   |   |   |-----0051200170 283 TSK 1095870 DTA 3039
+  |   |   |   |-----0051200171 283 TSK 1095889 DTA 3040
+  |   |   |   |-----0051200172 283 TSK 1096010 DTA 3044
+  |   |   |   |-----0051200173 283 TSK 1101021 DTA 3055
+  |   |   |   |-----0051200174 283 TSK 1101927 DTA 3057
+  |   |   |   |-----0051200175 283 TSK 1092308 DTA 3006
+  |   |   |   |-----0051200176 716 KSK Bitterfeld 60210663
+  |   |   |   |-----0051200177 461 PB 276660-600
+  |   |   |   |-----0051200178 283 SK Altenburger L
+  |   |   |   |-----0051200179 764 KSK Osterholz 111003539
+  |   |   |   |-----0051200180 764 RB Bramstedt 108278
+  |   |   |   |-----0051200181 764 Dreba HH 210/0515222700
+  |   |   |   |-----0051200182 764 Naspa 393251050
+  |   |   |   |-----0051200183 764 PB FFM (Kontonummer folgt)
+  |   |   |   |-----0051200184 764 SK Mittelthr. 600005976
+  |   |   |   |-----0051200185 764 OLB 7662024400
+  |   |   |   |-----0051200186 283 TSK DTA 3007 Freiberg
+  |   |   |   |-----0051200187 283 TSK DTA 3105 Neubrandenburg
+  |   |   |   |-----0051200188 461 PB 305542607
+  |   |   |   |-----0051200189 461 PB 305642608
+  |   |   |   |-----0051200190 461 PB 305846601
+  |   |   |   |-----0051200191 283 TSK DTA 3024
+  |   |   |   |-----0051200192 283 TSK DTA 3125 1111477
+  |   |   |   |-----0051200193 275 DREBA WBN_CASH
+  |   |   |   |-----0051200194 283 TSK DTA 3111 (ehem.HDL)
+  |   |   |   |-----0051200195 283 TSK DTA 3112 (ehem.HDL)
+  |   |   |   |-----0051200196 283 TSK DTA 3116 (ehem.HDL)
+  |   |   |   |-----0051200197 283 TSK DTA 3118 (ehem.HDL)
+  |   |   |   |-----0051200198 283 TSK DTA 3120 (ehem.HDL)
+  |   |   |   |-----0051200199 283 TSK DTA 3121 (ehem.HDL)
+  |   |   |   |-----0051200200 283 TSK DTA 3123 (ehem.HDL)
+  |   |   |   |-----0051200201 275 TSK DTA 1189
+  |   |   |   |-----0051200202 275 TSK DTA 1402
+  |   |   |   |-----0051200203 283 TSK DTA 3119 (ehem.HDL)
+  |   |   |   |-----0051200204 283 TSK DTA 3110
+  |   |   |   |-----0051200205 764 Dreba FFM 012914800
+  |   |   |   |-----0051200206 283 TSK DTA 3098
+  |   |   |   |-----0051200207 283 TSK DTA 3099
+  |   |   |   |-----0051200208 283 TSK DTA 3101
+  |   |   |   |-----0051200209 283 TSK DTA 3102
+  |   |   |   |-----0051200210 283 TSK DTA 3104
+  |   |   |   |-----0051200211 283 TSK DTA 3106
+  |   |   |   |-----0051200212 283 TSK DTA 3107
+  |   |   |   |-----0051200213 283 TSK DTA 3148
+  |   |   |   |-----0051200214 283 TSK DTA 3150
+  |   |   |   |-----0051200215 283 TSK DTA 3151
+  |   |   |   |-----0051200216 283 TSK DTA 3152
+  |   |   |   |-----0051200217 283 TSK DTA 3153
+  |   |   |   |-----0051200218 283 TSK DTA 3154
+  |   |   |   |-----0051200219 283 TSK DTA 3155
+  |   |   |   |-----0051200220 283 TSK DTA 3156
+  |   |   |   |-----0051200221 283 TSK 3150 NK
+  |   |   |   |-----0051200222 283 SP Taunus FFM 3100 ULM
+  |   |   |   |-----0051200223 792 Banken G-Kanne
+  |   |   |   |-----0051209998 716 KIGA Sponsoren 342 803 18
+  |   |   |   ------0051209999 716 VISA CARD HDL 4907 6270 1008 6862
+  |   |   |
+  |   |   |--   SCDE0053000000 - 0053009999 X|X
+  |   |   |   |
+  |   |   |   |-----0053000010 Kassen Betriebe
+  |   |   |   ------0053000020 Kassenbestand Betriebe
+  |   |   |
+  |   |   |-----SCDE0053010000 - 0053010000 X|X Kassen Betriebe - Adjustments
+  |   |   ---   SCDE0058000000 - 0058009999 X|X
+  |   |       |
+  |   |       |-----0058000041 283 DB DD 07 TRANS
+  |   |       |-----0058000042 283 DB DD 03 GIRO TRANS
+  |   |       |-----0058000043 283 DB DD 06 GIRO TRANS
+  |   |       |-----0058000044 283 DB DD 05 GIRO TRANS
+  |   |       |-----0058000065 283 DR DD TRANS
+  |   |       |-----0058001000 275 DB TRANSIT SOD
+  |   |       |-----0058001001 275 DR TRANSIT SOD
+  |   |       |-----0058001002 PB TRANSIT SODEXHO
+  |   |       |-----0058001003 275 DB Betriebe BAR
+  |   |       |-----0058001011 DREBA EURO TRANSIT
+  |   |       |-----0058001110 Transfer Food Concept 01
+  |   |       |-----0058002000 DB TRANSIT PLAUEN
+  |   |       |-----0058002002 275 PB TRANSIT PLA
+  |   |       |-----0058003000 DB TRANSIT  SCS
+  |   |       |-----0058003001 283 DR TRANSIT SOD
+  |   |       |-----0058003002 275 PB TRANSIT SCS
+  |   |       |-----0058003055 283 Transfer Falkensee 3055
+  |   |       |-----0058003100 283 Transfer Food Concept 00
+  |   |       |-----0058003110 Transfer Food Concept SCS 01
+  |   |       |-----0058003120 283 Transfer Food Concept 02
+  |   |       |-----0058004000 275 DB TRANSIT SodAB
+  |   |       |-----0058004002 275 PB TRANSIT SodAB
+  |   |       |-----0058005000 Voir au 31.08.01 si solde
+  |   |       |-----0058005002 275 PB Transit HDL
+  |   |       |-----0058007000 GT SOD-BÄM
+  |   |       |-----0058007001 GT LV-Einzug Bärenmenü
+  |   |       |-----0058007002 275 PB TRANSIT BÄM
+  |   |       |-----0058007110 275 Transfer Food Concept BM
+  |   |       |-----0058008000 275 DB TRANSIT Altys
+  |   |       |-----0058008002 275 PB TRANSIT ALTYS
+  |   |       |-----0058009001 BANKTRANSFER BETRIEBE
+  |   |       |-----0058009002 275 GT KA-DD
+  |   |       |-----0058009003 275 GT GMD HAMBURG
+  |   |       |-----0058009004 275 GT BANK/KASSE SZ
+  |   |       |-----0058009005 275 SOD DEB-ZAHLEG MAN
+  |   |       |-----0058009006 275 SOD KRED-ZAHLEG M
+  |   |       |-----0058009007 GT SPK-BANK
+  |   |       |-----0058009008 275 RESTANTEN GWB EHRMAN
+  |   |       |-----0058009009 275 RESTANTEN GWB RUTZM.
+  |   |       ------0058009010 Transfer Betriebe/Pass
+  |   |
+  |   |--   Inventur (Waren / Reinigung / Verpackung)
+  |   |   |
+  |   |   |--   SCDE0037000001 - 0037000003 X|X
+  |   |   |   |
+  |   |   |   ------0037000001 Warenbestand
+  |   |   |
+  |   |   |--   SCDE0037010001 - 0037010004 X|X
+  |   |   |   |
+  |   |   |   |-----0037010001 Verpackungsbestand
+  |   |   |   |-----0037010002 Reinigungsmittelbestand
+  |   |   |   |-----0037010003 Werbemittelbestand
+  |   |   |   ------0037010004 Ersatzteile Automaten Bestand
+  |   |   |
+  |   |   ------SCDE0039700003 - 0039700003 X|X WB Warenbestandd
+  |   |
+  |   |--   Forderungen L&L
+  |   |   |
+  |   |   |-----SCDE0023000000 - 0023000000 X|X Technical account
+  |   |   |-----SCDE0023700000 - 0023700000 X|X Anzahlung immaterielle WG
+  |   |   |-----SCDE0023800000 - 0023800000 X|X Anzahlung materielle WG
+  |   |   |-----SCDE0041010000 - 0041010000 X|X TechAcc Ford. L & L
+  |   |   |-----SCDE0041040000 - 0041040000 X|X TechAcc Ford. Zweifelhaft - Adjustments
+  |   |   |-----SCDE0041050000 - 0041050000 X|X TechAcc Debitoren M-Abgrenz. Adjustments
+  |   |   |-----SCDE0041100010 - 0041100010 X|X Forder.Lieferungen & Leistungen
+  |   |   |-----SCDE0041100012 - 0041100012 X|X Forder.Lieferungen & Leistungen Ausland
+  |   |   |-----SCDE0041600001 - 0041600001 X|X Forder.Zweifelhaft
+  |   |   |-----SCDE0041810001 - 0041810001 X|X Debitorenmonatsabgrenzung
+  |   |   |-----SCDE0046710000 - 0046710000 X|X Forderungen aus Anlagenverkauf Dritte
+  |   |   |-----SCDE0046720000 - 0046720000 X|X Forderungen aus Anlagenverkauf Interco
+  |   |   |-----SCDE0046760000 - 0046760000 X|X Forderungen Verkauf Finanzanlagen
+  |   |   |-----SCDE0046850031 - 0046850031 X|X Ford. EIDI
+  |   |   ---   SCDE0049190001 - 0049190002 X|X
+  |   |       |
+  |   |       |-----0049190001 Pauschalwertberichtigung Forder.
+  |   |       ------0049190002 Einzelwertberichtigung Forder.
+  |   |
+  |   |--   Forderungen geg. verb Unternehmen "Kurz"
+  |   |   |
+  |   |   |-----SCDE0041020000 - 0041020000 X|X Ford. verb. Untern. A -Adjustments
+  |   |   |-----SCDE0041129999 - 0041129999 X|X Forder.geg. Verb.Unternehmen (autom)
+  |   |   ------SCDE0046859000 - 0046859000 X|X SOD DP. Intercompany
+  |   |
+  |   |--   Aktive Rechnungsabgrenzung & Gel. Anzahlungen
+  |   |   |
+  |   |   ---   SCDE0048600001 - 0048600008 X|X
+  |   |       |
+  |   |       |-----0048600001 ARAP Sonstige I
+  |   |       |-----0048600002 ARAP IT - EDV
+  |   |       |-----0048600003 ARAP Catering DD (nur unterjährig)
+  |   |       |-----0048600004 ARAP KFZ-Versicherung
+  |   |       |-----0048600005 ARAP Versicherungen Sonstige
+  |   |       |-----0048600006 ARAP PIMA Arbeitsmedizinischer Dienst
+  |   |       |-----0048600007 ARAP ASI Arbeitssicherheitsingenieur
+  |   |       ------0048600008 ARAP Q-Consys
+  |   |
+  |   ---   Sonstige Forderungen (So. Vermögensgegenst.)
+  |       |
+  |       |--   SCDE0027260000 - 0027260003 X|X
+  |       |   |
+  |       |   |-----0027260000 Kautionen > 1 < 3 J
+  |       |   |-----0027260001 Kautionen II > 1 Jahr
+  |       |   |-----0027260002 KAUTIONEN BM-BANKEN (Bärenmenü) > 1 Jahr
+  |       |   ------0027260003 Forder. So [BM-MIETKAUTION] > 1 Jahr
+  |       |
+  |       |-----SCDE0040070000 - 0040070000 X|X Gel. Anzahlungen - Adjustments
+  |       |-----SCDE0040900001 - 0040900001 X|X Geleistete Anzahlungen
+  |       |-----SCDE0041100014 - 0041100014 X|X Forder.Zentraleinkauf (automatisch)
+  |       |--   SCDE0042510000 - 0042510012 X|X
+  |       |   |
+  |       |   |-----0042510001 Ford.Reisek. Dauervorschuss
+  |       |   |-----0042510002 Ford.Reisek. Kurzvorschuss
+  |       |   |-----0042510010 Forder.Lohn & Gehalt
+  |       |   ------0042510012 Mitarbeiter Darlehn
+  |       |
+  |       |--   SCDE0042511001 - 0042511003 X|X
+  |       |   |
+  |       |   |-----0042511001 Ford. Pensionsrückkaufswerte
+  |       |   |-----0042511002 Forder. Steinhaus Pension
+  |       |   ------0042511003 Forder. ehem. Mitarbeiter SXO
+  |       |
+  |       |-----SCDE0044490001 - 0044490001 X|X Kapitalertragssteuer Abzugsfähig
+  |       |--   SCDE0046850001 - 0046850018 X|X
+  |       |   |
+  |       |   |-----0046850001 Forder. Sonstige
+  |       |   |-----0046850002 Forder. an Versicherung
+  |       |   |-----0046850010 DP. Einnahmen
+  |       |   |-----0046850011 DP. RA Krauss/Schmitter
+  |       |   |-----0046850012 DP. Fazit SWZ Rödental
+  |       |   |-----0046850013 DP. Fazit SWZ Bamberg
+  |       |   |-----0046850014 DP. Salzgitter
+  |       |   |-----0046850015 DP. Dresden
+  |       |   |-----0046850016 DP. Einkauf
+  |       |   |-----0046850017 DP. Fraichaud
+  |       |   ------0046850018 461 DP. HV Freitag
+  |       |
+  |       |-----SCDE0046850021 - 0046850021 X|X 275 DP. Kiosk Regensburg
+  |       |--   SCDE0046850023 - 0046850030 X|X
+  |       |   |
+  |       |   |-----0046850023 DP. Gut & Gerne
+  |       |   |-----0046850026 275 DP. Leasinggesellschaften Kunde
+  |       |   |-----0046850027 DP. Rücklasten Bärenmenü
+  |       |   |-----0046850028 DP. Tarkett
+  |       |   |-----0046850029 DP. man. Bärenmenü
+  |       |   ------0046850030 DP. Aktien Sodexho
+  |       |
+  |       |-----SCDE0046850032 - 0046850032 X|X Ford. Altlasten BM (Helm/Hübner)
+  |       |-----SCDE0091910200 - 0091910200 X|X Verrechnungskonto Kreditoren
+  |       |-----SCDE0091910300 - 0091910300 X|_ Verrechnungskonto Anlagen
+  |       |-----SCDE0091910400 - 0091910400 X|_ Verrechnungskonto Sachkonten
+  |       ------SCDE0091915555 - 0091915555 X|_ Verrechnungskonto Bank
+  |
+  |--   Passiva              Passiva
+  |   |
+  |   |--   Kapital & Kapitalrücklagen
+  |   |   |
+  |   |   |-----SCDE0010100001 - 0010100001 X|X Stammkaptial
+  |   |   ---   SCDE0010400001 - 0010400002 X|X
+  |   |       |
+  |   |       |-----0010400001 KAPITALVERRKTO. BÄRENMENÜ
+  |   |       ------0010400002 Kapitalrücklage
+  |   |
+  |   |--   Reserven
+  |   |   |
+  |   |   |--   SCDE0010640000 - 0010649999 X|X
+  |   |   |   |
+  |   |   |   |-----0010640000 Gewinnvortrag  (Gesetzliche Rücklagen)
+  |   |   |   ------0010640001 Verlustvortrag  (Gesetzliche Rücklagen)
+  |   |   |
+  |   |   ---   SCDE0010660001 - 0010660002 X|X
+  |   |       |
+  |   |       |-----0010660001 Gewinnvortrag
+  |   |       ------0010660002 Verlustvortrag
+  |   |
+  |   |--   Pensionrückstellungen
+  |   |   |
+  |   |   ---   SCDE0015300001 - 0015300003 X|X
+  |   |       |
+  |   |       |-----0015300001 Rückst.Pensionen
+  |   |       |-----0015300002 Rückst.Altersvorsorge
+  |   |       ------0015300003 Rückst.Altersteilzeit
+  |   |
+  |   |--   Verbindlichkeiten geg. verb. Untern. > 1 Jahr
+  |   |   |
+  |   |   |-----SCDE0016290000 - 0016290000 X|X Darleh Interco > 1 Jahr
+  |   |   |-----SCDE0016390000 - 0016390000 X|X Darlehn v Interco  > 5 Jahren
+  |   |   |-----SCDE0016820000 - 0016820000 X|X Darlehn interco < 1 Jahr
+  |   |   ------SCDE0040820020 - 0040820020 X|X Rückst.Kapitalkosten
+  |   |
+  |   |--   Darlehn von Dritten < 1 Jahr
+  |   |   |
+  |   |   |-----SCDE0016000000 - 0016000000 X|X Technical account used by pgm SAPF101
+  |   |   |-----SCDE0016280000 - 0016280000 X|X Darlehn von Dritten > 1 Jahr
+  |   |   |-----SCDE0016380000 - 0016380000 X|X Darlehn von Dritten  > 5 Jahren
+  |   |   ------SCDE0016800000 - 0016800000 X|X Darlehn von Dritten < 1Jahr
+  |   |
+  |   |--   Darlehn von Bank < 1 Jahr
+  |   |   |
+  |   |   |-----SCDE0016240000 - 0016240000 X|X Darlehn v. Banken  > 1 Jahr
+  |   |   |-----SCDE0016340000 - 0016340000 X|X Darlehn v. Banken  > 5 Jahren
+  |   |   |-----SCDE0016400000 - 0016400000 X|X Darlehn Banken
+  |   |   ------SCDE0051900000 - 0051900000 X|X Kontokorrentcredit
+  |   |
+  |   |--   Erhaltene Anzahlungen
+  |   |   |
+  |   |   |-----SCDE0041060000 - 0041060000 X|X TechAcc Periodisch Anzahlung - Adjustments
+  |   |   |-----SCDE0041070000 - 0041070000 X|X TechAcc Erh. Anz. & Steuer - Adjustments
+  |   |   |-----SCDE0041080000 - 0041080000 X|X TechAcc Gutsch . an KD zu erstellen - Adjustments
+  |   |   |-----SCDE0041910000 - 0041910000 X|X Periodisch Anzahlung
+  |   |   |--   SCDE0041920000 - 0041929999 X|X
+  |   |   |   |
+  |   |   |   |-----0041920000 Aufwerter
+  |   |   |   |-----0041920001 Kreditkarten Peugeot
+  |   |   |   |-----0041920002 Essengeld Überzhg. 159-283-461
+  |   |   |   |-----0041921019 AW Bosch Erbach
+  |   |   |   |-----0041921022 AW Leuschnerpark
+  |   |   |   |-----0041921028 AW Delphi
+  |   |   |   |-----0041921034 AW Dt.Telekom AG/DKV
+  |   |   |   |-----0041921035 AW Dtsch.Telekom AG
+  |   |   |   |-----0041921039 AW Dresd.Druck&Verla
+  |   |   |   |-----0041921051 AW EWZ Frankfurt
+  |   |   |   |-----0041921057 AW G&J Berliner Zeit
+  |   |   |   |-----0041921060 AW Goldwell
+  |   |   |   |-----0041921070 AW IKB Düsseldorf
+  |   |   |   |-----0041921076 AW Elbe Flugzeugwerf
+  |   |   |   |-----0041921092 EM MAN
+  |   |   |   |-----0041921093 AW Technip Germany
+  |   |   |   |-----0041921095 AW MDR Leipzig
+  |   |   |   |-----0041921126 AW Schenk
+  |   |   |   |-----0041921131 AW Schütte GmbH
+  |   |   |   |-----0041921137 AW Infineon
+  |   |   |   |-----0041921153 AW VDEW
+  |   |   |   |-----0041921163 AW Züblin
+  |   |   |   |-----0041921167 AW Allianz Berlin
+  |   |   |   |-----0041921178 AW Lahmeyer
+  |   |   |   |-----0041921180 AW Alstom
+  |   |   |   |-----0041921184 AW Telekom Berlin
+  |   |   |   |-----0041921185 AW BHZ Frankfurt
+  |   |   |   |-----0041921193 AW Quelle Leipzig
+  |   |   |   |-----0041921196 AW ESOC Darmstadt
+  |   |   |   |-----0041921203 AW Auswärtiges Amt
+  |   |   |   |-----0041921212 AW AGFA Köln
+  |   |   |   |-----0041921216 AW Canon Giessen
+  |   |   |   |-----0041921218 AW Atos
+  |   |   |   |-----0041921221 GS Zoo Osnabrück
+  |   |   |   |-----0041921222 KK Peugeot
+  |   |   |   |-----0041921232 KK Zoo Leipzig
+  |   |   |   |-----0041921234 AW ZVK Wiesbaden
+  |   |   |   |-----0041921237 AW Bundespresseamt
+  |   |   |   |-----0041921242 AW Angiomed
+  |   |   |   |-----0041921244 AW MDR Dresden
+  |   |   |   |-----0041921245 AW Scala West Ffm
+  |   |   |   |-----0041921250 EM Int.Schule,Düsseldorf
+  |   |   |   |-----0041921251 AW FSD Frankfurt
+  |   |   |   |-----0041921253 AW Meistermarken
+  |   |   |   |-----0041921256 AW Alcan Singen
+  |   |   |   |-----0041921259 AW Telekom Propsthof
+  |   |   |   |-----0041921267 AW Wal-Mart
+  |   |   |   |-----0041921268 AW Nokia Ulm
+  |   |   |   |-----0041921269 AW Nokia Düsseldorf
+  |   |   |   |-----0041921270 AW Ploenzke
+  |   |   |   |-----0041921271 AW TP Maintal
+  |   |   |   |-----0041921273 AW Nokia Bochum
+  |   |   |   |-----0041921275 AW AXA Hamburg
+  |   |   |   |-----0041921285 AW GlaxoSmithKline
+  |   |   |   |-----0041921289 AW Peugeot Saarbrücken
+  |   |   |   |-----0041921293 AW Campus
+  |   |   |   |-----0041921294 AW Stw. Braunschweig
+  |   |   |   |-----0041921301 AW E-Plus Düsseldorf
+  |   |   |   |-----0041921307 AW BAC Maskhouse
+  |   |   |   |-----0041921308 AW AEG Rothenburg
+  |   |   |   |-----0041921330 AW Tyssen Krupp
+  |   |   |   |-----0041921332 AW H. d. Ärzteschaft
+  |   |   |   |-----0041921335 AW THS Treuhandstelle
+  |   |   |   |-----0041921340 AW Astra Zeneca
+  |   |   |   |-----0041921346 AW PWC FFM
+  |   |   |   |-----0041921348 AW PWC DUE
+  |   |   |   |-----0041921349 AW PWC HH
+  |   |   |   |-----0041921350 AW Gebr.Trox
+  |   |   |   |-----0041921360 AW Kraft Foods
+  |   |   |   |-----0041921361 AW T-Online, Darmstadt
+  |   |   |   |-----0041921362 AW Atricom FFM
+  |   |   |   |-----0041921364 AW IG Metall
+  |   |   |   |-----0041921366 AW dwp Bank
+  |   |   |   |-----0041921369 AW Römer FFM
+  |   |   |   |-----0041921377 AW Telecom Center MÜ
+  |   |   |   |-----0041921378 AW Vallourec GmbH
+  |   |   |   |-----0041921379 AW PWC Hannover
+  |   |   |   |-----0041921383 AW Osram
+  |   |   |   |-----0041921384 AW UFZ Leipzig
+  |   |   |   |-----0041921385 AW Gillet
+  |   |   |   |-----0041921386 AW Telekom Stuttgart
+  |   |   |   |-----0041921387 AW Emscher Genossenschaft
+  |   |   |   |-----0041921389 AW Theresie
+  |   |   |   |-----0041921390 AW Ebay
+  |   |   |   |-----0041921393 AW Azko Stuttgart
+  |   |   |   |-----0041921395 AW HAWE
+  |   |   |   |-----0041921396 AW Basler Ahrensburg
+  |   |   |   |-----0041921401 AW Posttower
+  |   |   |   |-----0041921402 AW IS Munich Starnberg
+  |   |   |   |-----0041921410 AW Philip Morris B
+  |   |   |   |-----0041921800 AW Catering OST
+  |   |   |   |-----0041921806 AW CBC Köln
+  |   |   |   |-----0041921834 AW Südhess.Gas u.Was
+  |   |   |   |-----0041922008 AW Hammerstraße PLA
+  |   |   |   |-----0041923008 AW Compound
+  |   |   |   |-----0041923106 AW Int. Schule Bonn
+  |   |   |   |-----0041924001 AW KL Darmstadt
+  |   |   |   |-----0041924002 AW Klinikum Regensbu
+  |   |   |   |-----0041924004 AW ADAC
+  |   |   |   |-----0041924005 AW Amadeus
+  |   |   |   |-----0041924006 AW Bob
+  |   |   |   |-----0041924007 AW Br Freimann
+  |   |   |   |-----0041924008 AW Br Unterföhring
+  |   |   |   |-----0041924009 AW Direkt Anlagen Ba
+  |   |   |   |-----0041924010 AW Dornier
+  |   |   |   |-----0041924012 AW Gore Putzbrunn
+  |   |   |   |-----0041924013 AW Gore Feldkirchen
+  |   |   |   |-----0041924014 AW Gore Pleinfeld
+  |   |   |   |-----0041924015 AW Hexal
+  |   |   |   |-----0041924018 AW Landratsamt
+  |   |   |   |-----0041924020 AW BBK II
+  |   |   |   |-----0041924023 AW OFD
+  |   |   |   |-----0041924025 AW Trunk
+  |   |   |   |-----0041924028 AW Stockdorf
+  |   |   |   |-----0041924033 AW Hewlett-Packard
+  |   |   |   |-----0041924036 AW Beta Research
+  |   |   |   |-----0041924037 AW Fiducia
+  |   |   |   |-----0041924039 AW GKN Aerospace
+  |   |   |   |-----0041924040 AW Siebel System
+  |   |   |   |-----0041924043 AW Süd-SD
+  |   |   |   |-----0041925004 AW AM-Vers. Aachener & Münchener Versicherung
+  |   |   |   |-----0041925009 AW Generali Hamburg
+  |   |   |   |-----0041925010 AW HHLA
+  |   |   |   |-----0041925016 AW Itzehoer Vers.
+  |   |   |   |-----0041925050 EM Küche HV Salzgitt
+  |   |   |   |-----0041925053 AW HV Salzgitter AG
+  |   |   |   |-----0041925063 AW Alstom IHB
+  |   |   |   |-----0041925090 AW MMI
+  |   |   |   |-----0041925097 AW MBV Osterode
+  |   |   |   |-----0041925098 AW Autom.Pigge/Borek
+  |   |   |   |-----0041925102 AW Autom.Tour9,Celle
+  |   |   |   |-----0041926005 AW SPK. Remscheid
+  |   |   |   |-----0041926006 AW Nissan Bank
+  |   |   |   |-----0041926012 AW Hochtief
+  |   |   |   |-----0041926016 AW Griesson De Beuke
+  |   |   |   |-----0041926023 AW Kisters Maschinen
+  |   |   |   |-----0041926024 AW Elf Atochem Bonn
+  |   |   |   |-----0041927730 AW VW OTLG
+  |   |   |   |-----0041927736 AW MDR Erfurt
+  |   |   |   |-----0041927738 AW W OTLG Dieburg
+  |   |   |   |-----0041927739 AW W OTLG Köln
+  |   |   |   |-----0041929443 EM Casino HV
+  |   |   |   |-----0041929998 EG SK BUKR 159-275-283-461
+  |   |   |   ------0041929999 AW BM Chipkarten Kau
+  |   |   |
+  |   |   |--   SCDE0041940000 - 0041940005 X|X
+  |   |   |   |
+  |   |   |   |-----0041940000 Kaution Kunde ohne USt.
+  |   |   |   |-----0041940001 Erh. Anz. (vor 1995)
+  |   |   |   |-----0041940002 Erhaltene Anzahlung 7%
+  |   |   |   |-----0041940003 Erhaltene Anzahlung 15%
+  |   |   |   |-----0041940004 Erhaltene Anzahlung
+  |   |   |   ------0041940005 Erh. Anz. USt kurzfr
+  |   |   |
+  |   |   ------SCDE0041980000 - 0041980000 X|X Gutschriften an KD zu erstellen
+  |   |
+  |   |--   Steuerrückstellungen
+  |   |   |
+  |   |   ---   SCDE0015190001 - 0015190004 X|X
+  |   |       |
+  |   |       |-----0015190001 Rückst.für Steuern
+  |   |       ------0015190004 Rückst.Steuern Betriebsprüfung
+  |   |
+  |   |--   Sonstige Verbindlichkeiten
+  |   |   |
+  |   |   |--   SCDE0041930000 - 0041939999 X|X
+  |   |   |   |
+  |   |   |   |-----0041930000 BAR VON KUNDE
+  |   |   |   |-----0041930001 GDS Meißen 3060
+  |   |   |   |-----0041930002 GDS Halle 3002
+  |   |   |   |-----0041930003 GDS Bautzen 3005
+  |   |   |   |-----0041930004 GDS Freiberg 3007
+  |   |   |   |-----0041930005 GDS CED DD 3022
+  |   |   |   |-----0041930006 GDS Neustadt 3030
+  |   |   |   |-----0041930007 GDS Unterwellenb. 3032
+  |   |   |   |-----0041930008 GDS TKC Cottb. 3035
+  |   |   |   |-----0041930009 GDS Leipzig FS 3036
+  |   |   |   |-----0041930010 GDS Schmölln PK 3038
+  |   |   |   |-----0041930011 GDS SK Döbeln 3039
+  |   |   |   |-----0041930012 GDS SK Kahla 3040
+  |   |   |   |-----0041930013 GDS PK Brandenb. 3042
+  |   |   |   |-----0041930014 GDS SK Oranienb. 3043
+  |   |   |   |-----0041930015 GDS SK Treuenbr. 3044
+  |   |   |   |-----0041930016 GDS Potsdam 3046
+  |   |   |   |-----0041930017 GDS G&G Falkens. 3055
+  |   |   |   |-----0041930018 GDS Grünau 3034
+  |   |   |   |-----0041930019 GDS Karlshorst 1112
+  |   |   |   |-----0041930020 GDS Schmölln 1116
+  |   |   |   |-----0041930021 GDS Kahla 1129
+  |   |   |   |-----0041930022 GDS Oranb. 1078
+  |   |   |   |-----0041930023 GDS Untwb. 1094
+  |   |   |   |-----0041930024 GDS Intech 1112
+  |   |   |   |-----0041930025 GDS Mittwd. 3010
+  |   |   |   |-----0041930026 GDS Karlsho. 3049
+  |   |   |   |-----0041930027 GDS Wolg. 3051
+  |   |   |   |-----0041930028 GDS Rohrb. 3045
+  |   |   |   |-----0041930029 Inka. Menütaxi BM
+  |   |   |   |-----0041930030 Inka. HALL SAN.GMBH 3002
+  |   |   |   |-----0041930031 GDS Rostock 3023
+  |   |   |   |-----0041930032 GDS Frankfurt 3056
+  |   |   |   |-----0041930033 Inka. MÜNCHEBERG 3057
+  |   |   |   |-----0041930034 Inka. MT Straussberg 7002
+  |   |   |   |-----0041930035 Inka. EUT 3060 Gemeinde Niederau
+  |   |   |   |-----0041930036 Inka. GDS 3059 Letschin
+  |   |   |   |-----0041930037 Inka. GDS EUR 3060
+  |   |   |   |-----0041930038 Inka. Menütaxi Müncheberg 3057
+  |   |   |   |-----0041930039 Inka. SOW Plauen
+  |   |   |   |-----0041930040 Inka. GDS Plauen
+  |   |   |   |-----0041930041 Inka. MT Letchi 3059
+  |   |   |   |-----0041930042 Inka. Lucia GmbH
+  |   |   |   |-----0041930043 Inka. RWS GmbH
+  |   |   |   |-----0041930044 Inka. Gem. Neuseddin GmbH
+  |   |   |   |-----0041930045 Inka. SV Treuenbrietzen
+  |   |   |   |-----0041930046 Inka. GDS Gy.Elsengr. Hellersdorf
+  |   |   |   |-----0041930047 Inka. St. Jakobus Pesterwitz
+  |   |   |   |-----0041930048 Inka. RZ Lotto-Totto
+  |   |   |   |-----0041930049 EM Bosch-Erbach 1019
+  |   |   |   |-----0041930050 TB Schulen RV
+  |   |   |   |-----0041930051 Inka. Kita Neschwitz
+  |   |   |   |-----0041930052 Inka. Kita Bautzen
+  |   |   |   |-----0041930053 INKA St Pattensen/GDS
+  |   |   |   |-----0041930054 Inka. Std. Buckow
+  |   |   |   |-----0041930055 Inkasso VS Raudebeul 3060
+  |   |   |   |-----0041930056 Inkasso SV Weissenberg 3005
+  |   |   |   |-----0041930057 Inkasso Stadt Leipzig 3036
+  |   |   |   |-----0041930058 Inkasso GDS AH Neubrandenb.3006
+  |   |   |   |-----0041930059 Inkasso DRK KVB Dresden 3022
+  |   |   |   |-----0041930060 Inkasso AWO Löbau 3005
+  |   |   |   |-----0041930061 Inkasso Ind Living 3022
+  |   |   |   |-----0041930062 Inkasso SU Stralsund 3024
+  |   |   |   |-----0041930063 Inka. MT Werder 7003
+  |   |   |   |-----0041930064 Inka. MT Neurup 7004
+  |   |   |   |-----0041930065 Inka. MT Nimord 7005
+  |   |   |   |-----0041930066 Inka. MT Sewanstrasse 7006
+  |   |   |   |-----0041930067 Inka. GDS Sewan 7006
+  |   |   |   |-----0041930068 Inkasso AXA DE1351
+  |   |   |   |-----0041930069 Inka. D.Winkler 7009
+  |   |   |   |-----0041930070 Inka. GDS 3103 IS Hannover
+  |   |   |   |-----0041930071 INK. GDS 3012 CGH
+  |   |   |   |-----0041930072 INK. GDS 3101 GS Duisburg
+  |   |   |   |-----0041930073 INK. VGS Anitas Schülercafe 3055
+  |   |   |   |-----0041930074 INK. VGS Kroll Schülercafe 3055
+  |   |   |   |-----0041930075 INK. Violas SS 3055
+  |   |   |   |-----0041930076 INK. Schüler GDS 716
+  |   |   |   |-----0041930077 INK. KIGA GDS
+  |   |   |   |-----0041930078 INK. Paul 3113/3002
+  |   |   |   |-----0041930079 INK. Toko DL 3125
+  |   |   |   |-----0041930080 INK. Perfekta 3112
+  |   |   |   |-----0041930081 INK. Wisag 3113/3002
+  |   |   |   |-----0041930082 INK. Dorfner 3113/3002
+  |   |   |   |-----0041930083 INK. Frei
+  |   |   |   |-----0041930084 INK. Frei
+  |   |   |   |-----0041930085 INK. Std.Güters 3104
+  |   |   |   |-----0041930086 INK. Wagners PS 3040
+  |   |   |   |-----0041930087 Inkasso Sonstige 3125 (HDL)3125
+  |   |   |   |-----0041930088 INK. GDS 3118 SVH
+  |   |   |   |-----0041930089 NK. Sonst. 3118 SVH
+  |   |   |   |-----0041930090 INK. DRK KV KST 3030
+  |   |   |   |-----0041930091 INK. GDS 3111 Stendal
+  |   |   |   |-----0041930092 INK. GDS 3116 Halberstadt
+  |   |   |   |-----0041930093 INK. GDS 3112 Magdeburg
+  |   |   |   |-----0041930094 INK. Gem.Klipph 3060
+  |   |   |   |-----0041930095 INK. GDS Thierb.3119
+  |   |   |   |-----0041930096 INK. GDS Suhl 3110
+  |   |   |   |-----0041930097 INK. Förderverein Niederbobritzsch 3007
+  |   |   |   |-----0041930098 INK.Stadt Radebeul 3060
+  |   |   |   |-----0041930099 INK. Stadt Recklinghausen 3108
+  |   |   |   |-----0041930100 INK. Schkola GmbH Zittau 3117
+  |   |   |   |-----0041930101 INK. GDS Techn. Rathaus 3120
+  |   |   |   |-----0041930102 INK. GDS Altenzeller Str.  3121
+  |   |   |   |-----0041930103 INK. GDS Vetschauer Str.  3123
+  |   |   |   |-----0041930104 Inka. Freier MV 3022
+  |   |   |   |-----0041930105 Inka. Soz.Dien. 3032
+  |   |   |   |-----0041930106 Inka. Std. Boiz 3097
+  |   |   |   |-----0041930107 Inka. MT Werder 7003
+  |   |   |   |-----0041930108 Inka. Gem Michd 3044
+  |   |   |   |-----0041930109 Inka. Gem.Beezd 3045
+  |   |   |   |-----0041930110 Inka. Lhstd. DD 3118
+  |   |   |   |-----0041930111 Inka.GDS 3150
+  |   |   |   |-----0041930112 Inka.RWS 3121
+  |   |   |   |-----0041930113 Inka.Std. DD 3121
+  |   |   |   |-----0041930114 Inka.Std. DD 3123
+  |   |   |   |-----0041930115 Inka.KL Sachsen 3121
+  |   |   |   |-----0041930116 Inka.GDS 3153/3154
+  |   |   |   |-----0041930117 Inka.GDS 3155
+  |   |   |   |-----0041930118 Inka. GDS 3151 GAW
+  |   |   |   |-----0041930119 Inka. Stadt Karlsruhe 3150
+  |   |   |   |-----0041930120 Inka. DLS Radeb.7003
+  |   |   |   |-----0041930121 Inka. Diak. DD 3123
+  |   |   |   |-----0041930122 Inka. Std.Quedb.3125
+  |   |   |   |-----0041930123 Inka. Kita Roßl.3125
+  |   |   |   ------0041933074 INK. VGS Kroll Schülercafe 3055
+  |   |   |
+  |   |   |-----SCDE0042500001 - 0042500001 X|X Ford.Reisek. Mitarbeiter
+  |   |   |--   SCDE0044550000 - 0044579999 X|X
+  |   |   |   |
+  |   |   |   |-----0044550001 Umsatzsteuer Zahllast automatisch
+  |   |   |   |-----0044560000 Vorsteuer
+  |   |   |   |-----0044560001 Einfuhrumsatzsteuer
+  |   |   |   |-----0044560002 Erwerbsteuer Warenverkehr EU
+  |   |   |   |-----0044570001 Umsatzsteuerverrechnungskonto manuell
+  |   |   |   |-----0044570002 Ust Warenverkehr EU
+  |   |   |   |-----0044570003 Umsatzsteuer 9% Inland
+  |   |   |   |-----0044570004 Umsatzsteuer 7% Inland
+  |   |   |   |-----0044570005 Umsatzsteuer 13% Inland
+  |   |   |   |-----0044570006 Umsatzsteuer 16% Inland
+  |   |   |   |-----0044570007 Umsatzsteuer 14% Inland (bis 31,12,1992)
+  |   |   |   |-----0044570008 Umsatzsteuer 15% Inland (bis 31.03.1998)
+  |   |   |   |-----0044570009 Umsatzsteuer 19% Inland
+  |   |   |   |-----0044570010 Umsatzsteuer Vorjahre
+  |   |   |   |-----0044570011 Ust Vorauszahlung 1/11
+  |   |   |   ------0044570012 Ust Vorauszahlung Sodexho DE
+  |   |   |
+  |   |   |-----SCDE0046850019 - 0046850019 X|X DP. Ford. Delphi
+  |   |   |--   SCDE0046870000 - 0046879999 X|X
+  |   |   |   |
+  |   |   |   |-----0046870001 Verbindl. Sonstige
+  |   |   |   |-----0046870002 Verbindl. Kreditarten
+  |   |   |   |-----0046870003 Verbindl. Jacobs Kaffeemaschinen
+  |   |   |   |-----0046870004 Verbindl. SO.POL.1106 dd
+  |   |   |   |-----0046870005 Verbindl. So.OLG II 1166 DD
+  |   |   |   |-----0046870006 275- 283 Gästeessen
+  |   |   |   |-----0046870007 Verb. Inkassounternehmen
+  |   |   |   |-----0046870009 Verbindl. DP Gut & Gerne
+  |   |   |   |-----0046870010 Verb. SO Hausverwaltung Plauen
+  |   |   |   ------0046870011 Verb. SO Diakonsche Leipziger GmbH
+  |   |   |
+  |   |   ------SCDE0048700001 - 0048700001 X|X RECHNUNGEN IM Voraus
+  |   |
+  |   |--   Sonstige Rückstellungen
+  |   |   |
+  |   |   |-----SCDE0015130001 - 0015130001 X|X Rückst.Arbeitsgerichtsprozesse
+  |   |   |-----SCDE0015150001 - 0015150001 X|X Rückst.Vertragsrisiko
+  |   |   |--   SCDE0040820001 - 0040820019 X|X
+  |   |   |   |
+  |   |   |   |-----0040820010 Rückst.Abschlußprüfung
+  |   |   |   |-----0040820011 Rückst.Rechts- & Beratungskosten
+  |   |   |   ------0040820012 Rückst.Betriebsführungsgebühr
+  |   |   |
+  |   |   |--   SCDE0040820021 - 0040820030 X|X
+  |   |   |   |
+  |   |   |   |-----0040820021 Rückst.Inventarbruchbeteiligung
+  |   |   |   |-----0040820022 Rückst.Mieten
+  |   |   |   |-----0040820023 Rückst.Miet-& Mietnebenkosten
+  |   |   |   |-----0040820024 Rückst.Software
+  |   |   |   |-----0040820025 Rückst.Sonstige
+  |   |   |   |-----0040820026 Rückst.Automatengarantie SZ
+  |   |   |   ------0040820027 Rückst.EDV-Projekt
+  |   |   |
+  |   |   |--   SCDE0042010010 - 0042010015 X|X
+  |   |   |   |
+  |   |   |   |-----0042010010 Rückst.Sonderzahlung
+  |   |   |   |-----0042010011 Rückst.Lohnkosten
+  |   |   |   |-----0042010012 Rückst.Leistungsprämien
+  |   |   |   |-----0042010013 Rückst.Feitage/Überstunden
+  |   |   |   |-----0042010014 Rückst.Tariferhöhung
+  |   |   |   ------0042010015 Rückst.Jubiläumszusage
+  |   |   |
+  |   |   |-----SCDE0042020001 - 0042020001 X|X Rückst.Urlaubsanspruch Mitarbeiter
+  |   |   ---   SCDE0043010001 - 0043010002 X|X
+  |   |       |
+  |   |       |-----0043010001 Rückst.Berufsgenossenschaft
+  |   |       ------0043010002 Rückst.Schwerbeschädigtenabgabe
+  |   |
+  |   |--   Verbindlichkeiten L&L
+  |   |   |
+  |   |   |-----SCDE0040010000 - 0040010000 X|X Verb.  L & L - Adjustments
+  |   |   |-----SCDE0040040000 - 0040040000 X|X TechAcc PRAP
+  |   |   |--   SCDE0040110000 - 0040115555 X|X
+  |   |   |   |
+  |   |   |   |-----0040110001 Verbindl.Lieferung & Leistung
+  |   |   |   |-----0040110002 Verbindl.Lieferung & Leistung Ausland
+  |   |   |   |-----0040110003 Verb. ServiceDienstleister S&U
+  |   |   |   ------0040115555 Migration Kreditor
+  |   |   |
+  |   |   |-----SCDE0040810080 - 0040810080 X|X PRAP Kreditorisch automatisch
+  |   |   |-----SCDE0040820000 - 0040820000 X|X PRAP Manuell
+  |   |   |-----SCDE0045070000 - 0045070000 X|X TechAcc Verb.AV Zug. - Adjustments
+  |   |   |-----SCDE0045710000 - 0045710000 X|X Verbindl.Anlageverm. Zugang materiell und immat.
+  |   |   ------SCDE0045760000 - 0045760000 X|X Verbindl.Anlageverm. Zugang finanz.
+  |   |
+  |   |--   Verbindlichkeiten geg. verb. Unter. "Kurz"
+  |   |   |
+  |   |   |-----SCDE0040020000 - 0040020000 X|X Ford. verb. Untern. A- Adjustments
+  |   |   |-----SCDE0040125555 - 0040125555 X|X Migration Kreditor Group
+  |   |   |-----SCDE0040129999 - 0040129999 X|X Verbindl.ggü.verb. UNT. Sammelkto Autom.
+  |   |   ------SCDE0045720000 - 0045720000 X|X Verbindl.Anlageverm. Zugang interco
+  |   |
+  |   |--   Verbindlichkeiten Personalkosten & Steuern
+  |   |   |
+  |   |   |--   SCDE0042000000 - 0042000010 X|X
+  |   |   |   |
+  |   |   |   |-----0042000000 Lohnverrechnungskonto
+  |   |   |   |-----0042000001 Verbindl. Lohn & Gehalt
+  |   |   |   |-----0042000002 Verbindl. aus VWL
+  |   |   |   |-----0042000003 Pfändungen
+  |   |   |   |-----0042000004 Jobticket
+  |   |   |   |-----0042000005 Versicherungen MA BÄM
+  |   |   |   |-----0042000006 Jobticket Sonstige
+  |   |   |   ------0042000009 VBLK Freiw.Entgeltumwandlung
+  |   |   |
+  |   |   |-----SCDE0042009999 - 0042009999 X|X Lohnverrechnungskonto - Adjustments
+  |   |   |-----SCDE0042510050 - 0042510050 X|X Vorschuss L&G
+  |   |   |-----SCDE0043010010 - 0043010010 X|X Verbindl. Sozialversicherung
+  |   |   ------SCDE0044000010 - 0044000010 X|X Verbindl. Lohnsteuer
+  |   |
+  |   |--   Passive Rechnungsabgrenzung
+  |   |   |
+  |   |   |-----SCDE0040810081 - 0040810081 X|X PRAP NUR MANUELL!
+  |   |   |-----SCDE0091910100 - 0091910100 X|X Verrechnungskonto Debitoren
+  |   |   |-----SCDE0091910300 - 0091910300 _|X Verrechnungskonto Anlagen
+  |   |   |-----SCDE0091910400 - 0091910400 _|X Verrechnungskonto Sachkonten
+  |   |   ------SCDE0091915555 - 0091915555 _|X Verrechnungskonto Bank
+  |   |
+  |   ---   GuV
+  |       |
+  |       |--   Wareneinsatz
+  |       |   |
+  |       |   |--   SCDE0060110000 - 0060119999 X|X
+  |       |   |   |
+  |       |   |   |-----0060110000 WE Allgemein & Küche
+  |       |   |   |-----0060110100 WE Rebates CnB
+  |       |   |   |-----0060110200 WE Small Discrep.CnB
+  |       |   |   |-----0060110300 WE Getraenke kalt
+  |       |   |   |-----0060110400 WE Getraenke warm
+  |       |   |   |-----0060110500 WE Automaten
+  |       |   |   |-----0060110600 WE HW F-Zwischenv.
+  |       |   |   |-----0060110700 WE Tiefkühl
+  |       |   |   |-----0060110800 WE Handelswaren Food
+  |       |   |   |-----0060110900 WE Pfand
+  |       |   |   |-----0060111000 WE Sonderveranstaltung
+  |       |   |   |-----0060111100 WE S&U  Mahngebühren
+  |       |   |   |-----0060111200 WE Flaschengetränke
+  |       |   |   |-----0060114000 WE Konzern SOD_SCSclusiv
+  |       |   |   |-----0060115000 WE Durchl. Posten
+  |       |   |   |-----0060115100 WE WVR (GESPERRT)
+  |       |   |   |-----0060119000 SOD Interco Wareineisatz
+  |       |   |   |-----0060119100 Abgrenzung WE Kueche
+  |       |   |   |-----0060119200 ABGR WE Geträ Flasch
+  |       |   |   |-----0060119300 Abgrenzung WE Kaltgetränke
+  |       |   |   |-----0060119400 Abgrenzung WE Heißgetränke
+  |       |   |   |-----0060119500 Abgrenzung WE HW
+  |       |   |   |-----0060119600 Abgrenzung WE Zwischenverpflegung
+  |       |   |   |-----0060119900 WE Periodenfremd
+  |       |   |   ------0060119999 MwST Agency
+  |       |   |
+  |       |   |--   SCDE0060270000 - 0060279999 X|X
+  |       |   |   |
+  |       |   |   |-----0060270000 WE HW Non-Food
+  |       |   |   |-----0060270100 WE HW Presseerzeugnisse
+  |       |   |   |-----0060270200 WE HW Tabakwaren
+  |       |   |   ------0060279200 Abgrenzung WE Zigaretten
+  |       |   |
+  |       |   |--   SCDE0060370000 - 0060370600 X|X
+  |       |   |   |
+  |       |   |   |-----0060370000 WE Küche Bestandsveränderung
+  |       |   |   |-----0060370100 WE HW Bestandsveränderungen
+  |       |   |   |-----0060370110 WE HW Einweggeschirr
+  |       |   |   |-----0060370200 WE Zigaretten Bestandsveränderungen
+  |       |   |   |-----0060370300 WE Kaltgetrände Bestandsveränderungen
+  |       |   |   |-----0060370400 WE Heißgetrände Bestandsveränderungen
+  |       |   |   |-----0060370500 BV WE Getränke Flasc
+  |       |   |   ------0060370600 WE Zwischenverpfl. Bestandsveränderung
+  |       |   |
+  |       |   |-----SCDE0060380000 - 0060380200 X|X
+  |       |   |--   SCDE0060910000 - 0060910100 X|X
+  |       |   |   |
+  |       |   |   |-----0060910000 Erhaltene Skonti
+  |       |   |   ------0060910100 Erhaltene Skonti man.
+  |       |   |
+  |       |   |--   SCDE0070891000 - 0070891130 X|X
+  |       |   |   |
+  |       |   |   |-----0070891000 Erlöse MZ (Gesperrt)
+  |       |   |   |-----0070891030 Erlöse MZ (Gesperrt)
+  |       |   |   ------0070891130 Erlöse Pfand  nur G & S
+  |       |   |
+  |       |   ---   SCDE0070910000 - 0070910030 X|X
+  |       |       |
+  |       |       |-----0070910000 Marketingerlöse 0%
+  |       |       |-----0070910010 Marketingerlöse 7%
+  |       |       ------0070910030 Marketingerlöse
+  |       |
+  |       |--   Hilfsmittel
+  |       |   |
+  |       |   |--   SCDE0060240000 - 0060240100 X|X
+  |       |   |   |
+  |       |   |   |-----0060240000 Waeschekosten Rein/Miete
+  |       |   |   ------0060240100 Berufsbekleidung unterhalt/miete/ersatz
+  |       |   |
+  |       |   ------SCDE0060260000 - 0060260000 X|X Einweggeschirr
+  |       |
+  |       |--   Personalkosten
+  |       |   |
+  |       |   |-----SCDE0062140000 - 0062140000 X|X Verrechnete loehne & gehaelter
+  |       |   |-----SCDE0062290100 - 0062290100 X|X Rechts&Beratungskost.Personal
+  |       |   |-----SCDE0062840000 - 0062840000 X|X Personalbeschaffung
+  |       |   |--   SCDE0064100000 - 0064100999 X|X
+  |       |   |   |
+  |       |   |   |-----0064100000 Löhne & Gehälter
+  |       |   |   |-----0064100001 Überstunden
+  |       |   |   |-----0064100002 Waschgeld
+  |       |   |   |-----0064100003 Jubiläum RS Aufwand
+  |       |   |   |-----0064100004 Verr. L&G ab 1.9.07
+  |       |   |   |-----0064100100 Sonderzahlung
+  |       |   |   |-----0064100200 Verkaufsprämien
+  |       |   |   |-----0064100300 Prämienaufw.gegen Rückstellung
+  |       |   |   |-----0064100400 Prämien ohne Rückstellung
+  |       |   |   |-----0064100500 Abfindungen
+  |       |   |   |-----0064100600 Direktversicherung
+  |       |   |   |-----0064100700 Vermoegenswirksame leistungen
+  |       |   |   |-----0064100800 Fahrgeldzuschuss
+  |       |   |   |-----0064100801 Kindergartenzuschuss steuerfrei
+  |       |   |   ------0064100900 Urlaub (fuer die rueckstellung)
+  |       |   |
+  |       |   |--   SCDE0064101100 - 0064101200 X|X
+  |       |   |   |
+  |       |   |   |-----0064101100 Personalschulung
+  |       |   |   ------0064101200 Sonstige Personalkosten
+  |       |   |
+  |       |   |-----SCDE0064101400 - 0064101400 X|X Periodenfremde Personalkosten
+  |       |   |-----SCDE0064500800 - 0064500800 X|X PIMA (Arbeitsmedizinischer Dienst)
+  |       |   |-----SCDE0065400000 - 0065400000 X|X Vergütungen Aufsichtsrat
+  |       |   ------SCDE0078100005 - 0078100005 X|X Ertrag Aufl. RS Personalkosten
+  |       |
+  |       |--   Sozialabgaben
+  |       |   |
+  |       |   |-----SCDE0064101000 - 0064101000 X|X Aushilfslöhne
+  |       |   |--   SCDE0064500000 - 0064500799 X|X
+  |       |   |   |
+  |       |   |   |-----0064500000 Sozialaufw.gestzlich
+  |       |   |   |-----0064500100 Sozialaufw.Sonderzahlung
+  |       |   |   |-----0064500200 Verpfl.mehraufw. Pauschalvers.
+  |       |   |   |-----0064500300 Verrechnete Arbeitgeberanteile
+  |       |   |   |-----0064500400 Berufsgenossenschaftsbeitrag
+  |       |   |   |-----0064500500 Schwerbehindertenabgabe
+  |       |   |   |-----0064500600 Pension Zuf. HGB
+  |       |   |   |-----0064500601 Altersteilzeit Zuf.
+  |       |   |   |-----0064500602 Altersvorsorge Zuf.
+  |       |   |   |-----0064500699 Pension Zuf IAS CONS
+  |       |   |   ------0064500700 Pauschale Lohnsteuer
+  |       |   |
+  |       |   |-----SCDE0064500900 - 0064500900 X|X Zuschuß KK & ARBA
+  |       |   ---   SCDE0064700000 - 0064700100 X|X
+  |       |       |
+  |       |       |-----0064700000 Freiwilliger Sozialaufw.
+  |       |       ------0064700100 Fahrkosten steuerfrei
+  |       |
+  |       |--   Fremde Löhne
+  |       |   |
+  |       |   ---   SCDE0062110000 - 0062110001 X|X
+  |       |       |
+  |       |       |-----0062110000 Fremde Löhne
+  |       |       ------0062110001 Personal Beigestellt
+  |       |
+  |       |--   Raumkosten
+  |       |   |
+  |       |   |-----SCDE0060610000 - 0060610000 X|X Gas/Strom/Wasser
+  |       |   |-----SCDE0061130000 - 0061130000 X|X Abfallentsorgung
+  |       |   |--   SCDE0061320000 - 0061320999 X|X
+  |       |   |   |
+  |       |   |   |-----0061320000 Raummiete
+  |       |   |   |-----0061320099 Umlage Raumkosten
+  |       |   |   |-----0061320100 Mietnebenkosten
+  |       |   |   |-----0061320200 Heizung
+  |       |   |   |-----0061320300 Gebäudereinigung
+  |       |   |   ------0061320900 So Raumkosten
+  |       |   |
+  |       |   ------SCDE0061520000 - 0061520000 X|X Instandhtg.Betriebsraeume
+  |       |
+  |       |--   Versicherungen
+  |       |   |
+  |       |   |--   SCDE0061610000 - 0061610299 X|X
+  |       |   |   |
+  |       |   |   |-----0061610000 Versicherung Haftpflicht
+  |       |   |   |-----0061610100 Versicherung Besitz
+  |       |   |   ------0061610200 Versicherung Sonstige
+  |       |   |
+  |       |   ------SCDE0061630000 - 0061630000 X|X KFZ-Versicherung
+  |       |
+  |       |--   Sonstige betriebliche Aufwendungen
+  |       |   |
+  |       |   |-----SCDE0060220000 - 0060220000 X|X Reinigungsmaterial
+  |       |   |--   SCDE0060250000 - 0060250100 X|X
+  |       |   |   |
+  |       |   |   |-----0060250000 Verpackungsmaterial
+  |       |   |   ------0060250100 Styropor Transportbehaelter
+  |       |   |
+  |       |   |--   SCDE0060390000 - 0060390100 X|X
+  |       |   |   |
+  |       |   |   |-----0060390000 Reinigungsmittel Bestandsveränderung
+  |       |   |   ------0060390100 Verpackungsmaterial Bestandsveränderung
+  |       |   |
+  |       |   |-----SCDE0060660000 - 0060660000 X|X Schwund / Bruch
+  |       |   |--   SCDE0061110000 - 0061110100 X|X
+  |       |   |   |
+  |       |   |   |-----0061110000 Service/Dienstleistung
+  |       |   |   |-----0061110001 Oracle -blocked-
+  |       |   |   ------0061110100 Leih-Equipment
+  |       |   |
+  |       |   |-----SCDE0061354000 - 0061354000 X|X GK Konzern SOD/SCS
+  |       |   |-----SCDE0061400999 - 0061400999 X|X Umlage Sonstige Kosten
+  |       |   |--   SCDE0062280000 - 0062280100 X|X
+  |       |   |   |
+  |       |   |   |-----0062280000 Verkaufsprovision
+  |       |   |   ------0062280100 So Provisionen
+  |       |   |
+  |       |   |--   SCDE0062420000 - 0062420100 X|X
+  |       |   |   |
+  |       |   |   |-----0062420000 Bezugs-& Nebenkosten
+  |       |   |   ------0062420100 Transportkosten Ausgangs-Frachten
+  |       |   |
+  |       |   |-----SCDE0062550000 - 0062550000 X|X Umzugskosten
+  |       |   |-----SCDE0062810000 - 0062810000 X|X Beiträge (IHK, HWK)
+  |       |   |-----SCDE0062830000 - 0062830000 X|X Kontrollen/Untersuchungen
+  |       |   |-----SCDE0062850000 - 0062850000 X|X Nicht abzugsfähige BAG (Bußgelder)
+  |       |   |--   SCDE0062860100 - 0062869000 X|X
+  |       |   |   |
+  |       |   |   |-----0062860100 Sonst.Kosten periodenfremd
+  |       |   |   |-----0062860999 AFA-UMB Manuelle Korrektur
+  |       |   |   ------0062869000 Weiterberechnung Gemeinkosten
+  |       |   |
+  |       |   |--   SCDE0063100000 - 0063100599 X|X
+  |       |   |   |
+  |       |   |   |-----0063100100 Betriebssteuer Sonstige
+  |       |   |   |-----0063100200 Verpackunssteuer
+  |       |   |   |-----0063100300 Getränkesteuer
+  |       |   |   |-----0063100400 Gebühren
+  |       |   |   ------0063100500 Beiträge (nicht staatl.)
+  |       |   |
+  |       |   |-----SCDE0063100800 - 0063100800 X|X Abgaben Sonstige
+  |       |   |-----SCDE0064104000 - 0064104000 X|X Personalkosten Konzernverträge SOD/SCS
+  |       |   |--   SCDE0065410000 - 0065410002 X|X
+  |       |   |   |
+  |       |   |   |-----0065410000 Ford.Verl.VJ 0 %
+  |       |   |   |-----0065410001 Ford.Verl.VJ 7 %
+  |       |   |   ------0065410002 Ford.Verl.VJ v UST
+  |       |   |
+  |       |   |-----SCDE0065430000 - 0065430000 X|X Aufwand Unterzahlung
+  |       |   |-----SCDE0067100000 - 0067100000 X|X Kassendifferenz
+  |       |   |-----SCDE0067104000 - 0067104000 X|X AOA Konzernverträge SOD/SCS
+  |       |   |-----SCDE0068104000 - 0068104000 X|X Afa Konzernverträge SOD/SCS
+  |       |   |--   SCDE0068170000 - 0068170200 X|X
+  |       |   |   |
+  |       |   |   |-----0068170000 Zuführung EWB/PWB
+  |       |   |   |-----0068170100 Zweifelhafte Forder.EWB
+  |       |   |   ------0068170200 Zweifelhafte Forder. 7 % EWB
+  |       |   |
+  |       |   |--   SCDE0070890100 - 0070890140 X|X
+  |       |   |   |
+  |       |   |   |-----0070890100 Gesp. Erlöse SB Verpflegung
+  |       |   |   |-----0070890130 Gesp. Erlöse SB Verpflegung 16%
+  |       |   |   ------0070890140 Gesperrt-Erlöse SB Verpflegung 0%
+  |       |   |
+  |       |   |--   SCDE0070890400 - 0070890640 X|X
+  |       |   |   |
+  |       |   |   |-----0070890400 Gesperrt-Erlöse Privat KFZ-Anteil
+  |       |   |   |-----0070890430 Gesperrt-Erlöse Privat KFZ-Anteil
+  |       |   |   |-----0070890440 Erlöse Privat KFZ-Anteil 0%
+  |       |   |   |-----0070890500 Gesp. Erlöse Sachbezug KFZ
+  |       |   |   |-----0070890530 Gesp. Erlöse Sachbezug KFZ
+  |       |   |   |-----0070890540 Gesperrt-Erlöse Sachbezug KFZ 0%
+  |       |   |   |-----0070890600 Gesp. Erlöse Privater Telefonanteil
+  |       |   |   |-----0070890630 Erlöse SB Telefon 16%
+  |       |   |   ------0070890640 Gesperrt-Erlöse SB Telefon 0%
+  |       |   |
+  |       |   |--   SCDE0074000100 - 0074000140 X|X
+  |       |   |   |
+  |       |   |   |-----0074000100 SO-Zuschüsse
+  |       |   |   |-----0074000130 Sonstige Zuschüsse
+  |       |   |   ------0074000140 SO-Zuschüsse 0%
+  |       |   |
+  |       |   ------SCDE0077104000 - 0077104000 X|X AOE Konzernverträge SOD/SCS
+  |       |
+  |       |--   KFZ-Kosten
+  |       |   |
+  |       |   |-----SCDE0061200000 - 0061200000 X|X KFZ-Leasing
+  |       |   |-----SCDE0061350000 - 0061350000 X|X KFZ-Leihgebühr
+  |       |   |--   SCDE0062510000 - 0062510100 X|X
+  |       |   |   |
+  |       |   |   |-----0062510000 KFZ Benzin-Tankkarte
+  |       |   |   ------0062510100 KFZ Kosten Sonstige
+  |       |   |
+  |       |   |-----SCDE0062520000 - 0062520000 X|X KFZ-Benzin
+  |       |   |-----SCDE0064101300 - 0064101300 X|X KFZ-Eigenbeteiligung
+  |       |   ------SCDE0065430001 - 0065430001 X|X KFZ-Reparatur
+  |       |
+  |       |--   Werbekosten
+  |       |   |
+  |       |   |--   SCDE0062310000 - 0062310200 X|X
+  |       |   |   |
+  |       |   |   |-----0062310000 Inserate
+  |       |   |   |-----0062310100 Öffentlichkeitsarbeit
+  |       |   |   ------0062310200 Neue Medien
+  |       |   |
+  |       |   |-----SCDE0062330000 - 0062330000 X|X Messekosten & Events
+  |       |   |--   SCDE0062340000 - 0062340100 X|X
+  |       |   |   |
+  |       |   |   |-----0062340000 Geschenke bis 35 EUR
+  |       |   |   ------0062340100 Geschenke > 35 EUR
+  |       |   |
+  |       |   |--   SCDE0062350000 - 0062350099 X|X
+  |       |   |   |
+  |       |   |   |-----0062350000 Spenden
+  |       |   |   ------0062350001 Sponsoring
+  |       |   |
+  |       |   |--   SCDE0062360000 - 0062360100 X|X
+  |       |   |   |
+  |       |   |   |-----0062360000 Werbedrucksachen
+  |       |   |   ------0062360100 Signalisation&Verkaufsförderung
+  |       |   |
+  |       |   ---   SCDE0062380000 - 0062380100 X|X
+  |       |       |
+  |       |       |-----0062380000 Dekoration
+  |       |       ------0062380100 Werbekosten
+  |       |
+  |       |--   Reisekosten
+  |       |   |
+  |       |   |--   SCDE0061850000 - 0061850100 X|X
+  |       |   |   |
+  |       |   |   |-----0061850000 Tagungskosten
+  |       |   |   ------0061850100 Betriebsleitervollversammlung
+  |       |   |
+  |       |   |--   SCDE0062510200 - 0062510400 X|X
+  |       |   |   |
+  |       |   |   |-----0062510200 Flug Ausland
+  |       |   |   ------0062510400 Flug&Bus&Bahn INL
+  |       |   |
+  |       |   |-----SCDE0062530000 - 0062530000 X|X KM-Gelderstattung MA
+  |       |   |--   SCDE0062560000 - 0062560300 X|X
+  |       |   |   |
+  |       |   |   |-----0062560000 Verpflegung MA
+  |       |   |   |-----0062560100 Hotel Ausland
+  |       |   |   |-----0062560200 Taxikosten
+  |       |   |   ------0062560300 Hotel   Inland
+  |       |   |
+  |       |   ------SCDE0062570000 - 0062570000 X|X Bewirtungskosten
+  |       |
+  |       |--   Porto- & Telefonkosten
+  |       |   |
+  |       |   |--   SCDE0062610000 - 0062610100 X|X
+  |       |   |   |
+  |       |   |   |-----0062610000 Portokosten
+  |       |   |   ------0062610100 Paket-/kurierdienst
+  |       |   |
+  |       |   ---   SCDE0062620200 - 0062620300 X|X
+  |       |       |
+  |       |       |-----0062620200 Telefon/-fax Gebühren
+  |       |       ------0062620300 Mobiltelefongebühren
+  |       |
+  |       |--   Bürokosten
+  |       |   |
+  |       |   |--   SCDE0060640000 - 0060640900 X|X
+  |       |   |   |
+  |       |   |   |-----0060640000 Bürobedarf
+  |       |   |   ------0060640900 So Bürokosten
+  |       |   |
+  |       |   |--   SCDE0061350200 - 0061350300 X|X
+  |       |   |   |
+  |       |   |   |-----0061350200 Miete & Wartung Kopierer
+  |       |   |   ------0061350300 Miete Telefonanlage
+  |       |   |
+  |       |   ------SCDE0061800000 - 0061800000 X|X Fachliteratur
+  |       |
+  |       |--   Rechts- & Beratungskosten
+  |       |   |
+  |       |   |-----SCDE0062260000 - 0062260000 X|X Wirtschaftspruefungskosten
+  |       |   ------SCDE0062290000 - 0062290000 X|X Rechts& Beratungskosten
+  |       |
+  |       |--   Rechts- & Beratungskosten Konzern
+  |       |   |
+  |       |   ---   SCDE0062219000 - 0062219200 X|X
+  |       |       |
+  |       |       |-----0062219000 SOD Interco Beratung FFR
+  |       |       |-----0062219100 SOD Interco Lizenzgebühr FFR
+  |       |       ------0062219200 Sod-international Gemeinkosten
+  |       |
+  |       |--   EDV-Kosten
+  |       |   |
+  |       |   |--   SCDE0060660400 - 0060660500 X|X
+  |       |   |   |
+  |       |   |   |-----0060660400 EDV-Material PC
+  |       |   |   |-----0060660401 EDV-Nutzungsgebühr (NUR EDV)
+  |       |   |   |-----0060660402 EDV-eBusinessgebühren
+  |       |   |   |-----0060660403 EDV-Intranetgebühren
+  |       |   |   |-----0060660404 EDV-Outsourcingebühren
+  |       |   |   ------0060660500 EDV-Softwarekosten
+  |       |   |
+  |       |   |-----SCDE0061560000 - 0061560000 X|X EDV-Wartungsgebühren (Hardware)
+  |       |   |-----SCDE0062280200 - 0062280200 X|X EDV-Beratung
+  |       |   |-----SCDE0062620100 - 0062620100 X|X EDV-Leitungsgebühr
+  |       |   ------SCDE0062860000 - 0062860000 X|X EDV-Schulung
+  |       |
+  |       |--   Nebenkosten Geldverkehr & Bankgebühren
+  |       |   |
+  |       |   ---   SCDE0062700000 - 0062700200 X|X
+  |       |       |
+  |       |       |-----0062700000 Nebenko.Geldverkehr
+  |       |       |-----0062700100 Einzahlungsgebuehren Bargeld
+  |       |       ------0062700200 Gebühr Geldkarte
+  |       |
+  |       |--   Sonstige Steuern
+  |       |   |
+  |       |   |--   SCDE0063100600 - 0063100700 X|X
+  |       |   |   |
+  |       |   |   |-----0063100600 KFZ-Steuer
+  |       |   |   ------0063100700 Grundsteuer
+  |       |   |
+  |       |   |-----SCDE0063101000 - 0063101000 X|X Sonstige aperiodische Steuern & Abgaben
+  |       |   |--   SCDE0069500000 - 0069500500 X|X
+  |       |   |   |
+  |       |   |   |-----0069500000 Kapitalertragsteuer
+  |       |   |   |-----0069500100 Körperschaftsteuer
+  |       |   |   |-----0069500200 Solidaritätszuschlag
+  |       |   |   |-----0069500300 Einkommensteuern aperiodisch (KÖST / KEST)
+  |       |   |   |-----0069500400 Gewerbeertragsteuer
+  |       |   |   |-----0069500401 GEWST Unterjährig
+  |       |   |   ------0069500500 Gewerbekapitalsteuer
+  |       |   |
+  |       |   ------SCDE0069900000 - 0069900000 X|X Latente Steuern
+  |       |
+  |       |--   Zinsen & Zinsähnlicher Aufwand
+  |       |   |
+  |       |   |--   SCDE0066100000 - 0066100400 X|X
+  |       |   |   |
+  |       |   |   |-----0066100000 Bankzinsen kurzfristig
+  |       |   |   |-----0066100100 Zinsen an Dritte
+  |       |   |   |-----0066100200 Zinsen Bank langfristig
+  |       |   |   |-----0066100300 Zinsähnlicher Aufwand
+  |       |   |   ------0066100400 Zinsen aus Steuern
+  |       |   |
+  |       |   |-----SCDE0066110000 - 0066110000 X|X Zinsen Finanzielles Leasing
+  |       |   ------SCDE0066600000 - 0066600000 X|X Kursverluste
+  |       |
+  |       |--   Zinsen Konzernintern
+  |       |   |
+  |       |   ------SCDE0066109000 - 0066109000 X|X SOD Interco Zinsaufwand
+  |       |
+  |       |--   AFA
+  |       |   |
+  |       |   |--   SCDE0068040001 - 0068040101 X|X
+  |       |   |   |
+  |       |   |   |-----0068040001 Afa Rechte (Verträge)
+  |       |   |   |-----0068040002 Afa Rechte (Verträge Zeit)
+  |       |   |   ------0068040101 Afa Firmen- & Geschaeftswert
+  |       |   |
+  |       |   |--   SCDE0068100001 - 0068103999 X|X
+  |       |   |   |
+  |       |   |   |-----0068100001 Afa Ingangsetzungskosten
+  |       |   |   |-----0068100201 Afa Software
+  |       |   |   |-----0068100301 Afa Grund & Boden
+  |       |   |   |-----0068100501 Afa Gebaeude
+  |       |   |   |-----0068100502 Afa Aussenanlage
+  |       |   |   |-----0068100601 Afa Beroausstattung
+  |       |   |   |-----0068100701 Afa PKW
+  |       |   |   |-----0068100702 Afa Transportmittel Sonstige
+  |       |   |   |-----0068100801 Afa Maschinen
+  |       |   |   |-----0068100802 Afa BGA (Küchenequipment)
+  |       |   |   |-----0068100803 Afa Automaten
+  |       |   |   |-----0068100804 Afa Lageraustattung
+  |       |   |   |-----0068100805 Afa Erstausstattung Betriebsrestaurant
+  |       |   |   |-----0068100901 Afa PC & Drucker
+  |       |   |   |-----0068100902 AfA Server
+  |       |   |   |-----0068100998 AfA Sonstige immat.
+  |       |   |   |-----0068100999 AfA Büromöbel
+  |       |   |   |-----0068101001 Afa Gebäudeinstallationen
+  |       |   |   ------0068101002 Afa Netzwerkverkabelung
+  |       |   |
+  |       |   |--   SCDE0068104001 - 0068109901 X|X
+  |       |   |   |
+  |       |   |   |-----0068109001 Afa gebrauchte Immaterielle Wirtschaftsgüter
+  |       |   |   |-----0068109081 Afa Gebrauchte BGA & KEQ
+  |       |   |   |-----0068109601 Afa Gebr. Büroausstattung
+  |       |   |   |-----0068109701 Afa Gebrauchte PKW
+  |       |   |   |-----0068109801 Afa Gebr. Maschinen
+  |       |   |   ------0068109901 Afa Gebrauchte Hardware
+  |       |   |
+  |       |   |-----SCDE0068120000 - 0068120000 X|X Afa Anschko. Verträge (man)
+  |       |   |-----SCDE0068160000 - 0068160000 X|X Zugang Kunden Vertrag Rückstellung
+  |       |   |-----SCDE0068620000 - 0068620000 X|X Afa Beteiligungen
+  |       |   |--   SCDE0068700000 - 0068700601 X|X
+  |       |   |   |
+  |       |   |   |-----0068700000 Afa immat.Vermögen außerplanm.
+  |       |   |   |-----0068700100 Afa mat apm (man)
+  |       |   |   |-----0068700500 Afa Finanzanlagen ausserplanmaeßig
+  |       |   |   ------0068700601 Afa Gebaeude/Aussenanlage ausserplanm.
+  |       |   |
+  |       |   |--   SCDE0068980000 - 0068989999 X|X
+  |       |   |   |
+  |       |   |   |-----0068980000 Afa Locale Korrektur gg. Grupp
+  |       |   |   |-----0068982011 Afa Korrektur GP/LC Aufw. Ingangsetzung
+  |       |   |   |-----0068982041 Afa Korrektur GP/LC Firmenwert
+  |       |   |   |-----0068982071 Afa Korrektur GP/LC Imm. Rechte (Verträge)
+  |       |   |   |-----0068982081 Afa Korrektur GP/LC Software
+  |       |   |   |-----0068982086 Afa Korrektur GP/LC Sonstige immat. WG
+  |       |   |   |-----0068982089 Afa Korrektur GP/LC Geb. Immater. WG
+  |       |   |   |-----0068982110 Afa Korrektur GP/LC Grund & Boden
+  |       |   |   |-----0068982130 Afa Korrektur GP/LC Gebäude
+  |       |   |   |-----0068982150 Afa Korrektur GP/LC Maschinen
+  |       |   |   |-----0068982151 Afa Korrektur GP/LC BGA ( Küchenequipment)
+  |       |   |   |-----0068982152 Afa Korrektur GP/LC Automaten
+  |       |   |   |-----0068982153 Afa Korrektur GP/LC Lageraustattung
+  |       |   |   |-----0068982154 Afa Korrektur GP/LC Erstausstattung BR
+  |       |   |   |-----0068982159 Afa Korrektur GP/LC Gebr. Maschinen
+  |       |   |   |-----0068982180 Afa Korrektur GP/LC Büromöbel
+  |       |   |   |-----0068982181 Afa Korrektur GP/LC Gebäudeinstallationen
+  |       |   |   |-----0068982182 Afa Korrektur GP/LC PKW
+  |       |   |   |-----0068982183 Afa Korrektur GP/LC Büroausstattung (Fax/Kop/Tel)
+  |       |   |   |-----0068982184 Afa Korrektur GP/LC PC & Drucker
+  |       |   |   |-----0068982186 Afa Korrektur GP/LC Netzwerkverkabelung
+  |       |   |   |-----0068982187 Afa Korrektur GP/LC Sonstige Transportmittel
+  |       |   |   |-----0068982188 Afa Korrektur GP/LC Hardware (Server)
+  |       |   |   |-----0068982189 Afa Korrektur GP/LC Gebr. Sachanlagen
+  |       |   |   |-----0068982190 Afa Korrektur GP/LC Gebr. PKW
+  |       |   |   |-----0068982191 Afa Korrektur GP/LC Gebr. Büroausstat. Fax/Kop/Tel
+  |       |   |   |-----0068982192 Afa Korrektur GP/LC Gebr. PC & Drucker
+  |       |   |   ------0068984810 Afa Korrektur GP/LC Imm Verträge Zeit
+  |       |   |
+  |       |   ---   SCDE0078980000 - 0078989999 X|X
+  |       |       |
+  |       |       |-----0078980000 Verrechnung Ertrag Aufl.von Anlangen (gg. Gruppe)
+  |       |       |-----0078982011 Afa Korrektur GP/LC Aufw. Ingangsetzung
+  |       |       |-----0078982041 Afa Korrektur GP/LC Firmenwert
+  |       |       |-----0078982071 Afa Korrektur GP/LC Imm. Rechte (Verträge)
+  |       |       |-----0078982081 Afa Korrektur GP/LC Software
+  |       |       |-----0078982086 Afa Korrektur GP/LC Sonstige immat. WG
+  |       |       |-----0078982089 Afa Korrektur GP/LC Geb. Immater. WG
+  |       |       |-----0078982110 Afa Korrektur GP/LC Grund & Boden
+  |       |       |-----0078982130 Afa Korrektur GP/LC Gebäude
+  |       |       |-----0078982150 Afa Korrektur GP/LC Maschinen
+  |       |       |-----0078982151 Afa Korrektur GP/LC BGA ( Küchenequipment)
+  |       |       |-----0078982152 Afa Korrektur GP/LC Automaten
+  |       |       |-----0078982153 Afa Korrektur GP/LC Lageraustattung
+  |       |       |-----0078982154 Afa Korrektur GP/LC Erstausstattung BR
+  |       |       |-----0078982159 Afa Korrektur GP/LC Gebr. Maschinen
+  |       |       |-----0078982180 Afa Korrektur GP/LC Büromöbel
+  |       |       |-----0078982181 Afa Korrektur GP/LC Gebäudeinstallationen
+  |       |       |-----0078982182 Afa Korrektur GP/LC PKW
+  |       |       |-----0078982183 Afa Korrektur GP/LC Büroausstattung (Fax/Kop/Tel)
+  |       |       |-----0078982184 Afa Korrektur GP/LC PC & Drucker (Hardware before)
+  |       |       |-----0078982186 Afa Korrektur GP/LC Netzwerkverkabelung
+  |       |       |-----0078982187 Afa Korrektur GP/LC Sonstige Transportmittel
+  |       |       |-----0078982188 Afa Korrektur GP/LC Hardware (Server)
+  |       |       |-----0078982189 Afa Korrektur GP/LC Gebr. Sachanlagen
+  |       |       |-----0078982190 Afa Korrektur GP/LC Gebr. PKW
+  |       |       |-----0078982191 Afa Korrektur GP/LC Gebr. Büroausstat. Fax/Kop/Tel
+  |       |       |-----0078982192 Afa Korrektur GP/LC Gebr. PC & Drucker
+  |       |       ------0078984810 Afa Korrektur GP/LC Imm Verträge Zeit
+  |       |
+  |       |--   Aufwand Abgang Anlagevermögen
+  |       |   |
+  |       |   |--   SCDE0067510000 - 0067519999 X|X
+  |       |   |   |
+  |       |   |   |-----0067510000 Aufw.Verkauf immaterielles Vermögen
+  |       |   |   ------0067519999 Aufw.Abgang immaterielles Vermögen
+  |       |   |
+  |       |   |--   SCDE0067520000 - 0067529999 X|X
+  |       |   |   |
+  |       |   |   |-----0067520000 Aufw.Verkauf Sachanlagen
+  |       |   |   ------0067529999 Aufwand Abgang Sachanlagen
+  |       |   |
+  |       |   |--   SCDE0067550000 - 0067559999 X|X
+  |       |   |   |
+  |       |   |   |-----0067550000 Buchwert Verkauf Beteiligung Interco
+  |       |   |   ------0067559999 Aufwand Abgang Sachanlagen Interco
+  |       |   |
+  |       |   ---   SCDE0067560000 - 0067569999 X|X
+  |       |       |
+  |       |       |-----0067560000 Buchwert Verkauf So. Beteiligungen
+  |       |       ------0067569999 Aufwand Abgang Sonstiger Beteiligungen
+  |       |
+  |       |--   Instandhaltungs- & Leasing- & Mietkosten
+  |       |   |
+  |       |   |--   SCDE0060660100 - 0060660300 X|X
+  |       |   |   |
+  |       |   |   |-----0060660100 Kleingeräte Werkzeuge
+  |       |   |   |-----0060660200 Ersatzgeschirr
+  |       |   |   ------0060660300 GWG > 60 bis 410 EUR
+  |       |   |
+  |       |   |-----SCDE0061200100 - 0061200100 X|X Anlagenleasing
+  |       |   |-----SCDE0061350100 - 0061350100 X|X Miete BGA
+  |       |   ------SCDE0061550000 - 0061550000 X|X Instandhaltung BGA
+  |       |
+  |       |--   AO-Aufwand
+  |       |   |
+  |       |   ---   SCDE0067100001 - 0067100100 X|X
+  |       |       |
+  |       |       |-----0067100001 AO-Aufw. Verschmelzung Gesellschaften
+  |       |       ------0067100100 Ausserordentlicher Aufwand
+  |       |
+  |       |--   Verlustübernahme & Gewinnabführung
+  |       |   |
+  |       |   ---   SCDE0076200000 - 0076200140 X|X
+  |       |       |
+  |       |       |-----0076200000 Aufw. Verlustuebernahme
+  |       |       |-----0076200040 Aufwand Verlustübern. 0%
+  |       |       |-----0076200100 Aufw.Gewinnabfuehrung
+  |       |       ------0076200140 Auwand Gewinnabführ. 0%
+  |       |
+  |       |--   Erlöse
+  |       |   |
+  |       |   |--   SCDE0070010100 - 0070019040 X|X
+  |       |   |   |
+  |       |   |   |-----0070010100 Erlöse Küche
+  |       |   |   |-----0070010110 Erlöse Küche 7%
+  |       |   |   |-----0070010130 Erlöse Küche
+  |       |   |   |-----0070010131 Erlöse Wohlfart 7%
+  |       |   |   |-----0070010132 Erlöse 16% Rückrechnung
+  |       |   |   |-----0070010200 Erlöse Frühstück BM
+  |       |   |   |-----0070010210 Erlöse Frühstück BM 7%
+  |       |   |   |-----0070010230 Erlöse Frühstück Bärenmenü
+  |       |   |   |-----0070010300 Erlöse HW Food
+  |       |   |   |-----0070010310 Erlöse HW Food 7%
+  |       |   |   |-----0070010330 Erlöse Handelsware Food
+  |       |   |   |-----0070010400 Erlöse HW Non-Food
+  |       |   |   |-----0070010430 Erlöse Handelsware Non-Food
+  |       |   |   |-----0070010440 Erlöse HW Non-Food 0%
+  |       |   |   |-----0070010500 Erlöse Presseerzeugn.
+  |       |   |   |-----0070010510 Erlöse Presseerzeugn. 7%
+  |       |   |   |-----0070010530 Erlöse Presseerzeugnisse
+  |       |   |   |-----0070010600 Erlöse Zigaretten
+  |       |   |   |-----0070010630 Erlöse Zigaretten
+  |       |   |   |-----0070010700 Erlöse Getränke KALT
+  |       |   |   |-----0070010710 Erlöse Getränke KALT 7%
+  |       |   |   |-----0070010730 Erlöse Getränke Kalt
+  |       |   |   |-----0070010800 Erlöse Getränke Warm
+  |       |   |   |-----0070010810 Erlöse Getränke Warm 7%
+  |       |   |   |-----0070010830 Erlöse Getränke Warm
+  |       |   |   |-----0070010900 Erlöse WE Kunde
+  |       |   |   |-----0070010910 Erlöse WE Kunde 7%
+  |       |   |   |-----0070010930 Erlöse Wareneinsatz Kunde
+  |       |   |   |-----0070011000 Erlöse GK Kunde
+  |       |   |   |-----0070011010 Erlöse GK Kunde 7%
+  |       |   |   |-----0070011030 Erlöse Gemeinkosten Kunde
+  |       |   |   |-----0070011100 Erlöse Prov. Kunde
+  |       |   |   |-----0070011130 Erlöse Provision Kunde
+  |       |   |   |-----0070011131 Gesp. Erl.Prov. KD16% (KST ohne Auftrag)
+  |       |   |   |-----0070011132 Erl. Bonusabkommen international
+  |       |   |   |-----0070011133 Erl. Bonusabkommen national
+  |       |   |   |-----0070011200 Erlöse Mieten Kunde
+  |       |   |   |-----0070011230 Erlöse Mieten Kunde
+  |       |   |   |-----0070011300 Erlöse Budget
+  |       |   |   |-----0070011310 Erlöse Budget 7%
+  |       |   |   |-----0070011330 Erlöse Budget
+  |       |   |   |-----0070011400 Erlöse S&U Wahlessen
+  |       |   |   |-----0070011410 Erlöse S&U Wahlessen 7%
+  |       |   |   |-----0070011430 Erlöse S&U Wahlessen
+  |       |   |   |-----0070011431 Erlöse Bonus S&U Kunde
+  |       |   |   |-----0070011500 Erlöse Rückführungsgebühr Bank
+  |       |   |   |-----0070011530 Erlöse S&U Mahngebühr
+  |       |   |   |-----0070011600 Erlöse Zwischenverpfl.
+  |       |   |   |-----0070011610 Erlöse Zwischenverpfl. 7%
+  |       |   |   |-----0070011630 Erlöse Zwischenverpflegung
+  |       |   |   |-----0070011700 Erlöse Kindergarten
+  |       |   |   |-----0070011710 Erlöse Kindergarten 7%
+  |       |   |   |-----0070011730 Erlöse Kindergarten
+  |       |   |   |-----0070011800 Erlöse Persko. Kunde
+  |       |   |   |-----0070011830 Erlöse Personalkosten Kunde
+  |       |   |   |-----0070011900 Erlöse Weiterverrechn. WE
+  |       |   |   |-----0070011910 Erlöse Weiterver. WE 7%
+  |       |   |   |-----0070011930 Erlöse Weiterverrechnung WE
+  |       |   |   |-----0070012000 Erlöse Durchl. Po.
+  |       |   |   |-----0070012010 Erlöse Durchl. Po. 7%
+  |       |   |   |-----0070012030 Erlöse Durchlaufende Posten
+  |       |   |   |-----0070012100 Erlöse Weiterber. Gemeinko.
+  |       |   |   |-----0070012110 Erlöse WB.GK 7% (NUR KD)
+  |       |   |   |-----0070012130 Erlöse Weiterber. Gemeinkosten
+  |       |   |   |-----0070012140 Erlöse Weiterb. Gemeinko. 0%
+  |       |   |   |-----0070012200 Erlöse Tiefkühl
+  |       |   |   |-----0070012210 Erlöse Tiefkühl BM 7%
+  |       |   |   |-----0070012230 Erlöse Tiefkühl Bärenmenü
+  |       |   |   |-----0070012300 Erlöse Mieten
+  |       |   |   |-----0070012330 Erlöse Mieten
+  |       |   |   |-----0070012400 Erlöse Leasing
+  |       |   |   |-----0070012430 Erlöse Leasing
+  |       |   |   |-----0070012900 GWB Erlös-Korrektur
+  |       |   |   |-----0070012910 Gesp. GWB Erlös-Korrektur 7%
+  |       |   |   |-----0070012930 Gesp. GWB Erlös-Korrektur 16%
+  |       |   |   |-----0070012940 GWB Erlös-Korrektur 0%
+  |       |   |   |-----0070013030 Erlöse Flaschengetränke G & S
+  |       |   |   |-----0070014000 Erlöse Konzern SOD/SCS
+  |       |   |   |-----0070019000 SOD Interco Erlöse
+  |       |   |   |-----0070019001 SOD Interco Er WE
+  |       |   |   |-----0070019002 SOD Interco Er PK
+  |       |   |   ------0070019040 Erlöse KONZERNINTERN 0%
+  |       |   |
+  |       |   |--   SCDE0070040100 - 0070040130 X|X
+  |       |   |   |
+  |       |   |   |-----0070040100 Erlöse Sonderveranstaltung
+  |       |   |   |-----0070040110 Erlöse Sonderveranstalt. 7%
+  |       |   |   ------0070040130 Erlöse Sonderveranstaltung
+  |       |   |
+  |       |   |--   SCDE0070050100 - 0070050130 X|X
+  |       |   |   |
+  |       |   |   |-----0070050100 Erlöse Automaten
+  |       |   |   |-----0070050110 Erlöse Automaten 7%
+  |       |   |   ------0070050130 Erlöse Automaten
+  |       |   |
+  |       |   |--   SCDE0070090100 - 0070090230 X|X
+  |       |   |   |
+  |       |   |   |-----0070090100 Erlöse Servicekosten
+  |       |   |   |-----0070090110 Erlöse Servicek. 7%
+  |       |   |   |-----0070090130 Erlöse Servicekosten
+  |       |   |   |-----0070090131 Erlöse Servicekosten Altys Ausser Vertrag
+  |       |   |   |-----0070090140 Erlöse Konferenzservice
+  |       |   |   |-----0070090150 Erlöse Gästeessen
+  |       |   |   |-----0070090160 Erlöse Zuschuss [Entgelt Dritter]
+  |       |   |   |-----0070090200 Erlöse Reinigung
+  |       |   |   ------0070090230 Erlöse Reinigung
+  |       |   |
+  |       |   |--   SCDE0070890200 - 0070890230 X|X
+  |       |   |   |
+  |       |   |   |-----0070890200 Erlöse Sonstige
+  |       |   |   |-----0070890210 Erlöse Sonstige 7%
+  |       |   |   ------0070890230 Erlöse Sonstige
+  |       |   |
+  |       |   |--   SCDE0070890700 - 0070890730 X|X
+  |       |   |   |
+  |       |   |   |-----0070890700 Gesp. Erlöse Essengld. MA
+  |       |   |   ------0070890730 Gesp. Erlöse Essengld. MA 16%
+  |       |   |
+  |       |   |--   SCDE0070900000 - 0070900160 X|X
+  |       |   |   |
+  |       |   |   |-----0070900000 Gewährte Skonti
+  |       |   |   |-----0070900010 Gewährte Skonti 7%
+  |       |   |   |-----0070900030 Gewährte Skonti
+  |       |   |   |-----0070900100 Erlöse Rundg.Schnittstelle
+  |       |   |   |-----0070900130 Erlöse Rundung Schnittstelle
+  |       |   |   ------0070900140 Erlöse Rundg.Schnittst. 0%
+  |       |   |
+  |       |   ------SCDE0072000000 - 0072000000 X|X Capitalized production
+  |       |
+  |       |--   Erlöse Sonstige
+  |       |   |
+  |       |   |--   SCDE0069500600 - 0069500700 X|X
+  |       |   |   |
+  |       |   |   |-----0069500600 Steuererstattung Vorjahre
+  |       |   |   ------0069500700 Sonstige Steuererstattung Vorjahre
+  |       |   |
+  |       |   |--   SCDE0074000000 - 0074000040 X|X
+  |       |   |   |
+  |       |   |   |-----0074000000 Invest. Zusch.
+  |       |   |   |-----0074000030 Investitionszuschuss m. Ust.
+  |       |   |   ------0074000040 Invest. Zusch. 0%
+  |       |   |
+  |       |   |--   SCDE0076600000 - 0076600040 X|X
+  |       |   |   |
+  |       |   |   |-----0076600000 Kursgewinne
+  |       |   |   |-----0076600001 SOD Interco Kursertrag
+  |       |   |   ------0076600040 Kursgewinne 0%
+  |       |   |
+  |       |   |--   SCDE0078100000 - 0078100004 X|X
+  |       |   |   |
+  |       |   |   |-----0078100000 E Aufl. operativer  Rückst. AV
+  |       |   |   |-----0078100001 Ertrag Aufl.Versichererungsbeiträge
+  |       |   |   |-----0078100003 Ertrag Aufl.So.Steuer-Rückstellung
+  |       |   |   ------0078100004 Ertrag Aufl.Sonstige Rückstellung
+  |       |   |
+  |       |   |-----SCDE0078130000 - 0078130000 X|X Ertrag Aufl.Pensionsrückstellung
+  |       |   |-----SCDE0078160000 - 0078160000 X|X Aufl. Kunden Vertrag RS
+  |       |   ---   SCDE0078700000 - 0078700601 X|X
+  |       |       |
+  |       |       |-----0078700000 Ertrag Aufl. Sonderafa Umlaufvermögen Immat
+  |       |       |-----0078700100 Ertrag Aufl. Sonderafa Umlaufvermögen mat
+  |       |       ------0078700601 Ertrag Aufl. Sonderafa Umlaufvermögen Gebäude
+  |       |
+  |       |--   Aufwand / Erlös Konzernintern
+  |       |   |
+  |       |   |-----SCDE0060399000 - 0060399000 X|X SoKo Inter*gesperrt*
+  |       |   ------SCDE0062359000 - 0062359000 X|X SOD Interco Geimeinkosten
+  |       |
+  |       |--   Erlöse aus Verkauf Anlagevermögen
+  |       |   |
+  |       |   |--   SCDE0067910000 - 0067980003 X|X
+  |       |   |   |
+  |       |   |   |-----0067910000 Verlust aus Verkauf materielles AV
+  |       |   |   |-----0067920000 Verlust Verkauf immaterielles AV
+  |       |   |   |-----0067950000 Verlust AV-Finanzanlagen interco
+  |       |   |   |-----0067960000 Verlust AV-Finanzanlagen
+  |       |   |   |-----0067980001 Afa Korrektur verkauften immaterielle Anlagen
+  |       |   |   |-----0067980002 Afa Korrektur verkauften materielle Anlagen
+  |       |   |   ------0067980003 Afa Korrektur Verschrottung Anlagevermögen
+  |       |   |
+  |       |   ---   SCDE0077510000 - 0077980002 X|X
+  |       |       |
+  |       |       |-----0077510000 Verkaufspreis immat. Wirtschaftsg.
+  |       |       |-----0077520000 Verkaufspreis Sachanlagen
+  |       |       |-----0077560000 Verkaufspreis Finanzanlagen
+  |       |       |-----0077910000 Mehrerlös AV auto. Sachanlagen
+  |       |       |-----0077920000 Mehrerlös AV  immat.WG
+  |       |       |-----0077950000 Mehrerlös AV Beteiligungen interco
+  |       |       |-----0077960000 Mehrerlös AV Finanzanlagen
+  |       |       |-----0077980001 Verrechn.Mehrerlös AV immat.
+  |       |       ------0077980002 Verrechn. Mehrerlös AV materiell
+  |       |
+  |       |--   Ertrag aus Gewinnübernahme & Beteiligung
+  |       |   |
+  |       |   ---   SCDE0076200200 - 0076200440 X|X
+  |       |       |
+  |       |       |-----0076200200 Ertrag Gewinnuebernahme
+  |       |       |-----0076200240 Ertrag Gewinnübernahme 0%
+  |       |       |-----0076200300 Ertrag Verlustabfuehrung
+  |       |       |-----0076200340 Ertrag Verlustabführung 0%
+  |       |       |-----0076200400 Ertrag Beteiligungen
+  |       |       ------0076200440 Ertrag aus Beteiligung So 0%
+  |       |
+  |       |--   Zins- & zinsähnliche Erträge
+  |       |   |
+  |       |   ---   SCDE0076800000 - 0076800400 X|X
+  |       |       |
+  |       |       |-----0076800000 Zinsertrag kurzfristig
+  |       |       |-----0076800030 Zinsertrag kurzfristig
+  |       |       |-----0076800040 Zinsertrag kurzfristig 0%
+  |       |       |-----0076800100 Zinsertrag von Dritten
+  |       |       |-----0076800130 Zinsertrag von Dritten m. Ust.
+  |       |       |-----0076800140 Zinsertrag von Dritten 0%
+  |       |       |-----0076800200 Zinsertrag langfristig
+  |       |       |-----0076800230 Zinsertrag langfristig m. Ust.
+  |       |       |-----0076800240 Zinsertrag langfristig 0%
+  |       |       |-----0076800300 Zinseähnliche Eträge Sonstige
+  |       |       |-----0076800330 Zinseähnliche Etr.So. m. Ust.
+  |       |       |-----0076800340 Zinseähnliche Etr. So 0%
+  |       |       ------0076800400 Zinsertag aus Steuern
+  |       |
+  |       |--   Zinserträge Konzernintern
+  |       |   |
+  |       |   ---   SCDE0076809000 - 0076809040 X|X
+  |       |       |
+  |       |       |-----0076809000 SOD Interco Zinsertrag
+  |       |       ------0076809040 Zinsertrag interco 0%
+  |       |
+  |       |--   AO-Ertrag & Periodenfremde Erträge
+  |       |   |
+  |       |   |--   SCDE0070890000 - 0070890030 X|X
+  |       |   |   |
+  |       |   |   |-----0070890000 Periodenfremd. Ertrag
+  |       |   |   |-----0070890010 Periodenfremd. Ertrag 7%
+  |       |   |   ------0070890030 Periodenfremde Erträge
+  |       |   |
+  |       |   |--   SCDE0070890300 - 0070890330 X|X
+  |       |   |   |
+  |       |   |   |-----0070890300 Ertrag aus ausgebuchte Forderungen
+  |       |   |   |-----0070890310 Gesp.Ertrag ausgeb. Ford 7%
+  |       |   |   ------0070890330 Gesp.Ertrag ausgeb. Ford
+  |       |   |
+  |       |   |--   SCDE0077100000 - 0077100130 X|X
+  |       |   |   |
+  |       |   |   |-----0077100000 AO-Ertrag
+  |       |   |   |-----0077100001 AO-Ertrag Verschmelzung Gesellschaften
+  |       |   |   |-----0077100010 AO-Ertrag  7%
+  |       |   |   |-----0077100030 AO-Ertrag
+  |       |   |   |-----0077100040 AO-Ertrag  0%
+  |       |   |   |-----0077100100 Erlös Überzahlung
+  |       |   |   |-----0077100110 Erlös Überzhlung 7%
+  |       |   |   ------0077100130 Erlös Überzahlung
+  |       |   |
+  |       |   ------SCDE0078170000 - 0078170000 X|X Ertrag Herabsetzung EWB/PWB
+  |       |
+  |       ---   Ergebnis-vortrag
+  |           |
+  |           ------SCDE0012000001 - 0012000001 X|X Ergebnis-Vortrag aus dem Vorjahr
+  |
+  |-----Passiva              Bilanzergebnis Gewinn
+  |-----Kein Text vorhanden  Bilanzergebnis Verlust
+  |-----Kein Text vorhanden  GuV Ergebnis
+  ------Kein Text vorhanden  Nicht zugeordnet

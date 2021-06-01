@@ -1,0 +1,67 @@
+@DB,$(#DEMO)\MEDIA
+@CHARSET,ANSI
+@FLDDSC,REPL,101,.Mappe,IDX,CAT,TXT
+@FLDDSC,REPL,102,.Version,IDX,CAT,TXT
+@FLDDSC,REPL,103,.Archivdatum,IDX,CAT,TXT
+@FLDDSC,REPL,104,.Änderungsdatum,IDX,CAT,TXT
+@FLDDSC,REPL,106,.Textfelder,IDX,CAT,TXT
+@FLDDSC,REPL,107,.Bilder,IDX,CAT,TXT
+@FLDDSC,REPL,110,.Titel,IDX,CAT,TXT
+@FLDDSC,REPL,801,.FileType,IDX,CAT,TXT
+@FLDDSC,REPL,802,.FormName,IDX,CAT,TXT
+@FLDDSC,REPL,803,.WorkBoxName,IDX,CAT,TXT
+@FLDDSC,REPL,804,.BatchName,IDX,CAT,TXT
+@FLDDSC,REPL,1001,Medium,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1002,Kategorie,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1003,Inhalt,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1004,Datum,IDX,CAT,DEF,QRY,TXT
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^privat/Urlaub ^,^Battersea Powerstation London ^,^28.08.2000^,^00000001^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.001\0.JPG^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^privat/Urlaub ^,^Canary Warf Tower London  ^,^29.08.2000^,^00000002^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.002\0.JPG^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^privat/Urlaub ^,^Venedig^,^02.07.1999^,^00000003^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.003\6.JPG^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^beruflich/Marketing ^,^EASY Software AG Niederlassung West Andernach^,^04.04.1999^,^00000004^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.004\0.jpg^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^beruflich/Messe ^,^Säulen auf der DMS-Messe 2000^,^04.09.2000^,^00000005^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.005\4.jpg^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^beruflich/Kunden ^,^Thyssen Testimonial Herr Roberto Sanna, Thyssen Stahlunion^,^06.03.1999^,^00000006^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.006\0.jpg^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^beruflich/Messe ^,^Standparty SYSTEMS-Messe München  ^,^Oktober 2000^,^00000007^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.007\0.JPG^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001,BI:2002,BI:2003
+^^,^^,^^,^^,^Farbphoto ^,^beruflich/Standort ^,^Panorama-Aufnahmen des fertiggestellten Zwillingsgebäudes ^,^22.05.2001^,^00000008^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.008\0.JPG^,^M:\EASYWARE\Export\DEMO\MEDIA.008\1.JPG^,^M:\EASYWARE\Export\DEMO\MEDIA.008\2.JPG^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^beruflich/Messe ^,^Web-Archiving Messestand^,^04.09.2000^,^00000009^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.009\0.JPG^
+@FOLDER,FT:^Röntgenbild ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Röntgenbild ^,^beruflich/Krankenakte ^,^Hand männlich links^,^16.11.1998^,^00000013^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^R”ntgenbild ^,^M:\EASYWARE\Export\DEMO\MEDIA.010\0.JPG^
+@FOLDER,FT:^Song ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Song ^,^beruflich/Marketing ^,^EASY SONG^,^Dezember 1999^,^00000016^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Song ^,^M:\EASYWARE\Export\DEMO\MEDIA.011\0.WAV^
+@FOLDER,FT:^Film ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Film ^,^beruflich/Marketing ^,^myEASY.de Produkt-Film^,^August 2000^,^00000017^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Film ^,^M:\EASYWARE\Export\DEMO\MEDIA.012\0.mpg^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^beruflich/Kunden ^,^Licher Privatbrauerei Helmut Jachimsky, Licher IT ^,^04.03.1999^,^00000018^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.013\0.jpg^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^privat/Hobby ^,^Hand mit Gitarre^,^04.06.1992^,^00000019^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.014\0.JPG^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^privat/Urlaub ^,^Kinder am Strand^,^04.09.1996^,^00000020^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.015\0.JPG^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^privat/Urlaub ^,^Big Ben und London Eye London^,^24.08.2000^,^00000021^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.016\0.JPG^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^privat/Urlaub ^,^Segeltörn vor Holland^,^11.09.1999^,^00000022^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.017\0.jpg^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001,BI:2002,BI:2003
+^^,^^,^^,^^,^Farbphoto ^,^privat/Urlaub ^,^Urlaubsziele Landschaftsaufnahmen ^,^Sommer 2000^,^00000023^,^001^,^03.07.2001 ^,^03.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.018\IMG_0523.JPG^,^M:\EASYWARE\Export\DEMO\MEDIA.018\IMG_0535.JPG^,^M:\EASYWARE\Export\DEMO\MEDIA.018\IMG_0423.JPG^
+@FOLDER,FT:^Zeichnung ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Zeichnung ^,^beruflich/Konstruktion ^,^Flugzeug Fahrwerk^,^13.10.1996^,^00000024^,^001^,^04.07.2001 ^,^04.07.2001 ^,^4^,^0^,^Zeichnung ^,^M:\EASYWARE\Export\DEMO\MEDIA.019\0.DWG^
+@FOLDER,FT:^Zeichnung ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Zeichnung ^,^beruflich/Konstruktion ^,^Beispiel Raumgestaltung Büroeinrichtung^,^04.11.1996^,^00000025^,^001^,^04.07.2001 ^,^04.07.2001 ^,^4^,^0^,^Zeichnung ^,^M:\EASYWARE\Export\DEMO\MEDIA.020\0.DWG^
+@FOLDER,FT:^Zeichnung ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Zeichnung ^,^beruflich/Konstruktion ^,^Aluminium Kiste Aufbau ^,^^,^00000026^,^001^,^04.07.2001 ^,^04.07.2001 ^,^4^,^1^,^Zeichnung ^,^M:\EASYWARE\Export\DEMO\MEDIA.021\681.tif^
+@FOLDER,FT:^Zeichnung ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Zeichnung ^,^beruflich/Konstruktion ^,^Wäremtauscher^,^20.02.1991^,^00000027^,^001^,^04.07.2001 ^,^04.07.2001 ^,^4^,^1^,^Zeichnung ^,^M:\EASYWARE\Export\DEMO\MEDIA.022\682.tif^
+@FOLDER,FT:^Zeichnung ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Zeichnung ^,^beruflich/Konstruktion ^,^Wärmetauscher^,^20.02.1991^,^00000028^,^001^,^04.07.2001 ^,^04.07.2001 ^,^4^,^1^,^Zeichnung ^,^M:\EASYWARE\Export\DEMO\MEDIA.023\683.tif^
+@FOLDER,FT:^Farbphoto ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto ^,^privat/Hobby ^,^Hobbymusiker bei Studioaufnahmen ^,^04.04.1986^,^00000029^,^001^,^04.07.2001 ^,^04.07.2001 ^,^4^,^0^,^Farbphoto ^,^M:\EASYWARE\Export\DEMO\MEDIA.024\0.JPG^
+@FOLDER,FT:^Farbphoto^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Farbphoto^,^beruflich/Messe ^,^Modulübersicht EASYWARE 3.20^,^02.08.2001^,^00000030^,^001^,^30.08.2001 ^,^30.08.2001 ^,^4^,^0^,^Farbphoto^,^M:\EASYWARE\Export\DEMO\MEDIA.025\Modul 3.20.jpg^

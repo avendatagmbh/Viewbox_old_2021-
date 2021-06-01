@@ -1,0 +1,151 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    x:Class="eBalanceKit.ResourceDictionaries.HyperCube"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="BalanceAccountTextBrush" Color="Black" />
+    <SolidColorBrush x:Key="BalanceAccountSelectedTextBrush" Color="#202020" />
+    <SolidColorBrush x:Key="HeaderGbBrush" Color="#202020" />
+    
+    <LinearGradientBrush x:Key="selectionOverlayBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#20303030" Offset="0.0" />
+        <GradientStop Color="#40303030" Offset="0.8" />
+        <GradientStop Color="#50303030" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <Style x:Key="selectionOverlayBorder" TargetType="{x:Type Border}">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Style.Triggers>
+            <DataTrigger Binding ="{Binding Path=IsSelected}" Value="true">
+                <Setter Property="Background" Value="{StaticResource selectionOverlayBackgroundBrush}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BalanceTreeNodeBackground" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="Silver" />
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <LinearGradientBrush x:Key="headerBgBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#06597b" Offset="0" />
+        <GradientStop Color="#06597b" Offset="1" />
+    </LinearGradientBrush>
+    
+    <Style x:Key="headerBgBorder" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource headerBgBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="Height" Value="36" />
+        <Setter Property="Padding" Value="3,1" />
+    </Style>
+    
+    <!--<HierarchicalDataTemplate DataType="{x:Type xbrlHC:HyperCubeRow}" ItemsSource="{Binding Path=Children}" >
+        <Grid>
+            <TextBlock TextWrapping="Wrap" Text="{Binding Path=Header}" Foreground="White" />
+        </Grid>
+    </HierarchicalDataTemplate>-->
+
+    <!--<HierarchicalDataTemplate DataType="{x:Type xbrlHC:HyperCubeColumn}" ItemsSource="{Binding Path=Children}">
+        <Grid Height="36">
+            <TextBlock TextWrapping="Wrap" Text="{Binding Path=Header}" Foreground="White" />
+        </Grid>
+    </HierarchicalDataTemplate>-->
+
+    <Style x:Key="ShowDetailsButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ImageButtonStyle}">
+        <Setter Property="Visibility" Value="Collapsed" />
+        <Setter Property="Height" Value="32" />
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding HasChildren}" Value="True" />
+                    <Condition Binding="{Binding IsExpanded}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Visibility" Value="Visible" />
+            </MultiDataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="HideDetailsButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ImageButtonStyle}">
+        <Setter Property="Visibility" Value="Collapsed" />
+        <Setter Property="Height" Value="32" />
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding HasChildren}" Value="True" />
+                    <Condition Binding="{Binding IsExpanded}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Visibility" Value="Visible" />
+            </MultiDataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Background" Value="Green" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <!-- removing fixed width sets the complete background of the column header row to the border background color! -->
+                    <Border Background="#0b5e80" CornerRadius="5" Width="198" Margin="1,0" Padding="3,1" HorizontalAlignment="Left">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock  Text="{Binding Header}" Foreground="White" TextWrapping="Wrap" Grid.Column="1"/>
+
+                            <!--<Button x:Name="btnHideDetails" Margin="0, 0, 5, 0" Style="{StaticResource HideDetailsButtonStyle}" Click="btnHideDetails_Click">
+                                <Image Source="/eBalanceKitResources;component/Resources/up.png" />
+                            </Button>
+                            
+                            <Button x:Name="btnShowDetails" Margin="5, 0, 0, 0" Grid.Column="2" Style="{StaticResource ShowDetailsButtonStyle}" Click="btnShowDetails_Click">
+                                <Image Source="/eBalanceKitResources;component/Resources/down.png" />
+                            </Button>-->
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RowHeaderStyle" TargetType="{x:Type DataGridRowHeader}">
+        <Setter Property="Background" Value="Red" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
+                        <Grid Width="300">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{Binding LeftMargin}"  />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton x:Name="Expander" Grid.Column="1"
+                                      IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      ClickMode="Press">
+                                <ToggleButton.Style>
+                                    <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ExpandCollapseToggleStyle}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=HasChildren}" Value="False">
+                                                <Setter Property="Visibility" Value="Hidden" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ToggleButton.Style>
+                            </ToggleButton>
+
+                            <Border CornerRadius="5" Background="#0b5e80" Margin="0,1" Padding="3,1" Grid.Column="2">
+                                <TextBlock  Text="{Binding Header}" Foreground="White" TextWrapping="Wrap"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

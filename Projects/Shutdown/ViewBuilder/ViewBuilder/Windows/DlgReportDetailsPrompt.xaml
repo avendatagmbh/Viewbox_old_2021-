@@ -1,0 +1,13 @@
+﻿<Window x:Class="ViewBuilder.Windows.DlgReportDetailsPrompt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Project Details" Height="175" Width="265">
+    <Grid>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="100,26,0,0" Name="txtProjectNumber" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="100,57,0,0" Name="txtProjectManager" VerticalAlignment="Top" Width="120" />
+        <Label Content="Projektnummer" Height="28" HorizontalAlignment="Left" Margin="0,24,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Erstellt durch" Height="28" HorizontalAlignment="Left" Margin="0,55,0,0" Name="label2" VerticalAlignment="Top" />
+        <Button Content="OK" Height="23" HorizontalAlignment="Left" Margin="145,101,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="64,101,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+    </Grid>
+</Window>

@@ -1,0 +1,12 @@
+E:\Aakash\Refactor_Viewbox_old\Projects\Shutdown\Libraries\WebServiceInterfaces\bin\Debug\net40\WebServiceInterfaces.dll
+E:\Aakash\Refactor_Viewbox_old\Projects\Shutdown\Libraries\WebServiceInterfaces\bin\Debug\net40\WebServiceInterfaces.pdb
+E:\Aakash\Refactor_Viewbox_old\Projects\Shutdown\Libraries\WebServiceInterfaces\obj\Debug\net40\WebServiceInterfaces.csproj.CoreCompileInputs.cache
+E:\Aakash\Refactor_Viewbox_old\Projects\Shutdown\Libraries\WebServiceInterfaces\obj\Debug\net40\WebServiceInterfaces.dll
+E:\Aakash\Refactor_Viewbox_old\Projects\Shutdown\Libraries\WebServiceInterfaces\obj\Debug\net40\WebServiceInterfaces.pdb
+E:\Aakash\Refactor_Viewbox_old\Projects\Shutdown\Libraries\WebServiceInterfaces\obj\Debug\net40\WebServiceInterfaces.csprojAssemblyReference.cache
+E:\Aakash\Refactor_v2\Projects\Shutdown\Libraries\WebServiceInterfaces\bin\Debug\net40\WebServiceInterfaces.dll
+E:\Aakash\Refactor_v2\Projects\Shutdown\Libraries\WebServiceInterfaces\bin\Debug\net40\WebServiceInterfaces.pdb
+E:\Aakash\Refactor_v2\Projects\Shutdown\Libraries\WebServiceInterfaces\obj\Debug\net40\WebServiceInterfaces.csprojAssemblyReference.cache
+E:\Aakash\Refactor_v2\Projects\Shutdown\Libraries\WebServiceInterfaces\obj\Debug\net40\WebServiceInterfaces.csproj.CoreCompileInputs.cache
+E:\Aakash\Refactor_v2\Projects\Shutdown\Libraries\WebServiceInterfaces\obj\Debug\net40\WebServiceInterfaces.dll
+E:\Aakash\Refactor_v2\Projects\Shutdown\Libraries\WebServiceInterfaces\obj\Debug\net40\WebServiceInterfaces.pdb

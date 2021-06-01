@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
+  <Class Name="eBalanceKitBusiness.HyperCubes.Structures.HyperCube">
+    <Position X="0.5" Y="0.5" Width="3.25" />
+    <Members>
+      <Method Name="GetItem" Hidden="true" />
+      <Method Name="InitHyperCubeProperty" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEgAAAAEAAAACGAABAAAAAIAAAAABAAiAAAAAAAAQAA=</HashCode>
+      <FileName>HyperCubes\Structures\HyperCube.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Manager" />
+      <Property Name="Items" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.HyperCubes.Manager.HyperCubeManager">
+    <Position X="5.25" Y="0.5" Width="3.25" />
+    <Members>
+      <Method Name="HyperCubeManager" Hidden="true" />
+      <Field Name="HyperCubeManagers" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAIAAAAEAAAA=</HashCode>
+      <FileName>HyperCubes\Manager\HyperCubeManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DimensionManager" />
+      <Property Name="DimensionKeyManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="eBalanceKitBusiness.HyperCubes.Manager.HyperCubeDimensionManager">
+    <Position X="4.5" Y="4.25" Width="4.25" />
+    <Members>
+      <Field Name="_dimensionTreeRoot" Hidden="true" />
+      <Field Name="_elementToOrdinal" Hidden="true" />
+      <Method Name="CreateDimensionItems" Hidden="true" />
+      <Method Name="GetDimensionId" Hidden="true" />
+      <Method Name="InitDimensionTree" Hidden="true" />
+      <Method Name="SetDimensionId" Hidden="true" />
+      <Property Name="TaxonomyIdManager" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="eBalanceKitBusiness.HyperCubes.Manager.HyperCubeDimensionManager.DimensionTreeNode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>HyperCubes\Manager\HyperCubeDimensionManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAhAAACAAAAAAggAAAAgAAAAA=</HashCode>
+      <FileName>HyperCubes\Manager\HyperCubeDimensionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eBalanceKitBusiness.HyperCubes.Manager.HyperCubeDimensionKeyManager">
+    <Position X="5.25" Y="2.25" Width="3.5" />
+    <Members>
+      <Field Name="_dimensionKeyIdDict" Hidden="true" />
+      <Field Name="_primaryDimensionElements" Hidden="true" />
+      <Property Name="DimensionManager" Hidden="true" />
+      <Property Name="TaxonomyIdManager" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgQBAAAAAAAAAAAAAAAAIAAAAAAEAgAAAAAAAAAAA=</HashCode>
+      <FileName>HyperCubes\Manager\HyperCubeDimensionKeyManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="eBalanceKitBusiness.HyperCubes.Interfaces.IHyperCubeItemCollection">
+    <Position X="0.5" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HyperCubes\Interfaces\IHyperCubeItemCollection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

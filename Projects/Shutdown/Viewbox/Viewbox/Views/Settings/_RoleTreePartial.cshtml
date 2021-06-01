@@ -1,0 +1,80 @@
+﻿@using SystemDb
+@using Viewbox
+@using Viewbox.Properties
+@using Viewbox.Models
+@model RoleTreeModel
+@helper PrintNodes(IEnumerable<RoleTreeModel.Node> list, int level)
+{
+    <ul class="children level1">
+        @foreach (var item in list)
+        {
+            string levelClass = "level" + level.ToString();
+            <li class="@levelClass">
+                @if (item.Descr != null)
+                {
+                    if (level == 1)
+                    {
+                        <h3 class="role-tree"><a>@item.Descr</a></h3><hr />
+                    }
+                    else if (level == 2)
+                    {
+                        <h4 class="role-tree"><a>@item.Descr</a></h4>
+                    }
+                    else if (level == 3)
+                    {
+                        <h5 class="role-tree"><a>@item.Descr</a></h5>
+                    }
+                    else
+                    {
+                        <h6 class ="role-tree"><a>@item.Descr</a></h6>
+                    }
+                }
+                @if (item.Children != null)
+                {
+                    @PrintNodes(item.Children, level + 1);
+                }
+            </li>
+        }
+    </ul>
+}
+<div id="loading" style="z-index: 1000; text-align: center; margin-top: 250px; position: relative; display: block;">
+    <img src="../../Content/img/gif-load.gif" />
+</div>
+<div class="role-settings" style="z-index: -1000; display: none;">
+    <div id="role-tabs">
+        <ul>
+            <li><a href="#role-tabs-1">@Resources.Optimization</a></li>
+            <li><a href="#role-tabs-2">@Resources.Tables</a></li>
+        </ul>
+        <div id="role-tabs-1">
+            <div class="role-tree" style="z-index: -1000;">
+                @if (ViewboxSession.RightsMode)
+                {
+                    <ul class="role-tree opt-role">
+                        <li class="root">
+                            @if (Model != null && Model.OptimizationTree != null && Model.OptimizationTree.Children != null && Model.OptimizationTree.Children.Count > 0)
+                            {
+                                @PrintNodes(Model.OptimizationTree.Children, 1);
+                            }
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+        <div id="role-tabs-2">
+            <div class="role-tree" style="z-index: -1000;">
+                @if (ViewboxSession.RightsMode)
+                {
+                    <ul class="role-tree">
+                        <li class="root">
+                            @if (Model != null && Model.RowTree != null && Model.RowTree.Children != null && Model.RowTree.Children.Count > 0)
+                            {
+                                @PrintNodes(Model.RowTree.Children, 1);
+                            }
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</div>

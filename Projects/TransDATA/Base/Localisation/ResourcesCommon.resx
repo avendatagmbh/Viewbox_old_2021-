@@ -1,0 +1,936 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BtnDisconnectCaption" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="BtnInfoCaption" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="BtnLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="BtnNewParamCaption" xml:space="preserve">
+    <value>New parameter</value>
+  </data>
+  <data name="BtnProfilesCaption" xml:space="preserve">
+    <value>Profiles</value>
+  </data>
+  <data name="BtnTestConnectionCaption" xml:space="preserve">
+    <value>Test connection</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Common" xml:space="preserve">
+    <value>Common</value>
+  </data>
+  <data name="ConnectionString" xml:space="preserve">
+    <value>Connection string</value>
+  </data>
+  <data name="DatabaseType" xml:space="preserve">
+    <value>Database type</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DlgInfoCaption" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="DlgLoginCaption" xml:space="preserve">
+    <value>TransDATA Professional / Login</value>
+  </data>
+  <data name="DlgMainCaption" xml:space="preserve">
+    <value>TransDATA Professional 3</value>
+  </data>
+  <data name="DlgProfilesCaption" xml:space="preserve">
+    <value>Profile management</value>
+  </data>
+  <data name="DlgSelectDatabaseCaption" xml:space="preserve">
+    <value>Select database connection</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ExportFolder" xml:space="preserve">
+    <value>Export folder</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>fax:</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NoName" xml:space="preserve">
+    <value>no name</value>
+  </data>
+  <data name="OdbcDriver" xml:space="preserve">
+    <value>ODBC-Driver</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>phone:</value>
+  </data>
+  <data name="ProfileName" xml:space="preserve">
+    <value>Profile name</value>
+  </data>
+  <data name="RequestDeleteProfile" xml:space="preserve">
+    <value>Should the profile '{0}' really be deleted?</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>support:</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>unknown</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="XmlComment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="XmlLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="XmlName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="XmlProperties" xml:space="preserve">
+    <value>XML-Properties</value>
+  </data>
+  <data name="DatabaseConnectionFailed" xml:space="preserve">
+    <value>Could not connect to database:</value>
+  </data>
+  <data name="ConnectionFailed" xml:space="preserve">
+    <value>Connection failed</value>
+  </data>
+  <data name="ConnectionSucceed" xml:space="preserve">
+    <value>Connection succeed</value>
+  </data>
+  <data name="DatabaseConnectionOk" xml:space="preserve">
+    <value>The database connection has been successfully etablished.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="UserDefinedParameter" xml:space="preserve">
+    <value>User defined parameter</value>
+  </data>
+  <data name="UserDefinedParameterHelp" xml:space="preserve">
+    <value>You could enter additional parameters for the connection string in this field. The parameter should be entered in the format &lt;parametername&gt;=&lt;value&gt;. Multiple parameters could be divided by ";", if neccesary: &lt;parametername1&gt;=&lt;value1&gt;;&lt;parametername2&gt;=&lt;value2&gt;,...</value>
+  </data>
+  <data name="ComboBoxNothing" xml:space="preserve">
+    <value>Please select...</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="SupportMailArchitecture" xml:space="preserve">
+    <value>architecture: </value>
+  </data>
+  <data name="SupportMailCompanyName" xml:space="preserve">
+    <value>company name:</value>
+  </data>
+  <data name="SupportMailContactPerson" xml:space="preserve">
+    <value>contact person:</value>
+  </data>
+  <data name="SupportMailEMail" xml:space="preserve">
+    <value>mail:</value>
+  </data>
+  <data name="SupportMailOperatingSystem" xml:space="preserve">
+    <value>operation system: </value>
+  </data>
+  <data name="SupportMailPhone" xml:space="preserve">
+    <value>phone:</value>
+  </data>
+  <data name="SupportMailProblemDescription" xml:space="preserve">
+    <value>problem description:</value>
+  </data>
+  <data name="SupportMailProgramVersion" xml:space="preserve">
+    <value>application version: </value>
+  </data>
+  <data name="SupportMailUnknownArchitecture" xml:space="preserve">
+    <value>unknown</value>
+  </data>
+  <data name="Datasets" xml:space="preserve">
+    <value>datasets</value>
+  </data>
+  <data name="EmptyTables" xml:space="preserve">
+    <value>empty tables</value>
+  </data>
+  <data name="FilledTables" xml:space="preserve">
+    <value>tables</value>
+  </data>
+  <data name="CtlSortTableListCaption" xml:space="preserve">
+    <value>Sort order of the table list</value>
+  </data>
+  <data name="CtlSortTableListCountDesc" xml:space="preserve">
+    <value>count of datasets descending</value>
+  </data>
+  <data name="CtlSortTableListNameAsc" xml:space="preserve">
+    <value>name ascending</value>
+  </data>
+  <data name="CtlSortTableListOriginal" xml:space="preserve">
+    <value>original order</value>
+  </data>
+  <data name="CtlSortTableListTransferState" xml:space="preserve">
+    <value>transfer state</value>
+  </data>
+  <data name="FilterList" xml:space="preserve">
+    <value>filter list</value>
+  </data>
+  <data name="SortList" xml:space="preserve">
+    <value>sort list</value>
+  </data>
+  <data name="BtnExportCaption" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ExportFinished" xml:space="preserve">
+    <value>Data Export finished.</value>
+  </data>
+  <data name="ExportFinishedCaption" xml:space="preserve">
+    <value>Data Export finished</value>
+  </data>
+  <data name="RequestCancelExport" xml:space="preserve">
+    <value>Are you sure, that the running data export should be cancelled?</value>
+  </data>
+  <data name="RequestCancelExportCaption" xml:space="preserve">
+    <value>Cancel data export?</value>
+  </data>
+  <data name="ExportStepExportingTables" xml:space="preserve">
+    <value>exporting tables</value>
+  </data>
+  <data name="ExportStepGeneratingIndexXml" xml:space="preserve">
+    <value>generating index.xml</value>
+  </data>
+  <data name="ImportStepGeneratingMetaInformation" xml:space="preserve">
+    <value>Extract metadata</value>
+  </data>
+  <data name="ImportStepCountingTable" xml:space="preserve">
+    <value>Counting table</value>
+  </data>
+  <data name="ImportStepSaving" xml:space="preserve">
+    <value>Saving data</value>
+  </data>
+  <data name="ImportStepFinished" xml:space="preserve">
+    <value>Extraction metadaten finished.</value>
+  </data>
+  <data name="ImportStepFinishedCaption" xml:space="preserve">
+    <value>Extraction metadaten finished</value>
+  </data>
+  <data name="CurrentWorkStep" xml:space="preserve">
+    <value>Current workstep</value>
+  </data>
+  <data name="TablesTotal" xml:space="preserve">
+    <value>Tables total:</value>
+  </data>
+  <data name="TablesProcessed" xml:space="preserve">
+    <value>Tables processed:</value>
+  </data>
+  <data name="InputType" xml:space="preserve">
+    <value>Data source</value>
+  </data>
+  <data name="OutputType" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="InputConfig" xml:space="preserve">
+    <value>Configurate data source</value>
+  </data>
+  <data name="OutputConfig" xml:space="preserve">
+    <value>Configurate output</value>
+  </data>
+  <data name="TransferFinished" xml:space="preserve">
+    <value>Datatransfer finished.</value>
+  </data>
+  <data name="TransferFinishedCaption" xml:space="preserve">
+    <value>Datatransfer finished</value>
+  </data>
+  <data name="ImportTables" xml:space="preserve">
+    <value>import tables</value>
+  </data>
+  <data name="ImportViews" xml:space="preserve">
+    <value>import views</value>
+  </data>
+  <data name="NoProfileSelected" xml:space="preserve">
+    <value>No profile selected. Please choose or create one.</value>
+  </data>
+  <data name="NoProfileSelectedCaption" xml:space="preserve">
+    <value>No profile selected</value>
+  </data>
+  <data name="FieldSeperator" xml:space="preserve">
+    <value>Field-Seperator</value>
+  </data>
+  <data name="LineEndSeperator" xml:space="preserve">
+    <value>Line-End-Seperator</value>
+  </data>
+  <data name="Threadcount" xml:space="preserve">
+    <value>Process threads:</value>
+  </data>
+  <data name="DoAnalyzation" xml:space="preserve">
+    <value>Analyze data during transfer</value>
+  </data>
+  <data name="TransferStepExportTables" xml:space="preserve">
+    <value>Transfer tables</value>
+  </data>
+  <data name="ZipAfterExport" xml:space="preserve">
+    <value>Zip after export</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>filtered</value>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>selected</value>
+  </data>
+  <data name="CpuUsage" xml:space="preserve">
+    <value>CPU-Usage:</value>
+  </data>
+  <data name="LogPerformance" xml:space="preserve">
+    <value>Log performance</value>
+  </data>
+  <data name="RamUsage" xml:space="preserve">
+    <value>Free RAM:</value>
+  </data>
+  <data name="CtlSortColumnListCaption" xml:space="preserve">
+    <value>Sort order of the column list</value>
+  </data>
+  <data name="CtlSortColumnListNameAsc" xml:space="preserve">
+    <value>Name ascending</value>
+  </data>
+  <data name="CtlSortColumnListOriginal" xml:space="preserve">
+    <value>original order</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Errors:</value>
+  </data>
+  <data name="MailFile" xml:space="preserve">
+    <value>TransDATA_transfer_protocol_</value>
+  </data>
+  <data name="MailFileInAttachement" xml:space="preserve">
+    <value>The information- / logfile for the transfer progress can be found in the attachement of this e-Mail.</value>
+  </data>
+  <data name="MailSubjectFinished" xml:space="preserve">
+    <value>[TransDATA] - Transfer progress finished of profile {0}</value>
+  </data>
+  <data name="MailConfiguration" xml:space="preserve">
+    <value>configurate mail</value>
+  </data>
+  <data name="MailHost" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="MailPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="MailPort" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="MailUser" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="MailUseSsl" xml:space="preserve">
+    <value>Use SSL</value>
+  </data>
+  <data name="MailSendStatusmail" xml:space="preserve">
+    <value>Send statusmail</value>
+  </data>
+  <data name="MailSendStatusmailTime" xml:space="preserve">
+    <value>Datetime when statusmail will be sended</value>
+  </data>
+  <data name="MailFileStatus" xml:space="preserve">
+    <value>TransDATA_transfer_status_protocol_</value>
+  </data>
+  <data name="Columnselection" xml:space="preserve">
+    <value>Columnselection</value>
+  </data>
+  <data name="Tableselection" xml:space="preserve">
+    <value>Table selection</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Hour</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="MailSubjectStatusmail" xml:space="preserve">
+    <value>[TransDATA] - statusmail of profile {0}</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>Minute</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minutes</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>Second</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Seconds</value>
+  </data>
+  <data name="TableInfoComment" xml:space="preserve">
+    <value>Comment:</value>
+  </data>
+  <data name="TableInfoCount" xml:space="preserve">
+    <value>Datasets:</value>
+  </data>
+  <data name="TableInfoLastTransfer" xml:space="preserve">
+    <value>Last transfer:</value>
+  </data>
+  <data name="TableInfoLastTransferDestinationCount" xml:space="preserve">
+    <value>Datasets destination:</value>
+  </data>
+  <data name="TableInfoLastTransferDuration" xml:space="preserve">
+    <value>Duration:</value>
+  </data>
+  <data name="TableInfoLastTransferFilter" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="TableInfoLastTransferSourceCount" xml:space="preserve">
+    <value>Datasets source:</value>
+  </data>
+  <data name="TableInfoTable" xml:space="preserve">
+    <value>Table:</value>
+  </data>
+  <data name="MailDocumentCurrentAction" xml:space="preserve">
+    <value>Current action:</value>
+  </data>
+  <data name="MailDocumentCurrentStatus" xml:space="preserve">
+    <value>Current status of transfer</value>
+  </data>
+  <data name="MailDocumentDatasetCount" xml:space="preserve">
+    <value>Dataset count</value>
+  </data>
+  <data name="MailDocumentFinished" xml:space="preserve">
+    <value>TransDATA - Protocol of transfer</value>
+  </data>
+  <data name="MailDocumentJob" xml:space="preserve">
+    <value>Table of job {0}:</value>
+  </data>
+  <data name="MailDocumentStartTime" xml:space="preserve">
+    <value>Start time:</value>
+  </data>
+  <data name="MailDocumentStatus" xml:space="preserve">
+    <value>TransDATA - Status of transfer</value>
+  </data>
+  <data name="MailDocumentTable" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="MailDocumentTablesErrors" xml:space="preserve">
+    <value>Table Errors</value>
+  </data>
+  <data name="MailDocumentTablesFinished" xml:space="preserve">
+    <value>Finished Tables</value>
+  </data>
+  <data name="MailDocumentTablesProcessed" xml:space="preserve">
+    <value>Tables processed:</value>
+  </data>
+  <data name="MailDocumentTablesTotal" xml:space="preserve">
+    <value>Tables totel:</value>
+  </data>
+  <data name="MailDocumentTimeElapsed" xml:space="preserve">
+    <value>Time elapsed:</value>
+  </data>
+  <data name="MailDocumentErrormessage" xml:space="preserve">
+    <value>Error message</value>
+  </data>
+  <data name="DatasetPreview" xml:space="preserve">
+    <value>Dataset preview</value>
+  </data>
+  <data name="ColumnSelect" xml:space="preserve">
+    <value>Select column</value>
+  </data>
+  <data name="ColumnUnselect" xml:space="preserve">
+    <value>Unselect column</value>
+  </data>
+  <data name="CtlSortColumnListUserDefined" xml:space="preserve">
+    <value>user defined</value>
+  </data>
+  <data name="ColumnOverview" xml:space="preserve">
+    <value>Column overview</value>
+  </data>
+  <data name="DatasetOverview" xml:space="preserve">
+    <value>Dataset overview</value>
+  </data>
+  <data name="DatasetPreviewCount" xml:space="preserve">
+    <value>Datasetcount or preview</value>
+  </data>
+  <data name="FilterOverview" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="UseAdoConnection" xml:space="preserve">
+    <value>Use Ado connection</value>
+  </data>
+  <data name="DocumentExport" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="TableInfoLastTransferError" xml:space="preserve">
+    <value>Error:</value>
+  </data>
+  <data name="DoFileSplit" xml:space="preserve">
+    <value>Perform file splitting</value>
+  </data>
+  <data name="FileEncoding" xml:space="preserve">
+    <value>File-encoding</value>
+  </data>
+  <data name="FileSplitSize" xml:space="preserve">
+    <value>Dataset count of the splitted files</value>
+  </data>
+  <data name="ImportFolder" xml:space="preserve">
+    <value>Source directory</value>
+  </data>
+  <data name="ImportSubDirectories" xml:space="preserve">
+    <value>Import sub directories</value>
+  </data>
+  <data name="IsSapCsvText" xml:space="preserve">
+    <value>SAP Export</value>
+  </data>
+  <data name="ToolTipCheckFileEncoding" xml:space="preserve">
+    <value>Check file-encoding</value>
+  </data>
+  <data name="ToolTipCheckFileEncodingError" xml:space="preserve">
+    <value>Encoding not detected.</value>
+  </data>
+  <data name="ToolTipCheckFileEncodingOk" xml:space="preserve">
+    <value>Encoding detected.</value>
+  </data>
+  <data name="BtnEditProfileCaption" xml:space="preserve">
+    <value>Edit profile</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="TableInfoCatalog" xml:space="preserve">
+    <value>Catalog:</value>
+  </data>
+  <data name="TableInfoSchema" xml:space="preserve">
+    <value>Schema:</value>
+  </data>
+  <data name="ColumnLength" xml:space="preserve">
+    <value>Length:</value>
+  </data>
+  <data name="CtlSortTableListCountAsc" xml:space="preserve">
+    <value>count of datasets ascending</value>
+  </data>
+  <data name="Datatype" xml:space="preserve">
+    <value>Datatype:</value>
+  </data>
+  <data name="MailCaption" xml:space="preserve">
+    <value>Email settings</value>
+  </data>
+  <data name="CtlSortColumnListNameDesc" xml:space="preserve">
+    <value>name descending</value>
+  </data>
+  <data name="CtlSortTableListNameDesc" xml:space="preserve">
+    <value>name descending</value>
+  </data>
+  <data name="CtlFilterTableListAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="CtlFilterTableListCaption" xml:space="preserve">
+    <value>Filter for tables</value>
+  </data>
+  <data name="CtlFilterTableListCountDifference" xml:space="preserve">
+    <value>Count difference</value>
+  </data>
+  <data name="CtlFilterTableListError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="CtlFilterTableListNotTransfered" xml:space="preserve">
+    <value>Not transfered</value>
+  </data>
+  <data name="CtlFilterTableListOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="ExportStepExportingErrorTables" xml:space="preserve">
+    <value>exporting tables with errors</value>
+  </data>
+  <data name="LogFile" xml:space="preserve">
+    <value>TransDATA_Transfer_Log_</value>
+  </data>
+  <data name="MailProcessErrorTables" xml:space="preserve">
+    <value>TransDATA - Protocol of transfer - continue with errors</value>
+  </data>
+  <data name="UserTooltipCaption" xml:space="preserve">
+    <value> (Leftclick for editing)</value>
+  </data>
+  <data name="UserLogin" xml:space="preserve">
+    <value>Sign up user:</value>
+  </data>
+  <data name="DlgEditProfileCaption" xml:space="preserve">
+    <value>Edit profile</value>
+  </data>
+  <data name="DlgEditUserCaption" xml:space="preserve">
+    <value>Edit user</value>
+  </data>
+  <data name="DlgExportCaption" xml:space="preserve">
+    <value>Data export</value>
+  </data>
+  <data name="DlgImportDbStructureCaption" xml:space="preserve">
+    <value>Import database structure</value>
+  </data>
+  <data name="DlgTransferCaption" xml:space="preserve">
+    <value>Transfer progress</value>
+  </data>
+  <data name="CtlEditUserNewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="CtlEditUserNewPasswordRepeat" xml:space="preserve">
+    <value>New password repeat</value>
+  </data>
+  <data name="CtlEditUserOldPassword" xml:space="preserve">
+    <value>Old password</value>
+  </data>
+  <data name="CtlEditUserUserFullName" xml:space="preserve">
+    <value>Username (long)</value>
+  </data>
+  <data name="CtlEditUserUserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="ProfileManagementModelAnalyseDb" xml:space="preserve">
+    <value>Analyse database-structure? For big databases the analysation could take a while.</value>
+  </data>
+  <data name="ProfileManagementModelAnalyseDbCaption" xml:space="preserve">
+    <value>Analyse database-structure?</value>
+  </data>
+  <data name="ExportStepExportingCreateDocumentation" xml:space="preserve">
+    <value>Create documentation</value>
+  </data>
+  <data name="MailDocumentCatalog" xml:space="preserve">
+    <value>Catalog</value>
+  </data>
+  <data name="MailDocumentComment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="MailDocumentCountSource" xml:space="preserve">
+    <value>Datasets in source</value>
+  </data>
+  <data name="MailDocumentCountDestination" xml:space="preserve">
+    <value>Datasets in destination</value>
+  </data>
+  <data name="MailDocumentDuration" xml:space="preserve">
+    <value>Transfer duration</value>
+  </data>
+  <data name="MailDocumentFilter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="MailDocumentSchema" xml:space="preserve">
+    <value>Schema</value>
+  </data>
+  <data name="MailDocumentTablesCountDifference" xml:space="preserve">
+    <value>Tables with count difference</value>
+  </data>
+  <data name="MailDocumentTablesError" xml:space="preserve">
+    <value>Tables with errors</value>
+  </data>
+  <data name="MailDocumentTablesNotTransfered" xml:space="preserve">
+    <value>Not transfered tabes</value>
+  </data>
+  <data name="MailDocumentTablesOk" xml:space="preserve">
+    <value>Tables succeded</value>
+  </data>
+  <data name="MailSubjectContinueWithErrorTables" xml:space="preserve">
+    <value>[TransDATA] - Transfer progress error tables of profile {0}</value>
+  </data>
+  <data name="CtlLegendCaption" xml:space="preserve">
+    <value>Legend</value>
+  </data>
+  <data name="LegendFilter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="LegendNotSelectedElement" xml:space="preserve">
+    <value>Deselected item</value>
+  </data>
+  <data name="LegendSelectedElement" xml:space="preserve">
+    <value>Selected item</value>
+  </data>
+  <data name="LegendSort" xml:space="preserve">
+    <value>Sorting</value>
+  </data>
+  <data name="LegendTransferCountDifference" xml:space="preserve">
+    <value>Transfer with difference in count</value>
+  </data>
+  <data name="LegendTransferError" xml:space="preserve">
+    <value>Transfer with error</value>
+  </data>
+  <data name="LegendTransferOk" xml:space="preserve">
+    <value>Transfer ok</value>
+  </data>
+  <data name="StatusDatadestination" xml:space="preserve">
+    <value>Outputdestination</value>
+  </data>
+  <data name="StatusDatasource" xml:space="preserve">
+    <value>Datasource</value>
+  </data>
+  <data name="CSV" xml:space="preserve">
+    <value>CSV-Files</value>
+  </data>
+  <data name="Database" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="GDPDU" xml:space="preserve">
+    <value>GDPdU-Files</value>
+  </data>
+  <data name="LegendConnectionFailed" xml:space="preserve">
+    <value>Connection failed</value>
+  </data>
+  <data name="LegendConnectionOk" xml:space="preserve">
+    <value>Connection established</value>
+  </data>
+  <data name="ImportFolderLog" xml:space="preserve">
+    <value>Directory with log files</value>
+  </data>
+  <data name="ImportHeadlineFirstLine" xml:space="preserve">
+    <value>Headline in first line</value>
+  </data>
+  <data name="OptionallyEnclosed" xml:space="preserve">
+    <value>Optionally enclosed</value>
+  </data>
+  <data name="DlgInitialPasswordCaption" xml:space="preserve">
+    <value>TransDATA Professional / Initial password</value>
+  </data>
+  <data name="MailRecipients" xml:space="preserve">
+    <value>Recipents</value>
+  </data>
+  <data name="MailRecipientsAdd" xml:space="preserve">
+    <value>Add recipient</value>
+  </data>
+  <data name="MailRecipientsRemove" xml:space="preserve">
+    <value>Remove recipient</value>
+  </data>
+  <data name="HddUsage" xml:space="preserve">
+    <value>Free disk space:</value>
+  </data>
+  <data name="LogDirectory" xml:space="preserve">
+    <value>Log directory</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="UseCatalog" xml:space="preserve">
+    <value>Use catalog</value>
+  </data>
+  <data name="UseSchema" xml:space="preserve">
+    <value>Use schema</value>
+  </data>
+  <data name="DocumentationFolderName" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="DocumentationCreated" xml:space="preserve">
+    <value>Documentation created</value>
+  </data>
+  <data name="ExportStepExportingWaitForConnection" xml:space="preserve">
+    <value>Waiting for connection...</value>
+  </data>
+  <data name="IsBaanCsvText" xml:space="preserve">
+    <value>BAAN Export</value>
+  </data>
+  <data name="SplitTable" xml:space="preserve">
+    <value>Table is split among multiple files</value>
+  </data>
+  <data name="DlgHistorySelectorCaption" xml:space="preserve">
+    <value>Recent</value>
+  </data>
+  <data name="TransferModelNoTablesSelected" xml:space="preserve">
+    <value>No tables were selected for transfer.</value>
+  </data>
+  <data name="MainWindowErrorReadingDBStructure" xml:space="preserve">
+    <value>Error reading the database structure</value>
+  </data>
+  <data name="MainWindowLongTimeRunning" xml:space="preserve">
+    <value>The scan of the database structure, depending on the size take a long time, you want to continue anyway?</value>
+  </data>
+  <data name="MetaDataAgentCsvErrorInTheFile" xml:space="preserve">
+    <value>Error in the file</value>
+  </data>
+  <data name="BtnDatabaseStructureAnalyze" xml:space="preserve">
+    <value>Database structure analyze</value>
+  </data>
+  <data name="BtnTransfer" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="CompanyIdFieldName" xml:space="preserve">
+    <value>Company ID field name</value>
+  </data>
+  <data name="CompanyIdLength" xml:space="preserve">
+    <value>Company ID length in table names</value>
+  </data>
+  <data name="DlgEmailConfigurationCaption" xml:space="preserve">
+    <value>Email configuration</value>
+  </data>
+  <data name="FilesInSelectedDirectory" xml:space="preserve">
+    <value>Files in the selected directory</value>
+  </data>
+  <data name="FirstRowEachFile" xml:space="preserve">
+    <value>First row in each file</value>
+  </data>
+  <data name="FirstRowFirstFile" xml:space="preserve">
+    <value>First row of the first file only</value>
+  </data>
+  <data name="IsNormal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="NoHeaderInfo" xml:space="preserve">
+    <value>No header information</value>
+  </data>
+  <data name="SelectedCSVFiles" xml:space="preserve">
+    <value>Selected CSV files</value>
+  </data>
+  <data name="SourceFiles" xml:space="preserve">
+    <value>Source files</value>
+  </data>
+  <data name="AutomaticDetection" xml:space="preserve">
+    <value>Automatically detect</value>
+  </data>
+  <data name="BaanSpecify" xml:space="preserve">
+    <value>BAAN specify</value>
+  </data>
+  <data name="HeaderInformation" xml:space="preserve">
+    <value>Header information</value>
+  </data>
+  <data name="SourceType" xml:space="preserve">
+    <value>Source type</value>
+  </data>
+  <data name="UseCompressedDatabase" xml:space="preserve">
+    <value>Use compressed database</value>
+  </data>
+  <data name="UseOriginalDatabase" xml:space="preserve">
+    <value>Use original database</value>
+  </data>
+  <data name="UseOriginalPrefix" xml:space="preserve">
+    <value>Use original table prefix</value>
+  </data>
+  <data name="UseSql" xml:space="preserve">
+    <value>Use MsSQL</value>
+  </data>
+</root>

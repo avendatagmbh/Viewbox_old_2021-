@@ -1,0 +1,346 @@
+﻿@using SystemDb
+@using Viewbox.Properties
+@using Viewbox
+@using Viewbox.Models
+@using ViewboxDb
+
+@{
+    var RightsMode = ViewboxSession.RightsMode;
+    var DataGridModel = Model as DataGridModel;
+    var TableInfo = DataGridModel != null ? DataGridModel.TableObject : Model as TableObject;
+    var TableObject = DataGridModel != null ? DataGridModel.TableInfo : (TableInfo == null) ? Model as ITableObject : TableInfo.Table;
+    var half = TableObject.Columns.Count%2 == 0 ? (TableObject.Columns.Count/2) : (TableObject.Columns.Count/2 + 1);
+    var visibleColumns = TableObject.Columns.Where((c) => c.IsVisible);
+    var invisibleColumns = TableObject.Columns.Where((c) => !c.IsVisible);
+    var visibleColumnsCount = visibleColumns.Count();
+    var visibleColumnsHalf = visibleColumnsCount%2 == 0 ? (visibleColumnsCount/2) : (visibleColumnsCount/2 + 1);
+    var invisibleColumnsCount = invisibleColumns.Count();
+    var invisibleColumnsHalf = invisibleColumnsCount%2 == 0 ? (invisibleColumnsCount/2) : (invisibleColumnsCount/2 + 1);
+    var originalOrder = TableObject.Id > 0 ? ViewboxApplication.Database.SystemDb.IsOriginalColumnOrder(TableObject) : true;
+}
+<!-- _ListVisibleOptionsPartial.cshtml -->
+@if (TableObject != null)
+{
+    <ul class="dropdown big view" id="listvisibleoptions">
+        <li class="panel">
+            @Html.Partial("_TooltipPartial", Resources.ViewOptions)
+            <a class="icon process right dropdown-btn"></a>
+            <ul class="dropdown-menu normal">
+                <li class="column-view-props visible">
+                    <div class="box">
+                        <div class="top">
+                            <h4>@Resources.ViewOptions</h4>
+                            <div class="tabbar">
+                                <a class="tabheader visible selected">@Resources.Visible</a>
+                                <a class="tabheader hidden" href="#">@Resources.Hidden</a>
+                                <a class="tabheader column-order" href="#">@Resources.ColumnOrder</a>
+                                @if (RightsMode && TableObject.Id > 0)
+                                {
+                                    <a class="tabheader rights" href="#">@Resources.Rights</a>
+                                }
+                                <div class="search-viewoptions-panel">
+                                    <div class="bg-left"></div>
+                                    @using (Html.BeginForm(null, null, FormMethod.Get, new Dictionary<string, object> {{"id", "searchoverview-viewoptions"}}))
+                                    {
+                                        <input class="field bg-middle placeholder" autocomplete="off" name="search_viewoptions" type="text" 
+                                               value="@(DataGridModel != null && !String.IsNullOrWhiteSpace(DataGridModel.Search) ? DataGridModel.Search : Resources.SearchPhrase)" 
+                                               placeholder="@Resources.SearchPhrase" />
+                                        <input type="hidden" class="table-object-id" value="@TableObject.Id" />
+                                        <input type="submit" class="submit" value="" />
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="middle columns">
+                            <table class="normal">
+                                <tr>
+                                    <th class="colnumber">
+                                        <span>@Resources.Column</span>
+                                    </th>
+                                    <th class="colname">
+                                        <span>@Resources.Name</span>
+                                    </th>
+                                    <th style="padding: 0; width: 21px;"></th>
+                                    <th class="visibility">
+                                        <div class="visibility">
+                                            <a href="@Url.Action("UpdateColumns", "DataGrid", new {id = TableObject.Id})"></a>
+                                        </div>
+                                    </th>
+                                    @if (RightsMode && TableObject.Id > 0)
+                                    {
+                                        <th class="colright"><div></div></th>
+                                    }
+                                </tr>
+                            </table>
+                            <table class="first">
+                                <tr>
+                                    <th class="colnumber">
+                                        <span>@Resources.Column</span>
+                                    </th>
+                                    <th class="colname">
+                                        <span>@Resources.Name</span>
+                                    </th>
+                                    <th class="visibility">
+                                        <div class="visibility">
+                                            <a href="@Url.Action("UpdateColumns", "DataGrid", new {id = TableObject.Id})"></a>
+                                        </div>
+                                    </th>
+                                    @if (RightsMode && TableObject.Id > 0)
+                                    {
+                                        <th class="colright"><div></div></th>
+                                    }
+                                </tr>
+                            </table>
+                            <table class="second">
+                                <tr>
+                                    <th class="colnumber">
+                                        <span>@Resources.Column</span>
+                                    </th>
+                                    <th class="colname">
+                                        <span>@Resources.Name</span>
+                                    </th>
+                                    <th class="visibility">
+                                    </th>
+                                    @if (RightsMode && TableObject.Id > 0)
+                                    {
+                                        <th class="colright"><div></div></th>
+                                    }
+                                </tr>
+                            </table>
+                            <div class="scroll" style="height: 90%">
+                                <table class="normal">
+                                    @foreach (var Column in TableObject.Columns)
+                                    {
+                                        if (DataGridModel != null && !Column.GetDescription(ViewboxSession.Language).ToLower().Contains(DataGridModel.Search))
+                                        {
+                                            continue;
+                                        }
+                                        var rightsclass = String.Empty;
+                                        if (RightsMode)
+                                        {
+                                            rightsclass += Column.IsAllowedInRightsMode() ? "col-readable" : "col-not-readable";
+                                        }
+                                        <tr class="@(Column.IsVisible ? "visible" : "hidden") @rightsclass">
+                                            <td class="colnumber">@(Column.Ordinal + 1)</td>
+                                            <td class="colname"><div class="description">@Column.GetDescription()</div></td>
+                                            <td style="height: 21px; padding: 0; width: 21px;">
+                                                @if (Column.IsOptEmpty)
+                                                {
+                                                    <a class="distinct-info"></a>
+                                                    @Html.Partial("_TooltipPartial", Resources.ColumnHasOnlyEmpty)
+                                                }
+                                                else if (Column.IsOneDistinct)
+                                                {
+                                                    <a class="distinct-info"></a>
+                                                    @Html.Partial("_TooltipPartial", Resources.ColumnHasOneDistinct)
+                                                }
+                                                @if (Column.HasIndex)
+                                                {
+                                                    <a class="column-index-info"></a>
+                                                }
+                                            </td>
+                                            <td class="visibility"><a href="@Url.Action("UpdateColumn", "DataGrid", new {id = Column.Id, is_visible = !Column.IsVisible})"></a></td>
+                                            @if (RightsMode && Column.Id > 0)
+                                            {
+                                                var right = Column.IsAllowedInRightsMode() ? RightType.None : RightType.Read;
+                                                <td class="colright"><a class="right-switch" href="@Url.Action("UpdateColumnRight", "UserManagement", new {id = Column.Id, right})"></a>
+                                                    @Html.Partial("_TooltipPartial", ViewboxSession.GetRightInfo(Column.Id, UpdateRightType.Column, Column.IsAllowedInRightsMode()))
+                                                </td>
+                                            }
+                                        </tr>
+                                    }
+                                </table>
+                            
+                                <table class="first">
+                                    @for (int i = 0; i < visibleColumnsHalf; i++)
+                                    {
+                                        var Column = visibleColumns.ElementAt(i);
+                                        if (DataGridModel != null && !Column.GetDescription(ViewboxSession.Language).ToLower().Contains(DataGridModel.Search))
+                                        {
+                                            continue;
+                                        }
+                                        var rightsclass = String.Empty;
+                                        if (RightsMode)
+                                        {
+                                            rightsclass += Column.IsAllowedInRightsMode() ? "col-readable" : "col-not-readable";
+                                        }
+                                        <tr class="@(Column.IsVisible ? "visible" : "hidden") @rightsclass">
+                                            <td class="colnumber">@(Column.Ordinal + 1)</td>
+                                            <td class="colname"><div class="description">@Column.GetDescription()</div></td>
+                                            <td class="visibility"><a href="@Url.Action("UpdateColumn", "DataGrid", new {id = Column.Id, is_visible = !Column.IsVisible})"></a></td>
+                                            @if (RightsMode && Column.Id > 0)
+                                            {
+                                                var right = Column.IsAllowedInRightsMode() ? RightType.None : RightType.Read;
+                                                <td class="colright"><a class="right-switch" href="@Url.Action("UpdateColumnRight", "UserManagement", new {id = Column.Id, right})"></a>
+                                                    @Html.Partial("_TooltipPartial", ViewboxSession.GetRightInfo(Column.Id, UpdateRightType.Column, Column.IsAllowedInRightsMode()))
+                                                </td>
+                                            }
+                                        </tr>
+                                    }
+                                    @for (int i = 0; i < invisibleColumnsHalf; i++)
+                                    {
+                                        var Column = invisibleColumns.ElementAt(i);
+                                        if (DataGridModel != null && !Column.GetDescription(ViewboxSession.Language).ToLower().Contains(DataGridModel.Search))
+                                        {
+                                            continue;
+                                        }
+                                        var rightsclass = String.Empty;
+                                        if (RightsMode)
+                                        {
+                                            rightsclass += Column.IsAllowedInRightsMode() ? "col-readable" : "col-not-readable";
+                                        }
+                                        <tr class="@(Column.IsVisible ? "visible" : "hidden") @rightsclass">
+                                            <td class="colnumber">@(Column.Ordinal + 1)</td>
+                                            <td class="colname"><div class="description">@Column.GetDescription()</div></td>
+                                            <td class="visibility"><a href="@Url.Action("UpdateColumn", "DataGrid", new {id = Column.Id, is_visible = !Column.IsVisible})"></a></td>
+                                            @if (RightsMode && Column.Id > 0)
+                                            {
+                                                var right = Column.IsAllowedInRightsMode() ? RightType.None : RightType.Read;
+                                                <td class="colright"><a class="right-switch" href="@Url.Action("UpdateColumnRight", "UserManagement", new {id = Column.Id, right})"></a>
+                                                    @Html.Partial("_TooltipPartial", ViewboxSession.GetRightInfo(Column.Id, UpdateRightType.Column, Column.IsAllowedInRightsMode()))
+                                                </td>
+                                            }
+                                        </tr>
+                                    }
+                                </table>
+                                <table class="second">
+                                    @for (int i = visibleColumnsHalf; i < visibleColumnsCount; i++)
+                                    {
+                                        var Column = visibleColumns.ElementAt(i);
+                                        if (DataGridModel != null && !Column.GetDescription(ViewboxSession.Language).ToLower().Contains(DataGridModel.Search))
+                                        {
+                                            continue;
+                                        }
+                                        var rightsclass = String.Empty;
+                                        if (RightsMode)
+                                        {
+                                            rightsclass += Column.IsAllowedInRightsMode() ? "col-readable" : "col-not-readable";
+                                        }
+                                        <tr class="@(Column.IsVisible ? "visible" : "hidden") @rightsclass">
+                                            <td class="colnumber">@(Column.Ordinal + 1)</td>
+                                            <td class="colname"><div class="description">@Column.GetDescription()</div></td>
+                                            <td class="visibility"><a href="@Url.Action("UpdateColumn", "DataGrid", new {id = Column.Id, is_visible = !Column.IsVisible})"></a></td>
+                                            @if (RightsMode && Column.Id > 0)
+                                            {
+                                                var right = Column.IsAllowedInRightsMode() ? RightType.None : RightType.Read;
+                                                <td class="colright"><a class="right-switch" href="@Url.Action("UpdateColumnRight", "UserManagement", new {id = Column.Id, right})"></a>
+                                                    @Html.Partial("_TooltipPartial", ViewboxSession.GetRightInfo(Column.Id, UpdateRightType.Column, Column.IsAllowedInRightsMode()))
+                                                </td>
+                                            }
+                                        </tr>
+                                    }
+                                    @for (int i = invisibleColumnsHalf; i < invisibleColumnsCount; i++)
+                                    {
+                                        var Column = invisibleColumns.ElementAt(i);
+                                        if (DataGridModel != null && !Column.GetDescription(ViewboxSession.Language).ToLower().Contains(DataGridModel.Search))
+                                        {
+                                            continue;
+                                        }
+                                        var rightsclass = String.Empty;
+                                        if (RightsMode)
+                                        {
+                                            rightsclass += Column.IsAllowedInRightsMode() ? "col-readable" : "col-not-readable";
+                                        }
+                                        <tr class="@(Column.IsVisible ? "visible" : "hidden") @rightsclass">
+                                            <td class="colnumber">@(Column.Ordinal + 1)</td>
+                                            <td class="colname"><div class="description">@Column.GetDescription()</div></td>
+                                            <td class="visibility"><a href="@Url.Action("UpdateColumn", "DataGrid", new {id = Column.Id, is_visible = !Column.IsVisible})"></a></td>
+                                            @if (RightsMode && Column.Id > 0)
+                                            {
+                                                var right = Column.IsAllowedInRightsMode() ? RightType.None : RightType.Read;
+                                                <td class="colright"><a class="right-switch" href="@Url.Action("UpdateColumnRight", "UserManagement", new {id = Column.Id, right})"></a>
+                                                    @Html.Partial("_TooltipPartial", ViewboxSession.GetRightInfo(Column.Id, UpdateRightType.Column, Column.IsAllowedInRightsMode()))
+                                                </td>
+                                            }
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                        </div>
+                        <div class="middle column-order-content" id="column-order">
+                            <table class="normal">
+                                <tr>
+                                    <th class="colnumber">
+                                        <span>@Resources.Column</span>
+                                    </th>
+                                    <th class="colname">
+                                        <span>@Resources.Name</span>
+                                    </th>
+                                    <th class="reset order-@originalOrder.ToString().ToLower()" >
+                                        <span>@Resources.ResetOrder</span>
+                                    </th>
+                                    <th class="hide table-id">@TableObject.Id</th>
+                                </tr>
+                            </table>
+                            <table class="first">
+                                <tr>
+                                    <th class="colnumber">
+                                        <span>@Resources.Column</span>
+                                    </th>
+                                    <th class="colname">
+                                        <span>@Resources.Name</span>
+                                    </th>
+                                    <th class="reset order-@originalOrder.ToString().ToLower()" >
+                                        <span>@Resources.ResetOrder</span>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </table>
+                            <table class="second">
+                                <tr>
+                                    <th class="colnumber">
+                                        <span>@Resources.Column</span>
+                                    </th>
+                                    <th class="colname">
+                                        <span>@Resources.Name</span>
+                                    </th>
+                                    <th class="reset order-@originalOrder.ToString().ToLower()" >
+                                        <span>@Resources.ResetOrder</span>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </table>
+                        
+                            <div class="scroll">
+                                <div class="sortable-columns sortable normal">
+                                    @foreach (var Column in TableObject.Columns)
+                                    {
+                                        <div class="column">
+                                            <div class="item-id">@Column.Id</div>
+                                            <div class="colnumber">@(Column.Ordinal + 1)</div>
+                                            <div class="colname">@Column.GetDescription()</div>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="sortable-columns sortable first">
+                                    @for (int i = 0; i < half; i++)
+                                    {
+                                        var Column = TableObject.Columns.ElementAt(i);
+                                        <div class="column">
+                                            <div class="item-id">@Column.Id</div>
+                                            <div class="colnumber">@(Column.Ordinal + 1)</div>
+                                            <div class="colname">@Column.GetDescription()</div>
+                                        </div>
+                                    }
+                                </div>
+                            
+                                <div class="sortable-columns sortable second">
+                                    @for (int i = half; i < TableObject.Columns.Count; i++)
+                                    {
+                                        var Column = TableObject.Columns.ElementAt(i);
+                                        <div class="column">
+                                            <div class="item-id">@Column.Id</div>
+                                            <div class="colnumber">@(Column.Ordinal + 1)</div>
+                                            <div class="colname">@Column.GetDescription()</div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+}

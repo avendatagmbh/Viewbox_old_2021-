@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.BalanceList.BalanceListFilter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel>
+
+        <TextBlock Text="Filter Summen- und Saldenliste" />
+        
+        <Separator />
+        
+        <TextBlock Text="Filtern nach" />
+        <StackPanel Orientation="Horizontal">
+            <RadioButton x:Name="optFilterValue" Content="Wert" IsChecked="{Binding FilterType, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Value, UpdateSourceTrigger=PropertyChanged}"/>
+            <RadioButton x:Name="optFilterArea" Content="Kontonummernbereich" Margin="5,0,0,0" IsChecked="{Binding FilterType, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Area, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        
+        <Separator />
+
+        <StackPanel Visibility="{Binding ElementName=optFilterValue, Path=IsChecked, Converter={StaticResource TrueToVisibilityConverter}}">
+            <Label Content="Filter" Padding="1" />
+            <TextBox Padding="0" Text="{Binding Filter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <CheckBox VerticalAlignment="Center" Content="Nummer/Bezeichnung beginnt mit Filterwert" IsChecked="{Binding ExactSearch}" Margin="0,5,0,0" />
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,5,0,0">
+                <RadioButton x:Name="optSearchAll" VerticalAlignment="Center" Content="Alles" IsChecked="True"
+                                 Checked="optSearchInfoIsCheckedChanged" />
+                <RadioButton x:Name="optSearchAccountNumbers" VerticalAlignment="Center" Content="Kontonummer" Margin="5,0,0,0" 
+                                 Checked="optSearchInfoIsCheckedChanged" />
+                <RadioButton x:Name="optSearchAccountNames" VerticalAlignment="Center" Content="Kontobezeichnung" Margin="5,0,0,0" 
+                                 Checked="optSearchInfoIsCheckedChanged" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Visibility="{Binding ElementName=optFilterArea, Path=IsChecked, Converter={StaticResource TrueToVisibilityConverter}}">
+            <Label Content="von" Padding="1" />
+            <TextBox Padding="0" Text="{Binding FilterAreaFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Content="bis" Padding="1" Margin="0,8,0,0"/>
+            <TextBox Padding="0" Text="{Binding FilterAreaTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>

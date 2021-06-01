@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Management.ManagementAssistant.CtlBalanceListInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+    <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <!--<Style.Triggers>-->
+            <!--<DataTrigger Binding="{Binding IsSelected}" Value="True">-->
+                <!-- workaround, otherwhise selected items would be white -->
+                <Setter Property="Foreground" Value="Black"/>
+            <!--</DataTrigger>-->
+        <!--</Style.Triggers>-->
+    </Style>
+    </UserControl.Resources>
+    <Grid Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <wpfc:ImageButton Margin="5" Grid.Column="1" Command="{Binding ItemsSource.CmdDeleteBalanceList, ElementName=lstItems}" CommandParameter="{Binding .}"
+                               ImageSource="/eBalanceKitResources;component/Resources/delete.png" HorizontalAlignment="Right" VerticalAlignment="Top"
+                               ToolTip="{x:Static Localisation:ResourcesCommon.Delete}" Height="20"/>
+        <StackPanel Grid.Column="0" Grid.Row="0" DataContext="{Binding BalanceListImporter}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" MaxWidth="400"/>
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.NameCaption1}" Margin="0,5,0,0"/>
+                <TextBox Grid.Column="1" Text="{Binding Config.BalanceListName}" TextWrapping="Wrap" Margin="5,5,0,0" IsEnabled="True"/>
+            </Grid>
+
+            <Separator Margin="0,2.5,0,2.5" Opacity="0.25" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.NumberOfAccountsCaption}" FontStyle="Italic" />
+                <TextBlock Text="{Binding SummaryConfig.NumberOfAccounts}" FontStyle="Italic" />
+                <TextBlock Text=", " FontStyle="Italic" />
+                <TextBlock Text="{Binding SummaryConfig.SumOfAccountsString}" FontStyle="Italic"/>
+            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.SourceCaption}" FontStyle="Italic" />
+                <TextBlock Grid.Column="1" Text="{Binding Config.CsvFileName}" FontStyle="Italic" TextWrapping="Wrap"/>
+            </Grid>
+        </StackPanel>
+    </Grid> 
+</UserControl>

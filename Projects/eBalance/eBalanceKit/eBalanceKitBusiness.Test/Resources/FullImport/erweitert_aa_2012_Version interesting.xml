@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="iso-8859-15"?>
+<xbrli:xbrl xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:de-gaap-ci="http://www.xbrl.de/taxonomies/de-gaap-ci-2012-06-01" xmlns:de-fi="http://www.xbrl.de/taxonomies/de-fi-2012-06-01" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <link:schemaRef xlink:type="simple" xlink:href="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01/de-gcd-2012-06-01-shell.xsd" />
+  <link:schemaRef xlink:type="simple" xlink:href="http://www.xbrl.de/taxonomies/de-fi-2012-06-01/de-fi-2012-06-01-shell-staffelform-fiscal.xsd" />
+  <xbrli:context id="I-2012">
+    <xbrli:entity>
+      <xbrli:identifier scheme="">
+      </xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2012-12-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="D-2012">
+    <xbrli:entity>
+      <xbrli:identifier scheme="">
+      </xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2012-01-01</xbrli:startDate>
+      <xbrli:endDate>2012-12-31</xbrli:endDate>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:unit id="EUR">
+    <xbrli:measure>iso4217:EUR</xbrli:measure>
+  </xbrli:unit>
+  <xbrli:unit id="unit_pure">
+    <xbrli:measure>xbrli:pure</xbrli:measure>
+  </xbrli:unit>
+  <de-gaap-ci:bs.ass.fixAss contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.ass.fixAss.intan contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.ass.fixAss.intan.otherForeign contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.ass.fixAss.tan.machinery contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.ass.fixAss.tan.otherEquipm contextRef="I-2012" unitRef="EUR" decimals="2">513.00</de-gaap-ci:bs.ass.fixAss.tan.otherEquipm>
+  <de-gaap-ci:bs.ass.fixAss.tan.otherEquipm.gwgsammelposten contextRef="I-2012" unitRef="EUR" decimals="2">513.00</de-gaap-ci:bs.ass.fixAss.tan.otherEquipm.gwgsammelposten>
+  <de-gaap-ci:bs.ass.fixAss.fin.sharesInAffil contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.ass.fixAss.fin.sharesInAffil.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.ass.fixAss.fin.loansToAffil contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.ass.fixAss.fin.loansToAffil.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.ass.fixAss.fin.particip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.ass.fixAss.fin.particip.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.ass.fixAss.fin.loansToParticip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.ass.fixAss.fin.loansToParticip.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.securities contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.bank contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.advPaym contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.trade contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.notes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.shareholders contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.shareholders.upTo1year contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.shareholders.upTo1year.gmbhSilent contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.shareholders.upTo1year.unlimitedLiable contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.shareholders.upTo1year.limitedLiable contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.assocComp contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.particip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.other.theroffTax contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.other.thereoffSocSec contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.other.jointVent contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.other.employees contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.other.profitPartLoans contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.other.profSharRights contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.netIncome contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.nonTaxableProfitsIncomeTax contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.nonTaxableProfitsIncomeTax.investmentGrants contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.taxFreeProfitsDBA contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.taxFreeProfitsEStG3_40 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.taxFreeProfitsKStG8b contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.taxFreeProfitsKStG8b.sub1_2 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.taxFreeProfitsKStG8b.add5ptSub3_5 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.taxFrerProfitsOther contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.jobConditChildcareCosts contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.InvestmentDeductionEStG7g contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.Other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.deductions.EarningsStrippingRuleEStG4h contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.nonDeductableDeductionsESTG3c contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.nonDeductableDeductionsESTG3c.sub2 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.KStG8b contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.EStG4_4a contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.nonDeductableExpEStG4_5EStG4_7 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.tradeTaxEStG4_5b contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.releaseBalancePosEStG4g contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.EarningsStrippingRuleEStG4h contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.profitMarkupEStG6b_7 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.profitMarkupEStG6b_10 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.releaseInvestmentDeductionEStG7g_2 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additions.OtherEgAO160 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.fiscalCorrectonsPartPartnerships contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.fiscalCorrectionsPartPartnerships.EStG3_40EStG3c_2KStG8b contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.fiscalCorrectionsPartPartnerships.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.fiscalCorrectonsTaxGroup contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additionDeductsTpl contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additionDeductsTpl.fullValueYearChange contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additionDeductsTpl.div2Years contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fpl.additionDeductsTpl.div3Years contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fplgm.netmethod contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fplgm.net contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fplgm.addPartnerships contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fplgm.dedPartnerships contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:fplgm.correctionsEStG3_40EStG3c_2KStG8b contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:kke.unlimitedPartners>
+    <de-gaap-ci:kke.unlimitedPartners.name contextRef="I-2012">aaa</de-gaap-ci:kke.unlimitedPartners.name>
+    <de-gaap-ci:kke.unlimitedPartners.name.group contextRef="I-2012" xsi:nil="true" />
+    <de-gaap-ci:kke.unlimitedPartners.name.number contextRef="I-2012">fad</de-gaap-ci:kke.unlimitedPartners.name.number>
+    <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts contextRef="I-2012" unitRef="EUR" decimals="2">60.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts>
+    <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.name>
+        <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.name.kkvh.FK contextRef="I-2012" />
+      </de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.name>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd contextRef="I-2012" unitRef="EUR" decimals="2">20.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.begin contextRef="I-2012" unitRef="EUR" decimals="2">5.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.begin>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.deposits contextRef="I-2012" unitRef="EUR" decimals="2">5.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.deposits>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.withdrawals contextRef="I-2012" unitRef="EUR" decimals="2">5.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.withdrawals>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.capAdjust6bRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.icomeShare contextRef="I-2012" unitRef="EUR" decimals="2">5.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.icomeShare>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.Capitalmovements contextRef="I-2012" unitRef="EUR" decimals="2">5.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.Capitalmovements>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.CapitaladjustmentOther contextRef="I-2012" unitRef="EUR" decimals="2">5.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.CapitaladjustmentOther>
+    </de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds>
+    <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.name>
+        <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.name.kkvh.DaFK contextRef="I-2012" />
+      </de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.name>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd contextRef="I-2012" unitRef="EUR" decimals="2">40.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.begin contextRef="I-2012" unitRef="EUR" decimals="2">10.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.begin>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.deposits contextRef="I-2012" unitRef="EUR" decimals="2">10.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.deposits>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.withdrawals contextRef="I-2012" unitRef="EUR" decimals="2">10.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.withdrawals>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.capAdjust6bRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.icomeShare contextRef="I-2012" unitRef="EUR" decimals="2">10.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.icomeShare>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.Capitalmovements contextRef="I-2012" unitRef="EUR" decimals="2">10.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.Capitalmovements>
+      <de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.CapitaladjustmentOther contextRef="I-2012" unitRef="EUR" decimals="2">10.00</de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds.sumYearEnd.CapitaladjustmentOther>
+    </de-gaap-ci:kke.unlimitedPartners.sumEquityAccounts.kinds>
+  </de-gaap-ci:kke.unlimitedPartners>
+  <de-gaap-ci:kke.limitedPartners>
+    <de-gaap-ci:kke.limitedPartners.name contextRef="I-2012" xsi:nil="true" />
+    <de-gaap-ci:kke.limitedPartners.name.group contextRef="I-2012" xsi:nil="true" />
+    <de-gaap-ci:kke.limitedPartners.name.number contextRef="I-2012" xsi:nil="true" />
+    <de-gaap-ci:kke.limitedPartners.sumEquityAccounts contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+    <de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds>
+      <de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds.name>
+        <de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds.name.kkth.FK contextRef="I-2012" />
+      </de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds.name>
+      <de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds.sumYearEnd contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+      <de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds.sumYearEnd.begin contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+      <de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds.sumYearEnd.deposits contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+      <de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds.sumYearEnd.withdrawals contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+      <de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds.sumYearEnd.capAdjust6bRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+      <de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds.sumYearEnd.icomeShare contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+      <de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds.sumYearEnd.Capitalmovements contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+      <de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds.sumYearEnd.CapitaladjustmentOther contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+    </de-gaap-ci:kke.limitedPartners.sumEquityAccounts.kinds>
+  </de-gaap-ci:kke.limitedPartners>
+  <de-gaap-ci:eqCh contextRef="I-2012" xsi:nil="true" />
+  <de-gaap-ci:cfs contextRef="I-2012" xsi:nil="true" />
+  <de-gaap-ci:cfs.cashEqu contextRef="I-2012" unitRef="EUR" decimals="2">8646.00</de-gaap-ci:cfs.cashEqu>
+  <de-gaap-ci:cfs.cashEqu.cashChanges contextRef="D-2012" unitRef="EUR" decimals="2">-61351.00</de-gaap-ci:cfs.cashEqu.cashChanges>
+  <de-gaap-ci:cfs.cashEqu.nonCashChanges contextRef="D-2012" unitRef="EUR" decimals="2">63531.00</de-gaap-ci:cfs.cashEqu.nonCashChanges>
+  <de-gaap-ci:nt contextRef="D-2012">mein &lt;b&gt;Anhang &lt;/b&gt;ist doof</de-gaap-ci:nt>
+  <de-gaap-ci:nt.ass contextRef="I-2012" xsi:nil="true" />
+  <de-gaap-ci:nt.bsInfo contextRef="D-2012" xsi:nil="true" />
+  <de-gaap-ci:nt.bsInfo.analysisOfLiab contextRef="D-2012" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.regulatory contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.other.thereoffCoopertiveRefunds contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.trade.shareholders contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:bs.eqLiab.liab.other.shareholders contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass contextRef="I-2012" unitRef="EUR" decimals="2">5.00</de-fi:bsBanks.ass>
+  <de-fi:bsBanks.ass.cashRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.publDebtRefCentralBanks contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.affil contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.particip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.dueOnDemand contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.mortgageLoans contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.publLoans contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.otherMortgageCompanies contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.otherMortgageCompanies.dueOnDemand contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.otherMortgageCompanies.mortgagingSecurities contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.homeSavingsLoans contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.interimLoans contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.otherBuildingLoans contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.otherBuildingSocieties contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivBanks.dueOnDemandBuildingSocieties contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.affil contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.particip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.securedByMortgages contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.publLoans contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.mortgageLoans contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.securedByShipMortgages contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.publLoansMortgage.Companies contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.otherMortgageCompanies contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.otherMortgageCompanies.collaterisedBySecurities contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.buildingLoans.allotments contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.buildingLoans.interim contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.buildingLoans.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.buildingLoans.other.securedByMortgages contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.otherBuildingSocieties contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.receivCustomers.buildingLoans contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.debtInstruments contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.debtInstruments.affil contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.debtInstruments.particip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.debtInstruments.moneyMarketPapers contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.debtInstruments.bonds contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.debtInstruments.ownDebtInstruments contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.shares contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tradingPortfolioOtherForeign contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.goodsHeld contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.shares.investmentPortfolio contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.shares.investmentPortfolio.tradingBook contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.shares.investmentPortfolio.bankingBook contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.shares.liquidityReserve contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.shares.liquidityReserve.tradingBook contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.shares.liquidityReserve.bankingBook contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.sharesOtherForeign contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tradingPortfolio contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tradingPortfolio.tradingBook contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tradingPortfolio.bankingBook contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.particip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.particip.corporations contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.particip.partnerships contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.participCoop.particip.corporations contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.participCoop.particip.partnerships contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.participCoop.particip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.sharesInAffil contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.sharesInAffil.partnerships contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.sharesInAffil.corporations contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.fiduciaryAssets contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.publEquilisationClaims contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.leaseAssets contextRef="I-2012" unitRef="EUR" decimals="2">5.00</de-fi:bsBanks.ass.leaseAssets>
+  <de-fi:bsBanks.ass.intan contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.intan.selfmade contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.intan.concessionBrands contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.intan.goodwill contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.intan.advPaym contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.landBuildings contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.landBuildings.landWithoutBuildings contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.landBuildings.rightEquivalentToLandWithoutBuildings contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.landBuildings.buildingsOnOwnLand contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.landBuildings.buildingsOnOwnLand.land contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.landBuildings.buildingsOnNonOwnedLand contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.landBuildings.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.machinery contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.otherEquipm contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.inConstrAdvPaym contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tan.leaseAssets contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.tanOtherForeign contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.unpaidCap contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.unpaidCapCalled contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.ownShares contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.other.corpTaxCredit37KStG contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.prepaidExp contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.prepaidExp.underwritingBusiness contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.prepaidExp.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.defTax contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.surplusFromOffsetting contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.deficitNotCoveredByCapital contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.taxbalanceOrgancomp contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.taxbalanceGenerally contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabBanks contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabBanks.affil contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabBanks.particip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabCustomers contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabCustomers.affil contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabCustomers.particip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabTransactionsInGoods contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabTransactionsInGoods.affil contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabTransactionsInGoods.particip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabSecuritised contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabSecuritised.affil contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabSecuritised.particip contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabTradingPortfolio contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabFiduciaryLiab contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherTaxes.taxResult contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.defTax contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabOther contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.defIncome contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.defIncome.underwritingBusiness contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.defIncome.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.accruals contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.accruals.pensions contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.accruals.pensions.shareholdersRelatedParties contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.accruals.pensions.direct contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.accruals.pensions.externalFunds contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.accruals.pensions.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.accruals.pensionsOtherForeign contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.accruals.tax contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.accruals.taxOtherForeign contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.accruals.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.accruals.otherForeign contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.fundHomeLoanSavingsAssociationRules contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.pretaxRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.pretaxRes.res contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.pretaxRes.specAmort contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.pretaxResOtherForeign contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.lastRangeLiab contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.profSharRights contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.profSharRights.debtEquiv contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.fundGeneralBankingRisks contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.currTransl contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.subscribed contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.calledCapital contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.capRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.revenueRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.revenueRes.legal contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.revenueRes.contingenciesRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.revenueRes.ownSharesRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.revenueRes.sharesParentCompRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.revenueRes.otherSavingsBanks contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.revenueRes.statutory contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.revenueRes.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.revenueResCoop contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.taxbalanceGenerally contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.ass.defTaxHGB274_2 contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.profitLoss contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.unlimitedLiablePartners contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.unlimitedLiablePartners.beginYear contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.unlimitedLiablePartners.capAdjustBILMOG contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.unlimitedLiablePartners.capAdjust contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.unlimitedLiablePartners.deposits contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.unlimitedLiablePartners.withdrawals contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.unlimitedLiablePartners.capChange6bRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.unlimitedLiablePartners.netIncome contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.unlimitedLiablePartners.capReclassifications contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.limitedLiablePartners contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.limitedLiablePartners.beginYear contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.limitedLiablePartners.capAdjustBILMOG contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.limitedLiablePartners.capAdjust contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.limitedLiablePartners.deposits contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.limitedLiablePartners.withdrawals contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.limitedLiablePartners.capChange6bRes contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.limitedLiablePartners.netIncome contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.partnerships.limitedLiablePartners.capReclassifications contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.reservesPartnership contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.coopPartners contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.profSharing contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.silentPartner contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.lastRangeCapital contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.taxbalanceOrgancomp contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.equity.taxbalanceInvstg contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.contingLiab.contingLiab contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.contingLiab.other contextRef="I-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.contingLiab.fundsUnderManagement contextRef="I-2012" xsi:nil="true" />
+  <de-fi:isBanks.leaseIncome contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.netIncome contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.OtherForeign contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.retainedEarningsPrevYear contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.netIncomeAndRetainedEarnings contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.releaseCapReserves contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.netIncomeAndRetainedEarningsAndCapRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.netIncomeAndRetainedEarningsAndCapResAndReleaseRevenRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.releaseRevenReserves contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.releaseRevenReserves.legalRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.releaseRevenReserves.contingencyRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.releaseRevenReserves.ownSharesRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.releaseRevenReserves.sharesParentCompRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.releaseRevenReserves.statRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.releaseRevenReserves.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.releaseRevenueResCoop contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.releaseProfSharRights contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.netIncomeAndRetainedEarningsAndCapResAndReleaseRevenResAndProfSharAndAdditionRevenRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.netIncomeAndRetainedEarningsAndCapResAndReleaseRevenResAndProfShar contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.additionRevenReserves contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.additionRevenReserves.legalRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.additionRevenReserves.contingencyRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.additionRevenReserves.ownSharesRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.additionRevenReserves.sharesParentCompRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.additionRevenReserves.statRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.additionRevenReserves.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.additionRevenueResCoop contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.additionProfSharRights contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.gainLoss contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.regularIncome contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.netTradingIncome contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.grossProfitOnGoodsTrading contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.grossProfitOnGoodsTrading.sales contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.grossProfitOnGoodsTrading.cogs contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.tradingIncome contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.tradingExpense contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.tradingExpense.securities contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.interestIncome contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.interestIncome.discounting contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.interestIncome.subjectToVat contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherOpRevenue.subjectToVat contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherOpRevenue.interestAO233a contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherOpRevenue.interestAO233a.corpTax contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherOpRevenue.interestAO233a.tradeTax contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherOpRevenue.disposFixAss contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherOpRevenue.revalFixAss contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherOpRevenue.revalCurrAss contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherOpRevenue.releaseLiab contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherOpRevenue.exchange contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherOpRevenue.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.incomeReleasePreTaxRes.EStG6b_10 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.incomeReleasePreTaxRes.EStG6b_3 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.incomeReleasePreTaxRes.substEStR6_6 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.incomeReleasePreTaxRes.EStG4g contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.incomeReleasePreTaxRes.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.netInterest contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.netFeeIncome contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.leaseExpenses contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.interestExpenses contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.interestExpenses.discounting contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.shares contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.shares.tradingBook contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.particip contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.particip.corporations contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.particip.partnerships contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.particip.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.coop contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.coop.corporations contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.coop.partnerships contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.coop.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.affil contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.affil.corporations contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.affil.partnerships contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.currIncome.affil.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.earningProfSharing contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.feeIncome contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.feeIncome.subjectToVat contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.feeExpenses contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherOpRevenue contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.incomeReleasePreTaxRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.staff contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.staff.salaries contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.staff.social contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.staff.salaries.pensions contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.giftsDeductible contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.giftsNonDeductible contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.businessEntertainment contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.supervisoryboard contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.donations contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.leaseFix contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.leaseFix.partners contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.leaseFix.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.leaseFix.notClassifiable contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.fixingLandBuildings contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.energyCost contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.leaseMovable contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.leaseMovable.partners contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.leaseMovable.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.leaseMovable.notClassifiable contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.leasingAll contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.leasingAll.moveable contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.leasingAll.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.fixing contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.insurance contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.vehicles contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.marketing contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.concessLicenses contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.communication contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.legalConsulting contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.training contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.staffRelated contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.otherTaxes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.provisions contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.otherOrdinary contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.exchange contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.otherCost contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.limitedDeductible contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.adminExp.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.intan contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.goodwill contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.tan contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.tan.lowValueAs contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.tan.lowValueAsCollItem contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.tan.buildings contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.leaseAssets contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.exceptionalDepr contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.exceptionalDepr.intan contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.exceptionalDepr.goodwill contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.exceptionalDepr.tan contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.exceptionalDepr.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.intanLeasing contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmFixAss.impairment contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherCost contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherCost.interestAO233a contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherCost.interestAO233a.corpTax contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherCost.interestAO233a.tradeTax contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherCost.donations contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmReceivAddLoanProv contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmReceivAddLoanProv.deprAmReceiv contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmReceivAddLoanProv.deprAmReceiv.specValAllowances contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmReceivAddLoanProv.deprAmReceiv.globValAllowances contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmReceivAddLoanProv.deprAmReceiv.nonTradingBook contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmReceivAddLoanProv.deprAmReceiv.KStG8b_3 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmReceivAddLoanProv.addLoanProv contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.revenueRevalReceivReleaseLoanProv contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.revenueRevalReceivReleaseLoanProv.revenueRevalReceiv contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.revenueRevalReceivReleaseLoanProv.revenueRevalReceiv.specValAllowances contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.revenueRevalReceivReleaseLoanProv.revenueRevalReceiv.globValAllowances contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.revenueRevalReceivReleaseLoanProv.revenueRevalReceiv.nonTradingBook contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:bsBanks.eqLiab.liabBanks.particip.partnerships contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.revenueRevalReceivReleaseLoanProv.ReleaseLoanProv contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmRevenueRevalReceivResult contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmParticip contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmParticip.corporations contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.revenueRevalParticip contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.revenueRevalParticip.corporations contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.lossFrParticip contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.addToPreTaxRes contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.addToPreTaxRes.EStG6b_10 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.addToPreTaxRes.EStG6b_3 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.addToPreTaxRes.substEStR6_6 contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.addToPreTaxRes.EStG4g contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.addToPreTaxRes.other contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.extraord contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.extraordIncome contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.extraordIncome.subjectToVat contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.extraordIncome.merger contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.extraordExpenses contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.extraordExpenses.merger contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.tax contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.otherTaxes.notIncludedInOtherCost contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.addFundGeneralBankRisks contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.releaseFundGeneralBankRisks contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.incomeFrParticip contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.profSharing contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-fi:isBanks.deprAmRevenueRevalParticipResult contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.positionName contextRef="D-2012">cfs.cashEqu.nonCashChanges</de-gaap-ci:detailedInformation.accountbalances.positionName>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">313</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">FABRIKGRUNDSTÜCKE</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">63531.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.positionName contextRef="D-2012">bs.ass.fixAss.tan.otherEquipm.gwgsammelposten</de-gaap-ci:detailedInformation.accountbalances.positionName>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">155</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">UNBEBAUTE GRUNDSTÜCKE</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">513.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.positionName contextRef="D-2012">cfs.cashEqu</de-gaap-ci:detailedInformation.accountbalances.positionName>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">105</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">BETRIEBSAUSSTATTUNG</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">8646.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.positionName contextRef="D-2012">cfs.cashEqu.cashChanges</de-gaap-ci:detailedInformation.accountbalances.positionName>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">31</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">KASSE</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">-61351.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.positionName contextRef="D-2012">bsBanks.ass.leaseAssets</de-gaap-ci:detailedInformation.accountbalances.positionName>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">54</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">FORDERUNGEN</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">5.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">424</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">KRAFTFAHRZEUGE</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">51153.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">351315</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">BETRIEBSVORRICHTUNG</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">21.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">1531</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">WOHNGRUNDSTÜCKE</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">6464.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">5</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">GESCHÄFTSGRUNDSTÜCKE</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">0.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">15341351</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">GESCHÄFTSAUSSTATTUNG</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">-64.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">688</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">KONTO</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">65.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">0031</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">STATISTISCHES KONTO FÜR XY</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">-129859.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">13</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">RÜCKSTELLUNGEN GEWERBESTEUER</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">-634.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">867</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">PACKMITTEL</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">-9910.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">15</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">MINERALWASSER</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">-4546.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">44</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">PATENTE</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">6486.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">1687</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">HILFS- UND BETRIEBSSTOFFE</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">46846.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">16</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">STROM</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">-354546.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">31648</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">UNBEKANNT</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">-564646.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">16387</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">STEUERHINTERZIEHUNG</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">5665433.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:detailedInformation.accountBalances>
+    <de-gaap-ci:detailedInformation.accountbalances.accountNumber contextRef="D-2012">23456</de-gaap-ci:detailedInformation.accountbalances.accountNumber>
+    <de-gaap-ci:detailedInformation.accountbalances.accountDescription contextRef="D-2012">BEISPIELKONTO</de-gaap-ci:detailedInformation.accountbalances.accountDescription>
+    <de-gaap-ci:detailedInformation.accountbalances.amount contextRef="D-2012" unitRef="EUR" decimals="2">-4723607.00</de-gaap-ci:detailedInformation.accountbalances.amount>
+    <detailedInformation.accountbalances.balanceList>2</detailedInformation.accountbalances.balanceList>
+  </de-gaap-ci:detailedInformation.accountBalances>
+  <de-gaap-ci:hbst.transfer>
+    <de-gaap-ci:hbst.transfer.kind>
+      <de-gaap-ci:hbst.transfer.kind.reclassification contextRef="D-2012" />
+    </de-gaap-ci:hbst.transfer.kind>
+    <de-gaap-ci:hbst.transfer.bsAss>
+      <de-gaap-ci:hbst.transfer.bsAss.name contextRef="D-2012">de-fi:bsBanks.ass.leaseAssets</de-gaap-ci:hbst.transfer.bsAss.name>
+      <de-gaap-ci:hbst.transfer.bsAss.changeValueActualPeriod contextRef="D-2012" unitRef="EUR" decimals="2">-5.00</de-gaap-ci:hbst.transfer.bsAss.changeValueActualPeriod>
+      <de-gaap-ci:hbst.transfer.bsAss.changeValuePreviousPeriod contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+    </de-gaap-ci:hbst.transfer.bsAss>
+    <de-gaap-ci:hbst.transfer.bsAss>
+      <de-gaap-ci:hbst.transfer.bsAss.name contextRef="D-2012">de-fi:bsBanks.ass.sharesInAffil</de-gaap-ci:hbst.transfer.bsAss.name>
+      <de-gaap-ci:hbst.transfer.bsAss.changeValueActualPeriod contextRef="D-2012" unitRef="EUR" decimals="2">5.00</de-gaap-ci:hbst.transfer.bsAss.changeValueActualPeriod>
+      <de-gaap-ci:hbst.transfer.bsAss.changeValuePreviousPeriod contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+    </de-gaap-ci:hbst.transfer.bsAss>
+    <de-gaap-ci:hbst.transfer.comment contextRef="D-2012" xsi:nil="true" />
+    <de-gaap-ci_hbst.transfer.name>123 Umgliederung</de-gaap-ci_hbst.transfer.name>
+  </de-gaap-ci:hbst.transfer>
+  <de-gaap-ci:hbst.transfer>
+    <de-gaap-ci:hbst.transfer.kind>
+      <de-gaap-ci:hbst.transfer.kind.reclassificationChangeValue contextRef="D-2012" />
+    </de-gaap-ci:hbst.transfer.kind>
+    <de-gaap-ci:hbst.transfer.bsAss>
+      <de-gaap-ci:hbst.transfer.bsAss.name contextRef="D-2012">de-fi:bsBanks.ass.receivCustomers</de-gaap-ci:hbst.transfer.bsAss.name>
+      <de-gaap-ci:hbst.transfer.bsAss.changeValueActualPeriod contextRef="D-2012" unitRef="EUR" decimals="2">-324.00</de-gaap-ci:hbst.transfer.bsAss.changeValueActualPeriod>
+      <de-gaap-ci:hbst.transfer.bsAss.changeValuePreviousPeriod contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+    </de-gaap-ci:hbst.transfer.bsAss>
+    <de-gaap-ci:hbst.transfer.comment contextRef="D-2012" xsi:nil="true" />
+    <de-gaap-ci_hbst.transfer.name>all</de-gaap-ci_hbst.transfer.name>
+  </de-gaap-ci:hbst.transfer>
+  <de-gaap-ci:hbst.transfer>
+    <de-gaap-ci:hbst.transfer.kind>
+      <de-gaap-ci:hbst.transfer.kind.reclassificationChangeValue contextRef="D-2012" />
+    </de-gaap-ci:hbst.transfer.kind>
+    <de-gaap-ci:hbst.transfer.bsAss>
+      <de-gaap-ci:hbst.transfer.bsAss.name contextRef="D-2012">de-fi:bsBanks.ass.cashRes</de-gaap-ci:hbst.transfer.bsAss.name>
+      <de-gaap-ci:hbst.transfer.bsAss.changeValueActualPeriod contextRef="D-2012" unitRef="EUR" xsi:nil="true" />
+      <de-gaap-ci:hbst.transfer.bsAss.changeValuePreviousPeriod contextRef="D-2012" unitRef="EUR" decimals="2">500.00</de-gaap-ci:hbst.transfer.bsAss.changeValuePreviousPeriod>
+    </de-gaap-ci:hbst.transfer.bsAss>
+    <de-gaap-ci:hbst.transfer.comment contextRef="D-2012">Vorjahreswerte</de-gaap-ci:hbst.transfer.comment>
+    <de-gaap-ci_hbst.transfer.name>Überleitungswerte Vorjahr</de-gaap-ci_hbst.transfer.name>
+  </de-gaap-ci:hbst.transfer>
+  <genInfo.report.id.reportType xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.report.id.reportType.reportType.GB contextRef="D-2012" />
+  </genInfo.report.id.reportType>
+  <genInfo.report.id.reportStatus xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.report.id.reportStatus.reportStatus.V contextRef="D-2012" />
+  </genInfo.report.id.reportStatus>
+  <genInfo.report.id.revisionStatus xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.report.id.revisionStatus.revisionStatus.E contextRef="D-2012" />
+  </genInfo.report.id.revisionStatus>
+  <genInfo.report.id.reportElement xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.report.id.reportElement.reportElements.L contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.B contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.EB contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.ZL contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.BA contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.BP contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.GuV contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.H contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.BAL contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.BAK contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.NA contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.EV contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.CFS contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.EKE contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.STU contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.KS contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.SEF contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.BGWG contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.SGE contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.SGEP contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.SGEB contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.KKE contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.SA contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.SB contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.BV contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.ARB contextRef="D-2012" />
+    <genInfo.report.id.reportElement.reportElements.S contextRef="D-2012" />
+  </genInfo.report.id.reportElement>
+  <genInfo.report.id.statementType xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.report.id.statementType.statementType.E contextRef="D-2012" />
+  </genInfo.report.id.statementType>
+  <genInfo.report.id.statementType.tax xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.report.id.statementType.tax.statementTypeTax.GHB contextRef="D-2012" />
+  </genInfo.report.id.statementType.tax>
+  <genInfo.report.id.incomeStatementendswithBalProfit contextRef="D-2012" xsi:nil="true" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01" />
+  <genInfo.report.id.accountingStandard xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.report.id.accountingStandard.accountingStandard.HGBM contextRef="D-2012" />
+  </genInfo.report.id.accountingStandard>
+  <genInfo.report.id.specialAccountingStandard xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.report.id.specialAccountingStandard.RKV contextRef="D-2012" />
+  </genInfo.report.id.specialAccountingStandard>
+  <genInfo.report.id.incomeStatementFormat xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.report.id.incomeStatementFormat.incomeStatementFormat.GKV contextRef="D-2012" />
+  </genInfo.report.id.incomeStatementFormat>
+  <genInfo.report.id.consolidationRange xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.report.id.consolidationRange.consolidationRange.EA contextRef="D-2012" />
+  </genInfo.report.id.consolidationRange>
+  <genInfo.report.id.accordingTo xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.report.id.accordingTo.name contextRef="D-2012" xsi:nil="true" />
+    <genInfo.report.id.accordingTo.idNo>
+      <genInfo.company.id.idNo.type.companyId.ST13 contextRef="D-2012" xsi:nil="true" />
+      <genInfo.company.id.idNo.type.companyId.BF4 contextRef="D-2012" xsi:nil="true" />
+    </genInfo.report.id.accordingTo.idNo>
+    <genInfo.report.id.accordingTo.yearEnd contextRef="D-2012" xsi:nil="true" />
+  </genInfo.report.id.accordingTo>
+  <genInfo.report.period.fiscalYearBegin contextRef="D-2012" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">2012-01-01</genInfo.report.period.fiscalYearBegin>
+  <genInfo.report.period.fiscalYearEnd contextRef="D-2012" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">2012-12-31</genInfo.report.period.fiscalYearEnd>
+  <genInfo.report.period.balSheetClosingDate contextRef="D-2012" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">2012-12-31</genInfo.report.period.balSheetClosingDate>
+  <genInfo.report.period.fiscalPreviousYearBegin contextRef="D-2012" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">2011-01-01</genInfo.report.period.fiscalPreviousYearBegin>
+  <genInfo.report.period.fiscalPreviousYearEnd contextRef="D-2012" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">2011-12-31</genInfo.report.period.fiscalPreviousYearEnd>
+  <genInfo.report.period.balSheetClosingDatePreviousYear contextRef="D-2012" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">2011-12-31</genInfo.report.period.balSheetClosingDatePreviousYear>
+  <genInfo.company.id.name contextRef="D-2012" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">aa</genInfo.company.id.name>
+  <genInfo.company.id.legalStatus xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.company.id.legalStatus.legalStatus.AG contextRef="D-2012" />
+  </genInfo.company.id.legalStatus>
+  <genInfo.company.id.location contextRef="D-2012" xsi:nil="true" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01" />
+  <genInfo.company.id.location.street contextRef="D-2012" xsi:nil="true" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01" />
+  <genInfo.company.id.location.houseNo contextRef="D-2012" xsi:nil="true" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01" />
+  <genInfo.company.id.location.zipCode contextRef="D-2012" xsi:nil="true" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01" />
+  <genInfo.company.id.location.city contextRef="D-2012" xsi:nil="true" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01" />
+  <genInfo.company.id.location.country contextRef="D-2012" xsi:nil="true" xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01" />
+  <genInfo.company.id.idNo xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.company.id.idNo.type.companyId.ST13 contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.idNo.type.companyId.STID contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.idNo.type.companyId.BF4 contextRef="D-2012" xsi:nil="true" />
+  </genInfo.company.id.idNo>
+  <genInfo.company.id.parent xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.company.id.parent.name contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.parent.name.formerName contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.parent.name.dateOfLastChange contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.parent.idNo>
+      <genInfo.company.id.idNo.type.companyId.ST13 contextRef="D-2012" xsi:nil="true" />
+      <genInfo.company.id.idNo.type.companyId.STID contextRef="D-2012" xsi:nil="true" />
+      <genInfo.company.id.idNo.type.companyId.BF4 contextRef="D-2012" xsi:nil="true" />
+    </genInfo.company.id.parent.idNo>
+  </genInfo.company.id.parent>
+  <genInfo.company.id.shareholder xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.company.id.shareholder.name contextRef="D-2012">Hans Meister</genInfo.company.id.shareholder.name>
+    <genInfo.company.id.shareholder.currentnumber contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.shareholder.taxnumber contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.shareholder.taxid contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.shareholder.legalStatus>
+      <genInfo.company.id.shareholder.legalStatus.legalStatus.NPP contextRef="D-2012" />
+    </genInfo.company.id.shareholder.legalStatus>
+    <genInfo.company.id.shareholder.ShareDivideKey>
+      <genInfo.company.id.shareholder.ShareDivideKey.numerator contextRef="D-2012" unitRef="unit_pure" xsi:nil="true" />
+      <genInfo.company.id.shareholder.ShareDivideKey.denominator contextRef="D-2012" unitRef="unit_pure" xsi:nil="true" />
+    </genInfo.company.id.shareholder.ShareDivideKey>
+    <genInfo.company.id.shareholder.SpecialBalanceRequired contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.shareholder.extensionRequired contextRef="D-2012" xsi:nil="true" />
+  </genInfo.company.id.shareholder>
+  <genInfo.company.id.shareholder xmlns="http://www.xbrl.de/taxonomies/de-gcd-2012-06-01">
+    <genInfo.company.id.shareholder.name contextRef="D-2012">Klaus Peters</genInfo.company.id.shareholder.name>
+    <genInfo.company.id.shareholder.currentnumber contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.shareholder.taxnumber contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.shareholder.taxid contextRef="D-2012">habe keine</genInfo.company.id.shareholder.taxid>
+    <genInfo.company.id.shareholder.legalStatus>
+      <genInfo.company.id.shareholder.legalStatus.legalStatus.NPP xsi:nil="true" contextRef="D-2012" />
+    </genInfo.company.id.shareholder.legalStatus>
+    <genInfo.company.id.shareholder.ShareDivideKey>
+      <genInfo.company.id.shareholder.ShareDivideKey.numerator contextRef="D-2012" unitRef="unit_pure" xsi:nil="true" />
+      <genInfo.company.id.shareholder.ShareDivideKey.denominator contextRef="D-2012" unitRef="unit_pure" xsi:nil="true" />
+    </genInfo.company.id.shareholder.ShareDivideKey>
+    <genInfo.company.id.shareholder.SpecialBalanceRequired contextRef="D-2012" xsi:nil="true" />
+    <genInfo.company.id.shareholder.extensionRequired contextRef="D-2012" xsi:nil="true" />
+  </genInfo.company.id.shareholder>
+  <detailedInformation.accountbalances.balanceListDescription>
+    <detailedInformation.accountbalances.balanceListItem id="1" isImported="False" source="Taxonomy" comment="SuSa mit berechneten Konten">berechnete Konten</detailedInformation.accountbalances.balanceListItem>
+    <detailedInformation.accountbalances.balanceListItem id="2" isImported="True">Balance list 2</detailedInformation.accountbalances.balanceListItem>
+  </detailedInformation.accountbalances.balanceListDescription>
+  <detailedInformation.accountbalances.accountGroupDescription />
+  <detailedInformation.accountbalances.splittedAccountGroupDescription />
+  <commentsTaxonomyPositions />
+  <system comment="">new system</system>
+  <report name="Version interesting" comment="" />
+  <Settings>
+    <ShowSelectedLegalForm>True</ShowSelectedLegalForm>
+    <ShowSelectedTaxonomy>True</ShowSelectedTaxonomy>
+    <ShowTypeOperatingResult>True</ShowTypeOperatingResult>
+    <ShowOnlyMandatoryPostions>True</ShowOnlyMandatoryPostions>
+  </Settings>
+</xbrli:xbrl>

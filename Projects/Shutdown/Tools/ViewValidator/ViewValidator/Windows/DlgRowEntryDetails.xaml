@@ -1,0 +1,28 @@
+﻿<Window x:Class="ViewValidator.Windows.DlgRowEntryDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DlgRowEntryDetails" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Label Content="Eintrag vor Regelanwendung:" />
+            <TextBox IsReadOnly="True" Text="{Binding RowEntry.DisplayString, Mode=OneWay}"/>
+            <Label Content="Eintrag vor Regelanwendung (Hexadezimal):" />
+            <TextBox IsReadOnly="True" Text="{Binding DisplayStringHex, Mode=OneWay}"/>
+            <Label Content="Eintrag nach Regelanwendung:" />
+            <TextBox IsReadOnly="True" Text="{Binding RowEntry.RuleDisplayString, Mode=OneWay}"/>
+            <Label Content="Eintrag nach Regelanwendung (Hexadezimal):" />
+            <TextBox IsReadOnly="True" Text="{Binding RuleDisplayStringHex, Mode=OneWay}"/>
+        </StackPanel>
+        <!-- button bar -->
+        <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}" Grid.ColumnSpan="2">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="_OK" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="btnOk_Click" />
+                <Button Content="A_bbrechen" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

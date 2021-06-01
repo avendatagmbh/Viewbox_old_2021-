@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Converters="clr-namespace:AvdWpfControls.Converters;assembly=AvdWpfControls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/AvdWpfStyles;component/Default.xaml"/>        
+    </ResourceDictionary.MergedDictionaries>
+
+    <Converters:BoolInverter x:Key="BoolInverter" />
+    
+    <ImageBrush x:Key="infoBgBrush" ImageSource="/eBalanceKitResources;component/Resources/head.png" ViewportUnits="Absolute" ViewboxUnits="Absolute" Viewbox="7,0,460,55" TileMode="FlipXY" Viewport="0,0,471,175" />
+</ResourceDictionary>

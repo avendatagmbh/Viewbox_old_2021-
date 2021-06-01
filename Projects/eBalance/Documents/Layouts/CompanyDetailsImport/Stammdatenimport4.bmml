@@ -1,0 +1,35 @@
+<mockup version="1.0" skin="sketch" measuredW="1032" measuredH="547" mockupW="930" mockupH="509">
+  <controls>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::TitleWindow" x="102" y="38" w="930" h="509" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Stammdatenimport%20Assistent</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Button" x="834" y="477" w="-1" h="-1" measuredW="65" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Zur%FCck</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Button" x="914" y="477" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Weiter</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Label" x="117" y="82" w="-1" h="-1" measuredW="512" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Es%20gibt%20Mehrfachauswahlelemente%20bei%20denen%20Ihre%20Auswahl%20noch%20zugeordnet%20werden%20muss</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::DataGrid" x="120" y="112" w="797" h="336" measuredW="797" measuredH="55" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>CSV%2C%20Name%2C%20Taxonomie%20Id%2C%20eingegebenes%20Element%2C%20Zuordnung%20zu%0AFirma1.csv%2C%20Rechtsform%2C%20genInfo.company.id.legalStatus%2C%20GmbH%2C%20genInfo.company.id.legalStatus.legalStatus.GMBH</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Label" x="644" y="82" w="-1" h="-1" measuredW="388" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <text>%28There%20have%20been%20combo%20values%20where%20which%20need%20to%20be%20mapped%29</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

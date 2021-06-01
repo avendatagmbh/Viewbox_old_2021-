@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="ViewAssistant.Controls.CtlDatabaseSummary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base"
+        xmlns:Converters="clr-namespace:ViewAssistant.Converters">
+    <Control.Resources>
+        <Converters:EmptyStringToNotSetStringConverter x:Key="emptyStringToNotSetStringConverter" />
+    </Control.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="450"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_SourceType}" FontWeight="Bold" Padding="0"
+                           HorizontalContentAlignment="Left"/>
+            <TextBlock Grid.Column="1" Text="{Binding Path=DbType, Mode=OneWay, Converter={StaticResource emptyStringToNotSetStringConverter}}" Padding="0"
+                               Margin="10,0,15,0" TextWrapping="WrapWithOverflow" Name="SourceType" DataContextChanged="DataContextChanged"></TextBlock>
+        </Grid>
+        
+        <Grid Grid.Row="1" Name="ServerField">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="450"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Server}" FontWeight="Bold" Padding="0"
+                           HorizontalContentAlignment="Left"/>
+            <TextBlock Grid.Column="1" Text="{Binding Path=Hostname, Mode=OneWay, Converter={StaticResource emptyStringToNotSetStringConverter}}" Padding="0"
+                               Margin="10,0,15,0" TextWrapping="WrapWithOverflow"></TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="2" Name="UsernameField">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="450"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Username}" FontWeight="Bold" Padding="0"
+                           HorizontalContentAlignment="Left"/>
+            <TextBlock Grid.Column="1" Text="{Binding Path=Username, Mode=OneWay, Converter={StaticResource emptyStringToNotSetStringConverter}}" Padding="0"
+                               Margin="10,0,15,0" TextWrapping="WrapWithOverflow"></TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="3" Name="DatabaseField">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="450"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Database}" FontWeight="Bold" Padding="0"
+                           HorizontalContentAlignment="Left"/>
+            <TextBlock Grid.Column="1" Text="{Binding Path=DbName, Mode=OneWay, Converter={StaticResource emptyStringToNotSetStringConverter}}" Padding="0"
+                               Margin="10,0,15,0" TextWrapping="WrapWithOverflow"></TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="4" Name="PortField">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="450"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Port}" FontWeight="Bold" Padding="0"
+                           HorizontalContentAlignment="Left"/>
+            <TextBlock Grid.Column="1" Text="{Binding Path=Port, Mode=OneWay, Converter={StaticResource emptyStringToNotSetStringConverter}}" Padding="0"
+                               Margin="10,0,15,0" TextWrapping="WrapWithOverflow"></TextBlock>
+        </Grid>
+
+    </Grid>
+</UserControl>

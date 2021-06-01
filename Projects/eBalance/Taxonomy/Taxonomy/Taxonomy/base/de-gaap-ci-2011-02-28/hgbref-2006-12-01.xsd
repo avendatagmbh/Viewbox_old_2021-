@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) XBRL Deutschland e.V. - see www.xbrl.de -->
+<schema xmlns:hgbref="http://www.xbrl.de/2006/ref" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xbrl.de/2006/ref" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+	<element name="ValidSince" type="string" substitutionGroup="link:part" id="ref_ValidSince">
+		<annotation>
+			<documentation xml:lang="de">Seit wann findet der Standard Anwendung?</documentation>
+		</annotation>
+	</element>
+	<element name="ValidThrough" type="string" substitutionGroup="link:part" id="ref_ValidThrough">
+		<annotation>
+			<documentation xml:lang="de">Bis wann war der Standard gültig?</documentation>
+		</annotation>
+	</element>
+</schema>

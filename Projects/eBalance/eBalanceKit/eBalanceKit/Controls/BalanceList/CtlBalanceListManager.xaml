@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.BalanceList.CtlBalanceListManager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" xmlns:my="clr-namespace:eBalanceKit.Controls.BalanceList"
+             xmlns:Localisation="clr-namespace:AvdWpfControls.Localisation;assembly=AvdWpfControls">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Padding="2" Background="{StaticResource headerBgBrush}">
+            <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Top">
+                <!-- new -->
+                <wpfc:AvdMenuButton
+                Name="btnAddItem" 
+                Click="btnAddItem_Click"
+                ToolTip="{x:Static loc:ResourcesBalanceList.BtnAddBalanceListTooltip}"
+                ImageSource="/eBalanceKitResources;component/Resources/add.png" 
+                Caption="{x:Static loc:ResourcesCommon.New}" IsEnabled="{Binding ReportRights.WriteRestAllowed}" />
+
+                <!-- delete -->
+                <wpfc:AvdMenuButton 
+                Name="btnDeleteItem" 
+                Click="btnDeleteItem_Click" 
+                Margin="5,0,0,0"
+                ToolTip="{x:Static loc:ResourcesBalanceList.BtnDeleteBalanceListTooltip}"
+                ImageSource="/eBalanceKitResources;component/Resources/delete.png" Caption="{x:Static loc:ResourcesCommon.Delete}">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="IsEnabled" Value="True" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ReportRights.WriteRestAllowed}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding SelectedIndex,ElementName=lstItems}" Value="-1">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </wpfc:AvdMenuButton>
+
+                <!-- edit -->
+                <wpfc:AvdMenuButton Name="btnEditItem" Click="btnEditItem_Click" Margin="5,0,0,0"
+                               ImageSource="/eBalanceKitResources;component/Resources/Edit.png" Caption="{x:Static loc:ResourcesCommon.Edit}"
+                               ToolTip="{x:Static loc:ResourcesBalanceList.BtnEditBalanceListTooltip}">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="IsEnabled" Value="True" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ReportRights.WriteAllowed}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding SelectedIndex,ElementName=lstItems}" Value="-1">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </wpfc:AvdMenuButton>
+            </StackPanel>
+        </Border>
+        
+        <Border Grid.Row="1" Style="{StaticResource GroupBoxBorder}" CornerRadius="0" Margin="0">
+            <ListBox Grid.Row="0" Name="lstItems"
+                 Padding="-2,0,0,0"
+                 ItemsSource="{Binding Path=Document.BalanceListsImported}" 
+                 SelectedItem="{Binding Path=Document.SelectedBalanceList}"
+                 MinHeight="100" BorderBrush="Transparent" BorderThickness="0"
+                 ScrollViewer.CanContentScroll="False"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" MouseDoubleClick="lstItems_MouseDoubleClick">
+
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                        </Style.Resources>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="0,0,0,5" Padding="5,2">
+                            <Border.Style>
+                                <Style TargetType="Border" BasedOn="{StaticResource GroupBoxBorder}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                            <Setter Property="Background" Value="{StaticResource TransparentOrangeGradientBrush}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <my:BalListInfo />
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+
+    </Grid>
+</UserControl>

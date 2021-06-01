@@ -1,0 +1,44 @@
+﻿<Window x:Class="eBalanceKit.Windows.FederalGazette.DlgCompanyList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!-- I wanted a list but why the hell i created this? who knows -->
+        <StackPanel>
+            <TextBlock Text="Company ID"/>
+            <TextBox Text="{Binding CompanyId}"/>
+            
+            <TextBlock Text="Company Name"/>
+            <TextBox Text="{Binding CompanyName}"/>
+            
+            <TextBlock Text="Legal Form"/>
+            <TextBox Text="{Binding LegalForm}"/>
+            
+            <TextBlock Text="Domicile"/>
+            <TextBox Text="{Binding Domicile}"/>
+            
+            <TextBlock Text="Register Court"/>
+            <TextBox Text="{Binding RegisterCourt}"/>
+            
+            <TextBlock Text="Register Number"/>
+            <TextBox Text="{Binding RegisterNumber}"/>
+            
+            <TextBlock Text="Register Type"/>
+            <TextBox Text="{Binding RegisterType}"/>
+        </StackPanel>
+        
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="_OK" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75"/>
+                <Button Content="A_bbrechen" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnCancel" VerticalAlignment="Top" Width="75" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

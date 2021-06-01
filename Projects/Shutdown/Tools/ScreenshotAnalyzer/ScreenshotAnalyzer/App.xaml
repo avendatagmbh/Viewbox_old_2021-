@@ -1,0 +1,20 @@
+﻿<Application x:Class="ScreenshotAnalyzer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Converters="clr-namespace:AvdWpfControls.Converters;assembly=AvdWpfControls"
+             Startup="Application_Startup"
+             ShutdownMode="OnMainWindowClose"
+             StartupUri="Windows\DlgMainWindow.xaml"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/AvdWpfStyles;component/Default.xaml"/>
+                <ResourceDictionary Source="/ResourceDictionaries/AppResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+          <Converters:BoolToVisibilityConverter x:Key="falseToVisibilityConverter" VisibleValue="false" HiddenState="Collapsed"/>
+        <Converters:BoolToVisibilityConverter x:Key="trueToVisibilityConverter" VisibleValue="true" HiddenState="Collapsed"/>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

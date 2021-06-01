@@ -1,0 +1,147 @@
+﻿@using SystemDb
+@using Viewbox.Properties
+@using Viewbox
+@using Viewbox.Models
+@using ViewboxDb
+@using vdb = ViewboxDb
+@{
+    var dataGridModel = Model as DataGridModel;
+    var tableInfo = dataGridModel != null ? dataGridModel.TableObject : Model as TableObject;
+    var tableObject = dataGridModel != null ? dataGridModel.TableInfo : (tableInfo == null) ? Model as ITableObject : tableInfo.Table;
+    string placeholder;
+    var issue = tableObject as IIssue;
+}
+<!-- _SummaPartial.cshtml -->
+@if (tableObject != null)
+{
+    <ul class="dropdown big view" id="extsummaoptions">
+        <li class="panel">
+            @Html.Partial("_TooltipPartial", Resources.AggSum)
+            <a class="icon process right dropdown-btn @(tableInfo != null && tableInfo.Sum != null && tableInfo.Sum.Count > 0 ? "active" : "") @(dataGridModel == null ? "" : (dataGridModel.GroupColumn != null && dataGridModel.SubtotalColumns != null ? "disabled" : ""))">
+            </a>
+            <ul class="dropdown-menu">
+                <li class="column-view-props visible">
+                    <div class="box">
+                        <div class="top">
+                            <h4>@Resources.AggSum</h4>
+                            <div class="close-popup" style="right: 20px; top: 32px;">
+                            </div>
+                            @if (issue == null || issue.Flag == 0)
+                            {
+                                <div class="tabbar">
+                                    <div class="search-viewoptions-panel">
+                                        <div class="bg-left">
+                                        </div>
+                                        @using (Html.BeginForm(null, null, FormMethod.Get, new Dictionary<string, object> { { "id", "searchoverview-extsummaoptions" } }))
+                                        {
+                                            <input class="field bg-middle placeholder" autocomplete="off" name="search_viewoptions" type="text"
+                                                   value="@(dataGridModel != null && !String.IsNullOrWhiteSpace(dataGridModel.Search) ? dataGridModel.Search : Resources.SearchPhrase)"
+                                                   placeholder="@Resources.SearchPhrase" />
+                                            <input type="hidden" class="table-object-id" value="@tableObject.Id" />
+                                            <input type="submit" class="submit" value="" />
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="middle summa" id="extsumma">
+                            @if (issue == null || issue.Flag == 0)
+                            {
+                                <div class="summing-columns">
+                                    <div class="droparea">
+                                        @{
+                                var show_placeholder = true;
+                                        }
+                                        <table class="top-sum">
+                                            <tbody>
+                                                @if (tableInfo != null && tableInfo.Sum != null)
+                                                {
+                                                    foreach (var Column in tableInfo.Sum)
+                                                    {
+                                                        show_placeholder = false;
+
+                                                        <tr class="sumtablerow-up">
+                                                            <td class="item-id">@Column.Id</td>
+                                                            <td class="colnumber">@(Column.Ordinal + 1)</td>
+                                                            <td class="colname"><div class="description">@Column.GetDescription()</div></td>
+                                                            <td class="from-sum"></td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    @{ placeholder = "placeholder" + (show_placeholder ? String.Empty : " hide"); }
+                                    <div class="@placeholder">
+                                        @Resources.SummaText
+                                    </div>
+                                </div>
+                                <div class="summable-columns1 ">
+                                    <table class="bot-sum">
+                                        <tbody>
+                                            @foreach (var Column in tableObject.Columns)
+                                            {
+                                                if (dataGridModel != null && dataGridModel.AlreadyAddedColumns != null && dataGridModel.AlreadyAddedColumns.Contains(Column.Id.ToString()) ||
+                                                    (dataGridModel != null && !Column.GetDescription(ViewboxSession.Language).ToLower().Contains((dataGridModel.Search ?? "").ToLower())) ||
+                                                    (tableInfo != null && tableInfo.Sum != null && (Column.IsVisible || !Column.IsTempedHidden)))
+                                                {
+                                                    continue;
+                                                }
+                                                if (Column.DataType == SqlType.Integer || Column.DataType == SqlType.Decimal || Column.DataType == SqlType.Numeric)
+                                                {
+                                                    <tr class="sumtablerow-visible" style="display: @( ((tableInfo == null || tableInfo.Sum == null) && !Column.IsVisible) ? "none" : "display")">
+                                                        <td class="item-id">@Column.Id</td>
+                                                        <td class="colnumber">@(Column.Ordinal + 1)</td>
+                                                        <td class="colname"><div class="description">@Column.GetDescription()</div></td>
+                                                        <td class="to-sum"></td>
+                                                    </tr>
+                                                }
+                                                else
+                                                {
+                                                    <tr class="sumtablerow-invisible" style="display: @( ((tableInfo == null || tableInfo.Sum == null) && !Column.IsVisible) ? "none" : "display")">
+                                                        <td class="item-id" style="opacity:0.4;">@Column.Id</td>
+                                                        <td class="colnumber" style="opacity:0.4;">@(Column.Ordinal + 1)</td>
+                                                        <td class="colname" style="opacity:0.4;"><div class=" description">@Column.GetDescription()</div></td>
+                                                        <td class="to-sum disabled" style="opacity: 0.3;"></td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="buttons">
+                                    @using (Html.BeginForm("SortAndFilter", "DataGrid", new { id = tableObject.Id, size = 25 }))
+                                    {
+                                        if (tableInfo != null)
+                                        {
+                                            if (tableInfo.Filter != null)
+                                            {
+                                                <input type="hidden" name="filter" value="@tableInfo.Filter.ToOriginalString()" />
+                                            }
+                                            if (tableInfo.Sort != null)
+                                            {
+                                                for (int i = 0; i < tableInfo.Sort.Count; ++i)
+                                                {
+                                                    <input type="hidden" name="sortList[@i].cid" value="@tableInfo.Sort[i].cid" />
+                                                    <input type="hidden" name="sortList[@i].dir" value="@(tableInfo.Sort[i].dir == vdb.SortDirection.Ascending ? 0 : 1)" />
+                                                }
+                                            }
+                                        }
+                                        <input type="submit" class="submit button" value="@Resources.Submit" />
+                                        <input type="button" class="button" value="@Resources.Reset" id="resetsumma" style="margin-right: 10px" />
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <a class="no-action">@String.Format(Resources.NoAction, Resources.AggSum)</a>
+                            }
+                        </div>
+                        <div class="bottom">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+}

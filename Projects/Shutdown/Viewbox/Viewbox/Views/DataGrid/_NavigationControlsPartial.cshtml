@@ -1,0 +1,82 @@
+﻿@using Viewbox
+@using Viewbox.Properties
+@model Viewbox.Models.DataGridModel
+    
+  
+    @if (Model.FromRow > 0 && Model.Summa == false)
+    {
+        <a href="@this.GetUrl(new UrlParam("start", 0))" class="iconx first"></a>
+        <a href="@this.GetUrl(new UrlParam("start", Model.RowsPerPage < Model.FromRow ? Model.FromRow - Model.RowsPerPage : 0))" class="iconx back">
+        </a>
+    }
+    else
+    {
+        <span class="iconx first"></span>
+        <span class="iconx back"></span>
+    }
+    @if (Model.RowsCount > 0)
+    {
+        <span class="from hide">@(Model.FromRow + 1)</span>
+        <span>
+            @if(Model.Summa)
+            {
+                (Model.FromRow).ToString("#,0");
+            }
+            else
+            {
+                (Model.FromRow + 1).ToString("#,0");
+            }
+    </span>
+        <span class="current">@(Model.ToRow == Model.RowsCount ? Model.RowsCount.ToString("#,0") : (Model.ToRow + 1).ToString("#,0"))</span>
+        <span>/</span>
+        <span class="count">@Model.RowsCount.ToString("#,0")</span>
+        <span>@Model.LabelNumberOfRows</span>
+        <span>|</span>
+        <span>@Resources.Page : </span>
+        @*using (Html.BeginForm("Index", "DataGrid", new { id = Model.TableInfo.Id }, FormMethod.Post, new { @class = "rowcount" }))
+        {
+            <input type="hidden" name="start" value="@Model.FromRow" id="start" />
+            <input type="text" id="startpage" name="startpage" value="@(Model.Summa ? 1 : Model.Page)" class="pagecount" />
+            <input type="hidden" name="original_startpage" value="@(Model.Summa ? 1 : Model.Page)" id="original_startpage" />
+        }*@
+            //<input type="hidden" name="start" value="@Model.FromRow" id="start" />
+        <input type="text" id="startpage" name="startpage" value="@(Model.Summa ? 1 : Model.Page)" class="pagecount" link="@("/Datagrid/Index/" + @Model.TableInfo.Id)" />
+        <input type="hidden" name="start" value="@Model.FromRow" id="start" />
+
+        <span>/</span>
+        <span id="pagecount">@Model.PageCount.ToString("#,0")</span>
+    }
+    else
+    {
+        <span>@Model.LabelNoData</span>
+    }
+    @if (Model.ToRow + 1 < Model.RowsCount && Model.Summa == false)
+    {
+        <a href="@this.GetUrl(new UrlParam("start", Model.FromRow + Model.RowsPerPage)).Replace("/ExecuteCountTable", "/Index")" class="iconx next"></a>
+        <a href="@this.GetUrl(new UrlParam("start", Model.RowsCount % Model.RowsPerPage == 0 ? Model.RowsCount - Model.RowsPerPage : Model.RowsCount - Model.RowsCount % Model.RowsPerPage)).Replace("/ExecuteCountTable", "/Index")" class="iconx last"></a>
+    }
+    else
+    {
+        <span class="iconx next"></span>
+        <span class="iconx last"></span>
+    }
+    <div class="hide size">@Model.RowsPerPage</div>
+    <div class="rowcountform">
+        @*@using (Html.BeginForm("Index", "DataGrid", new { id = Model.TableInfo.Id }, FormMethod.Post, new { @class = "rowcount" }))
+        {*@
+            @Resources.RowCount
+            <text>:</text>
+        <input type="text" name="size" value="@Model.RowsPerPage" id="displayrowcount" class="rowcount" link="@("/Datagrid/Index/" + @Model.TableInfo.Id)" />
+            <input type="hidden" name="start" value="@Model.FromRow" id="start2" />
+        @*}*@
+    </div>
+
+    @if (Model.TableObject != null && Model.TableObject.Table != null && Model.TableObject.Table.PageSystem != null && /*!Model.TableObject.Table.PageSystem.IsEnded &&*/ Model.RowsCount == Model.TableObject.Table.PageSystem.CountStep)
+    {
+        <a href="@String.Format("/DataGrid/ExecuteCountTable?id={0}&start={1}&size={2}", Model.TableInfo.Id, Model.FromRow, Model.RowsPerPage)" class="iconx counting"></a>
+    }
+    else
+    {
+        <span class="iconx counting"></span>
+    }
+   

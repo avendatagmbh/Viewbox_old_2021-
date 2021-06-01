@@ -1,0 +1,232 @@
+﻿<Window x:Class="eBalanceKit.Windows.Management.ManagementAssistant.DlgManagementAssistant"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        xmlns:ManagementAssistant="clr-namespace:eBalanceKit.Windows.Management.ManagementAssistant"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:Manager="clr-namespace:eBalanceKitBusiness.Manager;assembly=eBalanceKitBusiness"
+        xmlns:Add="clr-namespace:eBalanceKit.Windows.Management.ManagementAssistant.Add"
+        xmlns:Converters="clr-namespace:eBalanceKit.Windows.Management.ManagementAssistant.Converter"
+        xmlns:Document="clr-namespace:eBalanceKit.Controls.Document"
+        xmlns:Edit="clr-namespace:eBalanceKit.Windows.Management.Edit"
+        Icon="/CustomResources;component/Resources/logo1.png"
+        Title="Assistent" Width="800" Height="600" WindowStartupLocation="CenterOwner" MinWidth="300" MinHeight="200">
+    <Control.Resources>
+        <Converters:ObjectTypeDictContainsKeyToVisibilityConverter x:Key="ObjectTypeDictContainsKeyToVisibilityConverter"/>
+        <Converters:ObjectTypeDictContainsKeyToBoolConverter x:Key="ObjectTypeDictContainsKeyToBoolConverter"/>
+        <Converters:ObjectTypeDictContainsKeyToVisibilityConverter x:Key="ObjectTypeDictContainsKeyToVisibilityConverterInverted" Invert="True"/>
+        <Converters:ObjectTypeDictContainsKeyToBoolConverter x:Key="ObjectTypeDictContainsKeyToBoolConverterInverted" Invert="True"/>
+
+    </Control.Resources>
+    <Grid>
+        <AvdWpfControls:AssistantControl ShowSteps="False" CancelButtonVisibility="Collapsed" Name="assistantControl" Next="assistantControl_Next" Command="{Binding CmdRefreshVisibility}">
+            <AvdWpfControls:AssistantControl.Buttons>
+                <Button Name="btnGenerate" IsCancel="False" Command="{Binding CmdCreateObject}" CommandParameter="Report" Width="100" Content="{x:Static Localisation:ResourcesManamgement.BtnGenerateReport}" Margin="5,0" Visibility="{Binding SiteForReportGenerationReached, Converter={StaticResource TrueToVisibilityConverter}}"/>
+                <Button Name="btnAgain" IsCancel="False" Command="{Binding CmdGoBackToStart}" Width="150" Content="{x:Static Localisation:ResourcesManamgement.BtnAgain}" Visibility="{Binding LastPageReached, Converter={StaticResource TrueToVisibilityConverter}}" Margin="5,0"/>
+                <Button Name="btnClose" Command="{Binding CmdOk}" Width="100" Content="{x:Static Localisation:ResourcesManamgement.BtnFinished}" Visibility="{Binding LastPageReached, Converter={StaticResource TrueToVisibilityConverter}}" Margin="5,0"/>
+                <Button Command="{Binding CmdOk}" Content="{x:Static Localisation:ResourcesCommon.Cancel}" Padding="5,0" Visibility="{Binding LastPageReached, Converter={StaticResource FalseToVisibilityConverter}}" Margin="5,0"/>
+            </AvdWpfControls:AssistantControl.Buttons>
+            <AvdWpfControls:AssistantTabItem Name="tab1" Header="{x:Static Localisation:ResourcesManamgement.Welcome}" NextAllowed="True">
+                <ManagementAssistant:CtlWelcomePage />
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesMain.System}" NextAllowed="True" IsEnabled="True" DetailHeader="{x:Static Localisation:ResourcesManamgement.DetailHeaderSystem}">
+                <ManagementAssistant:CtlSelection />
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesMain.System}" IsEnabled="{Binding Selection[System].IsCreateNewObjectSelected}" DetailHeader="{x:Static Localisation:ResourcesManamgement.DetailHeaderNewSystem}" >
+                <AvdWpfControls:AssistantTabItem.Style>
+                    <Style TargetType="AvdWpfControls:AssistantTabItem">
+                        <Setter Property="NextAllowed" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Create[System].Name, Converter={StaticResource EmptyStringIsFalse}}" Value="False">
+                                <Setter Property="NextAllowed" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </AvdWpfControls:AssistantTabItem.Style>
+                <Add:CtlNameComment DataContext="{Binding Create[System]}"/>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesMain.Company}" NextAllowed="True" CommandOnSelected="{Binding CmdObjectSelected}" CommandOnSelectedParameter="System" IsEnabled="True" DetailHeader="{x:Static Localisation:ResourcesManamgement.DetailHeaderCompany}">
+                <ManagementAssistant:CtlSelection />
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesMain.Company}" CommandOnSelected="{Binding CmdObjectSelected}" CommandOnSelectedParameter="Company" DetailHeader="{x:Static Localisation:ResourcesManamgement.DetailHeaderNewCompany}">
+                <AvdWpfControls:AssistantTabItem.Style>
+                    <Style TargetType="AvdWpfControls:AssistantTabItem">
+                        <Setter Property="IsEnabled" Value="False" />
+                        <Setter Property="NextAllowed" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Create[Company].Name, Converter={StaticResource EmptyStringIsFalse}}" Value="False">
+                                <Setter Property="NextAllowed" Value="False" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Selection[Company].IsCreateNewObjectSelected}" Value="True">
+                                <Setter Property="IsEnabled" Value="True" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding NewCompanyGenerated}" Value="True">
+                                <Setter Property="IsEnabled" Value="True" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ShowCompanyNameCommentSite}" Value="False">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </AvdWpfControls:AssistantTabItem.Style>
+                <Add:CtlNameComment DataContext="{Binding Create[Company]}"/>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesMain.Company}" NextAllowed="True" CommandOnSelected="{Binding CmdCreateObject}" CommandOnSelectedParameter="Company" DetailHeader="{x:Static Localisation:ResourcesManamgement.DetailHeaderNewCompanyDetails}">
+                <AvdWpfControls:AssistantTabItem.Style>
+                    <Style TargetType="AvdWpfControls:AssistantTabItem">
+                        <Setter Property="IsEnabled" Value="False" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Selection[Company].IsCreateNewObjectSelected}" Value="True">
+                                <Setter Property="IsEnabled" Value="True" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding NewCompanyGenerated}" Value="True">
+                                <Setter Property="IsEnabled" Value="True" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding DontAskAgain}" Value="True">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </AvdWpfControls:AssistantTabItem.Style>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                <!--<ManagementAssistant:CtlYesNo DataContext="{Binding AskingModels[Company]}" Grid.Row="0"/>-->
+                    <Grid.Resources>
+                        <ResourceDictionary Source="/ResourceDictionaries/MainWindow.xaml" />
+                    </Grid.Resources>
+                    <StackPanel Grid.Row="0">
+                        <TextBlock HorizontalAlignment="Center" Text="{x:Static Localisation:ResourcesManamgement.QuestionInsertCompanyDetails}" >                            
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockSetupStyle}">
+                                    <Setter Property="Foreground" Value="Black" />
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                            <Button Content="{x:Static Localisation:ResourcesCommon.Yes}" Command="{Binding CmdCompanyDetails}" CommandParameter="True" Margin="5" Width="70"/>
+                            <Button Content="{x:Static Localisation:ResourcesCommon.No}" Command="{Binding CmdCompanyDetails}" CommandParameter="False" Margin="5" Width="70"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <CheckBox IsChecked="{Binding DontAskAgain}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="1" Margin="5,10"  ToolTip="{x:Static Localisation:ResourcesManamgement.DontShowAgainDetail}">
+                        <TextBlock TextWrapping="Wrap">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockSetupStyle}">
+                                <Setter Property="Foreground" Value="Black" />
+                            </Style>
+                        </TextBlock.Style>        
+                            <Run Text="{x:Static Localisation:ResourcesManamgement.DontShowAgainLabel}"/>
+                            <LineBreak />
+                            <Run Text="{x:Static Localisation:ResourcesManamgement.DontShowAgainDetail}" />
+                        </TextBlock>
+                    </CheckBox>
+                </Grid>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesMain.Company}" NextAllowed="True" IsEnabled="{Binding InsertCompanyDetails}"  DetailHeader="{x:Static Localisation:ResourcesManamgement.DetailHeaderNewCompanyDetails}">
+                <!-- content -->
+                <Border Style="{StaticResource GroupBoxBorder}" CornerRadius="0" Padding="5">
+                    <Edit:CtlEditCompany x:Name="ctlCompanyDetails">
+                       <Edit:CtlEditCompany.Style>
+                            <Style TargetType="Edit:CtlEditCompany">
+                                <Setter Property="DataContext" Value="{x:Null}" />
+                                <Style.Triggers>
+                                     <!--<DataTrigger Binding="{Binding Selection[Company].IsCreateNewObjectSelected}" Value="False" >
+                                        <Setter Property="DataContext" Value="{Binding Selection[Company].SelectedObject}" />
+                                    </DataTrigger>-->
+                                </Style.Triggers>
+                            </Style>
+                        </Edit:CtlEditCompany.Style>
+                    </Edit:CtlEditCompany>
+                </Border>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesMain.FinancialYear}" NextAllowed="True" IsEnabled="True" CommandOnSelected="{Binding CmdObjectSelected}" CommandOnSelectedParameter="Company"  DetailHeader="{x:Static Localisation:ResourcesManamgement.DetailHeaderFinancialYear}">
+                <ManagementAssistant:CtlSelection />
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesMain.FinancialYear}" NextAllowed="True" CommandOnSelected="{Binding CmdObjectSelected}" CommandOnSelectedParameter="FinancialYear" DetailHeader="{Binding FinancialYearDetailHeader}">
+                <!--Financial year configuration-->
+                <ManagementAssistant:CtlFinancialYear DataContext="{Binding Selection[FinancialYear].SelectedObject}" />
+            </AvdWpfControls:AssistantTabItem>
+           <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesManamgement.ReportDetails}">
+                <AvdWpfControls:AssistantTabItem.Style>
+                    <Style TargetType="AvdWpfControls:AssistantTabItem">
+                        <Setter Property="NextAllowed" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding AddReportModel.Name, Converter={StaticResource EmptyStringIsFalse}}" Value="False">
+                                <Setter Property="NextAllowed" Value="False" />
+                            </DataTrigger>
+                            <!--<DataTrigger Binding="{Binding AddReportModel.Comment}" Value="{x:Null}">
+                                <Setter Property="NextAllowed" Value="False" />
+                            </DataTrigger>-->
+                            <DataTrigger Binding="{Binding AddReportModel.AddReportModel.SelectedAccountingStandard}" Value="{x:Null}">
+                                <Setter Property="NextAllowed" Value="False" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding AddReportModel.AddReportModel.SelectedSpecialAccountingStandard}" Value="{x:Null}">
+                                <Setter Property="NextAllowed" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </AvdWpfControls:AssistantTabItem.Style>
+                <Add:CtlDocumentBaseData DataContext="{Binding AddReportModel}" />
+            </AvdWpfControls:AssistantTabItem>
+
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesMain.BalanceLists}" NextAllowed="{Binding BalanceListImported}">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ManagementAssistant:CtlYesNo DataContext="{Binding BalanceListImportModel}" />
+                    
+                    <!--<ManagementAssistant:CtlSelectedObjects Grid.Row="1"/>-->
+                </Grid>
+            </AvdWpfControls:AssistantTabItem>
+
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesMain.BalanceLists}" NextAllowed="True" IsEnabled="{Binding BalanceListImported}">
+                <ManagementAssistant:CtlBalanceListManager />
+            </AvdWpfControls:AssistantTabItem>
+            
+           <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesCompanyImport.Summary}" NextAllowed="False">
+                <Grid IsEnabled="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <ManagementAssistant:CtlSelection />
+                        <Add:CtlDocumentBaseData DataContext="{Binding AddReportModel}" />
+                        <ManagementAssistant:CtlBalanceListSummary Grid.Column="1" Grid.Row="1" DataContext="{Binding BalanceListImporter}" Margin="5" />
+                    </StackPanel>
+                </Grid>
+            </AvdWpfControls:AssistantTabItem>
+
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesManamgement.LastPageHeader}" IsSummaryPage="True">
+                <Grid Name="grid">
+                    <Grid.Resources>
+                        <ResourceDictionary Source="/ResourceDictionaries/MainWindow.xaml" />
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextWrapping="Wrap" Style="{StaticResource TextBlockSetupStyle}">
+                    <TextBlock Text="{x:Static Localisation:ResourcesManamgement.MsgReportCreated}" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <LineBreak />
+                    <LineBreak />
+                        <Run Text="Sie können jetzt mit einem Klick auf den Button &quot;" />
+                        <Run Text="{Binding ElementName=btnAgain, Path=Content}" />
+                        <Run Text="&quot; mit Hilfe des Assistenten einen weiteren Bericht anlegen." />
+                        <Run Text="Mit einem Klick auf &quot;" />
+                        <Run Text="{Binding ElementName=btnClose, Path=Content}" />
+                        <Run Text="&quot; beenden Sie den Assistenten." />
+                </TextBlock>
+                </Grid>
+            </AvdWpfControls:AssistantTabItem>
+        </AvdWpfControls:AssistantControl>
+    </Grid>
+</Window>

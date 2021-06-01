@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Import.CtlCsvConfigLimiterCharset"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Import="clr-namespace:eBalanceKitBusiness.Import;assembly=eBalanceKitBusiness"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:Import1="clr-namespace:eBalanceKit.Windows.Import" mc:Ignorable="d" 
+             d:DesignHeight="207" d:DesignWidth="757">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- info -->
+        <Border Grid.Row="0" Margin="0,2,0,0" Style="{StaticResource GroupBoxBorder}">
+            <StackPanel Margin="5,0,0,0">
+                <!--<TextBlock FontSize="18" Text="Festlegen der CSV-Struktur" />-->
+                <TextBlock TextWrapping="Wrap">
+                    Bitte wählen Sie die Struktur der CSV-Datei aus. Bei korrekter Auswahl sehen Sie in der Vorschau die einzelnen Spalten der CSV-Datei
+                </TextBlock>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource GroupBoxBorder}">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <StackPanel>
+                        <TextBlock Text="Trennzeichen" VerticalAlignment="Center" />
+                        <ComboBox Width="60" x:Name="cboSeperator" HorizontalAlignment="Left"
+                                  IsEditable="True" Text="{Binding Entry.Seperator, UpdateSourceTrigger=PropertyChanged}">
+                            <ComboBoxItem Content=","/>
+                            <ComboBoxItem Content=";" IsSelected="True"/>
+                            <ComboBoxItem Content="|" />
+                            <ComboBoxItem Content="TAB" />
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5,0,0,0" >
+                        <TextBlock Text="Textbegrenzungszeichen" VerticalAlignment="Center"/>
+                        <ComboBox Width="60" x:Name="cboTextDelimiter" HorizontalAlignment="Left"
+                                  IsEditable="True" Text="{Binding Entry.Delimiter, UpdateSourceTrigger= PropertyChanged}">
+                            <ComboBoxItem Content="&quot;" IsSelected="True"/>
+                            <ComboBoxItem Content="'"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5,0,0,0" >
+                        <TextBlock Text="Zeichensatz" VerticalAlignment="Center"/>
+                        <ComboBox Width="175" x:Name="cboEncoding" ItemsSource="{Binding Source={x:Static Import:Encodings.AvailableEncodings}}" HorizontalAlignment="Left"
+                                      SelectedItem="{Binding Entry.Encoding}" DisplayMemberPath="EncodingName"/>
+                    </StackPanel>
+                    
+                </StackPanel>
+                <Separator />
+                <CheckBox Content="inverse assignment" IsChecked="{Binding Entry.IsInverse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Click="CheckBox_Click" Margin="5,0,0,0" />
+                <Border>
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Setter Property="Visibility" Value="Visible" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Entry.Dimensions}" Value="null">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Config.Dimensions.Count}" Value="0">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <Import1:Ctl3dOrder x:Name="ctlOrder" DataContext="{Binding Config}" />
+                </Border>
+            </StackPanel>
+        </Border>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{x:Static Localisation:ResourcesHyperCube.txtPreviewData}" />
+            <DataGrid Grid.Row="1" DataContext="{Binding PreviewData}"
+                  BorderBrush="{x:Null}" ItemsSource="{Binding Path=.}" ColumnHeaderHeight="24"
+                  x:Name="dgCsvData" AutoGenerateColumns="True"  AlternatingRowBackground="WhiteSmoke" 
+                  CanUserSortColumns="False" CanUserDeleteRows="False" CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" 
+                  HeadersVisibility="Column" IsReadOnly="True" HorizontalGridLinesBrush="#FFA0A0A0" VerticalGridLinesBrush="#FFA0A0A0" 
+                  SelectionUnit="Cell" SelectionMode="Single" FontSize="13" />
+
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,67 @@
+﻿<Window x:Class="ViewBuilder.Windows.Optimizations.DlgAddFinancialYears"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Converters="clr-namespace:ViewBuilder.Converters"
+        xmlns:Optimizations="clr-namespace:ViewBuilder.Windows.Optimizations"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls" Title="Finanzjahre hinzufügen" Height="500" Width="600" SizeToContent="Height"
+        WindowStartupLocation="CenterOwner">
+  <Window.Resources>
+    <Converters:StringToNullConverter x:Key="stringToNullConverter" />
+  </Window.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+        <Label>Finanzjahre zu folgenden Optmierungen hinzufügen:</Label>
+            <DataGrid Name="dgAddTo" Grid.Row="1" AutoGenerateColumns="False" Grid.ColumnSpan="2" ItemsSource="{Binding Optimizations}" SelectionMode="Single"
+                  SelectionUnit="Cell" MaxHeight="300" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="Auto" CanUserResize="False" x:Name="dgScriptsCol_IsChecked">
+                    <DataGridTemplateColumn.Header>
+                        <CheckBox 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center" 
+                                            IsChecked="{Binding DataContext.IsCheckedHeaderState, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Optimizations:DlgAddFinancialYears}}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                            />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox
+                                                HorizontalAlignment="Center" 
+                                                VerticalAlignment="Center" 
+                                                IsChecked="{Binding Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                x:Name="chkIsChecked"  />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Width="Auto" Header="Wert" Binding="{Binding Value, Converter={StaticResource stringToNullConverter}}"/>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="2">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+
+        <Label>Folgende Finanzjahre hinzufügen</Label>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Label>Anfangsjahr:</Label>
+                <AvdWpfControls:NumericUpDown Width="100" Minimum="1900" Maximum="2100" Value="{Binding StartYear, Mode=TwoWay}" />
+                <Label>Endjahr:</Label>
+                <AvdWpfControls:NumericUpDown Width="100" Minimum="{Binding StartYear}" Maximum="2100" Value="{Binding EndYear, Mode=TwoWay}"/>
+            </StackPanel>
+        </Grid>
+      
+        <CheckBox Grid.Row="3" IsChecked="{Binding AddFinancialYearAll, Mode=TwoWay}">Geschäftsjahr "Alle" hinzufügen</CheckBox>
+        <!-- button bar -->
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="5,5,5,5" Orientation="Horizontal">
+            <Button Content="Ok" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="btnOk_Click"/>
+            <Button Content="Ab_brechen" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,518 @@
+﻿<Window x:Class="eBalanceKit.Windows.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="{x:Static CustomResources:CustomStrings.ProductName}" MinWidth="800" MinHeight="600" Width="1024" Height="768" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+		Icon="/CustomResources;component/Resources/logo1.png"
+		Closed="Window_Closed"
+		xmlns:p="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"        
+		xmlns:my2="clr-namespace:eBalanceKit.Controls"
+		xmlns:my="clr-namespace:eBalanceKit" xmlns:my1="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+		xmlns:CustomResources="clr-namespace:CustomResources;assembly=CustomResources" SizeChanged="Window_SizeChanged"
+		xmlns:Options="clr-namespace:eBalanceKitBusiness.Options;assembly=eBalanceKitBusiness"
+		xmlns:eBalanceKitControls="clr-namespace:eBalanceKitControls;assembly=eBalanceKitControls"
+		xmlns:Export="clr-namespace:eBalanceKit.Windows.Export"
+		xmlns:GlobalSearch="clr-namespace:eBalanceKit.Windows.GlobalSearch"
+		xmlns:Manager="clr-namespace:eBalanceKitBusiness.Manager;assembly=eBalanceKitBusiness" AllowDrop="True" PreviewDragOver="Window_PreviewDragOver">
+	
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/ResourceDictionaries/MainWindow.xaml" />
+				<ResourceDictionary Source="/ResourceDictionaries/TaxonomyTreeView.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
+	
+	<Grid x:Name="content">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" MaxHeight="300" x:Name="InfoGridRow" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Popup DataContext="{x:Null}" x:Name="DragDropPopup"
+			   IsHitTestVisible="False"
+			   Placement="RelativePoint"
+			   AllowsTransparency="True">
+			<Border Margin="0,0,15,15" x:Name="popupBorder">
+				<Border.Effect>
+					<DropShadowEffect ShadowDepth="5" Direction="315" Opacity="0.9"/>
+				</Border.Effect>
+
+				<ListBox SelectionMode="Single"
+								Grid.Row="1" Margin="0"
+								Background="Transparent"
+								BorderBrush="Transparent"
+								ItemsSource="{Binding Path=Accounts}"
+								ItemTemplateSelector="{StaticResource balanceListDragDropTemplateSelector}">
+
+					<ListBox.ItemContainerStyle>
+						<Style TargetType="ListBoxItem">
+							<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+							<Style.Resources>
+								<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+							</Style.Resources>
+						</Style>
+					</ListBox.ItemContainerStyle>
+				</ListBox>
+			</Border>
+		</Popup>
+		
+		<Grid Grid.Row="1">
+			<TabControl Name="tcMenu" Padding="0" BorderThickness="0" Background="Transparent" Height="90" SelectedIndex="{Binding Path=SelectedMenuItem,  Mode=TwoWay}">
+				<eBalanceKitControls:EbkTabItem Caption="E-Bilanz" Visibility="{Binding CurrentDocument, Converter={StaticResource ValueExistsToVisibilityConverter}}">
+					<Border Padding="2" Background="{StaticResource headerBgBrush}">
+						<StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Top">
+
+							<!-- validate -->
+							<my1:AvdMenuButton Click="btnValidate_Click" Caption="{x:Static p:ResourcesMain.btnValidate}" 
+											   ImageSource="/eBalanceKitResources;component/Resources/validate.png" />
+
+							<my1:AvdMenuSeparator />
+
+							<!-- export -->
+							<my1:AvdMenuExpander ImageSource="/eBalanceKitResources;component/Resources/ExportTemplate.png" ImageHeight="24" Caption="{x:Static p:ResourcesMain.btnExport}">
+								<!-- PDF -->
+								<my1:AvdMenuExpanderItem
+									Click="BtnPdfExportButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/Pdf64.png" 
+									Caption="{x:Static p:ResourcesExport.ExportLabelPdf}"
+									Description="{x:Static p:ResourcesExport.ExportDescriptionPdf}"/>
+
+								<!-- PDF like XBRL -->
+								<my1:AvdMenuExpanderItem
+									Click="BtnPdfLikeXbrlExportButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/Pdf64.png" 
+									Caption="{x:Static p:ResourcesExport.ExportLabelPdfLikeXbrl}"
+									Description="{x:Static p:ResourcesExport.ExportDescriptionPdfLikeXbrl}"/>
+
+								<!-- CSV -->
+								<my1:AvdMenuExpanderItem
+									Click="BtnCsvExportClick"
+									ImageSource="/eBalanceKitResources;component/Resources/Excel32.png" 
+									Caption="{x:Static p:ResourcesExport.ExportLabelCsv}"
+									Description="{x:Static p:ResourcesExport.ExportDescriptionCsv}"/>
+
+								<!-- XBRL -->
+								<my1:AvdMenuExpanderItem
+									Click="BtnXbrlExportClick"
+									ImageSource="/eBalanceKitResources;component/Resources/Xbrl32.png" 
+									Caption="{x:Static p:ResourcesExport.ExportLabelXbrl}"
+									Description="{x:Static p:ResourcesExport.ExportDescriptionXbrl}"/>
+							</my1:AvdMenuExpander>
+							
+							<!--<my1:AvdMenuButton Click="BtnExportClick" Caption="{x:Static p:ResourcesMain.btnExport}" 
+											   ImageSource="/eBalanceKitResources;component/Resources/ExportTemplate.png" />-->
+
+							<!-- send -->
+							<my1:AvdMenuButton Click="btnSendData_Click" Caption="{x:Static p:ResourcesMain.btnSendData}" 
+											   ImageSource="/eBalanceKitResources;component/Resources/send_data.png" />
+
+							<my1:AvdMenuSeparator />
+
+                            <my1:AvdMenuButton Click="BtnReconciliationClick" Caption="{x:Static p:ResourcesMain.btnReconciliation}" ToolTipService.ShowOnDisabled="True" Width="80"
+											   ImageSource="/eBalanceKitResources;component/Resources/ReconciliationDelta.png" IsEnabled="{Binding CurrentDocument.IsCommercialBalanceSheet}">
+                                <my1:AvdMenuButton.Style>
+                                    <Style TargetType="{x:Type my1:AvdMenuButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding CurrentDocument.IsCommercialBalanceSheet}" Value="False">
+                                                <Setter Property="ToolTip" Value="Sie können momentan keine Überleitungsrechnung durchführen. Bitte wählen Sie zuerst im Bilanzierungsstandard des Berichts eine Handelsbilanz aus." />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </my1:AvdMenuButton.Style>
+                            </my1:AvdMenuButton>
+							<!-- audit mode -->
+							<my1:AvdMenuButton Click="BtnAuditModeClick" Caption="{x:Static p:ResourcesAuditCorrections.AuditMode}" 
+											   ImageSource="/eBalanceKitResources;component/Resources/AuditCorrection24.png" />
+						</StackPanel>
+					</Border>
+				</eBalanceKitControls:EbkTabItem>
+
+				<eBalanceKitControls:EbkTabItem Caption="Extras">
+					<Border Padding="2" Background="{StaticResource headerBgBrush}">
+						<StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Top">
+
+							<!-- global config -->
+							<my1:AvdMenuButton Click="btnGlobalConfig_Click" Caption="{x:Static p:ResourcesMain.btnGlobalOptions}"
+											   ImageSource="/eBalanceKitResources;component/Resources/management.png" />
+
+							<!-- tools -->
+							<my1:AvdMenuExpander ImageSource="/eBalanceKitResources;component/Resources/Tools32.png" ImageHeight="24" Caption="Tools">
+								<my2:CtlExternCall/>
+							</my1:AvdMenuExpander>
+						</StackPanel>
+					</Border>                
+				</eBalanceKitControls:EbkTabItem>
+
+				<eBalanceKitControls:EbkTabItem Caption="{x:Static p:ResourcesCommon.Management}">
+					<Border Padding="2" Background="{StaticResource headerBgBrush}">
+						<StackPanel Orientation="Horizontal">
+							<!-- add -->
+							<my1:AvdMenuExpander ImageSource="/eBalanceKitResources;component/Resources/Add.png" Caption="{x:Static p:ResourcesCommon.New}">
+								<!-- setup assistant -->
+								<my1:AvdMenuExpanderItem
+									Click="BtnSetupAssistantButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/SetupAssistant48.png" 
+									Caption="{x:Static p:ResourcesManamgement.SetupAssistant}"
+									Description="{x:Static p:ResourcesManamgement.SetupAssistantDescription}"/>
+
+								<Separator Margin="0,5" />
+
+								<!-- add report -->
+								<my1:AvdMenuExpanderItem
+									Click="BtnAddReportButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/AddReport48.png" 
+									Caption="{x:Static p:ResourcesManamgement.AddReport}"
+									Description="{x:Static p:ResourcesManamgement.AddReportDescription}"/>
+
+								<!-- add company -->
+								<my1:AvdMenuExpanderItem 
+									Click="BtnAddCompanyButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/AddCompany48.png" 
+									Caption="{x:Static p:ResourcesManamgement.AddCompany}"
+									Description="{x:Static p:ResourcesManamgement.AddCompanyDescription}"/>
+
+								<!-- add system -->
+								<my1:AvdMenuExpanderItem 
+									Click="BtnAddSystemButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/AddSystem48.png" 
+									Caption="{x:Static p:ResourcesManamgement.AddSystem}"
+									Description="{x:Static p:ResourcesManamgement.AddSystemDescription}"/>
+							</my1:AvdMenuExpander>
+
+							<!-- delete -->
+							<my1:AvdMenuExpander ImageSource="/eBalanceKitResources;component/Resources/Delete.png" ImageHeight="24" Caption="{x:Static p:ResourcesCommon.Delete}">
+								<!-- delete report -->
+                                <my1:AvdMenuExpanderItem
+									Click="BtnDeleteReportButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/DeleteReport48.png" 
+									Caption="{x:Static p:ResourcesManamgement.DeleteReport}"
+									Description="{x:Static p:ResourcesManamgement.DeleteReportDescription}"
+                                    ToolTipService.ShowOnDisabled="True"
+                                    >
+                                    <my1:AvdMenuExpanderItem.Style>
+                                        <Style TargetType="{x:Type my1:AvdMenuExpanderItem}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Source={x:Static Manager:DocumentManager.Instance},Path=HasAllowedDocuments}" Value="False">
+                                                    <Setter Property="ToolTip" Value="Es sind keine zu löschenden Berichte vorhanden." />
+                                                    <Setter Property="IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </my1:AvdMenuExpanderItem.Style>
+
+                                </my1:AvdMenuExpanderItem>
+
+                                    <!-- delete company -->
+                                <my1:AvdMenuExpanderItem 
+									Click="BtnDeleteCompanyButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/DeleteCompany48.png" 
+									Caption="{x:Static p:ResourcesManamgement.DeleteCompany}"
+									Description="{x:Static p:ResourcesManamgement.DeleteCompanyDescription}"
+                                    ToolTipService.ShowOnDisabled="True">
+                                    <my1:AvdMenuExpanderItem.Style>
+                                        <Style TargetType="{x:Type my1:AvdMenuExpanderItem}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Source={x:Static Manager:CompanyManager.Instance}, Path=HasDeletableCompanies}" Value="False">
+                                                    <Setter Property="ToolTip" Value="Es sind keine löschbaren Unternehmen vorhanden. Unternehmen können nur gelöscht werden, wenn ihnen keine Berichte zugeordnet sind." />
+                                                    <Setter Property="IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </my1:AvdMenuExpanderItem.Style>
+
+                                </my1:AvdMenuExpanderItem>
+
+                                    <!-- delete system -->
+                                <my1:AvdMenuExpanderItem
+									Click="BtnDeleteSystemButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/DeleteSystem48.png" 
+									Caption="{x:Static p:ResourcesManamgement.DeleteSystem}"
+									Description="{x:Static p:ResourcesManamgement.DeleteSystemDescription}"
+                                    ToolTipService.ShowOnDisabled="True"
+                                    >
+                                    <my1:AvdMenuExpanderItem.Style>
+                                        <Style TargetType="{x:Type my1:AvdMenuExpanderItem}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Source={x:Static Manager:SystemManager.Instance}, Path=HasDeletableSystems}" Value="False">
+                                                    <Setter Property="ToolTip" Value="Es sind keine löschbaren Systeme vorhanden. Systeme können nur gelöscht werden, wenn ihnen keine Berichte zugeordnet sind." />
+                                                    <Setter Property="IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </my1:AvdMenuExpanderItem.Style>
+
+
+                                </my1:AvdMenuExpanderItem>
+
+                            </my1:AvdMenuExpander>
+
+							<!-- management -->
+							<my1:AvdMenuExpander ImageSource="/eBalanceKitResources;component/Resources/Management48.png" ImageHeight="24" Caption="{x:Static p:ResourcesCommon.Change}">
+								<!-- manage report -->
+                                <my1:AvdMenuExpanderItem
+									Click="BtnReportManagementButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/ReportManagement48.png" 
+									Caption="{x:Static p:ResourcesManamgement.ReportManagement}"
+									Description="{x:Static p:ResourcesManamgement.ReportManagementDescription}"
+                                    ToolTipService.ShowOnDisabled="True">
+                                    <my1:AvdMenuExpanderItem.Style>
+                                        <Style TargetType="{x:Type my1:AvdMenuExpanderItem}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Source={x:Static Manager:DocumentManager.Instance},Path=HasAllowedDocuments}" Value="False">
+                                                    <Setter Property="ToolTip" Value="Es sind keine Berichte vorhanden." />
+                                                    <Setter Property="IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </my1:AvdMenuExpanderItem.Style>
+                                </my1:AvdMenuExpanderItem>
+
+                                    <!-- manage company -->
+                                <my1:AvdMenuExpanderItem
+									IsEnabled="{Binding Source={x:Static Manager:CompanyManager.Instance}, Path=HasAllowedCompanies}"
+									Click="BtnCompanyManagementButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/CompanyManagement48.png" 
+									Caption="{x:Static p:ResourcesManamgement.CompanyManagement}"
+									Description="{x:Static p:ResourcesManamgement.CompanyManagementDescription}"
+                                    ToolTipService.ShowOnDisabled="True">
+                                    <my1:AvdMenuExpanderItem.Style>
+                                        <Style TargetType="{x:Type my1:AvdMenuExpanderItem}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Source={x:Static Manager:CompanyManager.Instance},Path=AllowedCompanies.Count}" Value="0">
+                                                    <Setter Property="ToolTip" Value="Es sind keine Unternehmen vorhanden." />
+                                                    <Setter Property="IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </my1:AvdMenuExpanderItem.Style>
+
+                                </my1:AvdMenuExpanderItem>
+
+                                    <!-- manage system -->
+                                <my1:AvdMenuExpanderItem
+									Click="BtnSystemManagementButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/SystemManagement48.png" 
+									Caption="{x:Static p:ResourcesManamgement.SystemManagement}"
+									Description="{x:Static p:ResourcesManamgement.SystemManagementDescription}"
+                                    ToolTipService.ShowOnDisabled="True">
+                                    <my1:AvdMenuExpanderItem.Style>
+                                        <Style TargetType="{x:Type my1:AvdMenuExpanderItem}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Source={x:Static Manager:SystemManager.Instance},Path=Systems.Count}" Value="0">
+                                                    <Setter Property="ToolTip" Value="Es sind keine Systeme vorhanden." />
+                                                    <Setter Property="IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </my1:AvdMenuExpanderItem.Style>
+
+                                </my1:AvdMenuExpanderItem>
+                            </my1:AvdMenuExpander>
+
+							<!-- import -->
+							<my1:AvdMenuExpander ImageSource="/eBalanceKitResources;component/Resources/Import48.png" ImageHeight="24" Caption="{x:Static p:ResourcesCommon.Import}">
+								<!-- import company data -->
+								<my1:AvdMenuExpanderItem
+									Click="BtnImportCompanyDataButtonClick"
+									ImageSource="/eBalanceKitResources;component/Resources/ImportCompany48.png" 
+									Caption="{x:Static p:ResourcesManamgement.ImportCompany}"
+									Description="{x:Static p:ResourcesManamgement.ImportCompanyDescription}"/>
+								<!-- import balance list -->
+								<my1:AvdMenuExpanderItem
+                                    Name="btnImportBalanceList"
+									Click="BtnImportBalanceListClick" Visibility="{Binding CurrentDocument, Converter={StaticResource ValueExistsToVisibilityConverter}}"
+									ImageSource="/eBalanceKitResources;component/Resources/ImportTemplate.png" 
+									Caption="{x:Static p:ResourcesManamgement.ImportBalancelist}"
+									Description="{x:Static p:ResourcesManamgement.ImportBalancelistDescription}"/>
+							</my1:AvdMenuExpander>
+
+
+                            <!-- copy -->
+                            <my1:AvdMenuExpander ImageSource="/eBalanceKitResources;component/Resources/CopyReport.png" ImageHeight="24" Caption="{x:Static p:ResourcesManamgement.Copy}">
+                                <!-- copy document -->
+                                <my1:AvdMenuExpanderItem
+									Click="BtnCopyReport" 
+									ImageSource="/eBalanceKitResources;component/Resources/ImportTemplate.png" 
+									Caption="{x:Static p:ResourcesManamgement.CopyReport}"
+									Description="{x:Static p:ResourcesManamgement.CopyReportDescription}"
+                                    ToolTipService.ShowOnDisabled="True">
+                                <my1:AvdMenuExpanderItem.Style>
+                                    <Style TargetType="{x:Type my1:AvdMenuExpanderItem}">
+                                        <Style.Triggers>
+                                                <DataTrigger Binding="{Binding CurrentDocument,Converter={StaticResource ValueExistsToBoolConverter}}" Value="False">
+                                                <Setter Property="ToolTip" Value="Bitte wählen Sie zuerst einen Bericht aus." />
+                                                <Setter Property="IsEnabled" Value="False" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </my1:AvdMenuExpanderItem.Style>
+                                </my1:AvdMenuExpanderItem>
+                            </my1:AvdMenuExpander>
+                            
+                            <my1:AvdMenuSeparator />
+
+
+                            <!-- templates -->
+							<my1:AvdMenuButton Click="btnTemplates_Click" Caption="{x:Static p:ResourcesMain.btnTemplates}"
+											   ImageSource="/eBalanceKitResources;component/Resources/templates.png" />
+
+							<!-- user config -->
+							<my1:AvdMenuButton x:Name="btnUserManagement" Click="BtnUserManagementClick" Caption="{x:Static p:ResourcesManamgement.BtnUserManagementCaption}"
+											   ImageSource="/eBalanceKitResources;component/Resources/UserManagement48.png" Visibility="Collapsed"/>
+						</StackPanel>
+					</Border>
+				</eBalanceKitControls:EbkTabItem>
+				
+				<eBalanceKitControls:EbkTabItem Caption="{x:Static p:ResourcesCommon.btHelp}">
+					<Border Padding="2" Background="{StaticResource headerBgBrush}">
+						<StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Top">
+							<!-- info -->
+							<my1:AvdMenuButton Click="btnInfo_Click" Caption="{x:Static p:ResourcesMain.btnInfo}" 
+											   ImageSource="/eBalanceKitResources;component/Resources/Info1.png" />
+
+							<!-- help -->
+							<my1:AvdMenuButton Click="BtnHelpClick" Caption="{x:Static p:ResourcesMain.btnHelp}" 
+											   ImageSource="/eBalanceKitResources;component/Resources/help.png" />
+
+						</StackPanel>
+					</Border>
+				</eBalanceKitControls:EbkTabItem>            
+			</TabControl>
+
+			<my1:AvdMenuButton Click="btnDisconnect_Click" HorizontalAlignment="Right" VerticalAlignment="Top" MinWidth="10" Caption="{x:Static p:ResourcesMain.btnLogout}" 
+							   Margin="5,52,5,5" ImageSource="/eBalanceKitResources;component/Resources/logout.png" ImageHeight="24" TextAllignment="Left" />
+
+		</Grid>
+
+		<Border Grid.Row="2" Padding="2" Style="{StaticResource ButtonBorder}" BorderBrush="#fcd48e" BorderThickness="0,1,0,0" Grid.RowSpan="1">
+
+			<Grid>
+				<StackPanel Orientation="Horizontal">
+
+					<!-- system selection -->
+					<StackPanel Margin="2" Visibility="{Binding SystemSelectionVisibility}">
+						<TextBlock Text="{x:Static p:ResourcesMain.System}" Margin="2,0,0,0" Foreground="#222"/>
+						<my1:AvdComboBox x:Name="cboSystems" MinWidth="150" ItemsSource="{Binding Systems}"
+											  SelectedItem="{Binding Path=SelectedSystem}"
+											  DisplayMemberPath="Name" SelectValueMessage="{x:Static p:ResourcesCommon.PleaseSelect}" />
+					</StackPanel>
+
+					<!-- company selection -->
+					<StackPanel Margin="2" Visibility="{Binding CompanySelectionVisibility}">
+						<TextBlock Text="{x:Static p:ResourcesMain.Company}" Margin="2,0,0,0" Foreground="#222"/>
+						<my1:AvdComboBox x:Name="cboCompanies" MinWidth="150" ItemsSource="{Binding Companies}"
+											  SelectedItem="{Binding Path=SelectedCompany}"
+											  DisplayMemberPath="Name" SelectValueMessage="{x:Static p:ResourcesCommon.PleaseSelect}"/>
+					</StackPanel>
+
+					<!-- financial year selection -->
+					<StackPanel Margin="2" Visibility="{Binding FinancialYearSelectionVisibility}">
+						<TextBlock Text="{x:Static p:ResourcesMain.FinancialYear}" Margin="2,0,0,0" Foreground="#222"/>
+						<my1:AvdComboBox x:Name="cboFinancialYear" MinWidth="150" ItemsSource="{Binding FinancialYears}"
+											  SelectedItem="{Binding Path=SelectedFinancialYear}"
+											  DisplayMemberPath="FYear" SelectValueMessage="{x:Static p:ResourcesCommon.PleaseSelect}"/>
+					</StackPanel>
+
+					<!-- document selection -->
+					<StackPanel Margin="2" Visibility="{Binding DocumentSelectionVisibility}">
+						<TextBlock Text="{x:Static p:ResourcesMain.Report}" Margin="2,0,0,0" Foreground="#222"/>
+						<my1:AvdComboBox x:Name="cboDocuments" MinWidth="150" ItemsSource="{Binding Documents}"
+											  SelectedItem="{Binding Path=CurrentDocument}"
+											  DisplayMemberPath="Name" SelectValueMessage="{x:Static p:ResourcesCommon.PleaseSelect}"/>
+					</StackPanel>
+				</StackPanel>
+
+			</Grid>
+		</Border>
+
+		<Border Grid.Row="3" x:Name="mainAreaBg" Style="{StaticResource GroupBoxBorder1}" />
+
+		<!-- main area -->
+		<TextBlock Text="Kein Report geladen..." HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#666" Grid.Row="3" FontStyle="Italic" FontSize="14" />
+
+		<Grid Grid.Row="3" Visibility="{Binding CurrentDocument, Converter={StaticResource ValueExistsToVisibilityConverter}}" >
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+
+			<!-- navigation / content -->
+			<my1:HierarchicalTabControl 
+				x:Name="nav"
+				ContentMemberPath="Content" ItemsSource="{Binding Path=NavigationTree}" NavAreaWidth="300"
+				ItemContainerStyle="{StaticResource NavigationTreeItemContainerStyle}"
+				ItemTemplate="{StaticResource NavigationTreeItemTemplate}"
+				SelectedItemChanged="navSelectionChanged">
+			</my1:HierarchicalTabControl>
+
+			<!-- balance list -->
+			<Expander Grid.Column="1" x:Name="BalanceListExpander" ExpandDirection="Left" IsExpanded="True" Margin="0,1">
+				<Expander.Style>
+					<Style TargetType="Expander" BasedOn="{StaticResource ExpanderLeft}">
+						<Setter Property="Visibility" Value="{Binding SelectedNavigationEntry.ShowBalanceList, Converter={StaticResource TrueToVisibilityConverter}}" />
+						<Style.Triggers>
+							<DataTrigger Binding="{Binding CurrentDocument}" Value="{x:Null}">
+								<Setter Property="Visibility" Value="Collapsed" />
+							</DataTrigger>
+							<DataTrigger Binding="{Binding CurrentDocument.BalanceListsVisible.Count}" Value="0">
+								<Setter Property="Visibility" Value="Collapsed" />
+							</DataTrigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding Source={x:Static Options:GlobalUserOptions.UserOptions}, Path=AuditModeEnabled}" Value="True" />
+									<Condition Binding="{Binding SelectedNavigationEntry.ShowBalanceList}" Value="True" />
+								</MultiDataTrigger.Conditions>
+								<MultiDataTrigger.Setters>
+									<Setter Property="Visibility" Value="Visible" />
+								</MultiDataTrigger.Setters>
+							</MultiDataTrigger>
+						</Style.Triggers>
+					</Style>
+				</Expander.Style>
+
+				<my2:CtlMonetarySources x:Name="CtlMonetarySources" />
+			</Expander>
+
+		</Grid>
+
+		<Border Grid.Row="5" Style="{StaticResource GroupBoxBorder}" Background="{StaticResource OrangeGradientBrush}" CornerRadius="0" Padding="5,2" >
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+
+				<TextBlock Text="Angemeldeter Benutzer: " Foreground="#333" VerticalAlignment="Center" />
+				<Button HorizontalAlignment="Left" Style="{StaticResource ImageButtonStyle1}" Margin="0" x:Name="btnEditCurrentUser" Click="btnEditCurrentUser_Click" Width="Auto" MinWidth="0">
+					<Button.ToolTip>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="{Binding CurrentUser.FullName}" />
+							<TextBlock Text=" (Linksklick zum bearbeiten)" />
+						</StackPanel>
+					</Button.ToolTip>
+					<StackPanel Orientation="Horizontal">
+						<Image Height="14" Source="/eBalanceKitResources;component/Resources/User1.png" />
+						<TextBlock Text="{Binding CurrentUser.UserName}" Foreground="#333" VerticalAlignment="Center" />
+					</StackPanel>
+				</Button>
+
+				<TextBlock Text="Aktuelle Taxonomie:" Margin="10,0,0,0" Foreground="#333" VerticalAlignment="Center"/>
+				<TextBox Name="txtTaxVersion" Text="{Binding  Path=TaxonomyVersion,  Mode=OneWay}" Foreground="#333" 
+							 FontSize="12" Background="Transparent" IsReadOnly="True" Style="{StaticResource BorderlessTextbox}"/>
+
+			</StackPanel>
+		</Border>
+
+		<!-- info -->
+		<my2:CtlInfoSlideout Grid.RowSpan="6" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,90,0" DataContext="{x:Static my:GlobalResources.Info}" />
+		
+		<!-- legend -->
+		<my2:Legend Grid.RowSpan="6" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+
+		<!-- global search -->
+        <GlobalSearch:CtlGlobalSearch DataContext="{x:Null}" Visibility="{Binding Source={x:Static Manager:DocumentManager.Instance},Path=CurrentDocument, Converter={StaticResource ValueExistsToVisibilityConverter}}"
+			x:Name="CtlGlobalSearch" Grid.Row="0" Grid.RowSpan="6" Margin="0,23,0,0" HorizontalAlignment="Right" />
+
+	</Grid>   
+</Window>

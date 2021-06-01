@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="DbSearch.Controls.Search.CtlSearchMatrix"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" DataContextChanged="UserControl_DataContextChanged">
+    <Grid>
+        <DataGrid  AutoGenerateColumns="False"
+                        Name="dgvSearchMatrix" 
+                        VerticalAlignment="Top"
+                        ItemsSource="{Binding Query.Rows}"
+                        CanUserAddRows="True"
+                        CanUserDeleteRows="True"
+                        CanUserReorderColumns="True"
+                        IsManipulationEnabled="True"
+                        SelectionMode="Extended"
+                        SelectionUnit="FullRow"
+                        HeadersVisibility="Column"
+                        ScrollViewer.CanContentScroll="True" 
+                        
+                         Sorting="dgvSearchMatrix_Sorting" ColumnReordered="dgvSearchMatrix_ColumnReordered" MouseDoubleClick="dgvSearchMatrix_MouseDoubleClick" ColumnReordering="dgvSearchMatrix_ColumnReordering" PreviewKeyDown="dgvSearchMatrix_PreviewKeyDown" MouseRightButtonUp="dgvSearchMatrix_MouseRightButtonUp" Drop="dgvSearchMatrix_Drop" PreparingCellForEdit="dgvSearchMatrix_PreparingCellForEdit">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <!--<DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="miExcludeValue"  Header="Diesen Wert ausschließen" Click="miExcludeValue_Click" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>-->
+
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,291 @@
+@DB,$(#DEMO)\BELEGE
+@CHARSET,ANSI
+@FLDDSC,REPL,101,.Mappe,IDX,CAT,TXT
+@FLDDSC,REPL,102,.Version,IDX,CAT,TXT
+@FLDDSC,REPL,103,.Archivdatum,IDX,CAT,TXT
+@FLDDSC,REPL,104,.Änderungsdatum,IDX,CAT,TXT
+@FLDDSC,REPL,106,.Textfelder,IDX,CAT,TXT
+@FLDDSC,REPL,107,.Bilder,IDX,CAT,TXT
+@FLDDSC,REPL,110,.Titel,IDX,CAT,TXT
+@FLDDSC,REPL,801,.FileType,IDX,CAT,TXT
+@FLDDSC,REPL,802,.FormName,IDX,CAT,TXT
+@FLDDSC,REPL,803,.WorkBoxName,IDX,CAT,TXT
+@FLDDSC,REPL,804,.BatchName,IDX,CAT,TXT
+@FLDDSC,REPL,1001,Abteilung,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1002,Belegart,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1003,BelegNr.,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1004,Belegdatum,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1005,Auftragsnummer,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1006,LieferscheinNr.,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1007,Deb/Kred-Nr.,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1008,Name,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1009,Text,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1010,Mandant,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1011,MandantenNr.,IDX,CAT,DEF,QRY,TXT
+@FLDDSC,REPL,1012,Volltext,IDX,CAT,DEF,QRY,TXT
+@FOLDER,FT:^Verkauf ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001,BI:2002
+^^,^^,^^,^^,^Verkauf ^,^Auftragsbestätigungen ^,^220110045^,^02.07.2001^,^^,^^,^32801^,^Mustermann&Co^,^2120-0025
+Plasmon Jukebox M104-520-2
+2100-0274
+Fujitsu M 4097D
+2121-0115
+Netrady for Workgroups(50 Clients)M20^,^ScanOptic GmbH ^,^2 ^,^^,^00000001^,^001^,^04.07.2001 ^,^04.07.2001 ^,^11^,^0^,^Verkauf ^,^M:\EASYWARE\Export\DEMO\BELEGE.001\0.ldf^,^M:\EASYWARE\Export\DEMO\BELEGE.001\1.ldf^
+@FOLDER,FT:^Verkauf ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Verkauf ^,^Lieferscheine ^,^230110028^,^02.07.2001^,^220110045^,^230110028^,^32801^,^Mustermann&Co^,^ST 2120-0025
+Plasmon Jukebox M104-520-2
+ST 2100-0274
+Fujitsu M 4097DP
+ST 2121-0115
+Netrady for Workgroups(50 Clients)M20^,^ScanOptic GmbH ^,^2 ^,^^,^00000002^,^001^,^04.07.2001 ^,^04.07.2001 ^,^11^,^0^,^Verkauf ^,^M:\EASYWARE\Export\DEMO\BELEGE.002\2.ldf^
+@FOLDER,FT:^Verkauf ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Verkauf ^,^Rechnungen ^,^240110029^,^02.07.2001^,^^,^230110028^,^32801^,^Mustermann&Co^,^2120-0025
+Plasmon JukeboK M104-520-2
+2700-0274
+Fujitsu M 4097D
+2121-0115
+Netrady for Workgroups(50 Clients)M20^,^ScanOptic GmbH ^,^2 ^,^^,^00000003^,^001^,^04.07.2001 ^,^04.07.2001 ^,^11^,^0^,^Verkauf ^,^M:\EASYWARE\Export\DEMO\BELEGE.003\3.ldf^
+@FOLDER,FT:^Verkauf ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001,BI:2002
+^^,^^,^^,^^,^Verkauf ^,^Auftragsbestätigungen ^,^220110045^,^02.07.2001^,^^,^^,^32801^,^Mustermann&Co^,^2120-0025
+Plasmon Jukebox M104-520-2
+2100-0274
+Fujitsu M 4097D
+2121-0115
+Netrady for Workgroups(50 Clients)M20^,^EASY Software AG ^,^1^,^^,^00000004^,^001^,^04.07.2001 ^,^04.07.2001 ^,^11^,^0^,^Verkauf ^,^M:\EASYWARE\Export\DEMO\BELEGE.004\4.ldf^,^M:\EASYWARE\Export\DEMO\BELEGE.004\5.ldf^
+@FOLDER,FT:^Verkauf ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Verkauf ^,^Lieferscheine ^,^230110028^,^02.07.2001^,^220110045^,^230110028^,^32801^,^Mustermann&Co^,^ST 2120-0025
+Plasmon Jukebox M104-520-2
+ST 2100-0274
+Fujitsu M 4097D
+ST 2121-0115
+Netrady for Workgroups(50 Clients)M20^,^EASY Software AG ^,^1^,^^,^00000005^,^001^,^04.07.2001 ^,^04.07.2001 ^,^11^,^0^,^Verkauf ^,^M:\EASYWARE\Export\DEMO\BELEGE.005\6.ldf^
+@FOLDER,FT:^Verkauf ^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^^,^^,^^,^Verkauf ^,^Rechnungen ^,^240110029^,^02.07.2001^,^^,^230110028^,^32801^,^Mustermann&Co^,^2120-0025
+Plasmon Jukebox M104-520-2
+2100-0274
+Fujitsu M 4097D
+2121-0115
+Netrady for Workgroups(50 Clients)M20^,^EASY Software AG ^,^1 ^,^^,^00000006^,^001^,^04.07.2001 ^,^04.07.2001 ^,^11^,^0^,^Verkauf ^,^M:\EASYWARE\Export\DEMO\BELEGE.006\7.ldf^
+@FOLDER,FT:^Verkauf^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110
+^^,^^,^^,^^,^Verkauf ^,^Rechnungen ^,^39148993^,^05.05.2000^,^00712751^,^20694733^,^7339^,^BAUERSCHREINER AG 467 000 POSTFACH 12655 84347 NIENBURG^,^^,^Testfirma ^,^3 ^,^
+
+
+
+
+
+
+
+
+       BAUERSCHREINER AG                                  R E C H N U N G
+       467 000                                            NR.     39148993
+       POSTFACH 12655                                     VOM   05.05.2000
+                                                          SEITE          1
+       84347 NIENBURG
+
+
+
+
+   AUFTRAGSNUMMER:  00712751   LIEFERSCHEIN:    20694733
+   KUNDENNUMMER  :  7339       VERTRETER   :    10020633   L-WERK:  KUPFERDREH   
+   ------------------------------------------------------------------------------
+   BESTELLNUMMER     BST.-DATUM     VERSANDART       VERSANDDATUM      GEWICHT/KG
+   857852            04.05.2000     TOUR > 20 TO     05.05.2000            13.927
+   ------------------------------------------------------------------------------
+   IHR ANSPRECHPARTNER BEI UNS:   FRAU HAUSBAU  TEL. 0899/5503-443
+   UNSERE KONTONUMMER BEI IHNEN:  4711                               BBN: 0000000
+   ------------------------------------------------------------------------------
+
+                 ABHOL. AM 05.05.2000 AUF PAL.
+                 SPED. SECONDARY TRANSPORT
+                 PAL A 50
+
+   ------------------------------------------------------------------------------
+   PN  ART-NR.  ARTIKELBEZEICHNUNG                                    NETTOWERT
+                    MENGE / MENGENEINHEIT        NETTOPREIS/PE        IN DM
+   ------------------------------------------------------------------------------
+   02 44578     B       12,5 VA SS 1250 2500
+                 BAULEISTE CHROM
+                     230,000  ST     718,750  M2       2,77 /M2        1.994,53 X
+
+   04 99999     BI      12,5 VA SS 1250 2500
+                 BAULEIST IMPR.
+                     150,000  ST     468,750  M2       4,57 /M2        2.144,53 X
+
+   06 50789     ANSETZBINDER AB 30KG
+                 Raffig-ANSETZBINDER
+                 30 KG SACK
+                      60,000  BE       1,800  TO     227,25 /TO          409,05 X
+
+   10 78947     GPS-PALETTE
+                       8,000  ST                      40,00 /ST          320,00
+
+            W A R E N N E T T O W E R T                                4.868,11
+
+            FRACHTVERG.ABHOL.        4,20- PRO   100 KG  13.926,563      584,92-
+
+            MEHRWERTSTEUER       16,00 %         4.283,19                685,31
+
+            E N D B E T R A G                                          4.968,50
+^,^00000007^,^001^,^04.07.2001 ^,^04.07.2001 ^,^12^,^0^,^Verkauf^
+@FOLDER,FT:^DEMO-BELEGE^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^Maskenkorb1/DEMO-Belege^,^Arbeitskorb^,^Belege^,^Verkauf^,^Auftragsbestätigungen^,^900322^,^02.07.2001^,^900322^,^^,^332202^,^Hausbau GBR^,^ohne^,^H^,^332202^,^Geschäftsstelle Süd
+Bahnhofstr. 22
+Handwerksoffice - Bahnhofstr. 22- 87654 Gernsburg                                                                           
+Firma                                                          Telefon: 0821-776655
+Hausbau GBR                                                     Fax: 0821-776656
+Flurweg 12
+81234 Obersenbach
+Seite 1 von 1
+AUFTRAGS-         Nr.: 900322                      Datum:     02.07.2001
+BESTÄTIGUNG                                  Kunden-Nr.:       332202
+Menge   Artikelnr_______Artikel_______Einheit___Einzelpreis    Gesamtpreis
+3   12-14.004    Spezialdübel        Karton ä 10    13,33 DM      39,99 DM
+5    11-02.103    Klammern          Karton ä 50     4,10 DM       20,50 DM
+21    44-32.012    Blech              Stk.            6,90DM      144,90DM
+3    56-11.002    Sicherheitsbrille      Stk.          129,00 DM      387,00 DM
+4   88-43.129    Zangen            Stk.           83,00 DM     332,00 DM
+7   13-97.097    Streben            Stk.           33,00 DM     231,00 DM
+10   14-54.201    Kantholz           m3            17,22 DM     172,20 DM
+100   55-11.111    Kabel              m             0,67 DM      67,00 DM
+1    09-09.543    Werkbank          Stk.        2.100,00DM    2.100,00DM
+Summe netto:                                  3.494,59 DM
+Summe brutto incl. 16% Ust.                     4.053,72 DM
+Summe brutto incl. 16% Ust. in EUR                              2.072,64
+Bankverbindung:     Sparkasse Obermoos
+BLZ : 777 888 00
+Kto.: 123456789
+Ust-ID-Nr.: DE987654321
+^,^00000008^,^001^,^30.08.2001 ^,^30.08.2001 ^,^15^,^1^,^DEMO-BELEGE^,^M:\EASYWARE\Export\DEMO\BELEGE.008\Auftragsb-4.tif^
+@FOLDER,FT:^DEMO-BELEGE^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^Maskenkorb1/DEMO-Belege^,^Arbeitskorb^,^Belege^,^Verkauf^,^Auftragsbestätigungen^,^900321^,^01.07.2001^,^900321^,^^,^332201^,^Bauland GmbH^,^ohne^,^B^,^332201^,^Geschäftsstelle Süd
+Bahnhofstr. 22
+Handwerksoffice - Bahnhofstr. 22- 87654 Gernsburg                                                                           
+Firma                                                        Telefon: 0821-776655
+Bauland GmbH                                                   Fax: 0821-776656
+Am Berg 66
+54321 Düsselbach
+Seite 1 von 1
+AUFTRAGS-         Nr.: 900321                      Datum:     01.07.2001
+BESTÄTIGUNG                                  Kunden-Nr.:       332201
+Menge   Artikelnr_______Artikel_______Einheit___Einzelpreis    Gesamtpreis
+2   12-12.001    Handschuhe        Karton ä 10    12,22 DM      24,44 DM
+4    11-01.003    Nägel              Karton ä 50     3,10 DM       12,40 DM
+20   44-22.042    Bohrer             Stk.            7,00DM      140,00DM
+2    12-11.002    Sicherheitsschuhe   Paar         230,34 DM     460,68 DM
+3    66-43.129    Gürtel              Stk.          109,12 DM      327,36 DM
+Summe netto:                                 964,88 DM
+Summe brutto incl. 16% Ust.                     1.119,26 DM
+Summe brutto incl. 16% Ust. in EUR                               572,27
+Bankverbindung:     Sparkasse Obermoos
+BLZ : 777 888 00
+Kto.: 123456789
+Ust-ID-Nr.: DE987654321
+^,^00000009^,^001^,^30.08.2001 ^,^30.08.2001 ^,^15^,^1^,^DEMO-BELEGE^,^M:\EASYWARE\Export\DEMO\BELEGE.009\Auftragsb-1.tif^
+@FOLDER,FT:^DEMO-BELEGE^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^Maskenkorb1/DEMO-Belege^,^Arbeitskorb^,^Belege^,^Verkauf^,^Lieferscheine^,^812011^,^16.07.2001^,^900322^,^812011^,^332202^,^Hausbau GBR^,^ohne^,^H^,^332202^,^Geschäftsstelle Süd
+Bahnhofstr. 22
+Handwerksoffice - Bahnhofstr. 22 - 87654 Gernsburg                                                                             
+Firma                                                          Telefon: 0821-776655
+Hausbau GBR                                                     Fax: 0821-776656
+Flurweg 12
+81234 Obersenbach
+Seite 1 von 1
+LIEFERSCHEIN      Nr.: 812011                        Datum:     16.07.2001
+Kunden-Nr.:        332202
+Auftrags-Nr.:        900322
+Menge   Artikelnr______Artikel________Einheit    Liefermenge  offene Liefermenge
+3    12-14.004    Spezialdübel        Karton ä 10         3,00
+5    11-02.103    Klammern          Karton ä 50         5,00
+21    44-32.012    Blech              Stk.               21,00
+3    56-11.002     Sicherheitsbrille     Stk.                 3,00
+4    88-43.129    Zangen            Stk.                4,00
+7    13-97.097    Streben            Stk.                7,00
+10    14-54.201     Kantholz           m3                10,00
+100    55-11.111     Kabel              m               100,00
+1    09-09.543    Werkbank          Stk.                1,00
+Ware erhalten: ____________________
+Datum       Unterschrift
+^,^00000010^,^001^,^30.08.2001 ^,^30.08.2001 ^,^15^,^1^,^DEMO-BELEGE^,^M:\EASYWARE\Export\DEMO\BELEGE.010\Lieferschein5.tif^
+@FOLDER,FT:^DEMO-BELEGE^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^Maskenkorb1/DEMO-Belege^,^Arbeitskorb^,^Belege^,^Verkauf^,^Lieferscheine^,^812010^,^15.07.2001^,^900321^,^812010^,^332201^,^Bauland GmbH^,^ohne^,^B^,^332201^,^Geschäftsstelle Süd
+Bahnhofstr. 22
+Handwerksoffice - Bahnhofstr. 22 - 87654 Gernsburg                                                                              
+Firma                                                        Telefon: 0821-776655
+Bauland GmbH                                                   Fax: 0821-776656
+Am Berg 66
+54321 Düsselbach
+Seite 1 von 1
+LIEFERSCHEIN      Nr.: 812010                       Datum:     15.07.2001
+Kunden-Nr.:        332201
+Auftrags-Nr.:        900321
+Menge   Artikelnr______Artikel________Einheit    Liefermenge  offene Liefermenge
+2    12-12.001    Handschuhe       Karton ä 10        2,00
+4    11-01.003    Nägel              Karton ä 50         4,00
+20   44-22.042    Bohrer             Stk.              20,00
+2    12-11.002    Sicherheitsschuhe   Paar               2,00
+3    66-43.129     Gürtel              Stk.                3,00
+Ware erhalten: ____________________
+Datum       Unterschrift
+^,^00000011^,^001^,^30.08.2001 ^,^30.08.2001 ^,^15^,^1^,^DEMO-BELEGE^,^M:\EASYWARE\Export\DEMO\BELEGE.011\Lieferschein2.tif^
+@FOLDER,FT:^DEMO-BELEGE^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^Maskenkorb1/DEMO-Belege^,^Arbeitskorb^,^Belege^,^Verkauf^,^Rechnungen^,^1080224^,^01.08.2001^,^900322^,^812011^,^332202^,^Hausbau GBR^,^ohne^,^H^,^332202^,^MW' V
+Geschäftsstelle Süd
+Bahnhofstr. 22
+Handwerksoffice - Bahnhofstr. 22- 87654 Gernsburg                                                                           
+Firma                                                          Telefon: 0821-776655
+Hausbau GBR                                                     Fax: 0821-776656
+Flurweg 12
+81234 Obersenbach
+Seite 1 von 1
+RECHNUNG          Nr.: 1080224                       Datum:     01.08.2001
+Kunden-Nr.:        332202
+Auftrags-Nr.:        900322
+LS-Nr.:        812011
+LS-Datum:     16.07.2001
+Menge   Artikelnr_______Artikel_______Einheit___Einzelpreis    Gesamtpreis
+3   12-14.004    Spezialdübel        Karton ä 10    13,33 DM      39,99 DM
+5    11 -02.103    Klammern           Karton ä 50     4,10DM       20,50 DM
+21    44-32.012    Blech              Stk.            6,90 DM      144,90 DM
+3    56-11.002    Sicherheitsbrille      Stk.          129,00 DM      387,00 DM
+4   88-43.129    Zangen             Stk.           83,00 DM     332,00 DM
+7    13-97.097    Streben            Stk.           33,00 DM     231,00 DM
+10    14-54.201     Kantholz            m3            17,22DM      172,20DM
+100   55-11.111     Kabel              m             0,67 DM       67,00 DM
+1    09-09.543    Werkbank          Stk.        2.100,00 DM    2.100,00 DM
+Summe netto:                                  3.494,59 DM
+Summe brutto incl. 16% Ust.                      4.053,72 DM
+Summe brutto incl. 16% Ust. in EUR                             2.072,64
+Zahlungsbedingungen: Bis zum 15.08.2001 ohne Abzug
+Bankverbindung:     Sparkasse Obermoos
+BLZ : 777 888 00
+Kto.: 123 456 789
+Ust-ID-Nr.: DE987654321
+^,^00000012^,^001^,^30.08.2001 ^,^30.08.2001 ^,^15^,^1^,^DEMO-BELEGE^,^M:\EASYWARE\Export\DEMO\BELEGE.012\Rechnung6.tif^
+@FOLDER,FT:^DEMO-BELEGE^,FI:801,FI:802,FI:803,FI:804,FI:1001,FI:1002,FI:1003,FI:1004,FI:1005,FI:1006,FI:1007,FI:1008,FI:1009,FI:1010,FI:1011,FI:1012,FI:101,FI:102,FI:103,FI:104,FI:106,FI:107,FI:110,BI:2001
+^^,^Maskenkorb1/DEMO-Belege^,^Arbeitskorb^,^Belege^,^Verkauf^,^Rechnungen^,^1080223^,^30.07.2001^,^900321^,^812010^,^332201^,^Bauland GmbH^,^ohne^,^B^,^332201^,^Geschäftsstelle Süd
+Bahnhofstr. 22
+Handwerksoffice - Bahnhofstr. 22- 87654 Gernsburg                                                                           
+Firma                                                        Telefon: 0821-776655
+Bauland GmbH                                                   Fax: 0821-776656
+Am Berg 66
+54321 Düsselbach
+Seite 1 von 1
+RECHNUNG          Nr.: 1080223                       Datum:     30.07.2001
+Kunden-Nr.:        332201
+Auftrags-Nr.:        900321
+LS-Nr.:        812010
+LS-Datum:     15.07.2001
+Menge   Artikelnr_______Artikel_______Einheit___Einzelpreis    Gesamtpreis
+2   12-12.001    Handschuhe        Karton ä 10    12,22 DM      24,44 DM
+4    11-01.003    Nägel              Karton ä 50     3,10 DM       12,40 DM
+20   44-22.042    Bohrer             Stk.            7,00 DM      140,00 DM
+2    12-11.002    Sicherheitsschuhe   Paar         230,34 DM     460,68 DM
+3    66-43.129    Gürtel              Stk.          109,12 DM      327,36 DM
+Summe netto:                                 964,88 DM
+Summe brutto incl. 16% Ust.                     1.119,26 DM
+Summe brutto incl. 16% Ust. in EUR                               572,27
+Zahlungsbedingungen: Bis zum 15.08.2001 ohne Abzug
+Bankverbindung:     Sparkasse Obermoos
+BLZ : 777 888 00
+Kto.: 123 456 789
+Ust-ID-Nr.: DE987654321
+^,^00000013^,^001^,^30.08.2001 ^,^30.08.2001 ^,^15^,^1^,^DEMO-BELEGE^,^M:\EASYWARE\Export\DEMO\BELEGE.013\Rechnung 3.tif^

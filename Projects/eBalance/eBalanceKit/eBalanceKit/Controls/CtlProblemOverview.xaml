@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.CtlProblemOverview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Structures="clr-namespace:eBalanceKitBusiness.Structures;assembly=eBalanceKitBusiness"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Margin="0" Padding="0">
+            <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+                <!--<ListBox Grid.Row="0" Name="lstItems"
+                 Padding="-2,0,0,0"
+                 ItemsSource="{Binding Path=Problems}" 
+                 MinHeight="100" BorderBrush="Transparent" BorderThickness="0"
+                 ScrollViewer.CanContentScroll="False"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="0,0,0,5" Padding="5,2">
+                            <Border.Style>
+                                <Style TargetType="Border" BasedOn="{StaticResource GroupBoxBorder}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                            <Setter Property="Background" Value="{StaticResource TransparentOrangeGradientBrush}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <StackPanel>
+                            <TextBlock Text="{Binding HeadLine}" />
+                                <Separator Margin="10" />
+                                <TextBlock Text="{Binding Description}" />
+                        </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>-->
+                <Border Style="{StaticResource GroupBoxBorder}" CornerRadius="0" Visibility="{Binding Path=Problems.Categories, Converter={StaticResource EmptyListToVisibleConverter}, ConverterParameter=False}" >
+                    <TreeView ItemsSource="{Binding Problems.Categories}" Background="Transparent" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <TreeView.Resources>
+                            <Style TargetType="{x:Type TreeViewItem}">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Padding" Value="1,0,0,0"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                                <!--<Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+                                <Setter Property="Template" Value="{StaticResource ExpandedTreeViewItem}" />
+                            </Style>
+
+                            <HierarchicalDataTemplate DataType="{x:Type Structures:ProblemEntry}">
+                                <Border Style="{StaticResource GroupBoxBorder}" Margin="0,0,0,5" Padding="5,2">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding HeadLine}" Margin="0,0,5,0" />
+                                        <!--<TextBlock Text=": " />-->
+                                        <Separator />
+                                        <TextBlock Text="{Binding Description}"/>
+                                    </StackPanel>
+                                </Border>
+                            </HierarchicalDataTemplate>
+                            <HierarchicalDataTemplate DataType="{x:Type Structures:ProblemCategory}" ItemsSource="{Binding Entries}">
+                                <Border Style="{StaticResource GroupBoxBorder}" Margin="0,0,0,5" Padding="5,2">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Name}" Margin="0,0,5,0" />
+                                        <!--<TextBlock Text=": " />-->
+                                        <!--<Separator />-->
+                                    </StackPanel>
+                                </Border>
+                            </HierarchicalDataTemplate>
+                        </TreeView.Resources>
+                    </TreeView>
+                </Border>
+                <TextBlock HorizontalAlignment="Center" Grid.Row="0" Text="{x:Static Localisation:ResourcesMain.NoProblems}" Visibility="{Binding Path=Problems.Categories, Converter={StaticResource EmptyListToVisibleConverter}}" />
+            </Grid>
+        </Border>
+        <Border Name="ButtonBar" Grid.Row="1">
+            <Grid>
+                <Button Name="btExportAsPdf" Content="Export" Click="btExportAsPdf_Click" Visibility="{Binding Path=Problems.Categories, Converter={StaticResource EmptyListToVisibleConverter}, ConverterParameter=False}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

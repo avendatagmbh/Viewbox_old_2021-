@@ -1,0 +1,651 @@
+﻿<ResourceDictionary x:Class="eBalanceKit.ResourceDictionaries.TaxonomyAndBalanceListBase"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:ts="clr-namespace:eBalanceKit.TemplateSelectors"
+                    xmlns:loc="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Structures="clr-namespace:eBalanceKitBusiness.Structures;assembly=eBalanceKitBusiness">
+
+    <ts:BalanceListDragDropTemplateSelector x:Key="balanceListDragDropTemplateSelector" />
+
+    <SolidColorBrush x:Key="BalanceAccountTextBrush" Color="Black" />
+    <SolidColorBrush x:Key="BalanceAccountSelectedTextBrush" Color="#202020" />
+
+    <!-- ######################################## -->
+
+    <SolidColorBrush x:Key="BalanceAccountBorderBorderBrush" Color="#9fba7b" />
+
+    <LinearGradientBrush x:Key="BalanceAccountBorderBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#def5cb" Offset="0.0" />
+        <GradientStop Color="#b6d68d" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <Style x:Key="AccountBorder" TargetType="{x:Type Border}" BasedOn="{StaticResource ListBoxItemBaseBorder}">
+        <Setter Property="Background" Value="{StaticResource BalanceAccountBorderBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BalanceAccountBorderBorderBrush}" />
+    </Style>
+
+    <!-- ######################################## -->
+
+    <SolidColorBrush x:Key="SplittedAccountBorderBorderBrush" Color="#aac4f3" />
+
+    <LinearGradientBrush x:Key="SplittedAccountBorderBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#d2ddea" Offset="0.0" />
+        <GradientStop Color="#aebdcf" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <Style x:Key="SplittedAccountBorder" TargetType="{x:Type Border}" BasedOn="{StaticResource ListBoxItemBaseBorder}">
+        <Setter Property="Background" Value="{StaticResource SplittedAccountBorderBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource SplittedAccountBorderBorderBrush}" />
+    </Style>
+
+    <!-- ######################################## -->
+
+    <SolidColorBrush x:Key="AccountGroupBorderBorderBrush" Color="#aac4f3" />
+
+    <LinearGradientBrush x:Key="AccountGroupBorderBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#d2ddea" Offset="0.0" />
+        <GradientStop Color="#aebdcf" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <Style x:Key="AccountGroupBorder" TargetType="{x:Type Border}" BasedOn="{StaticResource ListBoxItemBaseBorder}">
+        <Setter Property="Background" Value="{StaticResource AccountGroupBorderBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource AccountGroupBorderBorderBrush}" />
+    </Style>
+
+    <!-- ######################################## -->
+
+    <Style TargetType="{x:Type CheckBox}" x:Key="IsBalanceListEntryHiddenCheckbox">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Image x:Name="CheckMark" Width="16" Source="/eBalanceKitResources;component/Resources/eye.png" />
+                        </BulletDecorator.Bullet>
+
+                        <ContentPresenter x:Name="content"
+                                              Margin="4,0,0,0"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Stretch"
+                                              RecognizesAccessKey="True"/>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="CheckMark" Property="Image.Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect ShadowDepth="2" Opacity="0.8"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                            <Setter TargetName="CheckMark" Property="Opacity" Value="0.25"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsHidden}" Value="True"/>
+                </MultiDataTrigger.Conditions>
+                <Setter Property="ToolTip" Value="Element ist ausgeblendet." />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsHidden}" Value="False"/>
+                </MultiDataTrigger.Conditions>
+                <Setter Property="ToolTip" Value="Element ist sichtbar." />
+            </MultiDataTrigger>
+
+        </Style.Triggers>
+    </Style>
+    
+    <LinearGradientBrush x:Key="SelectedBalanceAccountBorderBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#c6e4a8" Offset="0.0" />
+        <GradientStop Color="#7da14a" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- used in CtlBalanceList -->
+    <Style x:Key="SelectedOverlayBorder" TargetType="{x:Type Border}" BasedOn="{StaticResource AccountBorder}">
+        <Setter Property="Background" Value="{StaticResource selectionOverlayBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="AccountTextStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource BalanceAccountTextBrush}" />
+        <Style.Triggers>
+            <DataTrigger Binding ="{Binding Path=IsSelected}" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource BalanceAccountSelectedTextBrush}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TreeViewTextStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource AccountTextStyle}">
+        <Setter Property="Foreground" Value="{StaticResource BalanceAccountTextBrush}" />
+        <Style.Triggers>
+            <DataTrigger Binding ="{Binding Path=Value.IsEnabled}" Value="False">
+                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- balance list account -->
+    <DataTemplate x:Key="BalanceListAccount">
+        <Grid MinHeight="36">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox IsChecked="{Binding IsHidden}" VerticalAlignment="Center" Style="{StaticResource IsBalanceListEntryHiddenCheckbox}" Margin="2,0,0,0" IsTabStop="False"
+                      Visibility="{Binding BalanceList.ItemsFilter.ShowHiddenItems, Converter={StaticResource TrueToVisibilityConverter}}"/>
+            
+            <Border Grid.Column="1" Style="{StaticResource AccountBorder}" />
+            <Border Grid.Column="1" Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Column="0" Grid.RowSpan="2" x:Name="txtLabel" Text="{Binding Path=Label}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                    <TextBlock x:Name="txtValue" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Style="{StaticResource AccountTextStyle}"/>
+
+                    <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" DataContext="{Binding}" Click="btnCreateSplitAccountGroup_Click"
+                            ToolTip="{x:Static loc:ResourcesBalanceList.SplitAccount}">
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource ImageButtonStyle}">
+                                <Style.Triggers>
+                                    <!--We don't allow to split virtual accounts--> 
+                                    <DataTrigger Binding="{Binding .,Converter={StaticResource ObjectToTypeStringConverter}}" Value="VirtualAccount">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Image Width="14" Source="/eBalanceKitResources;component/Resources/SplitAccount.png" IsEnabled="{Binding BalanceList.Document.ReportRights.WriteAllowed}"/>
+                    </Button>
+
+                    <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}"
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                    <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal">                        
+                        <StackPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding BalanceList.SortOptions.SortType}" Value="{x:Static Structures:BalanceListSortType.Index}">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                        <TextBlock Text="Sortier-Index: " Style="{StaticResource AccountTextStyle}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+                        <TextBlock Text="{Binding Path=SortIndex}" Style="{StaticResource AccountTextStyle}" FontSize="10" FontStyle="Italic" Foreground="#444" />                        
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+
+    <!-- balance list account group -->
+    <DataTemplate x:Key="BalanceListAccountGroup">
+        <Grid MinHeight="36">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox IsChecked="{Binding IsHidden}" VerticalAlignment="Center" Style="{StaticResource IsBalanceListEntryHiddenCheckbox}" Margin="2,0,0,0" IsTabStop="False"
+                      Visibility="{Binding BalanceList.ItemsFilter.ShowHiddenItems, Converter={StaticResource TrueToVisibilityConverter}}"/>
+
+            <Border Grid.Column="1" Style="{StaticResource AccountGroupBorder}"/>
+            <Border Grid.Column="1" Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="120"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Text="{Binding Path=Label}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Style="{StaticResource AccountTextStyle}"/>
+
+                        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                            <TextBlock Text="Anzahl zugeordneter Konten: " Style="{StaticResource AccountTextStyle}"/>
+                            <TextBlock Text="{Binding Path=ItemsCount}" Style="{StaticResource AccountTextStyle}" />
+                        </StackPanel>
+
+                        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                        <!--<StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
+                        <StackPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding BalanceList.SortOptions.SortType}" Value="{x:Static Structures:BalanceListSortType.Index}">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                        <TextBlock Text="Sortier-Index: " Style="{StaticResource AccountTextStyle}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+                        <TextBlock Text="{Binding Path=SortIndex}" Style="{StaticResource AccountTextStyle}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+                    </StackPanel>-->
+                    </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+    <!-- balance list splitted account -->
+    <DataTemplate x:Key="BalanceListSplittedAccount">
+        <Grid MinHeight="36">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox IsChecked="{Binding IsHidden}" VerticalAlignment="Center" Style="{StaticResource IsBalanceListEntryHiddenCheckbox}" Margin="2,0,0,0" IsTabStop="False"
+                      Visibility="{Binding BalanceList.ItemsFilter.ShowHiddenItems, Converter={StaticResource TrueToVisibilityConverter}}"/>
+
+            <Border Grid.Column="1" Style="{StaticResource SplittedAccountBorder}"/>
+            <Border Grid.Column="1" Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Text="{Binding Path=Label}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Style="{StaticResource AccountTextStyle}"/>
+
+                    <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                        <TextBlock Text="Hauptkonto: " TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                        <TextBlock Text="{Binding Path=BaseAccount.Number}" Style="{StaticResource AccountTextStyle}" ToolTip="{Binding Path=BaseAccount.Label}"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                    <!--<StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
+                        <StackPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding BalanceList.SortOptions.SortType}" Value="{x:Static Structures:BalanceListSortType.Index}">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                        <TextBlock Text="Sortier-Index: " Style="{StaticResource AccountTextStyle}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+                        <TextBlock Text="{Binding Path=SortIndex}" Style="{StaticResource AccountTextStyle}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+                    </StackPanel>-->
+                </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+
+    <!-- balance list splitted account (used to display split account group items) -->
+    <DataTemplate x:Key="BalanceListSplittedAccount1">
+        <Grid>
+            <Border Style="{StaticResource SplittedAccountBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Text="{Binding Path=Label}" ToolTip="{Binding Path=Label}" Style="{StaticResource AccountTextStyle}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Style="{StaticResource AccountTextStyle}"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+    <!-- account with split button -->
+    <DataTemplate x:Key="AccountWithSplitButton">
+        <Grid MinHeight="36">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <CheckBox IsChecked="{Binding IsHidden}" VerticalAlignment="Center" Style="{StaticResource IsBalanceListEntryHiddenCheckbox}" Margin="2,0,0,0" IsTabStop="False" />
+
+            <Border Grid.Column="1" Style="{StaticResource AccountBorder}" />
+            <Border Grid.Column="1" Style="{StaticResource SelectionOverlayBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.RowSpan="2" x:Name="txtLabel" Text="{Binding Path=Label}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                    <TextBlock x:Name="txtValue" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Style="{StaticResource AccountTextStyle}"/>
+
+                    <Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" DataContext="{Binding}" Style="{StaticResource ImageButtonStyle}" Click="btnCreateSplitAccountGroup_Click"
+                            ToolTip="Konto aufteilen">
+                        <Image Width="14" Source="/eBalanceKitResources;component/Resources/SplitAccount.png" />
+                    </Button>
+
+                    <TextBlock Grid.Row="3" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}"
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+    <!-- split account groups -->
+    <DataTemplate x:Key="SplitAccountGroup">
+        <Grid MinHeight="36">
+            <Border Style="{StaticResource AccountBorder}" Margin="0,0,0,10"/>
+            <Border Style="{StaticResource SelectionOverlayBorder}" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.RowSpan="2" x:Name="txtLabel" Text="{Binding Path=Account.Label}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                    <TextBlock x:Name="txtValue" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Account.ValueDisplayString}" Style="{StaticResource AccountTextStyle}"/>
+
+                    <StackPanel DataContext="{Binding}" Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,2">
+                        <Button Style="{StaticResource ImageButtonStyle}" Click="btnDeleteSplitAccountGroup_Click"
+                                ToolTip="{x:Static loc:ResourcesBalanceList.BtnDeleteSplitAccountGroupTooltip}">
+                            <Image Width="14" Source="/eBalanceKitResources;component/Resources/delete.png" />
+                        </Button>
+
+                        <Button Style="{StaticResource ImageButtonStyle}" Click="btnEditSplitAccountGroup_Click" Margin="5,0,0,0"
+                                ToolTip="{x:Static loc:ResourcesBalanceList.BtnEditSplitAccountGroupTooltip}">
+                            <Image Width="14" Source="/eBalanceKitResources;component/Resources/edit.png" />
+                        </Button>
+
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="2" Text="{Binding Path=Account.Comment}" ToolTip="{Binding Path=Account.Comment}" Style="{StaticResource AccountTextStyle}"
+                               Visibility="{Binding Account.HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                    <ListBox Grid.Row="3" Grid.ColumnSpan="2" MaxHeight="80" Background="Transparent" 
+                             BorderBrush="Transparent" BorderThickness="0" Padding="0"
+                             ScrollViewer.CanContentScroll="False"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                             ItemsSource="{Binding Items}" ItemTemplate="{StaticResource BalanceListSplittedAccount1}">
+
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="IsHitTestVisible" Value="False" />
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Setter Property="Padding" Value="0"/>
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                </Style.Resources>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+
+                    </ListBox>
+                </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+    <!-- account groups -->
+    <DataTemplate x:Key="AccountGroup">
+        <Grid MinHeight="36">
+            <Border Style="{StaticResource AccountBorder}" Margin="0,0,0,10"/>
+            <Border Style="{StaticResource SelectionOverlayBorder}" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.RowSpan="2" x:Name="txtLabel" Text="{Binding Path=Label}" TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                    <TextBlock x:Name="txtValue" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Style="{StaticResource AccountTextStyle}"/>
+
+                    <TextBlock Grid.Row="2" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}"
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+
+                    <ListBox Grid.Row="3" Grid.ColumnSpan="2" MaxHeight="80" Background="Transparent" 
+                             BorderBrush="Transparent" BorderThickness="0" Padding="0"
+                             ScrollViewer.CanContentScroll="False"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                             ItemsSource="{Binding Items}" ItemTemplate="{StaticResource BalanceListAccount}">
+
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="IsHitTestVisible" Value="False" />
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Setter Property="Padding" Value="0"/>
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                </Style.Resources>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+
+                    </ListBox>
+                </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+    <!-- balance list assigned account -->
+    <DataTemplate x:Key="BalanceListAssignedAccount">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <CheckBox Margin="0,0,2,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}" />
+            <Grid Grid.Column="1">
+                <Border Style="{StaticResource AccountBorder}" />
+                <Border Style="{StaticResource SelectionOverlayBorder}" Mouse.MouseUp="BalanceListAssignedAccountText_Clicked">
+                    <Border.ToolTip>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static loc:ResourcesBalanceList.AssignedTo}"></TextBlock>
+                            <TextBlock Margin="5,0,0,0" Text="{Binding AssignedElement.Label}" />
+                        </StackPanel>
+                    </Border.ToolTip>
+                    <Grid MinHeight="32">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="120"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="{Binding Path=Label}" Foreground="{StaticResource BalanceAccountTextBrush}" TextWrapping="Wrap" />
+                        <TextBlock Margin="5,0,0,0" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Foreground="{StaticResource BalanceAccountTextBrush}" />
+
+                        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <!-- balance list assigned splitted account -->
+    <DataTemplate x:Key="BalanceListAssignedSplittedAccount">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <CheckBox Margin="0,0,2,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <Grid Grid.Column="1" >
+                <Border Style="{StaticResource SplittedAccountBorder}" Cursor="Hand" />
+                <Border Style="{StaticResource SelectionOverlayBorder}" Mouse.MouseUp="BalanceListAssignedAccountText_Clicked">
+                    <Grid MinHeight="32">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="120"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="{Binding Path=Label}" Foreground="{StaticResource BalanceAccountTextBrush}" TextWrapping="Wrap" />
+                        <TextBlock Margin="5,0,0,0" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Foreground="{StaticResource BalanceAccountTextBrush}" />
+
+                        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                            <TextBlock Text="Hauptkonto: " TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                            <TextBlock Text="{Binding Path=BaseAccount.Number}" Style="{StaticResource AccountTextStyle}" ToolTip="{Binding Path=BaseAccount.Label}"/>
+                        </StackPanel>
+
+                        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <!-- balance list assigned account group -->
+    <DataTemplate x:Key="BalanceListAssignedAccountGroup">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <CheckBox Margin="0,0,2,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Grid Grid.Column="1">
+                <Border Style="{StaticResource AccountGroupBorder}" Cursor="Hand" />
+                <Border Style="{StaticResource SelectionOverlayBorder}" Mouse.MouseUp="BalanceListAssignedAccountText_Clicked">
+                    <Grid MinHeight="32">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="120"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="{Binding Path=Label}" Foreground="{StaticResource BalanceAccountTextBrush}" TextWrapping="Wrap" />
+                        <TextBlock Margin="5,0,0,0" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Foreground="{StaticResource BalanceAccountTextBrush}" />
+
+                        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                            <TextBlock Text="Anzahl gruppierter Konten: " TextWrapping="Wrap" Style="{StaticResource AccountTextStyle}"/>
+                            <TextBlock Text="{Binding Path=ItemsCount}" Style="{StaticResource AccountTextStyle}" />
+                        </StackPanel>
+
+                        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Path=Comment}" ToolTip="{Binding Path=Comment}" Style="{StaticResource AccountTextStyle}" 
+                               Visibility="{Binding HasComment, Converter={StaticResource TrueToVisibilityConverter}}" FontSize="10" FontStyle="Italic" Foreground="#444" />
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <!-- balance list drag&drop account -->
+    <DataTemplate x:Key="BalanceListDragDropAccount">
+        <Border Style="{StaticResource AccountBorder}" Cursor="Hand" Padding="3,1" Margin="1">
+            <Grid Height="16" Width="200">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=Number}" Foreground="{StaticResource BalanceAccountTextBrush}" />
+                <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Foreground="{StaticResource BalanceAccountTextBrush}" />
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <!-- balance list drag&drop account group -->
+    <DataTemplate x:Key="BalanceListDragDropAccountGroup">
+        <Border Style="{StaticResource AccountGroupBorder}" Cursor="Hand" Padding="3,1" Margin="1">
+            <Grid Height="16" Width="200">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=Number}" Foreground="{StaticResource BalanceAccountTextBrush}" />
+                <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Foreground="{StaticResource BalanceAccountTextBrush}" />
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <!-- balance list drag&drop splitted account -->
+    <DataTemplate x:Key="BalanceListDragDropSplittedAccount">
+        <Border Style="{StaticResource SplittedAccountBorder}" Cursor="Hand" Padding="3,1" Margin="1">
+            <Grid Height="16" Width="200">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=Number}" Foreground="{StaticResource BalanceAccountTextBrush}" />
+                <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=ValueDisplayString}" Foreground="{StaticResource BalanceAccountTextBrush}" />
+            </Grid>
+        </Border>
+    </DataTemplate>
+</ResourceDictionary>

@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.FederalGazette.FederalGazetteCtls.CtlFederalGazetteReportSettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <StackPanel Margin="5">
+                <!--<TextBlock Text="XBRL-Dokument" />-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--<TextBox x:Name="txtFile" Text="C:\Users\soh\Desktop\testBA.xml" />-->
+                    <!--<Button Grid.Column="1" Name="btnSelectFile" Margin="3" Style="{StaticResource ImageButtonStyle}">
+                        <Image Width="16" Source="/eBalanceKitResources;component/Resources/Folder.png" />
+                    </Button>-->
+                </Grid>
+            </StackPanel>
+            <TabControl>
+                <TabItem Header="Bekanntmachungsoptionen">
+                    <StackPanel>
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Berichtsbestandteile" />
+                                <Separator/>
+                                <CheckBox Margin="2" Content="Anhang" IsChecked="{Binding Path=ExportNotes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <CheckBox Margin="2" Content="Anlagenspiegel" IsChecked="{Binding Path=ExportFixedAssets, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <CheckBox Margin="2" Content="Bilanz" IsChecked="{Binding Path=ExportBalanceSheet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <CheckBox Margin="2" Content="Ergebnisverwendung" IsChecked="{Binding Path=ExportNetProfit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <CheckBox Margin="2" Content="Gewinn- und Verlustrechnung" IsChecked="{Binding Path=ExportIncomeStatement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <CheckBox Margin="2" Content="Lagebericht" IsChecked="{Binding Path=ExportManagementReport, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Margin="2" Text="Zeitraum der Bekannmachung" />
+                                <Separator/>
+                                <StackPanel Margin="2" Orientation="Horizontal">
+                                    <TextBlock Text="Vom" Margin="0,4,2,0"/>
+                                    <DatePicker Name="dpStart" SelectedDate="{Binding Path=AcquisitionPeriodStart}"/>
+                                    <Separator Margin="10"/>
+                                    <TextBlock Text="Bis" Margin="0,4,2,0"/>
+                                    <DatePicker Name="dpEnd" SelectedDate="{Binding Path=AcquisitionPeriodEnd}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Optionen" />
+                                <Separator/>
+                                <CheckBox Margin="2" Content="Befreiungsbeschluss" IsChecked="{Binding Path=BB264, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                <CheckBox Margin="2" Content="Befreiungshinweis nach §264 Abs. 3 Nr. 4b HGB" IsChecked="{Binding Path=BH264, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                <CheckBox Margin="2" Content="Verlustübernahme" IsChecked="{Binding Path=VU264, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Veröffentlichungsdetail">
+                    <StackPanel>
+
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Art des Auftrages" />
+                                <ComboBox Name="cmbOrderType" ItemsSource="{Binding Path=OrderTypes}"  SelectedValue="{Binding Path=SelectedOrderType}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Veröffentlichungsbereich" />
+                                <ComboBox Name="cmbPublicationArea" ItemsSource="{Binding Path=PublicationArea}"  SelectedValue="{Binding Path=SelectedPublicatioanArea}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Veröffentlichungsrubrik" />
+                                <ComboBox Name="cmbPublicationCategory" ItemsSource="{Binding Path=PublicationCategory}"  SelectedValue="{Binding Path=SelectedPublicationCategory}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Veröffentlichungsarten" />
+                                <ComboBox Name="cmbPublicationType"  ItemsSource="{Binding Path=PublicationType}"  SelectedValue="{Binding Path=SelectedPublicationType}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Veröffentlichungstyp" />
+                                <ComboBox Name="cmbPublicationSubType" ItemsSource="{Binding Path=PublicationSubType}"  SelectedValue="{Binding Path=SelectedPublicationSubType}"/>
+
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Sprache der Bekanntmachung" />
+                                <ComboBox Name="cmbPublicationLanguage"  ItemsSource="{Binding Path=PublicationLanguage}"  SelectedValue="{Binding Path=SelectedLanguage}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Firmentyp" />
+                                <ComboBox Name="cmbCompanyType" ItemsSource="{Binding Path=CompanyType}"  SelectedValue="{Binding Path=SelectedCompanyType}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Firmengröße" />
+                                <ComboBox Name="cmbCompanySize"  ItemsSource="{Binding Path=CompanySize}"  SelectedValue="{Binding Path=SelectedCompanySize}"/>
+
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Bilanzierungsstandard" />
+                                <ComboBox Name="cmbBalanceSheet" ItemsSource="{Binding Path=BalanceSheetStandard}"  SelectedValue="{Binding Path=SelectedBalanceSheetStandard}"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.User" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCgAAAAAAAAIUAMIAAAAIAiAIAAAAAAQIAAAAAAAA=</HashCode>
+      <FileName>Structures\DbMapping\User.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.AssignmentTemplateElementInfo" Collapsed="true">
+    <Position X="7" Y="0.5" Width="2.5" />
+    <AssociationLine Name="Template" Type="eBalanceKitBusiness.Structures.DbMapping.AssignmentTemplateHead">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.071" Y="0.235" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACBAAAAEAAAAAAAACAAAAQBAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Structures\DbMapping\AssignmentTemplate\AssignmentTemplateElementInfo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Template" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.AssignmentTemplateHead" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="2.5" Width="2" />
+    <Members>
+      <Field Name="_creator" Hidden="true" />
+      <Method Name="_creator_PropertyChanged" Hidden="true" />
+      <Field Name="_elementInfos" Hidden="true" />
+      <Method Name="_elementInfos_CollectionChanged" Hidden="true" />
+      <Field Name="_elementInfosByName" Hidden="true" />
+      <Field Name="_items" Hidden="true" />
+      <Field Name="_lastModifier" Hidden="true" />
+      <Method Name="_lastModifier_PropertyChanged" Hidden="true" />
+      <Field Name="_name" Hidden="true" />
+      <Method Name="AddElementInfo" Hidden="true" />
+      <Method Name="AssignmentTemplateHead" Hidden="true" />
+      <Method Name="CompareTo" Hidden="true" />
+      <Method Name="GetElementInfo" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Creator" Type="eBalanceKitBusiness.Structures.DbMapping.User">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.065" Y="0.445" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>UAICICQEAACAAAQGIAAAEAYighIAAAABFgAAAAgAAAA=</HashCode>
+      <FileName>Structures\DbMapping\AssignmentTemplate\AssignmentTemplateHead.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Creator" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Assignments" />
+      <Property Name="ElementInfos" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.AssignmentTemplateLine" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="2" />
+    <AssociationLine Name="Template" Type="eBalanceKitBusiness.Structures.DbMapping.AssignmentTemplateHead" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.25" Y="1.062" />
+        <Point X="11.25" Y="2.938" />
+        <Point X="9.75" Y="2.938" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAEAAAAAAAAAAAAAAAggCABAAAAQAAAAAAAA=</HashCode>
+      <FileName>Structures\DbMapping\AssignmentTemplate\AssignmentTemplateLine.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Template" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.Company" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="1" Y="3.5" Width="1.5" />
+    <Members>
+      <Field Name="_financialYears" Hidden="true" />
+      <Field Name="_id" Hidden="true" />
+      <Field Name="_name" Hidden="true" />
+      <Field Name="_valueTree" Hidden="true" />
+      <Field Name="_visibleFinancialYears" Hidden="true" />
+      <Method Name="CompareTo" Hidden="true" />
+      <Method Name="GetFinancialYear" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+      <Method Name="SetFinancialYearIntervall" Hidden="true" />
+      <Method Name="SetVisibleFinancialYearIntervall" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="UpdateFinancialYear" Hidden="true" />
+    </Members>
+    <AssociationLine Name="FinancialYears" Type="eBalanceKitBusiness.Structures.DbMapping.FinancialYear">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.104" Y="0.248" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Parent" Type="eBalanceKitBusiness.Structures.DbMapping.Company" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.517" Y="3.5" />
+        <Point X="1.517" Y="3.112" />
+        <Point X="2" Y="3.112" />
+        <Point X="2" Y="3.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.026" Y="0.391" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="ValueTree" Type="eBalanceKitBusiness.Structures.ValueTree.ValueTree" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.188" Y="3.5" />
+        <Point X="2.188" Y="1.875" />
+        <Point X="4.375" Y="1.875" />
+        <Point X="4.375" Y="2.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACoEAAQAAAAAQEKAJBUAQAgAAACAAAAAUAQAAAAAA=</HashCode>
+      <FileName>Structures\DbMapping\Company.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Parent" />
+      <Property Name="ValueTree" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="FinancialYears" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.Document" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <Members>
+      <Field Name="_company" Hidden="true" />
+      <Method Name="_company_PropertyChanged" Hidden="true" />
+      <Field Name="_creator" Hidden="true" />
+      <Method Name="_creator_PropertyChanged" Hidden="true" />
+      <Field Name="_financialYear" Hidden="true" />
+      <Method Name="_financialYear_PropertyChanged" Hidden="true" />
+      <Field Name="_id" Hidden="true" />
+      <Field Name="_lastModifier" Hidden="true" />
+      <Method Name="_lastModifier_PropertyChanged" Hidden="true" />
+      <Field Name="_system" Hidden="true" />
+      <Method Name="_system_PropertyChanged" Hidden="true" />
+      <Field Name="_valueTreeGAAP" Hidden="true" />
+      <Field Name="_valueTreeGCD" Hidden="true" />
+      <Method Name="AddAssignment" Hidden="true" />
+      <Method Name="AddAssignments" Hidden="true" />
+      <Method Name="ClearAssignments" Hidden="true" />
+      <Method Name="ClearHyperCubes" Hidden="true" />
+      <Method Name="CompareTo" Hidden="true" />
+      <Method Name="DeleteBalanceList" Hidden="true" />
+      <Method Name="Document" Hidden="true" />
+      <Method Name="LoadHyperCubes" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+      <Method Name="RemoveAssignment" Hidden="true" />
+      <Method Name="Validate" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Company" Type="eBalanceKitBusiness.Structures.DbMapping.Company" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="6.938" />
+        <Point X="3.136" Y="6.938" />
+        <Point X="3.136" Y="3.953" />
+        <Point X="2.5" Y="3.953" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.237" Y="-1.181" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="System" Type="eBalanceKitBusiness.Structures.DbMapping.System" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.438" Y="7.062" />
+        <Point X="4.438" Y="7.904" />
+        <Point X="3.359" Y="7.904" />
+        <Point X="3.359" Y="8.781" />
+        <Point X="2.5" Y="8.781" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="FinancialYear" Type="eBalanceKitBusiness.Structures.DbMapping.FinancialYear" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.188" Y="7.062" />
+        <Point X="4.188" Y="7.904" />
+        <Point X="1.75" Y="7.904" />
+        <Point X="1.75" Y="7.062" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Creator" Type="eBalanceKitBusiness.Structures.DbMapping.User" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.5" Y="6.75" />
+        <Point X="5.875" Y="6.75" />
+        <Point X="5.875" Y="4.75" />
+        <Point X="8" Y="4.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.509" Y="0.04" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="LastModifier" Type="eBalanceKitBusiness.Structures.DbMapping.User" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.5" Y="6.75" />
+        <Point X="5.875" Y="6.75" />
+        <Point X="5.875" Y="4.75" />
+        <Point X="8" Y="4.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.366" Y="-0.23" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="ValueTreeGCD" Type="eBalanceKitBusiness.Structures.ValueTree.ValueTree" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.5" Y="6.75" />
+        <Point X="5.875" Y="6.75" />
+        <Point X="5.875" Y="2.5" />
+        <Point X="5.25" Y="2.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.75" Y="-0.436" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="ValueTreeGAAP" Type="eBalanceKitBusiness.Structures.ValueTree.ValueTree" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.5" Y="6.75" />
+        <Point X="5.875" Y="6.75" />
+        <Point X="5.875" Y="2.5" />
+        <Point X="5.25" Y="2.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.706" Y="-0.151" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="HyperCubes" Type="eBalanceKitBusiness.Interfaces.IHyperCube" FixedFromPoint="true">
+      <Path>
+        <Point X="4.938" Y="7.062" />
+        <Point X="4.938" Y="8.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>cAACIGQEAIKAAAyGIwhAEAQGmBAUBAACFwAEBACAIAA=</HashCode>
+      <FileName>Structures\DbMapping\Document.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Company" />
+      <Property Name="System" />
+      <Property Name="FinancialYear" />
+      <Property Name="Creator" />
+      <Property Name="LastModifier" />
+      <Property Name="ValueTreeGCD" />
+      <Property Name="ValueTreeGAAP" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="HyperCubes" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.DocumentRight" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <Members>
+      <Field Name="_isAllowed" Hidden="true" />
+      <Method Name="CompareTo" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Document" Type="eBalanceKitBusiness.Structures.DbMapping.Document">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.914" Y="0.661" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAAAAQgAAAAAAgAAAAAAAACAAAAAAAABAA=</HashCode>
+      <FileName>Structures\DbMapping\DocumentRight.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Document" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.FinancialYear" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="1" Y="6.5" Width="1.5" />
+    <Members>
+      <Field Name="_balSheetClosingDate" Hidden="true" />
+      <Field Name="_fiscalYearBegin" Hidden="true" />
+      <Field Name="_fiscalYearEnd" Hidden="true" />
+      <Field Name="_fyear" Hidden="true" />
+      <Field Name="_id" Hidden="true" />
+      <Method Name="CompareTo" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQCAAAIAACAAAUAIAFAAAAAgAgAKQAAAABABAABAAA=</HashCode>
+      <FileName>Structures\DbMapping\FinancialYear.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Company" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.Info" Collapsed="true">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAIIAAAAgQAAAAgAAgAAJAAAAgAIEAiIAAAAAA=</HashCode>
+      <FileName>Structures\DbMapping\Info.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.System" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="1" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACoAAEEAAAAAQAIABAAAQAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Structures\DbMapping\System.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.ValueTree.ValueTree" Collapsed="true">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <Members>
+      <Method Name="CreateValueTree" Hidden="true" />
+      <Method Name="LoadValueMappingTree" Hidden="true" />
+      <Method Name="Save" Hidden="true" />
+      <Method Name="SaveNewEntries" Hidden="true" />
+      <Method Name="ValueTree" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Document" Type="eBalanceKitBusiness.Structures.DbMapping.Document">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.269" Y="0.756" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Company" Type="eBalanceKitBusiness.Structures.DbMapping.Company" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="2.438" />
+        <Point X="2.375" Y="2.438" />
+        <Point X="2.375" Y="3.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.874" Y="0.669" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAMAAAAAAACAAAAAAAEEAAAgAAAQCAAAEBAAAAAA=</HashCode>
+      <FileName>Structures\ValueTree\ValueTree.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Document" />
+      <Property Name="Company" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="eBalanceKitBusiness.Interfaces.IHyperCube" Collapsed="true">
+    <Position X="4" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgA=</HashCode>
+      <FileName>_interfaces\IHyperCube.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

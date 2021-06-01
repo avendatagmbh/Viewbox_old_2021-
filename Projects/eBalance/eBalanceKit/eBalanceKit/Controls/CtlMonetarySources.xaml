@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.CtlMonetarySources"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:BalanceList="clr-namespace:eBalanceKit.Controls.BalanceList"
+             xmlns:AuditMode="clr-namespace:eBalanceKit.Windows.AuditMode"
+             xmlns:Options="clr-namespace:eBalanceKitBusiness.Options;assembly=eBalanceKitBusiness" mc:Ignorable="d" 
+             d:DesignHeight="300" Width="440">
+    <Grid>
+        <!-- balance list control -->
+        <BalanceList:CtlBalanceList x:Name="balanceList">
+            <BalanceList:CtlBalanceList.Style>
+                <Style TargetType="BalanceList:CtlBalanceList">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Source={x:Static Options:GlobalUserOptions.UserOptions}, Path=AuditModeEnabled}" Value="False"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" />
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </BalanceList:CtlBalanceList.Style>
+        </BalanceList:CtlBalanceList>
+
+        <!-- audit corrections control -->
+        <AuditMode:CtlAuditCorrections>
+            <AuditMode:CtlAuditCorrections.Style>
+                <Style TargetType="AuditMode:CtlAuditCorrections">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Source={x:Static Options:GlobalUserOptions.UserOptions}, Path=AuditModeEnabled}" Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" />
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </AuditMode:CtlAuditCorrections.Style>
+        </AuditMode:CtlAuditCorrections>
+    </Grid>
+</UserControl>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AFF0C5D2-EA00-4A91-8E6E-003E534193E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Config</RootNamespace>
+    <AssemblyName>Config</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\Assemblies\64Bit\External\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigDb.cs" />
+    <Compile Include="Config\ConfigBase.cs" />
+    <Compile Include="Config\CsvInputConfig.cs" />
+    <Compile Include="Config\CsvOutputConfig.cs" />
+    <Compile Include="Config\DatabaseInputConfig.cs" />
+    <Compile Include="Config\GdpduOutputConfig.cs" />
+    <Compile Include="Config\BinaryConfig.cs" />
+    <Compile Include="Config\DatabaseOutputConfig.cs" />
+    <Compile Include="Config\SqlExportConfig.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DbStructure\File.cs" />
+    <Compile Include="DbStructure\FileColumn.cs" />
+    <Compile Include="DbStructure\MailConfig.cs" />
+    <Compile Include="DbStructure\OutputConfig.cs" />
+    <Compile Include="DbStructure\InputConfig.cs" />
+    <Compile Include="DbStructure\Table.cs" />
+    <Compile Include="DbStructure\TableColumn.cs" />
+    <Compile Include="DbStructure\Info.cs" />
+    <Compile Include="DbStructure\Profile.cs" />
+    <Compile Include="DbStructure\TransferEntityBase.cs" />
+    <Compile Include="DbStructure\User.cs" />
+    <Compile Include="Enums\InputConfigTypes.cs" />
+    <Compile Include="Enums\OutputConfigTypes.cs" />
+    <Compile Include="Interfaces\Config\IBinaryConfig.cs" />
+    <Compile Include="Interfaces\Config\IConfig.cs" />
+    <Compile Include="Interfaces\Config\ICsvInputConfig.cs" />
+    <Compile Include="Interfaces\Config\ICsvOutputConfig.cs" />
+    <Compile Include="Interfaces\Config\IDatabaseInputConfig.cs" />
+    <Compile Include="Interfaces\Config\IGdpduConfig.cs" />
+    <Compile Include="Interfaces\Config\ISqlExportConfig.cs" />
+    <Compile Include="Interfaces\DbStructure\IColumn.cs" />
+    <Compile Include="Interfaces\Config\IDatabaseOutputConfig.cs" />
+    <Compile Include="Interfaces\DbStructure\IFile.cs" />
+    <Compile Include="Interfaces\DbStructure\IFileColumn.cs" />
+    <Compile Include="Interfaces\DbStructure\ITransferEntity.cs" />
+    <Compile Include="Interfaces\DbStructure\IInputConfig.cs" />
+    <Compile Include="Interfaces\DbStructure\IOutputConfig.cs" />
+    <Compile Include="Interfaces\Mail\IMailConfig.cs" />
+    <Compile Include="Manager\MailManager.cs" />
+    <Compile Include="Manager\ProfileManager.cs" />
+    <Compile Include="Manager\UserManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structures\TransferState.cs" />
+    <Compile Include="Structures\TransferStates.cs" />
+    <Compile Include="VersionInfo.cs" />
+    <Compile Include="Interfaces\DbStructure\ITableColumn.cs" />
+    <Compile Include="Interfaces\DbStructure\IProfile.cs" />
+    <Compile Include="Interfaces\DbStructure\ITable.cs" />
+    <Compile Include="Interfaces\DbStructure\IUser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\LogHelper\LogHelper\AV.Log.LogHelper.csproj">
+      <Project>{1AFE5981-7268-4249-AFFA-77E42495886E}</Project>
+      <Name>AV.Log.LogHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Base\Base.csproj">
+      <Project>{E01C439B-FA3F-4F2B-9643-90631A8716F8}</Project>
+      <Name>Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

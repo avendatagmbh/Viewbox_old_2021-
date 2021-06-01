@@ -1,0 +1,656 @@
+﻿@model ITableObjectList
+@using System.Globalization
+@using Viewbox.Models
+@using Viewbox.Properties
+@using SystemDb
+@using SystemDb.Internal
+@using Viewbox
+
+@helper PrintParameterRow(IParameter param, IParameter param2 = null, bool isClone = false, int cloneId = -1, bool hasClones = false, bool isLast = true, bool freeSelection = true)
+{
+    var paramHistoryFreeSelection = ViewboxApplication.Database.SystemDb.GetFreeSelectionHistoryValue(ViewboxSession.User.Id, param.Id, cloneId < 0 ? 0 : cloneId);
+    int selectionType = paramHistoryFreeSelection == null ? 0 : paramHistoryFreeSelection.SelectionType;
+
+    <tr class="parameter @(cloneId > 0 ? "it-s-a-clone" : "")" @(cloneId > 0 ? String.Format("id={0}_{1}", param.Id, cloneId - 1) : "")>
+        @PrintParameter(param, false, isClone, cloneId, hasClones, isLast, paramHistoryFreeSelection, freeSelection)
+        @if (param2 != null)
+        {
+            paramHistoryFreeSelection = ViewboxApplication.Database.SystemDb.GetFreeSelectionHistoryValue(ViewboxSession.User.Id, param2.Id, cloneId < 0 ? 0 : cloneId);
+            <text>@PrintParameter(param2, true, isClone, cloneId, hasClones, isLast, paramHistoryFreeSelection, freeSelection)</text>
+        }
+    </tr>
+
+}
+
+@helper PrintParameter(IParameter param, bool onlyInput = false, bool isClone = false, int cloneId = -1, bool hasClones = false, bool isLast = true, IHistoryParameterValueFreeSelection paramHistoryFreeSelection = null, bool freeSelection = true)
+{
+    var newList = param.HistoryValues == null ? null : param.HistoryValues.Where(x => x.UserId == ViewboxSession.User.Id && x.ParameterId == param.Id).ToList().OrderByDescending(x => x.Id);
+    string defaultValue = (paramHistoryFreeSelection != null ? paramHistoryFreeSelection.Value : param.Default);
+    var selectionType = paramHistoryFreeSelection != null ? paramHistoryFreeSelection.SelectionType : 0;
+    if (param.Issue.OptimizationHidden == 1)
+    {
+        // JUSST FOR EON :DDD
+        <script>
+            $(document).ready(function () {
+                $(".SplitTable").parent().hide();
+                $(".SortColumn").parent().hide();
+            });
+        </script>
+    }
+    if (Model.Selection == null)
+    {
+        Model.Selection = new ConcreteSelectionTypeFactory();
+    }
+
+    if (param.GroupId == 0)
+    {
+
+        if (param.IsRequired == 0 && param.OptionallyRequired == 0 && param.FreeSelection == 1)
+        {
+            Model.SelectionList = Model.Selection.GetSelectionObject(SelectionTypeEnum.Simple, selectionType).GetSelection();
+        }
+        else if ((param.IsRequired == 1 || param.OptionallyRequired == 1) && param.FreeSelection == 1)
+        {
+            Model.SelectionList = Model.Selection.GetSelectionObject(SelectionTypeEnum.RequiredFree, selectionType).GetSelection();
+        }
+        else
+        {
+            Model.SelectionList = Model.Selection.GetSelectionObject(SelectionTypeEnum.Required, selectionType).GetSelection();
+        }
+    }
+    else
+    {
+        if (param.IsRequired == 0 && param.OptionallyRequired == 0 && param.FreeSelection == 1)
+        {
+            Model.SelectionList = Model.Selection.GetSelectionObject(SelectionTypeEnum.Simple, selectionType).GetSelection();
+        }
+        else if ((param.IsRequired == 1 || param.OptionallyRequired == 1) && param.FreeSelection == 1)
+        {
+            Model.SelectionList = Model.Selection.GetSelectionObject(SelectionTypeEnum.RequiredFree, selectionType).GetSelection();
+        }
+        else
+        {
+            Model.SelectionList = Model.Selection.GetSelectionObject(SelectionTypeEnum.Required, selectionType).GetSelection();
+        }
+    }
+
+    <!-- _ShowOneTableObjectOverviewPartial.cshtml PrintParameter -->
+    var requiredStyle = param.IsRequired > 0 ? ";border: 1px solid red;" : (param.OptionallyRequired > 0 ? ";border: 1px solid orange;" : "");
+    var emptyValueListStyle = param.IndexErrorStyleString;
+
+    bool disabled =
+        ((param.DataType != SqlType.Boolean && param.DataType != SqlType.Date && param.Values == null &&
+        !String.IsNullOrEmpty(param.ColumnName) && !String.IsNullOrEmpty(param.TableName) && !param.HasIndexData && !param.IndexDataGenerated)
+        || (param.DataType == SqlType.Date && (param.Values == null || param.UserDefined) && !String.IsNullOrEmpty(param.ColumnName) &&
+    !String.IsNullOrEmpty(param.TableName) && !param.HasIndexData && !param.IndexDataGenerated));
+
+    bool checkboxDisabled = (param.IsRequired == 1 || param.OptionallyRequired == 1);
+    bool disableCheckboxLogic = (disabled || cloneId > 2) || param.FreeSelection == 0 || (selectionType > 1);
+    <!--<tr class="parameter">-->
+    //if (!onlyInput)
+    //{
+    <td>
+        @{
+            string paramDescription = param.GetDescription();
+            if (!paramDescription.EndsWith("="))
+            {
+                paramDescription = string.Format("{0}:", paramDescription);
+            }
+            if (onlyInput)
+            {
+                paramDescription = Resources.To + ":";
+            }
+
+            <span class="@(disabled ? "disabled-parameter" : "")">@paramDescription</span>
+
+        }
+    </td>
+    //}
+    if (param.DataType == SqlType.Date)
+    {
+        string defaultDate = "";
+        if (defaultValue != "" && defaultValue != string.Empty)
+        {
+            defaultDate = defaultValue;
+        }
+        if (param.Issue.Flag == 0 || param.Issue.Flag == 100 || param.Issue.Flag == 10 || param.Issue.Flag == 1)
+        {
+            if (freeSelection)
+            {
+                if ((param.GroupId != 0) && Model.VonBisOrdinal == 0)
+                {
+                    <td class="selection-checkbox">
+                        <input type="checkbox" class="selectionCheckbox" @(disableCheckboxLogic ? "disabled" : "") @(((isClone && cloneId != 3) || (hasClones && cloneId == 0)) && !isLast ? "checked='checked'" : "") />
+                    </td>
+                    <td class="selection-type">
+                        @Html.DropDownList("selectionType", Model.SelectionList)
+                    </td>
+                }
+                else if (param.GroupId == 0)
+                {
+                    <td></td>
+                    <td class="selection-type">
+                        @Html.DropDownList("selectionType", Model.SelectionList)
+                    </td>
+
+                }
+            }
+        }
+        if (param.GroupId != 0 && Model.VonBisOrdinal == 0)
+        {
+            Model.VonBisOrdinal = 1;
+        }
+        else if (param.GroupId != 0 && Model.VonBisOrdinal != 0)
+        {
+            Model.VonBisOrdinal = 0;
+        }
+        <td class="parameter-item">
+            @Html.Hidden("itemId", param.Id)
+            <div class="item-id">@param.Id</div>
+            <div class="report-parameter-error hide" style="width: 345px;"></div>
+            <div style="max-height: 25px; padding-right: 20px;">
+                <div style="max-height: 25px;">
+                    @{
+        if (string.IsNullOrEmpty(defaultDate))
+        {
+            var id = "TextBoxName" + param.Id;
+            <div class="field2" style=" @(requiredStyle) "><input id=" @id " name="param" type="text" style="text-align: left@(emptyValueListStyle)" @(disabled ? "disabled" : "") class="text field @(disabled ? "" : "reportdate")  report-parameter-validate dropdown value placeholder" value="@(disabled ? "" : Model.LabelEnterValue)" placeholder="@Model.LabelEnterValue" /><img class="dropdown-black" src="/Content/img/icons/arrow-down-black.png" alt="..." title="..."></div>
+        }
+        else
+        {
+            var id = "TextBoxName" + param.Id;
+            <div class="field2" style=" @(requiredStyle) "><input id=" @id " name="param" type="text" style="text-align: left@(emptyValueListStyle)" @(disabled ? "disabled" : "") class="text field @(disabled ? "" : "reportdate")  report-parameter-validate dropdown value placeholder" value="@(disabled ? "" : defaultDate)" placeholder="@Model.LabelEnterValue" /><img class="dropdown-black" src="/Content/img/icons/arrow-down-black.png" alt="..." title="..."></div>
+        }
+        if (disabled)
+        {
+            <input name="param" type="hidden" />
+        }
+                    }
+
+                    @if (param.Values != null && !param.UserDefined)
+                    {
+                        <div class="dropdown-menu-container">
+                            @{
+                                var hasDescription = param.Values.Any(v => v.Value != v.GetDescription());
+                            }
+                            <div class="dropdown-menu" @if (hasDescription) { <text> style="width:450px;" </text>                 }>
+                                @foreach (var v in param.Values)
+                                {
+                                    <div class="entry gray-on-mouseover">
+                                        @if (v.Value != v.GetDescription())
+                                        {
+                                            <div class="value">@v.Value</div>
+                                            <div class="description">@v.GetDescription()</div>
+                                        }
+                                        else if (hasDescription)
+                                        {
+                                            <div class="value">@v.Value</div>
+                                        }
+                                        else
+                                        {
+                                            <div class="value-only">@v.Value</div>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+
+                        <div style="max-height: 25px; top: -21px; position:relative; text-align:right; width:30px; left: 216px;" id="datePicker">
+                            @if (!String.IsNullOrEmpty(param.ColumnName) && !String.IsNullOrEmpty(param.TableName))
+                            {
+                                if (param.HasIndexData)
+                                {
+                                    <img id="AdditionButton@(param.Id)" class="AdditionButton select-distinct@(param.HasIndexData ? "" : "-inactive")" src="/Content/img/buttons/plus.png" style="position: relative; left: -10px; " alt="..." title="..." data-id=@param.Id parameterid=@param.Id />
+
+                                    <img id="DeleteImage@(param.Id)" class="DeleteText" src="/Content/img/buttons/delete.png" style="position: relative; left: 20px; " data-id=@param.Id />
+                                }
+                                else
+                                {
+                                    <img id="DeleteImage@(param.Id)" class="DeleteText" src="/Content/img/buttons/delete.png" style="position: relative; left: 20px;" data-id=@param.Id />
+                                }
+                            }
+                            else
+                            {
+                                <img id="DeleteImage@(param.Id)" class="DeleteText" src="/Content/img/buttons/delete.png" style="position: relative; left: 20px; " data-id=@param.Id />
+                            }
+                        </div>
+                        if (param.HistoryValues != null && param.HistoryValues.Count > 0)
+                        {
+                            int historyCount = 0;
+                            <div class="dropdown-menu-container" style="z-index: 400">
+                                <div class="dropdown-menu scrollauto" style="height: 100px">
+                                    @{
+
+                                    }
+                                    @foreach (var v in newList)
+                                    {
+                                        if (!String.IsNullOrEmpty(v.Value))
+                                        {
+                                            <div class="entry gray-on-mouseover">
+                                                <div class="value-only" style="text-align: left">@v.Value</div>
+                                                <div class="value-only-hidden" hidden="hidden">@v.SelectionType.ToString()</div>
+                                            </div>
+                                            historyCount++;
+                                        }
+                                        if (historyCount > 3)
+                                        {
+                                            break;
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="dropdown-menu-container" style="z-index: 400">
+                                <div class="dropdown-menu scrollauto" style="height: 100px">
+                                    <div class="entry gray-on-mouseover">
+                                        <div class="value-only" style="text-align: left"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </td>
+        if (!true)
+        {
+            <td class="report-parameter-error hide"></td>
+        }
+    }
+    else if (param.Values != null && param.Values.Any() && !param.UserDefined)
+    {
+        if (param.Issue.Flag == 0 || param.Issue.Flag == 100 || param.Issue.Flag == 10 || param.Issue.Flag == 1)
+        {
+            if (freeSelection)
+            {
+                if ((param.GroupId != 0) && Model.VonBisOrdinal == 0)
+                {
+                    <td class="selection-checkbox">
+                        <input type="checkbox" class="selectionCheckbox" @(disableCheckboxLogic ? "disabled" : "") @(((isClone && cloneId != 3) || (hasClones && cloneId == 0)) && !isLast ? "checked='checked'" : "") />
+                    </td>
+                    <td class="selection-type">
+                        @Html.DropDownList("selectionType", Model.SelectionList)
+                    </td>
+                }
+                else if (param.GroupId == 0)
+                {
+                    <td></td>
+                    <td class="selection-type">
+                        @Html.DropDownList("selectionType", Model.SelectionList)
+                    </td>
+                }
+            }
+            if (param.GroupId != 0 && Model.VonBisOrdinal == 0)
+            {
+                Model.VonBisOrdinal = 1;
+            }
+            else if (param.GroupId != 0 && Model.VonBisOrdinal != 0)
+            {
+                Model.VonBisOrdinal = 0;
+            }
+        }
+
+        <td class="parameter-item">
+            @Html.Hidden("itemId", param.Id)
+            <div class="item-id">@param.Id</div>
+            <div class="report-parameter-error hide" style="width: 345px;"></div>
+            <div style="max-height: 25px; padding-right: 20px;">
+                @{
+        if (string.IsNullOrEmpty(param.Default))
+        {
+            <input name="param" type="text" @(disabled ? "disabled" : "") class="text field report-parameter-validate dropdown value placeholder" value="@(disabled ? "" : (string.IsNullOrEmpty(defaultValue) ? Model.LabelEnterValue : defaultValue))" placeholder="@Model.LabelEnterValue" />
+        }
+        else
+        {
+            <input name="param" type="text" @(disabled ? "disabled" : "") class="text field report-parameter-validate dropdown value placeholder" value="@defaultValue" readonly placeholder="@(disabled ? "" : Model.LabelEnterValue)" />
+        }
+        if (disabled)
+        {
+            <input name="param" type="hidden" />
+        }
+                }
+                <div class="dropdown-menu-container">
+                    @{
+                        var hasDescription = param.Values.Any(v => v.Value != v.GetDescription());
+                    }
+                    <div class="dropdown-menu scrollauto" @if (hasDescription) { <text> style="width:450px;" </text>                 }>
+                        @foreach (var v in param.Values)
+                        {
+                            <div class="entry gray-on-mouseover">
+                                @if (v.Value != v.GetDescription())
+                                {
+                                    <div class="value">@v.Value</div>
+                                    <div class="description">@v.GetDescription()</div>
+                                }
+                                else if (hasDescription)
+                                {
+                                    <div class="value">@v.Value</div>
+                                }
+                                else
+                                {
+                                    <div class="value-only">@v.Value</div>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </td>
+        if (!true)
+        {
+            <td class="report-parameter-error hide"></td>
+        }
+    }
+    else if (param.DataType == SqlType.Boolean)
+    {
+        <td>
+            @Html.Hidden("itemId", param.Id)
+            <div class="item-id">@param.Id</div>
+            <div class="report-parameter-error hide" style="width: 345px;"></div>
+            <input type="hidden" value="@(param.Default == null || param.Default.ToLower() == "true" ? "true" : "false")" name="param" />
+            <input type="checkbox" class="boolean field" @(param.Default == null || param.Default.ToLower() == "true" ? "checked='checked'" : "") />
+        </td>
+        if (!true)
+        {
+            <td class="report-parameter-error hide"></td>
+        }
+    }
+    else if (param.Values == null)
+    {
+        if (param.Issue.Flag == 0 || param.Issue.Flag == 100 || param.Issue.Flag == 10 || param.Issue.Flag == 1)
+        {
+            if (freeSelection)
+            {
+                if ((param.GroupId != 0) && Model.VonBisOrdinal == 0)
+                {
+                    <td class="selection-checkbox">
+                        <input type="checkbox" class="selectionCheckbox" @(disableCheckboxLogic ? "disabled" : "") @(((isClone && cloneId != 3) || (hasClones && cloneId == 0)) && !isLast ? "checked='checked'" : "") />
+                    </td>
+                    <td class="selection-type">
+                        @Html.DropDownList("selectionType", Model.SelectionList)
+                    </td>
+                }
+                else if (param.GroupId == 0)
+                {
+                    <td></td>
+                    <td class="selection-type">
+                        @Html.DropDownList("selectionType", Model.SelectionList)
+                    </td>
+                }
+            }
+            if (param.GroupId != 0 && Model.VonBisOrdinal == 0)
+            {
+                Model.VonBisOrdinal = 1;
+            }
+            else if (param.GroupId != 0 && Model.VonBisOrdinal != 0)
+            {
+                Model.VonBisOrdinal = 0;
+            }
+        }
+
+
+        <td class="parameter-item">
+            @Html.Hidden("itemId", param.Id)
+            <div class="item-id">@param.Id</div>
+            <div class="report-parameter-error hide" style="width: 345px;"></div>
+            <div style="max-height: 25px; padding-right: 20px;">
+                @{
+
+        if (string.IsNullOrEmpty(defaultValue))
+        {
+            var id = "TextBoxName" + param.Id;
+            <div class="field2" style="@(requiredStyle)"><input id="@id" name="param" type="text" @( disabled ? "disabled" : "") class="report-parameter-validate text field dropdown @((param.DataType == SqlType.Numeric || param.DataType == SqlType.Decimal || param.DataType == SqlType.Integer) && param.TypeModifier == 0 ? "thousand-separator" : "") value placeholder" style="text-align: left@(emptyValueListStyle)" value="@(disabled ? "" : Model.LabelEnterValue)" placeholder="@Model.LabelEnterValue" /><img class="dropdown-black" src="/Content/img/icons/arrow-down-black.png" alt="..." title="..."></div>
+        }
+        else
+        {
+            var id = "TextBoxName" + param.Id;
+            <div class="field2" style="@(requiredStyle)"><input id="@id" name="param" type="text" @( disabled ? "disabled" : "") class="report-parameter-validate text field dropdown @((param.DataType == SqlType.Numeric || param.DataType == SqlType.Decimal || param.DataType == SqlType.Integer) && param.TypeModifier == 0 ? "thousand-separator" : "") value placeholder" style="text-align: left@(emptyValueListStyle)" value="@(disabled ? "" : defaultValue)" placeholder="@Model.LabelEnterValue" /><img class="dropdown-black" src="/Content/img/icons/arrow-down-black.png" alt="..." title="..."></div>
+        }
+        if (disabled)
+        {
+            <input name="param" type="hidden" />
+        }
+                }
+                <div style="max-height: 25px; top: -21px; position:relative; text-align:right; width:30px; left: 216px;">
+                    @if (!String.IsNullOrEmpty(param.ColumnName) && !String.IsNullOrEmpty(param.TableName))
+                    {
+                        if (param.HasIndexData)
+                        {
+                            <img id="AdditionButton@(param.Id)" class="AdditionButton select-distinct@(param.HasIndexData ? "" : "-inactive")" src="/Content/img/buttons/plus.png" style="position: relative; left: -10px; " alt="..." title="..." data-id=@param.Id parameterid=@param.Id />
+
+                            <img id="DeleteImage@(param.Id)" class="DeleteText" src="/Content/img/buttons/delete.png" style="position: relative; left: 20px; " data-id=@param.Id />
+
+                        }
+                        else
+                        {
+                            <img id="DeleteImage@(param.Id)" class="DeleteText" src="/Content/img/buttons/delete.png" style="position: relative; left: 20px;" data-id=@param.Id />
+                        }
+                    }
+                    else
+                    {
+                        <img id="DeleteImage@(param.Id)" class="DeleteText" src="/Content/img/buttons/delete.png" style="position: relative; left: 20px;" data-id=@param.Id />
+                    }
+                </div>
+
+                @if (param.HistoryValues != null && param.HistoryValues.Count > 0)
+                {
+                    int historyCount = 0;
+                    <div class="dropdown-menu-container" style="z-index:400">
+                        <div class="dropdown-menu scrollauto" style=" height:100px">
+                            @foreach (var v in newList)
+                            {
+                                if (!String.IsNullOrEmpty(v.Value))
+                                {
+                                    <div class="entry gray-on-mouseover">
+                                        <div class="value-only" style="text-align: left">@v.Value</div>
+                                        <div class="value-only-hidden" hidden="hidden">@v.SelectionType.ToString()</div>
+                                    </div>
+                                    historyCount++;
+                                }
+                                if (historyCount > 3)
+                                {
+                                    break;
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="dropdown-menu-container" style="z-index: 400">
+                        <div class="dropdown-menu scrollauto" style="height: 100px">
+                            <div class="entry gray-on-mouseover">
+                                <div class="value-only" style="text-align: left"></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </td>
+        if (!true)
+        {
+            <td class="report-parameter-error hide"></td>
+        }
+    }
+    else
+    {
+        if (param.Issue.Flag == 0)
+        {
+            if (freeSelection)
+            {
+                if ((param.GroupId != 0) && Model.VonBisOrdinal == 0)
+                {
+                    <td class="selection-checkbox">
+                        <input type="checkbox" class="selectionCheckbox" @(disableCheckboxLogic ? "disabled" : "") @(((isClone && cloneId != 3) || (hasClones && cloneId == 0)) && !isLast ? "checked='checked'" : "") />
+                    </td>
+                    <td class="selection-type">
+                        @Html.DropDownList("selectionType", Model.SelectionList)
+                    </td>
+
+                }
+                else if (param.GroupId == 0)
+                {
+                    <td></td>
+                    <td class="selection-type">
+                        @Html.DropDownList("selectionType", Model.SelectionList)
+                    </td>
+                }
+            }
+            if (param.GroupId != 0 && Model.VonBisOrdinal == 0)
+            {
+                Model.VonBisOrdinal = 1;
+            }
+            else if (param.GroupId != 0 && Model.VonBisOrdinal != 0)
+            {
+                Model.VonBisOrdinal = 0;
+            }
+        }
+        <td class="parameter-item">
+            @Html.Hidden("itemId", param.Id)
+            <div class="item-id">@param.Id</div>
+            <div class="report-parameter-error hide" style="width: 345px;"></div>
+            <div style="max-height: 25px; padding-right: 20px;">
+                @if (string.IsNullOrEmpty(param.Default))
+                {
+                    <input name="param" type="text" @(disabled ? "disabled" : "") class="report-parameter-validate text field @((param.DataType == SqlType.Numeric || param.DataType == SqlType.Decimal || param.DataType == SqlType.Integer) && param.TypeModifier == 0 ? "thousand-separator" : "") value placeholder" value="@Model.LabelEnterValue" placeholder="@(disabled ? "" : Model.LabelEnterValue)" />
+                }
+                else
+                {
+                    <input name="param" type="text" @(disabled ? "disabled" : "") class="report-parameter-validate text field @((param.DataType == SqlType.Numeric || param.DataType == SqlType.Decimal || param.DataType == SqlType.Integer) && param.TypeModifier == 0 ? "thousand-separator" : "") value placeholder" value="@param.Default" placeholder="@(disabled ? "" : Model.LabelEnterValue)" />
+                }
+                @if (disabled)
+                {
+                    <input name="param" type="hidden" />
+                }
+            </div>
+        </td>
+        if (!true)
+        {
+            <td class="report-parameter-error hide"></td>
+        }
+    }
+        <!--</tr>-->
+}
+@{
+
+    IEnumerable<ITableObject> tableObjects = Model.TableObjects is IEnumerable<IIssue> ? ((IssueList)Model).SelectedIssues : Model.TableObjects;
+    if (tableObjects.Any())
+    {
+    <!-- _ShowOneTableObjectOverviewPartial.cshtml -->
+        <div class="onereportparamset scrollauto">
+            <table class="reportoverview">
+                @foreach (var TableObject in tableObjects)
+                {
+                    if (TableObject == null)
+                    {
+                        continue;
+                    }
+                    Model.VonBisOrdinal = 0;
+                    IIssue Issue = TableObject as IIssue;
+                    var classname = String.Empty;
+                    if (Model.RightsMode) { classname += TableObject.IsAllowedInRightsMode() ? "readable" : "not-readable"; }
+                    <tr class="@classname">
+                        <td class="params parameters">
+
+                            @if (Model.Type == TableType.Issue)
+                            {
+                                using (Html.BeginForm(Issue.IssueType != IssueType.Fake ? "ExecuteIssue" : "Index", "DataGrid", new { id = Issue.Id }, FormMethod.Post, new { autocomplete = "off", id = "execute_report" }))
+                                {
+                                    using (Html.BeginForm(Issue.IssueType != IssueType.Fake ? "ExecuteIssue" : "Index", "DataGrid", new { id = Issue.Id }, FormMethod.Post, new { autocomplete = "off", id = "execute_report" }))
+                                    {
+                                        @Html.Hidden("IssueId", Issue.Id)
+                                        <table class="parameter-table">
+                                            @{
+                                        //new code
+                                        var requiredParameters = Issue.Parameters.Where(p => p.IsRequired > 0).OrderBy(param => param.Ordinal);
+                                        List<IParameter> tempParams = requiredParameters.ToList();
+
+                                        if (requiredParameters.Count() > 0)
+                                        {
+                                            requiredParameters = requiredParameters.Concat(Issue.Parameters.Where(p => p.IsRequired == 0 && tempParams.Where(rparam => rparam.GroupId == p.GroupId && rparam.GroupId > 0).Count() > 0)).OrderBy(p => p.Ordinal).ThenBy(p => p.GroupId);
+                                        }
+
+                                        //var optionallyRequiredParameters = Issue.Parameters.Where(p => p.OptionallyRequired > 0).OrderBy(param => param.Ordinal);
+                                        //List<IParameter> tempParams2 = optionallyRequiredParameters.ToList();
+                                        //if (optionallyRequiredParameters.Count() > 0)
+                                        //{
+                                        //    optionallyRequiredParameters = optionallyRequiredParameters.Concat(Issue.Parameters.Where(p => p.OptionallyRequired == 0 && tempParams2.Where(rparam => rparam.GroupId == p.GroupId && rparam.GroupId > 0).Count() > 0)).OrderBy(p => p.GroupId);
+                                        //}
+                                        var parameters = Issue.Parameters.Where(p => requiredParameters.Where(param => param.Id == p.Id).Count() == 0).OrderBy(p => p.Ordinal);
+                                        var allParameters = requiredParameters.Concat(parameters);
+                                        bool freeSelection = Issue.Parameters.Any(x => x.FreeSelection == 1);
+
+                                        for (int i = 0; i < allParameters.Count(); i++)
+                                        {
+
+                                            var currentParameter = allParameters.ElementAt(i);
+                                            var nextParameter = allParameters.ElementAtOrDefault(i + 1);
+                                            try
+                                            {
+                                                Issue.Parameters[currentParameter.Id].OriginalOrdinal = i;
+                                                if (nextParameter != null)
+                                                {
+                                                    Issue.Parameters[nextParameter.Id].OriginalOrdinal = i + 1;
+                                                }
+                                            }
+                                            catch { }
+                                            if (nextParameter != null && currentParameter.GroupId > 0 && currentParameter.GroupId == nextParameter.GroupId)
+                                            {
+                                                var historyValues = ViewboxApplication.Database.SystemDb.GetFreeSelectionHistoryValuesByParameterId(ViewboxSession.User.Id, currentParameter.Id);
+                                                var historyValuesCount = historyValues != null && historyValues.Count != 0 ? historyValues.Count : 1;
+                                                var hasClones = historyValuesCount > 1;
+                                                if (currentParameter.FreeSelection != 0)
+                                                {
+                                                    for (int j = 0; j < (historyValuesCount >= 4 ? 4 : historyValuesCount); j++)
+                                                    {
+                                                        var isClone = j > 0;
+                                                        var isLast = j == historyValuesCount - 1;
+                                                        <text>@PrintParameterRow(currentParameter, nextParameter, isClone, j, hasClones, isLast, freeSelection)</text>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <text>@PrintParameterRow(currentParameter, nextParameter, false, 0, false, false, freeSelection)</text>
+                                                }
+
+                                                i++;
+                                            }
+                                            else
+                                            {
+                                                <text>@PrintParameterRow(currentParameter, freeSelection: freeSelection)</text>
+                                            }
+                                        }
+                                            }
+                                        </table>
+                                        <input type="submit" class="submit hide" value="OK" />
+                                    }
+                                }
+                            }
+                        </td>
+                        <td class="reporttoparams text-right">
+                            <div>
+                                @{
+                    if (Issue.UserDefined && (ViewboxSession.User.IsSuper || ViewboxSession.User.CanGrant))
+                    {
+                        <div class="delete">
+                            <span class="hide">@Issue.Id</span><a>@Resources.Remove</a>
+                        </div>
+                                    <div class="edit">
+                                        <span class="hide">@Issue.Id</span><a>@Resources.Edit</a>
+                                    </div>
+                    }
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    }
+}

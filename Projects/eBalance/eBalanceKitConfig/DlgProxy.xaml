@@ -1,0 +1,34 @@
+﻿<Window x:Class="eBalanceKitConfig.DlgProxy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Proxyserver" Width="300" SizeToContent="Height">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- main area -->
+        <StackPanel Margin="5">
+            <TextBlock Text="Host" />
+            <TextBox x:Name="txtHost" LostFocus="txtHost_LostFocus"/>
+
+            <TextBlock Text="Port" Margin="0,8,0,0"/>
+            <TextBox x:Name="txtPort" LostFocus="txtPort_LostFocus"/>
+
+            <TextBlock Text="Benutzername" Margin="0,8,0,0"/>
+            <TextBox x:Name="txtUsername" LostFocus="txtUsername_LostFocus"/>
+
+            <TextBlock Text="Passwort" Margin="0,8,0,0"/>
+            <PasswordBox x:Name="txtPassword" LostFocus="txtPassword_LostFocus"/>
+        </StackPanel>
+
+        <!-- button bar -->
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}">
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="_OK" Height="23" Name="btnOK" Width="75" Click="btnOK_Click" />
+                <Button Content="Ab_brechen" Height="23" Margin="5" Name="btnCancel" Width="75" Click="btnCancel_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

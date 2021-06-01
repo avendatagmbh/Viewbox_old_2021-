@@ -1,0 +1,16 @@
+﻿<Application x:Class="WpfControlsSample.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             StartupUri="Windows\MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/AvdWpfStyles;component/Default.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AvdWpfControls;component/Themes/Generic.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/NavigationResources.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

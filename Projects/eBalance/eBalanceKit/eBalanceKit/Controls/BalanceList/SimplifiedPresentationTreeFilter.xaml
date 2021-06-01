@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.BalanceList.SimplifiedPresentationTreeFilter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Border Style="{StaticResource PopupBorder}">
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <CheckBox IsChecked="{Binding Path=ShowOnlyMandatoryPostions}" Content="{x:Static Localisation:ResourcesCommon.ShowOnlyMandatoryPostions}"/>
+                <CheckBox IsChecked="{Binding Path=HideEmptyPositions}" Content="{x:Static Localisation:ResourcesCommon.HideEmptyPositions}"/>
+                <CheckBox IsChecked="{Binding Path=HideNonManualFields}" Content="{x:Static Localisation:ResourcesCommon.HideNonManualFields}"/>
+                <!--<CheckBox IsChecked="{Binding Path=ShowOnlyPositionsForSelectedLegalStatus}" Content="{x:Static Localisation:ResourcesCommon.ShowOnlyPositionsForSelectedLegalStatus}"/>-->
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

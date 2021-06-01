@@ -1,0 +1,22 @@
+﻿@using Viewbox;
+@using Viewbox.Properties;
+@using SystemDb;
+@model Viewbox.Models.FileSystemModel
+<div id="FileSystem">
+    <div class="content-box">
+        <div class="content-outer">
+            <div class="content-inner">
+                <div class="loading-container" style="display: none; z-index:-1000;">
+                    <div class="loading-text">@Resources.LoadingTreeView</div>
+                </div>
+                <div id="DirectoriesContainer" class="content-inner left hide">
+                    @Html.Partial("_DirectoriesPartial", Model)
+                </div>
+                <div class="mitte hide"></div>
+                <div id="FilesContainer" class="content-inner left hide">
+                    @Html.Partial("_FilesPartial", Model)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿<Window x:Class="eBalanceKit.Windows.EditPresentationTreeDetails.DlgEditListDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
+        xmlns:XbrlVisualisation="clr-namespace:eBalanceKit.Controls.XbrlVisualisation"
+        xmlns:Controls="clr-namespace:eBalanceKit.Controls" Height="600" Width="800" PreviewKeyDown="Window_PreviewKeyDown"
+        Icon="/eBalanceKitResources;component/Resources/EditPen.png" Title="{Binding Path=Value.Element.MandatoryLabel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <XbrlVisualisation:XbrlListView x:Name="listView" DataContext="{Binding Value}" />
+
+            <TextBlock Grid.Row="1" Margin="0,8,0,0" Text="Kommentar" />
+            <TextBox Grid.Row="2" Grid.ColumnSpan="3" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="40" 
+                                  x:Name="txtComment" TextWrapping="Wrap" Text="{Binding Value.Comment, UpdateSourceTrigger=Explicit}" MaxLength="4096"
+                                  IsEnabled="{Binding Value.ReportRights.WriteRestAllowed}"/>
+            <TextBlock Grid.Row="3" Grid.ColumnSpan="3" Text="Nur für interne Verwendung, Feld wird beim Senden des Reports und beim XBRL-Export nicht übertragen."
+                                   TextWrapping="Wrap" Foreground="#777" FontSize="10" FontStyle="Italic" />
+        </Grid>
+
+        <!-- button bar -->
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal" Margin="5">
+                <Button Content="_OK" Height="23" HorizontalAlignment="Left" Name="btnOk" VerticalAlignment="Top" Width="75" Click="btnOk_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="eBalanceKitManagement.Controls.CtlReportDataGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <DataGrid Name="lstItems" Background="Transparent"
+                  ItemsSource="{Binding Path=ReportConfig.Items}" 
+                  SelectedItem="{Binding Path=ReportConfig.SelectedItem}" 
+                  HeadersVisibility="Column" HorizontalGridLinesBrush="Silver" VerticalGridLinesBrush="Silver" AutoGenerateColumns="False" 
+                  CanUserReorderColumns="False" CanUserResizeColumns="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" 
+                  SelectionUnit="FullRow" SelectionMode="Single" CanUserSortColumns="True">
+
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Header="{x:Static Localisation:ResourcesMain.System}" Width="Auto" IsReadOnly="True" SortMemberPath="System.Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=System.Name}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localisation:ResourcesMain.Company}" Width="Auto" IsReadOnly="True" SortMemberPath="Company.Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Company.Name}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localisation:ResourcesMain.FinancialYear}" Width="Auto" IsReadOnly="True" SortMemberPath="FinancialYear.FYear">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=FinancialYear.FYear}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localisation:ResourcesCommon.Name}" Width="Auto" IsReadOnly="True" SortMemberPath="Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Name}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localisation:ResourcesCommon.Comment}" Width="Auto" IsReadOnly="True" SortMemberPath="Kommentar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Comment}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

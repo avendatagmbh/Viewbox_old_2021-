@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Brushes-->
+
+    <!--Ribbon background color.-->
+    <SolidColorBrush x:Key="RibbonHeaderBrush" Color="#EBEBEB" />
+    
+    <!--Main background color.-->
+    <SolidColorBrush x:Key="NewDesignLightGreyBrush" Color="#F5F5F5"></SolidColorBrush>
+    <!--Titles above controls (lists, table selectors, etc.).-->
+    <SolidColorBrush x:Key="NewDesignDeepBlueBrush" Color="#243553"></SolidColorBrush>
+    <!--Headers of controls (mainly lists), or tab control, etc.-->
+    <SolidColorBrush x:Key="NewDesignBlueBrush" Color="#637493"></SolidColorBrush>
+    <!--Special controls color (checkbox labels, specific list items, etc.).-->
+    <SolidColorBrush x:Key="NewDesignLightBlueBrush" Color="#0000FF"></SolidColorBrush>
+    <!--White color.-->
+    <SolidColorBrush x:Key="NewDesignWhiteBrush" Color="White"></SolidColorBrush>
+    <!--White color.-->
+    <SolidColorBrush x:Key="NewDesignBlackBrush" Color="Black"></SolidColorBrush>
+
+</ResourceDictionary>

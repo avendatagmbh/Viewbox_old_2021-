@@ -1,0 +1,12 @@
+Aktionen die noch nicht geloggt werden:
+
+V1.4.0
+-Anlegen/verändern von Rollen
+-Zuweisungen zwischen Rollen und Benutzern
+
+V1.3.1
+-Kontensalden senden
+-Vorlagen ausser dem Anwenden einer Vorlage
+-Account Splitting Aktionen (ausser dem Verschieben von SplitAccounts in der Taxonomie)
+-Bei Summen und Saldenlisten wird nur geloggt, dass eine angelegt/gelöscht wurde
+-XBRL/Pdf Export wird nicht geloggt

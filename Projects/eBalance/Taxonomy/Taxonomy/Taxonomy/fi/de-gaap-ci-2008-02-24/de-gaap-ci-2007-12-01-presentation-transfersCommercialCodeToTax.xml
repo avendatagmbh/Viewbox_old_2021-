@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://www.xbrl.de/de/fr/gaap/ci/role/transfersCommercialCodeToTax" xlink:type="simple" xlink:href="de-gaap-ci-2007-12-01.xsd#role_transfersCommercialCodeToTax"/>
+  <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/transfersCommercialCodeToTax">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst" xlink:label="hbst"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.changeposition" xlink:label="hbst.changeposition"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst" xlink:to="hbst.changeposition" use="optional" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.changeposition.item" xlink:label="hbst.changeposition.item"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst.changeposition" xlink:to="hbst.changeposition.item" use="optional" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.changeposition.name" xlink:label="hbst.changeposition.name"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst.changeposition" xlink:to="hbst.changeposition.name" use="optional" order="2.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.changeposition.resultable" xlink:label="hbst.changeposition.resultable"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst.changeposition" xlink:to="hbst.changeposition.resultable" use="optional" order="3.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.changeposition.nonresultable" xlink:label="hbst.changeposition.nonresultable"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst.changeposition" xlink:to="hbst.changeposition.nonresultable" use="optional" order="4.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.changeposition.taxvalue" xlink:label="hbst.changeposition.taxvalue"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst.changeposition" xlink:to="hbst.changeposition.taxvalue" use="optional" order="5.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.changeposition.comments" xlink:label="hbst.changeposition.comments"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst.changeposition" xlink:to="hbst.changeposition.comments" use="optional" order="6.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.profitaddon" xlink:label="hbst.profitaddon"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst" xlink:to="hbst.profitaddon" use="optional" order="2.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.profitaddon.name" xlink:label="hbst.profitaddon.name"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst.profitaddon" xlink:to="hbst.profitaddon.name" use="optional" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.profitaddon.name.steuZurech.Vz7g5" xlink:label="hbst.profitaddon.name.steuZurech.Vz7g5"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst.profitaddon.name" xlink:to="hbst.profitaddon.name.steuZurech.Vz7g5" use="optional" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.profitaddon.name.steuZurech.Vz6b7" xlink:label="hbst.profitaddon.name.steuZurech.Vz6b7"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst.profitaddon.name" xlink:to="hbst.profitaddon.name.steuZurech.Vz6b7" use="optional" order="2.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.profitaddon.name.steuZurech.S" xlink:label="hbst.profitaddon.name.steuZurech.S"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst.profitaddon.name" xlink:to="hbst.profitaddon.name.steuZurech.S" use="optional" order="3.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_hbst.profitaddon.value" xlink:label="hbst.profitaddon.value"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="hbst.profitaddon" xlink:to="hbst.profitaddon.value" use="optional" order="2.0"/>
+  </presentationLink>
+</linkbase>

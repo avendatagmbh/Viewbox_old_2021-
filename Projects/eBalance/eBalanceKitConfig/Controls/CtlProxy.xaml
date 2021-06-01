@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="eBalanceKitConfig.Controls.CtlProxy"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Host" />
+            <TextBox x:Name="txtHost" LostFocus="txtHost_LostFocus" Text="{Binding Host, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Port" Margin="0,8,0,0"/>
+            <TextBox x:Name="txtPort" LostFocus="txtPort_LostFocus" Text="{Binding Port, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Benutzername" Margin="0,8,0,0"/>
+            <TextBox x:Name="txtUsername" LostFocus="txtUsername_LostFocus" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Passwort" Margin="0,8,0,0"/>
+            <PasswordBox x:Name="txtPassword" LostFocus="txtPassword_LostFocus"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

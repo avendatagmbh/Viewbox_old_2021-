@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="TransDATA.Controls.CtlTransfer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base" mc:Ignorable="d" Width="600">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel DataContext="{Binding TransferAgent.TransferProgress}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="70" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Foreground="#333" Text="{x:Static Localisation:ResourcesCommon.CurrentWorkStep}" Background="Transparent" Padding="5,5,0,0" Grid.Row="0" Grid.Column="0"/>
+                <TextBlock Foreground="#333" Text="{Binding StepCaption}" Background="Transparent" Padding="10,5,0,0" Grid.Row="0" Grid.Column="1"/>
+                <TextBlock Foreground="#333" Text="{x:Static Localisation:ResourcesCommon.TablesProcessed}" Background="Transparent" Padding="5,5,0,0" Grid.Row="1" Grid.Column="0"/>
+                <TextBlock Foreground="#333" Text="{Binding EntitiesFinished}" Background="Transparent" Padding="10,5,0,0" Grid.Row="1" Grid.Column="1"/>
+                <TextBlock Foreground="#333" Text="{x:Static Localisation:ResourcesCommon.TablesTotal}" Padding="5,5,0,0" Grid.Row="2" Grid.Column="0"/>
+                <TextBlock Foreground="#333" Text="{Binding EntitiesTotal}" Background="Transparent" Padding="10,5,0,0" Grid.Row="2" Grid.Column="1"/>
+
+                <TextBlock Foreground="#333" Text="{x:Static Localisation:ResourcesCommon.CpuUsage}" Background="Transparent" Padding="5,5,0,0" Grid.Row="0" Grid.Column="2"/>
+                <TextBlock Foreground="#333" Text="{Binding CpuPerformanceLabel}" Background="Transparent" Padding="10,5,5,0" Grid.Row="0" Grid.Column="3"/>
+                <TextBlock Foreground="#333" Text="{x:Static Localisation:ResourcesCommon.RamUsage}" Background="Transparent" Padding="5,5,0,0" Grid.Row="1" Grid.Column="2"/>
+                <TextBlock Foreground="#333" Text="{Binding RamPerformanceLabel}" Background="Transparent" Padding="10,5,5,0" Grid.Row="1" Grid.Column="3"/>
+                <TextBlock Foreground="#333" Text="{x:Static Localisation:ResourcesCommon.HddUsage}" Background="Transparent" Padding="5,5,0,0" Grid.Row="2" Grid.Column="2"/>
+                <TextBlock Foreground="#333" Text="{Binding HDDPerformanceLabel}" Background="Transparent" Padding="10,5,5,0" Grid.Row="2" Grid.Column="3"/>
+            </Grid>
+            <ListBox ItemsSource="{Binding ActualProcessedTables}" Background="Transparent" BorderThickness="0">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="Padding" Value="0"/>
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                        </Style.Resources>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border CornerRadius="5" BorderBrush="Silver" BorderThickness="1" Padding="5" Margin="0,0,0,5" Height="64">
+                            <StackPanel Visibility="{Binding Progress, Converter={StaticResource ValueExistsToVisibilityConverter}}">
+                                <TextBlock Foreground="#333" Text="{Binding Progress.TableName}" Background="Transparent" />
+                                <TextBlock Foreground="#333" Text="{Binding Progress.StartTimeString}" Background="Transparent" />
+                                <TextBlock Foreground="#333" Text="{Binding Progress.DatasetProgressString}" Background="Transparent" />
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Grid>
+                <ProgressBar Maximum="{Binding EntitiesTotal}" Value="{Binding EntitiesFinished, Mode=OneWay}" VerticalAlignment="Center" Height="24" Margin="5" />
+                <!--
+                <TextBox HorizontalAlignment="Center" Foreground="#333" Text="dummy" Background="Transparent" VerticalAlignment="Center" />
+                -->
+            </Grid>
+        </StackPanel>
+
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}" >
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="5,3">
+                <Button Content="{x:Static Localisation:ResourcesCommon.Cancel}" Height="23" Margin="0" Name="btnCancel" VerticalAlignment="Top" Width="Auto" Padding="5,0" Click="BtnCancelClick" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

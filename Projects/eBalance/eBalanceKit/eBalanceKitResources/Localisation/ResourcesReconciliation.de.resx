@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NewReconciliationAssistant" xml:space="preserve">
+    <value>Assistent für neue Überleitung</value>
+  </data>
+  <data name="ReconciliationDelta" xml:space="preserve">
+    <value>Freie Überleitung</value>
+  </data>
+  <data name="ReconciliationReclassification" xml:space="preserve">
+    <value>Umgliederung</value>
+  </data>
+  <data name="Reconciliations" xml:space="preserve">
+    <value>Überleitungen</value>
+  </data>
+  <data name="ReconciliationSelectTypeCaption" xml:space="preserve">
+    <value>Überleitungsart auswählen</value>
+  </data>
+  <data name="ReconciliationValueChange" xml:space="preserve">
+    <value>Änderung der Wertansätze</value>
+  </data>
+  <data name="ReconciliationDeltaShort" xml:space="preserve">
+    <value>Freie Überleitung</value>
+  </data>
+  <data name="ReconciliationReclassificationShort" xml:space="preserve">
+    <value>Umgliederung</value>
+  </data>
+  <data name="ReconciliationValueChangeShort" xml:space="preserve">
+    <value>Änderung der Wertansätze</value>
+  </data>
+  <data name="SetReconciliationComment" xml:space="preserve">
+    <value>Erläuterung festlegen</value>
+  </data>
+  <data name="SetReconciliationReclassificationDest" xml:space="preserve">
+    <value>Zielposition der Umgliederung festlegen</value>
+  </data>
+  <data name="SetReconciliationReclassificationSource" xml:space="preserve">
+    <value>umzugliedernde Position festlegen</value>
+  </data>
+  <data name="AmountCaption" xml:space="preserve">
+    <value>Betrag</value>
+  </data>
+  <data name="CommentCaption" xml:space="preserve">
+    <value>Erläuterung</value>
+  </data>
+  <data name="ReconciliationReclassificationDest" xml:space="preserve">
+    <value>Zielposition der Umgliederung</value>
+  </data>
+  <data name="ReconciliationReclassificationSource" xml:space="preserve">
+    <value>Umzugliedernde Position</value>
+  </data>
+  <data name="SetReconciliationAmountAndComment" xml:space="preserve">
+    <value>Betrag und Erläuterung festlegen</value>
+  </data>
+  <data name="NewReconciliation" xml:space="preserve">
+    <value>Neue Überleitung</value>
+  </data>
+  <data name="DeleteException" xml:space="preserve">
+    <value>Überleitungsdatensatz konnte nicht gelöscht werden: </value>
+  </data>
+  <data name="DeleteTransactionException" xml:space="preserve">
+    <value>Buchung konnte nicht gelöscht werden: </value>
+  </data>
+  <data name="LoadException" xml:space="preserve">
+    <value>Überleitungsdatensätze konnten nicht geladen werden: </value>
+  </data>
+  <data name="SaveException" xml:space="preserve">
+    <value>Überleitungsdatensatz konnte nicht gespeichert werden: </value>
+  </data>
+  <data name="SaveTransactionException" xml:space="preserve">
+    <value>Buchung konnte nicht gespeichert werden: </value>
+  </data>
+  <data name="DeletePosition" xml:space="preserve">
+    <value>Position Löschen</value>
+  </data>
+  <data name="PositionsCaption" xml:space="preserve">
+    <value>Positionen</value>
+  </data>
+  <data name="BalanceListAssets" xml:space="preserve">
+    <value>Aktiva</value>
+  </data>
+  <data name="BalanceListLiabilities" xml:space="preserve">
+    <value>Passiva</value>
+  </data>
+  <data name="IncomeStatement" xml:space="preserve">
+    <value>Gewinn- und Verlustrechnung</value>
+  </data>
+  <data name="Sum" xml:space="preserve">
+    <value>Summe: </value>
+  </data>
+  <data name="EmptyReconciliationName" xml:space="preserve">
+    <value>&lt;keine Bezeichnung&gt;</value>
+  </data>
+  <data name="NameCaption" xml:space="preserve">
+    <value>Bezeichnung</value>
+  </data>
+  <data name="ReconciliationDeltaTooltip" xml:space="preserve">
+    <value>freie Überleitung</value>
+  </data>
+  <data name="ReconciliationReclassificationDestTooltip" xml:space="preserve">
+    <value>Umgliederung (Zielposition)</value>
+  </data>
+  <data name="ReconciliationReclassificationSourceTooltip" xml:space="preserve">
+    <value>Umgliederung (Ausgangsposition)</value>
+  </data>
+  <data name="ReconciliationValueChangeTooltip" xml:space="preserve">
+    <value>Wertänderung</value>
+  </data>
+  <data name="AssignDestinationPositionTooltip" xml:space="preserve">
+    <value>Position als Zielposition für ausgewählte Umgliederung festlegen</value>
+  </data>
+  <data name="AssignPositionTooltip" xml:space="preserve">
+    <value>Position zum ausgewählten Überleitungsdatensatz hinzufügen</value>
+  </data>
+  <data name="AssignSourcePositionTooltip" xml:space="preserve">
+    <value>Position als Ausgangsposition für ausgewählte Umgliederung festlegen</value>
+  </data>
+  <data name="EmptyCustomReconciliationNote" xml:space="preserve">
+    <value>leere Überleitung - neue Positionen können per Drag&amp;Drop hinzugefügt werden</value>
+  </data>
+  <data name="ReconciliationKindCaption" xml:space="preserve">
+    <value>Art der Überleitung</value>
+  </data>
+  <data name="ShowCommercialBalanceValues" xml:space="preserve">
+    <value>Handelsbilanzwerte anzeigen</value>
+  </data>
+  <data name="ShowEnterPreviousYearValuesTextbox" xml:space="preserve">
+    <value>Vorjahreswerte eingeben</value>
+  </data>
+  <data name="ShowReconciliationValues" xml:space="preserve">
+    <value>Überleitungswerte anzeigen</value>
+  </data>
+  <data name="ShowTaxBalanceValues" xml:space="preserve">
+    <value>Steuerbilanzwerte anzeigen</value>
+  </data>
+  <data name="TransferKindChangeVlaue" xml:space="preserve">
+    <value>Änderung der Wertansätze</value>
+  </data>
+  <data name="TransferKindReclassification" xml:space="preserve">
+    <value>Umgliederung</value>
+  </data>
+  <data name="TransferKindReclassificationChangeValue" xml:space="preserve">
+    <value>Umgliederung mit Änderung der Wertansätze</value>
+  </data>
+  <data name="CommentInfo" xml:space="preserve">
+    <value>Optionale Erläuterung des Sachverhaltes. Wert wird beim Senden des Reports an die Finanzbehörden mit übermittelt.</value>
+  </data>
+  <data name="EmptyListNote" xml:space="preserve">
+    <value>Für diese Übererleitungsart ist noch kein Datensatz vorhanden. Klicken Sie auf die Schaltfläche "Neu" um einen neuen Übereleitungsdatensatz zu erstellen.</value>
+  </data>
+  <data name="NameInfo" xml:space="preserve">
+    <value>Nur für interne Verwendung. Wert wird beim Senden des Reports an die Finanzbehörden nicht mit übermittelt.</value>
+  </data>
+  <data name="NoItemSelectedNote" xml:space="preserve">
+    <value>Wählen Sie einen Überleitungsdatensatz aus, um diesen zu bearbeiten.</value>
+  </data>
+  <data name="RequestDeletePosition" xml:space="preserve">
+    <value>Überleitung für Position "{0}" wirklich entfernen?</value>
+  </data>
+  <data name="SetPosPerDragAndDrop" xml:space="preserve">
+    <value>Position per Drag&amp;Drop zuordnen</value>
+  </data>
+  <data name="AssignedReconciliationIsSelectedIconTooltip" xml:space="preserve">
+    <value>Überleitung gehört zum aktuell ausgewählten Überleitungsdatensatz</value>
+  </data>
+  <data name="CommercialBalanceValue" xml:space="preserve">
+    <value>Handelsbilanzwert</value>
+  </data>
+  <data name="ContainsComputedReconciliationValue" xml:space="preserve">
+    <value>Diese Position enthält einen berechneten Überleitungswert</value>
+  </data>
+  <data name="ContainsManualReconciliationValue" xml:space="preserve">
+    <value>Für diese Position wurde ein Überleitungswert eingegeben</value>
+  </data>
+  <data name="PreviousYearValue" xml:space="preserve">
+    <value>Überleitungswerte Vorjahr</value>
+  </data>
+  <data name="PreviousYearValueCaption" xml:space="preserve">
+    <value>Überleitungswert Vorjahr:</value>
+  </data>
+  <data name="ReconciliationIsSelectedIconTooltip" xml:space="preserve">
+    <value>Position enthält Überleitung zum aktuell ausgewählten Überleitungsdatensatz</value>
+  </data>
+  <data name="TaxBalanceValue" xml:space="preserve">
+    <value>Steuerbilanzwert</value>
+  </data>
+  <data name="ReconciliationValue" xml:space="preserve">
+    <value>Überleitungswert</value>
+  </data>
+  <data name="RequestDeleteReconciliation" xml:space="preserve">
+    <value>Überleitungsdatensatz "{0}" wirklich löschen?</value>
+  </data>
+  <data name="ReconciliationImportedValues" xml:space="preserve">
+    <value>Importierte Überleitungen</value>
+  </data>
+  <data name="ReconciliationImportedValuesShort" xml:space="preserve">
+    <value>Importierte Überleitungen</value>
+  </data>
+  <data name="ReconciliationImportedValuesTooltip" xml:space="preserve">
+    <value>importierte Überleitungen</value>
+  </data>
+  <data name="ReconciliationPreviousYearValues" xml:space="preserve">
+    <value>Vorjahreswerte</value>
+  </data>
+  <data name="ReconciliationPreviousYearValuesShort" xml:space="preserve">
+    <value>Vorjahreswerte</value>
+  </data>
+  <data name="ReconciliationPreviousYearValuesTooltip" xml:space="preserve">
+    <value>Vorjahreswerte</value>
+  </data>
+  <data name="ReconciliationWarningNoAssignedPosition" xml:space="preserve">
+    <value>Es wurde keine Position zugeordnet.</value>
+  </data>
+  <data name="ReconciliationWarningNoAssignedTransaction" xml:space="preserve">
+    <value>Für diese Überleitung wurde noch keine Position zugeordnet.</value>
+  </data>
+  <data name="ReconciliationWarningNoAssignedValue" xml:space="preserve">
+    <value>Es wurde kein Überleitungswert eingegeben.</value>
+  </data>
+  <data name="ReconciliationWarningNoComercialBalanceValue" xml:space="preserve">
+    <value>Die zugeordneten Ausgangsposition enthält keinen Handelsbilanzwert.</value>
+  </data>
+  <data name="ReconciliationWarningWarningInAssignedTransaction" xml:space="preserve">
+    <value>Warnung bei einer zugeordneten Überleitungsposition.</value>
+  </data>
+  <data name="DeleteAllPreviousYearValuesCaption" xml:space="preserve">
+    <value>Alle Löschen</value>
+  </data>
+  <data name="PreviousYearValueInfoPart1" xml:space="preserve">
+    <value>Vorjahreswerte können direkt in der nebenstehenden Baumansicht eingegeben werden. Zur Eingabe muss unter Einstellungen (</value>
+  </data>
+  <data name="PreviousYearValueInfoPart2" xml:space="preserve">
+    <value>) die Option "Vorjahreswerte eingeben" aktiviert werden.</value>
+  </data>
+  <data name="RequestDeleteAllPreviousYearValues" xml:space="preserve">
+    <value>Sollen wirklich alle Vorjahreswerte gelöscht werden?</value>
+  </data>
+  <data name="RequestDeletePreviousYearValue" xml:space="preserve">
+    <value>Vorjahreswert für Position "{0}" wirklich entfernen?</value>
+  </data>
+  <data name="TabHeaderSumCaption" xml:space="preserve">
+    <value>Summe: </value>
+  </data>
+  <data name="AssignmentNotPossibleInformationCaption" xml:space="preserve">
+    <value>Zuordnung nicht möglich</value>
+  </data>
+  <data name="ImportPreviousYearCaption" xml:space="preserve">
+    <value>Import Vorjahreswerte</value>
+  </data>
+  <data name="TransactionAssignmentErrorPositionIsReclassificationSource" xml:space="preserve">
+    <value>Position kann nicht zugeordnet werden, da diese bereits als Ausgangsposition für eine Umgliederung verwendet worden ist.</value>
+  </data>
+  <data name="TransactionAssignmentErrorPositionIsAlreadyAssigned" xml:space="preserve">
+    <value>Position kann nicht zugeordnet werden, da diese bereits in der ausgewählten Überleitung enthalten ist.</value>
+  </data>
+  <data name="TransactionAssignmentErrorReclassivicationIllegalGroup" xml:space="preserve">
+    <value>Quelle und Ziel der Umgliederung müssen beide aus der selben Bilanzseite (Aktiva, Passiva) oder beide aus der GuV stammen.</value>
+  </data>
+  <data name="ReconciliationFileNotFound" xml:space="preserve">
+    <value>Datei nicht gefunden: {0}</value>
+  </data>
+  <data name="ReconciliationIsSelectedForReferenceListTooltip" xml:space="preserve">
+    <value>Position wird für die Erstellung von Referenz-Liste ausgewählt</value>
+  </data>
+  <data name="ParameterMissing" xml:space="preserve">
+    <value>Parameter fehlt</value>
+  </data>
+  <data name="ExistingPreviousValuesWarning" xml:space="preserve">
+    <value>Der aktuelle Report enthält bereits Vorjahreswerte für die Überleitung. Beim importieren werden diese mit den zu importierenden Daten überschrieben.</value>
+  </data>
+  <data name="ExistingPreviousValuesWarningCaption" xml:space="preserve">
+    <value>Import fortsetzen?</value>
+  </data>
+  <data name="ImportNotPossible" xml:space="preserve">
+    <value>Es sind keine Vorjahresreports mit Überleitungswerten vorhanden.</value>
+  </data>
+  <data name="NoExistingReportsWithPreviousYearValues" xml:space="preserve">
+    <value>Import nicht möglich</value>
+  </data>
+  <data name="SelectedPreviousYearReport" xml:space="preserve">
+    <value>gewählter Vorjahresreport:</value>
+  </data>
+  <data name="SelectPreviousYearReport" xml:space="preserve">
+    <value>Auswahl Vorjahresreport</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Zusammenfassung</value>
+  </data>
+  <data name="ProgressSaveReferenceList" xml:space="preserve">
+    <value>Referenzliste wird gespeichert ...</value>
+  </data>
+  <data name="ReferenceListPositionDescription" xml:space="preserve">
+    <value>Positionsbezeichnung</value>
+  </data>
+  <data name="ReferenceListPositionId" xml:space="preserve">
+    <value>Position-ID</value>
+  </data>
+  <data name="ReferenceListCreationError" xml:space="preserve">
+    <value>Bei der Erstellung des CSV-Referenzliste ist ein Fehler aufgetreten</value>
+  </data>
+  <data name="ProgressImportData" xml:space="preserve">
+    <value>Daten werden importiert ...</value>
+  </data>
+  <data name="ReconciliationWarningNoAssignedBalanceSheetPosition" xml:space="preserve">
+    <value>Es wurde keine Bilanzposition zugeordnet.</value>
+  </data>
+  <data name="ReconciliationWarningNoAssignedISPosition" xml:space="preserve">
+    <value>Es wurde keine GuV-Position zugeordnet.</value>
+  </data>
+  <data name="TransactionAssignmentErrorOnlyOneBalanceSheetPosAllowed" xml:space="preserve">
+    <value>Die Angabe mehrerer Bilanzpositionen bei Wertänderungen ist nicht möglich.</value>
+  </data>
+  <data name="ReconciliationImportValuesTitle" xml:space="preserve">
+    <value>Überleitung Wert Import</value>
+  </data>
+  <data name="ImportNextButton" xml:space="preserve">
+    <value>Nächste</value>
+  </data>
+  <data name="ImportPreviousButton" xml:space="preserve">
+    <value>Vorherige</value>
+  </data>
+  <data name="RequestDeleteImportedValueNotAllowed" xml:space="preserve">
+    <value>Entfernen input Werte sind nicht erlaubt!</value>
+  </data>
+  <data name="EmptyImportedReconciliationNote" xml:space="preserve">
+    <value>Vorjahreswerte können entweder manuell eingegeben werden, wählen Sie dazu im Menü "Vorjahreswerte eingeben" oder wenn Sie einen Vorjahresbericht haben, dann können Sie diese über Importieren automatisch übernehmen.</value>
+  </data>
+  <data name="ImportSuccessfulMessage" xml:space="preserve">
+    <value>Daten-Import war erfolgreich</value>
+  </data>
+  <data name="InvalidFormatError" xml:space="preserve">
+    <value>Ungültiges Dateiformat</value>
+  </data>
+  <data name="TransferKindError" xml:space="preserve">
+    <value>Art der Überleitung Konvertierungsfehler</value>
+  </data>
+  <data name="ReconciliationImport" xml:space="preserve">
+    <value>Wertänderungen import</value>
+  </data>
+  <data name="UnknownFileFormat" xml:space="preserve">
+    <value>Unbekanntes Dateiformat</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Erläuterung</value>
+  </data>
+  <data name="LabelCaption" xml:space="preserve">
+    <value>Bezeichnung</value>
+  </data>
+  <data name="TypeOfReconciliation" xml:space="preserve">
+    <value>Art der Überleitung</value>
+  </data>
+  <data name="ProgressExportData" xml:space="preserve">
+    <value>Daten werden exportiert ...</value>
+  </data>
+  <data name="ReconciliationAuditCorrection" xml:space="preserve">
+    <value>Korrekturen aus Betriebsprüfungen</value>
+  </data>
+  <data name="ReconciliationAuditCorrectionPreviousYear" xml:space="preserve">
+    <value>Korrekturen aus Betriebsprüfungen (Vorjahr)</value>
+  </data>
+  <data name="ReconciliationAuditCorrectionPreviousYearShort" xml:space="preserve">
+    <value>BP Korrekturen (VJ)</value>
+  </data>
+  <data name="ReconciliationAuditCorrectionPreviousYearTooltip" xml:space="preserve">
+    <value>Korrekturen aus Betriebsprüfungen (Vorjahr)</value>
+  </data>
+  <data name="ReconciliationAuditCorrectionShort" xml:space="preserve">
+    <value>BP Korrekturen</value>
+  </data>
+  <data name="ReconciliationAuditCorrectionTooltip" xml:space="preserve">
+    <value>Korrekturen aus Betriebsprüfungen</value>
+  </data>
+  <data name="AuditCorrectionPreviousYearValueCaption" xml:space="preserve">
+    <value>Korrektur Vorjahreswerte:</value>
+  </data>
+  <data name="RequestDeletePreviousYearCorrectionValue" xml:space="preserve">
+    <value>Korrekturwert Vorjahr für Position "{0}" wirklich entfernen?</value>
+  </data>
+  <data name="RequestDeleteAllPreviousYearCorrectionValues" xml:space="preserve">
+    <value>Sollen wirklich alle Korrekturen der Vorjahreswerte gelöscht werden?</value>
+  </data>
+  <data name="ReferenceListPreviousYearValue" xml:space="preserve">
+    <value>Überleitungswert Vorperioden</value>
+  </data>
+  <data name="ReferenceListReconciliationDescription" xml:space="preserve">
+    <value>Erläuterung</value>
+  </data>
+  <data name="ReferenceListReconciliationName" xml:space="preserve">
+    <value>Name der Überleitung</value>
+  </data>
+  <data name="ReferenceListReconciliationValue" xml:space="preserve">
+    <value>Überleitungswert</value>
+  </data>
+  <data name="ReferenceListValue" xml:space="preserve">
+    <value>Handelsbilanzwert</value>
+  </data>
+  <data name="ReferenceListFileName" xml:space="preserve">
+    <value>{0}_Bilanz</value>
+  </data>
+  <data name="ReferenceListFileNameProfitAndLoss" xml:space="preserve">
+    <value>{0}_GuV</value>
+  </data>
+  <data name="ReferenceListTaxValue" xml:space="preserve">
+    <value>Steuerbilanzwert</value>
+  </data>
+  <data name="ReconciliationName" xml:space="preserve">
+    <value>Name der Überleitung</value>
+  </data>
+  <data name="DeleteAllReconciliation" xml:space="preserve">
+    <value>Wollen Sie wirklich alle importierten Versöhnungen löschen?</value>
+  </data>
+  <data name="DeleteReconciliation" xml:space="preserve">
+    <value>Überleitung löschen</value>
+  </data>
+  <data name="QuestionDeleteAllImportedValues" xml:space="preserve">
+    <value>Möchten SIe wirklich alle importierten Daten löschen?</value>
+  </data>
+  <data name="QuestionDeleteAllPreviousYearValues" xml:space="preserve">
+    <value>Möchten Sie wirklich alle Vorjahreswerte löschen?</value>
+  </data>
+  <data name="ReconciliationDialogTitle" xml:space="preserve">
+    <value>Überleitungsrechnung</value>
+  </data>
+  <data name="AddReconciliationDlgCaption" xml:space="preserve">
+    <value>Neue Überleitung hinzufügen</value>
+  </data>
+  <data name="AuditCorrectionsPreviousYear" xml:space="preserve">
+    <value>Korrektur Vorjahreswerte</value>
+  </data>
+  <data name="PreviousYearValues" xml:space="preserve">
+    <value>Überleitungswert Vorjahr</value>
+  </data>
+  <data name="ReconciliationTransaction" xml:space="preserve">
+    <value>Überleitungs-Transaktion</value>
+  </data>
+  <data name="DragDestinationItemHereCaption" xml:space="preserve">
+    <value>Ziehen Sie das Ziellement per Drag&amp;Drop in dieses umrandete Feld..</value>
+  </data>
+  <data name="DragItemsHereCaption" xml:space="preserve">
+    <value>Bitte ziehen Sie eine Position aus der Bilanz oder Gewinn- und Verlustrechnung in dieses umrandete Feld, um es zur Überleitung hinzuzufügen.</value>
+  </data>
+  <data name="DragSourceItemHereCaption" xml:space="preserve">
+    <value>Ziehen Sie das Quellelement per Drag&amp;Drop in dieses umrandete Feld.</value>
+  </data>
+  <data name="ChooseTransactionsToDeleteCaption" xml:space="preserve">
+    <value>Wählen Sie die zu löschenden Überleitungen aus.</value>
+  </data>
+  <data name="NewReconciliationGeneralCaption" xml:space="preserve">
+    <value>Allgemein</value>
+  </data>
+  <data name="NewReconciliationSelectionCaption" xml:space="preserve">
+    <value>Auswahl der Überleitungsart</value>
+  </data>
+  <data name="ReconciliationMenuDeleteImportedValueCaption" xml:space="preserve">
+    <value>Importierte Überleitungen löschen</value>
+  </data>
+  <data name="ReconciliationMenuDeleteImportedValueDescription" xml:space="preserve">
+    <value>Löscht alle importierten Überleitungen.</value>
+  </data>
+  <data name="ReconciliationMenuDeletePreviousYearValueCaption" xml:space="preserve">
+    <value>Vorjahreswerte löschen</value>
+  </data>
+  <data name="ReconciliationMenuDeletePreviousYearValueDescription" xml:space="preserve">
+    <value>Löscht alle Vorjahreswerte.</value>
+  </data>
+  <data name="ReconciliationMenuDeleteReconciliationCaption" xml:space="preserve">
+    <value>Überleitungen löschen</value>
+  </data>
+  <data name="ReconciliationMenuDeleteReconciliationDescription" xml:space="preserve">
+    <value>Erlaubt die Auswahl von einer oder mehrerer Transaktionen zum Löschen.</value>
+  </data>
+  <data name="ReconciliationMenuImportPreviousYearValuesCaption" xml:space="preserve">
+    <value>Import der Vorjahreswerte</value>
+  </data>
+  <data name="ReconciliationMenuImportPreviousYearValuesDescription" xml:space="preserve">
+    <value>Erlaubt das Importieren aus einem Vorjahresbericht.</value>
+  </data>
+  <data name="ReconciliationMenuImportReconciliationCaption" xml:space="preserve">
+    <value>Import der Überleitungsrechnung</value>
+  </data>
+  <data name="ReconciliationMenuImportReconciliationDescription" xml:space="preserve">
+    <value>Importiert die Überleitungsrechnung aus einer CSV-Datei.</value>
+  </data>
+  <data name="ChangeInputMode" xml:space="preserve">
+    <value>Eingabemodus-Wechsel</value>
+  </data>
+  <data name="QuestionDeleteAllCurrentYearReconciliations" xml:space="preserve">
+    <value>Alle Überleitungen des aktuellen Jahres werden beim Wechsel des Eingabe-Modus gelöscht, möchten Sie wirklich fortfahren?</value>
+  </data>
+  <data name="QuestionDeleteAllTaxBalanceValueReconciliations" xml:space="preserve">
+    <value>Alle Steuerbilanzwerte Überleitungen gelöscht werden, wollen Sie vorgehen?</value>
+  </data>
+  <data name="UpdateReconciliation" xml:space="preserve">
+    <value>Ändern der Überleitungsrechnung</value>
+  </data>
+  <data name="ImportPreviousYearValuesTooltip" xml:space="preserve">
+    <value>Es existiert kein Vorjahresbericht mit Überleitungswerten</value>
+  </data>
+  <data name="ReconciliationTaxBalanceValueTooltip" xml:space="preserve">
+    <value>Steuerbilanzwert Überleitung</value>
+  </data>
+  <data name="ReconciliationTaxBalanceValue" xml:space="preserve">
+    <value>Steuerbilanzwert</value>
+  </data>
+  <data name="ReconciliationTaxBalanceValueShort" xml:space="preserve">
+    <value>Steuerbilanzwert</value>
+  </data>
+  <data name="Reconciliation" xml:space="preserve">
+    <value>Überleitung</value>
+  </data>
+  <data name="AreYouSureDeleteReconciliation" xml:space="preserve">
+    <value>Möchten Sie die ausgewählten Überleitungen wirklich löschen?</value>
+  </data>
+  <data name="DeleteReconciliationSuccessfulTitle" xml:space="preserve">
+    <value>Löschen erfolgreich</value>
+  </data>
+  <data name="NoSelectedReconciliation" xml:space="preserve">
+    <value>Es wurden keine Überleitungen ausgewählt.</value>
+  </data>
+  <data name="ReconciliationAssistantImportButtonCaption" xml:space="preserve">
+    <value>CSV-Datei Import mit Überleitungswerten</value>
+  </data>
+  <data name="ReconciliationAssistantText" xml:space="preserve">
+    <value>Was möchten Sie tun?</value>
+  </data>
+  <data name="ReconciliationAssistantTitle" xml:space="preserve">
+    <value>Assistent für die Überleitungsrechnung</value>
+  </data>
+  <data name="ReconciliationAssistantWelcome" xml:space="preserve">
+    <value>Willkommen beim Import-Assistenten für die Überleitungsrechnung</value>
+  </data>
+  <data name="ReconciliationDeleteSuccessful" xml:space="preserve">
+    <value>Die ausgewählten Überleitungsdatensätze wurden gelöscht.</value>
+  </data>
+  <data name="MessagePrevYearHasNoTransactions" xml:space="preserve">
+    <value>Vorjahr Bericht hat keine Überleitung Transaktionen daher Import ist nicht möglich</value>
+  </data>
+  <data name="MenuItemAvailibleWhenDataPresentTooltip" xml:space="preserve">
+    <value>Es sind keine Überleitungen vorhanden.</value>
+  </data>
+</root>

@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="ViewboxAdmin.Windows.CollectionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/MainWindowResources.xaml" />
+                <ResourceDictionary Source="/ResourceDictionaries/ViewBoxAdminResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition SharedSizeGroup="whatever" />
+            <ColumnDefinition SharedSizeGroup="name" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="LightBlue" HorizontalAlignment="Stretch"></Border>
+
+        <Label Grid.Column="0" Content="Value" FontSize="10" HorizontalAlignment="Stretch" Margin="2,2,2,2"></Label>
+            <TextBox  Grid.Column="1" Text="{Binding Value}" FontSize="10" FontWeight="Bold" HorizontalAlignment="Stretch" Style="{x:Null}" Margin="2,2,2,2" GotFocus="TextBox_GotFocus"></TextBox>
+        
+            <ListBox x:Name="myListBox"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Texts}" ItemTemplate="{StaticResource ResourceKey=parameterValueTemplate}" >
+               
+            </ListBox>
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="TransDATA.Controls.CtlMain" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:loc="clr-namespace:Base.Localisation;assembly=Base"
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls" mc:Ignorable="d" d:DesignHeight="500"
+             d:DesignWidth="800" xmlns:my="clr-namespace:TransDATA.Controls">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" x:Name="InfoGridRow" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- header navigation -->
+        <Border Grid.Row="0" Padding="2" Background="{StaticResource headerBgBrush}">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="wpfc:ImageButton" BasedOn="{StaticResource HeaderImageButton}" />
+                </StackPanel.Resources>
+                <Control x:Name="FocusDummyButton" />
+                <wpfc:ImageButton x:Name="btnProfiles" Click="BtnProfilesClick"
+                          ImageSource="/TransDATA;component/Resources/Profiles.png" Caption="{x:Static loc:ResourcesCommon.BtnProfilesCaption}" />
+
+                <wpfc:ImageButton x:Name="btnEditProfile" Click="BtnEditProfileClick"
+                          ImageSource="/TransDATA;component/Resources/Profiles.png" Caption="{x:Static loc:ResourcesCommon.BtnEditProfileCaption}" Width="100"/>
+
+                <wpfc:ImageButton x:Name="btnReadDatabaseStructure" 
+                          ImageSource="/TransDATA;component/Resources/ReadDatabaseStructure24.png" Caption="{x:Static loc:ResourcesCommon.BtnDatabaseStructureAnalyze}" Width="160" Click="BtnReadDatabaseStructureClick" />
+                
+                <wpfc:ImageButton x:Name="btnTransfer" Click="BtnTransferClick"
+                          ImageSource="/TransDATA;component/Resources/Export24.png" Caption="{x:Static loc:ResourcesCommon.BtnTransfer}" />
+
+                <wpfc:ImageButton x:Name="btnDocumentation" Click="BtnDocumentationClick"
+                          ImageSource="/TransDATA;component/Resources/Documentation24.png" Caption="{x:Static loc:ResourcesCommon.DocumentExport}" Width="100"/>
+
+                <wpfc:ImageButton x:Name="btnMail" Width="120"
+                          ImageSource="/TransDATA;component/Resources/Mail24.png" Caption="{x:Static loc:ResourcesCommon.MailCaption}" Click="btnMail_Click" />
+                
+                <wpfc:ImageButton x:Name="btnInfo" Click="BtnInfoClick"
+                          ImageSource="/TransDATA;component/Resources/Info1.png" Caption="{x:Static loc:ResourcesCommon.BtnInfoCaption}" />
+
+            </StackPanel>
+        </Border>
+        
+        <Border Grid.Row="2" Padding="2" Style="{StaticResource ButtonBorder}" BorderBrush="#fcd48e" BorderThickness="0,1,0,0" Grid.RowSpan="1">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="2">
+                    <TextBlock Text="{x:Static loc:ResourcesCommon.Profile}" Margin="2,0,0,0" Foreground="#222"/>
+                    <wpfc:AvdComboBox MinWidth="150" ItemsSource="{Binding Profiles}" SelectedItem="{Binding Path=SelectedProfile}"
+                                      DisplayMemberPath="DisplayString" SelectValueMessage="{x:Static loc:ResourcesCommon.ComboBoxNothing}" />
+                </StackPanel>
+                <Grid Margin="10,2,2,2" Visibility="{Binding SelectedProfile, Converter={StaticResource ValueExistsToVisibilityConverter}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{x:Static loc:ResourcesCommon.StatusDatasource}" Margin="2,0,10,0" Foreground="#222" ToolTip="{Binding SelectedProfile.DataSourceTooltip}"/>
+                    <TextBlock Text="{x:Static loc:ResourcesCommon.StatusDatadestination}" Margin="2,0,10,0" Foreground="#222" ToolTip="{Binding SelectedProfile.DataDestinationTooltip}" Grid.Row="1"/>
+
+                    <Image Height="16" VerticalAlignment="Center" Visibility="{Binding SelectedProfile.DataSourceAvailable, Converter={StaticResource TrueToVisibilityConverter}, Mode=OneWay}" Source="/TransDATA;component/Resources/SignalLightGreen_2.png" ToolTip="{Binding SelectedProfile.DataSourceTooltip}" Grid.Column="1"/>
+                    <Image Height="16" VerticalAlignment="Center" Visibility="{Binding SelectedProfile.DataSourceAvailable, Converter={StaticResource FalseToVisibilityConverter}, Mode=OneWay}" Source="/TransDATA;component/Resources/SignalLightRed_2.png" ToolTip="{Binding SelectedProfile.DataSourceTooltip}" Grid.Column="1" Grid.Row="1"/>
+
+                    <Image Height="16" VerticalAlignment="Center" Visibility="{Binding SelectedProfile.DataDestinationAvailable, Converter={StaticResource TrueToVisibilityConverter}, Mode=OneWay}" Source="/TransDATA;component/Resources/SignalLightGreen_2.png" ToolTip="{Binding SelectedProfile.DataDestinationTooltip}" Grid.Row="1" Grid.Column="1"/>
+                    <Image Height="16" VerticalAlignment="Center" Visibility="{Binding SelectedProfile.DataDestinationAvailable, Converter={StaticResource FalseToVisibilityConverter}, Mode=OneWay}" Source="/TransDATA;component/Resources/SignalLightRed_2.png" ToolTip="{Binding SelectedProfile.DataDestinationTooltip}" Grid.Row="1" Grid.Column="1"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+        
+        <!-- main area -->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" MinWidth="200" MaxWidth="400" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Padding="2" Style="{StaticResource HeadlineBorder}" BorderBrush="#D9D9D9" BorderThickness="0,1,0,0">
+                    <TextBlock Text="{x:Static loc:ResourcesCommon.Tableselection}" Margin="2,0,0,0" Foreground="#222" Grid.Row="0"/>
+                </Border>
+                <my:CtlTableList x:Name="_ctlTableList" DataContext="{Binding SelectedProfileModel}" Margin="0,0,5,0" Grid.Row="1"/>    
+            </Grid>
+            <GridSplitter DataContext="{Binding SelectedProfileModel}" x:Name="splitter" Width="4" Background="Silver" />
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Padding="2" Style="{StaticResource HeadlineBorder}" BorderBrush="#D9D9D9" BorderThickness="0,1,0,0">
+                    <TextBlock Text="{x:Static loc:ResourcesCommon.Columnselection}" Margin="2,0,0,0" Foreground="#222" Grid.Row="0"/>
+                </Border>
+                <my:CtlColumnList DataContext="{Binding SelectedProfileModel}" Grid.Row="1"/>    
+            </Grid>
+        </Grid>
+
+        <!-- info area-->
+        <Expander Grid.Row="4" IsExpanded="True" x:Name="detailExpander" Style="{StaticResource ExpanderDown}"
+              ExpandDirection="Down" Background="#ccc">
+            <Expander.Header>
+                <TextBlock Text="Info" Foreground="#303030" FontWeight="Bold" FontSize="11" />
+            </Expander.Header>
+            <my:CtlTableInfo DataContext="{Binding SelectedProfileModel}" />
+        </Expander>
+        
+        <!-- User info-->
+        <Border Grid.Row="5" Padding="2" Style="{StaticResource ButtonBorder}" BorderBrush="#fcd48e" BorderThickness="0,1,0,0" Grid.RowSpan="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-5,0,0,0" Grid.Row="5">
+                    <TextBlock Text="{x:Static loc:ResourcesCommon.UserLogin}" Foreground="#333" Margin="5,0,0,0" />
+                    <Button HorizontalAlignment="Left" Style="{StaticResource ImageButtonStyle1}" Margin="0" x:Name="btnEditCurrentUser" Click="btnEditCurrentUser_Click" Width="Auto">
+                        <Button.ToolTip>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding User.FullName}" />
+                                <TextBlock Text="{x:Static loc:ResourcesCommon.UserTooltipCaption}" />
+                            </StackPanel>
+                        </Button.ToolTip>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="14" Source="/TransDATA;component/Resources/User1.png" />
+                            <TextBlock Text="{Binding User.UserName}" Foreground="#333" Style="{StaticResource ImageButtonText}" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <Button HorizontalAlignment="Right" Style="{StaticResource ImageButtonStyle1}" Margin="0" x:Name="btnOpenLogFolder" Click="btnOpenLogFolder_Click" Width="Auto" Grid.Column="1">
+                    <Button.ToolTip>
+                        <TextBlock Text="{x:Static loc:ResourcesCommon.LogDirectory}" />
+                    </Button.ToolTip>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="18" Source="/TransDATA;component/Resources/pdf.png" Margin="5"/>
+                        <TextBlock Text="{x:Static loc:ResourcesCommon.LogDirectory}" Foreground="#333" Style="{StaticResource ImageButtonText}" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Border>
+        <my:CtlLegend Grid.RowSpan="5" HorizontalAlignment="Right" VerticalAlignment="Top" />
+    </Grid>
+</UserControl>

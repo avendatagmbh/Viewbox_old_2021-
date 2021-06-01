@@ -1,0 +1,18 @@
+﻿<Window x:Class="eBalanceKit.Controls.BalanceList.DlgExampleCsv"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:BalanceList="clr-namespace:eBalanceKit.Controls.BalanceList"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Icon="/eBalanceKitResources;component/Resources/info.png"
+        Title="Beispiel CSV-Datei" >
+    <BalanceList:CtlExampleCsv x:Name="CtlExampleCsv"/>
+    <!--<Border BorderThickness="1" Style="{StaticResource PopupBorder}" Padding="0" Background="White" >
+        <StackPanel Margin="5">
+            <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.ExampleLong}" />
+            <Image Source="/eBalanceKitResources;component/Resources/SuSa_Example.png" Height="87" HorizontalAlignment="Left"/>
+            <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.FileContent}" />
+            <TextBox TextWrapping="Wrap" IsReadOnly="True" Text="{Binding SampleBalanceListText, Mode=OneWay}"/>
+
+        </StackPanel>
+    </Border>-->
+</Window>

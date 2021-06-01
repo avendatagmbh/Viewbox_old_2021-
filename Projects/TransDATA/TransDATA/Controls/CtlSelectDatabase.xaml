@@ -1,0 +1,161 @@
+﻿<UserControl x:Class="TransDATA.Controls.CtlSelectDatabase"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" xmlns:loc="clr-namespace:Base.Localisation;assembly=Base"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:wpfUtils="clr-namespace:AvdWpfControls.Utils;assembly=AvdWpfControls"
+             xmlns:TemplateSelectors="clr-namespace:TransDATA.TemplateSelectors"
+             xmlns:Controls="clr-namespace:TransDATA.Controls" xmlns:Converter="clr-namespace:TransDATA.Converter"
+             MaxHeight="600" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <TemplateSelectors:ConnectionStringParameterSelector x:Key="ConnectionStringParameterSelector" />
+
+        <DataTemplate x:Key="StringParameter">
+            <Grid Margin="0,8,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding Caption}" />
+                <TextBox Grid.Row="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="IntegerParameter">
+            <Grid Margin="0,8,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding Caption}" />
+                <TextBox Grid.Row="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="BooleanParameter">
+            <Grid Margin="0,8,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding Caption}" />
+                <TextBox Grid.Row="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="PasswordParameter">
+            <Grid Margin="0,8,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding Caption}" />
+                <PasswordBox wpfUtils:PasswordBoxHelper.Attach="True" wpfUtils:PasswordBoxHelper.Password="{Binding Value, Mode=TwoWay}" Grid.Row="1" />
+            </Grid>
+        </DataTemplate>
+      <Converter:BoolInversionConverter x:Key="boolInversionConverter" />
+    </UserControl.Resources>
+
+  <!-- {Binding Model, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Controls:CtlSelectDatabase}}} -->
+    <Grid DataContext="{Binding Converter={StaticResource MyDebugConverter}, ConverterParameter=CtlSelectDatabase}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="5">
+            <TextBlock Text="{x:Static loc:ResourcesCommon.DatabaseType}" />
+            <ComboBox ItemsSource="{Binding Templates}" DisplayMemberPath="ServerName" SelectedItem="{Binding SelectedDbTemplate}"/>
+
+            <Grid Margin="0,8,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="optDriver" Content="{x:Static loc:ResourcesCommon.OdbcDriver}" IsChecked="{Binding IsDriverSelected}" GroupName="driverDsn"/>
+                    <RadioButton x:Name="optDSN" Content="DSN" Margin="5,0,0,0" IsChecked="{Binding IsDriverSelected, Converter={StaticResource boolInversionConverter}}" GroupName="driverDsn"/>
+                </StackPanel>
+                <ComboBox x:Name="cbDriverList" Grid.Row="1" ItemsSource="{Binding DriverList}" SelectedItem="{Binding SelectedDriver, Mode=TwoWay}" Margin="0,3,0,0" 
+                          Visibility="{Binding IsChecked, ElementName=optDriver, Converter={StaticResource TrueToVisibilityConverter}}" />
+                <!--<ComboBox x:Name="cbDriverList" Grid.Row="1" ItemsSource="{Binding DriverList}" SelectedIndex="{Binding SelectedDriverIndex, Mode=TwoWay}" Margin="0,3,0,0" 
+                          Visibility="{Binding IsChecked, ElementName=optDriver, Converter={StaticResource TrueToVisibilityConverter}}" />-->
+                <ComboBox x:Name="cbDsnList" Grid.Row="1" ItemsSource="{Binding DsnList}" SelectedItem="{Binding SelectedDsn, Mode=TwoWay}" Margin="0,3,0,0" 
+                          Visibility="{Binding IsChecked, ElementName=optDSN, Converter={StaticResource TrueToVisibilityConverter}}"/>
+            </Grid>
+        </StackPanel>
+
+        <Separator Margin="0,5,0,0" Grid.Row="1" />
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="5,0,0,0" Padding="0,0,5,0">
+            <StackPanel>
+                <ListBox ItemsSource="{Binding ConnectionStringBuilder.Params}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                         BorderBrush="Transparent" BorderThickness="0" Background="Transparent" ItemTemplateSelector="{StaticResource ConnectionStringParameterSelector}"
+                         KeyboardNavigation.TabNavigation="Cycle">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            <Setter Property="Padding" Value="0"/>
+                            <Setter Property="IsTabStop" Value="False" />
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Foreground" Value="Black" />
+                                </Trigger>
+                            </Style.Triggers>
+                            <Style.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                            </Style.Resources>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
+
+                <TextBlock Text="{x:Static loc:ResourcesCommon.UserDefinedParameter}" Margin="0,8,0,0"/>
+                <TextBox Text="{Binding ConnectionStringBuilder.UserParameter, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Height="48" />
+                <TextBlock TextWrapping="Wrap" Text="{x:Static loc:ResourcesCommon.UserDefinedParameterHelp}" Foreground="#888" FontSize="10" FontStyle="Italic" />
+            </StackPanel>
+        </ScrollViewer>
+
+        <Separator Margin="0,5" Grid.Row="3" />
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox Content="{x:Static loc:ResourcesCommon.UseAdoConnection}" IsChecked="{Binding UseAdo, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" Grid.Column="0"/>
+            <CheckBox Content="{x:Static loc:ResourcesCommon.UseCatalog}" IsChecked="{Binding UseCatalog, UpdateSourceTrigger=PropertyChanged}" Margin="15,0,0,0" Grid.Column="1"/>
+            <CheckBox Content="{x:Static loc:ResourcesCommon.UseSchema}" IsChecked="{Binding UseSchema, UpdateSourceTrigger=PropertyChanged}" Margin="15,0,0,0" Grid.Column="2"/>
+        </Grid>        
+
+        <Separator Margin="0,5" Grid.Row="5" />
+        <Grid Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Database - Whitelist:   "/>
+            <TextBox Text="{Binding DatabaseWhitelist, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Column="1" Height="20"/>
+            <Label Content="Table - Whitelist:   " Grid.Row="1"/>
+            <TextBox Text="{Binding TableWhitelist, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" Height="20"/>
+        </Grid>
+
+        <Separator Margin="0,5" Grid.Row="7" />
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,5">
+            <AvdWpfControls:ImageButton2 ImageHeight="14" x:Name="btnTestConnection" ImageSource="/TransDATA;component/Resources/Database.png" Click="btnTestConnection_Click" Caption="{x:Static loc:ResourcesCommon.BtnTestConnectionCaption}" Margin="5,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

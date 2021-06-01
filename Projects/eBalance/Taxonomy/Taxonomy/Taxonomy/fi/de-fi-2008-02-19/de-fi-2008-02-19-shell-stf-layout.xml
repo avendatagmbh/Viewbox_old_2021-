@@ -1,0 +1,35 @@
+<taxonomy-customizing xmlns:my="http://www.abz-informatik.com/abra/v1.2/examples"
+                      xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+                      xmlns:rf="http://www.abz-informatik.com/reportfactory"
+                      xmlns:ref2004="http://www.xbrl.org/2004/ref"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                      xmlns:ref2003="http://www.xbrl.org/2003/ref"
+                      xmlns:jrepository="java:com.abzinformatik.abra.taxonomy.Repository"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xmlns:jextensions="java:com.abzinformatik.abra.xslt.Extensions"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xmlns:jrelextensions="java:com.abzinformatik.abra.xslt.RelationExtensions"
+                      xmlns:xbrli="http://www.xbrl.org/2003/instance"
+                      xmlns:link="http://www.xbrl.org/2003/linkbase"
+                      key="de-fi-2008-02-19-shell-stf-layout"
+                      href="http://www.xbrl.de/index.php?option=com_content&amp;task=view&amp;id=65&amp;Itemid=48"
+                      default-language="de">
+   <languages>
+      <description lang="de">de-fi-2008-02-19-shell-stf-layout.xsd</description>
+      <lang lang="de">
+         <user-defined-referenceParts/>
+         <user-defined-roles>
+            <role uri="http://www.xbrl.de/de/fi/role/balanceSheet">Bilanz gemäß RechKredV</role>
+            <role uri="http://www.xbrl.de/de/fi/role/incomeStatementStf">Gewinn- und Verlustrechnung gemäß RechKredV Formblatt 3 in der Staffelform</role>
+            <role uri="http://www.xbrl.de/de/fi/role/incomeStatementKto">Gewinn- und Verlustrechnung gemäß RechKredV Formblatt 2 in der Kontoform</role>
+            <role uri="http://www.xbrl.de/de/fi/role/notes">Anhangsangaben gemäß RechKredV</role>
+            <role uri="http://www.xbrl.de/visualisationAnnotations/numberingSchema">Nummerierungsschema für die generische Nummerierung bei Visualisierungsannotationen</role>
+            <role uri="http://www.xbrl.de/visualisationAnnotations/excludeFromNumbering">Ausschließen von der generischen Nummerierung durch eine Visualisierungsannotation</role>
+            <role uri="http://www.xbrl.de/visualisationAnnotations/subCategorizationOnSingleLevel">Nummerierung auf einer Ebene durch Visualisierungsannotationen</role>
+            <role uri="http://www.xbrl.de/visualisationAnnotations/columnID">Spalteneingabe bei Visualisierungsannotationen</role>
+            <role uri="http://www.xbrl.de/visualisationAnnotations/viewAsSubTotal">Darstellung als Summenposition nach den Unterpositionen</role>
+            <role uri="http://www.xbrl.de/visualisationAnnotations/viewValueAsSubTotal">Darstellung des Wertes nach den Unterpositionen</role>
+         </user-defined-roles>
+      </lang>
+   </languages>
+</taxonomy-customizing>

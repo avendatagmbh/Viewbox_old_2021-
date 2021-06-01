@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="TransDATA.Controls.CtlProfileDetailsWrapper"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid DataContext="{Binding Converter={StaticResource MyDebugConverter}, ConverterParameter=CtlProfileDetailsWrapper}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!--<RowDefinition Height="Auto" />-->
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Name="txtHeader" FontSize="16" FontWeight="Bold" Margin="5,0,0,0"/>
+        <Border Grid.Row="1" BorderBrush="Silver" BorderThickness="0" Padding="5" Name="insertBorder"></Border>
+    </Grid>
+</UserControl>

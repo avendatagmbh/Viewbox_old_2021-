@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="DbSearch.Controls.Search.CtlColumnOverview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:Converter1="clr-namespace:AvdCommon.Converter;assembly=AvdCommon"
+             xmlns:Converter="clr-namespace:DbSearch.Converter" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Converter1:ColumnTypeToImageSourceConverter x:Key="columnTypeToImageSourceConverter" />
+        <Converter:IsVisibleToOpacityConverter x:Key="isVisibleToOpacityConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Spaltenübersicht" />
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Query.Columns}" IsReadOnly="True" AutoGenerateColumns="False"
+                      CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserResizeRows="False" CanUserSortColumns="True"
+                      SelectionMode="Single" Grid.RowSpan="1" Name="dgColumnOverview" MouseRightButtonUp="dgColumnOverview_MouseRightButtonUp">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <AvdWpfControls:ImageButton x:Name="btnSearch" ImageSource="/Resources/Search16.png" Opacity="{Binding IsUsedInSearch, Converter={StaticResource isVisibleToOpacityConverter}}" Width="12" Click="btnSearch_Click"
+                                                        ToolTip="Gibt an, ob die Spalte bei der Suche benutzt werden soll"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <AvdWpfControls:ImageButton x:Name="btnChangeVisibility" ImageSource="/Resources/eye.png" Opacity="{Binding IsVisible, Converter={StaticResource isVisibleToOpacityConverter}}" Width="12" Click="btnChangeVisibility_Click"
+                                                        ToolTip="Sichtbarkeit der Spalte in der Suchmatrix ändern"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Spalte" Width="Auto"  
+                                           Binding="{Binding Name, Mode=OneWay}" 
+                                           IsReadOnly="True"/>
+                <DataGridTemplateColumn Header="Typ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding DbColumnInfo.Type, Converter={StaticResource columnTypeToImageSourceConverter}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="miCopyColumn"  Header="Kopiere die Spalte" Click="miCopyColumn_Click" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        <Grid Grid.Row="2" Margin="5,5,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <CheckBox Grid.Row="0" IsChecked="{Binding SearchAllColumns}">Alle Spalten suchen</CheckBox>
+            <CheckBox Grid.Row="1" IsChecked="{Binding AllVisible}">Alle Spalten anzeigen</CheckBox>
+        </Grid>
+    </Grid>
+</UserControl>

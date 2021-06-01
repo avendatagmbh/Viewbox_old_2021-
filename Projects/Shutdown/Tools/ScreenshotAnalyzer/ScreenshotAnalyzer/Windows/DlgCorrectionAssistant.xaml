@@ -1,0 +1,17 @@
+﻿<Window x:Class="ScreenshotAnalyzer.Windows.DlgCorrectionAssistant"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:ScreenshotAnalyzer.Resources.Localisation"
+        xmlns:Results="clr-namespace:ScreenshotAnalyzer.Controls.Results"
+        Title="{x:Static Localisation:ResourcesGui.DlgCorrectionAssistant_Title}" Height="500" Width="800" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <TabControl>
+            <TabItem Header="{x:Static Localisation:ResourcesGui.DlgCorrectionAssistant_RecognitionOverview}">
+                <Results:CtlTextRecognitionResult DataContext="{Binding TextRecognitionResultModel}"/>
+            </TabItem>
+            <TabItem Header="{x:Static Localisation:ResourcesGui.DlgCorrectionAssistant_CorrectWords}">
+                <Results:CtlCorrectWords />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

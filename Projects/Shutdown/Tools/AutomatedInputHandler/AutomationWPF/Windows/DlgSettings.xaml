@@ -1,0 +1,11 @@
+﻿<Window x:Class="AutomationWPF.Windows.DlgSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="clr-namespace:AutomationWPF.Localisation"
+        xmlns:Controls="clr-namespace:AutomationWPF.Controls"
+        Title="{x:Static loc:ResourcesCommon.CaptionSettings}" Icon="/AutomationWPF;component/Resources/BlueDesign/icon_settings.png"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Height="300" Width="450">
+    <Grid>
+        <Controls:CtlSettings></Controls:CtlSettings>
+    </Grid>
+</Window>

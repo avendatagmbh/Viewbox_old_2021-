@@ -1,0 +1,86 @@
+﻿<Window x:Class="eBalanceKit.Windows.TaxonomyUpgrade.DlgTaxonomyUpgradeInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources" Icon="/CustomResources;component/Resources/logo1.png"
+        Title="Information zum Taxonomie-Upgrade" Height="300" Width="300" WindowStartupLocation="CenterOwner">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Margin="10" Text="{x:Static Localisation:ResourcesTaxonomy.UpgradeInfo_5_1}" TextWrapping="Wrap" />
+
+        <Button Grid.Row="2" Content="{x:Static Localisation:ResourcesTaxonomy.UpgradeInfoPDF_5_1}" HorizontalAlignment="Center" Click="PdfInfoClick">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <ContentPresenter Content="{TemplateBinding Content}" 
+                                  ContentTemplate="{TemplateBinding  ContentTemplate}"
+                                  VerticalAlignment="Center" >
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextDecorations" Value="Underline" />
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Foreground" Value="Blue" />
+                    <Setter Property="Cursor" Value="Hand" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="Red" />
+                        </Trigger>
+                    </Style.Triggers>
+
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button Grid.Row="4" Content="{x:Static Localisation:ResourcesTaxonomy.UpgradeInfoWeblink_5_1}" HorizontalAlignment="Center" Click="WebInfoClick">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <ContentPresenter Content="{TemplateBinding Content}" 
+                                  ContentTemplate="{TemplateBinding  ContentTemplate}"
+                                  VerticalAlignment="Center" >
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextDecorations" Value="Underline" />
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Foreground" Value="Blue" />
+                    <Setter Property="Cursor" Value="Hand" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="Red" />
+                        </Trigger>
+                    </Style.Triggers>
+
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Border Grid.Row="6" Style="{StaticResource ButtonBorder}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="{x:Static Localisation:ResourcesCommon.Close}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnCancel" VerticalAlignment="Top" Width="75" IsCancel="True"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

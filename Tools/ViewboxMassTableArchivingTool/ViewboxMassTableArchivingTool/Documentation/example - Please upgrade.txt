@@ -1,0 +1,17 @@
+c:\temp>ViewboxMassTableArchivingTool.exe -l -d viewbox_zsv
+
+Applicaton start 1.0.0.0
+Start viewbox database initialization
+
+Server: localhost
+Database: viewbox_zsv
+User: root
+Password: avendata
+
+
+Viewbox database initialized
+CurrentDbVersion:   1.8
+InstalledDbVersion: 1.7
+Please upgrade viewbox database from 1.7 to 1.8
+
+Application exit

@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6B330A1B-FEB4-4FD5-A3F0-0C0631F38578}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eBalanceKitBusiness</RootNamespace>
+    <AssemblyName>eBalanceKitBusiness</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomResources">
+      <HintPath>..\..\..\..\Assemblies\32Bit\AvenDATA\eBalanceKit_CustomResources\AvenDATA\CustomResources.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Assemblies\32Bit\External\iTextSharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuditCorrections\AuditCorrection.cs" />
+    <Compile Include="AuditCorrections\AuditCorrectionManager.cs" />
+    <Compile Include="AuditCorrections\AuditCorrectionSet.cs" />
+    <Compile Include="AuditCorrections\AuditCorrectionSetManager.cs" />
+    <Compile Include="AuditCorrections\AuditCorrectionTransaction.cs" />
+    <Compile Include="AuditCorrections\DbMapping\DbEntityAuditCorrection.cs" />
+    <Compile Include="AuditCorrections\DbMapping\DbEntityAuditCorrectionSetEntry.cs" />
+    <Compile Include="AuditCorrections\DbMapping\DbEntityAuditCorrectionTransaction.cs" />
+    <Compile Include="AuditCorrections\IAuditCorrection.cs" />
+    <Compile Include="AuditCorrections\IAuditCorrectionManager.cs" />
+    <None Include="AuditCorrections\ViewModels\AuditCorrectionsModel.cs" />
+    <Compile Include="AuditCorrections\IAuditCorrectionSet.cs" />
+    <Compile Include="AuditCorrections\IAuditCorrectionSetManager.cs" />
+    <Compile Include="AuditCorrections\IAuditCorrectionTransaction.cs" />
+    <Compile Include="EricController.cs" />
+    <Compile Include="EventArgs\AssignedTaxonomyInfoChangedEventArgs.cs" />
+    <Compile Include="Exceptions\AssignmentNotAllowedException.cs" />
+    <Compile Include="Exceptions\ExceptionBase.cs" />
+    <Compile Include="Exceptions\MessageEventArgs.cs" />
+    <Compile Include="Exceptions\ActionNotAllowed.cs" />
+    <Compile Include="Exceptions\_DatabaseExceptions.cs" />
+    <Compile Include="Exceptions\AccessDeniedException.cs" />
+    <Compile Include="Export\ConfigExport.cs" />
+    <Compile Include="Export\CsvExport.cs" />
+    <Compile Include="Export\ExportHelper.cs" />
+    <Compile Include="Export\HyperCubeExporter.cs" />
+    <Compile Include="Export\IExportConfig.cs" />
+    <Compile Include="Export\Models\ExportHypercubeModel.cs" />
+    <Compile Include="Export\Models\ExportModel.cs" />
+    <Compile Include="Export\PdfTreeView.cs" />
+    <Compile Include="Export\PosNumOverviewGen.cs" />
+    <Compile Include="Export\XbrlExporter.cs" />
+    <Compile Include="FederalGazette\FederalGazetteClientOperations.cs" />
+    <Compile Include="FederalGazette\FederalGazetteErrorAnalysis.cs" />
+    <Compile Include="FederalGazette\FederalGazetteGetxbrl.cs" />
+    <Compile Include="FederalGazette\FederalGazetteXbrlExport.cs" />
+    <Compile Include="FederalGazette\Model\BillingData.cs" />
+    <Compile Include="FederalGazette\Model\ClientsList.cs" />
+    <Compile Include="FederalGazette\Model\CompanyList.cs" />
+    <Compile Include="FederalGazette\Model\FederalGazetteFiles.cs" />
+    <Compile Include="FederalGazette\Model\FederalGazetteMainModel.cs" />
+    <Compile Include="FederalGazette\Model\FederalGazetteOrder.cs" />
+    <Compile Include="FederalGazette\Model\ReferencedCompany.cs" />
+    <Compile Include="HyperCubes\DbMapping\DbEntityHyperCube.cs" />
+    <Compile Include="HyperCubes\DbMapping\DbEntityHyperCubeDimension.cs" />
+    <Compile Include="HyperCubes\DbMapping\DbEntityHyperCubeDimensionKey.cs" />
+    <Compile Include="HyperCubes\DbMapping\DbEntityHyperCubeDimensionOrdinal.cs" />
+    <Compile Include="HyperCubes\DbMapping\DbEntityHyperCubeImport.cs" />
+    <Compile Include="HyperCubes\DbMapping\DbEntityHyperCubeItem.cs" />
+    <Compile Include="HyperCubes\Import\ChangesEquityStatementImporter.cs" />
+    <Compile Include="HyperCubes\Import\CsvColumn.cs" />
+    <Compile Include="HyperCubes\Import\CsvRow.cs" />
+    <Compile Include="HyperCubes\Import\DataValue.cs" />
+    <Compile Include="HyperCubes\Import\ImportBase.cs" />
+    <Compile Include="HyperCubes\Import\Importer.cs" />
+    <Compile Include="HyperCubes\Import\ImportConfig.cs" />
+    <Compile Include="HyperCubes\Import\TemplateCreator.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateBase.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateGenerator\ITemplateGenerator.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateGenerator\TemplateGeneratorBase.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateGenerator\TemplateGeneratorDb.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateGenerator\TemplateGeneratorFile.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateGenerator\TemplateGeneratorStream.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateGenerator\TemplateGeneratorTextWriter.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateGenerator\TemplateGeneratorXmlWriter.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateLoader\ILoader.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateLoader\TemplateLoaderDB.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateLoader\TempalteLoaderDb.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateLoader\TempalteLoaderFile.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateLoader\TempalteLoader.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateLoader\TempalteLoaderStream.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateLoader\TempalteLoaderString.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateLoader\TempalteLoaderTextReader.cs" />
+    <Compile Include="HyperCubes\Import\Templates\TemplateLoader\XmlLoaderXmlReader.cs" />
+    <Compile Include="HyperCubes\Interfaces\ViewModels\IHyperCube3DCube.cs" />
+    <Compile Include="HyperCubes\Manager\HyperCubeOrdinalManager.cs" />
+    <Compile Include="HyperCubes\Interfaces\Structure\IHyperCube.cs" />
+    <Compile Include="HyperCubes\Interfaces\Structure\IHyperCubeDimension.cs" />
+    <Compile Include="HyperCubes\Interfaces\Structure\IHyperCubeDimensionSet.cs" />
+    <Compile Include="HyperCubes\Interfaces\Structure\IHyperCubeDimensionValue.cs" />
+    <Compile Include="HyperCubes\Interfaces\Structure\IHyperCubeItem.cs" />
+    <Compile Include="HyperCubes\Interfaces\Structure\IHyperCubeItemCollection.cs" />
+    <Compile Include="HyperCubes\Interfaces\Structure\IHyperCubeItemTreeNode.cs" />
+    <Compile Include="HyperCubes\Interfaces\Structure\IHyperCubeTableEntry.cs" />
+    <Compile Include="HyperCubes\Interfaces\Structure\IScenarioContext.cs" />
+    <Compile Include="HyperCubes\Interfaces\Structure\IScenarioContextExplicitMember.cs" />
+    <Compile Include="HyperCubes\Interfaces\ViewModels\IHyperCubeColumn.cs" />
+    <Compile Include="HyperCubes\Interfaces\ViewModels\IHyperCubeRow.cs" />
+    <Compile Include="HyperCubes\Interfaces\ViewModels\IHyperCubeTable.cs" />
+    <Compile Include="HyperCubes\Manager\HyperCubeDimensionKeyManager.cs" />
+    <Compile Include="HyperCubes\Manager\HyperCubeDimensionManager.cs" />
+    <Compile Include="HyperCubes\Structures\HyperCube.cs" />
+    <Compile Include="HyperCubes\Structures\HyperCubeDimension.cs" />
+    <Compile Include="HyperCubes\Structures\HyperCubeDimensionSet.cs" />
+    <Compile Include="HyperCubes\Structures\HyperCubeDimensionValue.cs" />
+    <Compile Include="HyperCubes\Structures\HyperCubeItem\HyperCubeMonetaryItem.cs" />
+    <Compile Include="HyperCubes\Structures\HyperCubeItem\HyperCubeItemBase.cs" />
+    <Compile Include="HyperCubes\Structures\HyperCubeItem\HyperCubeMonetaryItemGroup.cs" />
+    <Compile Include="HyperCubes\Structures\HyperCubeItem\HyperCubeStringItem.cs" />
+    <Compile Include="HyperCubes\Structures\HyperCubeItem\HyperCubeAbstractItem.cs" />
+    <Compile Include="HyperCubes\Structures\ScenarioContext.cs" />
+    <Compile Include="HyperCubes\Structures\HyperCubeItemCollection.cs" />
+    <Compile Include="HyperCubes\Structures\ScenarioContextExplicitMember.cs" />
+    <Compile Include="HyperCubes\ViewModels\HyperCube3DCube.cs" />
+    <Compile Include="HyperCubes\ViewModels\HyperCubeColumn.cs" />
+    <Compile Include="HyperCubes\ViewModels\HyperCubeColumnEnumerator.cs" />
+    <Compile Include="HyperCubes\ViewModels\HyperCubeItemTreeNode.cs" />
+    <Compile Include="HyperCubes\ViewModels\HyperCubeRow.cs" />
+    <Compile Include="HyperCubes\ViewModels\HyperCubeRowEnumerator.cs" />
+    <Compile Include="HyperCubes\ViewModels\HyperCubeTable.cs" />
+    <Compile Include="HyperCubes\ViewModels\HyperCubeTableEntry.cs" />
+    <Compile Include="Import\BalanceListImportConfig.cs" />
+    <Compile Include="Import\BalanceListImporter.cs" />
+    <Compile Include="Import\BalanceListImportSummaryConfig.cs" />
+    <Compile Include="Import\Encodings.cs" />
+    <Compile Include="Import\ImportCompanyDetails\CompanyDetailsImporter.cs" />
+    <Compile Include="Import\ImportCompanyDetails\WrongDateError.cs" />
+    <Compile Include="Import\ImportCompanyDetails\WrongTaxonomyIdError.cs" />
+    <Compile Include="Import\ImportCompanyDetails\WrongValueError.cs" />
+    <Compile Include="Interfaces\INamedObject.cs" />
+    <Compile Include="Interfaces\IRightToolTipTreeNode.cs" />
+    <Compile Include="Interfaces\IsSelectable.cs" />
+    <Compile Include="Interfaces\ITaxonomyTreeNode.cs" />
+    <Compile Include="Interfaces\ITaxonomyIdManagerProvider.cs" />
+    <Compile Include="Interfaces\ITaxonomyTree.cs" />
+    <Compile Include="Logs\Actions\ActionAddDocument.cs" />
+    <Compile Include="Logs\Actions\ActionDeleteCompany.cs" />
+    <Compile Include="Logs\Actions\ActionDeleteDocument.cs" />
+    <Compile Include="Logs\Actions\ActionDeleteSystem.cs" />
+    <Compile Include="Logs\Actions\ActionLog.cs" />
+    <Compile Include="Logs\DbMapping\DbAdminLog.cs" />
+    <Compile Include="Logs\DbMapping\DbLogBase.cs" />
+    <Compile Include="Logs\DbMapping\DbReportValueChangeLog.cs" />
+    <Compile Include="Logs\DbMapping\DbSendLog.cs" />
+    <Compile Include="Logs\DbMapping\DbReportLog.cs" />
+    <Compile Include="Logs\Enums\ActionTypes.cs" />
+    <Compile Include="Logs\Enums\AdminLogContentTypes.cs" />
+    <Compile Include="Logs\Enums\ReportLogContentTypes.cs" />
+    <Compile Include="Logs\LogArgs.cs" />
+    <Compile Include="Logs\LogEntryBase.cs" />
+    <Compile Include="Logs\LogEntryValueChangeBase.cs" />
+    <Compile Include="Logs\LogFilter.cs" />
+    <Compile Include="Logs\LogManager.cs" />
+    <Compile Include="Logs\LogMessages\LogMessageAdmin.cs" />
+    <Compile Include="Logs\LogMessages\LogMessageAdminCompany.cs" />
+    <Compile Include="Logs\LogMessages\LogMessageAdminDocument.cs" />
+    <Compile Include="Logs\LogMessages\LogMessageAdminFactory.cs" />
+    <Compile Include="Logs\LogMessages\LogMessageAdminRight.cs" />
+    <Compile Include="Logs\LogMessages\LogMessageAdminRole.cs" />
+    <Compile Include="Logs\LogMessages\LogMessageAdminSystem.cs" />
+    <Compile Include="Logs\LogMessages\LogMessageAdminTemplate.cs" />
+    <Compile Include="Logs\LogMessages\LogMessageAdminUser.cs" />
+    <Compile Include="Logs\LogMessages\LogMessageAdminUserRight.cs" />
+    <Compile Include="Logs\Logs.cs" />
+    <Compile Include="Logs\Types\ReportLog.cs" />
+    <Compile Include="Logs\Types\ReportValueChangeLog.cs" />
+    <Compile Include="Manager\AccountGroupManager.cs" />
+    <Compile Include="Manager\BalanceListManager.cs" />
+    <Compile Include="Manager\BalListTemplateManager.cs" />
+    <Compile Include="Manager\FederalGazetteInfoManager.cs" />
+    <Compile Include="Manager\RoleManager.cs" />
+    <Compile Include="Manager\TaxonomyIdManager.cs" />
+    <Compile Include="Manager\TaxonomyManager.cs" />
+    <Compile Include="MappingTemplate\ApplyTemplateModel.cs" />
+    <Compile Include="MappingTemplate\AssignmentConflictListEntry.cs" />
+    <Compile Include="MappingTemplate\AssignmentConflict.cs" />
+    <Compile Include="MappingTemplate\AssignmentError.cs" />
+    <Compile Include="MappingTemplate\AssignmentErrorListEntry.cs" />
+    <Compile Include="MappingTemplate\CreateTemplateModel.cs" />
+    <Compile Include="MappingTemplate\ExtendTemplateModel.cs" />
+    <Compile Include="MappingTemplate\MappingTemplateBalanceList.cs" />
+    <Compile Include="MappingTemplate\MappingTemplateTypes.cs" />
+    <Compile Include="MappingTemplate\TemplateAssignmentConfictResolveMode.cs" />
+    <Compile Include="MappingTemplate\TemplateAssignmentPosition.cs" />
+    <Compile Include="MappingTemplate\TemplateManager.cs" />
+    <Compile Include="MappingTemplate\TemplateModelBase.cs" />
+    <Compile Include="MappingTemplate\UpdateTemplateResultListEntry.cs" />
+    <Compile Include="MappingTemplate\UpdateTemplateResultModel.cs" />
+    <Compile Include="Options\AvailableOptions.cs" />
+    <Compile Include="Options\GlobalOptionsBase.cs" />
+    <Compile Include="Options\GlobalUserOptions.cs" />
+    <Compile Include="Options\IOptions.cs" />
+    <Compile Include="Options\PdfOptions.cs" />
+    <Compile Include="Reconciliation\DbMapping\DbEntityReconciliation.cs" />
+    <Compile Include="Reconciliation\DbMapping\DbEntityReconciliationTransaction.cs" />
+    <Compile Include="Reconciliation\DbMapping\DbEntityReferenceList.cs" />
+    <Compile Include="Reconciliation\DbMapping\DbEntityReferenceListItem.cs" />
+    <Compile Include="Reconciliation\Enums\ReconciliationMode.cs" />
+    <Compile Include="Reconciliation\Enums\ReconciliationPresentationTreeTypes.cs" />
+    <Compile Include="Reconciliation\Enums\ReconciliationTypes.cs" />
+    <Compile Include="Reconciliation\Enums\TransactionTypes.cs" />
+    <Compile Include="Reconciliation\Enums\TransferKinds.cs" />
+    <Compile Include="Reconciliation\Import\ImportPreviousYearValuesReport.cs" />
+    <Compile Include="Reconciliation\Import\ImportRowError.cs" />
+    <Compile Include="Reconciliation\Import\InvalidValueError.cs" />
+    <Compile Include="Reconciliation\Import\PreviousYearValue.cs" />
+    <Compile Include="Reconciliation\Import\PreviousYearValues.cs" />
+    <Compile Include="Reconciliation\Import\ValueImporter.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReconciliationImportModel.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReconciliationInfo.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReconciliationManager.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReconciliationManagerInternal.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReconciliationManagerManagement.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReconciliationTree.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReconciliationTreeEntry.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReconciliationTreeNode.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReconciliationTypeInfo.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReconciliationTransaction.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReferenceList.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReferenceListItem.cs" />
+    <Compile Include="Reconciliation\Interfaces\IReferenceListManipulator.cs" />
+    <Compile Include="Reconciliation\Interfaces\ITransactionGroup.cs" />
+    <Compile Include="Reconciliation\Interfaces\ITransferTypeInfo.cs" />
+    <Compile Include="Reconciliation\Interfaces\IValueImporter.cs" />
+    <Compile Include="Reconciliation\Interfaces\ReconciliationTypes\IDeltaReconciliation.cs" />
+    <Compile Include="Reconciliation\Interfaces\ReconciliationTypes\IImportedValues.cs" />
+    <Compile Include="Reconciliation\Interfaces\ReconciliationTypes\IPreviousYearValues.cs" />
+    <Compile Include="Reconciliation\Interfaces\ReconciliationTypes\IReclassification.cs" />
+    <Compile Include="Reconciliation\Interfaces\ReconciliationTypes\IReconciliation.cs" />
+    <Compile Include="Reconciliation\Interfaces\ReconciliationTypes\ITaxBalanceValue.cs" />
+    <Compile Include="Reconciliation\Interfaces\ReconciliationTypes\IValueChange.cs" />
+    <Compile Include="Reconciliation\ReconciliationManager.cs" />
+    <Compile Include="Reconciliation\ReconciliationTree.cs" />
+    <Compile Include="Reconciliation\ReconciliationTreeNode.cs" />
+    <Compile Include="Reconciliation\ReconciliationTypeInfo.cs" />
+    <Compile Include="Reconciliation\ReconciliationTransaction.cs" />
+    <Compile Include="Reconciliation\ReconciliationTypes\AuditCorrection.cs" />
+    <Compile Include="Reconciliation\ReconciliationTypes\AuditCorrectionPreviousYear.cs" />
+    <Compile Include="Reconciliation\ReconciliationTypes\DeltaReconciliation.cs" />
+    <Compile Include="Reconciliation\ReconciliationTypes\ImportedValues.cs" />
+    <Compile Include="Reconciliation\ReconciliationTypes\PreviousYearValues.cs" />
+    <Compile Include="Reconciliation\ReconciliationTypes\Reclassification.cs" />
+    <Compile Include="Reconciliation\ReconciliationTypes\Reconciliation.cs" />
+    <Compile Include="Reconciliation\ReconciliationTypes\TaxBalanceValue.cs" />
+    <Compile Include="Reconciliation\ReconciliationTypes\ValueChange.cs" />
+    <Compile Include="Reconciliation\ReconciliationInfo.cs" />
+    <Compile Include="Reconciliation\ReferenceList.cs" />
+    <Compile Include="Reconciliation\ReferenceListItem.cs" />
+    <Compile Include="Reconciliation\TransactionChangedEventArgs.cs" />
+    <Compile Include="Reconciliation\TransactionGroup.cs" />
+    <Compile Include="Reconciliation\TransferKindCaptionHelper.cs" />
+    <Compile Include="Reconciliation\TransferTypeInfo.cs" />
+    <Compile Include="Reconciliation\TreeViewVisualOptions.cs" />
+    <Compile Include="Reconciliation\ViewModels\ImportPreviousYearValuesModel.cs" />
+    <Compile Include="Reconciliation\ViewModels\ReconciliationImportModel.cs" />
+    <Compile Include="Reconciliation\ViewModels\ReconciliationsModel.cs" />
+    <Compile Include="Rights\EffectiveRightTreeNode.cs" />
+    <Compile Include="Rights\Right.cs" />
+    <Compile Include="Rights\RightDeducer.cs" />
+    <Compile Include="Rights\RightTreeNodeBase.cs" />
+    <Compile Include="Rights\Role.cs" />
+    <Compile Include="Rights\RoleRightTreeNode.cs" />
+    <Compile Include="Rights\RoleRightTreeNodeCompany.cs" />
+    <Compile Include="Rights\RoleRightTreeNodeFinancialYear.cs" />
+    <Compile Include="Rights\RoleRightTreeNodeReport.cs" />
+    <Compile Include="Rights\RoleRightTreeNodeReportRights.cs" />
+    <Compile Include="Rights\RoleRightTreeNodeRoot.cs" />
+    <Compile Include="Rights\ReportRights.cs" />
+    <Compile Include="FederalGazette\TransferFederalGazetteData.cs" />
+    <Compile Include="StaticCompanyMethods.cs" />
+    <Compile Include="Structures\BalanceListFilterOptions.cs" />
+    <Compile Include="Structures\BalanceListSortOptions.cs" />
+    <Compile Include="Structures\CompanyInfo.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\AccountReferenceList.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\AccountReferenceListItem.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\AccountType.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\DbEntityAccountReferenceList.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\DbEntityAccountReferenceListItem.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\IAccountReferenceList.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\IAccountReferenceListItem.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\IAccountReferenceListManipulator.cs" />
+    <Compile Include="Structures\DbMapping\ClassArgumentHelper.cs" />
+    <Compile Include="Structures\DbMapping\DbEntityBase.cs" />
+    <Compile Include="Structures\DbMapping\FederalGazetteInfo.cs" />
+    <Compile Include="Structures\DbMapping\GlobalSearch\GlobalSearchHistoryItem.cs" />
+    <Compile Include="Structures\DbMapping\ReportFederalGazette.cs" />
+    <Compile Include="Structures\DbMapping\Templates\AccountsInformationProfile.cs" />
+    <Compile Include="Structures\DbMapping\Templates\AccountsProfileManager.cs" />
+    <Compile Include="Structures\DbMapping\UpgradeInformation.cs" />
+    <Compile Include="Structures\DbMapping\ValueMappings\ValuesGAAPFG.cs" />
+    <Compile Include="Structures\DocumentUpgradeResults.cs" />
+    <Compile Include="Structures\EnvironmentState.cs" />
+    <Compile Include="Structures\ExampleCSV.cs" />
+    <Compile Include="Structures\GlobalSearch\Enums\TopLevels.cs" />
+    <Compile Include="Structures\GlobalSearch\GeneralInformationBringer.cs" />
+    <Compile Include="Structures\GlobalSearch\GlobalSearchHistoryManager.cs" />
+    <Compile Include="Structures\GlobalSearch\GlobalSearcher.cs" />
+    <Compile Include="Structures\GlobalSearch\GlobalSearcherTreeNode.cs" />
+    <Compile Include="Structures\GlobalSearch\IGlobalSearcherTreeNode.cs" />
+    <Compile Include="Structures\GlobalSearch\ReconciliationSearcher.cs" />
+    <Compile Include="Structures\GlobalSearch\RecursiveSearcher.cs" />
+    <Compile Include="Structures\GlobalSearch\RecursiveSearcherStrategy.cs" />
+    <Compile Include="Structures\GlobalSearch\RecursiveSearchWithValueTree.cs" />
+    <Compile Include="Structures\GlobalSearch\SearcherBase.cs" />
+    <Compile Include="Structures\GlobalSearch\SearchResultItem.cs" />
+    <Compile Include="Structures\GlobalSearch\SpecialBringerIntoView.cs" />
+    <Compile Include="Structures\GlobalSearch\SpecialBringerIntoViewStrategy.cs" />
+    <Compile Include="Structures\ProblemSummary.cs" />
+    <Compile Include="Structures\ReportPartPath.cs" />
+    <Compile Include="Structures\UpgradeDataContext.cs" />
+    <Compile Include="Structures\UpgradeMissingValue.cs" />
+    <Compile Include="Structures\CompanyUpgradeResult.cs" />
+    <Compile Include="Structures\CompanyUpgradeResults.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\AccountGroup.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\BalanceListEntryBase.cs" />
+    <Compile Include="Logs\Types\AdminLog.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\_TableDefinitions.cs" />
+    <Compile Include="Structures\DbMapping\Rights\_TableDefinitions.cs" />
+    <Compile Include="Structures\DbMapping\TaxonomyInfo.cs" />
+    <Compile Include="Structures\DbMapping\Templates\GroupTemplate.cs" />
+    <Compile Include="Structures\DbMapping\Templates\BalListImportTemplate.cs" />
+    <Compile Include="Structures\DbMapping\Templates\BalListTemplate.cs" />
+    <Compile Include="Structures\DbMapping\Templates\SplitTemplate.cs" />
+    <Compile Include="Structures\DbMapping\Templates\TemplateBase.cs" />
+    <Compile Include="Structures\DbMapping\Templates\_TableDefinitions.cs" />
+    <Compile Include="Structures\DocumentUpgradeResult.cs" />
+    <Compile Include="Structures\PresentationTreeFilter.cs" />
+    <Compile Include="Structures\Presentation\PresentationTreeListNode.cs" />
+    <Compile Include="Structures\UpgradeRow.cs" />
+    <Compile Include="Structures\UserInfoActiveDirectory.cs" />
+    <Compile Include="Structures\ValueTree\ValueTreeNode.cs" />
+    <Compile Include="Structures\XbrlElementValue\ComputedValue.cs" />
+    <Compile Include="Structures\XbrlElementValue\XbrlElementValue_Hypercube.cs" />
+    <Compile Include="Structures\XbrlElementValue\XbrlElementValue_Monetary.cs" />
+    <Compile Include="Validators\ValidatorBra.cs" />
+    <Compile Include="Validators\ValidatorFI.cs" />
+    <Compile Include="Validators\ValidatorIns.cs" />
+    <Compile Include="Validators\ValidatorMainTaxonomy.cs" />
+    <Compile Include="Interfaces\BalanceList\IBalanceList.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\SplittedAccount.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\SplitAccountGroup.cs" />
+    <Compile Include="Logs\Types\SendLog.cs" />
+    <Compile Include="Structures\Presentation\PresentationTree.cs" />
+    <Compile Include="Structures\Presentation\PresentationTreeNode.cs" />
+    <Compile Include="Structures\XbrlElementValue\XbrlElementValue_Misc.cs" />
+    <Compile Include="Interfaces\BalanceList\IAccount.cs" />
+    <Compile Include="Interfaces\BalanceList\IAccountGroup.cs" />
+    <Compile Include="Interfaces\BalanceList\ISplitAccountGroup.cs" />
+    <Compile Include="Interfaces\BalanceList\ISplittedAccount.cs" />
+    <Compile Include="Interfaces\ILoggableObject.cs" />
+    <Compile Include="Interfaces\IRightTreeNode.cs" />
+    <Compile Include="Interfaces\IValidator.cs" />
+    <Compile Include="Interfaces\IValueMapping.cs" />
+    <Compile Include="Interfaces\IValueMappingCompany.cs" />
+    <Compile Include="Interfaces\IValueMappingDocument.cs" />
+    <Compile Include="Interfaces\internal\ITaxonomyAssignment.cs" />
+    <Compile Include="Localisation\ExceptionMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\CompanyManager.cs" />
+    <Compile Include="Manager\DocumentManager.cs" />
+    <Compile Include="Manager\RightManager.cs" />
+    <Compile Include="Manager\SystemManager.cs" />
+    <Compile Include="Manager\UserManager.cs" />
+    <Compile Include="Export\PdfExporter.cs" />
+    <Compile Include="Manager\ValueManager.cs" />
+    <Compile Include="MappingTemplate\MappingGUIBase.cs" />
+    <Compile Include="MappingTemplate\MappingHeaderGUI.cs" />
+    <Compile Include="MappingTemplate\MappingLineGUI.cs" />
+    <Compile Include="MappingTemplate\MappingTemplatePresentationTrees.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structures\AppConfig.cs" />
+    <Compile Include="Structures\Country.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\Account.cs" />
+    <Compile Include="Structures\DbMapping\MappingTemplate\MappingTemplateElementInfo.cs" />
+    <Compile Include="Structures\DbMapping\MappingTemplate\MappingTemplateHead.cs" />
+    <Compile Include="Structures\DbMapping\MappingTemplate\MappingTemplateLine.cs" />
+    <Compile Include="Structures\DbMapping\Company.cs" />
+    <Compile Include="Structures\DbMapping\BalanceList\BalanceList.cs" />
+    <Compile Include="Structures\DbMapping\Document.cs" />
+    <Compile Include="Structures\DbMapping\FinancialYear.cs" />
+    <Compile Include="Interfaces\BalanceList\IBalanceListEntry.cs" />
+    <Compile Include="Structures\DbMapping\ValueMappings\ValueMappingBase.cs" />
+    <Compile Include="Structures\DbMapping\ValueMappings\ValueMappingBaseCompany.cs" />
+    <Compile Include="Structures\DbMapping\ValueMappings\ValueMappingBaseDocument.cs" />
+    <Compile Include="Structures\DbMapping\ValueMappings\ValuesGCD_Company.cs" />
+    <Compile Include="Structures\DbMapping\TaxonomyIdAssignment.cs" />
+    <Compile Include="Structures\DbMapping\Info.cs" />
+    <Compile Include="Structures\DbMapping\ValueMappings\ValuesGAAP.cs" />
+    <Compile Include="Structures\DbMapping\System.cs" />
+    <Compile Include="Structures\DbMapping\User.cs" />
+    <Compile Include="Structures\DbMapping\ValueMappings\ValuesGCD.cs" />
+    <Compile Include="Structures\UserConfig.cs" />
+    <Compile Include="Structures\ValueTree\ValueTree.cs" />
+    <Compile Include="Structures\XbrlElementValue\XbrlElementValue_Tuple.cs" />
+    <Compile Include="Structures\XbrlElementValue\XbrlElementValueBase.cs" />
+    <Compile Include="Structures\XbrlElementValue\XbrlElementValue_List.cs" />
+    <Compile Include="Structures\XbrlElementValue\XbrlElementValue_MultipleChoice.cs" />
+    <Compile Include="Structures\XbrlElementValue\XbrlElementValue_SingleChoice.cs" />
+    <Compile Include="Validators\ValidatorGAAP.cs" />
+    <Compile Include="Validators\ValidatorGCD.cs" />
+    <Compile Include="Validators\ValidatorBase.cs" />
+    <Compile Include="Validators\ValidatorGCD_Company.cs" />
+    <Compile Include="Interfaces\IValueEntry.cs" />
+    <Compile Include="Interfaces\PresentationTree\IPresentationTree.cs" />
+    <Compile Include="Interfaces\PresentationTree\IPresentationTreeNode.cs" />
+    <Compile Include="Interfaces\Templates\IGroupTemplate.cs" />
+    <Compile Include="Interfaces\Templates\ISplitTemplate.cs" />
+    <Compile Include="Interfaces\Templates\IBalListImportTemplate.cs" />
+    <Compile Include="Interfaces\Templates\ITemplateBase.cs" />
+    <Compile Include="Interfaces\Templates\IBalListTemplate.cs" />
+    <Compile Include="VirtualAccount.cs" />
+    <None Include="CD_Templates.cd" />
+    <None Include="HyperCubes\ClassDiagrams\HyperCubesInterface.cd" />
+    <None Include="HyperCubes\ClassDiagrams\HyperCubeTable.cd" />
+    <None Include="Reconciliation\_class_diagram_.cd" />
+    <None Include="Structures\DbMapping\BalanceList\_CD_BalanceList.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="Structures\DbMapping\_CD_DbMapping.cd" />
+    <None Include="Structures\DbMapping\_CD_Document.cd" />
+    <None Include="Structures\XbrlElementValue\_CD_XbrlElementValue.cd" />
+    <None Include="Interfaces\BalanceList\_CD_BalanceList.cd" />
+    <None Include="Interfaces\PresentationTree\_CD_PresentationTree.cd" />
+    <None Include="HyperCubes\ClassDiagrams\HyperCubesDb.cd" />
+    <None Include="HyperCubes\ClassDiagrams\HyperCubesInternal.cd" />
+    <None Include="_ClassDiagrams\PresentationTree.cd" />
+    <None Include="_ClassDiagrams\ValueMapping.cd" />
+    <None Include="_ClassDiagrams\ValueTree.cd" />
+    <None Include="_ClassDiagrams\ValueTreeEntryImpl.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdCommon\AvdCommon.csproj">
+      <Project>{89148742-F482-479E-8831-579F54FDF08A}</Project>
+      <Name>AvdCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdWpfStyles\AvdWpfStyles.csproj">
+      <Project>{FED8686B-7BE7-432C-B1F6-FA5900F6BAC2}</Project>
+      <Name>AvdWpfStyles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\PdfGenerator\PdfGenerator\PdfGenerator.csproj">
+      <Project>{0867E9E0-6D5D-4E8A-A42F-ED839B22707F}</Project>
+      <Name>PdfGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\eBalanceKitBase\eBalanceKitBase.csproj">
+      <Project>{E2CEEA3B-3845-427E-998E-08ED35B18D29}</Project>
+      <Name>eBalanceKitBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\eBalanceKit\eBalanceKitResources\eBalanceKitResources.csproj">
+      <Project>{05CDF0E9-D91A-47A7-A4E2-E46B1F489425}</Project>
+      <Name>eBalanceKitResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\eBalanceKit\eFederalGazette\eFederalGazette.csproj">
+      <Project>{0A90B76A-93C6-4F12-BDC0-CC458F40A149}</Project>
+      <Name>eFederalGazette</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\eBundesanzeiger\eBundesanzeiger.csproj">
+      <Project>{45CA0679-5E7C-4EFF-9603-F76969285E43}</Project>
+      <Name>eBundesanzeiger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EricWrapper\EricWrapper.csproj">
+      <Project>{DEB7D8F7-5F31-47A6-BFE5-EF46BD2A386D}</Project>
+      <Name>EricWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Taxonomy\Taxonomy\Taxonomy.csproj">
+      <Project>{5E4B032D-3B2E-4E6D-B2D7-88499B01604D}</Project>
+      <Name>Taxonomy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localisation\ExceptionMessages.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ExceptionMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChangelogDb.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

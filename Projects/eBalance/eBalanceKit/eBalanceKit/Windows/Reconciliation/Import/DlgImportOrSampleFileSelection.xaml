@@ -1,0 +1,27 @@
+﻿<Window x:Class="eBalanceKit.Windows.Reconciliation.Import.DlgImportOrSampleFileSelectionReconciliation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             Height="300" Width="430" Title="{x:Static Localisation:ResourcesReconciliation.ReconciliationAssistantTitle}" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0">
+            <!-- TODO: change the picture -->
+            <Image Source="/eBalanceKitResources;component/Resources/Delete.png" />
+        </Border>
+        <Border Grid.Column="1">
+            <StackPanel>
+                <TextBlock Height="Auto" Name="textbInfoTitle" Text="{x:Static Localisation:ResourcesReconciliation.ReconciliationAssistantWelcome}" Margin="5" />
+                <TextBlock Height="Auto" Name="textbInfo" Text="{x:Static Localisation:ResourcesReconciliation.ReconciliationAssistantText}" Margin="5" />
+                <Button Name="BtnCreateCsvFiles" Click="BtnCreateCsvFilesClick" Content="{x:Static Localisation:ResourcesCommon.ImportSampleDataExport}" Margin="5" />
+                <!--<Button Name="BtnCreateCsvFiles" Click="BtnCreateCsvFilesClick" Content="Select reconciliation positions and create CSV-File" Margin="5" />-->
+                <Button Name="BtnImportReconciliationCsvFiles" Click="BtnImportReconciliationCsvFilesClick" Content="{x:Static Localisation:ResourcesReconciliation.ReconciliationAssistantImportButtonCaption}" Margin="5" />
+            </StackPanel>
+        </Border>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,1322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <LangVersion>latest</LangVersion>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F037DD0-6E1B-4209-86BF-902D2B14564A}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Viewbox</RootNamespace>
+    <AssemblyName>Viewbox</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <UseIISExpress>false</UseIISExpress>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DeployIisAppPath>Default Web Site</DeployIisAppPath>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <PublishDatabases>false</PublishDatabases>
+    <DesktopBuildPackageLocation>..\..\..\..\..\..\Viewbox deploy</DesktopBuildPackageLocation>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DesktopBuildPackageLocation>..\..\..\..\..\..\..\..\..\..\temp\Viewbox deploy\Viewbox.zip</DesktopBuildPackageLocation>
+    <DeployIisAppPath>Default Web Site</DeployIisAppPath>
+    <PublishDatabases>false</PublishDatabases>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Viewbox.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Viewbox.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Viewbox.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Viewbox.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AFPConverter">
+      <HintPath>..\..\..\..\Assemblies\64Bit\External\AFPConverter\AFPConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="gudusoft.gsqlparser, Version=1.12.13.27257, Culture=neutral, PublicKeyToken=1e1734490a0fe9ed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Assemblies\32Bit\External\guduSoft\gudusoft.gsqlparser\2.2.6\gudusoft.gsqlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\..\..\Assemblies\32Bit\External\DotNetZip\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Assemblies\32Bit\External\iTextSharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\Assemblies\64Bit\External\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MerckConverter">
+      <HintPath>..\..\..\..\Assemblies\64Bit\External\MerckConverter\MerckConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="PayRollConverter">
+      <HintPath>..\..\..\..\Assemblies\64Bit\External\PayRollConverter\PayRollConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\..\Assemblies\64Bit\External\Optimization\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Web.Optimization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Web.Optimization.0.0.8\lib\net40\Web.Optimization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackBtnFilterAttribute.cs" />
+    <Compile Include="BackStack.cs" />
+    <Compile Include="BundleConfig.cs" />
+    <Compile Include="Command\CreateArchiveFilesJobHelper.cs" />
+    <Compile Include="Command\DownloadJobHelper.cs" />
+    <Compile Include="Command\GenerateTableJobHelper.cs" />
+    <Compile Include="Command\IndexesJobHelper.cs" />
+    <Compile Include="Command\ExportJobHelper.cs" />
+    <Compile Include="Command\IJobStatusHelper.cs" />
+    <Compile Include="Command\JobStatusHelperFactory.cs" />
+    <Compile Include="Command\OptimizationJobHelper.cs" />
+    <Compile Include="Command\RelationJobHelper.cs" />
+    <Compile Include="Command\TransformationHelper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArchiveDocumentsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CommandController.cs" />
+    <Compile Include="Controllers\ControlCenterController.cs" />
+    <Compile Include="Controllers\DocumentationController.cs" />
+    <Compile Include="Controllers\DocumentsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ExportController.cs" />
+    <Compile Include="Controllers\FileSystemController.cs" />
+    <Compile Include="Controllers\HeaderController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IssueListController.cs" />
+    <Compile Include="Controllers\LotusNotesController.cs" />
+    <Compile Include="Controllers\NotepadController.cs" />
+    <Compile Include="Controllers\ObjectTypeController.cs" />
+    <Compile Include="Controllers\UserManagementController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\TableListController.cs" />
+    <Compile Include="Controllers\TableObjectControllerBase.cs" />
+    <Compile Include="Controllers\DataGridController.cs" />
+    <Compile Include="Controllers\ValueListBelegController.cs" />
+    <Compile Include="Controllers\ValueListController.cs" />
+    <Compile Include="Controllers\ViewListController.cs" />
+    <Compile Include="Controllers\WertehilfeController.cs" />
+    <Compile Include="DcwBalance\AccountRow.cs" />
+    <Compile Include="DcwBalance\StructureRow.cs" />
+    <Compile Include="DcwBalance\StructureSignRow.cs" />
+    <Compile Include="EncapsulatedPerformanceCounter.cs" />
+    <Compile Include="Enums\OperationEnum.cs" />
+    <Compile Include="Enums\ViewOptionEnum.cs" />
+    <Compile Include="Exceptions\BadPasswordException.cs" />
+    <Compile Include="Exceptions\JsonExceptionHandlerAttribute.cs" />
+    <Compile Include="Exceptions\ViewboxRightException.cs" />
+    <Compile Include="FakePerformanceCounter.cs" />
+    <Compile Include="FileLogger.cs" />
+    <Compile Include="HttpApplicationFactory.cs" />
+    <Compile Include="HttpContextFactory.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="IPerformanceCounter.cs" />
+    <Compile Include="IStructureRowBase.cs" />
+    <Compile Include="Job\Base.cs" />
+    <Compile Include="Job\CreateArchiveFilesJob.cs" />
+    <Compile Include="Job\DownloadJob.cs" />
+    <Compile Include="Job\ExportBelegPdf.cs" />
+    <Compile Include="Job\GenerateTableJob.cs" />
+    <Compile Include="Job\ImageConverter.cs" />
+    <Compile Include="Job\PdfExport\Actebis\ActebisDeliveryNotePdfExporter.cs" />
+    <Compile Include="Job\PdfExport\Actebis\ActebisFacturaPdfExporter.cs" />
+    <Compile Include="Job\PdfExport\Actebis\ActebisKreditnotePdfExporter.cs" />
+    <Compile Include="Job\PdfExport\Actebis\ActebisOrderPdfExporter.cs" />
+    <Compile Include="Job\PdfExport\Basler\KontoauszuegePdfExport.cs" />
+    <Compile Include="Job\PdfExport\Basler\PDFFooter.cs" />
+    <Compile Include="Job\PdfExport\Basler\ProvisionskontoPdfExport.cs" />
+    <Compile Include="Job\PdfExport\General\BelegPdfExporter.cs" />
+    <Compile Include="Job\PdfExport\General\FacturaPdfExporter.cs" />
+    <Compile Include="Job\PdfExport\General\KreditnotePdfExporter.cs" />
+    <Compile Include="Job\PdfExport\General\LegacyPdfExporter.cs" />
+    <Compile Include="Job\PdfExport\General\OrderPdfExporter.cs" />
+    <Compile Include="Job\PdfExport\General\SimplePdfExporter.cs" />
+    <Compile Include="Job\PdfExport\IPdfExporter.cs" />
+    <Compile Include="Job\PdfExport\Layouts\Alignment.cs" />
+    <Compile Include="Job\PdfExport\Layouts\Color.cs" />
+    <Compile Include="Job\PdfExport\Layouts\Decoration.cs" />
+    <Compile Include="Job\PdfExport\Layouts\FontWeight.cs" />
+    <Compile Include="Job\PdfExport\Layouts\StatementPdfLayout.cs" />
+    <Compile Include="Job\PdfExport\Layouts\DeliveryNotePdfLayout.cs" />
+    <Compile Include="Job\PdfExport\Layouts\FacturaKreditnotePdfLayout.cs" />
+    <Compile Include="Job\PdfExport\Layouts\FacturaPdfLayout.cs" />
+    <Compile Include="Job\PdfExport\Layouts\KreditnotePdfLayout.cs" />
+    <Compile Include="Job\PdfExport\Layouts\OrderPdfLayout.cs" />
+    <Compile Include="Job\PdfExport\Layouts\PdfLayout.cs" />
+    <Compile Include="Job\PdfExport\PdfExporterConfig.cs" />
+    <Compile Include="Job\PdfExport\PdfExporterConfigElement.cs" />
+    <Compile Include="Job\PdfExport\PdfExporterFactory.cs" />
+    <Compile Include="Job\PdfExport\ViewboxPdf\ViewboxActebisFacturaPdfExportClone.cs" />
+    <Compile Include="Job\PdfExport\ViewboxPdf\ViewboxActebisKreditnotePdfExportClone.cs" />
+    <Compile Include="Job\PopulateIndexesJob.cs" />
+    <Compile Include="Job\Janitor.cs" />
+    <Compile Include="Job\OptimizationJob.cs" />
+    <Compile Include="Job\RelationJob.cs" />
+    <Compile Include="Job\ScriptDbColumn.cs" />
+    <Compile Include="Job\ScriptDbColumnCollection.cs" />
+    <Compile Include="Job\ScriptTable.cs" />
+    <Compile Include="Job\ScriptTableCollection.cs" />
+    <Compile Include="Job\SetRightsForTablesTask.cs" />
+    <Compile Include="Job\Transformation.cs" />
+    <Compile Include="Job\Export.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="Job\TransformationNew.cs" />
+    <Compile Include="Job\UpdateOptimizationRolesTask.cs" />
+    <Compile Include="Job\UpdateTableObjectRolesTask.cs" />
+    <Compile Include="LocalizedDisplayNameAttribute.cs" />
+    <Compile Include="LogFactory.cs" />
+    <Compile Include="LogType.cs" />
+    <Compile Include="LotusNotes\LotusNode.cs" />
+    <Compile Include="Models\AccountMembershipService.cs" />
+    <Compile Include="Models\AccountValidation.cs" />
+    <Compile Include="Models\ADImportModel.cs" />
+    <Compile Include="Models\AdminTasksModel.cs" />
+    <Compile Include="Models\ArchiveDocumentsModel.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\BoxHeaderModel.cs" />
+    <Compile Include="Models\ClickAndClickForDynamicModel.cs" />
+    <Compile Include="Models\ConcreteSelectionTypeFactory.cs" />
+    <Compile Include="Models\ControlCenterModel.cs" />
+    <Compile Include="Models\ColumnValueListModels.cs" />
+    <Compile Include="Models\ConversionProgressDialogModel.cs" />
+    <Compile Include="Models\DatabaseDataReader.cs" />
+    <Compile Include="Models\DatabaseOutOfDateModel.cs" />
+    <Compile Include="Models\DatabaseUpgradeFinishedModel.cs" />
+    <Compile Include="Models\DataGridModel.cs" />
+    <Compile Include="Models\DcwBalanceModel.cs" />
+    <Compile Include="Models\DeadUrlModel.cs" />
+    <Compile Include="Models\DialogModel.cs" />
+    <Compile Include="Models\DocumentationContent.cs" />
+    <Compile Include="Models\DocumentFileModel.cs" />
+    <Compile Include="Models\DocumentsModel.cs" />
+    <Compile Include="Models\DocumentsModelNew.cs" />
+    <Compile Include="Models\DocumentsOverviewModel.cs" />
+    <Compile Include="Models\DownloadDirectoryInfo.cs" />
+    <Compile Include="Models\DownloadFileInfo.cs" />
+    <Compile Include="Models\EnumerableDataRowGroupList.cs" />
+    <Compile Include="Models\ErrorModel.cs" />
+    <Compile Include="Models\ExcelExport.cs" />
+    <Compile Include="Models\ExportColumn.cs" />
+    <Compile Include="Models\ExportJobModel.cs" />
+    <Compile Include="Models\ExportModel.cs" />
+    <Compile Include="Models\FileFormatHandler.cs" />
+    <Compile Include="Models\FileSystemModel.cs" />
+    <Compile Include="Models\FilterModel.cs" />
+    <Compile Include="Models\FilterModelFactory.cs" />
+    <Compile Include="Models\ForcedToQuitModel.cs" />
+    <Compile Include="Models\FormsAuthenticationService.cs" />
+    <Compile Include="Models\HelpModel.cs" />
+    <Compile Include="Models\HtmlDisplayModel.cs" />
+    <Compile Include="Models\ICategoryList.cs" />
+    <Compile Include="Models\IDownloadInfo.cs" />
+    <Compile Include="Models\IExportJobModel.cs" />
+    <Compile Include="Models\IColumnFilterModel.cs" />
+    <Compile Include="Models\IFormsAuthenticationService.cs" />
+    <Compile Include="Models\IMembershipService.cs" />
+    <Compile Include="Models\InformationModel.cs" />
+    <Compile Include="Models\IssueList.cs" />
+    <Compile Include="Models\ListOptionsModel.cs" />
+    <Compile Include="Models\LogOnModel.cs" />
+    <Compile Include="Models\LogReadModel.cs" />
+    <Compile Include="Models\LotusAttachment.cs" />
+    <Compile Include="Models\LotusEmailDetails.cs" />
+    <Compile Include="Models\LotusNodeCollection.cs" />
+    <Compile Include="Models\LotusNotesTableModel.cs" />
+    <Compile Include="Models\MaintenanceModel.cs" />
+    <Compile Include="Models\ModifyStartScreenModel.cs" />
+    <Compile Include="Models\NoRightForOptModel.cs" />
+    <Compile Include="Models\NoRightsForContentModel.cs" />
+    <Compile Include="Models\NotEnoughFreeSpaceModel.cs" />
+    <Compile Include="Models\NotificationModel.cs" />
+    <Compile Include="Models\NotReadyModel.cs" />
+    <Compile Include="Models\OptimizationModel.cs" />
+    <Compile Include="Models\PasswordExtentions.cs" />
+    <Compile Include="Models\PasswordModel.cs" />
+    <Compile Include="Models\PropertySettingsModel.cs" />
+    <Compile Include="Models\RelationModel.cs" />
+    <Compile Include="Models\RelationModelNew.cs" />
+    <Compile Include="Models\RequiredFreeSelection.cs" />
+    <Compile Include="Models\RequiredSelection.cs" />
+    <Compile Include="Models\RightSettingsModel.cs" />
+    <Compile Include="Models\RoleManagement.cs" />
+    <Compile Include="Models\RoleSettingsModel.cs" />
+    <Compile Include="Models\RoleTableObjectRightsCount.cs" />
+    <Compile Include="Models\RoleTreeModel.cs" />
+    <Compile Include="Models\RowVisibilityHelper.cs" />
+    <Compile Include="Models\SapBalanceModel.cs" />
+    <Compile Include="Models\SelectionType.cs" />
+    <Compile Include="Models\SelectionTypeEnum.cs" />
+    <Compile Include="Models\SelectionTypeFactory.cs" />
+    <Compile Include="Models\SettingsModel.cs" />
+    <Compile Include="Models\SimpleSelection.cs" />
+    <Compile Include="Models\SimpleTableModel.cs" />
+    <Compile Include="Models\Storage.cs" />
+    <Compile Include="Models\StructuedTableModel.cs" />
+    <Compile Include="Models\TableCrudColumnModel.cs" />
+    <Compile Include="Models\TableCrudModel.cs" />
+    <Compile Include="Models\TableIndexModel.cs" />
+    <Compile Include="Models\TableList.cs" />
+    <Compile Include="Models\TableObjectList.cs" />
+    <Compile Include="Models\UniversalTableModel.cs" />
+    <Compile Include="Models\UpdateModel.cs" />
+    <Compile Include="Models\UserAlreadyLoggedInModel.cs" />
+    <Compile Include="Models\UserManagementModel.cs" />
+    <Compile Include="Models\ITableObjectList.cs" />
+    <Compile Include="Models\UserSettingsModel.cs" />
+    <Compile Include="Models\ValidatePasswordLengthAttribute.cs" />
+    <Compile Include="Models\ValueListBelegModels.cs" />
+    <Compile Include="Models\ValueListModels.cs" />
+    <Compile Include="Models\ViewboxModel.cs" />
+    <Compile Include="Models\ViewList.cs" />
+    <Compile Include="Models\VonBisSelection.cs" />
+    <Compile Include="Models\Wertehilfe\DynamicWertehilfe.cs" />
+    <Compile Include="Models\Wertehilfe\IIndexer.cs" />
+    <Compile Include="Models\Wertehilfe\Indexer.cs" />
+    <Compile Include="Models\Wertehilfe\IndexingState.cs" />
+    <Compile Include="Models\Wertehilfe\IWertehilfe.cs" />
+    <Compile Include="Models\Wertehilfe\Wertehilfe.cs" />
+    <Compile Include="Models\Wertehilfe\WertehilfeFactory.cs" />
+    <Compile Include="Models\Wertehilfe\WertehilfeSorter.cs" />
+    <Compile Include="Models\Wertehilfe\WertehilfeSortObject.cs" />
+    <Compile Include="Models\Wertehilfe\WertehilfeType.cs" />
+    <Compile Include="MySqlAutoConfigModel.cs" />
+    <Compile Include="Operator.cs" />
+    <Compile Include="OptimizationManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SapBalance\AccountRow.cs" />
+    <Compile Include="SapBalance\AccountRowExtended.cs" />
+    <Compile Include="SapBalance\StructureRow.cs" />
+    <Compile Include="SessionMarker.cs" />
+    <Compile Include="SortAndFilterSettings.cs" />
+    <Compile Include="Structures\BilanzStructureRow.cs" />
+    <Compile Include="Structures\BilanzStructureSignRow.cs" />
+    <Compile Include="Structures\BilanzstrukturAnzeigen.cs" />
+    <Compile Include="Structures\BilanzstrukturAnzeigenNew.cs" />
+    <Compile Include="Structures\GuvStructureRow.cs" />
+    <Compile Include="Structures\GuvStructureSignRow.cs" />
+    <Compile Include="Structures\IBilanzstrukturAnzeigen.cs" />
+    <Compile Include="Structures\KostenartenhierarhyData.cs" />
+    <Compile Include="Structures\KostenartenhierarhyStructure.cs" />
+    <Compile Include="Structures\KostenstellengruppeAnzeigen.cs" />
+    <Compile Include="Structures\KostenstellengruppeAnzeigenData.cs" />
+    <Compile Include="Structures\KostenstellengruppeAnzeigenStruct.cs" />
+    <Compile Include="Structures\StructureDyn.cs" />
+    <Compile Include="Structures\StructureGraph.cs" />
+    <Compile Include="Structures\Summenbericht.cs" />
+    <Compile Include="Structures\SummenberichtFgnData.cs" />
+    <Compile Include="Structures\SummenberichtFgnStructure.cs" />
+    <Compile Include="Structures\T001.cs" />
+    <Compile Include="Structures\Workflowprotokoll.cs" />
+    <Compile Include="TableAndColumnSettingsModel.cs" />
+    <Compile Include="UrlParam.cs" />
+    <Compile Include="UserDefinedWidth.cs" />
+    <Compile Include="ViewboxApplication.cs" />
+    <Compile Include="ViewboxFileRefresh.cs" />
+    <Compile Include="ViewboxFilterAttribute.cs" />
+    <Compile Include="ViewboxMembershipProvider.cs" />
+    <Compile Include="ViewboxRightsExtensions.cs" />
+    <Compile Include="ViewboxSession.cs" />
+    <Compile Include="ViewboxTextExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\ControlCenter.css" />
+    <Content Include="Content\DataGrid.css" />
+    <Content Include="Content\Document.css" />
+    <Content Include="Content\Export.css" />
+    <Content Include="Content\favicon.ico" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\file.gif" />
+    <Content Include="Content\images\folder-closed.gif" />
+    <Content Include="Content\images\folder.gif" />
+    <Content Include="Content\images\folder_blue.png" />
+    <Content Include="Content\images\folder_grey.png" />
+    <Content Include="Content\images\minus.gif" />
+    <Content Include="Content\images\plus.gif" />
+    <Content Include="Content\images\treeview-arrows.gif" />
+    <Content Include="Content\images\treeview-black-line.gif" />
+    <Content Include="Content\images\treeview-black.gif" />
+    <Content Include="Content\images\treeview-default-line.gif" />
+    <Content Include="Content\images\treeview-default.gif" />
+    <Content Include="Content\images\treeview-famfamfam-line.gif" />
+    <Content Include="Content\images\treeview-famfamfam.gif" />
+    <Content Include="Content\images\treeview-gray-line.gif" />
+    <Content Include="Content\images\treeview-gray.gif" />
+    <Content Include="Content\images\treeview-red-line.gif" />
+    <Content Include="Content\images\treeview-red.gif" />
+    <Content Include="Content\img\archive\no_preview.png" />
+    <Content Include="Content\img\archive\no_preview_doc.png" />
+    <Content Include="Content\img\archive\no_preview_txt.png" />
+    <Content Include="Content\img\archive\no_preview_xls.png" />
+    <Content Include="Content\img\archive\no_preview_xml.png" />
+    <Content Include="Content\img\arrows.png" />
+    <Content Include="Content\img\background.jpg" />
+    <Content Include="Content\img\bg\arrow-orange-bottom.png" />
+    <Content Include="Content\img\bg\arrow-white-bottom.png" />
+    <Content Include="Content\img\bg\arrow-grey-bottom.png" />
+    <Content Include="Content\img\bg\arrow-orange-right.png" />
+    <Content Include="Content\img\bg\arrow-white-right.png" />
+    <Content Include="Content\img\bg\bg-top-layer.png" />
+    <Content Include="Content\img\bg\bg.jpg" />
+    <Content Include="Content\img\bg\content-bg.png" />
+    <Content Include="Content\img\bg\content-button.png" />
+    <Content Include="Content\img\bg\content-headline.png" />
+    <Content Include="Content\img\bg\dropdown-big.png" />
+    <Content Include="Content\img\bg\line-gradient-bottom.png" />
+    <Content Include="Content\img\bg\line-gradient-top.png" />
+    <Content Include="Content\img\bg\line-top-drop-area.png" />
+    <Content Include="Content\img\bg\nav.png" />
+    <Content Include="Content\img\bg\panel.jpg" />
+    <Content Include="Content\img\bg\report-button-bg.png" />
+    <Content Include="Content\img\bg\search-bar-bg.png" />
+    <Content Include="Content\img\bg\select-reports-hover.png" />
+    <Content Include="Content\img\bg\select-reports.png" />
+    <Content Include="Content\img\bg\slide.png" />
+    <Content Include="Content\img\bg\start-login.png" />
+    <Content Include="Content\img\bg\start-middle-input.png" />
+    <Content Include="Content\img\bg\start-middle-submit.png" />
+    <Content Include="Content\img\bg\start-middle.png" />
+    <Content Include="Content\img\bg\tab-background-180.png" />
+    <Content Include="Content\img\bg\tab-background.png" />
+    <Content Include="Content\img\bg\tooltip-bg.png" />
+    <Content Include="Content\img\bg\top-account.png" />
+    <Content Include="Content\img\bg\top-nav-line.png" />
+    <Content Include="Content\img\bg\view-active.png" />
+    <Content Include="Content\img\big-dialog\bg-bottom.png" />
+    <Content Include="Content\img\big-dialog\bg-middle.png" />
+    <Content Include="Content\img\big-dialog\bg-top.png" />
+    <Content Include="Content\img\big-dialog\button-left.png" />
+    <Content Include="Content\img\big-dialog\button-middle.png" />
+    <Content Include="Content\img\big-dialog\button-right.png" />
+    <Content Include="Content\img\buttons\button-bg.png" />
+    <Content Include="Content\img\buttons\button-book-hover.png" />
+    <Content Include="Content\img\buttons\button-book-inactive.png" />
+    <Content Include="Content\img\buttons\button-book.png" />
+    <Content Include="Content\img\buttons\button-check.png" />
+    <Content Include="Content\img\buttons\button-close-hover.png" />
+    <Content Include="Content\img\buttons\button-close.png" />
+    <Content Include="Content\img\buttons\button-drag-and-drop.png" />
+    <Content Include="Content\img\buttons\button-sort-ascending-hover.png" />
+    <Content Include="Content\img\buttons\button-sort-ascending.png" />
+    <Content Include="Content\img\buttons\button-sort-descending-hover.png" />
+    <Content Include="Content\img\buttons\button-sort-descending.png" />
+    <Content Include="Content\img\buttons\button-sort-hover.png" />
+    <Content Include="Content\img\buttons\button-sort.png" />
+    <Content Include="Content\img\buttons\button-uncheck.png" />
+    <Content Include="Content\img\buttons\checkbox-checked.png" />
+    <Content Include="Content\img\buttons\checkbox-unchecked.png" />
+    <Content Include="Content\img\buttons\delete.png" />
+    <Content Include="Content\img\buttons\minus.png" />
+    <Content Include="Content\img\buttons\plus.png" />
+    <Content Include="Content\img\buttons\top-icons.png" />
+    <Content Include="Content\img\buttons\top-language.png" />
+    <Content Include="Content\img\buttons\viewbox_book_white.png" />
+    <Content Include="Content\img\buttons\vollbild-hover.png" />
+    <Content Include="Content\img\buttons\vollbild.png" />
+    <Content Include="Content\img\buttons\vollbild_20x20.png" />
+    <Content Include="Content\img\buttons\vollbild_20x20_hover.png" />
+    <Content Include="Content\img\buttons\vollbild_23x21.png" />
+    <Content Include="Content\img\buttons\vollbild_23x21_hover.png" />
+    <Content Include="Content\img\clicknclick\arrow-right.png" />
+    <Content Include="Content\img\clicknclick\clicknclick-arrow.png" />
+    <Content Include="Content\img\clicknclick\clicknclick-left.png" />
+    <Content Include="Content\img\clicknclick\clicknclick-middle.png" />
+    <Content Include="Content\img\clicknclick\clicknclick-right.png" />
+    <Content Include="Content\img\clicknclick\cnc_close.png" />
+    <Content Include="Content\img\clicknclick\cnc_head.png" />
+    <Content Include="Content\img\clicknclick\cnc_popup_triangle.png" />
+    <Content Include="Content\img\controlcenter\achtung.png" />
+    <Content Include="Content\img\controlcenter\check.png" />
+    <Content Include="Content\img\controlcenter\delete.png" />
+    <Content Include="Content\img\controlcenter\hover-achtung.png" />
+    <Content Include="Content\img\controlcenter\hover-check.png" />
+    <Content Include="Content\img\controlcenter\hover-delete.png" />
+    <Content Include="Content\img\controlcenter\hover-play.png" />
+    <Content Include="Content\img\controlcenter\play.png" />
+    <Content Include="Content\img\download_icon.png" />
+    <Content Include="Content\img\dropdown\arrow-layer-down-black.png" />
+    <Content Include="Content\img\dropdown\arrow-layer.png" />
+    <Content Include="Content\img\dropdown\grey-arrow-layer.png" />
+    <Content Include="Content\img\excel-filter\ewr074.png" />
+    <Content Include="Content\img\excel-filter\ewr095.png" />
+    <Content Include="Content\img\excel-filter\ewr096.png" />
+    <Content Include="Content\img\flags\es.png" />
+    <Content Include="Content\img\flags\fr.png" />
+    <Content Include="Content\img\gif-load.gif" />
+    <Content Include="Content\img\icon-sprite-achtung.png" />
+    <Content Include="Content\img\icon-sprite-check.png" />
+    <Content Include="Content\img\icon-sprite-delete.png" />
+    <Content Include="Content\img\icon-sprite-play.png" />
+    <Content Include="Content\img\icons\backhistory.png" />
+    <Content Include="Content\img\icons\calculate-inactive.png" />
+    <Content Include="Content\img\icons\calculate.png" />
+    <Content Include="Content\img\icons\close.jpg" />
+    <Content Include="Content\img\content-li.gif" />
+    <Content Include="Content\img\controlcenter\ajax-loader.gif" />
+    <Content Include="Content\img\controlcenter\arrow-left.png" />
+    <Content Include="Content\img\controlcenter\arrow-right.png" />
+    <Content Include="Content\img\controlcenter\icon-data.png" />
+    <Content Include="Content\img\controlcenter\icon-time.png" />
+    <Content Include="Content\img\controlcenter\li-data.gif" />
+    <Content Include="Content\img\controlcenter\loading.gif" />
+    <Content Include="Content\img\controlcenter\prgogress.jpg" />
+    <Content Include="Content\img\controlcenter\progrress-bg.png" />
+    <Content Include="Content\img\controlcenter\progrress.png" />
+    <Content Include="Content\img\DeleteReport16.png" />
+    <Content Include="Content\img\disk.png" />
+    <Content Include="Content\img\dragdrop\bg.png" />
+    <Content Include="Content\img\dropdown\dropdown-bc.png" />
+    <Content Include="Content\img\dropdown\dropdown-bl.png" />
+    <Content Include="Content\img\dropdown\dropdown-br.png" />
+    <Content Include="Content\img\dropdown\dropdown-ml.png" />
+    <Content Include="Content\img\dropdown\dropdown-mr.png" />
+    <Content Include="Content\img\dropdown\dropdown-pin.png" />
+    <Content Include="Content\img\dropdown\dropdown-tc.png" />
+    <Content Include="Content\img\dropdown\dropdown-tl.png" />
+    <Content Include="Content\img\dropdown\dropdown-tr.png" />
+    <Content Include="Content\img\dropdown\filter-dropdown.png" />
+    <Content Include="Content\img\dropdown\white-bc.png" />
+    <Content Include="Content\img\dropdown\white-bl.png" />
+    <Content Include="Content\img\dropdown\white-br.png" />
+    <Content Include="Content\img\dropdown\white-ml.png" />
+    <Content Include="Content\img\dropdown\white-mr.png" />
+    <Content Include="Content\img\dropdown\white-tc.png" />
+    <Content Include="Content\img\dropdown\white-tl.png" />
+    <Content Include="Content\img\dropdown\white-tr.png" />
+    <Content Include="Content\img\ext-border\ext-border-bc.png" />
+    <Content Include="Content\img\ext-border\ext-border-bl.png" />
+    <Content Include="Content\img\ext-border\ext-border-br.png" />
+    <Content Include="Content\img\ext-border\ext-border-tc.png" />
+    <Content Include="Content\img\ext-border\ext-border-tl.png" />
+    <Content Include="Content\img\ext-border\ext-border-tr.png" />
+    <Content Include="Content\img\find-button.png" />
+    <Content Include="Content\img\flags\de.png" />
+    <Content Include="Content\img\flags\en.png" />
+    <Content Include="Content\img\glyphs\add-hover.png" />
+    <Content Include="Content\img\glyphs\add.png" />
+    <Content Include="Content\img\glyphs\checkbox-off.png" />
+    <Content Include="Content\img\glyphs\checkbox.png" />
+    <Content Include="Content\img\glyphs\dropdown-blue.png" />
+    <Content Include="Content\img\glyphs\dropdown-grey.png" />
+    <Content Include="Content\img\glyphs\dropdown.png" />
+    <Content Include="Content\img\header\divider.png" />
+    <Content Include="Content\img\header\editpen.png" />
+    <Content Include="Content\img\header\header-login-center.png" />
+    <Content Include="Content\img\header\header-login-left.png" />
+    <Content Include="Content\img\header\header-login-right.png" />
+    <Content Include="Content\img\header\header-select-center.png" />
+    <Content Include="Content\img\header\header-select-left.png" />
+    <Content Include="Content\img\header\header-select-right.png" />
+    <Content Include="Content\img\header\header-top-shadow.png" />
+    <Content Include="Content\img\header\header-top.png" />
+    <Content Include="Content\img\header\help.png" />
+    <Content Include="Content\img\header\home.png" />
+    <Content Include="Content\img\header\lang-dropdown.png" />
+    <Content Include="Content\img\header\logout.png" />
+    <Content Include="Content\img\header\msg.png" />
+    <Content Include="Content\img\header\search.png" />
+    <Content Include="Content\img\help.png" />
+    <Content Include="Content\img\icons\ajax-loader.gif" />
+    <Content Include="Content\img\icons\Apply16.png" />
+    <Content Include="Content\img\icons\arrow-down-black.png" />
+    <Content Include="Content\img\icons\arrow-nav.gif" />
+    <Content Include="Content\img\icons\arrow-nav2.png" />
+    <Content Include="Content\img\icons\arrow-top.gif" />
+    <Content Include="Content\img\icons\arrow.gif" />
+    <Content Include="Content\img\icons\back-inactive.png" />
+    <Content Include="Content\img\icons\back.png" />
+    <Content Include="Content\img\icons\bg-message-user-left.png" />
+    <Content Include="Content\img\icons\bg-message-user-right.png" />
+    <Content Include="Content\img\icons\bg-message-user.png" />
+    <Content Include="Content\img\icons\bg-notizzettel.png" />
+    <Content Include="Content\img\icons\blauverlauf.png" />
+    <Content Include="Content\img\icons\bullets.png" />
+    <Content Include="Content\img\icons\button-blue-hover.png" />
+    <Content Include="Content\img\icons\button-blue.png" />
+    <Content Include="Content\img\icons\clipboard.png" />
+    <Content Include="Content\img\icons\collapse.png" />
+    <Content Include="Content\img\icons\compress.png" />
+    <Content Include="Content\img\icons\csv.png" />
+    <Content Include="Content\img\icons\datepick.png" />
+    <Content Include="Content\img\icons\datepicker.png" />
+    <Content Include="Content\img\icons\download.png" />
+    <Content Include="Content\img\icons\duplicate.png" />
+    <Content Include="Content\img\icons\edit-icon.png" />
+    <Content Include="Content\img\icons\Error16.png" />
+    <Content Include="Content\img\icons\execute-report.png" />
+    <Content Include="Content\img\icons\expand.png" />
+    <Content Include="Content\img\icons\extended-info-hover.png" />
+    <Content Include="Content\img\icons\extended-info.png" />
+    <Content Include="Content\img\icons\extract.png" />
+    <Content Include="Content\img\icons\eye-off.png" />
+    <Content Include="Content\img\icons\eye.png" />
+    <Content Include="Content\img\icons\eye16.png" />
+    <Content Include="Content\img\icons\file-pdf.png" />
+    <Content Include="Content\img\icons\filter-hover.gif" />
+    <Content Include="Content\img\icons\filter-off.gif" />
+    <Content Include="Content\img\icons\filter-on.gif" />
+    <Content Include="Content\img\icons\first-inactive.png" />
+    <Content Include="Content\img\icons\first.png" />
+    <Content Include="Content\img\icons\glass.png" />
+    <Content Include="Content\img\icons\icon-plus-hover.png" />
+    <Content Include="Content\img\icons\icon-plus.png" />
+    <Content Include="Content\img\icons\icon-stift.png" />
+    <Content Include="Content\img\icons\icon-warning.png" />
+    <Content Include="Content\img\icons\Info2.png" />
+    <Content Include="Content\img\icons\key.png" />
+    <Content Include="Content\img\icons\new-contentbutton-hover.png" />
+    <Content Include="Content\img\icons\new-contentbutton.png" />
+    <Content Include="Content\img\icons\optimization_icon.png" />
+    <Content Include="Content\img\icons\pdf-file.png" />
+    <Content Include="Content\img\icons\last-inactive.png" />
+    <Content Include="Content\img\icons\last.png" />
+    <Content Include="Content\img\icons\mail.png" />
+    <Content Include="Content\img\icons\next-inactive.png" />
+    <Content Include="Content\img\icons\next.png" />
+    <Content Include="Content\img\icons\pdf.png" />
+    <Content Include="Content\img\icons\remove-icon.png" />
+    <Content Include="Content\img\icons\search-bg.png" />
+    <Content Include="Content\img\icons\search.png" />
+    <Content Include="Content\img\icons\sort-hover.png" />
+    <Content Include="Content\img\icons\sort-off.png" />
+    <Content Include="Content\img\icons\sort-on.png" />
+    <Content Include="Content\img\icons\sort-on2.png" />
+    <Content Include="Content\img\icons\struktur_close.png" />
+    <Content Include="Content\img\icons\struktur_open.png" />
+    <Content Include="Content\img\icons\sum.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\img\icons\table-connect-1.png" />
+    <Content Include="Content\img\icons\table-connect-2.png" />
+    <Content Include="Content\img\icons\table-connect-3.png" />
+    <Content Include="Content\img\icons\table-connect-4.png" />
+    <Content Include="Content\img\icons\table-connect-5.png" />
+    <Content Include="Content\img\icons\top-arrow-bottom.png" />
+    <Content Include="Content\img\icons\top-help.gif" />
+    <Content Include="Content\img\icons\top-help.png" />
+    <Content Include="Content\img\icons\top-home.gif" />
+    <Content Include="Content\img\icons\top-home.png" />
+    <Content Include="Content\img\icons\top-language-english.png" />
+    <Content Include="Content\img\icons\top-language-german.png" />
+    <Content Include="Content\img\icons\top-logout.gif" />
+    <Content Include="Content\img\icons\top-logout.png" />
+    <Content Include="Content\img\icons\top-mail.gif" />
+    <Content Include="Content\img\icons\top-mail.png" />
+    <Content Include="Content\img\icons\view-icon.png" />
+    <Content Include="Content\img\icons\view.png" />
+    <Content Include="Content\img\icons\visibility_icon.png" />
+    <Content Include="Content\img\icons\voucher.bmp" />
+    <Content Include="Content\img\icons\Warning16.png" />
+    <Content Include="Content\img\immediate-filter\close.png" />
+    <Content Include="Content\img\immediate-filter\open.png" />
+    <Content Include="Content\img\layer-handle-ext.png" />
+    <Content Include="Content\img\loadera16.gif" />
+    <Content Include="Content\img\loadera64.gif" />
+    <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\login\button-login.png" />
+    <Content Include="Content\img\login\form-checkbox.png" />
+    <Content Include="Content\img\login\form-input.png" />
+    <Content Include="Content\img\login\login-inner.de.jpg" />
+    <Content Include="Content\img\login\login-inner.jpg" />
+    <Content Include="Content\img\login\login.png" />
+    <Content Include="Content\img\message\0.png" />
+    <Content Include="Content\img\message\100.png" />
+    <Content Include="Content\img\message\bg-bottom.png" />
+    <Content Include="Content\img\message\bg-middle.png" />
+    <Content Include="Content\img\message\bg-top.png" />
+    <Content Include="Content\img\message\bg.png" />
+    <Content Include="Content\img\message\button-left.png" />
+    <Content Include="Content\img\message\button-middle.png" />
+    <Content Include="Content\img\message\button-right.png" />
+    <Content Include="Content\img\message\download_icon.png" />
+    <Content Include="Content\img\message\icon_info.png" />
+    <Content Include="Content\img\message\icon_mail.png" />
+    <Content Include="Content\img\message\icon_warning.png" />
+    <Content Include="Content\img\message\startup.png" />
+    <Content Include="Content\img\navbar\cases.png" />
+    <Content Include="Content\img\navbar\controlcenter.png" />
+    <Content Include="Content\img\navbar\controlcenter_hover.png" />
+    <Content Include="Content\img\navbar\docs.png" />
+    <Content Include="Content\img\navbar\export.png" />
+    <Content Include="Content\img\navbar\nav-bar.png" />
+    <Content Include="Content\img\navbar\nav-hover.png" />
+    <Content Include="Content\img\navbar\navbar-controlcenter.png" />
+    <Content Include="Content\img\navbar\navbar.png" />
+    <Content Include="Content\img\navbar\selected.png" />
+    <Content Include="Content\img\navbar\settings.png" />
+    <Content Include="Content\img\navbar\tables.png" />
+    <Content Include="Content\img\navbar\views.png" />
+    <Content Include="Content\img\notepad\bg-notizzettel.png" />
+    <Content Include="Content\img\notepad\blauverlauf-hover.png" />
+    <Content Include="Content\img\notepad\blauverlauf.png" />
+    <Content Include="Content\img\notepad\icon-plus-hover.png" />
+    <Content Include="Content\img\notepad\icon-plus.png" />
+    <Content Include="Content\img\notepad\icon-stift.png" />
+    <Content Include="Content\img\notepad\new-contentbutton-hover.png" />
+    <Content Include="Content\img\notepad\new-contentbutton.png" />
+    <Content Include="Content\img\notification\bottom.png" />
+    <Content Include="Content\img\notification\count_left.png" />
+    <Content Include="Content\img\notification\count_middle.png" />
+    <Content Include="Content\img\notification\count_right.png" />
+    <Content Include="Content\img\notification\head.png" />
+    <Content Include="Content\img\notification\head1.png" />
+    <Content Include="Content\img\notification\middle.png" />
+    <Content Include="Content\img\notification\notification.png" />
+    <Content Include="Content\img\notification\notification_hover.png" />
+    <Content Include="Content\img\objects\background.png" />
+    <Content Include="Content\img\objects\header-background.png" />
+    <Content Include="Content\img\objects\search.png" />
+    <Content Include="Content\img\ok-button.png" />
+    <Content Include="Content\img\overview\arrow_parameter.png" />
+    <Content Include="Content\img\overview\arrow_tab_top.png" />
+    <Content Include="Content\img\overview\eye.png" />
+    <Content Include="Content\img\pdf\arrow.png" />
+    <Content Include="Content\img\pdf\viewbox-legacy-small-logo.png" />
+    <Content Include="Content\img\pdf\viewbox-logo.png" />
+    <Content Include="Content\img\search\left-off.png" />
+    <Content Include="Content\img\search\left-on.png" />
+    <Content Include="Content\img\search\middle-off.png" />
+    <Content Include="Content\img\search\middle-on.png" />
+    <Content Include="Content\img\search\right-off.png" />
+    <Content Include="Content\img\search\right-on.png" />
+    <Content Include="Content\img\spacer.png" />
+    <Content Include="Content\img\startscreens\old pics\1.png" />
+    <Content Include="Content\img\startscreens\old pics\2.png" />
+    <Content Include="Content\img\startscreens\old pics\3.png" />
+    <Content Include="Content\img\startscreens\old pics\4.png" />
+    <Content Include="Content\img\startscreens\sliderpic1.png" />
+    <Content Include="Content\img\startscreens\wagner_login.png" />
+    <Content Include="Content\img\tableview\sort-asc.gif" />
+    <Content Include="Content\img\tableview\sort-desc.gif" />
+    <Content Include="Content\img\tableview\table-footer.png" />
+    <Content Include="Content\img\tableview\table-header-green.png" />
+    <Content Include="Content\img\tableview\table-header.png" />
+    <Content Include="Content\img\tableview\table-nav.png" />
+    <Content Include="Content\img\tableview\table-rows-icon.png" />
+    <Content Include="Content\img\tableview\table_filter_icon.png" />
+    <Content Include="Content\img\tableview\table_filter_icon_1.png" />
+    <Content Include="Content\img\tableview\table_filter_icon_2.png" />
+    <Content Include="Content\img\tableview\tdropdown.gif" />
+    <Content Include="Content\img\tabs\shadow-right.png" />
+    <Content Include="Content\img\tabs\tab-background.png" />
+    <Content Include="Content\img\treeview\toggle-collapse-dark.png" />
+    <Content Include="Content\img\treeview\toggle-collapse-light.png" />
+    <Content Include="Content\img\treeview\toggle-expand-dark.png" />
+    <Content Include="Content\img\treeview\toggle-expand-light.png" />
+    <Content Include="Content\img\viewoptions-enlarged\bottom.png" />
+    <Content Include="Content\img\viewoptions-enlarged\bottom1.png" />
+    <Content Include="Content\img\viewoptions-enlarged\middle.png" />
+    <Content Include="Content\img\viewoptions-enlarged\middle1.png" />
+    <Content Include="Content\img\viewoptions-enlarged\top.png" />
+    <Content Include="Content\img\viewoptions-enlarged\top1.png" />
+    <Content Include="Content\jquery-jstree\themes\default\32px.png" />
+    <Content Include="Content\jquery-jstree\themes\default\40px.png" />
+    <Content Include="Content\jquery-jstree\themes\default\d.gif" />
+    <Content Include="Content\jquery-jstree\themes\default\d.png" />
+    <Content Include="Content\jquery-jstree\themes\default\style.css" />
+    <Content Include="Content\jquery-jstree\themes\default\style.min.css" />
+    <Content Include="Content\jquery-jstree\themes\default\throbber.gif" />
+    <Content Include="Content\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\jquery-ui\images\ui-bg_highlight-hard_35_f8b42d_1x100.png" />
+    <Content Include="Content\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui\jquery-ui.css" />
+    <Content Include="Content\Filter.css" />
+    <Content Include="Content\jquery-ui\jquery-ui.min.css" />
+    <Content Include="Content\jquery.treeview.css" />
+    <Content Include="Content\nivo-slider.css" />
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\slider.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\Help.css" />
+    <Content Include="Content\viewbox.css" />
+    <Content Include="Content\ViewOptions.css" />
+    <Content Include="Global.asax" />
+    <Content Include="gsdll32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="gsdll64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PdfExporter.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="password.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="app.config" />
+    <None Include="Resources\AlsoLogo.jpg" />
+    <None Include="Resources\AteaLogo.jpg" />
+    <None Include="Resources\logo.png" />
+    <Content Include="Scripts\colResizable-1.3.med.js" />
+    <Content Include="Scripts\colResizable-1.3.min.js" />
+    <Content Include="Scripts\colResizable-1.3.source.modded.js" />
+    <Content Include="Scripts\Converter.js" />
+    <Content Include="Scripts\DataGrid.js" />
+    <Content Include="Scripts\ExportCenter.js" />
+    <Content Include="Scripts\FileSystem.js" />
+    <Content Include="Scripts\Filter.js" />
+    <Content Include="Scripts\flexigrid.js" />
+    <Content Include="Scripts\history.js" />
+    <Content Include="Scripts\images\ajax-loader.gif" />
+    <Content Include="Scripts\images\file.gif" />
+    <Content Include="Scripts\images\folder-closed.gif" />
+    <Content Include="Scripts\images\folder.gif" />
+    <Content Include="Scripts\images\minus.gif" />
+    <Content Include="Scripts\images\plus.gif" />
+    <Content Include="Scripts\images\treeview-black-line.gif" />
+    <Content Include="Scripts\images\treeview-black.gif" />
+    <Content Include="Scripts\images\treeview-default-line.gif" />
+    <Content Include="Scripts\images\treeview-default.gif" />
+    <Content Include="Scripts\images\treeview-famfamfam-line.gif" />
+    <Content Include="Scripts\images\treeview-famfamfam.gif" />
+    <Content Include="Scripts\images\treeview-gray-line.gif" />
+    <Content Include="Scripts\images\treeview-gray.gif" />
+    <Content Include="Scripts\images\treeview-red-line.gif" />
+    <Content Include="Scripts\images\treeview-red.gif" />
+    <Content Include="Scripts\jquery-1.5-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.js" />
+    <Content Include="Scripts\jquery-1.5.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-i18n.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.chili-2.2.js" />
+    <Content Include="Scripts\jquery.cyclic-fade.js" />
+    <Content Include="Scripts\jquery.dragtable.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.form.min.js" />
+    <Content Include="Scripts\jquery.json-2.2.min.js" />
+    <Content Include="Scripts\jquery.jstree.js" />
+    <Content Include="Scripts\jquery.nivo.slider.pack.js" />
+    <Content Include="Scripts\jquery.treeTable.js" />
+    <Content Include="Scripts\jquery.treeTable.min.js" />
+    <Content Include="Scripts\ControlCenter.js" />
+    <Content Include="Scripts\jquery.treeview.async.js" />
+    <Content Include="Scripts\jquery.treeview.css" />
+    <Content Include="Scripts\jquery.treeview.edit.js" />
+    <Content Include="Scripts\jquery.treeview.js" />
+    <Content Include="Scripts\jquery.treeview.sortable.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\jquery.ui.draggable.js" />
+    <Content Include="Scripts\jquery.ui.mouse.js" />
+    <Content Include="Scripts\jquery.ui.sortable.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\jquery.zoom.js" />
+    <Content Include="Scripts\jstree.min.js" />
+    <Content Include="Scripts\LotusNotes.js" />
+    <Content Include="Scripts\numberSeparator.js" />
+    <Content Include="Scripts\lib\jquery.js" />
+    <Content Include="Scripts\ListControls.js" />
+    <Content Include="Scripts\Notepad.js" />
+    <Content Include="Scripts\Other.js" />
+    <Content Include="Scripts\Search.js" />
+    <Content Include="Scripts\slide.js" />
+    <Content Include="Scripts\Sum.js" />
+    <Content Include="Scripts\Viewbox.js" />
+    <Content Include="Scripts\Tooltip.js" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\DataGrid\_RelationPartialNew.cshtml" />
+    <Content Include="Views\Documents\_DocumentsPartialNew.cshtml" />
+    <Content Include="Views\Documents\_DocumentsListPartialNew.cshtml" />
+    <Content Include="Views\Documents\IndexNew.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\UserManagement\_ADImportPartial.cshtml" />
+    <Content Include="Views\UserManagement\_ADUserListPartial.cshtml" />
+    <Content Include="Views\Shared\CustomError.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\_ExcelLikeFilterContent.cshtml" />
+    <Content Include="Views\ArchiveDocuments\_ArchiveDocumentsListPartial.cshtml" />
+    <Content Include="Views\ArchiveDocuments\_ArchiveDocumentsPartial.cshtml" />
+    <Content Include="Views\ArchiveDocuments\Index.cshtml" />
+    <Content Include="Views\DataGrid\_DcwBalanceViewPartial.cshtml" />
+    <Content Include="Views\IssueList\_TableCrud.cshtml" />
+    <Content Include="Views\IssueList\_TableCrudOuter.cshtml" />
+    <Content Include="Views\DataGrid\_NavigationControlsPartial.cshtml" />
+    <Content Include="Views\Documents\_NavigationControlsPartial.cshtml" />
+    <Content Include="Views\Documents\_NavigationControlsPartialNew.cshtml" />
+    <Content Include="Views\Shared\_SummaPartial.cshtml" />
+    <Content Include="Views\Settings\_InformationPartial.cshtml" />
+    <Content Include="Views\Settings\_LogOutUsersPartial.cshtml" />
+    <Content Include="Views\ControlCenter\Index.cshtml" />
+    <Content Include="Views\ControlCenter\_ActionPartial.cshtml" />
+    <Content Include="Views\ControlCenter\_ControlCenterPartial.cshtml" />
+    <Content Include="Views\ControlCenter\_JobListPartial.cshtml" />
+    <Content Include="Views\ControlCenter\_NewLogActionPartial.cshtml" />
+    <Content Include="Views\DataGrid\_DynamicClickAndClickDialogPartial.cshtml" />
+    <Content Include="Views\DataGrid\_GUVViewPartial.cshtml" />
+    <Content Include="Views\DataGrid\_UniversalStructurePartial.cshtml" />
+    <Content Include="Views\DataGrid\_UniversalStructureSecondPartial.cshtml" />
+    <Content Include="Views\Documents\_DocumentOverviewAttachmentsDownloadPartial.cshtml" />
+    <Content Include="Views\Documents\_DocumentsOverviewPartial.cshtml" />
+    <Content Include="Views\Error\ForcedToQuit.cshtml" />
+    <Content Include="Views\Error\Maintenance.cshtml" />
+    <Content Include="Views\Error\MySqlAutoConfig.cshtml" />
+    <Content Include="Views\Error\NoRightForOpt.cshtml" />
+    <Content Include="Views\Error\NoRightsForContent.cshtml" />
+    <Content Include="Views\Error\NotEnoughFreeSpaceInformation.cshtml" />
+    <Content Include="Views\Error\RoleChangedQuit.cshtml" />
+    <Content Include="Views\Error\UpdateMode.cshtml" />
+    <Content Include="Views\Error\UserAlreadyLoggedIn.cshtml" />
+    <Content Include="Views\LotusNotes\EmailDetails.cshtml" />
+    <Content Include="Views\LotusNotes\Index.cshtml" />
+    <Content Include="Views\LotusNotes\_EmailDetailsPartial.cshtml" />
+    <Content Include="Views\LotusNotes\_LotusChildrenPartial.cshtml" />
+    <Content Include="Views\LotusNotes\_LotusDataGrid.cshtml" />
+    <Content Include="Views\FileSystem\Index.cshtml" />
+    <Content Include="Views\FileSystem\_DirectoriesPartial.cshtml" />
+    <Content Include="Views\FileSystem\_FilesPartial.cshtml" />
+    <Content Include="Views\FileSystem\_FileSystemPartial.cshtml" />
+    <Content Include="Views\Settings\_LoginUser.cshtml" />
+    <Content Include="Views\Settings\_LogReadPartial.cshtml" />
+    <Content Include="Views\Settings\_ModifyStartScreenPartial.cshtml" />
+    <Content Include="Views\Settings\_OptimizationChildrenPartial.cshtml" />
+    <Content Include="Views\Settings\_RoleSettingsPartial.cshtml" />
+    <Content Include="Views\Settings\_RoleTreePartial.cshtml" />
+    <Content Include="Views\Shared\_DialogParameterLogicText.cshtml" />
+    <Content Include="Views\Shared\_DownloadPartial.cshtml" />
+    <Content Include="Views\Shared\_HtmlDisplayPartial.cshtml" />
+    <Content Include="Views\Shared\_MultipleOptimizationPartial.cshtml" />
+    <Content Include="Views\Shared\_RoleBasedVisibility.cshtml" />
+    <Content Include="Views\Shared\_SearchPartial.cshtml" />
+    <Content Include="Views\Shared\_SubtotalPartial.cshtml" />
+    <Content Include="Views\Shared\_TableListPartial.cshtml" />
+    <Content Include="Views\Shared\_WertehilfePartial.cshtml" />
+    <Content Include="Views\Shared\ViewPage1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_BoxHeaderPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Documentation\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Export\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\IssueList\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Settings\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TableList\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DataGrid\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ViewList\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.de.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.it.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\LogHelper\LogHelper\AV.Log.LogHelper.csproj">
+      <Project>{1AFE5981-7268-4249-AFFA-77E42495886E}</Project>
+      <Name>AV.Log.LogHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\PdfGenerator\PdfGenerator\PdfGenerator.csproj">
+      <Project>{0867E9E0-6D5D-4E8A-A42F-ED839B22707F}</Project>
+      <Name>PdfGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\OttoArchiveWeb\OttoArchiveWeb\OttoArchive.csproj">
+      <Project>{49FE3023-25E5-4B95-AB7C-198E5B2188F3}</Project>
+      <Name>OttoArchive</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\SystemDb\SystemDb.csproj">
+      <Project>{a7fa3a52-0ddd-456b-bf7a-ced14d0ae0df}</Project>
+      <Name>SystemDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\ViewboxDb\ViewboxDb.csproj">
+      <Project>{6E5FB80C-3B10-475B-ACF3-640D6D3399B0}</Project>
+      <Name>ViewboxDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\WebServiceInterfaces\WebServiceInterfaces.csproj">
+      <Project>{00C96297-B0CD-4769-A2FE-3A6F3AB55957}</Project>
+      <Name>WebServiceInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchiveWebService\ArchiveWebServiceInterface\ArchiveWebServiceInterface.csproj">
+      <Project>{EBD13E76-0CA0-4B01-ABFD-E8F1E4E2459B}</Project>
+      <Name>ArchiveWebServiceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{59A97A1A-8809-49E5-8236-59F5E62ED925}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewboxBusiness\ViewboxBusiness.csproj">
+      <Project>{D9D34C0A-C134-424D-8D99-7FD1B46DFA67}</Project>
+      <Name>ViewboxBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewBoxMdConverter\ViewboxMdConverter.csproj">
+      <Project>{BA29020A-B2A5-4987-91F8-AC281CD53533}</Project>
+      <Name>ViewboxMdConverter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-ui.min.js.map" />
+    <None Include="View Interface.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\Shared\_CategoryTabsPartial.cshtml" />
+    <Content Include="Views\Shared\_NavigationBarPartial.cshtml" />
+    <Content Include="Views\Shared\_SplitScreenPartial.cshtml" />
+    <Content Include="Views\DataGrid\_DataGridPartial.cshtml" />
+    <Content Include="Views\Documents\Index.cshtml" />
+    <Content Include="Views\Shared\_AppPagePartial.cshtml" />
+    <Content Include="Views\Export\_ExportCenterPartial.cshtml" />
+    <Content Include="Views\Documents\_DocumentsListPartial.cshtml" />
+    <Content Include="Views\Shared\_LayeredSplitScreenPartial.cshtml" />
+    <Content Include="Views\Shared\_JobsPartial.cshtml" />
+    <Content Include="Views\Account\_BoxHeaderPartial.cshtml" />
+    <Content Include="Views\Shared\_ViewOptionsPartial.cshtml" />
+    <Content Include="Views\Shared\_TableObjectsPartial.cshtml" />
+    <Content Include="Views\Documentation\_DocumentationPartial.cshtml" />
+    <Content Include="Views\Settings\_SettingsPartial.cshtml" />
+    <Content Include="Views\DataGrid\_TableFunctionsPartial.cshtml" />
+    <Content Include="Views\Documents\_DocumentsPartial.cshtml" />
+    <Content Include="Views\Shared\_ColumnListPartial.cshtml" />
+    <Content Include="Views\Shared\_TableObjectListPartial.cshtml" />
+    <Content Include="Views\Shared\_OperatorsPartial.cshtml" />
+    <Content Include="Views\Error\NotReady.cshtml" />
+    <Content Include="Views\Error\_BoxHeaderPartial.cshtml" />
+    <Content Include="Views\Shared\_TableObjectsOverviewListPartial.cshtml" />
+    <Content Include="Views\Export\_ExportJobsPartial.cshtml" />
+    <Content Include="Views\Shared\_DialogPartial.cshtml" />
+    <Content Include="Views\DataGrid\_BalanceViewPartial.cshtml" />
+    <Content Include="Views\DataGrid\SapBalance.cshtml" />
+    <Content Include="Views\UserManagement\Index.cshtml" />
+    <Content Include="Views\DataGrid\_DefaultPartial.cshtml" />
+    <Content Include="Views\UserManagement\_UserManagementPartial.cshtml" />
+    <Content Include="Views\Shared\_NotificationsPartial.cshtml" />
+    <Content Include="Views\Settings\_PropertiesPartial.cshtml" />
+    <Content Include="Views\Settings\_UserPartial.cshtml" />
+    <Content Include="Views\Settings\_RightsPartial.cshtml" />
+    <Content Include="Views\Shared\_OptimizationPartial.cshtml" />
+    <Content Include="Views\Error\WrongBrowser.cshtml" />
+    <Content Include="Views\Error\DeadUrl.cshtml" />
+    <Content Include="Views\Shared\_NotepadPartial.cshtml" />
+    <Content Include="Views\Shared\_TooltipPartial.cshtml" />
+    <Content Include="Views\Shared\_ExtendedDialogPartial.cshtml" />
+    <Content Include="Views\Shared\_ExtendedFilterPartial.cshtml" />
+    <Content Include="Views\Shared\_ExtendedSortPartial.cshtml" />
+    <Content Include="Views\DataGrid\_TableHeadPartial.cshtml" />
+    <Content Include="Views\Shared\_NotificationPartial.cshtml" />
+    <Content Include="Views\Shared\_CategoryTabsPartialNew.cshtml" />
+    <Content Include="Views\Shared\_TableObjectsPartialNew.cshtml" />
+    <Content Include="Views\Shared\_TableObjectsOverviewListPartialNew.cshtml" />
+    <Content Include="Views\Error\DatabaseOutOfDate.cshtml" />
+    <Content Include="Views\Error\UpgradeDatabase.cshtml" />
+    <Content Include="Views\DataGrid\_RelationPartial.cshtml" />
+    <Content Include="Views\Shared\_FilterPartial.cshtml" />
+    <Content Include="Views\Shared\_FilterSubTreePartial.cshtml" />
+    <Content Include="Views\Shared\_FilterOperatorsPartial.cshtml" />
+    <Content Include="Views\Shared\_LayoutError.cshtml" />
+    <Content Include="Views\DataGrid\_TableFilterPartial.cshtml" />
+    <Content Include="Views\Shared\_ResultListPartial.cshtml" />
+    <Content Include="Views\Shared\_ShowOneTableObjectOverviewPartial.cshtml" />
+    <Content Include="Views\Shared\_ShowOneTableObjectOverview.cshtml" />
+    <Content Include="Views\Shared\_ReportListPartial.cshtml" />
+    <Content Include="Views\Shared\_ReportListPopupPartial.cshtml" />
+    <Content Include="Views\Shared\_ReportPopupTabHeaderPartial.cshtml" />
+    <Content Include="Views\Shared\_ListArchiveOptionsPartial.cshtml" />
+    <Content Include="Views\Shared\_ListVisibleOptionsPartial.cshtml" />
+    <Content Include="Views\DataGrid\_TableIndexPartial.cshtml" />
+    <Content Include="Views\Settings\_AdminTasksPartial.cshtml" />
+    <Content Include="Views\Shared\_ReportListDistinctPopupPartial.cshtml" />
+    <Content Include="Views\ValueList\Index.cshtml" />
+    <Content Include="Views\Shared\_ValueListPartial.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Shared\_ReportParameterGroupPopup.cshtml" />
+    <Content Include="Views\Shared\_ImmediateFilterPartial.cshtml" />
+    <Content Include="Views\Shared\_ColumnValueListPartial.cshtml" />
+    <Content Include="Views\DataGrid\_ExtendedColumnInformation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DocumentFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Acrobat">
+      <Guid>{E64169B3-3592-47D2-816E-602C5C13F328}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(SolutionDir)..\..\..\VersionUpdater\VersionUpdater.exe" -a "$(SolutionDir)..\..\..\Assemblies\64Bit\External\Git\\" -r "$(SolutionDir)..\..\..\\" -o "$(ProjectDir)AssemblyInfo_temp.cs" -d "$(ProjectDir)Properties\AssemblyInfo.cs"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,30 @@
+﻿@model Viewbox.MySqlAutoConfigModel
+@{
+    ViewBag.Title = "MySQL Server Auto-configuration";
+}
+<div id="mySqlAutoConfig-dlg" class="hide">
+    @Html.Partial("_DialogPartial", Model.Dialog)
+</div>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        jQuery('#dialog').show().html(jQuery('#mySqlAutoConfig-dlg').remove().html()).addClass("NotEnoughFreeSpace");
+        jQuery('.NotEnoughFreeSpace .dialog-btn .text').click(function () {
+            var btnText = jQuery(this).html();
+            if (btnText === 'Yes') {
+                jQuery(".NotEnoughFreeSpace .dialog-text span").html("Please wait while configuration is running...");
+                jQuery(".NotEnoughFreeSpace .dialog-buttons").fadeOut(500);
+                jQuery.getJSON("/Error/UpdateMySqlConfig/", function (data) {
+                    jQuery(".NotEnoughFreeSpace .dialog-text span").html(data);
+                    jQuery("#dialog").fadeOut(1500, function () {
+                        window.location.replace("/Error/NotReady?cont=true");
+                    });
+                });
+            }
+            else {
+                jQuery('#dialog').fadeOut(500, function () {
+                    window.location.replace("/Error/NotReady?cont=true");
+                });
+            }
+        });
+    });
+</script>

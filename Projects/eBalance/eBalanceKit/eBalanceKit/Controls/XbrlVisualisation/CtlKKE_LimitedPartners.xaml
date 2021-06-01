@@ -1,0 +1,232 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.CtlKKE_LimitedPartners"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="530" d:DesignWidth="897"
+             xmlns:my="clr-namespace:eBalanceKit.Controls">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/DetailViews.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Style="{StaticResource FormulaBorder}">
+        <Grid Margin="5,0,5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border BorderBrush="{StaticResource FormulaHeaderTextForegroundBrush}" BorderThickness="0,0,0,1">
+                <TextBlock Text="Kapitalkontenentwicklung - beschränkt haftende Gesellschafter" Style="{StaticResource FormulaHeaderText}" />
+            </Border>
+
+            <Grid Grid.Row="1" Margin="0,8,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MaxWidth="600" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="*" MaxWidth="600" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*" />
+                    <RowDefinition Height="60*" />
+                </Grid.RowDefinitions>
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Text="Gesellschafter" Foreground="{StaticResource FormulaHeaderTextForegroundBrush}" FontStyle="Italic" />
+                    <Grid Grid.Row="1" DataContext="{Binding ValueTreeRoot.Values[de-gaap-ci_kke.limitedPartners]}" MinHeight="100">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <ListBox Grid.Row="0"
+                                    Name="lstLimitedPartners"
+                                    Background="{StaticResource ListBgBrush}"
+                                    ItemsSource="{Binding Path=Items}" 
+                                    SelectedItem="{Binding Path=SelectedItem}"
+                                    DisplayMemberPath = "Values[de-gaap-ci_kke.limitedPartners.name].DisplayString"/>
+
+                        <StackPanel Margin="0,3,0,3" Grid.Row="1" Orientation="Horizontal">
+
+                            <!-- new -->
+                            <Button Name="btnAddLimitedPartner" Click="btnAdd_Click" Margin="0" Style="{StaticResource ImageButtonStyle2}" Tag="kke.limitedPartners" IsEnabled="{Binding AddItemAllowed}">
+                                <StackPanel Orientation="Horizontal" Margin="2,1">
+                                    <Image Width="15" Source="/eBalanceKitResources;component/Resources/add.png" />
+                                    <TextBlock Text="Neu" Margin="2,0,0,0" FontSize="11" FontWeight="Bold" />
+                                </StackPanel>
+                            </Button>
+
+                            <!-- delete -->
+                            <Button Name="btnDeleteLimitedPartner" Click="btnDelete_Click" Margin="5,0,0,0" Tag="kke.limitedPartners">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ImageButtonStyle2}">
+                                        <Setter Property="IsEnabled" Value="True" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding DeleteItemAllowed}" Value="false">
+                                                <Setter Property="IsEnabled" Value="False" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding SelectedIndex,ElementName=lstLimitedPartners}" Value="-1">
+                                                <Setter Property="IsEnabled" Value="False" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <StackPanel Orientation="Horizontal" Margin="2,1">
+                                    <Image Width="15" Source="/eBalanceKitResources;component/Resources/delete.png" />
+                                    <TextBlock Text="Löschen" Margin="2,0,0,0" FontSize="11" FontWeight="Bold" />
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="1" DataContext="{Binding ElementName=lstLimitedPartners, Path=SelectedItem}">
+                    <Grid.Style>
+                        <Style TargetType="{x:Type Grid}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=SelectedIndex,ElementName=lstLimitedPartners}" Value="-1">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Border BorderBrush="{StaticResource FormulaHeaderTextForegroundBrush}" BorderThickness="0,0,0,0">
+                        <TextBlock Text="Detailangaben Gesellschafter" Foreground="{StaticResource FormulaHeaderTextForegroundBrush}" FontStyle="Italic" Margin="0,8,0,0" />
+                    </Border>
+                    <Border Grid.Row="1" Style="{StaticResource ListDetailBorder}">
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Border Padding="5">
+                                    <StackPanel>
+                                        <StackPanel x:Name="stackPanel1">
+                                            <!-- dynamically filled -->
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Grid.Row="1" Padding="5" Margin="0,2,0,0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Grid.Row="0" Text="Kapitalkontenarten" Foreground="{StaticResource FormulaHeaderTextForegroundBrush}" FontStyle="Italic" />
+                                        <Grid Grid.Row="1" MinHeight="100" DataContext="{Binding ElementName=lstLimitedPartners, Path=SelectedItem.Values[de-gaap-ci_kke.limitedPartners.sumEquityAccounts.kinds]}">
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <ListBox Background="{StaticResource ListBgBrush}"                                                         
+                                                     Grid.Row="0"
+                                                     Name="lstEquityAccounts"
+                                                     ItemsSource="{Binding Path=Items}" 
+                                                     SelectedItem="{Binding Path=SelectedItem}"
+                                                     DisplayMemberPath="Values[de-gaap-ci_kke.limitedPartners.sumEquityAccounts.kinds.name].DisplayString"/>
+
+                                            <StackPanel Margin="0,3,0,3" Grid.Row="1" Orientation="Horizontal">
+
+                                                <!-- new -->
+                                                <Button Name="btnAddEquityAccount" Click="btnAdd_Click" Margin="0" Style="{StaticResource ImageButtonStyle2}" IsEnabled="{Binding AddItemAllowed}">
+                                                    <StackPanel Orientation="Horizontal" Margin="2,1">
+                                                        <Image Width="15" Source="/eBalanceKitResources;component/Resources/add.png" />
+                                                        <TextBlock Text="Neu" Margin="2,0,0,0" FontSize="11" FontWeight="Bold" />
+                                                    </StackPanel>
+                                                </Button>
+                                                
+                                                <!-- delete -->
+                                                <Button Name="btnDeleteEquityAccount" Click="btnDelete_Click" Margin="5,0,0,0">
+                                                    <Button.Style>
+                                                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ImageButtonStyle2}">
+                                                            <Setter Property="IsEnabled" Value="True" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding DeleteItemAllowed}" Value="false">
+                                                                    <Setter Property="IsEnabled" Value="False" />
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding SelectedIndex,ElementName=lstEquityAccounts}" Value="-1">
+                                                                    <Setter Property="IsEnabled" Value="False" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Button.Style>
+                                                    <StackPanel Orientation="Horizontal" Margin="2,1">
+                                                        <Image Width="15" Source="/eBalanceKitResources;component/Resources/delete.png" />
+                                                        <TextBlock Text="Löschen" Margin="2,0,0,0" FontSize="11" FontWeight="Bold" />
+                                                    </StackPanel>
+                                                </Button>
+
+                                            </StackPanel>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+
+                            </Grid>
+                        </ScrollViewer>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Column="2" Grid.Row="1" DataContext="{Binding ElementName=lstEquityAccounts, Path=SelectedItem}">
+                    <Grid.Style>
+                        <Style TargetType="{x:Type Grid}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=SelectedIndex,ElementName=lstEquityAccounts}" Value="-1">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Border BorderBrush="{StaticResource FormulaHeaderTextForegroundBrush}" BorderThickness="0,0,0,0">
+                        <TextBlock Text="Detailangaben Kapitalkonto" Foreground="{StaticResource FormulaHeaderTextForegroundBrush}" FontStyle="Italic" Margin="0,8,0,0" />
+                    </Border>
+                    <Border Style="{StaticResource ListDetailBorder}" Grid.Row="1">
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" MaxWidth="500" />
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel x:Name="stackPanel2" >
+                                    <!-- dynamically filled -->
+                                </StackPanel>
+                            </Grid>
+                        </ScrollViewer>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+    
+
+</UserControl>

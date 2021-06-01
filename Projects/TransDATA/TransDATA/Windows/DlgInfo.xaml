@@ -1,0 +1,7 @@
+﻿<Window x:Class="TransDATA.Windows.DlgInfo" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:my="clr-namespace:TransDATA.Controls"
+        xmlns:loc="clr-namespace:Base.Localisation;assembly=Base" PreviewKeyDown="WindowPreviewKeyDown"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Title="{x:Static loc:ResourcesCommon.DlgInfoCaption}"
+        SizeToContent="WidthAndHeight" Loaded="WindowLoaded" Icon="/TransDATA;component/Resources/TransDATA.ico">
+  <my:CtlInfo x:Name="ctnInfo" />
+</Window>

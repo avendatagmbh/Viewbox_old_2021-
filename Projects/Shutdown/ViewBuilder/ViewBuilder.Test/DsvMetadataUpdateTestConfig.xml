@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ViewBuilderConfig>
+    <Name>DsvMetadataUpdateTestConfig</Name>
+    <Description></Description>
+    <ViewboxDb>viewbox_bes</ViewboxDb>
+    <MaxWorkerThreads>4</MaxWorkerThreads>
+	
+    <DatabaseConfig type="MySQL" 
+					host="localhost" 
+					user="root" 
+					password="avendata" 
+					port="3306" 
+					database="sap_wesslingen_020" />
+	
+    <MailConfig sendDailyReport="false" 
+				sendFinalReport="false" 
+				sendMailOnError="false" 
+				SendMailOnViewFinished="false" 
+				dailyReportIntervall="ReportOncePerDay" />
+	
+    <ScriptSource directory="Q:\Großprojekte" 
+				  includeSubDirectories="false" 
+				  mode="Directory" />
+	
+</ViewBuilderConfig>

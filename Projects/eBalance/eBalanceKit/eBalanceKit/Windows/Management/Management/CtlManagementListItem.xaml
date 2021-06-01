@@ -1,0 +1,49 @@
+<UserControl x:Class="eBalanceKit.Windows.Management.Management.CtlManagementListItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:Converter="clr-namespace:eBalanceKit.Windows.Management.Management.Converter"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:Converters="clr-namespace:AvdWpfControls.Converters;assembly=AvdWpfControls" mc:Ignorable="d" d:DesignHeight="60" d:DesignWidth="300">
+    
+    
+    <UserControl.Resources>
+        <Converter:ClassTypeToImageSourceConverter x:Key="ClassTypeToImageSourceConverter" />
+        <Converters:ObjectToTypeStringConverter x:Key="ObjectToTypeStringConverter"/>
+    </UserControl.Resources>
+    <AvdWpfControls:ClickableControl  MouseClick="ClickableControlMouseClick">
+        <Grid>
+            <Border Style="{StaticResource GroupBoxBorder}" />
+            <Border Padding="5" CornerRadius="0" BorderThickness="0,0,0,1" Margin="-2,0" ToolTip="Klicken um Element zu bearbeiten...">
+                <Border.Style>
+                    <Style TargetType="Border" BasedOn="{StaticResource GroupBoxBorder}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource TransparentOrangeGradientBrush}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="{Binding ., Converter={StaticResource ClassTypeToImageSourceConverter}}" Margin="0,0,5,0" VerticalAlignment="Center" Height="24" Width="24"/>
+
+                    <StackPanel VerticalAlignment="Center" Grid.Column="1" x:Name="mainPanel">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static Localisation:ResourcesCommon.Name}" />
+                            <TextBlock Text=": " />
+                            <TextBlock Text="{Binding Path=Name}" TextWrapping="Wrap" />
+                        </StackPanel>
+                        <TextBlock x:Name="txtComment" Text="{Binding Path=Comment}" Style="{StaticResource CommentTextBlock}" />                        
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </AvdWpfControls:ClickableControl>
+</UserControl>

@@ -1,0 +1,36 @@
+c:\temp>ViewboxMassTableArchivingTool.exe -a -i -d viewbox_zsv -f c:\temp\tables.csv -y system_name
+
+Applicaton start 1.0.0.0
+Start viewbox database initialization
+
+Server: localhost
+Database: viewbox_zsv
+User: root
+Password: avendata
+
+
+Viewbox database initialized
+Tables found: 12580
+Is SAP: True
+
+Read file: c:\temp\tables.csv
+Prepare table objects
+Table objects: 1
+
+Archive: sap_wesslingen_020.0sap_amdep
+Done
+
+Archive: sap_wesslingen_020.0sap_ammst
+Done
+
+Archive: sap_wesslingen_020.0sap_ampdp
+Done
+
+Archive: sap_wesslingen_020.0sap_amtrn
+Done
+
+Archive: sap_wesslingen_020.0sap_anea
+Done
+
+
+Application exit

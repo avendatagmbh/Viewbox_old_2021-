@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Management.ManagementAssistant.CtlSelection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ManagementAssistant="clr-namespace:eBalanceKit.Windows.Management.ManagementAssistant"
+             xmlns:Converters="clr-namespace:eBalanceKit.Windows.Management.ManagementAssistant.Converter"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Control.Resources>
+        <Converters:ObjectTypeDictContainsKeyToVisibilityConverter x:Key="ObjectTypeDictContainsKeyToVisibilityConverter"/>
+        <Converters:ObjectTypeDictContainsKeyToBoolConverter x:Key="ObjectTypeDictContainsKeyToBoolConverter"/>
+        <Converters:ObjectTypeDictContainsKeyToVisibilityConverter x:Key="ObjectTypeDictContainsKeyToVisibilityConverterInverted" Invert="True"/>
+        <Converters:ObjectTypeDictContainsKeyToBoolConverter x:Key="ObjectTypeDictContainsKeyToBoolConverterInverted" Invert="True"/>
+    </Control.Resources>
+    <Grid>
+        <StackPanel Grid.Row="1">
+            <Grid IsEnabled="{Binding AllowEdit[System]}">
+            <!--System-->
+                <ManagementAssistant:CtlSelectListboxEntry DataContext="{Binding Selection[System]}"/>
+            </Grid>
+            <Grid IsEnabled="{Binding AllowEdit[Company]}" Visibility="{Binding ShowObject[Company], Converter={StaticResource TrueToVisibilityConverter}}">
+            <!-- company -->
+            <ManagementAssistant:CtlSelectListboxEntry  DataContext="{Binding Selection[Company]}">
+                <!--<ManagementAssistant:CtlSelectListboxEntry.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding=""
+                        </Style.Triggers>
+                    </Style>
+                </ManagementAssistant:CtlSelectListboxEntry.Style>-->
+            </ManagementAssistant:CtlSelectListboxEntry>
+            </Grid>
+            <Grid IsEnabled="{Binding AllowEdit[FinancialYear]}" Visibility="{Binding ShowObject[FinancialYear], Converter={StaticResource TrueToVisibilityConverter}}">
+            <!-- financial year -->
+            <ManagementAssistant:CtlSelectListboxEntry  DataContext="{Binding Selection[FinancialYear]}"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

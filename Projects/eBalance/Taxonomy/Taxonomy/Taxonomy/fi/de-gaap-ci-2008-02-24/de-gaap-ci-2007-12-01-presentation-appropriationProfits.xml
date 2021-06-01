@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://www.xbrl.de/de/fr/gaap/ci/role/appropriationProfits" xlink:type="simple" xlink:href="de-gaap-ci-2007-12-01.xsd#role_appropriationProfits"/>
+  <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/appropriationProfits">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse" xlink:label="incomeUse"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss" xlink:label="incomeUse.gainLoss"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse" xlink:to="incomeUse.gainLoss" use="optional" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.netIncome" xlink:label="incomeUse.gainLoss.netIncome"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.netIncome" use="optional" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.retainedEarningsPrevYear" xlink:label="incomeUse.gainLoss.retainedEarningsPrevYear"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.retainedEarningsPrevYear" use="optional" order="2.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.accumLossPrevYear" xlink:label="incomeUse.gainLoss.accumLossPrevYear"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.accumLossPrevYear" use="optional" order="3.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.releaseCapReserves" xlink:label="incomeUse.gainLoss.releaseCapReserves"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releaseCapReserves" use="optional" order="4.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.releaseRevenReserves" xlink:label="incomeUse.gainLoss.releaseRevenReserves"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releaseRevenReserves" use="optional" order="5.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.releaseRevenReserves.legalRes" xlink:label="incomeUse.gainLoss.releaseRevenReserves.legalRes"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss.releaseRevenReserves" xlink:to="incomeUse.gainLoss.releaseRevenReserves.legalRes" use="optional" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.releaseRevenReserves.ownSharesRes" xlink:label="incomeUse.gainLoss.releaseRevenReserves.ownSharesRes"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss.releaseRevenReserves" xlink:to="incomeUse.gainLoss.releaseRevenReserves.ownSharesRes" use="optional" order="2.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.releaseRevenReserves.statRes" xlink:label="incomeUse.gainLoss.releaseRevenReserves.statRes"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss.releaseRevenReserves" xlink:to="incomeUse.gainLoss.releaseRevenReserves.statRes" use="optional" order="3.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.releaseRevenReserves.minorityInterest" xlink:label="incomeUse.gainLoss.releaseRevenReserves.minorityInterest"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss.releaseRevenReserves" xlink:to="incomeUse.gainLoss.releaseRevenReserves.minorityInterest" use="optional" order="4.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.releaseOtherRes" xlink:label="incomeUse.gainLoss.releaseOtherRes"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss.releaseRevenReserves" xlink:to="incomeUse.gainLoss.releaseOtherRes" xlink:title="presentation: incomeUse.gainLoss.releaseRevenReserves to incomeUse.gainLoss.releaseOtherRes" use="optional" order="5.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.releaseDiffFromCapitalConsol" xlink:label="incomeUse.gainLoss.releaseDiffFromCapitalConsol"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releaseDiffFromCapitalConsol" use="optional" order="7.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.releaseCapital" xlink:label="incomeUse.gainLoss.releaseCapital"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releaseCapital" use="optional" order="8.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.releaseCapitalReserve" xlink:label="incomeUse.gainLoss.releaseCapitalReserve"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releaseCapitalReserve" use="optional" order="9.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.additionRevenReserves" xlink:label="incomeUse.gainLoss.additionRevenReserves"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.additionRevenReserves" use="optional" order="10.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.additionRevenReserves.legalRes" xlink:label="incomeUse.gainLoss.additionRevenReserves.legalRes"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss.additionRevenReserves" xlink:to="incomeUse.gainLoss.additionRevenReserves.legalRes" use="optional" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.additionRevenReserves.ownSharesRes" xlink:label="incomeUse.gainLoss.additionRevenReserves.ownSharesRes"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss.additionRevenReserves" xlink:to="incomeUse.gainLoss.additionRevenReserves.ownSharesRes" use="optional" order="2.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.additionRevenReserves.statRes" xlink:label="incomeUse.gainLoss.additionRevenReserves.statRes"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss.additionRevenReserves" xlink:to="incomeUse.gainLoss.additionRevenReserves.statRes" use="optional" order="3.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.additionRevenReserves.minorityInterest" xlink:label="incomeUse.gainLoss.additionRevenReserves.minorityInterest"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss.additionRevenReserves" xlink:to="incomeUse.gainLoss.additionRevenReserves.minorityInterest" use="optional" order="4.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.additionOtherRes" xlink:label="incomeUse.gainLoss.additionOtherRes"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss.additionRevenReserves" xlink:to="incomeUse.gainLoss.additionOtherRes" xlink:title="presentation: incomeUse.gainLoss.additionRevenReserves to incomeUse.gainLoss.additionOtherRes" use="optional" order="5.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.additionDiffFromCapitalConsol" xlink:label="incomeUse.gainLoss.additionDiffFromCapitalConsol"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.additionDiffFromCapitalConsol" use="optional" order="12.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.other" xlink:label="incomeUse.gainLoss.other"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.other" use="optional" order="13.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.releasePartnersAccount" xlink:label="incomeUse.gainLoss.releasePartnersAccount"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releasePartnersAccount" use="optional" order="14.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.additionPartnersAccount" xlink:label="incomeUse.gainLoss.additionPartnersAccount"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.additionPartnersAccount" use="optional" order="15.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.dividensPlanned" xlink:label="incomeUse.gainLoss.dividensPlanned"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.dividensPlanned" use="optional" order="16.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.additionRetainedEarnings" xlink:label="incomeUse.gainLoss.additionRetainedEarnings"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.additionRetainedEarnings" use="optional" order="17.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.gainLoss.additionCummLoss" xlink:label="incomeUse.gainLoss.additionCummLoss"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.additionCummLoss" use="optional" order="18.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.managmentProposing" xlink:label="incomeUse.managmentProposing"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse" xlink:to="incomeUse.managmentProposing" use="optional" order="2.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.dividends" xlink:label="incomeUse.dividends"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse" xlink:to="incomeUse.dividends" use="optional" order="3.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.retainedEarnings" xlink:label="incomeUse.retainedEarnings"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse" xlink:to="incomeUse.retainedEarnings" use="optional" order="4.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.accumLoss" xlink:label="incomeUse.accumLoss"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse" xlink:to="incomeUse.accumLoss" use="optional" order="5.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.additionalDividends" xlink:label="incomeUse.additionalDividends"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse" xlink:to="incomeUse.additionalDividends" use="optional" order="6.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.paidInCapital" xlink:label="incomeUse.paidInCapital"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse" xlink:to="incomeUse.paidInCapital" use="optional" order="7.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.paidInCapital.toSubscrCap" xlink:label="incomeUse.paidInCapital.toSubscrCap"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.paidInCapital" xlink:to="incomeUse.paidInCapital.toSubscrCap" use="optional" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.paidInCapital.toReserves" xlink:label="incomeUse.paidInCapital.toReserves"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse.paidInCapital" xlink:to="incomeUse.paidInCapital.toReserves" use="optional" order="2.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.capitalRelease" xlink:label="incomeUse.capitalRelease"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse" xlink:to="incomeUse.capitalRelease" use="optional" order="8.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.deposits" xlink:label="incomeUse.deposits"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse" xlink:to="incomeUse.deposits" use="optional" order="9.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.withdrawals" xlink:label="incomeUse.withdrawals"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse" xlink:to="incomeUse.withdrawals" use="optional" order="10.0"/>
+  </presentationLink>
+  <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/appropriationProfits">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse" xlink:label="incomeUse" xlink:title="incomeUse"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2007-12-01.xsd#de-gaap-ci_incomeUse.Decision" xlink:label="incomeUse.Decision" xlink:title="incomeUse.Decision"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="incomeUse" xlink:to="incomeUse.Decision" xlink:title="presentation: incomeUse to incomeUse.Decision" order="2.5"/>
+  </presentationLink>
+</linkbase>

@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.Company.ImportCompanyDetailsAssistant.CtlImportCompany3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="430" d:DesignWidth="750">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <Label Content="{x:Static Localisation:ResourcesCompanyImport.WrongIdsLabel}" Name="lblSeparator" />
+                <DataGrid ItemsSource="{Binding CompanyDetailsImporter.TaxonomyIdErrors}" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="CSV" Binding="{Binding File}" />
+                        <DataGridTextColumn Header="{x:Static Localisation:ResourcesCommon.Name}" Binding="{Binding TaxonomyName}" />
+                        <DataGridTextColumn Header="{x:Static Localisation:ResourcesCompanyImport.TaxonomyId}" Binding="{Binding TaxonomyId}" />
+                        <DataGridTextColumn Header="{x:Static Localisation:ResourcesCompanyImport.LineNumberColumnName}" Binding="{Binding LineNumber}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        <CheckBox Content="{x:Static Localisation:ResourcesCompanyImport.IsIgnore}" Grid.Row="1" Height="16" Name="cbIgnore" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" IsChecked="{Binding IgnoreErrors}" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddCompany" xml:space="preserve">
+    <value>Neues Unternehmen anlegen</value>
+  </data>
+  <data name="AddCompanyDescription" xml:space="preserve">
+    <value>Erstellt ein neues Unternehmen. In einem Unternehmen können die Unternehmensstammdaten aller zugeordneten Berichte gemeinsam erfasst und verwaltet werden.</value>
+  </data>
+  <data name="AddReport" xml:space="preserve">
+    <value>Neuen Bericht anlegen</value>
+  </data>
+  <data name="AddReportDescription" xml:space="preserve">
+    <value>Erzeugt einen neuen Bericht.</value>
+  </data>
+  <data name="AddSystem" xml:space="preserve">
+    <value>Neues System anlegen</value>
+  </data>
+  <data name="AddSystemDescription" xml:space="preserve">
+    <value>Erstellt ein neues System. Ein System dient als Gliederungseinheit zum strukturieren zusammengehörender Unternehmen.</value>
+  </data>
+  <data name="AvailableReportsCaption" xml:space="preserve">
+    <value>Verfügbare Berichte</value>
+  </data>
+  <data name="AvailableSystemsCaption" xml:space="preserve">
+    <value>Verfügbare Systeme</value>
+  </data>
+  <data name="AvallableCompaniesCaption" xml:space="preserve">
+    <value>Verfügbare Unternehmen</value>
+  </data>
+  <data name="BtnUserManagementCaption" xml:space="preserve">
+    <value>Benutzer-verwaltung</value>
+  </data>
+  <data name="CompanyManagement" xml:space="preserve">
+    <value>Unternehmen ändern</value>
+  </data>
+  <data name="CompanyManagementDescription" xml:space="preserve">
+    <value>Ändern der erfassten Stammdaten und Geschäftsjahresdefinitionen für die verfügbaren Unternehmen.</value>
+  </data>
+  <data name="DeleteAllSelectedCompaniesFailed" xml:space="preserve">
+    <value>Fehler beim Löschen der ausgewählten Unternehmen:</value>
+  </data>
+  <data name="DeleteAllSelectedCompaniesSucceed" xml:space="preserve">
+    <value>Die ausgewählten Unternehmen wurden erfolgreich gelöscht.</value>
+  </data>
+  <data name="DeleteAllSelectedReportsFailed" xml:space="preserve">
+    <value>Fehler beim Löschen der ausgewählten Berichte:</value>
+  </data>
+  <data name="DeleteAllSelectedReportsSucceed" xml:space="preserve">
+    <value>Die ausgewählten Berichte wurden erfolgreich gelöscht.</value>
+  </data>
+  <data name="DeleteAllSelectedSystemsFailed" xml:space="preserve">
+    <value>Fehler beim Löschen der ausgewählten Systeme:</value>
+  </data>
+  <data name="DeleteAllSelectedSystemsSucceed" xml:space="preserve">
+    <value>Die ausgewählten Systeme wurden erfolgreich gelöscht.</value>
+  </data>
+  <data name="DeleteCompany" xml:space="preserve">
+    <value>Unternehmen Löschen</value>
+  </data>
+  <data name="DeleteCompanyDescription" xml:space="preserve">
+    <value>Unwiderufliches Löschen eines oder mehrerer Unternehmen.</value>
+  </data>
+  <data name="DeleteReport" xml:space="preserve">
+    <value>Bericht(e) Löschen</value>
+  </data>
+  <data name="DeleteReportDescription" xml:space="preserve">
+    <value>Unwiderufliches Löschen eines oder mehrerer Reports.</value>
+  </data>
+  <data name="DeleteSystem" xml:space="preserve">
+    <value>System(e) Löschen</value>
+  </data>
+  <data name="DeleteSystemDescription" xml:space="preserve">
+    <value>Unwiderufliches Löschen eines oder mehrerer Systeme.</value>
+  </data>
+  <data name="DeleteTooltip" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="DlgAddCompanyCaption" xml:space="preserve">
+    <value>Neues Unternehmen</value>
+  </data>
+  <data name="DlgAddReportCaption" xml:space="preserve">
+    <value>Neuer Bericht</value>
+  </data>
+  <data name="DlgAddSystemCaption" xml:space="preserve">
+    <value>Neues System</value>
+  </data>
+  <data name="DlgCompanyManagementCaption" xml:space="preserve">
+    <value>Unternehmen ändern</value>
+  </data>
+  <data name="DlgDeleteCompanyCaption" xml:space="preserve">
+    <value>Unternehmen Löschen</value>
+  </data>
+  <data name="DlgDeleteReportCaption" xml:space="preserve">
+    <value>Berichte Löschen</value>
+  </data>
+  <data name="DlgDeleteSystemCaption" xml:space="preserve">
+    <value>Systeme Löschen </value>
+  </data>
+  <data name="DlgEditCompanyCaption" xml:space="preserve">
+    <value>Unternehmen Bearbeiten</value>
+  </data>
+  <data name="DlgEditReportCaption" xml:space="preserve">
+    <value>Bericht Bearbeiten</value>
+  </data>
+  <data name="DlgEditSystemCaption" xml:space="preserve">
+    <value>System Bearbeiten</value>
+  </data>
+  <data name="DlgImportCompanyDataCaption" xml:space="preserve">
+    <value>Firmenstammdaten importieren</value>
+  </data>
+  <data name="DlgReportManagementCaption" xml:space="preserve">
+    <value>Berichte ändern</value>
+  </data>
+  <data name="DlgSetupAssistantCaption" xml:space="preserve">
+    <value>Einrichtungsassistent</value>
+  </data>
+  <data name="DlgSystemManagementCaption" xml:space="preserve">
+    <value>Systeme ändern</value>
+  </data>
+  <data name="EditTooltip" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="ErrMsgDuplicateSystemName" xml:space="preserve">
+    <value>Der angegebene Systemname ist bereits vergeben.</value>
+  </data>
+  <data name="ErrMsgNoSystemName" xml:space="preserve">
+    <value>Es wurde noch kein Systemname angegeben.</value>
+  </data>
+  <data name="ImportCompany" xml:space="preserve">
+    <value>Firmenstammdaten importieren</value>
+  </data>
+  <data name="ImportCompanyDescription" xml:space="preserve">
+    <value>Importiert ein oder mehrere Unternehmen aus CSV Dateien.</value>
+  </data>
+  <data name="ReportManagement" xml:space="preserve">
+    <value>Berichte ändern</value>
+  </data>
+  <data name="ReportManagementDescription" xml:space="preserve">
+    <value>Ändern der erfassten Daten für die verfügbaren Reports.</value>
+  </data>
+  <data name="RequestDeleteAllSelectedCompanies" xml:space="preserve">
+    <value>Sollen die ausgewählten Unternehmensstammdaten wirklich unwideruflich gelöscht werden?</value>
+  </data>
+  <data name="RequestDeleteAllSelectedReports" xml:space="preserve">
+    <value>Sollen die ausgewählten Berichte wirklich unwideruflich gelöscht werden?</value>
+  </data>
+  <data name="RequestDeleteAllSelectedSystems" xml:space="preserve">
+    <value>Sollen die ausgewählten Systeme wirklich unwideruflich gelöscht werden?</value>
+  </data>
+  <data name="RequestDeleteCompany" xml:space="preserve">
+    <value>Soll das Unternehmen '{0}' wirklich gelöscht werden?</value>
+  </data>
+  <data name="RequestDeleteReport" xml:space="preserve">
+    <value>Soll der Bericht '{0}' wirklich gelöscht werden?</value>
+  </data>
+  <data name="RequestDeleteSystem" xml:space="preserve">
+    <value>Soll das System '{0}' wirklich gelöscht werden?</value>
+  </data>
+  <data name="SetupAssistant" xml:space="preserve">
+    <value>Einrichtungsassistent</value>
+  </data>
+  <data name="SetupAssistantDescription" xml:space="preserve">
+    <value>Statet einen Assistenten für die Einrichtung neuer Systeme, Unternehmen und Berichte.</value>
+  </data>
+  <data name="SystemHasAssignedDocumentTooltip" xml:space="preserve">
+    <value>Löschen nicht möglich, da dieses Element noch mindestens einem Bericht zugeordnet ist</value>
+  </data>
+  <data name="SystemManagement" xml:space="preserve">
+    <value>Systeme ändern</value>
+  </data>
+  <data name="SystemManagementDescription" xml:space="preserve">
+    <value>Ändern der erfassten Daten für die verfügbaren Systeme.</value>
+  </data>
+  <data name="MsgExistingObject">
+    <value xml:space="preserve">Es existiert bereits ein {0} mit identischem Namen.</value>
+  </data>
+  <data name="QNewSameName">
+    <value xml:space="preserve">Soll ein neues {0} mit gleichem Namen erstellt werden?</value>
+  </data>
+  <data name="HeaderFoundIdentical">
+    <value xml:space="preserve">identisches {0} gefunden</value>
+  </data>
+  <data name="MsgNoRightsFor">
+    <value xml:space="preserve">Sie besitzen jedoch keine Berechtigungen für dieses {0}</value>
+  </data>
+  <data name="InsufficentRightsForSelected">
+    <value xml:space="preserve">Sie haben keine Berechtigung für das ausgewählte {0}</value>
+  </data>
+  <data name="SelectionOfAvailable">
+    <value xml:space="preserve">Auswahl von vorhandenem {0}</value>
+  </data>
+  <data name="Welcome">
+    <value xml:space="preserve">Willkommen</value>
+  </data>
+  <data name="NotExisiting">
+    <value xml:space="preserve">Es exisitiert noch kein {0}. </value>
+  </data>
+  <data name="WishToCreate">
+    <value xml:space="preserve">Soll jetzt ein {0} angelegt werden?</value>
+  </data>
+  <data name="QuestionExisting">
+    <value xml:space="preserve">Existiert das {0} bereits?</value>
+  </data>
+  <data name="QuestionRestart">
+    <value xml:space="preserve">Möchten sie den Assistenten von vorne beginnen?</value>
+  </data>
+  <data name="QuestionExistingReport">
+    <value xml:space="preserve">Exisitiert der {0} bereits?</value>
+  </data>
+  <data name="SelectionBalanceList">
+    <value xml:space="preserve">Auswahl der Summen- und Saldenliste</value>
+  </data>
+  <data name="QuestionBalanceListImport">
+    <value xml:space="preserve">Möchten Sie eine Summen- und Saldenliste importieren?</value>
+  </data>
+  <data name="QuestionBalanceListTestlist">
+    <value xml:space="preserve">Soll eine beispielhafte Summen- und Saldenliste importiert werden?</value>
+  </data>
+  <data name="AssistantLastPageHeader">
+    <value xml:space="preserve">Vorgang abgeschlossen</value>
+  </data>
+  <data name="QuestionInsertCompanyDetails">
+    <value xml:space="preserve">Möchten Sie jetzt weitere Unternehmens-Stammdaten einpflegen?</value>
+  </data>
+  <data name="BtnGenerateReport">
+    <value xml:space="preserve">Bericht anlegen</value>
+  </data>
+  <data name="BtnFinished">
+    <value xml:space="preserve">Abschließen</value>
+  </data>
+  <data name="BtnAgain">
+    <value xml:space="preserve">Weiteren Bericht anlegen</value>
+  </data>
+  <data name="FiscalYearBeginPrevious">
+    <value xml:space="preserve">Beginn des Wirtschaftsjahres (Vorjahr)</value>
+  </data>
+  <data name="FiscalYearEndPrevious">
+    <value xml:space="preserve">Ende des Wirtschaftsjahres (Vorjahr)</value>
+  </data>
+  <data name="BalSheetClosingDatePreviousYear">
+    <value xml:space="preserve">Bilanzstichtag (Vorjahr)</value>
+  </data>
+  <data name="FiscalYearBegin">
+    <value xml:space="preserve">Beginn des Wirtschaftsjahres</value>
+  </data>
+  <data name="FiscalYearEnd">
+    <value xml:space="preserve">Ende des Wirtschaftsjahres</value>
+  </data>
+  <data name="BalSheetClosingDate">
+    <value xml:space="preserve">Bilanzstichtag</value>
+  </data>
+  <data name="ConfigurationForFinancialYear">
+    <value xml:space="preserve">Festlegungen für das Geschäftsjahr</value>
+  </data>
+  <data name="DontShowAgainDetail">
+    <value xml:space="preserve">(Die Unternehmensdaten können jederzeit über "Verwaltung" -> "Ändern" -> "Unternehmen ändern" bearbeitet werden)</value>
+  </data>
+  <data name="DontShowAgainLabel">
+    <value xml:space="preserve">Diese Seite nicht wieder anzeigen</value>
+  </data>
+  <data name="ReportDetails">
+    <value xml:space="preserve">Bericht-Details</value>
+  </data>
+  <data name="LastPageHeader">
+    <value xml:space="preserve">Alle Schritte erfolgreich durchlaufen</value>
+  </data>
+  <data name="LabelNumerOfBalanceLists">
+    <value xml:space="preserve">Anzahl der Summen- und Saldenlisten:  </value>
+  </data>
+  <data name="LabelNumberOfAccounts">
+    <value xml:space="preserve">Anzahl der Konten</value>
+  </data>
+  <data name="LabelSumOfAccounts">
+    <value xml:space="preserve">Summe aller Konten</value>
+  </data>
+  <data name="MsgReportCreated">
+    <value xml:space="preserve">Der Bericht wurde erfolgreich erstellt.</value>
+  </data>
+  <data name="NameLabelSystem">
+    <value xml:space="preserve">Name des Systems</value>
+  </data>
+  <data name="NameLabelCompany">
+    <value xml:space="preserve">Name des Unternehmens</value>
+  </data>
+  <data name="NameLabelReport">
+    <value xml:space="preserve">Name des Berichts</value>
+  </data>
+  <data name="BtnBalanceListImport">
+    <value xml:space="preserve">Weiterer SuSa-Import</value>
+  </data>
+  <data name="DetailHeaderSystem">
+    <value xml:space="preserve">System wählen oder neu anlegen</value>
+  </data>
+  <data name="DetailHeaderCompany">
+    <value xml:space="preserve">Unternehmen wählen oder neu anlegen</value>
+  </data>
+  <data name="DeleteBalanceListHeader">
+    <value xml:space="preserve">Löschen von SuSa</value>
+  </data>
+  <data name="DeleteBalanceListConfirmation">
+    <value xml:space="preserve">Soll die Summen- und Saldenliste wirklich gelöscht werden?</value>
+  </data>
+  <data name="DetailHeaderNewSystem">
+    <value xml:space="preserve">Informationen für das neue System</value>
+  </data>
+  <data name="DetailHeaderNewCompany">
+    <value xml:space="preserve">Informationen für das neue Unternehmen</value>
+  </data>
+  <data name="DetailHeaderNewCompanyDetails">
+    <value xml:space="preserve">Zusatzangaben für das neue Unternehmen</value>
+  </data>
+  <data name="DetailHeaderFinancialYear">
+    <value xml:space="preserve">Auswahl des Geschäftsjahres</value>
+  </data>
+  <data name="ImportBalancelist">
+    <value xml:space="preserve">Summen- und Saldenliste importieren</value>
+  </data>
+  <data name="ImportBalancelistDescription">
+    <value xml:space="preserve">Importiert eine Summen- und Saldenliste mit beliebig vielen Konten aus einer CSV-Datei</value>
+  </data>
+  <data name="Copy">
+    <value xml:space="preserve">Kopieren</value>
+  </data>
+  <data name="CopyReport">
+    <value xml:space="preserve">Bericht kopieren</value>
+  </data>
+  <data name="CopyReportDescription">
+    <value xml:space="preserve">Kopiert den aktuellen Bericht.</value>
+  </data>
+</root>

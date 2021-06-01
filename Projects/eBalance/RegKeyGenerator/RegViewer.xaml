@@ -1,0 +1,8 @@
+﻿<Window x:Class="RegKeyGenerator.RegViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" WindowStartupLocation="CenterOwner"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ShowInTaskbar="False" 
+        Title="Registrierungen" Height="1024" Width="1200">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Registrations}" />
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+﻿<Window x:Class="eBalanceKit.Windows.MappingTemplates.DlgTemplateDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:MappingTemplates="clr-namespace:eBalanceKit.Windows.MappingTemplates"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Title="{x:Static Localisation:ResourcesCommon.DlgTemplateDetailsCaption}" 
+        Icon="/CustomResources;component/Resources/logo1.png"
+        MinWidth="800" MinHeight="600" WindowState="Maximized" ShowInTaskbar="False">
+    <MappingTemplates:CtlTemplateDetails x:Name="ctlTemplateDetails"/>
+</Window>

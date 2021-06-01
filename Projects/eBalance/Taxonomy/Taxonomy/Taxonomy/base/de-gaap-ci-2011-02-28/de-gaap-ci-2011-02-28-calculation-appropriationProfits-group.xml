@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://www.xbrl.de/de/fr/gaap/ci/role/appropriationProfits" xlink:type="simple" xlink:href="de-gaap-ci-2011-02-28.xsd#role_appropriationProfits"/>
+  <calculationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/appropriationProfits">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss" xlink:label="incomeUse.gainLoss" xlink:title="incomeUse.gainLoss"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.releaseDiffFromCapitalConsol" xlink:label="incomeUse.gainLoss.releaseDiffFromCapitalConsol" xlink:title="incomeUse.gainLoss.releaseDiffFromCapitalConsol"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releaseDiffFromCapitalConsol" xlink:title="calculation: incomeUse.gainLoss to incomeUse.gainLoss.releaseDiffFromCapitalConsol" order="6.0" weight="1.0"/>
+  </calculationLink>
+</linkbase>

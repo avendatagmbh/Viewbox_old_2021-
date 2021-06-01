@@ -1,0 +1,181 @@
+﻿<Window x:Class="eBalanceKit.Windows.FederalGazette.DlgAssistant"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        WindowState="Maximized"
+        xmlns:FederalGazette="clr-namespace:eBalanceKit.Controls.FederalGazette"
+        xmlns:enum="clr-namespace:federalGazetteBusiness;assembly=FederalGazetteBusiness"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:my2="clr-namespace:eBalanceKit.Controls" xmlns:Models="clr-namespace:eBalanceKit.Models"
+        xmlns:ManagementAssistant="clr-namespace:eBalanceKit.Windows.Management.ManagementAssistant"
+        xmlns:Enum="clr-namespace:federalGazetteBusiness.Structures.Enum;assembly=federalGazetteBusiness"
+        Title="{x:Static Localisation:ResourcesFederalGazette.WindowTitle}" Height="500" Width="500" x:Name="myDlgAssistant"
+        Icon="/CustomResources;component/Resources/logo1.png"  MinWidth="800" MinHeight="600" Loaded="MyDlgAssistantLoaded">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/MainWindow.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid x:Name="ContainerGrid" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="LeftColumn" Width="*" />
+            <ColumnDefinition x:Name="MidColumn" Width="5" />
+            <ColumnDefinition x:Name="RightColumn" >
+                <ColumnDefinition.Style>
+                    <Style TargetType="ColumnDefinition">
+                        <Setter Property="ColumnDefinition.Width" Value="Auto" />
+                    </Style>
+                </ColumnDefinition.Style>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions >
+
+        <AvdWpfControls:AssistantControl ShowSteps="True" Name="assistantControl" Grid.Column="0"
+                                         Next="OnTabIndexChanges" Back="OnTabIndexChanges" >
+            <AvdWpfControls:AssistantTabItem Header="Welcome" >
+                <FederalGazette:CtlIntroduction />
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="Werte übernehmen" NextAllowed="{Binding DataLoaded}">
+                <StackPanel Grid.Column="1">
+                    <TextBlock Style="{StaticResource TextBlockSetupStyle}" Text="Dieser Assistent wird Ihnen bei der Veröffentlichung Ihres Jahresabschlusses beim Bundesanzeiger helfen." Margin="0,15" />
+                    <TextBlock Style="{StaticResource TextBlockSetupStyle}" Margin="0,15,0,0" Text="Sie haben jetzt ganz einfach und komfortabel die Möglichkeit die Werte aus der E-Bilanz in den Bericht für den Bundesanzeiger zu übernehmen." />
+                    <ManagementAssistant:CtlYesNo DataContext="{Binding TransferDataModel}" />
+                </StackPanel>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="connection info" Tag="{x:Static Models:FederalGazetteAssistantTabs.Login}">
+                <Grid Margin="15">
+                    <StackPanel DataContext="{Binding SendModel}">
+                        <TextBlock Text="Benutzer"/>
+                        <my2:DeletableTextBox x:Name="txtUser" LabelText="Nutzername des Einsenders" Text="{Binding Path=User}"/>
+
+                        <TextBlock Text="Passwort" Margin="0,5,0,0"/>
+                        <!--<my2:SearchTextBox x:Name="txtPasswordClear" LabelText="Passwort des Einsenders" Text="{Binding Path=Password}" IsPassword="{Binding ElementName=ckPassword, Path=IsChecked, Converter={StaticResource BoolInverter}}"/>-->
+                        <my2:DeletableTextBox x:Name="txtPasswordClear" LabelText="Passwort des Einsenders" Text="{Binding Path=Password}" Visibility="{Binding ElementName=ckPassword, Path=IsChecked, Converter={StaticResource TrueToVisibilityConverter}}"/>
+                        <my2:DeletableTextBox x:Name="txtPassword" LabelText="Passwort des Einsenders" IsPassword="True" Text="{Binding Path=Password}" Visibility="{Binding ElementName=ckPassword, Path=IsChecked, Converter={StaticResource FalseToVisibilityConverter}}"/>
+                        <!--<st:SearchTextBox Name="txtPasswordClear" Text="{Binding Path=Password}" Visibility="{Binding ElementName=ckPassword, Path=IsChecked, Converter={StaticResource TrueToVisibilityConverter}}"/>-->
+                        <CheckBox Content="Show password" x:Name="ckPassword" Margin="0,5,0,0"/>
+
+                        <TextBlock Text="ID of the company" Margin="0,5,0,0"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <my2:DeletableTextBox Text="{Binding CompanyId}" LabelText="ID des Einsenderkunden" />
+                            <AvdWpfControls:ImageButton2 Margin="5,0" Command="{Binding CmdShowClientList}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" ImageSource="/eBalanceKitResources;component/Resources/EffectiveRights.png" Grid.Column="1"/>
+                        </Grid>
+                        <!--<Button Content="test connection" />-->
+                    </StackPanel>
+                </Grid>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="Configuration of sending parameter">
+                <FederalGazette:CtlSentParameterFG DataContext="{Binding SendParameterList}" />
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesFederalGazette.TabCompanySizeHeader}" Tag="{x:Static Models:FederalGazetteAssistantTabs.CompanySize}" >
+                <StackPanel Margin="10,10" >
+                    <RadioButton x:Name="rbSmall" Content="{x:Static Localisation:ResourcesFederalGazette.Small}" 
+                                 IsChecked="{Binding Path=CompanySize, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter={x:Static Enum:CompanySize.Small}}" 
+                                Checked="RbSmallChecked" />
+                    <RadioButton x:Name="rbMedium" Content="{x:Static Localisation:ResourcesFederalGazette.Medium}" 
+                                 IsChecked="{Binding Path=CompanySize, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter={x:Static Enum:CompanySize.Midsize}}" 
+                                Checked="RbMediumChecked" />
+                    <RadioButton x:Name="rbBig" Content="{x:Static Localisation:ResourcesFederalGazette.Large}" 
+                                 IsChecked="{Binding Path=CompanySize, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter={x:Static Enum:CompanySize.Big}}"
+                                Checked="RbBigChecked" />
+                </StackPanel>
+                <!--<ContentPresenter Content="{Binding }" ContentTemplateSelector="{StaticResource TreeViewItemTemplateSelector}">                </ContentPresenter>-->
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesFederalGazette.TabReportOptionsHeader}" Tag="{x:Static Models:FederalGazetteAssistantTabs.ReportOptions}" >
+                <StackPanel Margin="10,10" DataContext="{Binding TreeViewBalanceModel}">
+                    <Grid Column="4" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Content="{x:Static Localisation:ResourcesFederalGazette.TabReportOptionsColReportHeader}"></Label>
+                        <Label Grid.Column="1" Grid.Row="0" Content="{x:Static Localisation:ResourcesFederalGazette.TabReportOptionsColValueHeader}"></Label>
+                        <Label Grid.Column="0" Grid.Row="1" Content="{x:Static Localisation:ResourcesFederalGazette.TabReportOptionsColBilanz}"></Label>
+                        <CheckBox Name="chkBilanz" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="ReportPartChanged" Unchecked="ReportPartChanged" ></CheckBox>
+                        <Label Grid.Column="0" Grid.Row="2" Content="{x:Static Localisation:ResourcesFederalGazette.TabReportOptionsColGuv}"></Label>
+                        <CheckBox Name="chkGuV" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="ReportPartChanged" Unchecked="ReportPartChanged" ></CheckBox>
+                        <Label Grid.Column="0" Grid.Row="3" Content="{x:Static Localisation:ResourcesFederalGazette.TabReportOptionsColAnhang}"></Label>
+                        <CheckBox Name="chkAnhang" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="ReportPartChanged" Unchecked="ReportPartChanged" ></CheckBox>
+                        <Label Grid.Column="0" Grid.Row="4" Content="{x:Static Localisation:ResourcesFederalGazette.TabReportOptionsColLagebericht}"></Label>
+                        <CheckBox Name="chkLagebericht" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="ReportPartChanged" Unchecked="ReportPartChanged"></CheckBox>
+                    </Grid>
+                </StackPanel>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesFederalGazette.TabBilanzHeader}" IsEnabled="{Binding ElementName=chkBilanz, Path=IsChecked}" Tag="{x:Static Models:FederalGazetteAssistantTabs.TreeView}" NextAllowed="{Binding ValidBalance}">
+                <FederalGazette:CtlTreeView x:Name="tvBilanz" DataContext="{Binding TreeViewBalanceModel}"/>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesFederalGazette.TabGuVHeader}" IsEnabled="{Binding ElementName=chkGuV, Path=IsChecked}" Tag="{x:Static Models:FederalGazetteAssistantTabs.TreeView}">
+                <FederalGazette:CtlTreeView x:Name="tvGuV" DataContext="{Binding TreeViewIncomeStatementModel}"/>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesFederalGazette.TabAnhangHeader}" IsEnabled="{Binding ElementName=chkAnhang, Path=IsChecked}" Tag="{x:Static Models:FederalGazetteAssistantTabs.NotDefined}">
+                <FederalGazette:CtlTextParts DataContext="{Binding RtfModelNotes}"/>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesFederalGazette.TabLageberichtHeader}" IsEnabled="{Binding ElementName=chkLagebericht, Path=IsChecked}" Tag="{x:Static Models:FederalGazetteAssistantTabs.NotDefined}">
+                <FederalGazette:CtlTextParts DataContext="{Binding RtfModelNotes}"/>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesFederalGazette.HeaderTos}" NextAllowed="{Binding TosAccepted}">
+                <StackPanel>
+                    <TextBlock Text="{x:Static Localisation:ResourcesFederalGazette.TosHint}" />
+                    <CheckBox Content="{x:Static Localisation:ResourcesFederalGazette.TosQuery}" IsChecked="{Binding TosAccepted}" />
+                </StackPanel>
+            </AvdWpfControls:AssistantTabItem>
+        </AvdWpfControls:AssistantControl>
+
+        <GridSplitter HorizontalAlignment="Left" Grid.Column="1" ResizeBehavior="PreviousAndNext" x:Name="splitter">
+            <GridSplitter.Style>
+                <Style TargetType="{x:Type GridSplitter}" BasedOn="{StaticResource VerticalGridSplitter}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=PreviewExpander, Path=IsExpanded}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </GridSplitter.Style>
+        </GridSplitter>
+        
+        <Expander x:Name="PreviewExpander" Grid.Column="2" ExpandDirection="Left" IsExpanded="True" Margin="0,1" Visibility="Visible" 
+                  Expanded="PreviewExpanderExpanded" Collapsed="PreviewExpanderCollapsed"  >
+            <Expander.Style>
+                <Style TargetType="Expander" BasedOn="{StaticResource ExpanderLeft}">
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ElementName=CtlMonetarySources, Path=IsAnythingVisible}" Value="Visible" />
+                            </MultiDataTrigger.Conditions>
+                            <MultiDataTrigger.Setters>
+                                <Setter Property="Visibility" Value="Visible" />
+                            </MultiDataTrigger.Setters>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Expander.Style>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="*" />
+                    <RowDefinition  Height="Auto" />
+                </Grid.RowDefinitions>
+                <AvdWpfControls:AvdWebBrowser Grid.Row="0" Name="avdBrowser" VerticalAlignment="Stretch" HtmlStream="{Binding PreviewStream}" HtmlText="{Binding PreviewString}" />
+                <Button Grid.Row="1" Name="btnExport" Content="{x:Static Localisation:ResourcesFederalGazette.ExportButton}" 
+                        Click="PdfExportClick">
+                    <Button.IsEnabled>
+                        <Binding Path="BrowserHasContent" />
+                    </Button.IsEnabled>
+                </Button>
+            </Grid>
+        </Expander>
+    </Grid>
+</Window>

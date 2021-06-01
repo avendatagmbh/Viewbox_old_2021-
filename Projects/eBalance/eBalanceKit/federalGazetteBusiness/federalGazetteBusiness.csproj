@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0346E74A-380C-4700-AB8B-E5B74AF240F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>federalGazetteBusiness</RootNamespace>
+    <AssemblyName>federalGazetteBusiness</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="External\BAnzService.cs" />
+    <Compile Include="FederalGazetteManager.cs" />
+    <Compile Include="FederalGazetteOrderStatusConverter.cs" />
+    <Compile Include="NoClientsDefinedException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structures\Enum\CompanySize.cs" />
+    <Compile Include="Structures\ErrorAnalyse.cs" />
+    <Compile Include="Structures\Exceptions\FederalGazetteResponseError.cs" />
+    <Compile Include="Structures\Manager\FederalGazetteClientManager.cs" />
+    <Compile Include="Structures\Manager\FederalGazetteManagerBase.cs" />
+    <Compile Include="Structures\Manager\FederalGazetteOrderManager.cs" />
+    <Compile Include="Structures\Order.cs" />
+    <Compile Include="Structures\Parameters\FederalGazetteAdressParameter.cs" />
+    <Compile Include="Structures\Parameters\FederalGazetteClientParameter.cs" />
+    <Compile Include="Structures\Parameters\FederalGazetteParameterBase.cs" />
+    <Compile Include="Structures\Parameters\FederalGazettePersonParameter.cs" />
+    <Compile Include="Structures\Parameters\FederalGazetteSendParameter.cs" />
+    <Compile Include="Structures\Parameters\FederalGazetteTelephoneParameter.cs" />
+    <Compile Include="Structures\ValueTypes\DbElementValue.cs" />
+    <Compile Include="Structures\ValueTypes\FederalGazetteElementBool.cs" />
+    <Compile Include="Structures\ValueTypes\FederalGazetteElementInfoBase.cs" />
+    <Compile Include="Structures\FederalGazetteElementList.cs" />
+    <Compile Include="Structures\Parameters.cs" />
+    <Compile Include="Structures\ValueTypes\FederalGazetteElementDate.cs" />
+    <Compile Include="Structures\ValueTypes\FederalGazetteElementInfoString.cs" />
+    <Compile Include="Structures\ValueTypes\FederalGazetteElementSelectionBase.cs" />
+    <Compile Include="Structures\ValueTypes\FederalGazetteElementSelectionList.cs" />
+    <Compile Include="Structures\ValueTypes\FederalGazetteElementSelectionOption.cs" />
+    <Compile Include="Structures\ValueTypes\FederalGazetteElementText.cs" />
+    <Compile Include="Structures\ValueTypes\FederalGazetteElementType.cs" />
+    <Compile Include="Structures\ValueTypes\IFederalGazetteElementInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\eBalanceKitBase\eBalanceKitBase.csproj">
+      <Project>{E2CEEA3B-3845-427E-998E-08ED35B18D29}</Project>
+      <Name>eBalanceKitBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\eBalanceKitBusiness\eBalanceKitBusiness\eBalanceKitBusiness.csproj">
+      <Project>{6B330A1B-FEB4-4FD5-A3F0-0C0631F38578}</Project>
+      <Name>eBalanceKitBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Taxonomy\Taxonomy\Taxonomy.csproj">
+      <Project>{5E4B032D-3B2E-4E6D-B2D7-88499B01604D}</Project>
+      <Name>Taxonomy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eBalanceKitResources\eBalanceKitResources.csproj">
+      <Project>{05CDF0E9-D91A-47A7-A4E2-E46B1F489425}</Project>
+      <Name>eBalanceKitResources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\taxonomyPositionsFederalGazette.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D001_registration_info.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Faxformular Einsender-AvenDATA.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Structures\Helper\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

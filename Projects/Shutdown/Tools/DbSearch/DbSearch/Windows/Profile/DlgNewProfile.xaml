@@ -1,0 +1,36 @@
+﻿<Window x:Class="DbSearch.Windows.Profile.DlgNewProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        xmlns:Localisation="clr-namespace:DbSearch.Localisation"
+        xmlns:Profile="clr-namespace:DbSearch.Controls.Profile" Icon="/Resources/logo.ico"  Title="Neues Profil erstellen" SizeToContent="Height" ResizeMode="NoResize"
+        Width="500"
+        WindowStartupLocation="CenterOwner">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.ColumnSpan="2" Content="{x:Static Localisation:ResourcesGui.TxtEnterProfileName}" />
+        <TextBox Grid.Row="1" Margin="5,0,0,0" Name="txtName"/>
+
+        <Profile:CtlMysqlDatabaseChoice Grid.Row="2" Margin="0,5,0,5" x:Name="ctlMysqlDatabase"  />
+<!--        <Label Grid.Row="2" Grid.ColumnSpan="2" Content="{x:Static Localisation:ResourcesGui.TxtEnterProfilePath}"/>
+        <TextBox Grid.Row="3" Margin="5,0,0,0" Name="txtPath"/>
+        <AvdWpfControls:ImageButton Grid.Row="3" Grid.Column="1" Margin="3,0,3,0"  Name="btnSelectDir" ImageSource="/Resources/Folder.png" Click="btnSelectDir_Click" />-->
+        <!-- button bar -->
+        <Border Grid.Row="4" Grid.ColumnSpan="2"  Margin="0,5,0,0" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="_OK" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="btnOk_Click" />
+                <Button Content="A_bbrechen" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

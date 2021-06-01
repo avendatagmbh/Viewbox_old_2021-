@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://www.xbrl.de/de/fr/gaap/ci/role/cashFlowStatement" xlink:type="simple" xlink:href="de-gaap-ci-2011-02-28.xsd#role_cashFlowStatement"/>
+  <calculationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/cashFlowStatement">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_cfs.cashEqu.nonCashChanges" xlink:label="cfs.cashEqu.nonCashChanges" xlink:title="cfs.cashEqu.nonCashChanges"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_cfs.cashEqu.nonCashChanges.changeConsol" xlink:label="cfs.cashEqu.nonCashChanges.changeConsol" xlink:title="cfs.cashEqu.nonCashChanges.changeConsol"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="cfs.cashEqu.nonCashChanges" xlink:to="cfs.cashEqu.nonCashChanges.changeConsol" xlink:title="calculation: cfs.cashEqu.nonCashChanges to cfs.cashEqu.nonCashChanges.changeConsol" order="2.0" weight="1.0"/>
+  </calculationLink>
+</linkbase>

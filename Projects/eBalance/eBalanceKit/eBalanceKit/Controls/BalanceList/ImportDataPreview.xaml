@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.BalanceList.ImportDataPreview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" d:DesignHeight="365" d:DesignWidth="755">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />                           
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="{x:Static Localisation:ResourcesCommon.Preview}" />
+        <DataGrid Grid.Row="1" DataContext="{Binding PreviewData}"
+                  BorderBrush="{x:Null}" ItemsSource="{Binding Path=.}" ColumnHeaderHeight="24"
+                  x:Name="dgCsvData" AutoGenerateColumns="True"  AlternatingRowBackground="WhiteSmoke" 
+                  CanUserSortColumns="False" CanUserDeleteRows="False" CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" 
+                  HeadersVisibility="Column" IsReadOnly="True" HorizontalGridLinesBrush="#FFA0A0A0" VerticalGridLinesBrush="#FFA0A0A0" 
+                  SelectionUnit="FullRow" SelectionMode="Single" FontSize="13" PreviewMouseDown="dgCsvData_MouseDown" />
+
+    </Grid>
+</UserControl>

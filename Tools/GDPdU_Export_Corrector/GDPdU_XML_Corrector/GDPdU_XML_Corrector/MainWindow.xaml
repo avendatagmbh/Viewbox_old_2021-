@@ -1,0 +1,35 @@
+﻿<Window x:Class="GDPdU_XML_Corrector.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AvenDATA GDPdU-Export XML Corrector" Height="350" Width="525" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <Border Padding="5">
+            <StackPanel>
+            <TextBlock Text="XML-File:" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                
+                <TextBox x:Name="txtPath"/>
+                    <Button Grid.Column="1" Width="20" Content="..." Margin="5,0,0,0" x:Name="btnSelectFile" Click="btnSelectFile_Click" />
+                </Grid>
+        </StackPanel>
+        </Border>
+
+        <TextBlock Grid.Row="1" TextWrapping="Wrap">
+            <!-- ... -->
+        </TextBlock>
+
+        <Border Grid.Row="2" BorderBrush="Silver" Background="LightGray" BorderThickness="1">
+            <Button Content="Start" x:Name="btnStart" HorizontalAlignment="Right" Margin="5,2" Width="75" Click="btnStart_Click"/>
+        </Border>
+    </Grid>
+</Window>

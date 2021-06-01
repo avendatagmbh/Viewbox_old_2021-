@@ -1,0 +1,33 @@
+﻿<Window x:Class="eBalanceKit.Windows.Import.DlgImportHyperCube"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        xmlns:templ="clr-namespace:eBalanceKit.Windows.Import"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources" Title="DlgImportHyperCube" Height="500" Width="500">
+    <Grid>
+        <AvdWpfControls:AssistantControl Grid.Row="0" Name="tabControl1" Ok="OkClick" OkButtonCaption="Importieren" OkButtonEnabled="True" Next="tabControl1_Next">
+            <TabItem Name="tbFileSelection" Header="{x:Static Localisation:ResourcesHyperCube.tbFileSelection}">
+                <templ:CtlFileSelection x:Name="ctlFileSelection" />
+            </TabItem>
+            <TabItem Name="tbTemplateSelection" Header="{x:Static Localisation:ResourcesHyperCube.tbHeaderTemplateSelection}">
+                <templ:CtlTemplateList x:Name="ctlTemplateList" DataContext="{Binding Importer}" />
+            </TabItem>
+            <TabItem Header="{x:Static Localisation:ResourcesHyperCube.tbHeaderImportPreview}" Name="tbTemplateSummary">
+                <templ:CtlTemplateSummary x:Name="ctlAssignmentSummaryGrid" DataContext="{Binding Importer}" />
+            </TabItem>
+
+            <AvdWpfControls:AssistantTabItem Header="{x:Static Localisation:ResourcesHyperCube.tbHeaderImportSummary}" Name="tbSummary" IsSummaryPage="True">
+                <!--<TabItem.Resources>
+                    <Style TargetType="TabItem">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=Importer.TemplateGenerator}" Value="null">
+                                <Setter Property="IsEnabled" Value="false" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TabItem.Resources>-->
+                <templ:CtlImportSummary x:Name="x" DataContext="{Binding Importer}" />
+            </AvdWpfControls:AssistantTabItem>
+        </AvdWpfControls:AssistantControl>
+    </Grid>
+</Window>

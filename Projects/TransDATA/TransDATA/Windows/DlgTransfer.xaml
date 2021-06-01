@@ -1,0 +1,8 @@
+﻿<Window x:Class="TransDATA.Windows.DlgTransfer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:TransDATA.Controls"
+        xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base"
+        Title="{x:Static Localisation:ResourcesCommon.DlgTransferCaption}" Icon="/TransDATA;component/Resources/Export16.png"
+        WindowStartupLocation="CenterOwner" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight" Loaded="WindowLoaded">
+    <Controls:CtlTransfer x:Name="CtlTransfer" />
+</Window>

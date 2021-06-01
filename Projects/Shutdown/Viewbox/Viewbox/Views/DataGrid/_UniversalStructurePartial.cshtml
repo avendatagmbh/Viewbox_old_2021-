@@ -1,0 +1,136 @@
+﻿@using Viewbox
+@using Viewbox.Properties
+@using Viewbox.Models
+@model DataGridModel
+
+@helper PrintNodes(IEnumerable<UniversalTableModel.Node> list, int maxValueCount, bool useThousandSeparator, int firstColumnPadding)
+{
+    foreach (var node in list)
+    {
+        if (Model.UniversalTable.MaxPrintedLevel == 0 || Model.UniversalTable.MaxPrintedLevel >= node.Depth - 1)
+        {
+            var openClose = node.Children.Count > 0 ? "ubalance-node-closed" : string.Empty; // default closed
+            var nodeClass = (node.Type == UniversalTableModel.NodeType.Structure || node.Children.Count > 0 ? "ubalance-structure" : "ubalance-account"); // row type
+            string firstColWidth = (Model.UniversalTable.ColumnWidths[0] + ((Model.UniversalTable.MaxDepth - node.Depth) * firstColumnPadding)).ToString() + "px"; // extend width of first column because left padding varies at every level
+
+            <div class="ubalance-node @openClose">
+                <div class="@nodeClass">
+                    <div class="left" style="width: @firstColWidth">@node.Description</div>
+                    @if (maxValueCount > 0 || !Model.UniversalTable.HideEmptyNodes)
+                    {
+                        for (int i = node.Data.Count - 1; i >= 0; i--) // print columns in reverse order because of float right
+                        {
+                            string width = Model.UniversalTable.ColumnWidths[i + 1].ToString() + "px";
+                            if (node.Data[i].dataType == UniversalTableModel.Node.DataStruct.DataType.Field)
+                            {
+                                if (@node.Data[i].field.Length != 0)
+                                {
+                                    <div class="ubalance-data right" style="width: @width">@node.Data[i].field</div>
+                                }
+                                else
+                                {
+                                    <div class="ubalance-data right" style="width: @width">&nbsp;</div>
+                                }
+                            }
+                            else
+                            {
+                                string valueClass = "ubalance-value"; // text align right
+                                if (node.Data[i].value < 0)
+                                {
+                                    valueClass += " negative"; // red text
+                                }
+
+                                if (useThousandSeparator)
+                                {
+                                    <div class="right ubalance-data @valueClass" style="width: @width">@node.Data[i].value.ToString("N" + Model.UniversalTable.Columns[i].MaxLength)</div>
+                                }
+                                else
+                                {
+                                    <div class="right ubalance-data @valueClass" style="width: @width">@node.Data[i].value.ToString("F" + Model.UniversalTable.Columns[i].MaxLength)</div>
+                                }
+                            }
+                        }
+                    }
+                    <div style="clear: both"></div>
+                </div>
+                @PrintNodes(node.Children, maxValueCount, useThousandSeparator, firstColumnPadding)
+            </div>
+        }
+    }
+}
+
+<div class="table-container ubalance-container">
+    @if (Model != null && Model.TableInfo != null && Model.TableInfo.OptimizationHidden == 1)
+    {
+        // JUSST FOR EON :DDD
+        <script>
+            $(document).ready(function () {
+                $(".SplitTable").parent().hide();
+                $(".SortColumn").parent().hide();
+            });
+        </script>
+    }
+
+    <div class="table-parameters" id="table-parameter">
+        <div class="table-parameter left">
+            <div class="table-parameter-name left">@Model.DataGridNameDescription() :</div>
+            <div class="left" id="reportName">@Model.TableInfo.GetDescription()</div>
+            <div style="clear: left"></div>
+        </div>
+        @foreach (var par in Model.UniversalTable.GetParameters())
+        {
+            <div class="table-parameter left">
+                <div class="table-parameter-name left">@par.Item1 </div>
+                <div class="left"><span title="@par.Item2">@par.Item2</span></div>
+                <div style="clear: left"></div>
+            </div>
+        }
+        <div style="clear: left"></div>
+    </div>
+
+    @{
+        Model.UniversalTable.GenerateColumnWidths();
+        int firstColumnPadding = 20; // the left padding of the first column at each level
+        int columnMarginRight = 10; // the right margin of the columns
+        var fullwidth =
+            (Model.UniversalTable.MaximumValueCount > 1)
+            // sum column widths                 + add the maximum left padding which depends on how deep is the tree + add the right margin of each column (konto column is not included in columns)
+            ? (Model.UniversalTable.ColumnWidths.Sum() + (firstColumnPadding * Model.UniversalTable.MaxDepth) + ((Model.UniversalTable.Columns.Count + 1) * columnMarginRight)).ToString() + "px"
+            : "100%"; // if there is only 1 or there is no value column then set width 100%
+        //                                                    add the maximum left padding of the tree, but this column has left padding set by default so remove that from this calculation
+        var firstColWidth = (Model.UniversalTable.ColumnWidths[0] + ((Model.UniversalTable.MaxDepth - 1) * firstColumnPadding)).ToString() + "px";
+
+        var thousandSeparator = ViewboxApplication.FindProperty("thousand");
+        bool useThousandSeparator = thousandSeparator != null && thousandSeparator.Value.Equals("true", StringComparison.OrdinalIgnoreCase);
+    }
+
+    <div class="ubalance-header">
+        <div class="ubalance-cols" style="width: @fullwidth">
+            <div class="left ubalance-col" style="width: @firstColWidth">@Model.UniversalTable.KontoColumnName</div>
+            @{
+                int colCounter = 0;
+                var firstRowData = Model.UniversalTable.TreeRoot.Children[0].Data;
+            }
+            @for (int i = Model.UniversalTable.Columns.Count - 1; i >= 0; i--)
+            {
+                string width = Model.UniversalTable.ColumnWidths[i + 1].ToString() + "px";
+                var colClass = firstRowData[colCounter++].dataType == UniversalTableModel.Node.DataStruct.DataType.Value ? "ubalance-value right" : "right";
+                <div class="ubalance-col @colClass" style="width: @width">@Model.UniversalTable.Columns[i].GetDescription()</div>
+            }
+            <div style="clear: both"></div>
+        </div>
+    </div>
+
+    <div class="ubalance-view" style="position: relative; left: 0; top: 0;">
+        @if (Model.UniversalTable.TreeRoot.Children.Count > 0)
+        {
+            <div style="width: @fullwidth" class="ubalance-tree">
+                @PrintNodes(Model.UniversalTable.TreeRoot.Children, Model.UniversalTable.MaximumValueCount, useThousandSeparator, firstColumnPadding)
+            </div>
+        }
+        else
+        {
+            <div class="no-data-balance">@Model.LabelNoData</div>
+        }
+    </div>
+</div>

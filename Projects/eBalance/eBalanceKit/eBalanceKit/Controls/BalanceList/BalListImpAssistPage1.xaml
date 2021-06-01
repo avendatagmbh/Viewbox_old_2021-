@@ -1,0 +1,85 @@
+﻿<imp:BalListImpAssistPageBase x:Class="eBalanceKit.Controls.BalanceList.BalListImpAssistPage1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:imp="clr-namespace:eBalanceKit.Controls.BalanceList"
+                              xmlns:Templates="clr-namespace:eBalanceKitBusiness.Structures.DbMapping.Templates;assembly=eBalanceKitBusiness"
+                              xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+                              xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+                              mc:Ignorable="d" d:DesignHeight="400" d:DesignWidth="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- info -->
+        <Border Grid.Row="0" Margin="0,2,0,0" Style="{StaticResource GroupBoxBorder}">
+            <StackPanel Margin="5,0,0,0">
+                <!--<TextBlock FontSize="18" Text="{x:Static Localisation:ResourcesBalanceList.FileSelectionLabel}" />-->
+                <TextBlock TextWrapping="Wrap" Text="{x:Static Localisation:ResourcesBalanceList.SelectCsvIncluding}" />
+                <TextBlock FontWeight="Bold" Text="{x:Static Localisation:ResourcesBalanceList.AccountNumber}" />
+                <TextBlock FontWeight="Bold" Text="{x:Static Localisation:ResourcesBalanceList.AccountName}" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Text="{x:Static Localisation:ResourcesBalanceList.TotalBalance}" />
+                    <TextBlock Margin="5,0,0,0" TextWrapping="Wrap" Text="{x:Static Localisation:ResourcesBalanceList.SignedLong}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Text="{x:Static Localisation:ResourcesBalanceList.MarkIncomeExpense}" />
+                    <TextBlock Margin="5,0,0,0" Text="{x:Static Localisation:ResourcesBalanceList.MarkLong}" />
+                </StackPanel>
+                <!--<TextBlock TextWrapping="Wrap" FontWeight="Bold" Margin="0,5,0,0" FontStyle="Normal" Text="{x:Static Localisation:ResourcesBalanceList.Hint}" />
+                <TextBlock TextWrapping="Wrap" FontStyle="Normal" Text="{x:Static Localisation:ResourcesBalanceList.HintContent}" />-->
+            </StackPanel>
+        </Border>
+        
+        <!-- main -->
+        <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource GroupBoxBorder}">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Margin="0,10,0,0">
+                    <TextBlock Text="Name" />
+                    <TextBox Text="{Binding Importer.Config.BalanceListName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.File}" Margin="0,8,0,0"/>
+                    <Grid IsEnabled="{Binding ElementName=checkUseTestlist, Path=IsChecked, Converter={StaticResource BoolInverter}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox Text="{Binding Importer.Config.CsvFileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Grid.Column="1" Name="btnSelectCsvFile" Click="btnSelectCsvFile_Click" Margin="3" Style="{StaticResource ImageButtonStyle}">
+                            <Image Width="16" Source="/eBalanceKitResources;component/Resources/Folder.png" ImageFailed="Image_ImageFailed" />
+                        </Button>
+                        
+                                                
+                    </Grid>
+                    <CheckBox Margin="0,10" Content="{x:Static Localisation:ResourcesBalanceList.TestBalanceList}" Name="checkUseTestlist" IsChecked="{Binding UseTestConfig}"/>
+                    
+                    <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.ChooseProfile}" Margin="0,8,0,0"/>
+                    <ComboBox Height="23" ItemsSource="{x:Static Templates:AccountsProfileManager.Items}" SelectedItem="{x:Static Templates:AccountsProfileManager.DefaultElement}" SelectionChanged="ComboBoxSelectionChanged" />
+                    <TextBlock Text="{Binding Importer.Config.Warning}" Foreground="Red" />                    
+                    <TextBlock x:Name="txtNameWarning1" Padding="1" Text="{x:Static Localisation:ResourcesBalanceList.SelectCsv}" Foreground="Red" Visibility="Collapsed" />
+                    <TextBlock x:Name="txtNameWarning2" Padding="1" Text="{x:Static Localisation:ResourcesBalanceList.FileNotExist}" Foreground="Red" Visibility="Collapsed" />
+                    <TextBlock x:Name="txtNameWarning3" Padding="1" TextWrapping="Wrap" Text="{x:Static Localisation:ResourcesBalanceList.TooBig}" Foreground="Red" Visibility="Collapsed" />
+                    <!--<AvdWpfControls:TogglePopup ImageSource="/eBalanceKitResources;component/Resources/info.png" ImageHeight="12" Text="{x:Static Localisation:ResourcesBalanceList.ExampleShort}" >
+                        <Border BorderThickness="1" Style="{StaticResource PopupBorder}" Padding="0" Background="White" >
+                            <StackPanel Margin="5">
+                                <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.ExampleLong}" />
+                            <Image Source="/eBalanceKitResources;component/Resources/SuSa_Example.png" Height="87" HorizontalAlignment="Left"/>
+                                <TextBlock Text="{x:Static Localisation:ResourcesBalanceList.FileContent}" />
+                                <TextBox TextWrapping="Wrap" IsReadOnly="True" Text="{Binding SampleBalanceListText, Mode=OneWay}"/>
+
+                        </StackPanel>
+                        </Border>
+                    </AvdWpfControls:TogglePopup>-->
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</imp:BalListImpAssistPageBase>

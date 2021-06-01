@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Management.ManagementAssistant.Add.CtlDocumentBaseData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Manager="clr-namespace:eBalanceKitBusiness.Manager;assembly=eBalanceKitBusiness"
+             xmlns:Add="clr-namespace:eBalanceKit.Windows.Management.ManagementAssistant.Add" mc:Ignorable="d" 
+             d:DesignHeight="409" d:DesignWidth="759">
+    <Grid>
+        <StackPanel Grid.Row="1">
+            <!-- owner -->
+            <!--<TextBlock VerticalAlignment="Center" Text="Besitzer" Visibility="{Binding Document.AllowEditOwner, Converter={StaticResource TrueToVisibilityConverter}}"/>
+            <ComboBox x:Name="cboOwner" Visibility="{Binding Document.AllowEditOwner, Converter={StaticResource TrueToVisibilityConverter}}"
+                      ItemsSource="{Binding Path=Document.AllowedOwners}"
+                      SelectedItem="{Binding Path=Document.Owner}"
+                      DisplayMemberPath="DisplayString" IsEnabled="{Binding ReportRights.WriteAllowed}" Margin="0,0,0,8"/>-->
+
+            <Add:CtlNameComment />
+            <Add:CtlReportSpecificData DataContext="{Binding AddReportModel}" />
+
+        </StackPanel>
+    </Grid>
+</UserControl>

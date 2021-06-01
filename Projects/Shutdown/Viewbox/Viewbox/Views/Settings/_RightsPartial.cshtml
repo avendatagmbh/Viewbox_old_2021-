@@ -1,0 +1,115 @@
+﻿@model Viewbox.Models.RightSettingsModel
+@using SystemDb
+@using Viewbox
+@using Viewbox.Properties
+<div id="rightsettings">
+    <h3 class="users">@Resources.User</h3>
+    <ul class="users">
+        @foreach (var user in Model.Users.OrderBy((u) => { return !string.IsNullOrWhiteSpace(u.Name) ? u.Name : u.UserName; }))
+        {
+            String logRightClass = String.Empty;
+            RightType logRight = RightType.None;
+            if (Model.RightsMode)
+            {
+                logRight = (Model.User.IsUserLogAllowedInRightsMode(user)) ? RightType.None : RightType.Read;
+                logRightClass = (logRight == RightType.None) ? "readable" : "not-readable";
+            }
+            if (!Model.User.CanGrant(user)) { continue; }
+            <li class="user @logRightClass" data-class="user">
+                <span class="admin"></span>
+                <a class="right delete" href="@Url.Action("DeleteUser", "UserManagement", new { id = @user.Id })" obj-name="@user.GetName()">@Resources.Remove</a>
+                <table>
+                    <tr>
+                        <td>
+                            <span class="name" style="word-break: break-all;">@(user.GetName() + (user.IsADUser ? " (AD)" : String.Empty))</span>
+                            <ul class="details user-roles">
+                                @foreach (var role in user.Roles)
+                                {
+                                    <li>
+                                        <span class="item-id">@role.Id</span>
+                                        <a href="@Url.Action("UserRemoveRole", "UserManagement", new { user = user.Id, role = role.Id })" style="word-break: break-all;">@role.Name</a>
+                                    </li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <div style="clear: both;"></div>
+                <span class="item-id">@user.Id</span>
+            </li>
+        }
+    </ul>
+    <div class="users">
+        @if (ViewboxApplication.ADImportSupported)
+        {
+            <a href="#" class="ad-import">@Resources.ADImport</a>
+        }
+        <a href="#" class="new-user">@Resources.AddUser</a>
+        @*<a href="#" class="apply-settings">@Resources.ApplySettingsForAll</a>*@
+    </div>
+    <h3 class="roles">@Resources.Roles</h3>
+    <ul class="roles">
+        @foreach (var role in Model.Roles.OrderBy((r) => { return r.Name; }))
+        {
+            if (!Model.User.CanGrant(role)) { continue; }
+            <li class="role" data-class="role">
+                <span class="user"></span>
+                @if (!role.IsSuper)
+                {
+                    <a class="right delete" href="@Url.Action("DeleteRole", "UserManagement", new { id = @role.Id })" obj-name="@role.Name">@Resources.Remove</a>
+                }
+                <table>
+                    <tr>
+                        <td>
+                            <span class="name" style="word-break: break-all;">@role.Name</span>
+                            <span class="details">@role.Users.Count @Resources.User</span>
+                        </td>
+                    </tr>
+                </table>
+                <div style="clear: both;"></div>
+                <span class="item-id">@role.Id</span>
+            </li>
+        }
+    </ul>
+    <div class="roles">
+        <a href="#" class="new-role">@Resources.AddRole</a>
+    </div>
+
+</div>
+@if (Model.Dialog != null)
+{
+    <div class="hide" id="show-dlg">
+        @if (Model.Type == CredentialType.User)
+        {
+            @Html.Partial("_ExtendedDialogPartial", Model.Dialog)
+        }
+        else
+        {
+            @Html.Partial("_DialogPartial", Model.Dialog)
+        }
+    </div>
+    <script type="text/javascript" language="javascript">
+        jQuery('#dialog').show().html(jQuery('#show-dlg').remove().html());
+    </script>
+}
+<div class="hide" id="wait-dlg">
+    @Html.Partial("_DialogPartial", Model.GetWaitDialog(Resources.AddUser));
+</div>
+<div class="hide" id="add-confirm-dlg">
+    @Html.Partial("_DialogPartial", Model.GetConfirmDialog(Resources.AddUser));
+</div>
+<div class="hide" id="addRole-confirm-dlg">
+    @Html.Partial("_DialogPartial", Model.GetConfirmDialog(Resources.AddRole));
+</div>
+<div class="hide" id="assignRole-confirm-dlg">
+    @Html.Partial("_DialogPartial", Model.GetConfirmDialog(Resources.AssignRole));
+</div>
+<div class="hide" id="clearAssignment-confirm-dlg">
+    @Html.Partial("_DialogPartial", Model.GetConfirmDialog(Resources.ClearAssignment));
+</div>
+<div class="hide" id="delete-confirm-dlg">
+    @Html.Partial("_DialogPartial", Model.GetConfirmDialog(Resources.RemoveUserOrRole));
+</div>
+<div class="hide" id="delete-wait-dlg">
+    @Html.Partial("_DialogPartial", Model.GetWaitDialog(Resources.RemoveUserOrRole));
+</div>

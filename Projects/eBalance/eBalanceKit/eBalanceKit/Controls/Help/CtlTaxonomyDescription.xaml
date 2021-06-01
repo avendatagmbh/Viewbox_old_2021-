@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.Help.CtlTaxonomyDescription"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Converters="clr-namespace:eBalanceKit.Converters"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+  <UserControl.Resources>
+    <Converters:TaxonomyTypeToDescriptionConverter x:Key="TaxonomyTypeToDescriptionConverter" />
+    <Converters:TaxonomyTypeToImageConverter x:Key="TaxonomyTypeToImageConverter" />
+  </UserControl.Resources>
+  <StackPanel Margin="0,10" Orientation="Horizontal" >
+        <Image Source="{Binding Type, Converter={StaticResource TaxonomyTypeToImageConverter}}" />
+            <!--<AvdWpfControls:ImageButton ImageSource="{Binding Type, Converter={StaticResource TaxonomyTypeToImageConverter}}" >
+            <AvdWpfControls:ImageButton.Content>-->
+                <StackPanel>
+            <TextBlock Text="{Binding Name}" />
+            <TextBlock Text="{Binding Type, Converter={StaticResource TaxonomyTypeToDescriptionConverter}}" TextWrapping="Wrap" />
+                </StackPanel>
+            <!--</AvdWpfControls:ImageButton.Content>
+        </AvdWpfControls:ImageButton>-->
+        <TextBlock Text="" />
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,9 @@
+﻿@using Viewbox
+@{
+    ViewBag.Title = Model.LabelCaption;
+    var model = new Helper.PassThroughView("_BalanceViewPartial", Model);
+}
+@section HeadSection {
+    <link href="@Html.AddCurrentVersion(@Url.Content("~/Content/DataGrid.css"))" rel="stylesheet" type="text/css" />
+}
+@Html.Partial("_AppPagePartial", model)

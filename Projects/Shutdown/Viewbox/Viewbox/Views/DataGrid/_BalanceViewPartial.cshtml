@@ -1,0 +1,88 @@
+﻿@using Viewbox
+@using Viewbox.Properties
+@using Viewbox.Models
+@model DataGridModel
+@helper PrintNodes(IEnumerable<SapBalanceModel.Node> list)
+{
+    foreach (var node in list)
+    {
+        var children = new List<SapBalanceModel.Node>(node.Children.Where((n) => { return n.HasValueChildren; }));
+        if ((node.Type == SapBalanceModel.StructureType.RangeNode || node.Type == SapBalanceModel.StructureType.AccountNode) && !node.Equals(Model.SapBalance.UnassignedAccounts))
+        {<text>@PrintNodes(children)</text>
+        }
+        else
+        {
+            var classname = "tree-node" + (children.Count > 0 ? " open" : String.Empty);
+            if (Model.SapBalance.Flag == 1)
+            { 
+                var valueclass = "node-value" + (node.Value < 0 ? " negative" : String.Empty);
+                <div class="@classname">
+                    <div class="node-descr">@node.Description</div>
+                    <div class="@valueclass">@(node.Value.ToString("#,0.00") + (String.IsNullOrEmpty(Model.SapBalance.Currency) ? "" : " " + Model.SapBalance.Currency))</div>
+                    @PrintNodes(children)
+                </div>
+            }
+            if (Model.SapBalance.Flag == 10)
+            {
+                var valueclass = node.Type == SapBalanceModel.StructureType.MainNode ? "dcw-structure" : "dcw-account";
+                var valueclass1 = "balance-value right " + (node.Value_REL < 0 ? " negative" : String.Empty);
+                var valueclass2 = "balance-value right " + (node.Value_ABS < 0 ? " negative" : String.Empty);
+                var valueclass3 = "balance-value right " + (node.Value_VJ < 0 ? " negative" : String.Empty);
+                var valueclass4 = "balance-value right " + (node.Value < 0 ? " negative" : String.Empty);
+                <div class="@classname">
+                    <div class="@valueclass">
+                        <div class="node-descr">@node.Description</div>
+                        <div class="@valueclass1">@(node.Value_REL.ToString("#,0.00") + " %")</div>
+                        <div class="@valueclass2">@(node.Value_ABS.ToString("#,0.00") + (String.IsNullOrEmpty(Model.SapBalance.Currency) ? "" : " " + Model.SapBalance.Currency))</div>
+                        <div class="@valueclass3">@(node.Value_VJ.ToString("#,0.00") + (String.IsNullOrEmpty(Model.SapBalance.Currency) ? "" : " " + Model.SapBalance.Currency))</div>
+                        <div class="@valueclass4">@(node.Value.ToString("#,0.00") + (String.IsNullOrEmpty(Model.SapBalance.Currency) ? "" : " " + Model.SapBalance.Currency))</div>
+                    </div>
+                    @PrintNodes(children)
+                </div>
+            }
+        }
+    }
+}
+<div class="table-container balance-container" style="overflow: hidden;">
+    @{
+        var list = Model.SapBalance.TreeRoot.Children.Where((n) => { return n.HasValueChildren; });
+    }
+    <div class="balance-parameters left">
+        <div class="balance-parameter left">
+            <div class="balance-parameter-name left">@Model.DataGridNameDescription() :</div>
+            <div class="left">@Model.TableInfo.GetDescription()</div>
+        </div>
+        @foreach (var par in Model.SapBalance.GetParameters())
+        {
+            <div class="balance-parameter left">
+                <div class="balance-parameter-name left">@par.Item1 :</div>
+                <div class="left">@par.Item2</div>
+            </div>
+        }
+    </div>
+    <div class="clear">
+    </div>
+    <div class="balance-header">
+        <div class="left">@Resources.DCWDescription</div>
+        <div class="balance-scroll-header right">&nbsp;</div>
+        @if (Model.SapBalance.Flag == 10)
+        { 
+            <div class="balance-value right">Rel. Abw</div>
+            <div class="balance-value right">Abs. Abw.</div>
+            <div class="balance-value right">Vorjahr</div>
+        }
+        <div class="balance-value right">@Resources.DCWValue</div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="balance-view table-scroll scroll">
+        @if (list.Count() > 0)
+        {
+            @PrintNodes(list)
+        }
+        else
+        {
+            <div class="no-data-balance">@Model.LabelNoData</div>
+        }
+    </div>
+</div>

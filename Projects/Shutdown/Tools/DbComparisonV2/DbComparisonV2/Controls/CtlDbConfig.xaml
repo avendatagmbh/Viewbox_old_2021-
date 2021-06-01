@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="DbComparisonV2.Models.CtlDbConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".20*"></RowDefinition>
+            <RowDefinition Height=".80*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Content="Datenbanktyp" Height="27" HorizontalAlignment="Left" Name="lblDbType" VerticalAlignment="Top" />
+        <ComboBox VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5,24,5,13" Name="cboDbType" SelectedItem="{Binding Path=DbType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+        </ComboBox>
+        <GroupBox Grid.Row="2" HorizontalAlignment="Stretch" Name="groupBox1" VerticalAlignment="Stretch">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".80*"/>
+                    <ColumnDefinition Width=".20*" /> 
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <!--Column 1-->
+                <Label  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="lblHostName" Content="HostName"></Label>
+                <Label Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="lblUserName" Content="Benutzername"></Label>
+                <Label Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="lblPassword" Content="Passwort"></Label>
+                <Label Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="lblDNS" Content="DNS"></Label>
+                <Label Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="lblDatabase" Content="Database"></Label>
+                <TextBox Grid.Row="1" HorizontalAlignment="Stretch"  Name="txtHost" Text="{Binding Path=Hostname}"  VerticalAlignment="Stretch" />
+                <TextBox Grid.Row="3"  HorizontalAlignment="Stretch" Name="Username" Text="{Binding Path=Username}"  VerticalAlignment="Stretch" />
+                <PasswordBox Grid.Row="5" HorizontalAlignment="Stretch" Name="txtPassword" VerticalAlignment="Stretch"  />
+                <ComboBox Grid.Row="7" HorizontalAlignment="Stretch" Name="cboDsn" SelectedItem="{Binding Path=DNS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Stretch" />
+                <ComboBox Grid.Row="9" HorizontalAlignment="Stretch" Name="cboDbName" SelectedItem="{Binding Path=DbName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Stretch" />
+                <!--Column 2-->
+                <Label Content="Port" Grid.Column="2"  Margin="5,0,0,0"  Grid.Row="0"  HorizontalAlignment="Stretch" Name="lblPort" VerticalAlignment="Stretch" />
+                <TextBox Grid.Row="1"  Grid.Column="2" Margin="5,0,0,0"  HorizontalAlignment="Stretch" Text="{Binding Path=Port}" Name="txtPort" VerticalAlignment="Stretch"  />
+                <Button Content="Update" Grid.Column="2" FontSize="10" Grid.Row="9" Height="23" HorizontalAlignment="Stretch" Margin="5,0,0,0" Name="btnUpdateDatabaseList" VerticalAlignment="Stretch" Click="btnUpdateDatabaseList_Click" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

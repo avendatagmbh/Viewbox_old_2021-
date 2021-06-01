@@ -1,0 +1,21 @@
+﻿<Window x:Class="TransDATA.Windows.DlgEditMail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Config="clr-namespace:TransDATA.Controls.Config"
+        xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base" 
+        Title="{x:Static Localisation:ResourcesCommon.DlgEmailConfigurationCaption}"  Icon="/Resources/Mail24.png"
+        SizeToContent="Height" Width="400"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Config:CtlMailConfig />
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}" >
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="5,3">
+                <Button Content="{x:Static Localisation:ResourcesCommon.Save}" Height="23" Margin="0" Name="btnSave" VerticalAlignment="Top" Width="Auto" Padding="5,0" Click="BtnSaveClick" />
+                <Button Content="{x:Static Localisation:ResourcesCommon.Cancel}" Height="23" Margin="5,0,0,0" Name="btnCancel" VerticalAlignment="Top" Width="Auto" Padding="5,0" Click="BtnCancelClick" Visibility="{Binding IsNewProfile, Converter={StaticResource TrueToVisibilityConverter}}"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

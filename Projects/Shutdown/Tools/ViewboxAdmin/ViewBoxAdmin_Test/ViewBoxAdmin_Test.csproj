@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C3E6957E-8948-418B-984F-98F6C7EA0953}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViewBoxAdmin_Test</RootNamespace>
+    <AssemblyName>ViewBoxAdmin_Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=2.6.3.862, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\Autofac-2.6.3.862-NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.1.12217, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\NUnit 2.6.1\bin\framework\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\..\Libraries\Rhino.Mocks-3.6-Build-20\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CollectionEdit_ViewModel_Test.cs" />
+    <Compile Include="CollectionUnitOfWork_Test.cs" />
+    <Compile Include="CreateParameterValue_ViewModel_Test.cs" />
+    <Compile Include="DataContextChangeEventArg_Test.cs" />
+    <Compile Include="DebugEventArgs_Test.cs" />
+    <Compile Include="DeleteSystemFromDb_Test.cs" />
+    <Compile Include="EditText_ViewModel_Test.cs" />
+    <Compile Include="LoaderBase_Test.cs" />
+    <Compile Include="Loader_Base.cs" />
+    <Compile Include="MainWindow_ViewModel_Test.cs" />
+    <Compile Include="MergeDataBase_Test.cs" />
+    <Compile Include="Merger_ViewModel_Test.cs" />
+    <Compile Include="OptimizationEventArgs_Test.cs" />
+    <Compile Include="OptimizationTree_ViewModel__Test.cs" />
+    <Compile Include="Optimization_ViewModel_Test.cs" />
+    <Compile Include="Parameters_ViewModel_Test.cs" />
+    <Compile Include="ProfileManagement_ViewModel_Test.cs" />
+    <Compile Include="ProfileModelRepository_Test.cs" />
+    <Compile Include="ProfileModel_Test.cs" />
+    <Compile Include="RoleEditViewModel_Test.cs" />
+    <Compile Include="SystemDelete_ViewModel_Test.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableLoader_Test.cs" />
+    <Compile Include="UserModel_Test.cs" />
+    <Compile Include="UserUnitOfWork_Test.cs" />
+    <Compile Include="UserViewModel_Test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\SystemDb\SystemDb.csproj">
+      <Project>{A7FA3A52-0DDD-456B-BF7A-CED14D0AE0DF}</Project>
+      <Name>SystemDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewboxAdminBusiness\ViewboxAdminBusiness.csproj">
+      <Project>{031F9B92-9903-475A-B4F5-06D8FDCE1F93}</Project>
+      <Name>ViewboxAdminBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewboxAdmin\ViewboxAdmin.csproj">
+      <Project>{4AE8FAA1-CD43-472C-8542-1341E64DD23C}</Project>
+      <Name>ViewboxAdmin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,17 @@
+﻿@model Viewbox.Models.NotEnoughFreeSpaceModel
+@{
+    ViewBag.Title = "Not enough free space!";
+}
+<div id="notEnoughFreeSpace-dlg" class="hide">
+    @Html.Partial("_DialogPartial", Model.Dialog)
+</div>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+        jQuery('#dialog').show().html(jQuery('#notEnoughFreeSpace-dlg').remove().html()).addClass("NotEnoughFreeSpace");
+        jQuery('.NotEnoughFreeSpace .dialog-btn .text').click(function () {
+            jQuery('#dialog').fadeOut(500, function () {
+                window.location.replace("/Error/NotReady?cont=true");
+            });
+        });
+    });
+</script>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="eBalanceKit.Controls.DlgMessageBoxExt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Converters="clr-namespace:eBalanceKit.Converters"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Title="{Binding Caption}" Height="192" Width="468"
+        WindowStyle="ToolWindow" ResizeMode="NoResize" SizeToContent="Height" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Style="{StaticResource ButtonBorder}" Height="40">
+            <TextBlock Margin="5,0,5,0" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Caption}"/>
+        </Border>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding MessageImageSource}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="32" Width="32" Margin="10 0 0 0" Visibility="{Binding HasImageSource, Converter={StaticResource TrueToVisibilityConverter}}"/>
+                <TextBlock Grid.Column="2" Margin="5,0,5,0" FontSize="13" VerticalAlignment="Center" Text="{Binding MessageBoxText}"/>
+            </Grid>
+        </StackPanel>
+        <Border Grid.Row="2" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="{x:Static Localisation:ResourcesMessageBoxExt.Yes}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnButtonYes" IsDefault="{Binding IsYesDefault}" VerticalAlignment="Top" Width="75" Click="btnButtonYes_Click" Visibility="{Binding YesNoVisible, Converter={StaticResource TrueToVisibilityConverter}}" />
+                <Button Content="{x:Static Localisation:ResourcesMessageBoxExt.No}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnButtonNo" IsDefault="{Binding IsNoDefault}" VerticalAlignment="Top" Width="75" Click="btnButtonNo_Click" Visibility="{Binding YesNoVisible, Converter={StaticResource TrueToVisibilityConverter}}"/>
+                <Button Content="{x:Static Localisation:ResourcesMessageBoxExt.Ok}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnButtonOk" IsDefault="{Binding IsOkDefault}" VerticalAlignment="Top" Width="75" Click="btnButtonOk_Click" Visibility="{Binding OkVisible, Converter={StaticResource TrueToVisibilityConverter}}" />
+                <Button Content="{x:Static Localisation:ResourcesMessageBoxExt.Cancel}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnButtonCancel" IsDefault="{Binding IsCancelDefault}" VerticalAlignment="Top" Width="75" Click="btnButtonCancel_Click" Visibility="{Binding CancelVisible, Converter={StaticResource TrueToVisibilityConverter}}" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

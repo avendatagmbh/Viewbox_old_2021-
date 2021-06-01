@@ -1,0 +1,58 @@
+﻿<Window x:Class="ViewAssistant.Windows.DlgLocalisationTextsSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base"
+        Title="{x:Static Localisation:ResourcesCommon.LocalizationSettings}" Height="auto" MinHeight="450" Width="450" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+
+    <Control.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/TLocalisationTextsConfiguration.xaml"/>
+                <ResourceDictionary Source="/Themes/TMain.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Control.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="31" />
+            <RowDefinition Height="31" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="31" />
+            <RowDefinition Height="31" />
+            <RowDefinition MinHeight="150"/>
+            <RowDefinition Height="31" />
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label Width="70" Grid.Row="0" Grid.Column="0" Margin="3" VerticalAlignment="Center" Content="{x:Static Localisation:ResourcesCommon.Language}"/>
+            <ComboBox Width="200" Grid.Row="0" Grid.Column="1" Margin="3" VerticalAlignment="Center" ItemsSource="{Binding Path=CountryCodes, Mode=OneTime}" SelectedItem="{Binding Path=CountryCode, Mode=TwoWay}"/>
+        </StackPanel>
+
+        <CheckBox Grid.Row="1" Grid.ColumnSpan="2" Margin="3" VerticalAlignment="Center" Content="{x:Static Localisation:ResourcesCommon.OnlyForTheEmptyOnes}" IsChecked="{Binding Path=OnlyForTheEmptyOnes, Mode=TwoWay}" />
+        <CheckBox Grid.Row="2" Grid.ColumnSpan="2" Margin="3" VerticalAlignment="Center" Content="{x:Static Localisation:ResourcesCommon.UppercaseFirstLetters}" IsChecked="{Binding Path=UppercaseFirstLetters, Mode=TwoWay}"/>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <Label Width="70" Grid.Column="0" Margin="3" VerticalAlignment="Center" Content="{x:Static Localisation:ResourcesCommon.Keep}"/>
+            <ComboBox Width="200" Margin="3" Grid.Column="1" VerticalAlignment="Center" ItemsSource="{Binding Path=Keeps, Mode=OneWay}" SelectedItem="{Binding Path=Keep, Mode=TwoWay}"/>
+        </StackPanel>
+        
+        <CheckBox Grid.Row="4" Grid.ColumnSpan="2" Margin="3" VerticalAlignment="Center" Content="{x:Static Localisation:ResourcesCommon.OnTableNames}" IsChecked="{Binding Path=OnTableNames, Mode=TwoWay}"/>
+        <CheckBox Grid.Row="5" Grid.ColumnSpan="2" Margin="3" VerticalAlignment="Center" Content="{x:Static Localisation:ResourcesCommon.OnColumnNames}" IsChecked="{Binding Path=OnColumnNames, Mode=TwoWay}"/>
+
+        <ListBox x:Name="libDictionary" Grid.Row="6" Grid.ColumnSpan="2" Margin="3" VerticalAlignment="Stretch"
+                 ItemsSource="{Binding Path=ReplaceFromTo, Mode=TwoWay}"
+                 SelectionMode="Single"
+                 ItemTemplate="{StaticResource ViewboxLocalisationDictionaryItem}">
+        </ListBox>
+        <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button Margin="3" Command="{Binding Path=AddCommand, Mode=OneWay}" Content="{x:Static Localisation:ResourcesCommon.Add}"/>
+            <Button Margin="3" Command="{Binding Path=DeleteCommand, Mode=OneWay}" CommandParameter="{Binding ElementName=libDictionary, Path=SelectedItem}" Content="{x:Static Localisation:ResourcesCommon.Delete}"/>
+        </StackPanel>
+        <Border Grid.Row="8" Grid.ColumnSpan="2" Style="{StaticResource HeadlineBorder}" Background="{StaticResource NewDesignBlueBrush}" BorderBrush="{StaticResource NewDesignDeepBlueBrush}" BorderThickness="0,1,0,0">
+            <Button x:Name="btnOk" Height="40" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Static Localisation:ResourcesCommon.Ok}" Command="{Binding Path=AcceptCommand, Mode=OneWay}"/>
+        </Border>
+    </Grid>
+</Window>

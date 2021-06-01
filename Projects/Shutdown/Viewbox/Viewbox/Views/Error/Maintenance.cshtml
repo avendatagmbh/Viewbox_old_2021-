@@ -1,0 +1,11 @@
+﻿@using Viewbox.Properties
+@model Viewbox.Models.MaintenanceModel
+@{ ViewBag.Title = Resources.MaintenanceModelCaption; }
+<div id="url-dlg" class="hide">
+    @Html.Partial("_DialogPartial", Model.Dialog)
+</div>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+        jQuery('#dialog').show().html(jQuery('#url-dlg').html()).addClass("maintance-url");
+    });
+</script>

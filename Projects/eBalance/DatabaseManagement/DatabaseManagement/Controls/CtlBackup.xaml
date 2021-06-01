@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="DatabaseManagement.Controls.CtlBackup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Margin="0,5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox IsReadOnly="true" Text="{Binding BackupConfig.BackupDirectory}" Background="#ddd"/>
+                <Button Name="ChooseDirectory" Margin="5,0" Grid.Column="1" Click="ChooseDirectory_Click" Style="{StaticResource ImageButtonStyle}">
+                    <Image Width="16" Source="/DatabaseManagement;component/Resources/Folder.png" />
+                </Button>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="250" />
+            </Grid.ColumnDefinitions>
+            <ListBox ItemsSource="{Binding BackupConfig.Files}" SelectedItem="{Binding BackupConfig.SelectedFile,Mode=TwoWay}">
+            </ListBox>
+
+            <Border Padding="5" Grid.Column="1" Style="{StaticResource GroupBoxBorder}" CornerRadius="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Datenbankversion" Margin="0,8,0,0" />
+                    <TextBox Grid.Row="1" IsReadOnly="True" Width="100" HorizontalAlignment="Left" Text="{Binding BackupConfig.SelectedFileUserInfo.DbVersion}" Background="#ddd"/>
+
+                    <TextBlock Grid.Row="2" Text="Kommentar" Margin="0,8,0,0" />
+                    <TextBox Grid.Row="3" IsReadOnly="True" AcceptsReturn="True" VerticalAlignment="Top"
+                             VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" TextWrapping="Wrap" Background="#ddd"
+                             Text="{Binding BackupConfig.SelectedFileUserInfo.Comment}"/>
+                    <!--<Button Content="Backup entschlüsseln" Grid.Row="3" Height="20" HorizontalAlignment="Left" Margin="53,38,0,0" Name="button1" VerticalAlignment="Top" Width="123" Click="button1_Click" />-->
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="2" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Margin="0,5,0,5" Name="CreateBackup" Click="CreateBackup_Click">Backup erstellen</Button>
+                <Button Margin="5,5,5,5" Name="RestoreBackup" Click="RestoreBackup_Click">Backup importieren</Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

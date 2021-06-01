@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="RtfConverterWpf.Controls.CtlMain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Converters="clr-namespace:AvdWpfControls.Converters;assembly=AvdWpfControls" mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <UserControl.Resources>
+        <Converters:ValueExistsToVisibilityConverter x:Key="ValueExistsToVisibilityConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="250" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <DataGrid    Name="dataGrid" BorderBrush="Transparent" SelectedItem="{Binding SelectedTable}" 
+                                ItemsSource="{Binding Path=Tables}" 
+                                AutoGenerateColumns="False"
+                                CanUserResizeRows="False" 
+                                CanUserAddRows="False"
+                                HorizontalGridLinesBrush="#40000000" 
+                                VerticalGridLinesBrush="#40000000" 
+                                SelectionMode="Single" 
+                                SelectionUnit="FullRow"                                    
+                                HeadersVisibility="Column"
+                                >
+
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Width="Auto" CanUserResize="False" x:Name="dgScriptsCol_IsChecked">
+                    <DataGridTemplateColumn.Header>
+                        <CheckBox 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center" 
+                                            x:Name="chkIsViewCheckedHeader" Checked="chkIsViewCheckedHeader_Checked" Unchecked="chkIsViewCheckedHeader_Unchecked" />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox
+                                                HorizontalAlignment="Center" 
+                                                VerticalAlignment="Center" 
+                                                IsChecked="{Binding Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                
+                                                x:Name="chkIsChecked"  />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+
+                <DataGridTemplateColumn Header="Name" Width="Auto" IsReadOnly="True" SortMemberPath="Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Name}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Column="1" Margin="15,0,0,0" Visibility="{Binding SelectedTable, Converter={StaticResource ValueExistsToVisibilityConverter}}">
+            <TextBlock FontWeight="Bold">Spalten (mit ; getrennt)</TextBlock>
+            <TextBox Text="{Binding SelectedTable.ColumnString}"/>
+            <TextBlock FontWeight="Bold">Ausgabe-Tabellenname</TextBlock>
+            <TextBox Text="{Binding SelectedTable.TargetName}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

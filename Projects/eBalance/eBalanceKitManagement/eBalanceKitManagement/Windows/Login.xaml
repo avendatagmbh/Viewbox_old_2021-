@@ -1,0 +1,128 @@
+﻿<Window x:Class="eBalanceKitManagement.Windows.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:CustomResources="clr-namespace:CustomResources;assembly=CustomResources"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:Structures="clr-namespace:eBalanceKitBusiness.Structures;assembly=eBalanceKitBusiness"
+        xmlns:Converter="clr-namespace:eBalanceKitBase.Converters;assembly=eBalanceKitBase"
+        Title="{x:Static CustomResources:CustomStrings.ProductNameManagement}" Height="271" Width="420"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        Closed="Window_Closed" Loaded="Window_Loaded"
+        Icon="/CustomResources;component/Resources/logo1.png" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="91"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- header -->
+        <Border Grid.Row="0">
+            <Grid>
+                <Image Stretch="Fill" Source="/eBalanceKitManagement;component/Resources/background_header.png"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Margin="10,10,5,10" Width="64" Source="/CustomResources;component/Resources/logoLogin.png">
+                        <Image.Effect>
+                            <DropShadowEffect Opacity="0.4" ShadowDepth="4" Direction="300" />
+                        </Image.Effect>
+                    </Image>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,5">
+                        <TextBlock Opacity="0.95" Padding="0" Grid.Row="0" Grid.Column="1" Height="Auto" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                                       FontSize="24" FontFamily="Arial" Foreground="White" FontWeight="Bold" 
+                                       x:Name="txtCaption" Text="{x:Static CustomResources:CustomStrings.ProductNameManagement}"/>
+                        <TextBlock Opacity="0.95" Padding="0" Grid.Row="1"  Grid.Column="1" Height="Auto" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                       FontSize="12" FontFamily="Arial" FontStyle="Italic" Foreground="#FF7CB4C9"
+                                       x:Name="txtVersion" Text="Version x.x.x"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Border>
+
+        <!-- main -->
+        <Border Grid.Row="1" Style="{StaticResource GroupBoxBorder1}">
+            <Grid Margin="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="13*" />
+                </Grid.RowDefinitions>
+
+                <Label Padding="0" Grid.Column="0" Content="{x:Static Localisation:ResourcesLogin.User}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Name="lblUsername" />
+                <ComboBox Grid.Row="1" Grid.Column="0" 
+                          HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+                          Name="username" Height="23" 
+                          DisplayMemberPath="DisplayString" />
+                <Label Padding="0" Content="{x:Static Localisation:ResourcesLogin.Password}" Grid.Column="0" Grid.Row="2" Margin="0,12,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Name="lblpassword"/>
+                <PasswordBox Height="23" Padding="0" Grid.Row="3" Grid.Column="0" Name="password" HorizontalAlignment="Stretch" VerticalAlignment="Top" KeyDown="password_KeyDown" />
+
+                <StackPanel x:Name="LanguagePanel" Grid.Column="1" Grid.RowSpan="5" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed">
+                    <TextBlock Grid.Row="0" Padding="0" Text="{x:Static Localisation:ResourcesCommon.Language}" />
+                    <ComboBox Grid.Row="1" x:Name="languages" ItemsSource="{x:Static Structures:AppConfig.Languages}" SelectedItem="{Binding SelectedLanguage, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" 
+                          Height="24" Width="90"
+                          HorizontalAlignment="Left">
+                        <ComboBox.Resources>
+                            <Converter:LanguageToImageConverter x:Key="LanguageToImageConverter" />
+                        </ComboBox.Resources>
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding ., Converter={StaticResource LanguageToImageConverter}}" Width="16" HorizontalAlignment="Left" />
+                                    <TextBlock Grid.Column="1" Margin="5,0,0,0" Text="{Binding DisplayName}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+
+            </Grid>
+        </Border>
+
+        <!-- bottom -->
+        <Border Grid.Row="2" Style="{StaticResource ButtonBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Image Height="25" HorizontalAlignment="Left" Margin="3" Source="/eBalanceKitManagement;component/Resources/AvenDATA.png" />
+
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <Button Content="{x:Static Localisation:ResourcesLogin.BtnLogin}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnOk" VerticalAlignment="Top" Width="Auto" Padding="5,0" Click="btnOk_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                <Setter Property="IsEnabled" Value="True" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SelectedIndex,ElementName=username}" Value="-1">
+                                        <Setter Property="IsEnabled" Value="False" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+        </Border>
+
+    </Grid>
+</Window>

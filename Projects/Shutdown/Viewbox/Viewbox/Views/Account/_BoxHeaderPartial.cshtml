@@ -1,0 +1,51 @@
+﻿@using Viewbox
+@model Viewbox.Models.BoxHeaderModel
+    <div id="topnav" class="start">
+        <div id="logo"><a href="#" title=""></a></div>
+        <div id="account"><ul class="dropdown"><li class="textcenter">@Model.CaptionAccount</li></ul></div>
+        <div id="right" class="right_lang">
+            <div id="language">
+                <ul class="dropdown small position-language">
+                    <li class="language">
+                        <a><span class="img-@Model.CurrentLanguage.CountryCode">@Model.CurrentLanguage.LanguageName</span></a>
+                        <ul class="dropdown-menu">
+                            <li><h4>@Model.LabelLanguageSelection</h4>
+                                <ul>
+                                    @{
+                                        var languages = ViewboxApplication.Application.Get("ViewboxApplication.Languages");
+                                    }
+                                    @if (ViewboxApplication.OnlyGermanLanguageEnabled)
+                                    {
+                                        var Language = Model.Languages.FirstOrDefault(p => p.CountryCode == "de");
+                                        ViewboxSession.Language = Language;
+                                        <li><a href="?lang=@Language.CountryCode"><span class="@Language.CountryCode"></span>@Language.LanguageName<span class="details">@Language.LanguageMotto</span></a></li>
+                                    }
+                                    else if (ViewboxApplication.RequiredLanguages != null)
+                                    {
+                                        List<SystemDb.ILanguage> reqLangs = new List<SystemDb.ILanguage>();
+                                        ViewboxApplication.RequiredLanguages.ForEach(rl =>
+                                        {
+                                            var temp = Model.Languages.FirstOrDefault(l => l.CountryCode == rl);
+                                            if (temp != null)
+                                                reqLangs.Add(temp);
+                                        });
+                                        foreach (var Language in reqLangs)
+                                        {
+                                            <li><a href="?lang=@Language.CountryCode"><span class="@Language.CountryCode"></span>@Language.LanguageName<span class="details">@Language.LanguageMotto</span></a></li>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        foreach (var Language in Model.Languages.Where(Language => Language != Model.CurrentLanguage))
+                                        {
+                                            <li><a href="?lang=@Language.CountryCode"><span class="@Language.CountryCode"></span>@Language.LanguageName<span class="details">@Language.LanguageMotto</span></a></li>
+                                        }
+                                    }
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

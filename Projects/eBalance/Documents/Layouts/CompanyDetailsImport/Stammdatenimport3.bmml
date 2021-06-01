@@ -1,0 +1,52 @@
+<mockup version="1.0" skin="sketch" measuredW="736" measuredH="547" mockupW="634" mockupH="509">
+  <controls>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::TitleWindow" x="102" y="38" w="634" h="509" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Stammdatenimport%20Assistent</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Button" x="571" y="477" w="-1" h="-1" measuredW="65" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Zur%FCck</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Button" x="651" y="477" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Weiter</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Label" x="117" y="82" w="-1" h="-1" measuredW="267" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Folgende%20Taxonomie%20Ids%20wurden%20nicht%20erkannt%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::DataGrid" x="120" y="112" w="-1" h="-1" measuredW="338" measuredH="115" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>CSV%2C%20Name%2C%20Taxonomie%20Id%2C%20Zeile%0AFirma1.csv%2C%20Firmenname%2C%20geninfo.company%2C%2017%0AFirma1.csv%2C%20Rechtsform%2C%20geninfo.wrongEntry%2C%2023%0AFirma2.csv%2C%20Test%2C%20fi.wrong%2C%2044</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::CheckBox" x="117" y="249" w="-1" h="-1" measuredW="510" measuredH="22" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Fehlerhafte%20Eintr%E4ge%20ignorieren%20und%20alle%20korrekt%20erkannten%20Stammdaten%20importieren%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::Label" x="126" y="369" w="-1" h="-1" measuredW="555" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <text>Diese%20Seite%20nur%20anzeigen%2C%20wenn%20es%20wirklich%20Fehler%20gab%20/%20Show%20this%20page%20only%20if%20there%20were%20errors</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Label" x="419" y="82" w="308" h="24" measuredW="292" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <text>%28The%20following%20taxonomy%20ids%20could%20not%20be%20identified%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Label" x="138" y="271" w="-1" h="-1" measuredW="320" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <text>%28Ignore%20incorrect%20entries%20and%20only%20import%20correct%20data%3F%29</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

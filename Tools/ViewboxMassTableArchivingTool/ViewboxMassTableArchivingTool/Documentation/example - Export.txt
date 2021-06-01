@@ -1,0 +1,106 @@
+﻿c:\temp>ViewboxMassTableArchivingTool.exe -e -d viewbox_zsv -f c:\temp\tables.csv
+
+Applicaton start 1.0.0.0
+Start viewbox database initialization
+
+Server: localhost
+Database: viewbox_zsv
+User: root
+Password: avendata
+
+
+Viewbox database initialized
+Tables found: 12580
+Is SAP: True
+
+Export done: c:\temp\tables.csv
+
+Application exit
+
+
+
+
+
+
+### It is generate a tables.csv file with table names :
+1sap_fi08
+1sap_fi08aj
+1sap_fi09
+1sap_fi09aj
+blg_bilanz_guv
+abc_ftree_filter_2012_11_08_14_51_56
+acctcr_filter_2012_11_08_16_45_51
+acctcr_filter_2012_11_08_16_48_06
+a002_filter_2012_11_08_16_54_28
+0sap_amdep
+0sap_ammst
+0sap_ampdp
+0sap_amtrn
+0sap_anea
+0sap_anek
+0sap_anep
+0sap_bkpf
+0sap_bseg
+0sap_bset
+0sap_coa
+0sap_cust
+0sap_ekko
+0sap_mkpf
+0sap_mseg
+0sap_t003
+0sap_tbsum
+0sap_trlbl
+0sap_vbak
+0sap_vbap
+0sap_vbrk
+0sap_vbrp
+0sap_vendr
+0sap_vndr
+1sap_fi01
+1sap_fi02
+1sap_fi03
+1sap_fi05
+1sap_fi06
+1sap_fi07
+1sap_fi10
+1sap_fi11
+2sap_Anlagenbestand
+2sap_anlagengitter
+2sap_deb_adressen
+2sap_Debitoren_Salden
+2SAP_DebVZ
+2sap_einzelpostenjournal
+2SAP_geb_Abschreibung_kst
+2sap_historie_stammdatenaenderungen_sachkonten
+2sap_kontenplan
+2sap_kred_adressen
+2SAP_Kreditoren_Salden
+2sap_Kreditoren_Salden_Sonderhauptbuchkennzeichen
+2SAP_KredVZ
+2sap_materialverzeichnis
+2sap_Sachkontenliste
+2sap_sachkontensalden
+3sap_anla
+3sap_anlb
+3sap_anlc
+3sap_t001
+4sap_kontobewegungen
+0sap_coep
+3SAP_VBPA
+2sap_Debitoren_Salden_Sonderhauptbuchkennzeichen
+3sap_likp
+2sap_historie_stammdatenaenderungen_debitoren
+2sap_historie_stammdatenaenderungen_kostenstelle
+2sap_historie_stammdatenaenderungen_kreditoren
+2sap_historie_stammdatenaenderungen_material
+0sap_cobk
+0sap_ekpo
+0sap_sutax
+1sap_fi04
+3sap_lips
+_sapsmoss_addid
+_sapsmoss_addidt
+_sapsmoss_dbsy
+_sapsmoss_dbsyt
+_sapsmoss_frnt
+...

@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Windows="clr-namespace:ViewboxAdmin.Windows">
+
+
+
+    <DataTemplate x:Key="parameterTemplate">
+        <Border BorderThickness="1" BorderBrush="Black" Background="LightCoral" CornerRadius="10" Margin="2,2,2,2">
+            <StackPanel>
+                <Label Content="{Binding Name}" FontWeight="Bold" MinWidth="150" FontSize="10"></Label>
+                <ListBox IsEnabled="False" ItemsSource="{Binding Texts}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label HorizontalAlignment="Stretch" MinWidth="150"  Grid.Column="0" FontSize="10" Content="{Binding Language.LanguageName}" Style="{x:Null}"></Label>
+                                <Label HorizontalAlignment="Stretch" MinWidth="150"  Grid.Column="1" FontSize="10"  Content="{Binding Text}" Style="{x:Null}"></Label>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </Border>
+
+    </DataTemplate>
+
+
+    <DataTemplate x:Key="parameterValueTemplate">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label HorizontalAlignment="Stretch" MinWidth="150" Margin="2,2,2,2" Grid.Column="0" FontSize="10" Content="{Binding Language.LanguageName}" Style="{x:Null}"></Label>
+            <TextBox HorizontalAlignment="Stretch" MinWidth="150" Margin="2,2,2,2" Grid.Column="1" FontSize="10"   Text="{Binding Text}" Style="{x:Null}"></TextBox>
+        </Grid>
+    </DataTemplate>
+
+    
+
+
+</ResourceDictionary>

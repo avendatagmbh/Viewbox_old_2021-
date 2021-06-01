@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="TransDATA.Controls.Config.CtlOutputConfigPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Enums="clr-namespace:Config.Enums;assembly=Config"
+             xmlns:Config="clr-namespace:TransDATA.Controls.Config" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid DataContext="{Binding Converter={StaticResource MyDebugConverter}, ConverterParameter=CtlOutputConfigPanel}">
+        <!-- database config -->
+        <Border>
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding OutputConfig.Type}">
+                            <DataTrigger.Value>
+                                <Enums:OutputConfigTypes>Database</Enums:OutputConfigTypes>
+                            </DataTrigger.Value>
+                            <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Config:CtlDatabaseExportConfig x:Name="DatabaseOutput" DataContext="{Binding Converter={StaticResource MyDebugConverter}, ConverterParameter=CtlOutputConfigPanel_CtlDatabaseExportConfig}" />
+        </Border>
+
+        <!-- gdpdu config -->
+        <Border>
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding OutputConfig.Type}">
+                            <DataTrigger.Value>
+                                <Enums:OutputConfigTypes>Gdpdu</Enums:OutputConfigTypes>
+                            </DataTrigger.Value>
+                            <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Config:CtlGdpduOutputConfig  x:Name="GdpduOutput" />
+        </Border>
+
+        <!-- csv config -->
+        <Border>
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding OutputConfig.Type}">
+                            <DataTrigger.Value>
+                                <Enums:OutputConfigTypes>Csv</Enums:OutputConfigTypes>
+                            </DataTrigger.Value>
+                            <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Config:CtlCsvOutputConfig x:Name="CsvOutput" DataContext="{Binding Converter={StaticResource MyDebugConverter}, ConverterParameter=CtlOutputConfigPanel_CtlCsvOutputConfig}" />
+        </Border>
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="AutomationWPF.Controls.CtlSettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:AutomationWPF.Localisation"
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:del="clr-namespace:AvdWpfControls.DeletableTextBox;assembly=AvdWpfControls"
+             mc:Ignorable="d" d:DesignHeight="250" d:DesignWidth="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>            
+        </Grid.RowDefinitions>
+
+        <StackPanel DataContext="{Binding TransferAgent.TransferProgress}" Grid.Row="0">
+            <Label Content="{x:Static loc:ResourcesCommon.CaptionSettings}" FontSize="15" FontWeight="Bold" Foreground="{StaticResource NewDesignBlueBrush}" Padding="0"
+                   Margin="15,15,0,0"/>
+            
+            <Grid Margin="20,10,20,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>                
+
+                <wpfc:AvdMenuSeparator Margin="-15,15,-15,0" Grid.Row="0" Grid.ColumnSpan="2"></wpfc:AvdMenuSeparator>
+
+                <Label Content="{x:Static loc:ResourcesCommon.SettingsWindowName}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource NewDesignBlueBrush}"
+                       Padding="0" Margin="0,15,0,5" Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Right"/>
+
+                <del:DeletableTextBox Padding="0" Margin="15,15,0,5" Grid.Column="1" Grid.Row="1"></del:DeletableTextBox>
+
+                <Label Content="{x:Static loc:ResourcesCommon.SettingsClassName}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource NewDesignBlueBrush}"
+                       Padding="0" Margin="0,0,0,0" Grid.Column="0" Grid.Row="2" HorizontalContentAlignment="Right"/>
+
+                <del:DeletableTextBox Padding="0" Margin="15,0,0,0" Grid.Column="1" Grid.Row="2"></del:DeletableTextBox>
+
+                <wpfc:AvdMenuSeparator Margin="-15,15,-15,0" Grid.Row="3" Grid.ColumnSpan="2"></wpfc:AvdMenuSeparator>
+
+                <Label Content="{x:Static loc:ResourcesCommon.SettingsDatFileFolder}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource NewDesignBlueBrush}"
+                       Padding="0" Margin="0,15,0,5" Grid.Column="0" Grid.Row="4" HorizontalContentAlignment="Right"/>
+
+                <Grid Grid.Column="1" Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <del:DeletableTextBox Name="tbxDatFolder" Padding="0" Margin="15,15,0,5" Grid.Column="0" VerticalAlignment="Center"></del:DeletableTextBox>
+
+                    <wpfc:ImageButton Name="btnDatFolder" ImageSource="/AutomationWPF;component/Resources/BlueDesign/icon_folder.png" Margin="5,15,0,5"
+                                      Click="btnDatFolder_Click"  HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1"/>
+                </Grid>
+                    
+            </Grid>
+        </StackPanel>
+        
+        <Border Grid.Row="1" Background="{StaticResource NewDesignBlueBrush}" >
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="10,5,20,5">
+                <Button Content="{x:Static loc:ResourcesCommon.Save}" Height="23" Margin="0,0,15,0" Name="btnSave"
+                        VerticalAlignment="Top" Width="Auto" Padding="5,0" MinWidth="75"  Click="btnSave_Click" />
+                <Button Content="{x:Static loc:ResourcesCommon.Cancel}" Height="23" Margin="0" Name="btnCancel"
+                        VerticalAlignment="Top" Width="Auto" Padding="5,0" MinWidth="75"  Click="btnCancel_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

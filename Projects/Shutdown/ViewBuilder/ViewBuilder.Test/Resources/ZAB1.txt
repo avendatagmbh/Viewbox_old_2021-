@@ -1,0 +1,1646 @@
+
+ ZAB1 SOUTH AFRICA - INTERNAL ACCOUNTS
+  |
+  |--   1000000000 EMPLOYMENT OF CAPITAL  Assets
+  |   |
+  |   |--   1001000000 FIXED ASSETS
+  |   |   |
+  |   |   |--   1001001000 FIXED ASSETS AT COST
+  |   |   |   |
+  |   |   |   |--   BAY 0000001001 - 0000001002 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000001001 LAND
+  |   |   |   |   ------0000001002 PROPERTY - RESIDENTIAL
+  |   |   |   |
+  |   |   |   |--   BAY 0000002001 - 0000002003 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000002001 BUILDINGS - ADMINISTRATION AND OFFICES
+  |   |   |   |   |-----0000002002 BUILDINGS - WAREHOUSES AND FACTORIES
+  |   |   |   |   ------0000002003 BUILDINGS - SHAFT SINKING
+  |   |   |   |
+  |   |   |   |--   BAY 0000003001 - 0000003003 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000003001 PLANT & MACHINERY - MINING AND MANUFACTURING
+  |   |   |   |   |-----0000003002 PLANT & MACHINERY - LABORATORY EQUIPMENT
+  |   |   |   |   ------0000003003 TOOLS & EQUIPMENT
+  |   |   |   |
+  |   |   |   |-----BAY 0000003005 - 0000003005 X|X FIXED ASSETS BAH
+  |   |   |   |--   BAY 0000004001 - 0000004004 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000004001 MOTOR VEHICLES
+  |   |   |   |   |-----0000004002 MOTOR VEHICLES - EARTHMOVING EQUIPMENT
+  |   |   |   |   ------0000004004 MOTOR VEHICLES - LEASED
+  |   |   |   |
+  |   |   |   |-----BAY 0000005001 - 0000005001 X|X EQUIPMENT - DEMONSTRATION
+  |   |   |   |--   BAY 0000006001 - 0000006007 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000006001 LEASEHOLD IMPROVEMENTS
+  |   |   |   |   |-----0000006002 EQUIPMENT - LEASED
+  |   |   |   |   |-----0000006003 FURNITURE & FIXTURES
+  |   |   |   |   |-----0000006004 OFFICE MACHINES
+  |   |   |   |   |-----0000006005 OFFICE MACHINES - LEASED
+  |   |   |   |   |-----0000006006 EQUIPMENT - EDP LEASED
+  |   |   |   |   ------0000006007 EQUIPMENT - MAINFRAME COMPUTER HARDWARE
+  |   |   |   |
+  |   |   |   |-----BAY 0000006008 - 0000006008 X|X EQUIPMENT - LABORATORY - LEASED
+  |   |   |   |--   BAY 0000009001 - 0000009008 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000009001 CAPITAL IN COURSE OF CONSTRUCTION
+  |   |   |   |   |-----0000009002 CAPITAL IN COURSE OF CONSTRUCTION
+  |   |   |   |   |-----0000009003 CAPITAL IN COURSE OF CONSTRUCTION
+  |   |   |   |   |-----0000009004 CAPITAL IN COURSE OF CONSTRUCTION
+  |   |   |   |   |-----0000009005 CAPITAL IN COURSE - FURNITURE & FIXTURES NIGEL
+  |   |   |   |   |-----0000009006 CAPITAL IN COURSE - AGFA COLD ROOM
+  |   |   |   |   |-----0000009007 CAPITAL IN COURSE OF CONSTRUCTION
+  |   |   |   |   ------0000009008 CAPITAL IN COURSE - DEVELOPMENT COST
+  |   |   |   |
+  |   |   |   |--   BAY 0000010001 - 0000010002 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000010001 MINING RIGHTS
+  |   |   |   |   ------0000010002 PATENTS AND TRADEMARKS
+  |   |   |   |
+  |   |   |   |-----BAY 0000011001 - 0000011001 X|X EQUIPMENT - PC'S AND PRINTERS
+  |   |   |   ---   BAY 0000180033 - 0000180034 X|X
+  |   |   |       |
+  |   |   |       |-----0000180033 SUSPENSE - C.I.C. ACCOUNT
+  |   |   |       ------0000180034 CLEARING - ASSETS
+  |   |   |
+  |   |   ---   1001002000 FIXED ASSETS ACC. DEPRECIATION
+  |   |       |
+  |   |       |--   BAY 0000002051 - 0000002053 X|X
+  |   |       |   |
+  |   |       |   |-----0000002051 DEPRECIATION - PROVISION - BUILDINGS
+  |   |       |   |-----0000002052 DEPRECIATION - PROVISION - RAILWAY SIDING
+  |   |       |   ------0000002053 DEPRECIATION - PROVISION - SHAFT SINKING
+  |   |       |
+  |   |       |--   BAY 0000003051 - 0000003055 X|X
+  |   |       |   |
+  |   |       |   |-----0000003051 DEPRECIATION PROVISION PLANT MACHINERY MIN & MANUF
+  |   |       |   |-----0000003052 DEPRECIATION - PROVISION - LABORATORY EQUIPMENT
+  |   |       |   ------0000003055 DEPRECIATION - PROVISION - FIXED ASSETS BAH
+  |   |       |
+  |   |       |--   BAY 0000004051 - 0000004054 X|X
+  |   |       |   |
+  |   |       |   |-----0000004051 DEPRECIATION - PROVISION - MOTOR VEHICLES
+  |   |       |   |-----0000004052 DEPRECIATION - PROVISION - EQUIPMENT EARTHMOVING
+  |   |       |   ------0000004054 DEPRECIATION - PROVISION - MOTOR VEHICLES LEASED
+  |   |       |
+  |   |       |-----BAY 0000005051 - 0000005051 X|X DEPRECIATION - PROVISION - EQUIPMENT DEMONSTRATION
+  |   |       |--   BAY 0000006051 - 0000006057 X|X
+  |   |       |   |
+  |   |       |   |-----0000006051 DEPRECIATION - PROVISION - LEASEHOLD IMPROVEMENTS
+  |   |       |   |-----0000006052 DEPRECIATION - PROVISION - EQUIPMENT LEASED
+  |   |       |   |-----0000006053 DEPRECIATION - PROVISION - FURNITURE & FIXTURES
+  |   |       |   |-----0000006054 DEPRECIATION - PROVISION - OFFICE MACHINES
+  |   |       |   |-----0000006055 DEPRECIATION - PROVISION - OFFICE MACHINES LEASED
+  |   |       |   |-----0000006056 DEPRECIATION - PROVISION - EQUIPMENT EDP LEASED
+  |   |       |   ------0000006057 DEPRECIATION - PROVISION - MAINFRAME COMPUTER HW
+  |   |       |
+  |   |       |--   BAY 0000006058 - 0000006059 X|X
+  |   |       |   |
+  |   |       |   |-----0000006058 DEPRECIATION - PROVISION - EQUIPMENT LAB LEASED
+  |   |       |   ------0000006059 DEPRECIATION - PROVISION - TOOLS & EQUIPMENT
+  |   |       |
+  |   |       |--   BAY 0000010051 - 0000010052 X|X
+  |   |       |   |
+  |   |       |   |-----0000010051 DEPRECIATION - PROVISION - MINERAL RIGHTS
+  |   |       |   ------0000010052 DEPRECIATION - PROVISION - PATENTS AND TRADEMARKS
+  |   |       |
+  |   |       ------BAY 0000011051 - 0000011051 X|X DEPRECIATION - PROVISION PC'S AND PRINTERS
+  |   |
+  |   |--   1002000000 INVESTMENTS
+  |   |   |
+  |   |   |--   1002001000 SUBSIDIARY COMPANIES
+  |   |   |   |
+  |   |   |   |--   BAY 0000022001 - 0000022005 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000022001 INVESTMENT - ASSOCIATE A COMP (JOINT VENTURE)
+  |   |   |   |   |-----0000022002 INVESTMENT -
+  |   |   |   |   |-----0000022003 INVESTMENT - AFFILIATE B COMP
+  |   |   |   |   |-----0000022004 INVESTMENT - OTHER
+  |   |   |   |   ------0000022005 INVESTMENT - AFFILIATE B COMP (NON LISTED)
+  |   |   |   |
+  |   |   |   |--   BAY 0000031300 - 0000031301 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000031300 ++OBSOLETE++SUSPENSE - BAYER MILES SUSPENSE A/C
+  |   |   |   |   ------0000031301 ++OBSOLETE++SUSPENSE - BAYER MILES SUSPENSE A/C
+  |   |   |   |
+  |   |   |   |--   BAY 0000140030 - 0000140031 X|X
+  |   |   |   |   |
+  |   |   |   |   |-----0000140030 TRADE ACCOUNTS RECEIVABLE A GROUP COMPANIES
+  |   |   |   |   ------0000140031 CREDIT BALANCES IN DEBTORS A GROUP COMPANIES
+  |   |   |   |
+  |   |   |   |-----BAY 0000140033 - 0000140033 X|X TRADE ACCOUNTS RECEIVABLE B GROUP COMPANIES
+  |   |   |   ------BAY 0000140051 - 0000140051 X|X DEBTORS CONTROL - INTER-COMPANY DEBTORS
+  |   |   |
+  |   |   ---   1002002000 JOINT VENTURES
+  |   |       |
+  |   |       ------BAY 0000151042 - 0000151042 X|X JOINT VENTURE - CHROME PROJECT
+  |   |
+  |   |--   1003000000 WORKING CAPITAL
+  |   |   |
+  |   |   |--   1003100000 CURRENT ASSETS
+  |   |   |   |
+  |   |   |   |--   1003101000 STOCKS
+  |   |   |   |   |
+  |   |   |   |   |--   1003101050 STOCKS PER STOCK LEDGER
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   1003101100 RAW MATERIAL
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ---   BAY 0000301001 - 0000301010 X|X
+  |   |   |   |   |   |       |
+  |   |   |   |   |   |       |-----0000301001 RAW MATERIALS
+  |   |   |   |   |   |       |-----0000301005 STOCK - RAW MATERIAL PAID BUT DELIVERED
+  |   |   |   |   |   |       |-----0000301006 STOCK - RAW MATERIAL DELIVERED - NOT PAID
+  |   |   |   |   |   |       ------0000301010 STOCK - RAW MATERIAL IN TRANSIT
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   1003101200 PACKING MATERIAL
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ---   BAY 0000302001 - 0000302010 X|X
+  |   |   |   |   |   |       |
+  |   |   |   |   |   |       |-----0000302001 PACKING MATERIAL
+  |   |   |   |   |   |       |-----0000302005 STOCK - PACKING MATERIAL PAID BUT NOT DELIVERED
+  |   |   |   |   |   |       |-----0000302006 STOCK - PACKING MATERIAL DELIVERED BUT NOT PAID
+  |   |   |   |   |   |       ------0000302010 STOCK - PACKING MATERIAL IN TRANSIT
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   1003101300 MAINTENANCE
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ---   BAY 0000303001 - 0000303010 X|X
+  |   |   |   |   |   |       |
+  |   |   |   |   |   |       |-----0000303001 CONSUMABLES
+  |   |   |   |   |   |       |-----0000303005 STOCK - MAINTENANCE MAT. PAID BUT NOT DELIVERED
+  |   |   |   |   |   |       |-----0000303006 STOCK - MAINTENANCE MAT.DELIVERED BUT NOT PAID
+  |   |   |   |   |   |       ------0000303010 STOCK - MAINTENANCE MAT. IN TRANSIT
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   1003101400 WORK IN PROCESS
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----BAY 0000380128 - 0000380128 X|X RECOVERY ACCOUNTS - RM PRODUCTION OVERHEADS
+  |   |   |   |   |   |   |-----BAY 0000711011 - 0000711011 X|X STOCK - WORK IN PROGRESS
+  |   |   |   |   |   |   |-----BAY 0000720001 - 0000720001 X|X WORK IN PROGRESS OVERHEADS RECOVERY ACCRUAL
+  |   |   |   |   |   |   |--   BAY 0000869015 - 0000869018 X|X
+  |   |   |   |   |   |   |   |
+  |   |   |   |   |   |   |   |-----0000869015 STOCKS - PRODUCTION MATERIAL CONSUMPTION
+  |   |   |   |   |   |   |   |-----0000869016 ++OBSOLETE++COST OF GOODS SOLD - PLAN/ACT COST VAR
+  |   |   |   |   |   |   |   |-----0000869017 ++OBSOLETE++RM OVERHEAD RECOVERIES
+  |   |   |   |   |   |   |   ------0000869018 OVERHEAD RECOVERY CONTRA ACCOUNT FROM PRODUCTION
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----BAY 0000869019 - 0000869019 X|X ++OBSOLETE++OVERHEAD RECOVERY RM LAB C/C REALLOC
+  |   |   |   |   |   |   |-----BAY 0000890301 - 0000890301 X|X STOCKS - RAW MAT. PRODUCTION CONSUMPTION
+  |   |   |   |   |   |   |-----BAY 0000890311 - 0000890311 X|X STOCKS - PACKING MATERIAL PRODUCTION CONSUMPTION
+  |   |   |   |   |   |   |-----BAY 0000890321 - 0000890321 X|X STOCKS - CONTRACT PRODUCTION CONSUMPTION
+  |   |   |   |   |   |   |-----BAY 0000890331 - 0000890331 X|X STOCKS - MAINTENANCE MAT PROD CONSUMP
+  |   |   |   |   |   |   |-----BAY 0000890334 - 0000890334 X|X ++OBSOLETE++STOCKS - MAINTENANCE MAT STORAGE ADJ
+  |   |   |   |   |   |   |-----BAY 0000890351 - 0000890351 X|X STOCKS - RESALE PRODUCTION CONSUMPTION
+  |   |   |   |   |   |   |-----BAY 0000895701 - 0000895701 X|X STOCKS - FIN. GOODS PRODUCTION CONSUMPTION
+  |   |   |   |   |   |   ------BAY 0000895711 - 0000895711 X|X STOCKS - SEMI-FIN.GOODS PRODUCTION CONSUMPTION
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   1003101500 SEMI FINISHED GOODS
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ------BAY 0000711001 - 0000711001 X|X SEMI-FINISHED DOODS
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   1003101600 GOODS FOR RESALE
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ---   BAY 0000335001 - 0000335010 X|X
+  |   |   |   |   |   |       |
+  |   |   |   |   |   |       |-----0000335001 FINISHED GOODS
+  |   |   |   |   |   |       |-----0000335005 STOCK - RESALE PAID BUT NOT DELIVERED
+  |   |   |   |   |   |       |-----0000335006 STOCK - RESALE DELIVERED BUT NOT PAID
+  |   |   |   |   |   |       ------0000335010 STOCK - RESALE IN TRANSIT
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   1003101700 FINISHED GOODS
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----BAY 0000320070 - 0000320070 X|X STOCK - DIVISIONAL TRANSFER
+  |   |   |   |   |   |   ---   BAY 0000701001 - 0000701011 X|X
+  |   |   |   |   |   |       |
+  |   |   |   |   |   |       |-----0000701001 MANUFACTURED FINISHED GOODS
+  |   |   |   |   |   |       |-----0000701010 STOCK - SUSPENSE FINISHED GOODS NIGEL
+  |   |   |   |   |   |       ------0000701011 STOCK - SUSPENSE LINEAR
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   1003101750 GOODS IN TRANSIT
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |--   BAY 0000381000 - 0000383000 X|X
+  |   |   |   |   |   |   |   |
+  |   |   |   |   |   |   |   |-----0000381000 GOODS / INVOICE RECEIVED CLEARING ACCOUNT
+  |   |   |   |   |   |   |   |-----0000382000 INTER WAREHOUSE TRANSFERS VALUE DIFFERENCES
+  |   |   |   |   |   |   |   ------0000383000 ADJUSTMENT TO GOODS IN TRANSIT ACCOUNT 381000
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ------BAY 0000731000 - 0000731000 X|X STOCK - GOODS IN TRANSIT
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   1003101900 ADJUSTMENTS (PROVISION)
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----BAY 0000084305 - 0000084305 X|X PROVISION - STOCK
+  |   |   |   |   |       |-----BAY 0000151083 - 0000151083 X|X R3 SUSPENSE FOR STOCKS
+  |   |   |   |   |       |-----BAY 0000151110 - 0000151110 X|X R3 SUSPENSE FOR STOCKS - INTERIM BOOKINGS R2
+  |   |   |   |   |       |--   BAY 0000301020 - 0000301021 X|X
+  |   |   |   |   |       |   |
+  |   |   |   |   |       |   |-----0000301020 STOCK - PRICING DIFF. (OLD 606 A/C)
+  |   |   |   |   |       |   ------0000301021 STOCK - PRICING VARIANCE (MANUAL ENTRY)
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----BAY 0000869007 - 0000869007 X|X STOCK - INTERDIVISIONAL TRFS
+  |   |   |   |   |       |-----BAY 0000869012 - 0000869012 X|X Small Quanitity production stock
+  |   |   |   |   |       |-----BAY 0000890304 - 0000890304 X|X STOCKS - RAW MATERIALS STORAGE ADJUSTMENT
+  |   |   |   |   |       |-----BAY 0000890314 - 0000890314 X|X STOCKS - INTERDIVISIONAL TRANSFERS
+  |   |   |   |   |       |-----BAY 0000890401 - 0000890401 X|X STOCKS - PRODUCTION CONSUMPTION R2 MAPS
+  |   |   |   |   |       ------BAY 0000895714 - 0000895714 X|X ++OBSOLETE++STOCKS - SEMI-FIN.GOODS STORAGE ADJ
+  |   |   |   |   |
+  |   |   |   |   ---   1003101800 SUNDRY STOCKS
+  |   |   |   |       |
+  |   |   |   |       |--   BAY 0000320001 - 0000320004 X|X
+  |   |   |   |       |   |
+  |   |   |   |       |   |-----0000320001 MISCELLANEOUS INVENTORIES
+  |   |   |   |       |   |-----0000320003 STOCKS - MISCELLANEOUS PETROL PAARL
+  |   |   |   |       |   ------0000320004 STOCKS - MISCELLANEOUS DIESEL PAARL
+  |   |   |   |       |
+  |   |   |   |       |-----BAY 0000320010 - 0000320010 X|X STOCKS - MISCELLANEOUS DIESEL DENVER
+  |   |   |   |       |-----BAY 0000320015 - 0000320015 X|X STOCKS - MISCELLANEOUS TYRES DENVER
+  |   |   |   |       |--   BAY 0000320017 - 0000320020 X|X
+  |   |   |   |       |   |
+  |   |   |   |       |   |-----0000320017 MISCELLANEOUS GARAGE SPARES
+  |   |   |   |       |   |-----0000320018 ++OBSOLETE++STOCKS - MISC PROTECTIVE CLOTHING
+  |   |   |   |       |   ------0000320020 MISCELLANEOUS - STOCKS & POSTAGE
+  |   |   |   |       |
+  |   |   |   |       |-----BAY 0000320030 - 0000320030 X|X ++OBSOLETE++STOCK - MISCELLANEOUS CORPORATE GIFTS
+  |   |   |   |       |-----BAY 0000320032 - 0000320032 X|X STOCKS - MISCELLANEOUS CORPORATE GIFTS
+  |   |   |   |       |-----BAY 0000320040 - 0000320040 X|X STOCKS - MISCELLANEOUS CALENDARS
+  |   |   |   |       |-----BAY 0000320050 - 0000320050 X|X STOCKS - MISCELLANEOUS FOOD & LIQOUR
+  |   |   |   |       ------BAY 0000320060 - 0000320060 X|X STOCKS - MISCELLANEOUS TRAINING MATERIAL
+  |   |   |   |
+  |   |   |   |--   1003102000 DEBTORS
+  |   |   |   |   |
+  |   |   |   |   |--   1003102100 ASSOCIATED COMPANIES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   1003102110 A-COMPANIES
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ------BAY 0000140053 - 0000140053 X|X DEBTORS CONTROL - COMM EARNED AFFILIATE B COMP
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   1003102160 B-COMPANIES
+  |   |   |   |   |       |
+  |   |   |   |   |       ------BAY 0000160007 - 0000160007 X|X DEBIT BALANCES IN CREDITORS TRADE B GROUP COMPANY
+  |   |   |   |   |
+  |   |   |   |   |--   1003102200 THIRD PARTIES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   1003102215 ASSOCIATED COMPANIES
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ------BAY 0000151010 - 0000151010 X|X TAEUBER & CORSSEN (PTY) LTD
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   1003102210 TRADE DEBTORS
+  |   |   |   |   |       |
+  |   |   |   |   |       |--   BAY 0000140000 - 0000140001 X|X
+  |   |   |   |   |       |   |
+  |   |   |   |   |       |   |-----0000140000 Receivables from clients
+  |   |   |   |   |       |   ------0000140001 TRADE ACCOUNTS RECEIVABLE THIRD PARTIES
+  |   |   |   |   |       |
+  |   |   |   |   |       |--   BAY 0000140003 - 0000140005 X|X
+  |   |   |   |   |       |   |
+  |   |   |   |   |       |   |-----0000140003 ACCOUNTS RECEIVABLE SUSPENSE
+  |   |   |   |   |       |   |-----0000140004 DEBTORS CONTROL - TRADE THIRD PARTIES DDMA
+  |   |   |   |   |       |   ------0000140005 UNCLEARED DEPOSIT SUSPENSE
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----BAY 0000140052 - 0000140052 X|X DEBTORS - COMM EARNED THIRD PARTIES (SUSPENSE)
+  |   |   |   |   |       |-----BAY 0000140060 - 0000140060 X|X MARK TO MARKET FOREIGN CURRENCY RECEIVABLES
+  |   |   |   |   |       |--   BAY 0000140070 - 0000140071 X|X
+  |   |   |   |   |       |   |
+  |   |   |   |   |       |   |-----0000140070 DEBTORS - BANK SUSPENSE - AGFA
+  |   |   |   |   |       |   ------0000140071 DIRECT DEPOSIT CLEARING
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----BAY 0000140072 - 0000140072 X|X DEBTORS - BANK SUSPENSE - DYES
+  |   |   |   |   |       |--   BAY 0000140073 - 0000140075 X|X
+  |   |   |   |   |       |   |
+  |   |   |   |   |       |   |-----0000140073 DEBTORS - BANK SUSPENSE - AGFA PHOTO
+  |   |   |   |   |       |   |-----0000140074 DEBTORS - BANK SUSPENSE - AGRO
+  |   |   |   |   |       |   ------0000140075 DEBTORS - BANK SUSPENSE - ANIMAL HEALTH
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----BAY 0000140076 - 0000140076 X|X DEBTORS - BANK SUSPENSE - CONSUMER CARE
+  |   |   |   |   |       |-----BAY 0000140077 - 0000140077 X|X CHEQUE DEPOSIT CLEARING
+  |   |   |   |   |       |--   BAY 0000140078 - 0000140079 X|X
+  |   |   |   |   |       |   |
+  |   |   |   |   |       |   |-----0000140078 DEBTORS - BANK SUSPENSE - DEPOSITS CAPE TOWN
+  |   |   |   |   |       |   ------0000140079 DEBTORS - BANK SUSPENSE - DEPOSITS DURBAN
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----BAY 0000140080 - 0000140080 X|X DEBTORS - BANK SUSPENSE - DEPOSITS P E
+  |   |   |   |   |       ------BAY 0000140101 - 0000140101 X|X PROVISION - DOUBTFUL DEBTS
+  |   |   |   |   |
+  |   |   |   |   |--   1003102300 BILLS
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----BAY 0000122002 - 0000122002 X|X BILLS RECEIVABLE - 3RD PARTIES
+  |   |   |   |   |   ------BAY 0000151033 - 0000151033 X|X SUSPENSE - CONSIGNMENT FREIGHT - AGFA
+  |   |   |   |   |
+  |   |   |   |   |--   1003102400 SUNDRY DEBTORS
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----BAY 0000151001 - 0000151001 X|X MISCELANEOUS RECEIVABLES A GROUP COMPANIES
+  |   |   |   |   |   |-----BAY 0000151002 - 0000151002 X|X MISCELANEOUS RECEIVABLES B GROUP COMPANIES
+  |   |   |   |   |   |-----BAY 0000151005 - 0000151005 X|X MISCELANEOUS RECEIVABLES THIRD PARTIES
+  |   |   |   |   |   |--   BAY 0000151011 - 0000151012 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000151011 DEBTORS - SUNDRY CONTRA
+  |   |   |   |   |   |   ------0000151012 blocked
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000151030 - 0000151032 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000151030 CONSIGNMENT INVENTORIES FREIGHT CLEARING
+  |   |   |   |   |   |   |-----0000151031 INSURANCE - CLAIMS - ELWYN
+  |   |   |   |   |   |   ------0000151032 INSURANCE - CLAIMS - ELWYN ZIM
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000151040 - 0000151041 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ------0000151040 DEBTORS - SUNDRY STORAGE DENVER
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000151045 - 0000151079 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000151045 ++OBSOLETE++SUSPENSE - DEBIT NOTE
+  |   |   |   |   |   |   |-----0000151046 SUSPENSE DEBIT NOTE BRANCHES
+  |   |   |   |   |   |   |-----0000151047 DEBIT/NOTES (14225)
+  |   |   |   |   |   |   |-----0000151048 SUSPENSE DEBIT NOTE HEAD OFFICE
+  |   |   |   |   |   |   |-----0000151049 INTERCOMPANY DEBIT NOTE SUSPENSE
+  |   |   |   |   |   |   |-----0000151050 LEASE SETTLEMENT - CHEQUESOL A/C
+  |   |   |   |   |   |   |-----0000151051 LEASED ASSETS - DISPOSAL
+  |   |   |   |   |   |   |-----0000151052 LEASE PAYMENT - FNB SUSPENSE           N
+  |   |   |   |   |   |   |-----0000151054 LEASE PAYMENT - FNB CHEQUE SUSPENSE    N
+  |   |   |   |   |   |   |-----0000151060 RETURNS TO SUPPLIER - ALL INVENTORIES
+  |   |   |   |   |   |   |-----0000151061 RETURNS TO SUPPLIER - DIAGNOSTICS GOODS
+  |   |   |   |   |   |   |-----0000151062 RETURNS TO SUPPLIER -RETURNABLE PACKING MATERIAL
+  |   |   |   |   |   |   |-----0000151063 RETURNS TO SUPPLIER - FLORA
+  |   |   |   |   |   |   |-----0000151064 RETURNS TO SUPPLIER - AGFA ADMIN
+  |   |   |   |   |   |   |-----0000151065 RETURNS TO SUPPLIER - JOINT VENT. GEN.ELEC AI/SP
+  |   |   |   |   |   |   |-----0000151070 CROSS CO. BAYER
+  |   |   |   |   |   |   |-----0000151071 CROSS COMPANY HAARMANN AND REIMER (PTY) LTD
+  |   |   |   |   |   |   |-----0000151072 CROSS CO. VERGENOEG MINING CO
+  |   |   |   |   |   |   |-----0000151073 CROSS CO. AGFA (PTY) LTD
+  |   |   |   |   |   |   |-----0000151074 CROSS CO. BAYER ZIMBABWE
+  |   |   |   |   |   |   |-----0000151075 CROSS CO. BAYER ANIMAL HEALTH
+  |   |   |   |   |   |   |-----0000151076 CROSS CO. CISA
+  |   |   |   |   |   |   ------0000151077 CROSS CO. MILBORROW
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000180004 - 0000180005 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000180004 DEBIT BALANCES IN CREDITORS MISCELLANEOUS A COMP
+  |   |   |   |   |   |   ------0000180005 CREDITORS CONTROL - MISC AFFILIATE B COMP (DR BAL)
+  |   |   |   |   |   |
+  |   |   |   |   |   ------BAY 0000180011 - 0000180011 X|X DEBIT BALANCES IN CREDITORS MISCELLANEOUS
+  |   |   |   |   |
+  |   |   |   |   |--   1003102450 INSURANCE CLAIMS
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   BAY 0000151021 - 0000151028 X|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000151021 INSURANCE - CLAIMS : PALLAS AG
+  |   |   |   |   |       |-----0000151022 INSURANCE - CLAIMS : PALLAS AG
+  |   |   |   |   |       |-----0000151023 INSURANCE - CLAIMS : ALLIANZ
+  |   |   |   |   |       |-----0000151025 INSURANCE - CLAIMS - WRONGFUL ADVICE
+  |   |   |   |   |       |-----0000151026 INSURANCE - CLAIMS - FRIDGE
+  |   |   |   |   |       |-----0000151027 CLAIMS - AGFA SMALL CLAIMS                      N
+  |   |   |   |   |       ------0000151028 INSURANCE - CLAIMS - STRUCTA
+  |   |   |   |   |
+  |   |   |   |   |--   1003102500 PREPAYMENTS
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000090020 - 0000090023 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000090020 OUTSTANDING ACQUITTALS ON PRE PAID DUTIES
+  |   |   |   |   |   |   |-----0000090021 AGGREGATE EXCESS DISTRIBUTION
+  |   |   |   |   |   |   |-----0000090022 PREPAID - WRONGFUL ADVICE INSURANCE
+  |   |   |   |   |   |   ------0000090023 PREPAID - AGRO AGENTS INTERNET SUBSCRIPTIONS
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000090061 - 0000090062 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000090061 PREPAID - MAINTENANCE
+  |   |   |   |   |   |   ------0000090062 PREPAID - MAINTENANCE
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000090071 - 0000090075 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000090071 PREPAID
+  |   |   |   |   |   |   |-----0000090073 PREPAID - RENT
+  |   |   |   |   |   |   ------0000090075 ADVANCE - PAYMENTS
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----BAY 0000090081 - 0000090081 X|X PREPAID - EUROLOAN INTEREST
+  |   |   |   |   |   ------BAY 0000090083 - 0000090083 X|X MARK TO MARKET HEDGING INSTRUMENTS POSITIVE VALUE
+  |   |   |   |   |
+  |   |   |   |   |--   1003102600 SOCIAL RECEIVABLES
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----BAY 0000150001 - 0000150001 X|X TRAVEL ADVANCES
+  |   |   |   |   |   |--   BAY 0000150003 - 0000150005 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000150003 PRIVATE LEDGER CONTROL A/C
+  |   |   |   |   |   |   |-----0000150004 LOAN - CONTROL PERSONAL LOANS SHORT TERM ACCOUNT
+  |   |   |   |   |   |   ------0000150005 LOAN - CONTROL PERSONAL MEDICAL AID ACCOUNT
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----BAY 0000150014 - 0000150014 X|X CLEARING - PERSONNEL URGENT CHEQUE CLEARING
+  |   |   |   |   |   |--   BAY 0000150017 - 0000150018 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000150017 MEDICAL AID
+  |   |   |   |   |   |   ------0000150018 INSURANCE - LIFE ASSURANCE
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----BAY 0000150021 - 0000150021 X|X INSURANCE - GROUP
+  |   |   |   |   |   |-----BAY 0000150040 - 0000150040 X|X PRIVATE TRAVEL EXPENSES
+  |   |   |   |   |   |--   BAY 0000150050 - 0000150055 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000150050 PROVIDENT FUND - BAYER/TAEUBER & CORSSEN
+  |   |   |   |   |   |   |-----0000150051 PROVIDENT FUND - BAYER GROUP
+  |   |   |   |   |   |   |-----0000150052 BAYER/TAEUBER & CORSSEN - S/CRS ACCIDENT
+  |   |   |   |   |   |   |-----0000150054 BAYER/TAEUBER & CORSSEN - S/CRS LIFE
+  |   |   |   |   |   |   ------0000150055 DISABILITY FUND
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----BAY 0000150060 - 0000150060 X|X BAYER SCHOOLING ASSISTANCE
+  |   |   |   |   |   |-----BAY 0000150065 - 0000150065 X|X PROVIDENT FUND PENSIONERS CLEARING
+  |   |   |   |   |   |-----BAY 0000150070 - 0000150070 X|X INSURANCE - OLD MUTUAL GROUP SCHEME
+  |   |   |   |   |   |--   BAY 0000150072 - 0000150074 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000150072 LOAN - HOUSING
+  |   |   |   |   |   |   |-----0000150073 ADVANCE - MEREBANK STAFF ADVANCE ACCOUNT
+  |   |   |   |   |   |   ------0000150074 ADVANCE - MINES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000150076 - 0000150080 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000150076 LOAN - 90 DAY - RUSTENBURG
+  |   |   |   |   |   |   |-----0000150077 STAFF LOANS
+  |   |   |   |   |   |   |-----0000150078 ADVANCE - CONTROL PERSONNEL MEDICAL ADVANCES A/C
+  |   |   |   |   |   |   |-----0000150079 LOAN - CONTROL HOUSING LOANS
+  |   |   |   |   |   |   ------0000150080 LOANS - STUDY
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----BAY 0000150086 - 0000150086 X|X DEFERRED - COMPENSATION
+  |   |   |   |   |   |-----BAY 0000151017 - 0000151017 X|X MEDICAL AID - AGRO AGENTS
+  |   |   |   |   |   |-----BAY 0000185025 - 0000185025 X|X LOAN - SUNDRY DEDUCTIONS HOUSING LOANS
+  |   |   |   |   |   |-----BAY 0000185029 - 0000185029 X|X MONEY MAKER
+  |   |   |   |   |   ------BAY 0000185090 - 0000185090 X|X PERSONNEL TRAVELLING EXPENSES
+  |   |   |   |   |
+  |   |   |   |   |-----1003102700 GOODS RETURNED TO SUPPLIER
+  |   |   |   |   |--   1003102800 AGRO COMMISSIONS SUSPENCE
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   BAY 0000151015 - 0000151016 X|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000151015 COMMISSION SUSPENSE - AGRO
+  |   |   |   |   |       ------0000151016 CASH SALE ADJUSTMENTS - AGRO AGENTS
+  |   |   |   |   |
+  |   |   |   |   ---   1003102850 DEPOSITS
+  |   |   |   |       |
+  |   |   |   |       |--   BAY 0000155161 - 0000158161 X|X
+  |   |   |   |       |   |
+  |   |   |   |       |   |-----0000156000 Recievables from credits
+  |   |   |   |       |   |-----0000157000 Deferred interest
+  |   |   |   |       |   |-----0000158000 Outstanding demanded deposits
+  |   |   |   |       |   |-----0000158100 Outstanding non demanding deposits
+  |   |   |   |       |   ------0000158161 ++OBSOLETE++DEPOSIT - ELECTRICITY & WATER
+  |   |   |   |       |
+  |   |   |   |       ---   BAY 0000158162 - 0000158169 X|X
+  |   |   |   |           |
+  |   |   |   |           |-----0000158162 ++OBSOLETE++DEPOSIT - PACKING MATERIAL
+  |   |   |   |           |-----0000158163 DEPOSIT - PACKING MATERIAL NIGEL
+  |   |   |   |           |-----0000158164 DEPOSIT - CONFA
+  |   |   |   |           |-----0000158166 ++OBSOLETE++DEPOSIT - Safcor
+  |   |   |   |           |-----0000158167 ++OBSOLETE++DEPOSIT - GENERAL / OTHER
+  |   |   |   |           |-----0000158168 ++OBSOLETE++DEPOSIT - GRINDROD
+  |   |   |   |           ------0000158169 DEPOSIT - KUEHNE & NAGEL
+  |   |   |   |
+  |   |   |   |--   1003103000 CASH
+  |   |   |   |   |
+  |   |   |   |   |--   BAY 0000100001 - 0000100014 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000100001 PETTY CASH - ISANDO
+  |   |   |   |   |   |-----0000100002 PETTY CASH - AGFA FACTORY JHB.
+  |   |   |   |   |   |-----0000100003 PETTY CASH - PHARMACEUTICAL
+  |   |   |   |   |   |-----0000100005 FOREIGN CASH ON HAND
+  |   |   |   |   |   |-----0000100011 ++OBSOLETE++PETTY CASH - COLIGNY
+  |   |   |   |   |   ------0000100014 PETTY CASH - DENVER WAREHOUSE
+  |   |   |   |   |
+  |   |   |   |   |--   BAY 0000100016 - 0000100061 X|X
+  |   |   |   |   |   |
+  |   |   |   |   |   |-----0000100018 d
+  |   |   |   |   |   |-----0000100021 PETTY CASH - ANIMAL HEALTH KYALAMI
+  |   |   |   |   |   |-----0000100022 PETTY CASH - ANIMAL HEALTH BELVILLE
+  |   |   |   |   |   |-----0000100023 PETTY CASH - ANIMAL HEALTH BLOEMFONTEIN
+  |   |   |   |   |   |-----0000100024 PETTY CASH - ANIMAL HEALTH JET PARK NORMAL
+  |   |   |   |   |   |-----0000100025 PETTY CASH - ANIMAL HEALTH JET PARK EXPORT
+  |   |   |   |   |   |-----0000100026 PETTY CASH - ANIMAL HEALTH PORT ELIZABETH
+  |   |   |   |   |   |-----0000100027 PETTY CASH - ANIMAL HEALTH PIETERMARITZBURG
+  |   |   |   |   |   |-----0000100028 PETTY CASH - ANIMAL HEALTH POTGIETERSRUST
+  |   |   |   |   |   |-----0000100029 PETTY CASH - NIGEL FACTORY
+  |   |   |   |   |   |-----0000100030 PETTY CASH - PAARL WAREHOUSE
+  |   |   |   |   |   |-----0000100033 PETTY CASH - AVENTIS - HEAD OFFICE
+  |   |   |   |   |   |-----0000100034 PETTY CASH - AVENTIS - BON ACCORD
+  |   |   |   |   |   |-----0000100035 PETTY CASH - AVENTIS - STELLENBOSCH
+  |   |   |   |   |   |-----0000100037 PETTY CASH -PIETERMARITZBURG FACTORY
+  |   |   |   |   |   |-----0000100049 PETTY CASH - CAPE TOWN BRANCH
+  |   |   |   |   |   |-----0000100050 PETTY CASH - PORT ELIZABETH BRANCH
+  |   |   |   |   |   |-----0000100056 PETTY CASH - MEREBANK
+  |   |   |   |   |   |-----0000100057 PETTY CASH - RUSTENBURG
+  |   |   |   |   |   |-----0000100058 PETTY CASH - MANDINI
+  |   |   |   |   |   ------0000100061 PETTY CASH - DURBAN
+  |   |   |   |   |
+  |   |   |   |   ------BAY 0000100068 - 0000100068 X|X PETTY CASH - PIKETBERG
+  |   |   |   |
+  |   |   |   ---   1003104000 R3 SUSPENSE ACCOUNTS
+  |   |   |       |
+  |   |   |       |--   BAY 0000151080 - 0000151082 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000151080 R3 SUSPENSE FOR GENERAL LEDGER
+  |   |   |       |   |-----0000151081 R3 SUSPENSE FOR DEBTORS
+  |   |   |       |   ------0000151082 R3 SUSPENSE FOR CREDITORS
+  |   |   |       |
+  |   |   |       |--   BAY 0000151084 - 0000151109 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000151084 R3 SUSPENSE GOODS  IN  TRANSIT
+  |   |   |       |   |-----0000151085 R3 SUSPENSE INVESTMENT IN ASS CO'S CONTROL - 1101
+  |   |   |       |   |-----0000151086 R3 SUSPENSE FNB LEASE CONTROL A/C - 2221
+  |   |   |       |   |-----0000151087 R3 SUSPENSE TRADE DRS CONT A/C - 14001
+  |   |   |       |   |-----0000151088 R3 SUSPENSE SUNDRY DEBTORS C/A A COMP - 14025
+  |   |   |       |   |-----0000151089 R3 SUSPENSE SUNDRY DEBTORS C/A B COMP - 14026
+  |   |   |       |   |-----0000151090 R3 SUSPENSE DEBTORS CONTROL A COMP - 14030
+  |   |   |       |   |-----0000151091 R3 SUSPENSE DEBTORS CONTROL B COMP - 14031
+  |   |   |       |   |-----0000151092 R3 SUSPENSE COMM. EARNED CONTROL - 14050
+  |   |   |       |   |-----0000151093 R3 SUSPENSE COMM EARNED C/A A COMP - 14051
+  |   |   |       |   |-----0000151094 R3 SUSPENSE COMM EARNED C/A B COMP - 14052
+  |   |   |       |   |-----0000151095 R3 SUSPENSE CRS CONT A/C TRADE - 16001
+  |   |   |       |   |-----0000151096 R3 SUSPENSE SUNDRY CREDITORS - 16002
+  |   |   |       |   |-----0000151097 R3 SUSPENSE CRS CONTR RENT/LEASE - 16008
+  |   |   |       |   |-----0000151098 R3 SUSPENSE CRS C/A TRADE A COMP - 16011
+  |   |   |       |   |-----0000151099 R3 SUSPENSE CRS C/A TRADE B COMP - 16012
+  |   |   |       |   |-----0000151100 R3 SUSPENSE CRS A COMP PROMISSORY NOTE - 16021
+  |   |   |       |   |-----0000151101 R3 SUSPENSE SUNDRY CRS B COMP - 16022
+  |   |   |       |   |-----0000151102 R3 SUSPENSE AGRO COMM AGENTS CONTROL - 16030
+  |   |   |       |   |-----0000151103 R3 SUSPENSE BILLS PAYABLE C/A - 16120
+  |   |   |       |   |-----0000151104 R3 SUSPENSE PROMISSORY NOTES NON-BAYER - 16120
+  |   |   |       |   |-----0000151105 R3 SUSPENSE TRAV ADV CONTOL A/C - 17101
+  |   |   |       |   |-----0000151106 R3 SUSPENSE PR. LEDG CONTROL A/C - 18205
+  |   |   |       |   |-----0000151107 R3 SUSPENSE P.LOANS TERM CONTROL A/C - 18206
+  |   |   |       |   |-----0000151108 R3 SUSPENSE SANVET STOCK TRANSFER
+  |   |   |       |   ------0000151109 R3 SUSPENSE - MED AID LOANS CONTR A/C
+  |   |   |       |
+  |   |   |       |-----BAY 0000151111 - 0000151111 X|X R3 SUSPENSE FOR UNRECOGNISED CONTROL ACCOUNTS
+  |   |   |       ---   BAY 0000151120 - 0000151123 X|X
+  |   |   |           |
+  |   |   |           |-----0000151120 BAYER ANIMAL HEALTH BANK TRANSFERS
+  |   |   |           |-----0000151121 BAYER ANIMAL HEALTH CREDITORS TRANSFERS
+  |   |   |           |-----0000151122 BAYER ANIMAL HEALTH DEBTORS TRANSFERS
+  |   |   |           ------0000151123 BAYER ANIMAL HEALTH MAP TRANSFERS
+  |   |   |
+  |   |   ---   1003200000 CURRENT LIABILITIES
+  |   |       |
+  |   |       ---   1003201000 CREDITORS
+  |   |           |
+  |   |           |--   1003201100 ASSOCIATED COMPANIES
+  |   |           |   |
+  |   |           |   |--   1003201110 A-COMPANIES
+  |   |           |   |   |
+  |   |           |   |   |-----BAY 0000069904 - 0000069904 X|X SHORT TERM LOAN - HOLDING COMPANY
+  |   |           |   |   |-----BAY 0000160005 - 0000160005 X|X TRADE PAYABLES SYMRISE INTER-CO
+  |   |           |   |   ------BAY 0000181013 - 0000181013 X|X BAYER AG CONSIGNMENT STOCK INVOICE CLEARING
+  |   |           |   |
+  |   |           |   ---   1003201120 B-COMPANIES
+  |   |           |       |
+  |   |           |       |-----BAY 0000140034 - 0000140034 X|X CREDIT BALANCES IN DEBTORS B GROUP COMPANIES
+  |   |           |       |-----BAY 0000160006 - 0000160006 X|X DEBIT BALANCES IN CREDITORS TRADE A GROUP COMPANY
+  |   |           |       ------BAY 0000160008 - 0000160008 X|X CREDITORS CONTROL - TRADE AFFILIATE B COMP
+  |   |           |
+  |   |           |--   1003201200 TRADE CRED. THIRD PARTIES ACCR. & PROVISIONS
+  |   |           |   |
+  |   |           |   |--   1003201210 TRADE CREDITORS
+  |   |           |   |   |
+  |   |           |   |   |-----BAY 0000160001 - 0000160001 X|X TRADE PAYABLES THIRD PARTIES
+  |   |           |   |   |-----BAY 0000160002 - 0000160002 X|X DEBIT BALANCES IN CREDITORS TRADE THIRD PARTIES
+  |   |           |   |   |-----BAY 0000160020 - 0000160020 X|X SUSPENSE - SPOORNET
+  |   |           |   |   |--   BAY 0000160025 - 0000160026 X|X
+  |   |           |   |   |   |
+  |   |           |   |   |   |-----0000160025 ++OBSOLETE++TRADE ACCRUALS THIRD PARTIES
+  |   |           |   |   |   ------0000160026 CREDITORS SUSPENSE ACCOUNT
+  |   |           |   |   |
+  |   |           |   |   |-----BAY 0000160060 - 0000160060 X|X MARK TO MARKET FOREIGN CURRENCY PAYABLES
+  |   |           |   |   ---   BAY 0000180006 - 0000180007 X|X
+  |   |           |   |       |
+  |   |           |   |       |-----0000180006 ADVANCE CONTROL - PF DEALERS
+  |   |           |   |       ------0000180007 CREDITORS - OVERSEAS CONTRA
+  |   |           |   |
+  |   |           |   ---   1003201220 PROVISIONS/ACCRUALS
+  |   |           |       |
+  |   |           |       |--   1003201221 PROVISIONS
+  |   |           |       |   |
+  |   |           |       |   |-----BAY 0000084132 - 0000084132 X|X Provision  - LEAVE PAY
+  |   |           |       |   |-----BAY 0000084137 - 0000084137 X|X PROVISION PENSION LIABILITY
+  |   |           |       |   |-----BAY 0000084203 - 0000084203 X|X PROVISION - INTEREST PAYABLE
+  |   |           |       |   |-----BAY 0000084207 - 0000084207 X|X PROVISION - INSURANCES
+  |   |           |       |   |-----BAY 0000084217 - 0000084217 X|X PROVISION - POWER
+  |   |           |       |   |-----BAY 0000084226 - 0000084226 X|X PROVISION - MEDICAL RESEARCH
+  |   |           |       |   |-----BAY 0000084227 - 0000084227 X|X PROV - RENTAL  AMORTIZATION
+  |   |           |       |   |-----BAY 0000084235 - 0000084235 X|X PROVISION - STOCK RETURNS
+  |   |           |       |   |-----BAY 0000084238 - 0000084238 X|X ACCRUAL - MAINTENANCE CONTRACTS
+  |   |           |       |   |-----BAY 0000084323 - 0000084323 X|X PROVISION - SHAREHOLDERS FOR DIVIDENDS
+  |   |           |       |   |-----BAY 0000084342 - 0000084342 X|X PROVISION - MEDICAL AID
+  |   |           |       |   |-----BAY 0000084349 - 0000084349 X|X INTEREST PAYABLE THIRD PARTIES
+  |   |           |       |   |-----BAY 0000084355 - 0000084355 X|X AGGREGATE EXCESS FIXED ASSETS EXC MOTOR VEHICLES
+  |   |           |       |   |-----BAY 0000085001 - 0000085001 X|X PROVISION - REHABILITATION COSTS
+  |   |           |       |   |-----BAY 0000086001 - 0000086001 X|X PROVISION - SAP  IMPLEMENTATION - CAPEX
+  |   |           |       |   |-----BAY 0000180010 - 0000180010 X|X SUSPENSE - DIVISIONAL
+  |   |           |       |   ------BAY 0000180012 - 0000180012 X|X MARK TO MARKET HEDGING INSTRUMENTS NEGATIVE VALUE
+  |   |           |       |
+  |   |           |       ---   1003201222 ACCRUALS
+  |   |           |           |
+  |   |           |           |--   BAY 0000084110 - 0000084111 X|X
+  |   |           |           |   |
+  |   |           |           |   |-----0000084110 ACCRUAL - UNPAID WAGES
+  |   |           |           |   ------0000084111 Provision - STAFF BONUS
+  |   |           |           |
+  |   |           |           |--   BAY 0000084204 - 0000084206 X|X
+  |   |           |           |   |
+  |   |           |           |   |-----0000084204 ACCRUAL - COMMISSION PAYABLE
+  |   |           |           |   |-----0000084205 ACCRUAL - ROYALTIES
+  |   |           |           |   ------0000084206 PROVISION - OTHER
+  |   |           |           |
+  |   |           |           |-----BAY 0000084219 - 0000084219 X|X PROVISION - WATER
+  |   |           |           |-----BAY 0000084225 - 0000084225 X|X ACCRUAL - TRANSPORT
+  |   |           |           |--   BAY 0000084233 - 0000084234 X|X
+  |   |           |           |   |
+  |   |           |           |   |-----0000084233 ACCRUAL - REBATES
+  |   |           |           |   ------0000084234 ACCRUAL - ADVERTISING
+  |   |           |           |
+  |   |           |           |-----BAY 0000084236 - 0000084236 X|X ACCRUAL - FREIGHT CHARGES
+  |   |           |           |-----BAY 0000084301 - 0000084301 X|X ACCRUAL - AUDIT FEES
+  |   |           |           |--   BAY 0000084321 - 0000084322 X|X
+  |   |           |           |   |
+  |   |           |           |   |-----0000084321 PROVISION - OVERHEAD COSTS
+  |   |           |           |   ------0000084322 PROVISION - SELLING EXPENSES
+  |   |           |           |
+  |   |           |           |-----BAY 0000084330 - 0000084330 X|X ACCRUAL - REGIONAL SERVICES COUNCIL
+  |   |           |           |--   BAY 0000084343 - 0000084344 X|X
+  |   |           |           |   |
+  |   |           |           |   |-----0000084343 ACCRUAL - CREDITORS
+  |   |           |           |   ------0000084344 ACCRUAL - 4 SECTION EXPENSES
+  |   |           |           |
+  |   |           |           |-----BAY 0000084350 - 0000084350 X|X ACCRUAL - QUARTERLY
+  |   |           |           |--   BAY 0000084351 - 0000084352 X|X
+  |   |           |           |   |
+  |   |           |           |   |-----0000084351 AGGREGATE EXCESS (VEHICLES)
+  |   |           |           |   ------0000084352 AGGREGATE EXCESS (CAR ALLOWANCE)
+  |   |           |           |
+  |   |           |           |-----BAY 0000084354 - 0000084354 X|X ACCRUAL - TELEPHONE & TELEX
+  |   |           |           |-----BAY 0000086002 - 0000086002 X|X ACCRUAL - REPAIRS
+  |   |           |           ------BAY 0000845007 - 0000845007 X|X SUSPENSE - CLEARING AGENTS
+  |   |           |
+  |   |           |--   1003201300 PROMISSORY NOTES
+  |   |           |   |
+  |   |           |   ------BAY 0000181002 - 0000181002 X|X PROMISSORY NOTES CONTROL - NON ASSOC COMPANIES
+  |   |           |
+  |   |           |--   1003201400 BILLS PAYABLE
+  |   |           |   |
+  |   |           |   ------BAY 0000181001 - 0000181001 X|X BILLS PAYABLE - GROUP A COMPANIES
+  |   |           |
+  |   |           ---   1003201500 SUNDRY CREDITORS
+  |   |               |
+  |   |               |--   1003201510 SUNDRY CREDITORS
+  |   |               |   |
+  |   |               |   |-----BAY 0000140002 - 0000140002 X|X CREDIT BALANCES IN DEBTORS THIRD PARTIES
+  |   |               |   |-----BAY 0000140050 - 0000140050 X|X COMMISSION RECEIVABLE THIRD PARTIES
+  |   |               |   |-----BAY 0000151003 - 0000151003 X|X DEBTORS CONTROL - MISC ASSOCIATE A COMP (CR BAL)
+  |   |               |   |-----BAY 0000160050 - 0000160050 X|X GIT - TRADE PAYABLES -USA
+  |   |               |   |--   BAY 0000180001 - 0000180003 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000180001 CREDITORS CONTROL
+  |   |               |   |   |-----0000180002 MISCELANEOUS PAYABLES A GROUP COMPANIES
+  |   |               |   |   ------0000180003 MISCELANEOUS PAYABLES B GROUP COMPANIES
+  |   |               |   |
+  |   |               |   |--   BAY 0000180008 - 0000180009 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000180008 RENT - SUSPENSE
+  |   |               |   |   ------0000180009 ++OBSOLETE++CREDITORS SUNDRY TECHNICON AUTOANALYZE
+  |   |               |   |
+  |   |               |   |--   BAY 0000180013 - 0000180014 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000180013 SUSPENSE - FREIGHT
+  |   |               |   |   ------0000180014 SUSPENSE - NASHUA
+  |   |               |   |
+  |   |               |   |-----BAY 0000180016 - 0000180016 X|X ACCRUAL INTEREST
+  |   |               |   |--   BAY 0000180018 - 0000180019 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000180018 DEBTORS - EXTRAORDINARY - AGFA
+  |   |               |   |   ------0000180019 UNALLOCATED DEPOSITS FROM BANK SATEMENTS
+  |   |               |   |
+  |   |               |   |-----BAY 0000180021 - 0000180021 X|X STANNIC PETROL AND MAINTENANCE CLEARING
+  |   |               |   |--   BAY 0000180022 - 0000180024 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000180022 FULL MAINTENANCE LEASE CONTRACTS PAYMENT CLEARING
+  |   |               |   |   |-----0000180023 STANNIC CASH RECOVERY
+  |   |               |   |   ------0000180024 SUSPENSE - STANNIC CAR ALLOWANCE
+  |   |               |   |
+  |   |               |   |--   BAY 0000180031 - 0000180032 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000180031 ASSET DISPOSAL CLEARING
+  |   |               |   |   ------0000180032 SUSPENSE - ASSET DISPOSAL LEASED
+  |   |               |   |
+  |   |               |   |-----BAY 0000185013 - 0000185013 X|X CHEMIST A/C
+  |   |               |   |-----BAY 0000185030 - 0000185030 X|X INSURANCE - NEW ERA
+  |   |               |   ------BAY 0000185035 - 0000185035 X|X FLEET LOST CARD
+  |   |               |
+  |   |               |--   1003201520 SOCIAL LIABILITIES
+  |   |               |   |
+  |   |               |   |-----BAY 0000084140 - 0000084140 X|X ACCRUAL - LE PENSION CONTRIBUTIONS
+  |   |               |   |-----BAY 0000150007 - 0000150007 X|X CLEARING - ZIMBABWE POOL CHEMICALS
+  |   |               |   |-----BAY 0000150013 - 0000150013 X|X TAX - WITHHOLDINGS EMPLOYEES (GARNISHEE)
+  |   |               |   |--   BAY 0000150015 - 0000150016 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000150015 PENSION FUND
+  |   |               |   |   ------0000150016 CLEARING - CIMAS LOAN
+  |   |               |   |
+  |   |               |   |-----BAY 0000150019 - 0000150019 X|X INSURANCE - ACCIDENT
+  |   |               |   |--   BAY 0000150022 - 0000150028 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000150022 INSURANCE - PRIVATE
+  |   |               |   |   |-----0000150024 INSURANCE - BOND
+  |   |               |   |   |-----0000150025 MOCAMBIQUE M/A
+  |   |               |   |   |-----0000150026 BAYER SAVINGS FUND
+  |   |               |   |   |-----0000150027 INSURANCE - GROUP FUNERAL
+  |   |               |   |   ------0000150028 SACHU UNION FEES
+  |   |               |   |
+  |   |               |   |--   BAY 0000150030 - 0000150034 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000150032 PFV FINANCIAL SERVICES
+  |   |               |   |   ------0000150033 INSURANCE - IGI
+  |   |               |   |
+  |   |               |   |--   BAY 0000150056 - 0000150057 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000150056 BANK - CALL ACCOUNT AFC
+  |   |               |   |   ------0000150057 BAYER/TAEUBER & CORSSEN - LIFE/ACCIDENT CALL
+  |   |               |   |
+  |   |               |   |-----BAY 0000150071 - 0000150071 X|X LOAN - HOUSING LOANS STANDARD BANK
+  |   |               |   |-----BAY 0000150075 - 0000150075 X|X ADVANCE - PERSONNEL CASH ADVANCES
+  |   |               |   |-----BAY 0000150085 - 0000150085 X|X SA PERM BOND RENTALS
+  |   |               |   |-----BAY 0000152052 - 0000152054 X|X
+  |   |               |   |-----BAY 0000180017 - 0000180017 X|X INSURANCE - FUND
+  |   |               |   |-----BAY 0000184053 - 0000184053 X|X UNCLAIMED WAGES / SALARIES
+  |   |               |   |-----BAY 0000185012 - 0000185012 X|X PREVIOUSLY DISADVANTEGED INDIVIDUALS (old bantu)
+  |   |               |   |--   BAY 0000185016 - 0000185021 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000185016 UNION DUES
+  |   |               |   |   |-----0000185017 HEALTH AND RACQUET CLUB
+  |   |               |   |   |-----0000185018 INSURANCE - WORKMENS COMPENSATION
+  |   |               |   |   |-----0000185019 UNEMPLOYMENT INSURANCE FUND
+  |   |               |   |   |-----0000185020 ANNUITY FUND
+  |   |               |   |   ------0000185021 SAFRICAN FUNERAL DEDUCTIONS
+  |   |               |   |
+  |   |               |   |-----BAY 0000185034 - 0000185034 X|X PROVIDENT FUND
+  |   |               |   |--   BAY 0000185036 - 0000185038 X|X
+  |   |               |   |   |
+  |   |               |   |   |-----0000185036 SA BOILERMAKERS UNION
+  |   |               |   |   ------0000185038 XMAS FUND - NIGEL
+  |   |               |   |
+  |   |               |   |--   BAY 0000185045 - 0000185055 X|X
+  |   |               |   |   |
+  |   |               |   |   ------0000185045 EMPLOYEE PARKING
+  |   |               |   |
+  |   |               |   ------BAY 0000186010 - 0000186010 X|X INCOME TAX - PAYE
+  |   |               |
+  |   |               ---   1003201530 VALUE ADDED TAXES
+  |   |                   |
+  |   |                   |--   BAY 0000151019 - 0000151020 X|X
+  |   |                   |   |
+  |   |                   |   ------0000151020 VAT - 10% INPUT TAX ACCOUNT
+  |   |                   |
+  |   |                   |-----BAY 0000151044 - 0000151044 X|X VAT - INTERCOMPANY - SUSPENSE
+  |   |                   |--   BAY 0000174999 - 0000176008 X|X
+  |   |                   |   |
+  |   |                   |   |-----0000174999 VAT - CLEARING
+  |   |                   |   |-----0000175000 VAT - INPUT SERVICES OTHER  V4
+  |   |                   |   |-----0000175001 VAT - INPUT IMPORTS  V5
+  |   |                   |   |-----0000175002 VAT - INPUT BAD DEBTS  V6
+  |   |                   |   |-----0000175003 VAT - INPUT CREDITS EX DEBTORS  V7
+  |   |                   |   |-----0000175004 VAT - INPUT CAPITAL GOODS  V8
+  |   |                   |   |-----0000175005 VAT - INPUT INTERCOMPANY  V9
+  |   |                   |   |-----0000175010 Turnover tax Fed. Rep. of Germany
+  |   |                   |   |-----0000175020 TT Danmark
+  |   |                   |   |-----0000175040 TT Sweden
+  |   |                   |   |-----0000175050 TT Finland
+  |   |                   |   |-----0000175100 TT Austria
+  |   |                   |   |-----0000175150 TT Greece
+  |   |                   |   |-----0000175170 TT Switzerland
+  |   |                   |   |-----0000175180 TT Italy
+  |   |                   |   |-----0000175200 TT Spain
+  |   |                   |   |-----0000175210 TT Portugal
+  |   |                   |   |-----0000175220 TT France
+  |   |                   |   |-----0000175260 TT Belgium
+  |   |                   |   |-----0000175280 TT Netherlands
+  |   |                   |   |-----0000175290 TT Luxemburg
+  |   |                   |   |-----0000175300 TT Great Britain
+  |   |                   |   |-----0000175310 TT Irelande
+  |   |                   |   |-----0000175999 TT other countries
+  |   |                   |   |-----0000176000 VAT - OUTPUT STANDARD A2
+  |   |                   |   |-----0000176001 VAT - OUTPUT ZERO RATED A3
+  |   |                   |   |-----0000176002 VAT - OUTPUT EXPORT A4
+  |   |                   |   |-----0000176003 VAT - OUTPUT FRINGE BENEFITS A5
+  |   |                   |   |-----0000176004 VAT - OUTPUT INTERCOMPANY A6
+  |   |                   |   |-----0000176005 VAT - OUTPUT DISCOUNTS & OTHER  A7
+  |   |                   |   |-----0000176006 VAT - OUTPUT VAT - VAT INCLUSIVE
+  |   |                   |   |-----0000176007 VAT - OUTPUT 14%
+  |   |                   |   ------0000176008 VAT - OUTPUT DDMA
+  |   |                   |
+  |   |                   |-----BAY 0000186056 - 0000186056 X|X VAT - INPUT ZERO RATED
+  |   |                   ------BAY 0000186061 - 0000186061 X|X VAT CLEARING
+  |   |
+  |   |--   1004000000 INT. BEARING LIABILITIES
+  |   |   |
+  |   |   ---   1004100000 BANK LIABILITIES TOTAL
+  |   |       |
+  |   |       |--   1004101000 BANK LIABILITIES
+  |   |       |   |
+  |   |       |   |--   BAY 0000111001 - 0000111020 X|X
+  |   |       |   |   |
+  |   |       |   |   |-----0000111001 STANDARD BANK ISANDO (MAIN BANK ACCOUNT)
+  |   |       |   |   |-----0000111003 BANK - AVENTIS SALARIES STANDARD
+  |   |       |   |   |-----0000111004 BANK - ISANDO NO 2 SALARIES STANDARD (SUSPENSE)
+  |   |       |   |   |-----0000111005 BANK - ISANDO NO 2 STANDARD
+  |   |       |   |   |-----0000111006 STANDARD BANK ISITHEBE
+  |   |       |   |   |-----0000111007 STANDARD BANK CAPE TOWN
+  |   |       |   |   |-----0000111008 BANK - PORT ELIZABETH STANDARD
+  |   |       |   |   |-----0000111009 BANK - DURBAN STANDARD
+  |   |       |   |   |-----0000111010 Bank 1 (cheques)
+  |   |       |   |   |-----0000111011 BANK - HUGENOT STANDARD
+  |   |       |   |   |-----0000111012 BANK - NEDBANK
+  |   |       |   |   |-----0000111013 STANDARD BANK ISANDO ANIMAL HEALTH
+  |   |       |   |   |-----0000111014 STANDARD BANK CENTURION - AVENTIS
+  |   |       |   |   |-----0000111015 STANDARD BANK MOBENI
+  |   |       |   |   |-----0000111016 STANDARD BANK RUSTENBURG
+  |   |       |   |   |-----0000111017 STANDARD BANK GALE PLACE (DURBAN)
+  |   |       |   |   ------0000111020 ISANDO FIRST NATIONAL ISANDO
+  |   |       |   |
+  |   |       |   |--   BAY 0000111022 - 0000111023 X|X
+  |   |       |   |   |
+  |   |       |   |   |-----0000111022 BANK - CALL DEPOSIT
+  |   |       |   |   ------0000111023 BANK - WARMBATHS FIRST NATIONAL
+  |   |       |   |
+  |   |       |   |-----BAY 0000111026 - 0000111026 X|X STANDARD BANK NIGEL
+  |   |       |   |-----BAY 0000111029 - 0000111029 X|X BANK - DDMA STANDARD
+  |   |       |   |--   BAY 0000111035 - 0000111036 X|X
+  |   |       |   |   |
+  |   |       |   |   |-----0000111035 STANDARD BANK ISANDO NUMBER 4 ACCOUNT
+  |   |       |   |   ------0000111036 BANK - GHR MISCELLANEOUS STANDARD
+  |   |       |   |
+  |   |       |   |--   BAY 0000111040 - 0000111075 X|X
+  |   |       |   |   |
+  |   |       |   |   |-----0000111040 STANDARD BANK ISANDO USD ACCOUNT
+  |   |       |   |   |-----0000111041 STANDARD BANK ISANDO DEM ACCOUNT
+  |   |       |   |   |-----0000111042 MARK TO MARKET FOREIGN CURRENCY BANK BALANCES
+  |   |       |   |   |-----0000111043 STANDARD BANK ISANDO EURO ACCOUNT
+  |   |       |   |   |-----0000111044 BANK - GBP BRIDGING STANDARD
+  |   |       |   |   |-----0000111045  DRAGOCO NEDBANK CURRENT ACCOUNT
+  |   |       |   |   |-----0000111046 DEPOSIT ACCOUNT
+  |   |       |   |   |-----0000111047 NEDBANK CALL ACCOUNT
+  |   |       |   |   |-----0000111048 NEDBANK EURO  ACCOUNT
+  |   |       |   |   |-----0000111049 NEDBANK USD  ACCOUNT
+  |   |       |   |   |-----0000111050 CREDIT AGRICOLE JOHANNESBURG
+  |   |       |   |   |-----0000111051 NEDBANK GBP  ACCOUNT
+  |   |       |   |   |-----0000111052 BANK - NEDBANK CALL ACCOUNT
+  |   |       |   |   |-----0000111055 BANK - ISANDO TRUST
+  |   |       |   |   |-----0000111056 BANK - ISANDO STANDARD - SPORT
+  |   |       |   |   |-----0000111060 SHORT TERM FINANCE LOANS THIRD PARTIES
+  |   |       |   |   |-----0000111061 BANK CONTROL- SHORT TERM LOAN - EURO
+  |   |       |   |   |-----0000111070 Bank 1 (other temporary entries)
+  |   |       |   |   ------0000111075 CITI BANK JOHANNESBURG
+  |   |       |   |
+  |   |       |   |--   BAY 0000111101 - 0000111118 X|X
+  |   |       |   |   |
+  |   |       |   |   |-----0000111101 OUTGOING BANK PAYMENTS CLEARING ISANDO MAIN ACC
+  |   |       |   |   |-----0000111102 BANK - STANDARD BANK
+  |   |       |   |   |-----0000111103 BANK - SUSPENSE CREDITORS BILLS PAYABLE
+  |   |       |   |   |-----0000111104 FOREIGN CURRENCY CREDITORS PAYMENT CLEARING
+  |   |       |   |   |-----0000111107 OUTGOING BANK PAYMENTS CLEARING CAPE TOWN
+  |   |       |   |   |-----0000111108 BANK - STANDARD SUSPENSE A/C P E
+  |   |       |   |   |-----0000111109 BANK - STANDARD SUSPENSE A/C DURBAN
+  |   |       |   |   |-----0000111110 Bank 1 (money entries from debitors)
+  |   |       |   |   |-----0000111111 BANK - STANDARD SUSPENSE A/C HUGENOT
+  |   |       |   |   |-----0000111113 BANK - BAH SUSPENSE
+  |   |       |   |   |-----0000111114 OUTGOING BANK PMTS CLEARING CENTURION - AVENTIS
+  |   |       |   |   |-----0000111117 OUTGOING BANK PAYMENTS CLEARING - GALE PLACE
+  |   |       |   |   ------0000111118 CHEQUE DEPOSITS SUSPENSE ACCOUNT AUTO POSTING
+  |   |       |   |
+  |   |       |   |-----BAY 0000111119 - 0000111119 X|X BANK - STANDARD DEPOSIT SUSPENSE DURBAN
+  |   |       |   |-----BAY 0000111120 - 0000111120 X|X BANK - SUSPENSE FIRST NATIONAL ISANDO
+  |   |       |   |-----BAY 0000111126 - 0000111126 X|X OUTGOING BANK PAYMENTS CLEARING - NIGEL
+  |   |       |   |--   BAY 0000111127 - 0000111129 X|X
+  |   |       |   |   |
+  |   |       |   |   |-----0000111127 BANK - STANDARD SUSPENSE A/C CAPE TOWN
+  |   |       |   |   |-----0000111128 BANK - STANDARD SUSPENSE A/C PORT ELIZABETH
+  |   |       |   |   ------0000111129 BANK - STANDARD DDMA SUSPENSE
+  |   |       |   |
+  |   |       |   ---   BAY 0000111135 - 0000111136 X|X
+  |   |       |       |
+  |   |       |       |-----0000111135 DIRECT DEPOSIT NO 4 ACCOUNT CLEARING
+  |   |       |       ------0000111136 BANK - STANDARD GHR MISCELLANEOUS SUSPENSE
+  |   |       |
+  |   |       |-----1004102000 OVERDRAFT
+  |   |       ---   1004103000 EUROLOANS
+  |   |           |
+  |   |           ------BAY 0000181015 - 0000181015 X|X BILLS PAYABLE  - NON ASSOC COMPANIES EURO FINANCE
+  |   |
+  |   ---   1005000000 TAXATION
+  |       |
+  |       |--   BAY 0000082001 - 0000082002 X|X
+  |       |   |
+  |       |   |-----0000082001 INCOME TAX ANNUAL PROVISIONS
+  |       |   ------0000082002 PROVISION - BOPHUTHATSWANA TAX
+  |       |
+  |       ------BAY 0000151009 - 0000151009 X|X INCOME TAX PROVISIONAL PAYMENTS
+  |
+  |--   2000000000 CAPITAL EMPLOYED       Liabilities
+  |   |
+  |   |--   2001000000 EQUITY
+  |   |   |
+  |   |   |--   2001100000 SHARE CAPITAL
+  |   |   |   |
+  |   |   |   |--   2001101000 AUTHORISED AND ISSUED
+  |   |   |   |   |
+  |   |   |   |   |-----BAY 0000070001 - 0000070001 X|X SHARE CAPITAL - ISSUED
+  |   |   |   |   ------BAY 0000070003 - 0000070003 X|X SHARE CAPITAL - PREFERENCE REDEEMABLE
+  |   |   |   |
+  |   |   |   ---   2001102000 NON - DISTRIBUTABLE RESERVES
+  |   |   |       |
+  |   |   |       |-----BAY 0000072001 - 0000072001 X|X SHARE CAPITAL - SHARE PREMIUM
+  |   |   |       ------BAY 0000072002 - 0000072002 X|X NON DISTRIBUTABLE RESERVES
+  |   |   |
+  |   |   ---   2001200000 DISTRIBUTABLE RESERVES
+  |   |       |
+  |   |       |-----BAY 0000074001 - 0000074001 X|X RETAINED INCOME
+  |   |       ------BAY 0000999999 - 0000999999 X|X NET INCOME CARRIED FORWARD FROM PREV. YEAR HB2
+  |   |
+  |   ---   2002000000 LONG TERM LIABILITIES
+  |       |
+  |       |--   2002100000 LEASES
+  |       |   |
+  |       |   ------BAY 0000190001 - 0000190001 X|X LEASE CONTROL - FNB
+  |       |
+  |       |--   2002200000 LOANS
+  |       |   |
+  |       |   |-----BAY 0000061001 - 0000061001 X|X LONG TERM LOAN - EURORAND BOND 15 3/8%
+  |       |   ---   BAY 0000069901 - 0000069903 X|X
+  |       |       |
+  |       |       |-----0000069901 LONG TERM LOAN - J P MORGAN
+  |       |       |-----0000069902 LONG TERM LOAN - HOLDING COMPANY
+  |       |       ------0000069903 LONG TERM LOAN - I D C
+  |       |
+  |       ---   2002300000 DEFERRED TAXES
+  |           |
+  |           ------BAY 0000091100 - 0000091100 X|X DEFFERED TAX LIABILITY
+  |
+  |--   3000000000 PROFIT & LOSS SECTION
+  |   |
+  |   |--   3100000000 PROFIT & LOSS SECTION (OPERATING RESULT)
+  |   |   |
+  |   |   |--   3101000000 PROFIT & LOSS ACCOUNTS (CLASS 8)
+  |   |   |   |
+  |   |   |   |--   3101100000 NET SALES
+  |   |   |   |   |
+  |   |   |   |   |--   3101101000 GROSS SALES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   3101101100 EX-STOCK SALES
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ---   BAY 0000800003 - 0000800031 X|X
+  |   |   |   |   |   |       |
+  |   |   |   |   |   |       |-----0000800003 SALES - MANUAL  (OLD 90003 A/C)
+  |   |   |   |   |   |       |-----0000800004 SALES - MANUAL  TRANSFER R2 TO R3
+  |   |   |   |   |   |       |-----0000800021 SALES - STD. RATED
+  |   |   |   |   |   |       |-----0000800022 SALES - ZERO RATED
+  |   |   |   |   |   |       |-----0000800023 SALES - EXPORTS
+  |   |   |   |   |   |       |-----0000800024 SALES - CREDITS - STD. RATED
+  |   |   |   |   |   |       |-----0000800025 SALES - CREDIT - ZERO RATED
+  |   |   |   |   |   |       |-----0000800026 SALES - CREDITS - EXPORT
+  |   |   |   |   |   |       |-----0000800027 SALES - IHD
+  |   |   |   |   |   |       |-----0000800028 SALES - SANVET
+  |   |   |   |   |   |       |-----0000800029 COMMISSION RECEIVED from other Symrise companies
+  |   |   |   |   |   |       |-----0000800030 SALES - INDENT (BALANCE MUST ALWAYS BE ZERO)
+  |   |   |   |   |   |       ------0000800031 SALES - EXPORT TAXABLE
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   3101101200 COMMISSION EARNED
+  |   |   |   |   |       |
+  |   |   |   |   |       ---   BAY 0000801001 - 0000801004 X|X
+  |   |   |   |   |           |
+  |   |   |   |   |           |-----0000801001 INDENT COMMISSION - BAYER AG
+  |   |   |   |   |           |-----0000801002 INDENT account not to be used
+  |   |   |   |   |           |-----0000801003 INDENT COMMISSION - NON ASSOC COMPANIES
+  |   |   |   |   |           ------0000801004 INDENT COMMISSION - BAYER INTERNAL
+  |   |   |   |   |
+  |   |   |   |   ---   3101102000 REBATES, CASH DISCOUNT, INDEMNIFICATION
+  |   |   |   |       |
+  |   |   |   |       |--   BAY 0000841001 - 0000841002 X|X
+  |   |   |   |       |   |
+  |   |   |   |       |   |-----0000841001 DISCOUNT - CASH DISCOUNT ALLOWED
+  |   |   |   |       |   ------0000841002 DISCOUNT - PRODUCTS IN LIEU OF
+  |   |   |   |       |
+  |   |   |   |       |-----BAY 0000842001 - 0000842001 X|X REBATES
+  |   |   |   |       |-----BAY 0000842050 - 0000842050 X|X REBATES - PROVISION ENTRIES ONLY
+  |   |   |   |       ------BAY 0000847001 - 0000847001 X|X INDEMNIFICATIONS
+  |   |   |   |
+  |   |   |   |--   3101200000 SALES ADJUSTMENTS
+  |   |   |   |   |
+  |   |   |   |   |--   3101201000 COMMISSIONS PAYABLE
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000844001 - 0000844002 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000844001 COMMISSION PAID - AGENTS
+  |   |   |   |   |   |   ------0000844002 COMMISSION PAID - AGRO AGENTS
+  |   |   |   |   |   |
+  |   |   |   |   |   ------BAY 0000844050 - 0000844050 X|X COMMISSION  (ACCRUAL ENTRIES ONLY)
+  |   |   |   |   |
+  |   |   |   |   |--   3101202000 OUTWARD FREIGHT AND TRANSPORT CHARGES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000845001 - 0000845003 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000845001 RAILAGE OUTWARDS
+  |   |   |   |   |   |   |-----0000845002 SHIPPING EXPENSES
+  |   |   |   |   |   |   ------0000845003 CARTAGE OUTWARDS
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000845005 - 0000845006 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ------0000845005 FREIGHT - AUTO BOOKINGS
+  |   |   |   |   |   |
+  |   |   |   |   |   ------BAY 0000845050 - 0000845050 X|X FREIGHT (ACCRUALS ENTRIES ONLY)
+  |   |   |   |   |
+  |   |   |   |   |--   3101203000 ROYALITIES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000846001 - 0000846003 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000846001 ROYALTIES - ASSOCIATED A COMPANIES
+  |   |   |   |   |   |   |-----0000846002 ROYALTIES - AFFILIATED B COMPANIES
+  |   |   |   |   |   |   ------0000846003 ROYALTIES - THIRD PARTIES
+  |   |   |   |   |   |
+  |   |   |   |   |   ------BAY 0000846050 - 0000846050 X|X ROYALTIES (ACCRUAL ENTRIES ONLY)
+  |   |   |   |   |
+  |   |   |   |   ---   3101204000 LEVIES
+  |   |   |   |       |
+  |   |   |   |       ------BAY 0000844008 - 0000844008 X|X RSC REGIONAL ESTABLISHMENT LEVY - TURNOVER
+  |   |   |   |
+  |   |   |   ---   3101300000 COST OF GOODS SOLD
+  |   |   |       |
+  |   |   |       |--   BAY 0000869001 - 0000869006 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000869001 COST OF GOODS SOLD - STOCK WRITE OFF PROVISION
+  |   |   |       |   |-----0000869002 COST OF GOODS SOLD - transfer Pricing Adjustment
+  |   |   |       |   |-----0000869003 COST OF GOODS SOLD - SALES AND DISTRIBUTION
+  |   |   |       |   |-----0000869004 COST OF GOODS SOLD - PURCHASE PRICE ADJUSTMENT
+  |   |   |       |   |-----0000869005 COST OF GOODS SOLD - STOCK WRITE OFFS
+  |   |   |       |   ------0000869006 COST OF GOODS SOLD - DESTRUCTION SPARE PARTS
+  |   |   |       |
+  |   |   |       |--   BAY 0000869008 - 0000869009 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000869008 COST OF GOODS SOLD - START UP COSTS
+  |   |   |       |   ------0000869009 COST OF GOODS SOLD - STANDSTILL COSTS
+  |   |   |       |
+  |   |   |       |-----BAY 0000869010 - 0000869010 X|X COST OF GOODS SOLD - AGFA CLEARING CHARGES DISPO
+  |   |   |       |-----BAY 0000869011 - 0000869011 X|X COST OF GOODS SOLD - STOCK COUNT WRITE OFF
+  |   |   |       |--   BAY 0000869013 - 0000869014 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000869013 COST OF GOODS SOLD - OVER/UNDER CR STOCK RETURNS
+  |   |   |       |   ------0000869014 COST OF GOODS SOLD - CORR OF 869011 ALLOCATIONS
+  |   |   |       |
+  |   |   |       |-----BAY 0000869020 - 0000869020 X|X COST OF GOODS SOLD - R2 MAPS AGFA TRF
+  |   |   |       |-----BAY 0000869050 - 0000869050 X|X COST OF GOODS SOLD - ACCRUAL ENTRIES ONLY
+  |   |   |       |--   BAY 0000890302 - 0000890303 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000890302 STOCKS - PIPELINE PRODUCTION CONSUMPTION
+  |   |   |       |   ------0000890303 ++OBSOLETE++STOCKS - RAW MAT INV DIFF (SYS ACC)
+  |   |   |       |
+  |   |   |       |--   BAY 0000890312 - 0000890313 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000890312 ++OBSOLETE++STOCKS - PACKING MATERIAL DEPRECIATION
+  |   |   |       |   ------0000890313 ++OBSOLETE++STOCKS - PACK MAT INV DIFF (SYS ACC)
+  |   |   |       |
+  |   |   |       |--   BAY 0000890332 - 0000890333 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000890332 ++OBSOLETE++STOCKS - MAINTENANCE MAT. DEPRECIATION
+  |   |   |       |   ------0000890333 ++OBSOLETE++STOCKS - MAINT MAT INV DIFF (SYS ACC)
+  |   |   |       |
+  |   |   |       |--   BAY 0000890352 - 0000890355 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000890352 ++OBSOLETE++STOCKS - RESALE DEPRECIATION
+  |   |   |       |   |-----0000890353 ++OBSOLETE++STOCKS RESALE INVENTORY DIFF (SYS ACC)
+  |   |   |       |   |-----0000890354 ++OBSOLETE++STOCKS - RESALE STORAGE ADJUSTMENT
+  |   |   |       |   ------0000890355 ++OBSOLETE++STOCKS - RESALE COST OF GOODS SOLD
+  |   |   |       |
+  |   |   |       |--   BAY 0000895702 - 0000895705 X|X
+  |   |   |       |   |
+  |   |   |       |   |-----0000895702 ++OBSOLETE++STOCKS - FIN. GOODS DEPRECIATION
+  |   |   |       |   |-----0000895703 ++OBSOLETE++STOCKS - FIN GOODS INV DIFF (SYS ACC)
+  |   |   |       |   |-----0000895704 ++OBSOLETE++STOCKS - FIN. GOODS STORAGE ADJ
+  |   |   |       |   ------0000895705 ++OBSOLETE++STOCKS - FIN. GOODS COST OF GOODS SOLD
+  |   |   |       |
+  |   |   |       ---   BAY 0000895712 - 0000895713 X|X
+  |   |   |           |
+  |   |   |           |-----0000895712 ++OBSOLETE++STOCKS - SEMI-FIN.GOODS DEPRECIATION
+  |   |   |           ------0000895713 ++OBSOLETE++STOCKS SEMI-FIN GOODS INV DIFF-SYS ACC
+  |   |   |
+  |   |   |--   3101010000 PROFIT & LOSS ACCOUNTS (4-SECTION)
+  |   |   |   |
+  |   |   |   |--   3102000000 4-SECTION EXPENSES
+  |   |   |   |   |
+  |   |   |   |   |--   3102100000 WAGES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000401001 - 0000401004 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000401001 WAGES
+  |   |   |   |   |   |   |-----0000401002 WAGES - XMAS BONUS
+  |   |   |   |   |   |   |-----0000401003 WAGES - LEAVE PAY
+  |   |   |   |   |   |   ------0000401004 ++OBSOLETE++WAGES - IN KIND
+  |   |   |   |   |   |
+  |   |   |   |   |   ------BAY 0000401006 - 0000401006 X|X WAGES - CASUAL LABOUR
+  |   |   |   |   |
+  |   |   |   |   |--   3102105000 SALARIES
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   BAY 0000401010 - 0000401016 X|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000401010 SALARIES
+  |   |   |   |   |       |-----0000401012 SALARIES - XMAS BONUS
+  |   |   |   |   |       |-----0000401013 SALARIES - LEAVE PAY
+  |   |   |   |   |       |-----0000401014 SALARIES - INCENTIVE BONUS
+  |   |   |   |   |       ------0000401016 SALARIES - CONTRACT OUTSIDE LABOUR
+  |   |   |   |   |
+  |   |   |   |   |--   3102110000 PERSONNEL EXPENSES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   3102111000 WAGES
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----3102111100 WAGES IN KIND
+  |   |   |   |   |   |   |-----3102111200 WAGES X-MAS BONUS
+  |   |   |   |   |   |   |-----3102111300 WAGES LEAVE PAY
+  |   |   |   |   |   |   ------3102111400 CASUAL LABOUR
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   3102113000 SOCIAL EXPENDITURES
+  |   |   |   |   |       |
+  |   |   |   |   |       |--   3102113110 GROUP PENSIONS.
+  |   |   |   |   |       |   |
+  |   |   |   |   |       |   ---   BAY 0000403020 - 0000403030 X|X
+  |   |   |   |   |       |       |
+  |   |   |   |   |       |       |-----0000403020 PROVIDENT FUND                               gal
+  |   |   |   |   |       |       |-----0000403025 Direct personnel expenses,social charges,voluntary
+  |   |   |   |   |       |       ------0000403030 PENSION FUND LIABILTY
+  |   |   |   |   |       |
+  |   |   |   |   |       |--   3102113120 OTHER SOCIAL EXPENDITURE
+  |   |   |   |   |       |   |
+  |   |   |   |   |       |   |--   BAY 0000406001 - 0000406012 X|X
+  |   |   |   |   |       |   |   |
+  |   |   |   |   |       |   |   |-----0000406001 RSC REGIONAL SERVICES LEVY - SALARIES
+  |   |   |   |   |       |   |   |-----0000406002 UNEMPLOYMENT INSURANCE FUND
+  |   |   |   |   |       |   |   |-----0000406003 MEDICAL AID
+  |   |   |   |   |       |   |   |-----0000406004 SKILLS DEVELOPMENT LEVY
+  |   |   |   |   |       |   |   |-----0000406005 INSURANCE - WORKMAN'S COMPENSATION
+  |   |   |   |   |       |   |   |-----0000406006 RETIREMENT MEDICAL FUNDING
+  |   |   |   |   |       |   |   |-----0000406007 SCHOOL FEES - EXPATRIATES (OBSOLETE)
+  |   |   |   |   |       |   |   |-----0000406008 VOLUNTARY SOCIAL EXPENSES
+  |   |   |   |   |       |   |   |-----0000406009 STAFF TRAINING
+  |   |   |   |   |       |   |   |-----0000406010 CANTEEN MEALS
+  |   |   |   |   |       |   |   |-----0000406011 DIRECTORS MPP BONUS
+  |   |   |   |   |       |   |   ------0000406012 MEDICINES
+  |   |   |   |   |       |   |
+  |   |   |   |   |       |   ------BAY 0000406015 - 0000406015 X|X NOT TO BE USED IN 2006 - DIRECTORS MPP BONUS
+  |   |   |   |   |       |
+  |   |   |   |   |       ------3102113170 OTHER VOLUNTARY SOCIAL EXPENSES
+  |   |   |   |   |
+  |   |   |   |   |--   3102120000 ENERGY EXPENSES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000410001 - 0000411000 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000410001 WATER
+  |   |   |   |   |   |   |-----0000410002 WATER PURIFICATION
+  |   |   |   |   |   |   |-----0000410100 Betriebswasser
+  |   |   |   |   |   |   |-----0000410110 Kühlwasser
+  |   |   |   |   |   |   |-----0000410200 Trinkwasser
+  |   |   |   |   |   |   ------0000411000 Steam
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   BAY 0000411002 - 0000419005 X|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000413000 Electricity
+  |   |   |   |   |       |-----0000413001 ELECTRIC POWER
+  |   |   |   |   |       |-----0000413005 WATER
+  |   |   |   |   |       |-----0000418300 Gas
+  |   |   |   |   |       |-----0000419000 Other energies
+  |   |   |   |   |       |-----0000419001 FUEL S.20
+  |   |   |   |   |       |-----0000419002 DIESEL
+  |   |   |   |   |       |-----0000419003 HEAVY FURNACE OIL
+  |   |   |   |   |       |-----0000419004 GAS
+  |   |   |   |   |       ------0000419005 NITROGEN
+  |   |   |   |   |
+  |   |   |   |   |--   3102130000 REPAIRS AND MAINTENANCE
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   3102131000 R & M
+  |   |   |   |   |       |
+  |   |   |   |   |       ---   BAY 0000422001 - 0000422092 X|X
+  |   |   |   |   |           |
+  |   |   |   |   |           |-----0000422001 REPAIRS & MAINTENANCE - BUILDINGS
+  |   |   |   |   |           |-----0000422002 REPAIRS & MAINTENANCE - PLANT & MACHINERY
+  |   |   |   |   |           |-----0000422003 REPAIRS & MAINTENANCE - OFFICE MACHINES
+  |   |   |   |   |           |-----0000422004 REPAIRS & MAINTENANCE - FURNITURE & FIXTURES
+  |   |   |   |   |           |-----0000422005 REPAIRS & MAINTENANCE - MOTOR VEHICLES
+  |   |   |   |   |           |-----0000422006  (OBSOLETE)
+  |   |   |   |   |           |-----0000422007 REPAIRS & MAINTENANCE - NOT TO BE USED
+  |   |   |   |   |           |-----0000422008 REPAIRS & MAINTENANCE - NOT TO BE USED
+  |   |   |   |   |           |-----0000422009 REPAIRS & MAINTENANCE - NOT TO BE USED
+  |   |   |   |   |           |-----0000422010 REPAIRS & MAINTENANCE - NOT TO BE USED
+  |   |   |   |   |           |-----0000422012 REPAIRS & MAINTENANCE - PLANT & MACHINERY LABOUR
+  |   |   |   |   |           |-----0000422013 REPAIRS & MAINTENANCE - CONTRACTORS
+  |   |   |   |   |           |-----0000422015 REPAIRS & MAINTENANCE - IT
+  |   |   |   |   |           |-----0000422016 REPAIRS & MAINTENANCE - NOT TO BE USED
+  |   |   |   |   |           |-----0000422017 REPAIRS & MAINTENANCE - FILTER CLOTH GASKETS
+  |   |   |   |   |           |-----0000422018 REPAIRS & MAINTENANCE - ANODES
+  |   |   |   |   |           |-----0000422019 REPAIRS & MAINTENANCE - CATHODES
+  |   |   |   |   |           |-----0000422020 REPAIRS & MAINTENANCE - DUMPSITE REHABILITATION
+  |   |   |   |   |           ------0000422021 REPAIRS & MAINTENANCE - PROJECTS
+  |   |   |   |   |
+  |   |   |   |   |--   3102140000 CONSUMABLES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000420001 - 0000420020 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000420004 SPARES
+  |   |   |   |   |   |   |-----0000420005 ++OBSOLETE++BUILDING MATERIALS
+  |   |   |   |   |   |   |-----0000420006 PIPES & FITTINGS
+  |   |   |   |   |   |   |-----0000420007 TOOLS & INSTRUMENTS
+  |   |   |   |   |   |   |-----0000420008 REAGENTS
+  |   |   |   |   |   |   |-----0000420009 LUBRICANTS
+  |   |   |   |   |   |   |-----0000420010 PARAFFIN
+  |   |   |   |   |   |   |-----0000420012 WELDING MATERIALS
+  |   |   |   |   |   |   ------0000420020 REPAIRS EX STORES
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   BAY 0000423001 - 0000439002 X|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000423002 SULPHURIC ACID
+  |   |   |   |   |       |-----0000423003 CAUSTIC SODA
+  |   |   |   |   |       |-----0000423004 EXPLOSIVES
+  |   |   |   |   |       |-----0000423005 PIT TIMBER
+  |   |   |   |   |       |-----0000423010 LAUNDRY & CLEANING - do not use
+  |   |   |   |   |       |-----0000423012 CONSUMABLES - TECHNICAL
+  |   |   |   |   |       |-----0000423013 FIRST AID AND PROTECTIVE CLOTHING
+  |   |   |   |   |       |-----0000423014 OVERALLS
+  |   |   |   |   |       |-----0000423015 MILL LINERS
+  |   |   |   |   |       |-----0000423016 GRINDING BALLS
+  |   |   |   |   |       |-----0000424000 Expenses for process-improvement
+  |   |   |   |   |       |-----0000425800 Gesetzliche Auflagen für Anlagen,Arbeitssicherheit
+  |   |   |   |   |       |-----0000426000 R&D expenses
+  |   |   |   |   |       |-----0000426001 PRODUCT ANALYSIS
+  |   |   |   |   |       |-----0000426007 CLINICAL TESTS & TRIALS
+  |   |   |   |   |       |-----0000427000 Demolition expenses
+  |   |   |   |   |       |-----0000431000 Expenses for packaging material
+  |   |   |   |   |       |-----0000431001 PACKING MATERIAL - FACTORY + W/HOUSE ONLY
+  |   |   |   |   |       |-----0000432000 Fuel expenses
+  |   |   |   |   |       |-----0000432020 Betriebsmaterial, Kraftstoffe
+  |   |   |   |   |       |-----0000432040 Betriebsmaterial, Kleinwerkzeuge
+  |   |   |   |   |       |-----0000432130 Betriebsmaterial, Arbeitskleidung
+  |   |   |   |   |       |-----0000434000 Expenses for office materials
+  |   |   |   |   |       |-----0000434001 PRINTING  & STATIONERY
+  |   |   |   |   |       |-----0000434002 BLANK
+  |   |   |   |   |       |-----0000434020 Vervielfältigungen
+  |   |   |   |   |       |-----0000434030 Expenses for books and newspapers
+  |   |   |   |   |       |-----0000435000 Lebensmittel, Getränke
+  |   |   |   |   |       |-----0000437000 Expenses for raw materials
+  |   |   |   |   |       |-----0000438000 Trading goods
+  |   |   |   |   |       |-----0000439000 Expenses for auxiliary materials
+  |   |   |   |   |       |-----0000439001 SUPPLIES - OTHER
+  |   |   |   |   |       ------0000439002 OTHER MATERIALS (OBSOLETE)
+  |   |   |   |   |
+  |   |   |   |   |--   3102150000 TRANSPORT EXPENSES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   3102151000 EXPENSES FOR TRANSPORT
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ---   BAY 0000440001 - 0000440002 X|X
+  |   |   |   |   |   |       |
+  |   |   |   |   |   |       |-----0000440001 TRANSPORT
+  |   |   |   |   |   |       ------0000440002 TRANSPORT - Do not use
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   3102152000 TRAVEL AND BUSINESS TRIP EXPENSES
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |--   3102152100 LOCAL TRAVEL EXPENSES
+  |   |   |   |   |   |   |   |
+  |   |   |   |   |   |   |   |-----BAY 0000441001 - 0000441001 X|X TRAVELLING EXPENSES - LOCAL(OBSOLETE)
+  |   |   |   |   |   |   |   |-----BAY 0000482001 - 0000482001 X|X TRAVEL - AIRFARES LOCAL
+  |   |   |   |   |   |   |   |-----BAY 0000482010 - 0000482010 X|X TRAVEL - ACCOMODATION LOCAL + OTHER
+  |   |   |   |   |   |   |   |-----BAY 0000482020 - 0000482020 X|X TRAVEL - CAR RENTALS LOCAL
+  |   |   |   |   |   |   |   ------BAY 0000482030 - 0000482030 X|X TRAVEL - LOCAL - do not use
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ---   3102152200 OVERSEA TRAVEL EXPENSES
+  |   |   |   |   |   |       |
+  |   |   |   |   |   |       |-----BAY 0000441002 - 0000441002 X|X TRAVELLING EXPENSES - OVERSEAS(OBSOLETE)
+  |   |   |   |   |   |       |-----BAY 0000482002 - 0000482002 X|X TRAVEL OVERSEAS
+  |   |   |   |   |   |       |-----BAY 0000482011 - 0000482011 X|X TRAVEL - ACCOMODATION OVERSEAS & NEIGHBOUR COUNTRI
+  |   |   |   |   |   |       |-----BAY 0000482021 - 0000482021 X|X TRAVEL - CAR RENTALS OVERSEAS & NEIGHBOUR COUNTRI
+  |   |   |   |   |   |       ------BAY 0000482031 - 0000482031 X|X TRAVEL - OVERSEAS & NEIGHBOUR COUNTRIES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   3102153000 LODGING AND ENTERTAINMENT
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ---   BAY 0000442001 - 0000442002 X|X
+  |   |   |   |   |   |       |
+  |   |   |   |   |   |       |-----0000442001 ENTERTAINMENT -INTERNAL
+  |   |   |   |   |   |       ------0000442002 OBSOLETE
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   3102154000 POSTAL EXPENSES
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   ---   BAY 0000443001 - 0000443006 X|X
+  |   |   |   |   |   |       |
+  |   |   |   |   |   |       |-----0000443001 POSTAGE
+  |   |   |   |   |   |       |-----0000443002 TELEPHONE - INCLUDING RENTAL
+  |   |   |   |   |   |       |-----0000443003 TELEPHONE - DATA LINES
+  |   |   |   |   |   |       |-----0000443004 TELEPHONES CELL
+  |   |   |   |   |   |       |-----0000443005 TELEXES & FAXES (OBSOLETE)
+  |   |   |   |   |   |       ------0000443006 CLEARING - - Do not use
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   3102155000 MOTOR VEHICLE RUNNING EXPENSES
+  |   |   |   |   |       |
+  |   |   |   |   |       ---   BAY 0000447001 - 0000447010 X|X
+  |   |   |   |   |           |
+  |   |   |   |   |           |-----0000447001 MOTOR VEHICLES - FUEL
+  |   |   |   |   |           |-----0000447002 MOTOR VEHICLES - TYRES & TUBES (OBSOLETE)
+  |   |   |   |   |           |-----0000447003 MOTOR VEHICLES - GARAGE CHARGE
+  |   |   |   |   |           |-----0000447005 MOTOR VEHICLES - PETROL (OBSOLETE)
+  |   |   |   |   |           |-----0000447006 MOTOR VEHICLES - GARAGE CHARGE
+  |   |   |   |   |           |-----0000447007 MOTOR VEHICLES - OIL - IN HOUSE (OBSOLETE)
+  |   |   |   |   |           ------0000447010 MOTOR VEHICLES - LICENCES
+  |   |   |   |   |
+  |   |   |   |   |-----3102160000 ENVIROMENTAL CONSERVATION EXPENSES
+  |   |   |   |   |--   3102170000 DEPRECIATION
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000460001 - 0000460035 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000460001 DEPRECIATION - BUILDINGS
+  |   |   |   |   |   |   |-----0000460002 DEPRECIATION - RAILWAY SIDING
+  |   |   |   |   |   |   |-----0000460003 DEPRECIATION - PLANT & MACHINERY
+  |   |   |   |   |   |   |-----0000460004 DEPRECIATION - RENTAL EQUIPMENT
+  |   |   |   |   |   |   |-----0000460005 DEPRECIATION - EQUIPMENT - DEMO
+  |   |   |   |   |   |   |-----0000460006 DEPRECIATION - EQUIPMENT - LABORATORY
+  |   |   |   |   |   |   |-----0000460007 DEPRECIATION - FURNITURE & FIXTURES
+  |   |   |   |   |   |   |-----0000460008 DEPRECIATION - OFFICE MACHINES
+  |   |   |   |   |   |   |-----0000460009 DEPRECIATION - EQUIPMENT LEASED
+  |   |   |   |   |   |   |-----0000460010 DEPRECIATION - MOTOR VEHICLES
+  |   |   |   |   |   |   |-----0000460011 DEPRECIATION - EQUIPMENT - EARTH MOVING
+  |   |   |   |   |   |   |-----0000460013 DEPRECIATION - MINING RIGHTS
+  |   |   |   |   |   |   |-----0000460014 DEPRECIATION - SHAFT SINKING
+  |   |   |   |   |   |   |-----0000460015 DEPRECIATION - PROPERTY
+  |   |   |   |   |   |   |-----0000460016 DEPRECIATION - PATENTS & TRADEMARKS
+  |   |   |   |   |   |   |-----0000460018 DEPRECIATION - COMPUTER EQUIPMENT (5 YEARS)
+  |   |   |   |   |   |   |-----0000460019 DEPRECIATION - COMPUTER EQUIPMENT (3 YEARS)
+  |   |   |   |   |   |   |-----0000460020 DEPRECIATION - LEASEHOLD IMPROVEMENTS
+  |   |   |   |   |   |   |-----0000460021 DEPRECIATION - SOFTWARE
+  |   |   |   |   |   |   |-----0000460031 DEPRECIATION - MOTOR VEHICLES LEASED
+  |   |   |   |   |   |   |-----0000460032 DEPRECIATION - EQUIPMENT - EDP LEASED
+  |   |   |   |   |   |   |-----0000460034 DEPRECIATION - OFFICE MACHINES LEASED
+  |   |   |   |   |   |   ------0000460035 DEPRECIATION - KNOWHOW
+  |   |   |   |   |   |
+  |   |   |   |   |   ------BAY 0000460055 - 0000460055 X|X DEPRECIATION FIXED ASSETS BAH
+  |   |   |   |   |
+  |   |   |   |   |--   3102180000 FEES & LICENCES
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   BAY 0000471001 - 0000471006 X|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000471001 LEGAL CHARGES
+  |   |   |   |   |       |-----0000471002 REGISTRATION FEES & LICENCES - OTHER
+  |   |   |   |   |       |-----0000471003 CORPORATE SOCIAL AND ECONOMICAL EXPENSES
+  |   |   |   |   |       |-----0000471004 DEBT COLLECTION CHARGES
+  |   |   |   |   |       |-----0000471005 FLEET MANAGEMENT FEE
+  |   |   |   |   |       ------0000471006 REGISTRATION FEES - PRODUCTS
+  |   |   |   |   |
+  |   |   |   |   |--   3102190000 RECOVERIES AND OTHERS
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000480107 - 0000480125 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000480107 RECOVERY ACCOUNTS - BRANCH ASSOCIATED COMPANIES
+  |   |   |   |   |   |   |-----0000480109 RECOVERY ACCOUNTS - ACCOUNTING CHARGES ASS. COS
+  |   |   |   |   |   |   |-----0000480110 RECOVERY ACCOUNTS - EDP CHARGES ASS COMPANIES
+  |   |   |   |   |   |   |-----0000480112 RECOVERY ACCOUNTS - COMMISSION
+  |   |   |   |   |   |   |-----0000480113 RECOVERY ACCOUNTS - CANTEEN
+  |   |   |   |   |   |   |-----0000480114 RECOVERY ACCOUNTS - GARAGE
+  |   |   |   |   |   |   |-----0000480115 RECOVERY ACCOUNTS - TRAVEL
+  |   |   |   |   |   |   |-----0000480116 RECOVERY ACCOUNTS - ADMINISTRATION COSTS
+  |   |   |   |   |   |   |-----0000480118 RECOVERY ACCOUNTS - POOL TRANSPORT
+  |   |   |   |   |   |   |-----0000480123 RECOVERY ACCOUNTS - GENERAL
+  |   |   |   |   |   |   |-----0000480124 RECOVERY ACCOUNTS - CROSS CHARGE CLEARING
+  |   |   |   |   |   |   ------0000480125 RECOVERY ACCOUNTS - STORAGE & HANDLING
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   BAY 0000480129 - 0000480130 X|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000480129 RECOVERY ACCOUNTS - PERSONNEL DEVELOPMENT
+  |   |   |   |   |       ------0000480130 RECOVERY ACCOUNTS - GENERAL BALANCING
+  |   |   |   |   |
+  |   |   |   |   |--   3102200000 DONATIONS
+  |   |   |   |   |   |
+  |   |   |   |   |   ------BAY 0000479501 - 0000479501 X|X DONATIONS
+  |   |   |   |   |
+  |   |   |   |   |--   3102210000 RATES & TAXES
+  |   |   |   |   |   |
+  |   |   |   |   |   ------BAY 0000471501 - 0000471501 X|X RATES & TAXES
+  |   |   |   |   |
+  |   |   |   |   |--   3102220000 AUDIT & ADMINISTRATION FEES
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   BAY 0000472001 - 0000472006 X|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000472001 AUDIT FEES
+  |   |   |   |   |       |-----0000472004 ADMINISTRATION FEES - DOW
+  |   |   |   |   |       |-----0000472005 ADMINISTRATION FEES
+  |   |   |   |   |       ------0000472006 ADMIN CHARGE CROSS COMPANY
+  |   |   |   |   |
+  |   |   |   |   |--   3102230000 RENT
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   BAY 0000475001 - 0000475060 X|X
+  |   |   |   |   |       |
+  |   |   |   |   |       |-----0000475001 RENT - PROPERTY RENTAL
+  |   |   |   |   |       |-----0000475002 RENT - BRANCHES
+  |   |   |   |   |       |-----0000475006 RENT - PLANT & MACHINERY
+  |   |   |   |   |       |-----0000475007 RENT - OFFICE EQUIPMENT
+  |   |   |   |   |       |-----0000475008 RENT - OTHER DO NOT USE THIS ACCOUNT
+  |   |   |   |   |       |-----0000475009 RENT - ISITHEBE
+  |   |   |   |   |       |-----0000475010 Miet- und Raumkosten
+  |   |   |   |   |       |-----0000475040 RENT - MOTOR VEHICLES FULL MAINTENANCE
+  |   |   |   |   |       |-----0000475041 CAR ALLOWANCE
+  |   |   |   |   |       |-----0000475044 CAR ALLOWANCE - TOOL OF TRADE
+  |   |   |   |   |       |-----0000475045 CAR ALLOWANCE - PERKS
+  |   |   |   |   |       |-----0000475050 Grundstückspachten
+  |   |   |   |   |       ------0000475060 LEASING CHARGES - OTHER (MOTOR VEHICLES)
+  |   |   |   |   |
+  |   |   |   |   |--   3102240000 MISCELLANEOUS EXPENSES
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000479001 - 0000479097 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000479001 REFRESHMENTS
+  |   |   |   |   |   |   |-----0000479002 STAFF ADVERTISEMENTS (OBSOLETE)
+  |   |   |   |   |   |   |-----0000479004 PENALTIES & FINES
+  |   |   |   |   |   |   |-----0000479005 SUNDRY EXPENSES
+  |   |   |   |   |   |   |-----0000479006 SMALL ASSET PURCHASES
+  |   |   |   |   |   |   |-----0000479008 WASTE DISPOSAL
+  |   |   |   |   |   |   |-----0000479009 SUBSCRIBTIONS FEES
+  |   |   |   |   |   |   |-----0000479015 FACTORY WASTAGE
+  |   |   |   |   |   |   |-----0000479016 STORAGE CHARGES
+  |   |   |   |   |   |   |-----0000479019 INTERNET E-BUSINESS
+  |   |   |   |   |   |   |-----0000479020 SUNDRY SERVICES 3RD PARTIES
+  |   |   |   |   |   |   |-----0000479021 PRODUCTION SAMPLES - SMALL QUANTITY
+  |   |   |   |   |   |   |-----0000479022 PROFESSIONAL FEES - MEDICAL DEPTARTMENT
+  |   |   |   |   |   |   |-----0000479023 SURVEYING FEES
+  |   |   |   |   |   |   |-----0000479024 STAFF RECRUITMENT CHARGES
+  |   |   |   |   |   |   |-----0000479025 MISCELLANEOUS - SERVICE CONTRACTS
+  |   |   |   |   |   |   |-----0000479026 CONSULTING FEES
+  |   |   |   |   |   |   |-----0000479027 SECURITY
+  |   |   |   |   |   |   |-----0000479028 R + M GARDEN SERVICES
+  |   |   |   |   |   |   |-----0000479029 CLEANING
+  |   |   |   |   |   |   |-----0000479030 MARKET RESEARCH
+  |   |   |   |   |   |   |-----0000479031 LAB CONSUMABLES
+  |   |   |   |   |   |   |-----0000479032 MARKET SAMPLES Local only
+  |   |   |   |   |   |   |-----0000479033 MARKET SAMPLES - Symrise  Company samples
+  |   |   |   |   |   |   |-----0000479050 MONTH ACCRUAL ENTRIES ONLY
+  |   |   |   |   |   |   |-----0000479060 Language training
+  |   |   |   |   |   |   |-----0000479070 Congresses, training
+  |   |   |   |   |   |   |-----0000479080 Lawyers, court costs
+  |   |   |   |   |   |   |-----0000479090 Sonstige Gebühren und Beiträge
+  |   |   |   |   |   |   ------0000479097 RECOVERY ACCOUNTS - RM PRODUCTION
+  |   |   |   |   |   |
+  |   |   |   |   |   ------BAY 0000479099 - 0000479099 X|X ACCRUALS - MONTHLY
+  |   |   |   |   |
+  |   |   |   |   |--   3102250000 ADVERTISING COSTS
+  |   |   |   |   |   |
+  |   |   |   |   |   |--   BAY 0000479390 - 0000479403 X|X
+  |   |   |   |   |   |   |
+  |   |   |   |   |   |   |-----0000479390 ADVERTISING - GIFTS
+  |   |   |   |   |   |   |-----0000479391 ADVERTISING - MEDIA
+  |   |   |   |   |   |   |-----0000479392 ADVERTISING - OTHER
+  |   |   |   |   |   |   |-----0000479393 ADVERTISING - REGIONAL SALES CONFERENCE
+  |   |   |   |   |   |   |-----0000479394 ADVERTISING - FARMERS DAYS
+  |   |   |   |   |   |   |-----0000479395 ADVERTISING - MATERIAL FILM SLIDES
+  |   |   |   |   |   |   |-----0000479396 ADVERTISING - DEMONSTRATIONS
+  |   |   |   |   |   |   |-----0000479397 ADVERTISING - PUBLIC RELATIONS
+  |   |   |   |   |   |   |-----0000479398 ADVERTISING - PRE CYCLE MEETINGS
+  |   |   |   |   |   |   |-----0000479399 ADVERTISING - AGFA PHOTO
+  |   |   |   |   |   |   |-----0000479400 ADVERTISING - MONTHLY ACCRUAL ENTRIES ONLY
+  |   |   |   |   |   |   |-----0000479401 ADVERTISING - DOCTORS MEETINGS
+  |   |   |   |   |   |   |-----0000479402 ADVERTISING - CME MEETINGS
+  |   |   |   |   |   |   ------0000479403 ADVERTISING - LOCAL MARKETING TRIALS
+  |   |   |   |   |   |
+  |   |   |   |   |   ------BAY 0000480001 - 0000480001 X|X CONFERENCE EXPENSES
+  |   |   |   |   |
+  |   |   |   |   ---   3102260000 INSURANCES
+  |   |   |   |       |
+  |   |   |   |       ---   BAY 0000479910 - 0000479927 X|X
+  |   |   |   |           |
+  |   |   |   |           |-----0000479910 INSURANCE - MACHINERY BREAKDOWN
+  |   |   |   |           |-----0000479911 INSURANCE - MOTOR VEHICLES
+  |   |   |   |           |-----0000479912 INSURANCE - CREDIT UNDERWRITING
+  |   |   |   |           |-----0000479913 INSURANCE - PERSONAL ACCIDENT
+  |   |   |   |           |-----0000479914 INSURANCE - FIRE SASRIA
+  |   |   |   |           |-----0000479915 INSURANCE - MONEY
+  |   |   |   |           |-----0000479916 INSURANCE - RIOT AND LOSS OF PROFITS
+  |   |   |   |           |-----0000479917 INSURANCE - FIRE
+  |   |   |   |           |-----0000479918 INSURANCE - TRAVELLERS ALL RISKS
+  |   |   |   |           |-----0000479919 INSURANCE - MOTOR SASRIA
+  |   |   |   |           |-----0000479920 INSURANCE - BUSINESS INTERRUPTION & LOSS OF PROFIT
+  |   |   |   |           |-----0000479921 INSURANCE - BUSINESS INTERRUPTION
+  |   |   |   |           |-----0000479922 INSURANCE - HOUSEOWNERS
+  |   |   |   |           |-----0000479923 INSURANCE - BURGLARY
+  |   |   |   |           |-----0000479924 INSURANCE - PUBLIC LIABILITY
+  |   |   |   |           |-----0000479925 INSURANCE - MACHINERY BREAKDOWN & LOSS OF PROFITS
+  |   |   |   |           |-----0000479926 INSURANCE - PLANT ALL RISKS
+  |   |   |   |           ------0000479927 CONTRACTORS ALL RISKS
+  |   |   |   |
+  |   |   |   ---   3102270000 PRODUCTION OVERHEAD RECOVERY
+  |   |   |       |
+  |   |   |       |-----BAY 0000479098 - 0000479098 X|X RECOVERY ACCOUNTS - RM PRODUCTION
+  |   |   |       ------BAY 0000480128 - 0000480128 X|X RECOVERY ACCOUNTS - DOWNTIME COSTS
+  |   |   |
+  |   |   ---   3103000000 PROFIT & LOSS ACCOUNTS (2-SECTION)
+  |   |       |
+  |   |       |--   3103100000 FOREX AND BANK CHARGES
+  |   |       |   |
+  |   |       |   |--   3103101000 BANK CHARGES
+  |   |       |   |   |
+  |   |       |   |   ------BAY 0000200001 - 0000200001 X|X BANK - CHARGES
+  |   |       |   |
+  |   |       |   |--   3103103000 PROFIT & LOSS ON EXCHANGE
+  |   |       |   |   |
+  |   |       |   |   |--   BAY 0000203901 - 0000204030 X|X
+  |   |       |   |   |   |
+  |   |       |   |   |   |-----0000204000 Losses due to exchange rates
+  |   |       |   |   |   |-----0000204001 EXCHANGE LOSS - do not use
+  |   |       |   |   |   |-----0000204002 EXCHANGE LOSS - AUTOMATIC POSTING
+  |   |       |   |   |   |-----0000204003 ++OBSOLETE++EXCHANGE LOSS AUTO POSTING NO C/C
+  |   |       |   |   |   |-----0000204015 EXCHANGE REVALUATION BRIDGING
+  |   |       |   |   |   |-----0000204016 EXCHANGE REVALUATION DEBTORS
+  |   |       |   |   |   |-----0000204017 EXCHANGE UNREALISED PROFIT/LOSS
+  |   |       |   |   |   |-----0000204020 EXCHANGE PREMIUM ON FORWARD COVER
+  |   |       |   |   |   |-----0000204025 ++OBSOLETE++ FEC COSTS - PREMIUM ON OPTIONS
+  |   |       |   |   |   ------0000204030 EXCHANGE REVALUATION FEC'S
+  |   |       |   |   |
+  |   |       |   |   |-----BAY 0000204033 - 0000204033 X|X ++OBSOLETE++ FEC COSTS - EXPORTS FOREX GAINS
+  |   |       |   |   |-----BAY 0000204034 - 0000204034 X|X ++OBSOLETE++ FEC COSTS - EXPORTS FOREX LOSSES
+  |   |       |   |   ---   BAY 0000214001 - 0000214020 X|X
+  |   |       |   |       |
+  |   |       |   |       |-----0000214001 EXCHANGE GAIN - do not use
+  |   |       |   |       |-----0000214002 EXCHANGE GAIN - AUTOMATIC POSTING
+  |   |       |   |       ------0000214020 EXCHANGE DISCOUNT ON FORWARD COVER
+  |   |       |   |
+  |   |       |   ---   3103106000 BAD DEBTS
+  |   |       |       |
+  |   |       |       |-----BAY 0000205001 - 0000205001 X|X BAD DEBTS - WRITTEN OFF
+  |   |       |       |-----BAY 0000205002 - 0000205002 X|X BAD DEBTS - PROVISION ENTRIES ONLY
+  |   |       |       |-----BAY 0000205050 - 0000205050 X|X BAD DEBTS - ACCRUAL ENTRIES ONLY
+  |   |       |       ------BAY 0000216001 - 0000216001 X|X BAD DEBTS - RECOVERED
+  |   |       |
+  |   |       ---   3103200000 OTHER OPERATING LOSSES & INCOME
+  |   |           |
+  |   |           |-----BAY 0000203001 - 0000203001 X|X FIXED ASSETS - LOSS ON SALE
+  |   |           |--   BAY 0000206001 - 0000206029 X|X
+  |   |           |   |
+  |   |           |   |-----0000206001 NON OPERATING - EXPENSES
+  |   |           |   |-----0000206002 NON OPERATING - EXPENSES EXCEPTIONAL
+  |   |           |   |-----0000206010 LOSS ON INVESTMENT
+  |   |           |   ------0000206020 INSURANCE - LOSS ON CLAIMS
+  |   |           |
+  |   |           |--   BAY 0000213001 - 0000213009 X|X
+  |   |           |   |
+  |   |           |   |-----0000213001 FIXED ASSETS - PROFIT ON SALE
+  |   |           |   |-----0000213002 FIXED ASSETS CLEARING REVENUE FROM SALES(use180031
+  |   |           |   ------0000213005 RENTED VEHICLES - PROFIT OR LOSS ON SALE
+  |   |           |
+  |   |           |--   BAY 0000217001 - 0000217031 X|X
+  |   |           |   |
+  |   |           |   |-----0000217001 NON OPERATING - INCOME
+  |   |           |   |-----0000217002 NON OPERATING - INCOME EXCEPTIONAL ABOVE OPERATING
+  |   |           |   |-----0000217003 NON OPERATING - INCOME EXCEPTIONAL BELOW OPERATING
+  |   |           |   |-----0000217004 NON OPERATING - INCOME GARNISHEE COMM RECEIVED
+  |   |           |   |-----0000217005 CREDIT NOTES EX STATEMENTS
+  |   |           |   |-----0000217006 CREDITORS - DIFFERENCES EX RECONS
+  |   |           |   |-----0000217010 INSURANCE - PROFIT ON CLAIMS
+  |   |           |   |-----0000217020 RENT - RECEIVED
+  |   |           |   |-----0000217021 ++OBSOLETE++ BCD STORAGE COSTS RECOVERED
+  |   |           |   ------0000217031 RESEARCH & DEVELOPMENT - REIMBURSEMENT PF
+  |   |           |
+  |   |           |-----BAY 0000217032 - 0000217032 X|X RESEARCH & DEVELOPMENT - REIMBURSEMENT PH
+  |   |           |-----BAY 0000217050 - 0000217050 X|X NON OPERATING ( ACCRUAL ENTRIES ONLY )
+  |   |           ------BAY 0000242000 - 0000242000 X|X Exceptional Expenses
+  |   |
+  |   ---   3200000000 PROFIT & LOSS SECTION (NON-OPERATING RESULT)
+  |       |
+  |       |--   3200100000 FINANCE COSTS
+  |       |   |
+  |       |   |--   BAY 0000252001 - 0000252014 X|X
+  |       |   |   |
+  |       |   |   |-----0000252001 INTEREST PAYABLE - STANNIC
+  |       |   |   |-----0000252002 INTEREST PAYABLE - CREDITORS
+  |       |   |   |-----0000252003 INTEREST PAYABLE - OVERDRAFT & SHORT TERM BORROW
+  |       |   |   ------0000252005 ++OBSOLETE++ INTEREST PAYABLE - INTERCOMPANY
+  |       |   |
+  |       |   |--   BAY 0000252016 - 0000252024 X|X
+  |       |   |   |
+  |       |   |   ------0000252020 INTEREST PAYABLE - BUILDINGS
+  |       |   |
+  |       |   ---   BAY 0000252026 - 0000262015 X|X
+  |       |       |
+  |       |       |-----0000252030 INTEREST PAYABLE - EURORAND BOND 15 3/8%
+  |       |       |-----0000252031 INTEREST PAYABLE - J P MORGAN
+  |       |       |-----0000252032 INTEREST PAYABLE - I D C
+  |       |       |-----0000252033 INTEREST PAYABLE - MEDICAL AID
+  |       |       |-----0000252034 INTEREST PAYABLE - HOLDING COMPANY
+  |       |       |-----0000252035 INTEREST PAYABLE - DOW
+  |       |       |-----0000254000 Other interrest and similar expenses (accrued)
+  |       |       |-----0000260000 Earnings due to similar investment
+  |       |       |-----0000261000 Earnings due to other financial assets
+  |       |       |-----0000262000 Interests and similar earnings
+  |       |       |-----0000262001 INTEREST RECEIVED - BANK
+  |       |       |-----0000262002 INTEREST RECEIVED - DEBTORS
+  |       |       |-----0000262004 INTEREST RECEIVED - STAFF LOANS
+  |       |       |-----0000262005 ++OBSOLETE++ INTEREST RECEIVED - INTERCOMPANY
+  |       |       |-----0000262006 INTEREST RECEIVED - CISA
+  |       |       |-----0000262007 INTEREST RECEIVED - Dystar
+  |       |       |-----0000262008 INTEREST RECEIVED - HOLDING COMPANY
+  |       |       ------0000262015 DISCOUNT - RECEIVED
+  |       |
+  |       ---   3200200000 INCOME TAX
+  |           |
+  |           |-----BAY 0000293001 - 0000293001 X|X TAX - DEFERRED
+  |           |-----BAY 0000295001 - 0000295001 X|X TAX - SA NORMAL TAX
+  |           ------BAY 0000295015 - 0000295015 X|X TAX - SECONDARY TAX ON COMPANIES
+  |
+  |-----8          P                      Net result: profit
+  |-----12         Net result: loss       Net result: loss
+  |-----11         P+L result             P+L result
+  ------9          Not assigned           Not assigned

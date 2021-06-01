@@ -1,0 +1,138 @@
+﻿<src:DlgWindowBase x:Class="ViewBuilder.Windows.MetadataUpdate.DlgDifferences"		
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:src="clr-namespace:ViewBuilder.Windows"
+        Title="Differences between viewbox and customer database" Height="600" Width="1100" Loaded="Window_Loaded">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="350"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+
+		<Grid Grid.Column="0" Grid.Row="0">
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30"></RowDefinition>
+				<RowDefinition></RowDefinition>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			
+			<Button Grid.Column="0" Grid.Row="0" Content="Resolve selected table differences" Click="ButtonResolveTableDiff_OnClick"></Button>
+			<ListView Name="ListViewTableDifferences" Grid.Column="0" Grid.Row="1"  SelectionChanged="ListViewTableDifferences_OnSelectionChanged">
+				<ListView.ItemContainerStyle>
+					<Style TargetType="{x:Type ListViewItem}">
+						<Setter Property="ToolTip" Value="{Binding ToolTip}" />
+					</Style>
+				</ListView.ItemContainerStyle>
+				<ListView.View>
+					<GridView>
+						<GridViewColumn Width="30">
+							<GridViewColumnHeader>
+								<CheckBox HorizontalAlignment="Center" 
+										  VerticalAlignment="Center" 
+										  IsChecked="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+										  x:Name="CheckBoxSelectAllTableDifferences" 
+										  Checked="CheckBoxSelectAllTableDifferences_OnChecked"
+										  Unchecked="CheckBoxSelectAllTableDifferences_OnUnchecked"
+										  ToolTip="Select/Unselect all" />
+							</GridViewColumnHeader>
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<CheckBox	HorizontalAlignment="Center" 
+												VerticalAlignment="Center" 
+												Tag="{Binding TableName}" 
+												IsChecked="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+												Click="CheckBoxSelectTableDifference_OnClick"
+												IsEnabled="{Binding IsEnabled}" />
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+						<GridViewColumn Header="Table" DisplayMemberBinding="{Binding TableName}" Width="120">
+							<GridViewColumn.HeaderContainerStyle>
+								<Style  TargetType="{x:Type GridViewColumnHeader}">
+									<Setter Property="HorizontalContentAlignment" Value="Left" />
+								</Style>
+							</GridViewColumn.HeaderContainerStyle>
+						</GridViewColumn>
+						<GridViewColumn Header="Problem" DisplayMemberBinding="{Binding Problem}" Width="180">
+							<GridViewColumn.HeaderContainerStyle>
+								<Style  TargetType="{x:Type GridViewColumnHeader}">
+									<Setter Property="HorizontalContentAlignment" Value="Left" />
+								</Style>
+							</GridViewColumn.HeaderContainerStyle>
+						</GridViewColumn>
+					</GridView>
+				</ListView.View>
+			</ListView>
+		</Grid>
+		<Grid Grid.Column="1" Grid.Row="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30"></RowDefinition>
+				<RowDefinition></RowDefinition>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+
+			<Button Grid.Column="0" Grid.Row="0" Content="Resolve selected column differences" Click="ButtonResolveColumnDiff_OnClick"></Button>
+			<ListView Name="ListViewDetails" Grid.Column="0" Grid.Row="1">
+				<ListView.ItemContainerStyle>
+					<Style TargetType="{x:Type ListViewItem}">
+						<Setter Property="ToolTip" Value="{Binding ToolTip}" />
+					</Style>
+				</ListView.ItemContainerStyle>
+				<ListView.View>
+					<GridView>
+						<GridViewColumn Width="30">
+							<GridViewColumnHeader>
+								<CheckBox HorizontalAlignment="Center" 
+										  VerticalAlignment="Center" 
+										  IsChecked="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+										  x:Name="CheckBoxSelectAllDetails"
+										  Checked="CheckBoxSelectAllDetails_OnChecked"
+										  Unchecked="CheckBoxSelectAllDetails_OnUnchecked"
+										  ToolTip="Select/Unselect all"/>
+							</GridViewColumnHeader>
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<CheckBox	HorizontalAlignment="Center" 
+												VerticalAlignment="Center" 
+												Tag="{Binding TableName}" 
+												IsChecked="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+												Click="CheckBoxSelectDetails_OnClick"
+												IsEnabled="{Binding IsEnabled}" />
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+						<GridViewColumn Header="Table" DisplayMemberBinding="{Binding TableName}" Width="120">
+							<GridViewColumn.HeaderContainerStyle>
+								<Style  TargetType="{x:Type GridViewColumnHeader}">
+									<Setter Property="HorizontalContentAlignment" Value="Left" />
+								</Style>
+							</GridViewColumn.HeaderContainerStyle>
+						</GridViewColumn>
+						<GridViewColumn Header="Column" DisplayMemberBinding="{Binding ColumnName}" Width="120">
+							<GridViewColumn.HeaderContainerStyle>
+								<Style  TargetType="{x:Type GridViewColumnHeader}">
+									<Setter Property="HorizontalContentAlignment" Value="Left" />
+								</Style>
+							</GridViewColumn.HeaderContainerStyle>
+						</GridViewColumn>
+						<GridViewColumn Header="Problem" DisplayMemberBinding="{Binding Problem}" Width="340">
+							<GridViewColumn.HeaderContainerStyle>
+								<Style  TargetType="{x:Type GridViewColumnHeader}">
+									<Setter Property="HorizontalContentAlignment" Value="Left" />
+								</Style>
+							</GridViewColumn.HeaderContainerStyle>
+						</GridViewColumn>
+					</GridView>
+				</ListView.View>
+			</ListView>
+		</Grid>
+	</Grid>
+</src:DlgWindowBase>

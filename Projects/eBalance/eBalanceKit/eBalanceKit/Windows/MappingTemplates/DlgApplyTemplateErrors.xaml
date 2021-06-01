@@ -1,0 +1,84 @@
+﻿<Window x:Class="eBalanceKit.Windows.MappingTemplates.DlgApplyTemplateErrors"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:MappingTemplate="clr-namespace:eBalanceKitBusiness.MappingTemplate;assembly=eBalanceKitBusiness"
+        Title="Vorlage Anwenden - Fehler" Height="400" Width="800"
+        ResizeMode="CanResize" Icon="/eBalanceKitResources;component/Resources/ExtendTemplate.png" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+    <Window.Resources>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+            </Style.Resources>
+        </Style>
+
+        <Style x:Key="BalanceTreeViewItem" TargetType="{x:Type TreeViewItem}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="1,0,0,0"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Template" Value="{StaticResource ExpandedTreeViewItem}" />
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource GroupBoxBorder}" Padding="5" CornerRadius="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Fehler beim Anwenden der Vorlage:" />
+                <TreeView Grid.Row="1" BorderBrush="Transparent" Background="Transparent" ItemsSource="{Binding AssignmentErrors}"
+                          ScrollViewer.CanContentScroll="False" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                    <TreeView.Resources>
+                        <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource TreeViewItemBaseStyle}">
+                            <Setter Property="IsSelected" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Style>
+
+                        <HierarchicalDataTemplate DataType="{x:Type MappingTemplate:AssignmentErrorListEntry}" ItemsSource="{Binding Errors}">
+                            <Grid>
+                                <Border Style="{StaticResource GroupBoxBorder}" Padding="5,2" Margin="0,0,0,5" />
+                                <Border Style="{StaticResource SelectionOverlayBorder}" Padding="5,2" Margin="0,0,0,5">
+                                    <TextBlock Text="{Binding BalanceList.Name}"/>
+                                </Border>
+                            </Grid>
+                        </HierarchicalDataTemplate>
+
+                        <DataTemplate DataType="{x:Type MappingTemplate:AssignmentError}">
+                            <Grid>
+                                <Border Style="{StaticResource GroupBoxBorder}" Padding="5,2" Margin="0,0,0,5" />
+                                <Border Style="{StaticResource SelectionOverlayBorder}" Padding="5,2" Margin="0,0,0,5">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Message}"/>
+                                        <TextBlock Text="{Binding AccountLabel}" TextWrapping="Wrap"/>
+                                        <Separator Margin="-5,2" />
+                                        <TextBlock Text="Taxonomieposition:" />
+                                        <TextBlock Text="{Binding Element.Name}" TextWrapping="Wrap"/>
+                                        <TextBlock Text="{Binding Element.Label}" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </TreeView.Resources>
+                </TreeView>
+            </Grid>
+        </Border>
+
+        <!-- button bar -->
+        <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="{x:Static Localisation:ResourcesCommon.SaveAsPdf}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnSave" VerticalAlignment="Top" MinWidth="75" Click="BtnSaveClick" />
+                <Button Content="{x:Static Localisation:ResourcesCommon.Ok}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnOk" VerticalAlignment="Top" MinWidth="75" Click="BtnOkClick" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

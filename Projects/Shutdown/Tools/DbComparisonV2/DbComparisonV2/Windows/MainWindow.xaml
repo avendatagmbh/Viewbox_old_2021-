@@ -1,0 +1,90 @@
+﻿<Window x:Class="DbComparisonV2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="586" Width="613"  xmlns:my="clr-namespace:DbComparisonV2.Models" xmlns:root="clr-namespace:DbComparisonV2" 
+        xmlns:uiHelper="clr-namespace:DbComparisonV2.UIHelper" xmlns:my1="clr-namespace:DbComparisonV2.Controls">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="dbConfigChoiceProvider" ObjectType="{x:Type uiHelper:DbConfigurationCache}" MethodName="GetConfigurations" />
+        <ObjectDataProvider x:Key="UpdateCompareConfiguration" MethodName="UpdateCompareMode">
+            <ObjectDataProvider.MethodParameters>
+                <root:CompareMode>Database</root:CompareMode>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Grid HorizontalAlignment="Stretch">
+        <TabControl  HorizontalAlignment="Stretch" Margin="5,0,5,5" Name="compareModeTab" VerticalAlignment="Stretch" SelectionChanged="compareModeTab_SelectionChanged">
+            <TabItem Header="Datenbanken" Name="tabDatabaseCompare">
+                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".50*" />
+                        <ColumnDefinition Width=".50*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TabControl Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="tabControl2" VerticalAlignment="Top">
+                        <TabItem Header="Datenbank 1" Name="tabItem2">
+                            <Grid>
+                                <my:CtlDbConfig DataContext="{Binding Path=Object1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" x:Name="ctlDbConfig1" VerticalAlignment="Stretch" />
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <TabControl Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Name="tabControl3" VerticalAlignment="Top">
+                        <TabItem Header="Datenbank 2" Name="tabItem3">
+                            <Grid>
+                                <my:CtlDbConfig DataContext="{Binding Path=Object2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" x:Name="ctlDbConfig2" VerticalAlignment="Stretch" />
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="135,4,0,0" Name="cboConfigChoice" SelectedValue="{Binding ConfigName}" DisplayMemberPath="ConfigName" SelectedValuePath="ConfigName" VerticalAlignment="Top" Width="427" Grid.ColumnSpan="2" SelectionChanged="cboConfigChoice_SelectionChanged">
+                        <ComboBox.ItemsSource>
+                            <CompositeCollection>
+                                <ComboBoxItem IsEnabled="True">[new]</ComboBoxItem>
+                                <CollectionContainer Collection="{Binding Source={StaticResource dbConfigChoiceProvider}}" />
+                            </CompositeCollection>
+                        </ComboBox.ItemsSource>
+                    </ComboBox>
+                    <Label Content="Saved configurations:" Height="28" HorizontalAlignment="Left" Margin="4,2,0,0" Name="lblConfigChoice" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="ViewScript" Name="tabViewScriptCompare">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".50*" />
+                        <ColumnDefinition Width=".50*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TabControl Grid.Row="1" HorizontalAlignment="Stretch" Name="tabControl5" VerticalAlignment="Top" Height="341">
+                        <TabItem Header="Database" Name="tabItem6">
+                            <Grid>
+                                <my:CtlDbConfig DataContext="{Binding Path=Object1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Margin="0,0,0,0" x:Name="ctlDbConfig3" VerticalAlignment="Stretch" />
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <TabControl Grid.Column="1" Grid.Row="1" Height="341" HorizontalAlignment="Stretch" Name="tabControl6" VerticalAlignment="Top">
+                        <TabItem Header="tabItem7" Name="tabItem7">
+                            <Grid >
+                                <my1:CtlViewScript DataContext="{Binding Path=Object2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" x:Name="ctlViewScript1" VerticalAlignment="Stretch" Margin="0,0,0,0" />
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <TabControl Height="128" HorizontalAlignment="Stretch" Name="tabControl4" VerticalAlignment="Bottom" Margin="12,0,10,15">
+            <TabItem Header="Export" Name="tabItem4">
+                <Grid>
+                    <Label Content="Pdf Ausgabe Verzeichnis" Height="28" HorizontalAlignment="Left" Margin="3,4,0,0" Name="label1" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="6,30,0,0" Name="txtOutputDir" VerticalAlignment="Top" Width="462" />
+                    <Button Content="Durchsuchen" Height="23" HorizontalAlignment="Left" Margin="480,30,0,0" Name="btnBrowseDirectory" VerticalAlignment="Top" Width="75" Click="btnBrowseDirectory_Click" />
+                    <ProgressBar Height="22" HorizontalAlignment="Left" Margin="6,66,0,0" Name="progressBar" VerticalAlignment="Top" Width="421" />
+                    <Button Content="Starte Vergleich" Height="23" HorizontalAlignment="Left" Margin="443,66,0,0" Name="btnStartComparison" VerticalAlignment="Top" Width="112" Click="btnStartComparison_Click" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

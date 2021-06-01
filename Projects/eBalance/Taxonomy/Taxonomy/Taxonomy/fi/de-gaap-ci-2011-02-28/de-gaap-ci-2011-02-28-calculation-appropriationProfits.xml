@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://www.xbrl.de/de/fr/gaap/ci/role/appropriationProfits" xlink:type="simple" xlink:href="de-gaap-ci-2011-02-28.xsd#role_appropriationProfits"/>
+  <calculationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/appropriationProfits">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss" xlink:label="incomeUse.gainLoss"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.retainedEarningsPrevYear" xlink:label="incomeUse.gainLoss.retainedEarningsPrevYear"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.retainedEarningsPrevYear" use="optional" order="2.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.accumLossPrevYear" xlink:label="incomeUse.gainLoss.accumLossPrevYear"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.accumLossPrevYear" use="optional" order="3.0" weight="-1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.releaseCapReserves" xlink:label="incomeUse.gainLoss.releaseCapReserves"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releaseCapReserves" use="optional" order="4.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.releaseRevenReserves" xlink:label="incomeUse.gainLoss.releaseRevenReserves"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releaseRevenReserves" use="optional" order="5.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.releaseCapital" xlink:label="incomeUse.gainLoss.releaseCapital"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releaseCapital" use="optional" order="8.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.releaseCapitalReserve" xlink:label="incomeUse.gainLoss.releaseCapitalReserve"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releaseCapitalReserve" use="optional" order="9.0" weight="-1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.additionRevenReserves" xlink:label="incomeUse.gainLoss.additionRevenReserves"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.additionRevenReserves" use="optional" order="10.0" weight="-1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.other" xlink:label="incomeUse.gainLoss.other"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.other" use="optional" order="13.0" weight="-1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.releasePartnersAccount" xlink:label="incomeUse.gainLoss.releasePartnersAccount"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.releasePartnersAccount" use="optional" order="14.0" weight="1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.additionPartnersAccount" xlink:label="incomeUse.gainLoss.additionPartnersAccount"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.additionPartnersAccount" use="optional" order="15.0" weight="-1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.dividensPlanned" xlink:label="incomeUse.gainLoss.dividensPlanned"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.dividensPlanned" use="optional" order="16.0" weight="-1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.additionRetainedEarnings" xlink:label="incomeUse.gainLoss.additionRetainedEarnings"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.additionRetainedEarnings" use="optional" order="17.0" weight="-1"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.additionCummLoss" xlink:label="incomeUse.gainLoss.additionCummLoss"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.additionCummLoss" use="optional" order="18.0" weight="1"/>
+  </calculationLink>
+  <calculationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/appropriationProfits">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss" xlink:label="incomeUse.gainLoss" xlink:title="incomeUse.gainLoss"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_incomeUse.gainLoss.netIncome" xlink:label="incomeUse.gainLoss.netIncome" xlink:title="incomeUse.gainLoss.netIncome"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="incomeUse.gainLoss" xlink:to="incomeUse.gainLoss.netIncome" xlink:title="calculation: incomeUse.gainLoss to incomeUse.gainLoss.netIncome" order="0.5" weight="1.0"/>
+  </calculationLink>
+</linkbase>

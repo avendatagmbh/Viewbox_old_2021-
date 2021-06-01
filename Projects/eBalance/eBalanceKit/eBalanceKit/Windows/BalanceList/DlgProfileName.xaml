@@ -1,0 +1,31 @@
+﻿<Window x:Class="eBalanceKit.Windows.BalanceList.DlgProfileName"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Title="Import als Profil speichern"
+        SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" MinWidth="300"
+        Icon="/CustomResources;component/Resources/logo1.png" 
+        mc:Ignorable="d" PreviewKeyDown="Window_PreviewKeyDown">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="191" />
+            <ColumnDefinition Width="87" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="5" Text="{x:Static Localisation:ResourcesBalanceList.ProfileNameCaption}" Grid.ColumnSpan="2" />
+        <TextBox Grid.Row="1" MinWidth="150" Margin="5,0,5,5" x:Name="InputTextBox" Text="{Binding ProfileName,Mode=TwoWay}" Grid.ColumnSpan="2" MaxLength="30" />
+        <Border Grid.Row="2" Style="{StaticResource ButtonBorder}" Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="{x:Static Localisation:ResourcesCommon.Ok}" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="YesButtonClick" IsEnabled="{Binding IsValid}" />
+                    <Button Content="{x:Static Localisation:ResourcesCommon.Cancel}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="NoButtonClick" />
+                </StackPanel>
+            </Border>
+    </Grid>
+</Window>

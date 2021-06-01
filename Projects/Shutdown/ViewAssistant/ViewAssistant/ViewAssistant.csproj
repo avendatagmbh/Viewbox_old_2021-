@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EEDC17B0-130F-4395-B657-6AD7F7907A77}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViewAssistant</RootNamespace>
+    <AssemblyName>ViewAssistant</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ViewAssistant.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ApplicationConfigSection.cs" />
+    <Compile Include="Controls\CtlDatabaseConfig.xaml.cs">
+      <DependentUpon>CtlDatabaseConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlDatabaseSummary.xaml.cs">
+      <DependentUpon>CtlDatabaseSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListboxBehaviour.cs" />
+    <Compile Include="Converters\BoolInversionConverter.cs" />
+    <Compile Include="Converters\EmptyStringToNotSetStringConverter.cs" />
+    <Compile Include="Converters\SelectedProfileToWindowTitleConverter.cs" />
+    <Compile Include="Windows\DlgAccessOperations.xaml.cs">
+      <DependentUpon>DlgAccessOperations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgLocalisationTextsConfiguration.xaml.cs">
+      <DependentUpon>DlgLocalisationTextsConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgDataPreview.xaml.cs">
+      <DependentUpon>DlgDataPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgInfo.xaml.cs">
+      <DependentUpon>DlgInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgLocalisationTextsSettings.xaml.cs">
+      <DependentUpon>DlgLocalisationTextsSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgProfile.xaml.cs">
+      <DependentUpon>DlgProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgProfileCRUD.xaml.cs">
+      <DependentUpon>DlgProfileCRUD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgRenamer.xaml.cs">
+      <DependentUpon>DlgRenamer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgRenamerSettings.xaml.cs">
+      <DependentUpon>DlgRenamerSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgViewProfileSettings.xaml.cs">
+      <DependentUpon>DlgViewProfileSettings.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\CtlDatabaseConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlDatabaseSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\TDataPreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TLocalisationTextsConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\TMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgAccessOperations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgLocalisationTextsConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgDataPreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DlgInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgLocalisationTextsSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\BoolToStringConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\DataGridCellToTextConverter.cs" />
+    <Compile Include="Converters\ItemSelectedToColorConverter.cs" />
+    <Compile Include="Converters\StringToDecimalConverter.cs" />
+    <Compile Include="Converters\ValueExistsToVisibilityConverter.cs" />
+    <Compile Include="Converters\ValueNotExistsToVisibilityConverter.cs" />
+    <Compile Include="Windows\DlgMain.xaml.cs">
+      <DependentUpon>DlgMain.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\DlgProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgProfileCRUD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgRenamer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgRenamerSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgViewProfileSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\ViewboxDb\ViewboxDb.csproj">
+      <Project>{6E5FB80C-3B10-475B-ACF3-640D6D3399B0}</Project>
+      <Name>ViewboxDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AvdWpfControls\AvdWpfControls.csproj">
+      <Project>{96D9D99F-EC68-4F32-AEFA-CBCB0C18A9EE}</Project>
+      <Name>AvdWpfControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Base\Base.csproj">
+      <Project>{8488F322-2DC6-4337-92E8-CB94A8CE3AE7}</Project>
+      <Name>Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewAssistantBusiness\ViewAssistantBusiness.csproj">
+      <Project>{89434CBA-4684-4936-9FE0-768A0C11ED5D}</Project>
+      <Name>ViewAssistantBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_about_viewassistant.png" />
+    <Resource Include="Resources\icon_current_profile_settings.png" />
+    <Resource Include="Resources\icon_filter.png" />
+    <Resource Include="Resources\icon_main_edit_profile.png" />
+    <Resource Include="Resources\icon_main_info.png" />
+    <Resource Include="Resources\icon_main_log_dir.png" />
+    <Resource Include="Resources\icon_main_profiles.png" />
+    <Resource Include="Resources\icon_sort.png" />
+    <Resource Include="Resources\icon_transfer_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_new_profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_connected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_disconnected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\header_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_edit_profile_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo_avendata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_migrate_small.png" />
+    <Resource Include="Resources\icon_refresh_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\alert_24x24.png" />
+    <Resource Include="Resources\error_24x24.png" />
+    <Resource Include="Resources\info_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cancel_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_generate_viewscripts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_merge_files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_copy_files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_link_to_files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_access_operations.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_copy_files_small.png" />
+    <Resource Include="Resources\icon_link_to_files_small.png" />
+    <Resource Include="Resources\icon_merge_files_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\globe_16x16.png" />
+    <Resource Include="Resources\globe_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rename_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\rename_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ViewAssistant.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

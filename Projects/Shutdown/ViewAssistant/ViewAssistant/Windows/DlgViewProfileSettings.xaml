@@ -1,0 +1,98 @@
+﻿<Window x:Class="ViewAssistant.Windows.DlgViewProfileSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base"
+        xmlns:Converters="clr-namespace:ViewAssistant.Converters"
+        xmlns:Controls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        xmlns:MyControls="clr-namespace:ViewAssistant.Controls" Width="900"
+        Title="{x:Static Localisation:ResourcesCommon.DlgSummaryTitle}" 
+        PreviewKeyDown="WindowPreviewKeyDown"  WindowStartupLocation="CenterOwner" ShowInTaskbar="False" 
+        SizeToContent="WidthAndHeight" ResizeMode="NoResize" Background="{StaticResource AvdMenuBackground}"
+        Icon="/Resources/icon_current_profile_settings.png">
+    <Control.Resources>
+        <Converters:EmptyStringToNotSetStringConverter x:Key="emptyStringToNotSetStringConverter" />
+    </Control.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="{x:Static Localisation:ResourcesCommon.DlgSummaryTitle}" FontSize="15" FontWeight="Bold" Foreground="{StaticResource NewDesignBlueBrush}" Padding="0" Margin="15,15,0,0"/>
+
+        <Controls:AvdMenuSeparator Margin="-15,15,-15,0" Grid.Row="1"></Controls:AvdMenuSeparator>
+
+        <Label Content="{x:Static Localisation:ResourcesCommon.DefaultProperties}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource NewDesignBlueBrush}"
+                       Padding="0" Margin="15,15,0,10" Grid.Row="2" HorizontalContentAlignment="Left"/>
+
+        <Grid Grid.Row="3" Margin="15,15,0,10" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="450"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_ProfileName}" FontWeight="Bold" Padding="0"
+                           HorizontalContentAlignment="Left"/>
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Path=Name, Mode=OneWay, Converter={StaticResource emptyStringToNotSetStringConverter}}" Padding="0"
+                               Margin="10,0,15,0" TextWrapping="WrapWithOverflow"></TextBlock>
+
+            <Label Grid.Column="0" Grid.Row="1" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Mandt}" FontWeight="Bold" Padding="0"
+                           HorizontalContentAlignment="Left"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Path=DefaultMandtCol, Mode=OneWay, Converter={StaticResource emptyStringToNotSetStringConverter}}" Padding="0"
+                               Margin="10,0,15,0" TextWrapping="WrapWithOverflow"></TextBlock>
+
+            <Label Grid.Column="0" Grid.Row="2" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Bukrs}" FontWeight="Bold" Padding="0"
+                           HorizontalContentAlignment="Left"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Path=DefaultBukrsCol, Mode=OneWay, Converter={StaticResource emptyStringToNotSetStringConverter}}" Padding="0"
+                               Margin="10,0,15,0" TextWrapping="WrapWithOverflow"></TextBlock>
+
+            <Label Grid.Column="0" Grid.Row="3" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_Gjahr}" FontWeight="Bold" Padding="0"
+                           HorizontalContentAlignment="Left"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Path=DefaultGjahrCol, Mode=OneWay, Converter={StaticResource emptyStringToNotSetStringConverter}}" Padding="0"
+                               Margin="10,0,15,0" TextWrapping="WrapWithOverflow"></TextBlock>
+
+            <Label Grid.Column="0" Grid.Row="4" Content="{x:Static Localisation:ResourcesCommon.AssistantControl_ProcessThreads}" FontWeight="Bold" Padding="0"
+                           HorizontalContentAlignment="Left"/>
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Path=ThreadsNumber, Mode=OneWay, Converter={StaticResource emptyStringToNotSetStringConverter}}" Padding="0"
+                               Margin="10,0,15,0" TextWrapping="WrapWithOverflow"></TextBlock>
+        </Grid>
+
+        <Label Content="{x:Static Localisation:ResourcesCommon.SourceDbProperties}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource NewDesignBlueBrush}"
+                       Padding="0" Margin="15,15,0,10" Grid.Row="4" HorizontalContentAlignment="Left"/>
+
+        <MyControls:CtlDatabaseSummary Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="SourceDbConfig" DataContext="{Binding SourceConnection}" Margin="15,15,0,10" />
+
+        <Label Content="{x:Static Localisation:ResourcesCommon.ViewboxDbProperties}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource NewDesignBlueBrush}"
+                       Padding="0" Margin="15,15,0,10" Grid.Row="6" HorizontalContentAlignment="Left"/>
+
+        <MyControls:CtlDatabaseSummary Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="ViewboxDbConfig" DataContext="{Binding ViewboxConnection}" Margin="15,15,0,10" />
+
+        <Label Content="{x:Static Localisation:ResourcesCommon.OutputDbProperties}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource NewDesignBlueBrush}"
+                       Padding="0" Margin="15,15,0,10" Grid.Row="8" HorizontalContentAlignment="Left"/>
+
+        <MyControls:CtlDatabaseSummary Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="FinalDbConfig" DataContext="{Binding FinalConnection}" Margin="15,15,0,10" />
+
+        <Border Grid.Row="10" Background="{StaticResource NewDesignBlueBrush}"  Margin="0,15,0,0">
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="10,8,20,8">
+                <Button Content="{x:Static Localisation:ResourcesCommon.Ok}" Height="23" Margin="0" Name="btnClose" VerticalAlignment="Center"
+                                    MinWidth="75" Padding="5,0" Click="BtnCloseClick" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

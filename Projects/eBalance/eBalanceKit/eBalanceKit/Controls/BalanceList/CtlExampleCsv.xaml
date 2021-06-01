@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.BalanceList.CtlExampleCsv"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Margin="5">Eine Beispiel CSV-Datei sieht wie folgt aus.</TextBlock>
+        <DataGrid Grid.Row="1" Margin="5" 
+                  BorderBrush="{x:Null}" ItemsSource="{Binding Path=CsvExample}" ColumnHeaderHeight="24"
+                  x:Name="dgCsvData" AutoGenerateColumns="True"  AlternatingRowBackground="WhiteSmoke" 
+                  CanUserSortColumns="False" CanUserDeleteRows="False" CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" 
+                  HeadersVisibility="Column" IsReadOnly="True" HorizontalGridLinesBrush="#FFA0A0A0" VerticalGridLinesBrush="#FFA0A0A0" 
+                  SelectionUnit="FullRow" SelectionMode="Single" FontSize="13" />
+        <TextBlock Grid.Row="2" Margin="5">Der Datei-Inhalt sieht wie folgt aus:</TextBlock>
+        <TextBox Grid.Row="3" Margin="5" Name="txt" Background="White" Foreground="Black" IsReadOnly="True" Text="{Binding CsvSource, Mode=OneWay}"/>
+        <Border Grid.Row="4" Style="{StaticResource ButtonBorder}">
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <Button Content="{x:Static Localisation:ResourcesCommon.Close}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnClose" VerticalAlignment="Top" Width="Auto" Padding="5,0" Click="btnClose_Click" />
+                </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

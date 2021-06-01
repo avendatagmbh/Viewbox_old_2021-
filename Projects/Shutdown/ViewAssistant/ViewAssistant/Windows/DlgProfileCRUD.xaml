@@ -1,0 +1,135 @@
+﻿<Window x:Class="ViewAssistant.Windows.DlgProfileCRUD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base" 
+        Title="{x:Static Localisation:ResourcesCommon.DlgProfilesCaption}" 
+        Icon="/Resources/icon_edit_profile_small.png" ResizeMode="NoResize" Topmost="False"
+        xmlns:Controls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        Width="500" Height="650" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" 
+        PreviewKeyDown="WindowPreviewKeyDown">
+    <Control.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/TMain.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Control.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid MinHeight="250" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ListBox x:Name="lbItems" ItemsSource="{Binding Path=Items, Mode=OneWay}" SelectedItem="{Binding SelectedItem}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0"
+                      Margin="2,0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="{StaticResource AvdMenuSplitter}" BorderThickness="1" Margin="6">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Name="border1" Grid.Column="0" Padding="4">
+                                    <Image Source="/Resources/icon_main_profiles.png"/>
+                                </Border>
+
+                                <Grid Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Name="border2" Grid.Column="0" >
+                                        <Separator>
+                                            <Separator.LayoutTransform>
+                                                <RotateTransform Angle="90" />
+                                            </Separator.LayoutTransform>
+                                        </Separator>
+                                    </Border>
+
+                                    <Border Name="border3" Grid.Column="1">
+                                        <Label Content="{Binding Name}" VerticalAlignment="Center"/>
+                                    </Border>
+
+                                    <Border Name="border4" Grid.Column="2">
+                                        <Border Padding="5,9,5,9">
+                                            <Controls:ImageButton Click="BtnInfoClick" ImageSource="/Resources/btn_info.png"  VerticalAlignment="Center" Tag="{Binding Id}"/>
+                                        </Border>
+                                    </Border>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" Value="True">
+                                <Setter TargetName="border2" Property="Background" Value="{StaticResource ListBoxSelectionBrush}"/>
+                                <Setter TargetName="border3" Property="Background" Value="{StaticResource ListBoxSelectionBrush}"/>
+                                <Setter TargetName="border4" Property="Background" Value="{StaticResource ListBoxSelectionBrush}"/>
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+                        </Style.Resources>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </Grid>
+
+        <Border Grid.Row="1" Background="{StaticResource NewDesignBlueBrush}" >
+            <StackPanel HorizontalAlignment="Right"  Orientation="Horizontal" Margin="8">
+
+                <Button Name="btnAddItem" Click="btnAddItem_Click" Content="{x:Static Localisation:ResourcesCommon.New}" Height="23" MinWidth="75"/>
+
+                <Button Name="btnModify" Click="btnModify_Click" Margin="5,0,0,0" Content="{x:Static Localisation:ResourcesCommon.Edit}" Height="23" MinWidth="75">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=SelectedItem}" Value="{x:Null}">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button Name="btnCopyItem" Click="btnCopyItem_Click" Margin="5,0,0,0" Content="{x:Static Localisation:ResourcesCommon.Copy}" Height="23" MinWidth="75">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=SelectedItem}" Value="{x:Null}">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button Name="btnDeleteItem" Margin="5,0,0,0" Content="{x:Static Localisation:ResourcesCommon.Delete}" Click="btnDeleteItem_Click" Height="23" MinWidth="75">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=SelectedItem}" Value="{x:Null}">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button Content="{x:Static Localisation:ResourcesCommon.Close}" Margin="5,0,0,0" Name="btnClose" Click="btnClose_Click" Height="23" MinWidth="75"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

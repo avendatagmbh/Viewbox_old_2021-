@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2790FBA2-1F3C-4EC7-96C9-6015D9C17DF6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DbSearchLogic</RootNamespace>
+    <AssemblyName>DbSearchLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|AnyCPU'">
+    <OutputPath>bin\x64\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\DbSearchLogic.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\DbSearchLogic.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\DbSearchLogic.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|x64'">
+    <OutputPath>bin\x64\x64\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\DbSearchLogic.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\Assemblies\64Bit\External\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\Assemblies\32Bit\External\MySQLData\6.3.6\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Localisation\Config\ApplicationConfig.cs" />
+    <Compile Include="Localisation\Config\Profile.cs" />
+    <Compile Include="Localisation\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ApplicationManager.cs" />
+    <Compile Include="Manager\ProfileManager.cs" />
+    <Compile Include="Manager\RuleManager.cs" />
+    <Compile Include="Manager\TableListManager.cs" />
+    <Compile Include="ProcessQueue\ForeignKeySearchStatEntry.cs" />
+    <Compile Include="ProcessQueue\IForeignKeySearchStatEntry.cs" />
+    <Compile Include="ProcessQueue\IKeySearchStatEntry.cs" />
+    <Compile Include="ProcessQueue\IPrimaryKeySearchStatEntry.cs" />
+    <Compile Include="ProcessQueue\KeySearchStatEntityBase.cs" />
+    <Compile Include="ProcessQueue\PrimaryKeySearchStatEntry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchCore\Config\GlobalSearchConfig.cs" />
+    <Compile Include="SearchCore\Config\QueryConfig.cs" />
+    <Compile Include="SearchCore\Events\ErrorEventArgs.cs" />
+    <Compile Include="SearchCore\Events\IDeleted.cs" />
+    <Compile Include="SearchCore\Events\SearchEventArgs.cs" />
+    <Compile Include="SearchCore\ForeignKeySearch\ForeignKey.cs" />
+    <Compile Include="SearchCore\ForeignKeySearch\ForeignKeyCollector.cs" />
+    <Compile Include="SearchCore\ForeignKeySearch\ForeignKeyColumn.cs" />
+    <Compile Include="SearchCore\ForeignKeySearch\ForeignKeySearcher.cs" />
+    <Compile Include="SearchCore\ForeignKeySearch\ForeignKeySearchParameter.cs" />
+    <Compile Include="SearchCore\Global.cs" />
+    <Compile Include="SearchCore\KeySearch\BinaryRowIdEnumerator.cs" />
+    <Compile Include="SearchCore\KeySearch\IdxIdEnumerator.cs" />
+    <Compile Include="SearchCore\KeySearch\KeySearchResult.cs" />
+    <Compile Include="SearchCore\KeySearch\RowIdEnumerator.cs" />
+    <Compile Include="SearchCore\Keys\DisplayForeignKey.cs" />
+    <Compile Include="SearchCore\Keys\DisplayKey.cs" />
+    <Compile Include="SearchCore\Keys\DisplayPrimaryKey.cs" />
+    <Compile Include="SearchCore\Keys\IDisplayDbKey.cs" />
+    <Compile Include="SearchCore\Keys\IDisplayKey.cs" />
+    <Compile Include="SearchCore\Keys\IKeyResultFilter.cs" />
+    <Compile Include="SearchCore\Keys\KeyManager.cs" />
+    <Compile Include="SearchCore\KeySearch\KeyCandidate.cs" />
+    <Compile Include="SearchCore\KeySearch\Column.cs" />
+    <Compile Include="SearchCore\KeySearch\KeyCandidateColumn.cs" />
+    <Compile Include="SearchCore\KeySearch\KeyColumn.cs" />
+    <Compile Include="SearchCore\KeySearch\KeySearchParameter.cs" />
+    <Compile Include="SearchCore\KeySearch\KeySearcherAdvanced.cs" />
+    <Compile Include="SearchCore\KeySearch\Key.cs" />
+    <Compile Include="SearchCore\KeySearch\KeyCollector.cs" />
+    <Compile Include="SearchCore\KeySearch\KeySearcherBase.cs" />
+    <Compile Include="SearchCore\KeySearch\KeySearcherBasic.cs" />
+    <Compile Include="SearchCore\KeySearch\PerformanceItem.cs" />
+    <Compile Include="SearchCore\Keys\KeyResultFilter.cs" />
+    <Compile Include="SearchCore\Keys\KeyTable.cs" />
+    <Compile Include="SearchCore\QueryCache\DbCache.cs" />
+    <Compile Include="SearchCore\QueryCache\DbCacheLine.cs" />
+    <Compile Include="SearchCore\QueryCache\DbCacheLineIdEntry.cs" />
+    <Compile Include="SearchCore\QueryCache\IDbCacheLine.cs" />
+    <Compile Include="SearchCore\QueryCache\IEnumerator.cs" />
+    <Compile Include="SearchCore\QueryCache\ReaderEnumerator.cs" />
+    <Compile Include="SearchCore\QueryExecution\TableSearcher.cs" />
+    <Compile Include="SearchCore\Result\ColumnHit.cs" />
+    <Compile Include="SearchCore\Result\ColumnMapping.cs" />
+    <Compile Include="SearchCore\Result\ResultSet.cs" />
+    <Compile Include="SearchCore\Result\ResultXmlReader.cs" />
+    <Compile Include="SearchCore\Result\ResultXmlWriter.cs" />
+    <Compile Include="SearchCore\Result\SearchValueResult.cs" />
+    <Compile Include="SearchCore\Result\SearchValueResultEntry.cs" />
+    <Compile Include="SearchCore\Result\SearchValueResultEntryType.cs" />
+    <Compile Include="SearchCore\Result\TableResultSet.cs" />
+    <Compile Include="SearchCore\Result\UserColumnMappings.cs" />
+    <Compile Include="SearchCore\KeySearchManager.cs" />
+    <Compile Include="SearchCore\SearchMatrix\SearchValue.cs" />
+    <Compile Include="SearchCore\SearchMatrix\SearchValueMatrix.cs" />
+    <Compile Include="SearchCore\SearchMatrix\SearchValueMatrixCellType.cs" />
+    <Compile Include="SearchCore\SearchMatrix\SearchValueMatrixOrdinals.cs" />
+    <Compile Include="SearchCore\SearchMatrix\SearchValueParser.cs" />
+    <Compile Include="SearchCore\Structures\ConfigSearchParams.cs" />
+    <Compile Include="SearchCore\Structures\Db\DatabaseTableList.cs" />
+    <Compile Include="SearchCore\Structures\Db\DbColumnSet.cs" />
+    <Compile Include="SearchCore\Structures\Db\TableInfo.cs" />
+    <Compile Include="SearchCore\Structures\EventList.cs" />
+    <Compile Include="SearchCore\Structures\IConfigSearchParams.cs" />
+    <Compile Include="SearchCore\Structures\MessageEventArgs.cs" />
+    <Compile Include="SearchCore\Structures\QueryInfo.cs" />
+    <Compile Include="SearchCore\Structures\QueryState.cs" />
+    <Compile Include="SearchCore\Structures\QueryTableState.cs" />
+    <Compile Include="SearchCore\Structures\Result\ColumnHitInfo.cs" />
+    <Compile Include="SearchCore\Structures\Result\ColumnResult.cs" />
+    <Compile Include="SearchCore\Structures\Result\DataMapper\ColumnHitInfoMapper.cs" />
+    <Compile Include="SearchCore\Structures\Result\DataMapper\ColumnResultsLoader.cs" />
+    <Compile Include="SearchCore\Structures\Result\DataMapper\ResultSaver.cs" />
+    <Compile Include="SearchCore\Structures\Result\DataMapper\ResultSetLoader.cs" />
+    <Compile Include="SearchCore\Structures\Result\DataMapper\SearchValueResultMapper.cs" />
+    <Compile Include="SearchCore\Structures\Result\ResultHistory.cs" />
+    <Compile Include="SearchCore\Structures\Result\ResultSet.cs" />
+    <Compile Include="SearchCore\Structures\SearchParamsEvaluated.cs" />
+    <Compile Include="SearchCore\Structures\TableColumn.cs" />
+    <Compile Include="SearchCore\Structures\TableList.cs" />
+    <Compile Include="SearchCore\TableRelation\RelationAnalyserEventArgs.cs" />
+    <Compile Include="SearchCore\TableRelation\TableRelation.cs" />
+    <Compile Include="SearchCore\TableRelation\TableRelationColumns.cs" />
+    <Compile Include="SearchCore\Threading\IThreadExecutor.cs" />
+    <Compile Include="SearchCore\Threading\QueryThread.cs" />
+    <Compile Include="SearchCore\Threading\TableSearchThread.cs" />
+    <Compile Include="SearchCore\Threading\ThreadManager.cs" />
+    <Compile Include="Structures\PriorityQueue.cs" />
+    <Compile Include="Structures\TableRelated\Column.cs" />
+    <Compile Include="Structures\TableRelated\ColumnInfo.cs" />
+    <Compile Include="Structures\TableRelated\Row.cs" />
+    <Compile Include="Structures\TableRelated\RowEntry.cs" />
+    <Compile Include="Structures\TableRelated\Query.cs" />
+    <Compile Include="Structures\TableRelated\Queries.cs" />
+    <Compile Include="Structures\TableRelated\SearchTableDecider.cs" />
+    <Compile Include="Structures\TableRelated\TableInfoManager.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdCommon\AvdCommon.csproj">
+      <Project>{89148742-F482-479E-8831-579F54FDF08A}</Project>
+      <Name>AvdCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\LogHelper\LogHelper\AV.Log.LogHelper.csproj">
+      <Project>{1AFE5981-7268-4249-AFFA-77E42495886E}</Project>
+      <Name>AV.Log.LogHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DbSearchBase\DbSearchBase.csproj">
+      <Project>{7675B5FD-9CC3-4B88-A75C-7154CCDD3B48}</Project>
+      <Name>DbSearchBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DbSearchDatabase\DbSearchDatabase.csproj">
+      <Project>{57ED24CB-1B7C-4F5E-8C14-0E321944E64E}</Project>
+      <Name>DbSearchDatabase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localisation\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

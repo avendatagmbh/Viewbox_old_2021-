@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="WpfControlsSample.Controls.CtlButtonsDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:w="clr-namespace:AvdWpfControls.Utils;assembly=AvdWpfControls" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ImageBrush x:Key="headerBgBrush" ImageSource="/Resources/head.png" ViewportUnits="Absolute" ViewboxUnits="Absolute" Viewbox="7,0,460,55" TileMode="FlipX" Viewport="0,0,471,55" />
+    </UserControl.Resources>
+    <StackPanel>
+        <AvdWpfControls:ImageButton ImageSource="/Resources/database64.png"  Foreground="Black" Caption="Datenbank selektieren (Imagebutton)" />
+        <AvdWpfControls:ImageButton2 ImageSource="/Resources/database64.png" Foreground="Black" Caption="Datenbank selektieren (Imagebutton2)"/>
+        <Separator Margin="0,10,0,10" />
+        <StackPanel Orientation="Horizontal" >
+            <Border Padding="2" Background="{StaticResource headerBgBrush}">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <AvdWpfControls:ImageRadioButton x:Name="rbError" Foreground="White" Content="ImageRadioButton_Error" ImageSource="/Resources/ValidationError.png" GroupName="group1" IsChecked="True"/>
+                    <AvdWpfControls:ImageRadioButton x:Name="rbWarning" Foreground="White" Content="ImageRadioButton_Warning" ImageSource="/Resources/ValidationWarn.png" GroupName="group1"/>
+                </StackPanel>
+            </Border>
+            <Label Content="Current Selection is Error">
+                <Label.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=rbError, Path=IsChecked}" Value="False">
+                                <Setter Property="Label.Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
+            <Label Visibility="{Binding ElementName=rbWarning, Path=IsChecked, Converter={StaticResource trueToVisibilityConverter}}">Current Selection is Warning</Label>
+        </StackPanel>
+
+        <Separator Margin="0,10,0,10" />
+        <Label>MonetaryTextBox:</Label>
+        <AvdWpfControls:MonetaryTextBox Text="50000" CurrencyString="$" Margin="10,0,10,0"/>
+        <Separator Margin="0,10,0,10" />
+        <Label>NumericUpDown:</Label>
+        <AvdWpfControls:NumericUpDown Minimum="100" Maximum="1500" Value="1000" Margin="10,0,10,0"/>
+        <Separator Margin="0,10,0,10" />
+        <Label>ThreeStateCheckbox:</Label>
+        <AvdWpfControls:ThreeStateCheckBox Content="Three states"/>
+        <Separator Margin="0,10,0,10" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label>TogglePopup:</Label>
+            <AvdWpfControls:TogglePopup Grid.Column="1" ImageSource="/Resources/view32.png">
+                <Grid>
+                    <Rectangle Height="50" Width="50" Fill="Red"/>
+                    <Ellipse Width="50" Height="50" Fill="White"/>
+                </Grid>
+            </AvdWpfControls:TogglePopup>
+        </Grid>
+        <Separator Margin="0,10,0,10" />
+        <Label>PasswordBox is normally not bindable, but with the PasswordBoxHelper it's possible</Label>
+        <PasswordBox w:PasswordBoxHelper.Attach="True" w:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay}" />
+        <TextBox x:Name="tbPassword" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Separator Margin="0,10,0,10" />
+        <Button Name="btnCreateProgress" Click="btnCreateProgress_Click">Create Progress Dialog</Button>
+    </StackPanel>
+</UserControl>

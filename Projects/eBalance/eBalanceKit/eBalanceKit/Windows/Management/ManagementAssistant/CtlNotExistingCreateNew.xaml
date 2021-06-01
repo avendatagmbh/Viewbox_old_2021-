@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Management.ManagementAssistant.CtlNotExistingCreateNew"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/ResourceDictionaries/MainWindow.xaml" />
+    </UserControl.Resources>
+    <StackPanel>
+        <TextBlock Style="{StaticResource TextBlockSetupStyle}" HorizontalAlignment="Center" TextAlignment="Center">
+            <Run Text="Es existiert noch kein" />
+            <Run Text="{Binding Path=ObjectType}" />
+            <LineBreak />
+            <Run Text="Möchten Sie jetzt ein neues" />
+            <Run Text="{Binding Path=ObjectType}" />
+            <Run Text="erzeugen?" />
+        </TextBlock>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <Button Content="{x:Static Localisation:ResourcesCommon.Yes}" Command="{Binding CmdYes}" Margin="5" Width="70"/>
+            <Button Content="{x:Static Localisation:ResourcesCommon.No}" Command="{Binding CmdNo}" Margin="5" Width="70"/>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>

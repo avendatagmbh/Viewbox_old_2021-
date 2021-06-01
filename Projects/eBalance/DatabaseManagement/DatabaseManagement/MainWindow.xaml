@@ -1,0 +1,28 @@
+﻿<Window x:Class="DatabaseManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:DatabaseManagement.Controls"
+        xmlns:CustomResources="clr-namespace:CustomResources;assembly=CustomResources"
+        WindowStartupLocation="CenterScreen"
+        Title="{x:Static CustomResources:CustomStrings.ProductNameDatabaseManagement}" Height="450" Width="625"
+        Icon="/CustomResources;component/Resources/logo1.png" Closed="WindowClosed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TabControl>
+            <TabItem Header="Datenbank Informationen" DataContext="{Binding DatabaseInfoModel}">
+                <c:CtlDatabaseInfo/>
+            </TabItem>
+            <TabItem Header="Backup">
+                <c:CtlBackup/>
+            </TabItem>
+            <TabItem Header="Automatisches Backup">
+                <c:CtlAutomaticBackup/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+
+</Window>

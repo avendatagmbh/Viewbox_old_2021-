@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Security.CtlRoleRights"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls" 
+             mc:Ignorable="d" d:DesignHeight="500" d:DesignWidth="800" PreviewKeyDown="UserControl_PreviewKeyDown"
+             xmlns:ebkc="clr-namespace:eBalanceKitControls;assembly=eBalanceKitControls"
+             xmlns:Security="clr-namespace:eBalanceKit.Windows.Security">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/RoleDialogResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,4,5,0">
+            <wpfc:ImageButton Margin="8,0,0,0" x:Name="btnExpandAllNodes" Click="btnExpandAllNodes_Click" ToolTip="Alle Elemente anzeigen" ImageSource="/eBalanceKitResources;component/Resources/ExpandTreeView.png" />
+            <wpfc:ImageButton Margin="8,0,0,0" x:Name="btnCollapseAllNodes1" Click="btnCollapseAllNodes_Click" ToolTip="Alle Elemente verbergen" ImageSource="/eBalanceKitResources;component/Resources/CollapseTreeView.png" />
+        </StackPanel>
+
+        <TabControl Padding="0">
+
+            <ebkc:EbkTabItem Caption="Rechte nach Typ" >
+                <Security:CtlRoleRightsByType />
+            </ebkc:EbkTabItem>
+        
+            <ebkc:EbkTabItem Caption="Rechte nach Objekt" >
+                <Security:CtlRoleRightsByElement />
+            </ebkc:EbkTabItem>
+        
+        </TabControl>
+        
+
+        <!-- button bar -->
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}" Padding="5">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <Button x:Name="btnBack" Content="{x:Static loc:ResourcesCommon.Ok}" Click="btnOk_Click" MinWidth="75"/>
+
+                <wpfc:ImageButton2 Margin="5,0,0,0" x:Name="btnAcceptChanges" ImageSource="/eBalanceKitResources;component/Resources/validate.png"
+                               Caption="{x:Static loc:ResourcesCommon.AcceptChanges}" Click="btnAcceptChanges_Click" />
+
+                <wpfc:ImageButton2 Margin="5,0,0,0" x:Name="btnCancel" ImageSource="/eBalanceKitResources;component/Resources/delete.png"
+                               Caption="{x:Static loc:ResourcesCommon.Cancel}" Click="btnCancel_Click" />
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

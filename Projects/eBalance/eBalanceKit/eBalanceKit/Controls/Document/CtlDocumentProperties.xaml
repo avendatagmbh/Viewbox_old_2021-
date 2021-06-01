@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.Document.CtlDocumentProperties"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="364" d:DesignWidth="632">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/DetailViews.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Style="{StaticResource FormulaBorder}">
+        <Grid Margin="5,0,5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border x:Name="borderHeader" BorderBrush="{StaticResource FormulaHeaderTextForegroundBrush}" BorderThickness="0,0,0,1">
+                <TextBlock x:Name="txtHeader" Style="{StaticResource FormulaHeaderText}" TextWrapping="Wrap" Text="Allgemeine Reporteigenschaften" />
+            </Border>
+
+            <ScrollViewer x:Name="ScrollViewer" Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                <Grid x:Name="ContentPanel">
+                    <StackPanel Margin="5">
+                        <TextBlock VerticalAlignment="Center" Text="*Branche" />
+                        <ComboBox x:Name="cbSpecialAccountingStandard"
+                      ItemsSource="{Binding ValueTreeGcd.Root.Values[de-gcd_genInfo.report.id.specialAccountingStandard].Elements}"
+                      SelectedItem="{Binding ValueTreeGcd.Root.Values[de-gcd_genInfo.report.id.specialAccountingStandard].SelectedValue, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                      DisplayMemberPath="ComboBoxLabel"
+                      IsEnabled="{Binding ReportRights.WriteRestAllowed}" SelectionChanged="ComboBoxSpecialAccountingStandardSelectionChanged"/>
+
+                        <TextBlock Margin="0,10,0,0" VerticalAlignment="Center" Text="*Bilanzierungsstandard" />
+                        <ComboBox ItemsSource="{Binding ValueTreeGcd.Root.Values[de-gcd_genInfo.report.id.accountingStandard].Elements}"
+                      SelectedItem="{Binding ValueTreeGcd.Root.Values[de-gcd_genInfo.report.id.accountingStandard].SelectedValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="ComboBoxLabel" IsEnabled="{Binding ReportRights.WriteRestAllowed}" />
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+
+        </Grid>
+    </Border>
+</UserControl>

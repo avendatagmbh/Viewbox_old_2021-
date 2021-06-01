@@ -1,0 +1,12 @@
+﻿<Window x:Class="TransDATA.Windows.DlgEditUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base"
+        xmlns:my="clr-namespace:TransDATA.Controls" Icon ="/TransDATA;component/Resources/User1.png" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        SizeToContent="WidthAndHeight" MinWidth="400"
+        Title="{x:Static Localisation:ResourcesCommon.DlgEditUserCaption}">
+    <Grid>
+        <my:CtlEditUser />
+    </Grid>
+</Window>

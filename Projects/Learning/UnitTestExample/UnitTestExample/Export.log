@@ -1,0 +1,3 @@
+﻿USER;TableName;FileName;Filter;DateBefore;TimeBefore;CountBeforeStr;DateAfter;TimeAfter;CountAfterStr;Duration
+BEH;allazymt;allazymt;;20120113;174549;62;20120113;174850;63;181
+BEH;allazymt2;allazymt2;;20120113;174549;62;20120113;174850;63;181

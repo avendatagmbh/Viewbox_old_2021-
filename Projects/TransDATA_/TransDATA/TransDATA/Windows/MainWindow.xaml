@@ -1,0 +1,556 @@
+﻿<Window x:Class="TransDATA.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+        xmlns:exptype="clr-namespace:TransDATABusiness.Converters;assembly=TransDATABusiness"
+        Title="TransDATA Professional 3.0" 
+        Width="800" Height="600"
+        WindowStartupLocation="CenterScreen" Icon="/TransDATA;component/Resources/AvenDATA.ico" WindowState="Maximized" Closed="Window_Closed">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition x:Name="cdInfoPanel" Width="250" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- ribbon -->
+        <Border Grid.ColumnSpan="2">
+            <Border.BitmapEffect>
+                <DropShadowBitmapEffect ShadowDepth="4" Opacity="0.75" Direction="315" />
+            </Border.BitmapEffect>
+            <my:Ribbon x:Name="Ribbon" SelectedIndex="0" ShowQuickAccessToolBarOnTop="False">
+
+                <my:Ribbon.QuickAccessToolBar>
+                    <my:RibbonQuickAccessToolBar Visibility="Collapsed">
+                        <my:RibbonQuickAccessToolBar.CustomizeMenuButton>
+                            <my:RibbonMenuButton Visibility="Collapsed" />
+                        </my:RibbonQuickAccessToolBar.CustomizeMenuButton>
+                    </my:RibbonQuickAccessToolBar>
+                </my:Ribbon.QuickAccessToolBar>
+
+                <my:Ribbon.ApplicationMenu>
+                    <my:RibbonApplicationMenu Visibility="Collapsed">
+                    </my:RibbonApplicationMenu>
+                </my:Ribbon.ApplicationMenu>
+
+                <my:RibbonTab Header="Start">
+                    <my:RibbonGroup Header="Allgemein">
+                        <my:RibbonButton x:Name="btnSelectProfile" Label="Profilauswahl" SmallImageSource="/transdata;component/Resources/Qute/Address-book16.png" Click="btnSelectProfile_Click" />
+                        <my:RibbonButton x:Name="btnSelectDataBase" Label="Datenbank" SmallImageSource="/transdata;component/Resources/Qute/Downloads16.png" Click="btnSelectDataBase_Click" />
+                    </my:RibbonGroup>
+
+                    <my:RibbonGroup Header="Einstellungen">
+                        <my:RibbonButton x:Name="btnEditConfig" Label="Konfiguration" LargeImageSource="/TransDATA;component/Resources/Qute/Options30.png" />
+                        <my:RibbonButton x:Name="btnEditProfile" Label="Profil" LargeImageSource="/transdata;component/Resources/Qute/Address-book30.png" Click="btnEditProfile_Click" />
+                    </my:RibbonGroup>
+
+                    <my:RibbonGroup Header="...">
+                        <my:RibbonButton IsEnabled="True" Label="Test" LargeImageSource="/TransDATA;component/Resources/Qute/Star-gold30.png" Click="RibbonButton_Click" />
+                        <my:RibbonButton IsEnabled="False" Label="xxx" LargeImageSource="/TransDATA;component/Resources/Qute/Help30.png"  />
+                        <my:RibbonButton IsEnabled="False" Label="xxx" LargeImageSource="/TransDATA;component/Resources/Qute/Help30.png" />
+                        <my:RibbonButton IsEnabled="False" Label="xxx" LargeImageSource="/TransDATA;component/Resources/Qute/Help30.png" Click="RibbonButton_Click_1" />
+                    </my:RibbonGroup>
+                    
+                </my:RibbonTab>                               
+
+            </my:Ribbon>
+        </Border>
+
+        <GridSplitter Grid.Row="1" HorizontalAlignment="Right" Width="0" Margin="0,2,0,0" />
+
+        <!-- main window -->
+        <Grid Grid.Row="1" Grid.Column="0" Margin="0,2,3,0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200*" />
+                <ColumnDefinition Width="400*" />
+            </Grid.ColumnDefinitions>
+
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Left" Width="3" />
+
+            <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource GroupBoxBorder}">
+                <TabControl Margin="0" Padding="0" SelectionChanged="TabControl_SelectionChanged" Name="tableControl">
+
+                    <!--tab-->
+                    <TabItem Header="Tabellen" Name="tab" Padding="4" IsSelected="False">
+                        <Grid> 
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <!--<Border Grid.Row="0" Style="{StaticResource GroupBoxBorder}">-->
+                                <StackPanel Grid.Row="0"  Orientation="Horizontal">
+                                <RadioButton GroupName="Tables" 
+                                             Content="alle"               
+                                             Name="rdbAllIsChecked" 
+                                             Checked="rdbAllIsChecked_Checked"
+                                             IsThreeState="True"
+                                             IsChecked="False" 
+                                             Padding="1" Margin="10"/>                               
+                                <RadioButton GroupName="Tables" 
+                                             Content=" gewählt" 
+                                             Name="rdbSelectedIsChecked" 
+                                             Checked="rdbSelectedIsChecked_Checked"
+                                             Padding="1" Margin="10"/>   
+                                <RadioButton GroupName="Tables" 
+                                             Content="abgewählt" 
+                                             Name="rdbDeselectedIsChecked" 
+                                             Checked="rdbDeselectedIsChecked_Checked"
+                                             Padding="1" Margin="10"/>
+                            </StackPanel>
+                            <!--</Border>-->
+                            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <TextBlock  Text="Suchen" Padding="1" Width="Auto" Margin="4,5,4,0" />
+                            <TextBox Grid.Row="1" Name="txtSearchItem" 
+                                     Text="{Binding Path=Name, Mode=TwoWay,
+                                     UpdateSourceTrigger=PropertyChanged}" 
+                                     TextChanged="txtSearchItem_TextChanged"
+                                     TextWrapping="NoWrap" 
+                                     Width="150"
+                                     HorizontalAlignment="Left" 
+                                     Margin="10,5,0,0"/>
+                            </StackPanel>
+                            <DataGrid Grid.Row="2"
+                                x:Name="dgTablescripts"
+                                BorderBrush="Transparent"
+                                Background="{StaticResource DefaultBorderBg}"                        
+                                ItemsSource="{Binding Path=SourceTables}" 
+                                AutoGenerateColumns="False"
+                                CanUserResizeRows="False" 
+                                CanUserAddRows="False"
+                                HorizontalGridLinesBrush="#40000000" 
+                                VerticalGridLinesBrush="#40000000" 
+                                SelectionMode="Single" 
+                                SelectionUnit="FullRow"                                    
+                                HeadersVisibility="Column"
+                                      Margin="0,10,0,0" SelectionChanged="dgTablescripts_SelectionChanged">
+
+                                <DataGrid.Resources>
+                                    <Style TargetType="{x:Type DataGridCell}">
+                                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="DataGridCell_PreviewMouseLeftButtonDown"></EventSetter>
+                                        <EventSetter Event="PreviewKeyDown" Handler="DataGridCell_PreviewMouseKeyDown"></EventSetter>
+
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background" Value="{StaticResource SelectedBackgroundBrush}" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+
+                                </DataGrid.Resources>
+
+                                <DataGrid.Columns>
+                            
+                                    <!-- number -->
+                                    <DataGridTemplateColumn Header="lfd" Width="Auto" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=TableInfo.RunningNumber}" Padding="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                            
+                                    <DataGridTemplateColumn Width="Auto" CanUserResize="False" x:Name="dgScriptsCol_IsChecked">                   
+                                        <!-- checkbox -->
+                                        <DataGridTemplateColumn.Header>
+                                            <CheckBox 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center" 
+                                            IsChecked="{Binding TableHeaderChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                            x:Name="chkIsTableCheckedHeader" 
+                                            Checked="chkIsTableCheckedHeader_Checked"
+                                            Unchecked="chkIsTableCheckedHeader_Unchecked" IsEnabled="True" />
+                                   
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <CheckBox
+                                                HorizontalAlignment="Center" 
+                                                VerticalAlignment="Center" 
+                                                IsChecked="{Binding Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                x:Name="chkTableIsChecked" Click="chkIsTableChecked_Click" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!-- name -->
+                                    <DataGridTemplateColumn Header="Name" Width="Auto" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=TableInfo.Name}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!-- description -->
+                                    <DataGridTemplateColumn Header="Beschreibung" Width="Auto" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=TableInfo.Description}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!-- columnNumber -->
+                                    <DataGridTemplateColumn Header="Spaltenzahl" Width="Auto" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=TableInfo.StrClmCount}" Padding="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!--numberofdatasets -->
+                                    <DataGridTemplateColumn Header="Zeilenzahl" Width="Auto" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=TableInfo.StrCount}" Padding="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                         </Grid>
+                    </TabItem>
+                                 
+                    <!--tabEmpty-->
+                        <TabItem Header="leere Tabellen" Name="tabEmpty" Padding="4" >
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <DataGrid Grid.Row="1"
+                        x:Name="dgTablescriptsEmpty"
+                        BorderBrush="Transparent"
+                        Background="{StaticResource DefaultBorderBg}"                        
+                        ItemsSource="{Binding Path=EmptyTables}" 
+                        AutoGenerateColumns="False"
+                        CanUserResizeRows="False" 
+                        CanUserAddRows="False"
+                        HorizontalGridLinesBrush="#40000000" 
+                        VerticalGridLinesBrush="#40000000" 
+                        SelectionMode="Single" 
+                        SelectionUnit="FullRow"                                    
+                        HeadersVisibility="Column"
+                        Margin="0,10,0,0" 
+                        SelectionChanged="dgTablescriptsEmpty_SelectionChanged">
+
+                                <DataGrid.Resources>
+                                    <Style TargetType="{x:Type DataGridCell}">
+                                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="DataGridCell_PreviewMouseLeftButtonDown"></EventSetter>
+                                        <EventSetter Event="PreviewKeyDown" Handler="DataGridCell_PreviewMouseKeyDown"></EventSetter>
+
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background" Value="{StaticResource SelectedBackgroundBrush}" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+
+                                </DataGrid.Resources>
+
+                                <DataGrid.Columns>
+
+                                    <!-- number -->
+                                    <DataGridTemplateColumn Header="lfd" Width="Auto" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=TableInfo.RunningNumber}" Padding="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Width="Auto" CanUserResize="False" x:Name="dgEmptyScriptsCol_IsChecked">
+                                        <!-- checkbox -->
+                                        <DataGridTemplateColumn.Header>
+                                            <CheckBox 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center" 
+                                            IsChecked="{Binding EmptyTableHeaderChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                            x:Name="chkIsEmptyTableCheckedHeader" 
+                                            Checked="chkIsEmptyTableCheckedHeader_Checked"
+                                            Unchecked="chkIsEmptyTableCheckedHeader_Unchecked"
+                                            IsEnabled="True" />
+
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <CheckBox
+                                                HorizontalAlignment="Center" 
+                                                VerticalAlignment="Center" 
+                                                IsChecked="{Binding Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                x:Name="chkEmptyTableIsChecked" Click="chkIsEmptyTableChecked_Click" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!-- name -->
+                                    <DataGridTemplateColumn Header="Name" Width="Auto" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=TableInfo.Name}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!-- description -->
+                                    <DataGridTemplateColumn Header="Beschreibung" Width="Auto" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=TableInfo.Description}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!-- columnNumber -->
+                                    <DataGridTemplateColumn Header="Spaltenzahl" Width="Auto" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=TableInfo.ClmCount}" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!--numberofdatasets -->
+                                    <DataGridTemplateColumn Header="Zeilenzahl" Width="Auto" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=TableInfo.Count}" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Border>
+
+            <!--column-->
+            <Border Grid.Row="1" Grid.Column="1" Margin="3,0,0,0" Style="{StaticResource GroupBoxBorder}">
+
+                        <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height=" Auto"/>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+<!-- ItemsSource="{Binding ElementName=dgTablescripts, Path=SelectedItem.Columns}" -->
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3,0,5,0" Text="Spalten aus der Tabelle " />
+                        <TextBlock Name="txbCurrentTableSource" Padding="1" Width="Auto"  FontWeight="Bold" Text="{Binding Path=Table.TableInfo.Name}"/>
+                        <TextBlock Name="txbNumberOfDatasets" Margin="3,0,0,0"  Padding="1" Width="Auto"  FontWeight="Bold"  Text="{Binding Path=Table.TableInfo.CountString}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <RadioButton GroupName="Columns" 
+                                             Content="alle"               
+                                             Name="rdbAllColumnsIsChecked" 
+                                             Checked="rdbAllColumnsIsChecked_Checked"
+                                             IsThreeState="True"
+                                             IsChecked="False" 
+                                             Padding="1" Margin="10"/>
+                        <RadioButton GroupName="Columns" 
+                                             Content=" gewählt" 
+                                             Name="rdbSelectedColumnsIsChecked" 
+                                             Checked="rdbSelectedColumnsIsChecked_Checked"
+                                             Padding="1" Margin="10"/>
+                        <RadioButton GroupName="Columns" 
+                                             Content="abgewählt" 
+                                             Name="rdbDeselectedColumnsIsChecked" 
+                                             Checked="rdbDeselectedColumnsIsChecked_Checked"
+                                             Padding="1" Margin="10"/>
+                    </StackPanel><!--"--> 
+                    <DataGrid Grid.Row="2"
+                        x:Name="dgColumns"
+                        BorderBrush="Transparent"
+                        Background="{StaticResource DefaultBorderBg}"  
+                        ItemsSource="{Binding  Path=SourceColumns}"      
+                        AutoGenerateColumns="False"
+                        CanUserResizeRows="False" 
+                        CanUserAddRows="False"
+                        HorizontalGridLinesBrush="#40000000" 
+                        VerticalGridLinesBrush="#40000000" 
+                        SelectionMode="Single" 
+                        SelectionUnit="FullRow"                                    
+                        HeadersVisibility="Column"
+                        Margin=" 0,10,0,0" 
+                        SelectionChanged="TabControl_SelectionChanged">
+                        
+
+                        <DataGrid.Columns >
+                                    <!-- ordinal -->
+                            <DataGridTemplateColumn Header="lfd" Width="Auto" IsReadOnly="True">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                                <TextBlock Text="{Binding Path=ColumnInfo.Ordinal}" Padding="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            
+                            <DataGridTemplateColumn Width="Auto" CanUserResize="False" x:Name="dgColumn_IsChecked">  
+                                <!-- checkbox -->
+                                <DataGridTemplateColumn.Header>
+                                    <CheckBox 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" 
+                                    IsChecked="{Binding ColumnHeaderChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                    x:Name="chkIsColumnCheckedHeader" 
+                                    Checked="chkIsColumnCheckedHeader_Checked"
+                                    Unchecked="chkIsColumnCheckedHeader_Unchecked" IsEnabled="True" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                                        IsChecked="{Binding Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                        x:Name="chkColumnIsChecked" Click="chkIsColumnChecked_Click" />
+                                        
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <!-- name -->
+                            <DataGridTemplateColumn Header="Name" Width="Auto" IsReadOnly="True">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=ColumnInfo.Name}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <!-- description -->
+                            <DataGridTemplateColumn Header="Beschreibung" Width="Auto" IsReadOnly="True">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=ColumnInfo.Description}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <!-- Type , Converter={StaticResource exportTypeToStringConverter}-->
+                            <DataGridTemplateColumn Header="Feldtyp" Width="Auto" IsReadOnly="True">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=ColumnInfo.TypeName}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+            </Border>
+
+        </Grid>
+
+        <!-- info panel -->
+        <Expander x:Name="expander" Grid.Row="1" Grid.Column="1" IsExpanded="true" ExpandDirection="Left" Expanded="expander_Expanded" Collapsed="expander_Collapsed">
+            <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource GroupBoxBorder}" Margin="0,2,0,0">
+                <Grid Width="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Image Margin="5,5,5,0" Height="40" HorizontalAlignment="Left" Width="Auto" Source="/transdata;component/Resources/logo.png" />
+                    <ScrollViewer Margin="5,0,5,5" Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel>
+
+                            <Border Style="{StaticResource GroupBoxBorderNoShadow}" Margin="0,5,0,0" Padding="2">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <!-- profile -->
+                                    <Border Grid.Row="0" Padding="2" Margin="0,2,0,0">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                                <Image Height="16" VerticalAlignment="Center" Source="/transdata;component/Resources/Qute/Address-book16.png" />
+                                                <TextBlock Grid.Row="0" Text="Profil" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri"/>
+                                            </StackPanel>
+                                            <TextBlock TextWrapping="Wrap"  Grid.Row="1" Grid.Column="0" Text="{Binding Path=CurrentProfile.Name}" Padding="1" FontSize="12" FontFamily="Calibri"/>
+                                        </Grid>
+                                    </Border>
+
+                                    <!-- database -->
+                                    <Border Grid.Row="2" Padding="2" Margin="0,2,0,0">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                                <Image Height="16" VerticalAlignment="Center" Source="/transdata;component/Resources/database16.png" Visibility="Collapsed"/>
+                                                <TextBlock Text="Datenbank" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri" Visibility="Collapsed"/>
+                                            </StackPanel>
+                                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=Profile.DbConfig}" Margin="0,0,0,0" Padding="1" FontSize="12" FontFamily="Calibri" TextWrapping="Wrap" Visibility="Collapsed"/>
+                                        </Grid>
+                                    </Border>
+
+                                    <!-- destination folder -->
+                                    <Border Grid.Row="3" Padding="2" Margin="0,2,0,0">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                                <Image Height="16" VerticalAlignment="Center" Source="/TransDATA;component/Resources/Qute/Folder16.png" />
+                                                <TextBlock Text="Zielordner" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri" />
+                                            </StackPanel>
+                                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=Profile.DbConfig}" Margin="0,0,0,0" Padding="1" FontSize="12" FontFamily="Calibri" TextWrapping="Wrap" />
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+
+                            </Border>
+
+                        </StackPanel>
+                    </ScrollViewer>
+
+                </Grid>
+            </Border>
+        </Expander>
+
+        <!-- button bar -->
+        <StackPanel Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="5" Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="2">
+            <Button 
+                IsEnabled="{Binding TableBuilder.IsIdle}" 
+                Content="_Start" 
+                Height="23" Width="75" 
+                Margin="3" 
+                Name="btnStartExport" Click="btnStartExport_Click" />
+            <Button 
+                IsEnabled="False"
+                Content="Ab_brechen" 
+                Height="23" Width="75" 
+                Margin="3" 
+                Name="btnCancel" 
+                Click="btnCancel_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

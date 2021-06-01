@@ -1,0 +1,1914 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5E4B032D-3B2E-4E6D-B2D7-88499B01604D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Taxonomy</RootNamespace>
+    <AssemblyName>Taxonomy</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arc.cs" />
+    <Compile Include="Element.cs" />
+    <Compile Include="Enums\ContextElement.cs" />
+    <Compile Include="Enums\LabelRoles.cs" />
+    <Compile Include="Enums\LinkbaseRoles.cs" />
+    <Compile Include="Enums\MandatoryType.cs" />
+    <Compile Include="Enums\TaxonomyType.cs" />
+    <Compile Include="Enums\XbrlElementValueTypes.cs" />
+    <Compile Include="Exceptions\InvalidAttributeException.cs" />
+    <Compile Include="Exceptions\InvalidTaxonomyFileException.cs" />
+    <Compile Include="Exceptions\MissingAttributeException.cs" />
+    <Compile Include="Exceptions\PresentationTreeNodeNotFound.cs" />
+    <Compile Include="Exceptions\UnknownReferenceNodeChildType.cs" />
+    <Compile Include="Exceptions\Resources\XbrlExceptions.Designer.cs">
+      <DependentUpon>XbrlExceptions.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Exceptions\UnknownAttributeException.cs" />
+    <Compile Include="Exceptions\UnknownRoleException.cs" />
+    <Compile Include="Interfaces\IArc.cs" />
+    <Compile Include="Interfaces\ILabel.cs" />
+    <Compile Include="Interfaces\ILinkbaseRef.cs" />
+    <Compile Include="Interfaces\ILocator.cs" />
+    <Compile Include="Interfaces\IReference.cs" />
+    <Compile Include="Interfaces\IRoleType.cs" />
+    <Compile Include="Interfaces\ISearchableNode.cs" />
+    <Compile Include="Interfaces\ITaxonomyInfo.cs" />
+    <Compile Include="PresentationTree\PresentationTreeEntry.cs" />
+    <Compile Include="TaxonomyInfo.cs" />
+    <Compile Include="XbrlDisplayStyle.cs" />
+    <Compile Include="Interfaces\IElement.cs" />
+    <Compile Include="Interfaces\PresentationTree\IPresentationTreeEntry.cs" />
+    <Compile Include="Interfaces\ITaxonomy.cs" />
+    <Compile Include="Label.cs" />
+    <Compile Include="LinkbaseRef.cs" />
+    <Compile Include="Locator.cs" />
+    <Compile Include="PresentationTree\PresentationTree.cs" />
+    <Compile Include="PresentationTree\PresentationTreeNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reference.cs" />
+    <Compile Include="RoleType.cs" />
+    <Compile Include="Taxonomy.cs" />
+    <Compile Include="Interfaces\PresentationTree\IPresentationTree.cs" />
+    <Compile Include="Interfaces\PresentationTree\IPresentationTreeNode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Exceptions\Resources\XbrlExceptions.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exceptions\Resources\XbrlExceptions.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>XbrlExceptions.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-shell-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-shell-before-BilMoG.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-shell-group-before-BilMoG.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-shell-group.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-visualisation-annotations.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-visualisations-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-02-28\hgbref-2006-12-01.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-shell-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gcd-2011-02-28\de-gcd-2011-02-28-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gcd-2011-02-28\de-gcd-2011-02-28.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gcd-2012-06-01\de-gcd-2012-06-01-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gcd-2012-06-01\de-gcd-2012-06-01.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gcd-2012-06-01\hgbref-2010-02-19.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-kontoform-layout.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-kontoform-no-numbers-layout.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-kontoform-no-numbers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-kontoform.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-staffelform-layout.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-staffelform-no-numbers-layout.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-staffelform-no-numbers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-staffelform.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-visualisation-annotations.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2008-02-19\hgbref-2006-12-01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-shell-staffelform-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-shell-staffelform-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-additions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-shell.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2008-02-24\hgbref-2006-12-01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-shell-before-BilMoG.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-shell-group-before-BilMoG.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-shell-group.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-shell.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-visualisation-annotations.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-visualisations-shell.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-02-28\hgbref-2006-12-01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-shell-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-shell-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gcd-2011-02-28\de-gcd-2011-02-28-shell.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gcd-2011-02-28\de-gcd-2011-02-28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Taxonomy\fi\de-gcd-2011-09-14\de-gcd-2011-09-14-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gcd-2011-09-14\de-gcd-2011-09-14.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gcd-2011-09-14\hgbref-2010-02-19.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-calculation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-dimensions.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-shell-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gcd-2010-12-16\de-gcd-2010-12-16-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gcd-2010-12-16\de-gcd-2010-12-16.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gcd-2010-12-16\hgbref-2010-02-19.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-shell-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-shell-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gcd-2011-09-14\de-gcd-2011-09-14-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gcd-2011-09-14\de-gcd-2011-09-14.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\base\de-gcd-2011-09-14\hgbref-2010-02-19.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gcd-2012-06-01\de-gcd-2012-06-01-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gcd-2012-06-01\de-gcd-2012-06-01.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\fi\de-gcd-2012-06-01\hgbref-2010-02-19.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-shell-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-shell-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gcd-2011-09-14\de-gcd-2011-09-14-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gcd-2011-09-14\de-gcd-2011-09-14.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gcd-2011-09-14\hgbref-2010-02-19.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gcd-2012-06-01\de-gcd-2012-06-01-shell.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gcd-2012-06-01\de-gcd-2012-06-01.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-gcd-2012-06-01\hgbref-2010-02-19.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14-shell-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Interfaces\PresentationTree\_CD_PresentationTree.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-calculation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-calculation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-calculation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-calculation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-calculation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-calculation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-calculation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-calculation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-dimensions-definition.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-dimensions-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-dimensions-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-changesEquityStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-managementReport.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-otherReportElements.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-presentation-transfersCommercialCodeToTax.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-shell-fiscal-label.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gaap-ci-2010-12-16\de-gaap-ci-2010-12-16-shell-fiscal-presentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gcd-2010-12-16\de-gcd-2010-12-16-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gcd-2010-12-16\de-gcd-2010-12-16-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gcd-2010-12-16\de-gcd-2010-12-16-presentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\base\de-gcd-2010-12-16\de-gcd-2010-12-16-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01-shell-fiscal.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\TaxonomyPosNumbers.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-calculation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-label-guidance-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-presentation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-reference-gaap-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-reference-gaap.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2012-06-01\de-bra-2012-06-01-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-appropriationProfits-group.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-balanceSheet-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-balanceSheet-group.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-cashFlowStatement-group.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-changesEquityStatement-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-changesEquityStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-incomeStatement-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-de-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-en-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-group-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-group.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-appropriationProfits-group.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-balanceSheet-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-balanceSheet-group-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-balanceSheet-group.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-cashFlowStatement-group.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-changesEquityStatement-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-changesEquityStatement-group.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-changesEquityStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-incomeStatement-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-incomeStatement-group.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-managementReport.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-notes-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-notes-group-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-notes-group.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-otherReportElements.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-transfersCommercialCodeToTax.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-reference-before-BilMoG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-role-labels-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-visualisation-annotations-numbering-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions-definition.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-fiscal-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-guidance-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-changesEquityStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-detailedInformation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-determinationOfTaxableIncomeSpecialCases.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-managementReport.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-otherReportElements.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-transfersCommercialCodeToTax.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2011-02-28\de-gcd-2011-02-28-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2011-02-28\de-gcd-2011-02-28-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2011-02-28\de-gcd-2011-02-28-presentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2012-06-01\de-gcd-2012-06-01-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2012-06-01\de-gcd-2012-06-01-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2012-06-01\de-gcd-2012-06-01-presentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2012-06-01\de-gcd-2012-06-01-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2012-06-01\de-gcd-2012-06-01-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-calculation-bilanz.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-calculation.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-guv-kontoform-calculation.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-guv-kontoform-label-de-no-numbers.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-guv-kontoform-label-de.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-guv-kontoform-presentation.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-guv-staffelform-calculation.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-guv-staffelform-label-de-no-numbers.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-guv-staffelform-label-de.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-guv-staffelform-presentation.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-label-de-no-numbers.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-label-de.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-presentation-anhang.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-presentation-bilanz.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-presentation.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-reference.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-kto-layout.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-kto-no-numbers-layout.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-kto-no-numbers.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-kto.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-stf-layout.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-stf-no-numbers-layout.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-stf-no-numbers.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-shell-stf.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-visualisation-annotations-no-numbers-label-de.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-visualisation-annotations-no-numbers-numbering-exceptions-label-de.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-visualisation-gen-column-layout-bilanz.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-visualisation-gen-column-layout-guvkontoform.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2008-02-19\de-fi-2008-02-19-visualisation-gen-column-layout-guvstaffelform.xml" />
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-calculation-incomeStatement-staffelform.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-dimensions-calculation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-dimensions-definition.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-dimensions-presentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-presentation-incomeStatement-staffelform.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2011-09-14\de-fi-2011-09-14-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-calculation-incomeStatement-staffelform.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-dimensions-calculation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-dimensions-definition.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-dimensions-presentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-presentation-incomeStatement-staffelform.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-fi-2012-06-01\de-fi-2012-06-01-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-calculation-appropriationProfits.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-calculation-balanceSheet.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-calculation-cashFlowStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-calculation-changesEquityAccounts.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-calculation-changesEquityStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-calculation-contingentLiabilities.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-calculation-incomeStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-calculation-notes.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-label-de.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-label-en.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-presentation-appropriationProfits.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-presentation-balanceSheet.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-presentation-cashFlowStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-presentation-changesEquityAccounts.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-presentation-changesEquityStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-presentation-contingentLiabilities.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-presentation-incomeStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-presentation-managementReport.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-presentation-notes.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-presentation-otherReportElements.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-presentation-transfersCommercialCodeToTax.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2008-02-24\de-gaap-ci-2007-12-01-reference.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-appropriationProfits-group.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-appropriationProfits.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-balanceSheet-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-balanceSheet-group.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-balanceSheet.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-cashFlowStatement-group.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-cashFlowStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-changesEquityAccounts.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-changesEquityStatement-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-changesEquityStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-contingentLiabilities.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-incomeStatement-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-incomeStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-calculation-notes.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-de-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-de.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-en-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-en.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-group-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-label-group.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-appropriationProfits-group.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-appropriationProfits.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-balanceSheet-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-balanceSheet-group-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-balanceSheet-group.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-balanceSheet.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-cashFlowStatement-group.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-cashFlowStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-changesEquityAccounts.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-changesEquityStatement-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-changesEquityStatement-group.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-changesEquityStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-contingentLiabilities.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-incomeStatement-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-incomeStatement-group.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-incomeStatement.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-managementReport.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-notes-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-notes-group-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-notes-group.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-notes.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-otherReportElements.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-presentation-transfersCommercialCodeToTax.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-reference-before-BilMoG.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-reference.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-role-labels-en.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-02-28\de-gaap-ci-2011-02-28-visualisation-annotations-numbering-label-de.xml" />
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions-definition.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-label-fiscal-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-changesEquityStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-detailedInformation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-determinationOfTaxableIncomeSpecialCases.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-managementReport.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-otherReportElements.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-transfersCommercialCodeToTax.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions-definition.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-fiscal-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-guidance-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-changesEquityStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-detailedInformation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-determinationOfTaxableIncomeSpecialCases.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-managementReport.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-otherReportElements.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-transfersCommercialCodeToTax.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gcd-2011-02-28\de-gcd-2011-02-28-label-de.xml" />
+    <Content Include="Taxonomy\fi\de-gcd-2011-02-28\de-gcd-2011-02-28-label-en.xml" />
+    <Content Include="Taxonomy\fi\de-gcd-2011-02-28\de-gcd-2011-02-28-presentation.xml" />
+    <Content Include="Taxonomy\fi\de-gcd-2011-09-14\de-gcd-2011-09-14-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gcd-2011-09-14\de-gcd-2011-09-14-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gcd-2011-09-14\de-gcd-2011-09-14-presentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gcd-2011-09-14\de-gcd-2011-09-14-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-calculation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-presentation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-reference-gaap-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-reference-gaap.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-bra-2011-09-14\de-bra-2011-09-14-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions-definition.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-label-fiscal-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-changesEquityStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-detailedInformation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-determinationOfTaxableIncomeSpecialCases.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-managementReport.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-otherReportElements.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-transfersCommercialCodeToTax.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2011-09-14\de-gcd-2011-09-14-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2011-09-14\de-gcd-2011-09-14-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2011-09-14\de-gcd-2011-09-14-presentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\base\de-gcd-2011-09-14\de-gcd-2011-09-14-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gcd-2012-06-01\de-gcd-2012-06-01-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gcd-2012-06-01\de-gcd-2012-06-01-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gcd-2012-06-01\de-gcd-2012-06-01-presentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gcd-2012-06-01\de-gcd-2012-06-01-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\fi\de-gcd-2012-06-01\de-gcd-2012-06-01-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-calculation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions-definition.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-dimensions-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-label-fiscal-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-changesEquityStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-detailedInformation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-determinationOfTaxableIncomeSpecialCases.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-managementReport.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-otherReportElements.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-presentation-transfersCommercialCodeToTax.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2011-09-14\de-gaap-ci-2011-09-14-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-calculation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions-definition.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-dimensions-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-fiscal-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-label-guidance-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-adjustmentOfIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-appropriationProfits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-cashFlowStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-changesEquityAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-changesEquityStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-contingentLiabilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-detailedInformation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-determinationOfTaxableIncome.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-determinationOfTaxableIncomeBusinessPartnership.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-determinationOfTaxableIncomeSpecialCases.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-managementReport.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-otherReportElements.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-presentation-transfersCommercialCodeToTax.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gaap-ci-2012-06-01\de-gaap-ci-2012-06-01-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gcd-2011-09-14\de-gcd-2011-09-14-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gcd-2011-09-14\de-gcd-2011-09-14-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gcd-2011-09-14\de-gcd-2011-09-14-presentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gcd-2011-09-14\de-gcd-2011-09-14-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gcd-2012-06-01\de-gcd-2012-06-01-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gcd-2012-06-01\de-gcd-2012-06-01-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gcd-2012-06-01\de-gcd-2012-06-01-presentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gcd-2012-06-01\de-gcd-2012-06-01-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-gcd-2012-06-01\de-gcd-2012-06-01-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14-presentation-managementReport.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2011-09-14\de-ins-2011-09-14-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Taxonomy\styles\de-bra-2011-09-14.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\styles\de-fi-2011-09-14.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Taxonomy\styles\de-ins-2011-09-14.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01-calculation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01-calculation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01-label-de.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01-label-en.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01-presentation-balanceSheet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01-presentation-incomeStatement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01-presentation-managementReport.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01-presentation-notes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01-reference-fiscal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\ins\de-ins-2012-06-01\de-ins-2012-06-01-reference.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\styles\de-fi-2012-06-01.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\styles\de-gaap-2012-06-01.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\styles\de-gcd-2010-12-16.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\styles\de-gcd-2011-02-28.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\styles\de-gcd-2011-09-14.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\styles\de-gcd-2012-06-01.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\styles\de-ins-2012-06-01.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Taxonomy\styles\global.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Taxonomy\styles\de-gaap-2011-09-14.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Taxonomy\styles\de-gaap-2010-12-16.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

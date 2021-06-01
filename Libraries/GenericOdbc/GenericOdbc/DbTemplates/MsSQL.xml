@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DbTemplate ServerName="MsSQL">
+  <Enquote>
+    <Left>[</Left>
+    <Right>]</Right>
+  </Enquote>
+  <ConnectionStringParameter>
+    <Param Caption="Username" Caption_de="Benutzername" Name="Uid"/>
+    <Param Caption="Password" Caption_de="Passwort" Name="Pwd"/>
+    <Param Caption="Database" Caption_de="Datenbank" Name="Database"/>
+  </ConnectionStringParameter>
+  <Syntax>
+    <!--
+    
+    public virtual void SetConnectionString(string host, string user, string password) {
+            ConnectionString =
+                (host.Length > 0 ? "Server=" + host + ";" : string.Empty) +
+                (user.Length > 0 || password.Length > 0 ? "UID=" + user + ";PWD=" + password + ";" : string.Empty); // either both or none of parameters UID and PWD are used
+        }
+    
+    Einlesen von Tabellen Struktur:
+    
+    List<SchemaTable> lSchemas = sourceDb.GetSchemaTableList();
+    List<DbFieldInfo> lColumnInfos = sourceDb.GetFieldInfos(oSchemaTable.Schema, oSchemaTable.Table);
+    
+    public override List<SchemaTable> GetSchemaTableList()
+        {
+            List<SchemaTable> oResult = new List<SchemaTable>();
+
+            DataTable oSchemaTable = this.mDbCommand.Connection.GetSchema("Tables");
+
+            foreach (DataRow oRow in oSchemaTable.Rows) {
+                if (oRow.Field<object>(0) != null && 
+                    oRow.Field<object>(1) != null &&
+                    oRow.Field<object>(2) != null) {
+                    oResult.Add(new SchemaTable(
+                        oRow.Field<object>(0).ToString(),
+                        oRow.Field<object>(1).ToString() + "." + oRow.Field<object>(2).ToString()));
+                }
+            }
+
+            return oResult.Distinct().ToList();
+        }
+    
+    
+    protected override List<DbFieldInfo> ReadFieldInfos(string sql) {
+            List<DbFieldInfo> lFieldInfos = new List<DbFieldInfo>();
+            DbDataReader oReader = null;
+
+            try {
+                mDbCommand.CommandText = sql;
+
+                oReader = mDbCommand.ExecuteReader(CommandBehavior.SchemaOnly);
+
+                DataTable oDataTable = oReader.GetSchemaTable();
+
+                /*/DEBUG: This code pops up a messagebox with an overview over the columns of the table returned by GetSchemaTable()
+                string dbgSchemaDesc = "index\tColumnName\tCaption\tDataType\tAllowDBNull\n";
+                for (int i = 0; i < oDataTable.Columns.Count; ++i) {
+                    dbgSchemaDesc += i.ToString() + "\t"
+                        + oDataTable.Columns[i].ColumnName + "\t"
+                        + oDataTable.Columns[i].Caption + "\t"
+                        + oDataTable.Columns[i].DataType.ToString() + "\t"
+                        + oDataTable.Columns[i].AllowDBNull + "\n";
+                }
+                System.Windows.Forms.MessageBox.Show("DbAccess/DbSpecific/SQLServer/Database.cs: ReadFieldInfos(string): before iterating fields\nsql: " + sql + "\nSchemaTable Description:\n" + dbgSchemaDesc);
+                /*/
+
+                for (Int32 n = 0; n < oReader.FieldCount; n++) {
+                    String sColumn = oReader.GetName(n);
+                    sColumn = ReplaceSpecialChars(sColumn);
+
+                    DbFieldInfo oFieldInfo = null;
+
+                    string sType = oReader.GetDataTypeName(n);
+
+                    switch (sType) {
+
+                        case "double":
+                        case "numeric":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbNumeric);
+                            break;
+
+                        case "int":
+                        case "bigint":
+                        case "int identity":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbInt);
+                            break;
+
+                        case "varchar":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbText);
+                            break;
+
+                        case "date":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbDate);
+                            break;
+
+                        case "text":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbLongText);
+                            break;
+
+                        case "datetime":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbDateTime);
+                            break;
+
+                        default:
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbText);
+                            break;
+                    }
+
+                    /* original table of SchemaTable columns; unknown origin
+                     +		[0]	{ColumnName}	object {System.Data.DataColumn}
+                     +		[1]	{ColumnOrdinal}	object {System.Data.DataColumn}
+                     +		[2]	{ColumnSize}	object {System.Data.DataColumn}
+                     +		[3]	{NumericPrecision}	object {System.Data.DataColumn}
+                     +		[4]	{NumericScale}	object {System.Data.DataColumn}
+                     +		[5]	{DataType}	object {System.Data.DataColumn}
+                     +		[6]	{ProviderType}	object {System.Data.DataColumn}
+                     +		[7]	{IsLong}	object {System.Data.DataColumn}
+                     +		[8]	{AllowDBNull}	object {System.Data.DataColumn}
+                     +		[9]	{IsReadOnly}	object {System.Data.DataColumn}
+                     +		[10]	{IsRowVersion}	object {System.Data.DataColumn}
+                     +		[11]	{IsUnique}	object {System.Data.DataColumn}
+                     +		[12]	{IsKey}	object {System.Data.DataColumn}
+                     +		[13]	{IsAutoIncrement}	object {System.Data.DataColumn}
+                     +		[14]	{BaseSchemaName}	object {System.Data.DataColumn}
+                     +		[15]	{BaseCatalogName}	object {System.Data.DataColumn}
+                     +		[16]	{BaseTableName}	object {System.Data.DataColumn}
+                     +		[17]	{BaseColumnName}	object {System.Data.DataColumn}
+                      */
+                    /* hot: table of SchemaTable columns; origin: Klinikum Region Hannover, Gehrden; unknown MS SQL Server version
+                     *  [0] ColumnName                      System.String
+                     *  [1] ColumnOrdinal                   System.Int32
+                     *  [2] ColumnSize                      System.Int32
+                     *  [3] NumericPrecision                System.Int16
+                     *  [4] NumericScale                    System.Int16
+                     *  [5] IsUnique                        System.Boolean
+                     *  [6] IsKey                           System.Boolean
+                     *  [7] BaseServerName                  System.String
+                     *  [8] BaseCatalogName                 System.String
+                     *  [9] BaseColumnName                  System.String
+                     * [10] BaseSchemaName                  System.String
+                     * [11] BaseTableName                   System.String
+                     * [12] DateType                        System.Type
+                     * [13] AllowDBNull                     System.Boolean
+                     * [14] ProviderType                    System.Int32
+                     * [15] IsAliased                       System.Boolean
+                     * [16] IsExpression                    System.Boolean
+                     * [17] IsIdentity                      System.Boolean
+                     * [18] IsAutoIncrement                 System.Boolean
+                     * [19] IsRowVersion                    System.Boolean
+                     * [20] IsHidden                        System.Boolean
+                     * [21] IsLong                          System.Boolean
+                     * [22] IsReadOnly                      System.Boolean
+                     * [23] ProviderSpecificDataType        System.Type
+                     * [24] DataTypeName                    System.String
+                     * [25] XmlSchemaCollectionDatabase     System.String
+                     * [26] XmlSchemaCollectionOwningSchema System.String
+                     * [27] XmlSchemaCollectionName         System.String
+                     * [28] UdtAssemblyQualifiedName        System.String
+                     * [29] NonVersionedProviderType        System.Int32
+                     * [30] IsColumnSet                     System.Boolean
+                     * */
+                    DataRow oRow = oDataTable.Rows[n];
+                    oFieldInfo.AutoIncrement = !oRow.IsNull("IsAutoIncrement") && oRow.Field<bool>("IsAutoIncrement");
+                    oFieldInfo.MaxLength = oRow.Field<int>("ColumnSize");
+                    oFieldInfo.AllowDBNull = !oRow.IsNull("AllowDBNull") && oRow.Field<bool>("AllowDBNull");
+                    oFieldInfo.NumericScale = oRow.Field<Int16>("NumericScale");
+                    oFieldInfo.IsPrimaryKey = !oRow.IsNull("IsKey") && oRow.Field<bool>("IsKey");
+                    oFieldInfo.OriginalType = sType;
+
+                    lFieldInfos.Add(oFieldInfo);
+                }
+            } catch (Exception ex) {
+                //System.Windows.Forms.MessageBox.Show("Exception! Message:\n" + ex.Message + "\nStack Trace:\n" + ex.StackTrace);//DEBUG
+                LastErrorMessage = "Fehler in GetFieldTypes: " + ex.Message;
+                throw new Exception(LastErrorMessage);
+            } finally {
+                if ((oReader != null) && !(oReader.IsClosed))
+                    oReader.Close();
+            }
+
+            return lFieldInfos;
+    
+    Datenabzug:
+    
+    public DbDataReader GetTextReaderFromTable(string database, string tableName, List<string> fieldNames) {
+            string sOutput = "SELECT ";
+            foreach (string field in fieldNames) {
+                sOutput += Enquote(field) + ", ";
+            }
+            sOutput = sOutput.Remove(sOutput.Length - 2);
+
+            return ExecuteReader(sOutput + " FROM " + GetTableName(database, tableName));
+        }
+      -->
+  </Syntax>
+</DbTemplate>

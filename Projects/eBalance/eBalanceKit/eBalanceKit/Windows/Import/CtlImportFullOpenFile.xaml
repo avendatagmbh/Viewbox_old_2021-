@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Import.CtlImportFullOpenFile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid MinHeight="300">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Margin="0,2,0,0" Style="{StaticResource GroupBoxBorder}">
+            <StackPanel Margin="5">
+                <TextBlock Height="Auto" Name="textbInfoTitle" Text="{x:Static Localisation:ResourcesCommon.ImportFullDialogTitle}" FontWeight="Bold" />
+                <TextBlock Height="Auto" Name="textbInfo" Text="{x:Static Localisation:ResourcesCommon.ImportFullDialogDescription}" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Style="{StaticResource GroupBoxBorder}">
+            <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="xbrlFileList" MinHeight="100" Height="Auto" Margin="5" ItemsSource="{Binding XbrlFile}" SelectedItem="{Binding SelectedFile, Mode=TwoWay}" />
+        </Border>
+        <Border Grid.Row="2" Margin="0,2,0,0" Style="{StaticResource GroupBoxBorder}">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <wpfc:ImageButton2 Caption="{x:Static Localisation:ResourcesCommon.ImportAddFile}" MinWidth="100" Padding="5,0,5,0" 
+                                   Margin="0,0,5,0" ImageSource="/eBalanceKitResources;component/Resources/Add.png" 
+                                   Command="{Binding AddFileCommand}" IsEnabled="{Binding HasNoFile}"/>
+
+                <wpfc:ImageButton2 Caption="{x:Static Localisation:ResourcesCommon.ImportDeleteFile}" MinWidth="100" Padding="5,0,5,0" 
+                                   Command="{Binding DeleteFileCommand}" IsEnabled="{Binding HasSelectedFile}"  
+                                   ImageSource="/eBalanceKitResources;component/Resources/Delete.png"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,5 @@
+1.2:
+Added OriginalColumnName to DbColumn in order to allow a copy of the column
+
+1.1:
+Added column CustomRules to table profile

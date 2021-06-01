@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Anlage" xml:space="preserve">
+    <value>Anlage</value>
+  </data>
+  <data name="Bankdaten" xml:space="preserve">
+    <value>Bankdaten</value>
+  </data>
+  <data name="Bearbeiter" xml:space="preserve">
+    <value>Bearbeiter</value>
+  </data>
+  <data name="Geschäftsführer" xml:space="preserve">
+    <value>Geschäftsführer</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="empty_distinct_columns" xml:space="preserve">
+    <value>Wollen Sie die leeren oder verschiedene Spalten auszublenden?</value>
+  </data>
+  <data name="empty_distinct_columns_name" xml:space="preserve">
+    <value>Leer und unterschiedlichen Spalten</value>
+  </data>
+  <data name="enlarge_datagrid" xml:space="preserve">
+    <value>Soll die Detailansicht immer vergrößert dargestellt werden?</value>
+  </data>
+  <data name="enlarge_datagrid_name" xml:space="preserve">
+    <value>Darstellung der Detailansicht</value>
+  </data>
+  <data name="export_description" xml:space="preserve">
+    <value>Wollen Sie, dass die Beschreibung des Exports in der Excel-Datei sichtbar ist?</value>
+  </data>
+  <data name="export_description_name" xml:space="preserve">
+    <value>Export-Beschreibung in Excel-Datei</value>
+  </data>
+  <data name="InvalidDictionary" xml:space="preserve">
+    <value>Fehler im Dictionary (Korrektes Format: 'Spalte;Beschreibung_Sprache1;Beschreibung_Sprache2;...'). Es wurden mehr Beschreibungen als Sprachen im -- ##LANGUAGES## Abschnitt.</value>
+  </data>
+  <data name="InvalidParameter" xml:space="preserve">
+    <value>Fehler bei den Parametern (Korrektes Format: 'Spalte;Datentyp;Beschreibung_Sprache1;Beschreibung_Sprache2;...'). Es wurden mehr Beschreibungen als Sprachen im -- ##LANGUAGES## Abschnitt. {0}</value>
+  </data>
+  <data name="InvalidParameterReference" xml:space="preserve">
+    <value>Fehler bei den Parameter Referenz (Korrektes Format: 'Parameter;Datenbank;Tabelle;Spalte'). {0}</value>
+  </data>
+  <data name="LessReportParamMetadataThanExpected" xml:space="preserve">
+    <value>Less metadata specified for report parameter than expected. (Correct format: 'Table;Column;Parameter;Datetype;Default value;Description_Language1;Description_Language2;...') {0}</value>
+    <comment>translate</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MoreReportParamDescriptionThanLanguageSpecified" xml:space="preserve">
+    <value>Fehler bei den Parametern (Korrektes Format: 'Tabelle;Spalte;Parameter;Datentyp;Defaultwert;Beschreibung_Sprache1;Beschreibung_Sprache2;...'). Es wurden mehr Beschreibungen als Sprachen im -- ##LANGUAGES## Abschnitt. {0}</value>
+  </data>
+  <data name="NoFilterSpecifiedForParameterizedView" xml:space="preserve">
+    <value>No filter specified for parameterized view [{0}]</value>
+    <comment>translate</comment>
+  </data>
+  <data name="optimization" xml:space="preserve">
+    <value>Soll die Beschreibung der Optimierungskriterien angezeigt werden?</value>
+  </data>
+  <data name="optimization_name" xml:space="preserve">
+    <value>Darstellung der Optimierungskriterien</value>
+  </data>
+  <data name="ParameterColumnDoesNotExists" xml:space="preserve">
+    <value>Parameter column [{0}] does not exists</value>
+    <comment>translate</comment>
+  </data>
+  <data name="ParameterExists" xml:space="preserve">
+    <value>Parameter with name [{0}] already exists</value>
+    <comment>translate</comment>
+  </data>
+  <data name="Projektnummer" xml:space="preserve">
+    <value>Projektnummer</value>
+  </data>
+  <data name="ReferencedColumnNotFound" xml:space="preserve">
+    <value>The refecenced column not found for parameter [{0}] ({1}.{2}.{3})</value>
+    <comment>translate</comment>
+  </data>
+  <data name="Steuernummer" xml:space="preserve">
+    <value>Steuernummer</value>
+  </data>
+  <data name="send_job_email" xml:space="preserve">
+    <value>Wollen Sie eine Email erhalten, die sie auf einen fertigen Hintergrundprozess hinweist?</value>
+  </data>
+  <data name="send_job_email_name" xml:space="preserve">
+    <value>Emailversand nach fertigem Prozess</value>
+  </data>
+  <data name="TableDoesNotExists" xml:space="preserve">
+    <value>Table [{0}] does not exists</value>
+    <comment>translate</comment>
+  </data>
+  <data name="Versionsnummer" xml:space="preserve">
+    <value>Versionsnummer</value>
+  </data>
+  <data name="Viewübersicht" xml:space="preserve">
+    <value>Viewübersicht</value>
+  </data>
+  <data name="Vorwort" xml:space="preserve">
+    <value>Vorwort</value>
+  </data>
+  <data name="VorwortText" xml:space="preserve">
+    <value>Dieses Dokument bietet eine Übersicht der im Projekt umgesetzten
+Views.
+Die folgende Tabelle stellt die Gesamtübersicht aller Views dar.</value>
+  </data>
+  <data name="table_order" xml:space="preserve">
+    <value>Wollen Sie, dass zuletzt angeklickte Sachverhalte/Sichten in den Übersichtslisten auf die oberste Position rutschen?</value>
+  </data>
+  <data name="table_order_name" xml:space="preserve">
+    <value>Tabellen-Reihenfolge nach Aufruf</value>
+  </data>
+  <data name="thousand" xml:space="preserve">
+    <value>Soll das Tausender-Trennzeichen in der Tabellenansicht angezeigt werden?</value>
+  </data>
+  <data name="thousand_name" xml:space="preserve">
+    <value>Tausender-Trennzeichen</value>
+  </data>
+  <data name="WrongReportFilterCriteria" xml:space="preserve">
+    <value>Worng report parameter reference: {0}</value>
+    <comment>translate</comment>
+  </data>
+  <data name="WrongViewFilterCriteria" xml:space="preserve">
+    <value>Worng view filter criteria: {0}</value>
+    <comment>translate</comment>
+  </data>
+  <data name="IssueSummary" xml:space="preserve">
+    <value>Sachverhalte-Gesamtübersicht</value>
+  </data>
+  <data name="IssueText" xml:space="preserve">
+    <value>Die folgende Tabelle stellt die Gesamtübersicht aller Sachverhalte dar.</value>
+  </data>
+  <data name="Tabelle" xml:space="preserve">
+    <value>Tabelle</value>
+  </data>
+  <data name="ViewSummary" xml:space="preserve">
+    <value>View-Gesamtübersicht</value>
+  </data>
+  <data name="NoRows" xml:space="preserve">
+    <value>No rows available.</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Seite</value>
+  </data>
+  <data name="Abgänge" xml:space="preserve">
+    <value>Abgänge</value>
+  </data>
+  <data name="Beschreibung" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="Datentyp" xml:space="preserve">
+    <value>Datentyp</value>
+  </data>
+  <data name="ErstelltDurch" xml:space="preserve">
+    <value>Erstellt durch</value>
+  </data>
+  <data name="Feldname" xml:space="preserve">
+    <value>Feldname</value>
+  </data>
+  <data name="Inhaltsverzeichnis" xml:space="preserve">
+    <value>Inhaltsverzeichnis</value>
+  </data>
+  <data name="Parameterbeschreibung" xml:space="preserve">
+    <value>Parameterbeschreibung</value>
+  </data>
+  <data name="Parametername" xml:space="preserve">
+    <value>Parametername</value>
+  </data>
+  <data name="Sachverhalte" xml:space="preserve">
+    <value>Sachverhalte</value>
+  </data>
+  <data name="Viewbezeichnung" xml:space="preserve">
+    <value>Viewbezeichnung</value>
+  </data>
+  <data name="Views" xml:space="preserve">
+    <value>Views</value>
+  </data>
+  <data name="optClient" xml:space="preserve">
+    <value>Mandant</value>
+  </data>
+  <data name="optCompanyCode" xml:space="preserve">
+    <value>Buchungskreis</value>
+  </data>
+  <data name="optFinancialYear" xml:space="preserve">
+    <value>Geschäftsjahr</value>
+  </data>
+  <data name="optSystem" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Category_General" xml:space="preserve">
+    <value>Allgemein</value>
+  </data>
+  <data name="enlarged_datagrid" xml:space="preserve">
+    <value>Soll die Detailansicht immer vergrößert dargestellt werden?</value>
+  </data>
+  <data name="enlarged_datagrid_name" xml:space="preserve">
+    <value>Darstellung der Detailansicht</value>
+  </data>
+  <data name="am" xml:space="preserve">
+    <value>Anlagen</value>
+  </data>
+  <data name="ap" xml:space="preserve">
+    <value>Verbindlichkeiten / Kreditoren</value>
+  </data>
+  <data name="ar" xml:space="preserve">
+    <value>Forderungen / Debitoren</value>
+  </data>
+  <data name="bu" xml:space="preserve">
+    <value>Budget</value>
+  </data>
+  <data name="co" xml:space="preserve">
+    <value>Kostenstellen</value>
+  </data>
+  <data name="ek" xml:space="preserve">
+    <value>Einkauf</value>
+  </data>
+  <data name="fi" xml:space="preserve">
+    <value>Finanzbuchhaltung</value>
+  </data>
+  <data name="mm" xml:space="preserve">
+    <value>Materialwirtschaft</value>
+  </data>
+  <data name="other" xml:space="preserve">
+    <value>Andere</value>
+  </data>
+  <data name="pm" xml:space="preserve">
+    <value>Instandhaltung</value>
+  </data>
+  <data name="sd" xml:space="preserve">
+    <value>Verkauf</value>
+  </data>
+  <data name="ue" xml:space="preserve">
+    <value>Übergreifend</value>
+  </data>
+  <data name="dart" xml:space="preserve">
+    <value>DART</value>
+  </data>
+</root>

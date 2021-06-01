@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08B55DFE-5CDB-4337-819C-6ADA1669F407}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViewValidator</RootNamespace>
+    <AssemblyName>ViewValidator</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>viewvalidator.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary">
+      <HintPath>..\..\..\..\..\Assemblies\32Bit\External\Microsoft\Ribbons\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\CtlListView.xaml.cs">
+      <DependentUpon>CtlListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Datagrid\CtlColumnHeader.xaml.cs">
+      <DependentUpon>CtlColumnHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Datagrid\UnifiedDataGrid.cs" />
+    <Compile Include="Controls\Filters.xaml.cs">
+      <DependentUpon>Filters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\CtlNewTableMappingPage1.xaml.cs">
+      <DependentUpon>CtlNewTableMappingPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\CtlNewTableMappingPage2.xaml.cs">
+      <DependentUpon>CtlNewTableMappingPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\CtlStoredProcedure.xaml.cs">
+      <DependentUpon>CtlStoredProcedure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\CtlTableMappingDataGrid.xaml.cs">
+      <DependentUpon>CtlTableMappingDataGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\DataPreview.xaml.cs">
+      <DependentUpon>DataPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\FilterCriteria.xaml.cs">
+      <DependentUpon>FilterCriteria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\Mapping.xaml.cs">
+      <DependentUpon>Mapping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\DatabaseChoice.xaml.cs">
+      <DependentUpon>DatabaseChoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\ProfileDetails.xaml.cs">
+      <DependentUpon>ProfileDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\TableMappingDetails.xaml.cs">
+      <DependentUpon>TableMappingDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Result\ResultOverview.xaml.cs">
+      <DependentUpon>ResultOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Result\ResultOverviewDetails.xaml.cs">
+      <DependentUpon>ResultOverviewDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Result\ResultOverviewTableDetails.xaml.cs">
+      <DependentUpon>ResultOverviewTableDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Result\ResultRowsDifferentColumnWise.xaml.cs">
+      <DependentUpon>ResultRowsDifferentColumnWise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Result\ResultRowsDifferent.xaml.cs">
+      <DependentUpon>ResultRowsDifferent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Result\ResultRowsMissing.xaml.cs">
+      <DependentUpon>ResultRowsMissing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Rules\ExtendedDataPreview.xaml.cs">
+      <DependentUpon>ExtendedDataPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Rules\RuleToColumnsAssignment.xaml.cs">
+      <DependentUpon>RuleToColumnsAssignment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TableMappingSettings.xaml.cs">
+      <DependentUpon>TableMappingSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BoolInversionConverter.cs" />
+    <Compile Include="Converters\DbNullToFontConverter.cs" />
+    <Compile Include="Converters\EmptyListToVisibilityConverter.cs" />
+    <Compile Include="Converters\EnumMatchToBooleanConverter.cs" />
+    <Compile Include="Converters\EnumMatchToVisibilityConverter.cs" />
+    <Compile Include="Converters\IsVisibleToOpacityConverter.cs" />
+    <Compile Include="Converters\PathToFilenameConverter.cs" />
+    <Compile Include="Converters\RuleAppliedToBrushConverter.cs" />
+    <Compile Include="Converters\RuleEntryTypeToBrushConverter.cs" />
+    <Compile Include="Converters\StringToByteConverter.cs" />
+    <Compile Include="Converters\ValueExistsToVisibilityConverter.cs" />
+    <Compile Include="Converters\ValueNotExistsToVisibilityConverter.cs" />
+    <Compile Include="Converters\VisibilityToBoolConverter.cs" />
+    <Compile Include="Factories\HeaderFactory.cs" />
+    <Compile Include="Interfaces\INewTableMappingPage.cs" />
+    <Compile Include="Manager\ColorManager.cs" />
+    <Compile Include="Manager\DatabaseManager.cs" />
+    <Compile Include="Manager\ProfileModelManager.cs" />
+    <Compile Include="Models\Datagrid\ColumnHeaderModel.cs" />
+    <Compile Include="Models\ListView\IListViewModel.cs" />
+    <Compile Include="Models\ListView\ListViewModelBase.cs" />
+    <Compile Include="Models\ListView\ListViewProfileModel.cs" />
+    <Compile Include="Models\ListView\ListViewTableMappingModel.cs" />
+    <Compile Include="Models\Profile\ColumnMappingModel.cs" />
+    <Compile Include="Models\Profile\DatabaseModel.cs" />
+    <Compile Include="Controls\Profile\SortMapping.xaml.cs">
+      <DependentUpon>SortMapping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BoolToBrushConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\EnumToBooleanConverter.cs" />
+    <Compile Include="Converters\EnumToVisibilityConverter.cs" />
+    <Compile Include="Models\Profile\StoredProcedureModel.cs" />
+    <Compile Include="Models\Profile\ProfileModel.cs" />
+    <Compile Include="Models\MainWindowModel.cs" />
+    <Compile Include="Models\Profile\DataPreviewModel.cs" />
+    <Compile Include="Models\Profile\TableMappingModel.cs" />
+    <Compile Include="Models\Result\ResultOverviewModel.cs" />
+    <Compile Include="Models\Result\ResultsModel.cs" />
+    <Compile Include="Models\Result\ResultTableDetailsModel.cs" />
+    <Compile Include="Models\Result\RowsDifferentColumnWiseModel.cs" />
+    <Compile Include="Models\Rules\ExtendedDataPreviewModel.cs" />
+    <Compile Include="Models\Rules\RowEntryDetailsModel.cs" />
+    <Compile Include="Models\Rules\RuleAssignmentModel.cs" />
+    <Compile Include="Models\Rules\RuleConfigurationModel.cs" />
+    <Compile Include="Models\Rules\RuleSelectionDetailsModel.cs" />
+    <Compile Include="Models\Rules\RuleToColumnsAssignmentModel.cs" />
+    <Compile Include="Models\SettingsModel.cs" />
+    <Compile Include="Structures\ColumnMappingHelper.cs" />
+    <Compile Include="Structures\Mapping.cs" />
+    <Compile Include="Structures\NavigationTree.cs" />
+    <Compile Include="Structures\NavigationTreeEntry.cs" />
+    <Compile Include="UIHelpers.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\DataGridHelper.cs" />
+    <Compile Include="Windows\DlgExcelExport.xaml.cs">
+      <DependentUpon>DlgExcelExport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgRowEntryDetails.xaml.cs">
+      <DependentUpon>DlgRowEntryDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgRuleConfiguration.xaml.cs">
+      <DependentUpon>DlgRuleConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgMainWindow.xaml.cs">
+      <DependentUpon>DlgMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgNewProfile.xaml.cs">
+      <DependentUpon>DlgNewProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgNewTableMapping.xaml.cs">
+      <DependentUpon>DlgNewTableMapping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgPopupProgress.xaml.cs">
+      <DependentUpon>DlgPopupProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgRuleAssignment.xaml.cs">
+      <DependentUpon>DlgRuleAssignment.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\CtlListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Datagrid\CtlColumnHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Filters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\CtlNewTableMappingPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\CtlNewTableMappingPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\CtlStoredProcedure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\CtlTableMappingDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\DatabaseChoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\DataPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\FilterCriteria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\Mapping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\ProfileDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\TableMappingDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Result\ResultOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Result\ResultOverviewDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Result\ResultOverviewTableDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Result\ResultRowsDifferentColumnWise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Result\ResultRowsDifferent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Result\ResultRowsMissing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\SortMapping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Rules\ExtendedDataPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Rules\RuleToColumnsAssignment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TableMappingSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\AppResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\DetailViews.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\MainWindowResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgExcelExport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgRowEntryDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgRuleConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgNewProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgNewTableMapping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgPopupProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgRuleAssignment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdCommon\AvdCommon.csproj">
+      <Project>{14B42A75-0B7A-4FF2-867C-31DA6A45D180}</Project>
+      <Name>AvdCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdWpfControls\AvdWpfControls.csproj">
+      <Project>{E3B12F3F-E420-48FA-B991-FA1FF8D603F2}</Project>
+      <Name>AvdWpfControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdWpfStyles\AvdWpfStyles.csproj">
+      <Project>{FED8686B-7BE7-432C-B1F6-FA5900F6BAC2}</Project>
+      <Name>AvdWpfStyles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewValidatorLogic\ViewValidatorLogic.csproj">
+      <Project>{CED0E4F8-66EC-4C1C-8356-A85DFA530240}</Project>
+      <Name>ViewValidatorLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Qute\Address-book-open16.png" />
+    <Resource Include="Resources\Qute\Address-book-open24.png" />
+    <Resource Include="Resources\Qute\Address-book-open30.png" />
+    <Resource Include="Resources\Qute\Address-book16.png" />
+    <Resource Include="Resources\Qute\Address-book24.png" />
+    <Resource Include="Resources\Qute\Address-book30.png" />
+    <Resource Include="Resources\Qute\Advanced16.png" />
+    <Resource Include="Resources\Qute\Advanced24.png" />
+    <Resource Include="Resources\Qute\Advanced30.png" />
+    <Resource Include="Resources\Qute\Apply16.png" />
+    <Resource Include="Resources\Qute\Apply24.png" />
+    <Resource Include="Resources\Qute\Apply30.png" />
+    <Resource Include="Resources\Qute\Attach16.png" />
+    <Resource Include="Resources\Qute\Attach24.png" />
+    <Resource Include="Resources\Qute\Attach30.png" />
+    <Resource Include="Resources\Qute\Back16.png" />
+    <Resource Include="Resources\Qute\Back24.png" />
+    <Resource Include="Resources\Qute\Back30.png" />
+    <Resource Include="Resources\Qute\Balloon16.png" />
+    <Resource Include="Resources\Qute\Balloon24.png" />
+    <Resource Include="Resources\Qute\Balloon30.png" />
+    <Resource Include="Resources\Qute\Clock16.png" />
+    <Resource Include="Resources\Qute\Clock24.png" />
+    <Resource Include="Resources\Qute\Clock30.png" />
+    <Resource Include="Resources\Qute\Copy16.png" />
+    <Resource Include="Resources\Qute\Copy24.png" />
+    <Resource Include="Resources\Qute\Copy30.png" />
+    <Resource Include="Resources\Qute\Cut16.png" />
+    <Resource Include="Resources\Qute\Cut24.png" />
+    <Resource Include="Resources\Qute\Cut30.png" />
+    <Resource Include="Resources\Qute\Delete16.png" />
+    <Resource Include="Resources\Qute\Delete24.png" />
+    <Resource Include="Resources\Qute\Delete30.png" />
+    <Resource Include="Resources\Qute\Document16.png" />
+    <Resource Include="Resources\Qute\Document24.png" />
+    <Resource Include="Resources\Qute\Document30.png" />
+    <Resource Include="Resources\Qute\Downloads16.png" />
+    <Resource Include="Resources\Qute\Downloads24.png" />
+    <Resource Include="Resources\Qute\Downloads30.png" />
+    <Resource Include="Resources\Qute\Envelope-front16.png" />
+    <Resource Include="Resources\Qute\Envelope-front24.png" />
+    <Resource Include="Resources\Qute\Envelope-front30.png" />
+    <Resource Include="Resources\Qute\Envelope-open16.png" />
+    <Resource Include="Resources\Qute\Envelope-open24.png" />
+    <Resource Include="Resources\Qute\Envelope-open30.png" />
+    <Resource Include="Resources\Qute\Envelope16.png" />
+    <Resource Include="Resources\Qute\Envelope24.png" />
+    <Resource Include="Resources\Qute\Envelope30.png" />
+    <Resource Include="Resources\Qute\Error16.png" />
+    <Resource Include="Resources\Qute\Error24.png" />
+    <Resource Include="Resources\Qute\Error30.png" />
+    <Resource Include="Resources\Qute\Folder16.png" />
+    <Resource Include="Resources\Qute\Folder24.png" />
+    <Resource Include="Resources\Qute\Folder30.png" />
+    <Resource Include="Resources\Qute\Fonts16.png" />
+    <Resource Include="Resources\Qute\Fonts24.png" />
+    <Resource Include="Resources\Qute\Fonts30.png" />
+    <Resource Include="Resources\Qute\Forward16.png" />
+    <Resource Include="Resources\Qute\Forward24.png" />
+    <Resource Include="Resources\Qute\Forward30.png" />
+    <Resource Include="Resources\Qute\Get mail16.png" />
+    <Resource Include="Resources\Qute\Get mail24.png" />
+    <Resource Include="Resources\Qute\Get mail30.png" />
+    <Resource Include="Resources\Qute\Glasses16.png" />
+    <Resource Include="Resources\Qute\Glasses24.png" />
+    <Resource Include="Resources\Qute\Glasses30.png" />
+    <Resource Include="Resources\Qute\Globe16.png" />
+    <Resource Include="Resources\Qute\Globe24.png" />
+    <Resource Include="Resources\Qute\Globe30.png" />
+    <Resource Include="Resources\Qute\Help16.png" />
+    <Resource Include="Resources\Qute\Help24.png" />
+    <Resource Include="Resources\Qute\Help30.png" />
+    <Resource Include="Resources\Qute\History16.png" />
+    <Resource Include="Resources\Qute\History24.png" />
+    <Resource Include="Resources\Qute\History30.png" />
+    <Resource Include="Resources\Qute\Home16.png" />
+    <Resource Include="Resources\Qute\Home24.png" />
+    <Resource Include="Resources\Qute\Home30.png" />
+    <Resource Include="Resources\Qute\Junk16.png" />
+    <Resource Include="Resources\Qute\Junk24.png" />
+    <Resource Include="Resources\Qute\Junk30.png" />
+    <Resource Include="Resources\Qute\Key16.png" />
+    <Resource Include="Resources\Qute\Key24.png" />
+    <Resource Include="Resources\Qute\Key30.png" />
+    <Resource Include="Resources\Qute\Landscape-orientation16.png" />
+    <Resource Include="Resources\Qute\Landscape-orientation24.png" />
+    <Resource Include="Resources\Qute\Landscape-orientation30.png" />
+    <Resource Include="Resources\Qute\Lock16.png" />
+    <Resource Include="Resources\Qute\Lock24.png" />
+    <Resource Include="Resources\Qute\Lock30.png" />
+    <Resource Include="Resources\Qute\Message16.png" />
+    <Resource Include="Resources\Qute\Message24.png" />
+    <Resource Include="Resources\Qute\Message30.png" />
+    <Resource Include="Resources\Qute\Monitor16.png" />
+    <Resource Include="Resources\Qute\Monitor24.png" />
+    <Resource Include="Resources\Qute\Monitor30.png" />
+    <Resource Include="Resources\Qute\Move16.png" />
+    <Resource Include="Resources\Qute\Move24.png" />
+    <Resource Include="Resources\Qute\Move30.png" />
+    <Resource Include="Resources\Qute\New folder16.png" />
+    <Resource Include="Resources\Qute\New folder24.png" />
+    <Resource Include="Resources\Qute\New folder30.png" />
+    <Resource Include="Resources\Qute\Note16.png" />
+    <Resource Include="Resources\Qute\Note24.png" />
+    <Resource Include="Resources\Qute\Note30.png" />
+    <Resource Include="Resources\Qute\Options16.png" />
+    <Resource Include="Resources\Qute\Options24.png" />
+    <Resource Include="Resources\Qute\Options30.png" />
+    <Resource Include="Resources\Qute\Paste16.png" />
+    <Resource Include="Resources\Qute\Paste24.png" />
+    <Resource Include="Resources\Qute\Paste30.png" />
+    <Resource Include="Resources\Qute\Pen16.png" />
+    <Resource Include="Resources\Qute\Pen24.png" />
+    <Resource Include="Resources\Qute\Pen30.png" />
+    <Resource Include="Resources\Qute\Person16.png" />
+    <Resource Include="Resources\Qute\Person24.png" />
+    <Resource Include="Resources\Qute\Person30.png" />
+    <Resource Include="Resources\Qute\Portrait-orientation16.png" />
+    <Resource Include="Resources\Qute\Portrait-orientation24.png" />
+    <Resource Include="Resources\Qute\Portrait-orientation30.png" />
+    <Resource Include="Resources\Qute\Print16.png" />
+    <Resource Include="Resources\Qute\Print24.png" />
+    <Resource Include="Resources\Qute\Print30.png" />
+    <Resource Include="Resources\Qute\Privacy16.png" />
+    <Resource Include="Resources\Qute\Privacy24.png" />
+    <Resource Include="Resources\Qute\Privacy30.png" />
+    <Resource Include="Resources\Qute\Properties16.png" />
+    <Resource Include="Resources\Qute\Properties24.png" />
+    <Resource Include="Resources\Qute\Properties30.png" />
+    <Resource Include="Resources\Qute\Question16.png" />
+    <Resource Include="Resources\Qute\Question24.png" />
+    <Resource Include="Resources\Qute\Question30.png" />
+    <Resource Include="Resources\Qute\Quote16.png" />
+    <Resource Include="Resources\Qute\Quote24.png" />
+    <Resource Include="Resources\Qute\Quote30.png" />
+    <Resource Include="Resources\Qute\Reload16.png" />
+    <Resource Include="Resources\Qute\Reload24.png" />
+    <Resource Include="Resources\Qute\Reload30.png" />
+    <Resource Include="Resources\Qute\Rename16.png" />
+    <Resource Include="Resources\Qute\Rename24.png" />
+    <Resource Include="Resources\Qute\Rename30.png" />
+    <Resource Include="Resources\Qute\Search document16.png" />
+    <Resource Include="Resources\Qute\Search document24.png" />
+    <Resource Include="Resources\Qute\Search document30.png" />
+    <Resource Include="Resources\Qute\Search16.png" />
+    <Resource Include="Resources\Qute\Search24.png" />
+    <Resource Include="Resources\Qute\Search30.png" />
+    <Resource Include="Resources\Qute\Send16.png" />
+    <Resource Include="Resources\Qute\Send24.png" />
+    <Resource Include="Resources\Qute\Send30.png" />
+    <Resource Include="Resources\Qute\Spell-check16.png" />
+    <Resource Include="Resources\Qute\Spell-check24.png" />
+    <Resource Include="Resources\Qute\Spell-check30.png" />
+    <Resource Include="Resources\Qute\Star-gold16.png" />
+    <Resource Include="Resources\Qute\Star-gold24.png" />
+    <Resource Include="Resources\Qute\Star-gold30.png" />
+    <Resource Include="Resources\Qute\Star-silver16.png" />
+    <Resource Include="Resources\Qute\Star-silver24.png" />
+    <Resource Include="Resources\Qute\Star-silver30.png" />
+    <Resource Include="Resources\Qute\Star16.png" />
+    <Resource Include="Resources\Qute\Star24.png" />
+    <Resource Include="Resources\Qute\Star30.png" />
+    <Resource Include="Resources\Qute\Stop16.png" />
+    <Resource Include="Resources\Qute\Stop24.png" />
+    <Resource Include="Resources\Qute\Stop30.png" />
+    <Resource Include="Resources\Qute\Theme16.png" />
+    <Resource Include="Resources\Qute\Theme24.png" />
+    <Resource Include="Resources\Qute\Theme30.png" />
+    <Resource Include="Resources\Qute\Trash16.png" />
+    <Resource Include="Resources\Qute\Trash24.png" />
+    <Resource Include="Resources\Qute\Trash30.png" />
+    <Resource Include="Resources\Qute\Wand16.png" />
+    <Resource Include="Resources\Qute\Wand24.png" />
+    <Resource Include="Resources\Qute\Wand30.png" />
+    <Resource Include="Resources\Qute\Warning16.png" />
+    <Resource Include="Resources\Qute\Warning24.png" />
+    <Resource Include="Resources\Qute\Warning30.png" />
+    <Resource Include="Resources\Qute\Write16.png" />
+    <Resource Include="Resources\Qute\Write24.png" />
+    <Resource Include="Resources\Qute\Write30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
+    <Resource Include="Resources\AvenDATA.ico" />
+    <Resource Include="Resources\delete.png" />
+    <Resource Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\shutdown16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\database16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\validate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Localisation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AddDocument.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ValidationDatabase.png" />
+    <Resource Include="Resources\ViewDatabase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ValidationDatabase16.png" />
+    <Resource Include="Resources\ViewDatabase16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="viewvalidator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\viewvalidator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EditPen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Attach16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\eye.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

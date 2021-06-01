@@ -1,0 +1,25 @@
+﻿<Window x:Class="eBalanceKit.Windows.Management.Edit.DlgEditReportSelection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Delete="clr-namespace:eBalanceKit.Windows.Management.Delete"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
+        ResizeMode="NoResize" Icon="/eBalanceKitResources;component/Resources/Edit1.png"
+        Title="Bericht ändern" Height="400" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- content -->
+        <Delete:CtlSelectReport />
+        <!-- button bar -->
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal" Margin="5">
+                <Button Content="{x:Static Localisation:ResourcesCommon.Ok}" Height="23" HorizontalAlignment="Left" Name="btnOk" VerticalAlignment="Top" Width="75" Click="BtnOkClick" IsEnabled="{Binding SelectedReport, Converter={StaticResource ValueExistsToBoolConverter}}" />
+                <Button Content="{x:Static Localisation:ResourcesCommon.Cancel}" Height="23" HorizontalAlignment="Left" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="BtnCancelClick" Margin="5,0,0,0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

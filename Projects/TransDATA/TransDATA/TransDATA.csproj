@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B0F1857-2F2D-4623-B5E8-C67892436C99}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TransDATA</RootNamespace>
+    <AssemblyName>TransDATA</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>3.2.3.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\TransDATA.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Assemblies\32Bit\External\iTextSharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\Assemblies\64Bit\External\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\Config\CtlBinaryConfig.xaml.cs">
+      <DependentUpon>CtlBinaryConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlCsvConfig.xaml.cs">
+      <DependentUpon>CtlCsvConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlCsvInputConfig.xaml.cs">
+      <DependentUpon>CtlCsvInputConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlCsvOutputConfig.xaml.cs">
+      <DependentUpon>CtlCsvOutputConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlDatabaseExportConfig.xaml.cs">
+      <DependentUpon>CtlDatabaseExportConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlDatabaseImportConfig.xaml.cs">
+      <DependentUpon>CtlDatabaseImportConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlGdpduOutputConfig.xaml.cs">
+      <DependentUpon>CtlGdpduOutputConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlInputConfigPanel.xaml.cs">
+      <DependentUpon>CtlInputConfigPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlOutputConfigPanel.xaml.cs">
+      <DependentUpon>CtlOutputConfigPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlHistorySelector.xaml.cs">
+      <DependentUpon>CtlHistorySelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlInputConfigWithSelector.xaml.cs">
+      <DependentUpon>CtlInputConfigWithSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlMailConfig.xaml.cs">
+      <DependentUpon>CtlMailConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlOutputConfigWithSelector.xaml.cs">
+      <DependentUpon>CtlOutputConfigWithSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Config\CtlSqlConfig.xaml.cs">
+      <DependentUpon>CtlSqlConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlColumnList.xaml.cs">
+      <DependentUpon>CtlColumnList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlDatasetpreview.xaml.cs">
+      <DependentUpon>CtlDatasetpreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlEditUser.xaml.cs">
+      <DependentUpon>CtlEditUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlExport.xaml.cs">
+      <DependentUpon>CtlExport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlFilter.xaml.cs">
+      <DependentUpon>CtlFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlFilterTableList.xaml.cs">
+      <DependentUpon>CtlFilterTableList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlImportDbStructure.xaml.cs">
+      <DependentUpon>CtlImportDbStructure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlInfo.xaml.cs">
+      <DependentUpon>CtlInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlLegend.xaml.cs">
+      <DependentUpon>CtlLegend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlLogin.xaml.cs">
+      <DependentUpon>CtlLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlMain.xaml.cs">
+      <DependentUpon>CtlMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlProfile.xaml.cs">
+      <DependentUpon>CtlProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlProfileDetailsWrapper.xaml.cs">
+      <DependentUpon>CtlProfileDetailsWrapper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlProfileGeneral.xaml.cs">
+      <DependentUpon>CtlProfileGeneral.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlProfileManagement.xaml.cs">
+      <DependentUpon>CtlProfileManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlSelectDatabase.xaml.cs">
+      <DependentUpon>CtlSelectDatabase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlSortColumnList.xaml.cs">
+      <DependentUpon>CtlSortColumnList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlSortTableList.xaml.cs">
+      <DependentUpon>CtlSortTableList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlTableInfo.xaml.cs">
+      <DependentUpon>CtlTableInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlTableList.xaml.cs">
+      <DependentUpon>CtlTableList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlSortEmptyTableList.xaml.cs">
+      <DependentUpon>CtlSortEmptyTableList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlTransfer.xaml.cs">
+      <DependentUpon>CtlTransfer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlInitPassword.xaml.cs">
+      <DependentUpon>CtlInitPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\BoolInversionConverter.cs" />
+    <Compile Include="Converter\BoolToStringConverter.cs" />
+    <Compile Include="Converter\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converter\EnumMatchToBooleanConverter.cs" />
+    <Compile Include="Converter\EnumMatchToVisibilityConverter.cs" />
+    <Compile Include="Converter\EnumToTransferStateImage.cs" />
+    <Compile Include="Converter\LanguageToImageConverter.cs" />
+    <Compile Include="Converter\PercentageConverter.cs" />
+    <Compile Include="Converter\StringToDecimalConverter.cs" />
+    <Compile Include="Converter\ValueExistsToBoolConverter.cs" />
+    <Compile Include="Converter\ValueExistsToVisibilityConverter.cs" />
+    <Compile Include="Converter\ValueNotExistsToBoolConverter.cs" />
+    <Compile Include="Converter\ValueNotExistsToVisibilityConverter.cs" />
+    <Compile Include="Models\HistorySelectorModel.cs" />
+    <Compile Include="Models\ConfigModels\OutputModelBase.cs" />
+    <Compile Include="Models\ConfigModels\SelectCsvInputModel.cs" />
+    <Compile Include="Models\ConfigModels\SelectCsvOutputModel.cs" />
+    <Compile Include="Models\ConfigModels\SelectDatabaseInputModel.cs" />
+    <Compile Include="Models\ConfigModels\SelectDatabaseOutputModel.cs" />
+    <Compile Include="Models\ConfigModels\SelectGdpduOutputModel.cs" />
+    <Compile Include="Models\EditMailModel.cs" />
+    <Compile Include="Models\EditProfileModel.cs" />
+    <Compile Include="Models\EditUserModel.cs" />
+    <Compile Include="Models\ImportDbStructureModel.cs" />
+    <Compile Include="Models\InitPasswordModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MainWindowModel.cs" />
+    <Compile Include="Models\ProfileDetailModel.cs" />
+    <Compile Include="Models\ProfileManagementModel.cs" />
+    <Compile Include="Models\SelectedProfileModel.cs" />
+    <Compile Include="Models\TransferModel.cs" />
+    <Compile Include="Converter\MyDebugConverter.cs" />
+    <Compile Include="ResourceDictionaries\AppResources.cs" />
+    <Compile Include="Structures\ColumnDisplayOptions.cs" />
+    <Compile Include="Structures\NavigationTree.cs" />
+    <Compile Include="Structures\NavigationTreeEntry.cs" />
+    <Compile Include="Structures\TableDisplayOptions.cs" />
+    <Compile Include="TemplateSelectors\ConnectionStringParameterSelector.cs" />
+    <Compile Include="UIHelpers.cs" />
+    <Compile Include="Windows\DlgEditMail.xaml.cs">
+      <DependentUpon>DlgEditMail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgEditProfile.xaml.cs">
+      <DependentUpon>DlgEditProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgEditUser.xaml.cs">
+      <DependentUpon>DlgEditUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgExport.xaml.cs">
+      <DependentUpon>DlgExport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgHistorySelector.xaml.cs">
+      <DependentUpon>DlgHistorySelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgImportDbStructure.xaml.cs">
+      <DependentUpon>DlgImportDbStructure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgInfo.xaml.cs">
+      <DependentUpon>DlgInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgInitPassword.xaml.cs">
+      <DependentUpon>DlgInitPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgLogin.xaml.cs">
+      <DependentUpon>DlgLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgMain.xaml.cs">
+      <DependentUpon>DlgMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgProfileManagement.xaml.cs">
+      <DependentUpon>DlgProfileManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgTransfer.xaml.cs">
+      <DependentUpon>DlgTransfer.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\Config\CtlBinaryConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlCsvConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlCsvInputConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlCsvOutputConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlDatabaseExportConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlDatabaseImportConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlGdpduOutputConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlInputConfigPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlOutputConfigPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlHistorySelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlInputConfigWithSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlMailConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlOutputConfigWithSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Config\CtlSqlConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlColumnList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlDatasetpreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlEditUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlExport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlFilterTableList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlImportDbStructure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlLegend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlProfileDetailsWrapper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlProfileGeneral.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlProfileManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlSelectDatabase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlSortColumnList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlSortTableList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlTableInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlTableList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlSortEmptyTableList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CtlTransfer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CtlInitPassword.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\AppResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\NavigationResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DlgEditMail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgEditProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgEditUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgExport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgHistorySelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgImportDbStructure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgInitPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgProfileManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgTransfer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\AvdCommon\AvdCommon.csproj">
+      <Project>{89148742-F482-479E-8831-579F54FDF08A}</Project>
+      <Name>AvdCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\AvdWpfControls\AvdWpfControls.csproj">
+      <Project>{E3B12F3F-E420-48FA-B991-FA1FF8D603F2}</Project>
+      <Name>AvdWpfControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\AvdWpfStyles\AvdWpfStyles.csproj">
+      <Project>{FED8686B-7BE7-432C-B1F6-FA5900F6BAC2}</Project>
+      <Name>AvdWpfStyles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\GenericOdbc\GenericOdbc\GenericOdbc.csproj">
+      <Project>{2C488B6E-12DF-4297-B25D-1A120BF5AEEB}</Project>
+      <Name>GenericOdbc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\LogHelper\LogHelper\AV.Log.LogHelper.csproj">
+      <Project>{1AFE5981-7268-4249-AFFA-77E42495886E}</Project>
+      <Name>AV.Log.LogHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\PdfGenerator\PdfGenerator\PdfGenerator.csproj">
+      <Project>{0867E9E0-6D5D-4E8A-A42F-ED839B22707F}</Project>
+      <Name>PdfGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Base\Base.csproj">
+      <Project>{E01C439B-FA3F-4F2B-9643-90631A8716F8}</Project>
+      <Name>Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{24D507BA-D743-4B41-B6AA-0F84581437D8}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Config\Config.csproj">
+      <Project>{AFF0C5D2-EA00-4A91-8E6E-003E534193E0}</Project>
+      <Name>Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{0EA5B063-0CC0-48AC-BB0B-5628D7971E6C}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\background_header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TransDATA.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
+    <Resource Include="Resources\delete.png" />
+    <Resource Include="Resources\Info1.png" />
+    <Resource Include="Resources\User1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\shutdown24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Profiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\eye.png" />
+    <Resource Include="Resources\Database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DE.png" />
+    <Resource Include="Resources\EN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Filter16.png" />
+    <Resource Include="Resources\RemoveFilter.png" />
+    <Resource Include="Resources\Sort16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ReadDatabaseStructure24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Export24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Documentation24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Export16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Mail24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ValidationError.png" />
+    <Resource Include="Resources\ValidationWarn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Checkmark24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SignalLightGreen_2.png" />
+    <Resource Include="Resources\SignalLightRed_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="skip.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

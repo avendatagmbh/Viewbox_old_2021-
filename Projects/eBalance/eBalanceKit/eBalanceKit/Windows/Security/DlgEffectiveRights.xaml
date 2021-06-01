@@ -1,0 +1,6 @@
+﻿<Window x:Class="eBalanceKit.Windows.Security.DlgEffectiveRights"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="600" Width="800" xmlns:Security="clr-namespace:eBalanceKit.Windows.Security" WindowStartupLocation="CenterOwner" Title="{Binding Title}" Icon="/eBalanceKitResources;component/Resources/EffectiveRights.png" PreviewKeyDown="Window_PreviewKeyDown">
+    <Security:CtlEffectiveRights Ok="CtlEffectiveRights_Ok" />
+</Window>

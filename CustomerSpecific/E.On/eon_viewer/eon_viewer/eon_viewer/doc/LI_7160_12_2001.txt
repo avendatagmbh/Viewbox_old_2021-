@@ -1,0 +1,171 @@
+1
+  TRANS EUROPA NATURGAS PIPELINE GMBH (TENP)                          Blatt   1
+             Allotment Procedure
+0 Monat 12            Jahr 2001      Datum 21.12.2010
+  Mengenangaben in m3 bezogen auf 0 Celsius, 1,01325 bar, HSN BOCHOLTZ
+  K-ZAHL nach Standard-GERG-88
+0 A) Berechnung der Leitungsatmung   H1 =  9824 kcal/m3  H2 =  9778 kcal/m3
+0    Abschnitt 1
+     Geometrisches Volumen     in m3                9804,3
+     Absoluter Druck am Anfang in bar                 53,4
+     Absoluter Druck am Ende   in bar                 51,4
+     Mittlerer Druck           in bar                 52,4
+     Gastemperatur am Anfang   in K                  281,7
+     Gastemperatur am Ende     in K                  280,0
+     Mittlere Gastemperatur    in K                  281,5
+     K-Zahl                                         0,8705
+     Gewichtete Durchflu~rate  in m3/h             1245214
+     Leitungsinhalt  am  1.12.01    572322 m3(H1)   575015 m3(H2)   5622495 Mcal
+     Leitungsinhalt  am  1. 1.02                    565297 m3(H2)   5527477 Mcal
+     Leitungsinhalts{nderung                         -9718 m3(H2)    -95018 Mcal
+0    Abschnitt 2
+     Geometrisches Volumen     in m3              264459,4
+     Absoluter Druck am Anfang in bar                 66,4
+     Absoluter Druck am Ende   in bar                 55,6
+     Mittlerer Druck           in bar                 61,2
+     Gastemperatur am Anfang   in K                  303,9
+     Gastemperatur am Ende     in K                  278,9
+     Mittlere Gastemperatur    in K                  286,1
+     K-Zahl                                         0,8594
+     Gewichtete Durchflu~rate  in m3/h             1143758
+     Leitungsinhalt  am  1.12.01  17419029 m3(H1) 17500975 m3(H2) 171124537 Mcal
+     Leitungsinhalt  am  1. 1.02                  17733996 m3(H2) 173403012 Mcal
+     Leitungsinhalts{nderung                        233021 m3(H2)   2278475 Mcal
+0    Abschnitt 3
+     Geometrisches Volumen     in m3              142424,7
+     Absoluter Druck am Anfang in bar                 64,5
+     Absoluter Druck am Ende   in bar                 54,8
+     Mittlerer Druck           in bar                 59,8
+     Gastemperatur am Anfang   in K                  301,1
+     Gastemperatur am Ende     in K                  278,7
+     Mittlere Gastemperatur    in K                  290,5
+     K-Zahl                                         0,8749
+     Gewichtete Durchflu~rate  in m3/h             1695376
+     Leitungsinhalt  am  1.12.01   9030629 m3(H1)  9073113 m3(H2)  88716901 Mcal
+     Leitungsinhalt  am  1. 1.02                   9030422 m3(H2)  88299464 Mcal
+     Leitungsinhalts{nderung                        -42691 m3(H2)   -417437 Mcal
+0    Abschnitt 4
+     Geometrisches Volumen     in m3              138174,1
+     Absoluter Druck am Anfang in bar                 67,3
+     Absoluter Druck am Ende   in bar                 57,5
+     Mittlerer Druck           in bar                 62,5
+     Gastemperatur am Anfang   in K                  299,2
+     Gastemperatur am Ende     in K                  279,2
+     Mittlere Gastemperatur    in K                  289,3
+     K-Zahl                                         0,8673
+     Gewichtete Durchflu~rate  in m3/h             1564790
+     Leitungsinhalt  am  1.12.01   9449631 m3(H1)  9494086 m3(H2)  92833173 Mcal
+     Leitungsinhalt  am  1. 1.02                   9281875 m3(H2)  90758177 Mcal
+     Leitungsinhalts{nderung                       -212211 m3(H2)  -2074997 Mcal
+1
+0    Abschnitt 5
+     Geometrisches Volumen     in m3               48427,5
+     Absoluter Druck am Anfang in bar                 66,9
+     Absoluter Druck am Ende   in bar                 61,5
+     Mittlerer Druck           in bar                 64,2
+     Gastemperatur am Anfang   in K                  294,5
+     Gastemperatur am Ende     in K                  288,2
+     Mittlere Gastemperatur    in K                  292,6
+     K-Zahl                                         0,8702
+     Gewichtete Durchflu~rate  in m3/h             1474706
+     Leitungsinhalt  am  1.12.01   3297208 m3(H1)  3312719 m3(H2)  32391768 Mcal
+     Leitungsinhalt  am  1. 1.02                   3293228 m3(H2)  32201186 Mcal
+     Leitungsinhalts{nderung                        -19491 m3(H2)   -190582 Mcal
+0    Ges.Leitungsinhalt 1.12.01  39768819 m3(H1)  39955909 m3(H2)  390688874 Mcal
+     Ges.Leitungsinhalt 1. 1.02                   39904819 m3(H2)  390189316 Mcal
+     Leitungsinhalts{nderung Gesamt                 -51090 m3(H2)    -499559 Mcal
+1
+  TRANS EUROPA NATURGAS PIPELINE GMBH (TENP)                          Blatt   2
+             Allotment Procedure
+0 Monat 12            Jahr 2001      Datum 21.12.2010
+  Mengenangaben in m3 bezogen auf 0 Celsius, 1,01325 bar
+  K-ZAHL nach Standard-GERG-88
+- B) Mengenaufteilung WALLBACH       Monatsmengen    RUHRGAS-     Eni/SWISS-
+     Eingabewerte (Me~werte):               in m3  Anteil in m3  Anteil in m3
+0    Q0 Bocholtz                        939424068     112596951     826827117
+     Q1 Stolberg                                0
+     Q2 Mittelbrunn                     520620148
+     Q5 Wallbach                       1111489000   (incl. EniSW-Menge)
+0    Q  0   Bocholtz                            0
+     Q  1   VERLAUTENHEIDE               34692118
+     Q  2   Stolberg                            0
+     Q  3   Vossenack                      661379
+     Q  4   Wallenthaler  H¦he            4536182
+     Q  5   Hirschberg                     617809
+     Q  6   Sch¦nbach                     5990779
+     Q  7   Weiler                        2056828
+     Q  8   Alf                          19959802
+     Q  9   Sohren                        3537276
+     Q 10   Sienhachenbach               28652390
+     Q 11   Mittelbrunn S}d                 42955
+     Q 12   Donsieders                     991249
+     Q 13   Merzalben                     3357278
+     Q 14   Klingenm}nster                7441300
+     Q 15   Minfeld                       7367206
+     Q 16   B}chelberg                   86247986
+     Q 17   Willst{tt                    83248731
+     Q 18   Tunsel                       29254783
+     Q 19   RG H}gelheim                     3653
+     Q 20   Nordschwaben                 21494230
+
+     ST Sonderverluste                          0
+0    C1   Eigenverbrauch Stolberg         2723042
+          davon
+     Cadd Stolberg Turbo-Expander           23569
+     C2   Eigenverbrauch Mittelbrunn      3307887
+     C3   Eigenverbrauch Schwarzach       3376645
+     C4   Eigenverbrauch H}gelheim        2554361
+0    X  G E S A M T - Aufteilungsfaktor         0,740966461389
+1
+1
+  TRANS EUROPA NATURGAS PIPELINE GMBH (TENP)                          Blatt   3
+             Allotment Procedure
+0 Monat 12            Jahr 2001      Datum 21.12.2010
+  Mengenangaben in m3 bezogen auf 0 Celsius, 1,01325 bar, HSN BOCHOLTZ
+  K-ZAHL nach Standard-GERG-88
+0     Hsn Bocholtz             in kcal/m3    9778
+      Hsn Stolberg             in kcal/m3       0
+      Hsn Bocholtz/Stolberg    in kcal/m3    9776
+      Hsn Mittelbrunn          in kcal/m3    9684
+      Hsn Wallbach             in kcal/m3    9749,92834617
+      Hsn Eigenv.Stolberg      in kcal/m3    9776
+      Hsn Eigenv.Mittelbrunn   in kcal/m3    9752
+0     CO2 Bocholtz   in Mol.-Proz.           1,48
+      d   Bocholtz   rel. Dichte           0,6306
+      H2  Bocholtz   in Mol.-Proz.           0,00
+      CO2 Bo/Stolb.  in Mol.-Proz.           1,49
+      d   Bo/Stolb.  rel. Dichte           0,6299
+      H2  Bo/Stolb.  in Mol.-Proz.           0,00
+      CO2 Wallbach   in Mol.-Proz.           1,13
+      d   Wallbach   rel. Dichte           0,6161
+      H2  Wallbach   in Mol.-Proz.           0,00
+-     Gerechnete Werte (HSN BOCHOLTZ):
+0     CT Summe Eigenverbrauch            11935555
+      LT Ges.Mess.u.Leitungsverluste     -4596212
+      LT EniSW                           -3541287
+      LT RG                              -1054925
+      PT EniSW                             -39364
+      PT RG                                -11726
+      ST EniSW                                  0
+      ST RG                                     0
+      CT EniSW                            9177945
+      CT RG                               2757610
+      X  Aufteilungsfaktor         0,740966461389
+      Z1 EniSW                     0,770479507215
+      Z1 RG                        0,229520492785
+      Z2 EniSW                     0,770479507215
+      Z2 RG                        0,229520492785
+      V  EniSW                          826827117
+      V  RG                             628212160
+
+      V EniSW + V RG                   1455039277
+      Q_0 + Q0 + Q1 + Q2               1455039277
+      Differenz                                 0
+
+      Q5 EniSW                          821229823
+      Q5 RG                             287068204
+
+      Q5 EniSW + Q5 RG                 1108298027
+      Q5                               1108298027
+      Differenz                                 0
+1

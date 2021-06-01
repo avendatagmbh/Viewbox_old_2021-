@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlParser>
+  <sqlObjects>
+    <objectDefinitions>
+      <staticObjects>
+        <Transcodings>
+            <Value>UTF8</Value>
+        </Transcodings>
+        <Types>
+          
+        </Types>
+      </staticObjects>
+      <statements>
+        <SELECTStatement></SELECTStatement>
+      </statements>
+      <functions>
+        <CONVERTFunction>
+          <CodeShape>CONVERT({expression} USING {transcoding})</CodeShape>
+          <Expression base="SimpleExpression" />
+          <Transcoding />
+        </CONVERTFunction>
+      </functions>
+      <expressions>
+      
+      </expressions>
+    </objectDefinitions>
+    <objectRelations>
+      
+    </objectRelations>
+  </sqlObjects>
+</sqlParser>

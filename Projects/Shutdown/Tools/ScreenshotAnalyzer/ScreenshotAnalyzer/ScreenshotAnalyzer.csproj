@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C8A280E2-F498-4F7B-80A6-8ECC23E1CFA4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScreenshotAnalyzer</RootNamespace>
+    <AssemblyName>ScreenshotAnalyzer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\CtlListView.xaml.cs">
+      <DependentUpon>CtlListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProfileRelated\CtlProfileDetails.xaml.cs">
+      <DependentUpon>CtlProfileDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProfileRelated\CtlTableDetails.xaml.cs">
+      <DependentUpon>CtlTableDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Results\CtlColumnHeader.xaml.cs">
+      <DependentUpon>CtlColumnHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Results\CtlCorrectWords.xaml.cs">
+      <DependentUpon>CtlCorrectWords.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Results\CtlCorrectWordsColumnWise.xaml.cs">
+      <DependentUpon>CtlCorrectWordsColumnWise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Results\CtlTextRecognitionResult.xaml.cs">
+      <DependentUpon>CtlTextRecognitionResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\IntToBoolConverter.cs" />
+    <Compile Include="Converter\RecognitionToBrushConverter.cs" />
+    <Compile Include="Manager\ProfileModelManager.cs" />
+    <Compile Include="Models\ListView\IListViewModel.cs" />
+    <Compile Include="Models\ListView\ListViewModelBase.cs" />
+    <Compile Include="Models\ListView\ListViewProfileModel.cs" />
+    <Compile Include="Models\ListView\ListViewTableModel.cs" />
+    <Compile Include="Models\ProfileRelated\ProfileModel.cs" />
+    <Compile Include="Models\ProfileRelated\TableModel.cs" />
+    <Compile Include="Models\Results\ColumnHeaderModel.cs" />
+    <Compile Include="Models\Results\CorrectionAssistantModel.cs" />
+    <Compile Include="Models\Results\TextRecognitionResultModel.cs" />
+    <Compile Include="Models\TextTableModel.cs" />
+    <Compile Include="Resources\Localisation\ResourcesGui.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesGui.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Structures\Navigation\NavigationTree.cs" />
+    <Compile Include="Structures\Navigation\NavigationTreeEntry.cs" />
+    <Compile Include="Structures\SelectOcrAreasHelper\EditModeBase.cs" />
+    <Compile Include="Structures\SelectOcrAreasHelper\EditModeSelectAndResizeRectangle.cs" />
+    <Compile Include="Structures\SelectOcrAreasHelper\EditModeSelectAreaOrAnchor.cs" />
+    <Compile Include="Windows\DlgCorrectionAssistant.xaml.cs">
+      <DependentUpon>DlgCorrectionAssistant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgInfo.xaml.cs">
+      <DependentUpon>DlgInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgMainWindow.xaml.cs">
+      <DependentUpon>DlgMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgNewProfile.xaml.cs">
+      <DependentUpon>DlgNewProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgPopupProgress.xaml.cs">
+      <DependentUpon>DlgPopupProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgTextTable.xaml.cs">
+      <DependentUpon>DlgTextTable.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\CtlListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CtlScreenshotList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlSelectOcrAreas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProfileRelated\CtlProfileDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ProfileRelated\CtlTableDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Results\CtlColumnHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Results\CtlCorrectWords.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Results\CtlCorrectWordsColumnWise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Results\CtlTextRecognitionResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\AppResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\DetailViews.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\MainWindowResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlScreenshotList.xaml.cs">
+      <DependentUpon>CtlScreenshotList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlSelectOcrAreas.xaml.cs">
+      <DependentUpon>CtlSelectOcrAreas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MainWindowModel.cs" />
+    <Compile Include="Models\ScreenshotListModel.cs" />
+    <Compile Include="Models\SelectOcrAreasModel.cs" />
+    <Page Include="Windows\DlgCorrectionAssistant.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DlgMainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DlgNewProfile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DlgPopupProgress.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DlgTextTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Localisation\ResourcesGui.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesGui.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
+    <Resource Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdCommon\AvdCommon.csproj">
+      <Project>{89148742-F482-479E-8831-579F54FDF08A}</Project>
+      <Name>AvdCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdWpfControls\AvdWpfControls.csproj">
+      <Project>{E3B12F3F-E420-48FA-B991-FA1FF8D603F2}</Project>
+      <Name>AvdWpfControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdWpfStyles\AvdWpfStyles.csproj">
+      <Project>{FED8686B-7BE7-432C-B1F6-FA5900F6BAC2}</Project>
+      <Name>AvdWpfStyles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImageHelper\ImageHelper.vcxproj">
+      <Project>{DD8EF770-B1C5-42A7-BF68-9366259A0802}</Project>
+      <Name>ImageHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScreenshotAnalyzerBusiness\ScreenshotAnalyzerBusiness.csproj">
+      <Project>{9B5B8185-C740-4EEB-BF76-C485F055E8A0}</Project>
+      <Name>ScreenshotAnalyzerBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZoomAndPan\ZoomAndPan.csproj">
+      <Project>{468ADEDE-6F5E-40C0-99C9-C6DAC4FAC934}</Project>
+      <Name>ZoomAndPan</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="opencv_core220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="opencv_highgui220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="opencv_imgproc220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="opencv_core220d.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="opencv_highgui220d.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="opencv_imgproc220d.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Info1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.ico" />
+    <Resource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\shutdown16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\textdocument.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\textdocuments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\copyrectangles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\background_header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AvenDATA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Structures\Results\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EditPen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ExportAccess.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(SolutionDir)..\..\..\..\Assemblies\32Bit\External\TortoiseSVN\subwcrev.exe" "$(ProjectDir)." "$(ProjectDir)AssemblyInfo_temp.cs" "$(ProjectDir)Properties\AssemblyInfo.cs"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

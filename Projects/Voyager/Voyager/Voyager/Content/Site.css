@@ -1,0 +1,492 @@
+/* HAUPTLAYOUTELEMENTE   
+----------------------------------------------------------*/
+
+body {
+    font-size: 10pt;
+    font-family: Verdana, Helvetica, Sans-Serif;
+    margin: 0px;
+    padding: 0px;
+    background: #037db0 url(img/background.jpg) top left no-repeat;
+}
+
+
+.scroll { overflow: auto; width: 100%; -height: 100%; }
+
+.page {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+    bottom: 100px;
+    text-align: center;
+}
+
+.page-content {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    height: 100%;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.page-header {
+    height: 50px;
+    text-align: left;
+}
+
+.page-header .view-select {
+    color: #b4dae9;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.page-header .view-select a {
+    padding-right: 15px;
+    background: url(img/glyphs/dropdown-blue.png) right center no-repeat;
+}
+
+.page-header .table-select {
+    color: White;
+    font-size: 1.4em;
+    line-height: 30px;
+}
+
+.page-header .table-select a {
+    padding-right: 15px;
+    background: url(img/glyphs/dropdown.png) right center no-repeat;
+}
+
+.page-header .functions {
+    text-align: right;
+    line-height: 18px;
+    padding-top: 28px;
+    color: White;
+    font-size: .7em;
+}
+
+.page-header .functions a {
+    display: inline-block;
+    padding-right: 20px;
+    margin-left: 20px;
+    background: url(img/glyphs/add.png) right center no-repeat;
+}
+
+.page-header .functions a:hover {
+    -text-decoration: none;
+    background-image: url(img/glyphs/add-hover.png);
+}
+
+.content-box {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 26px;
+}
+
+.content-outer {
+    /***** BORDER *****/
+    -position: relative;
+    padding: 1px;
+    background: #b9dde9;
+    border: 12px solid #ecf9ff;
+    max-height: 150%;
+    height: 150%;
+}
+
+.content-inner {
+    position: relative;
+    width: 100%;
+    background: white;
+    height: 100%;
+}
+
+.view-scroll {
+    position: absolute;
+    top: 23px;
+    bottom: 0;
+}
+
+h2 {
+    color: White;
+    font-size: 1.4em;
+    padding: 5px 0;
+}
+
+/* HEADER
+----------------------------------------------------------*/
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1100px;
+    margin-left: -550px;
+}
+
+.header-top {
+    position: absolute;
+    z-index: 1000;
+    height: 38px;
+    width: 100%;
+    background: url(img/header/header-top.png);
+}
+
+.header-top-login {
+    line-height: 20px;
+    vertical-align: middle;
+    font-weight: bold;
+    text-align: center;
+    color: White;
+    width: 210px;
+    margin-left: 446px;
+    overflow: hidden;
+}
+
+.header-top-login .login {
+    padding: 0 10px;
+    display: inline-block;
+    color: White;
+}
+
+.header-top-shadow {
+    background: url(img/header/header-top-shadow.png);
+    width: 100%;
+    height: 62px;
+    margin-top: 38px;
+}
+
+.header-top-controls {
+    float: right;
+    width: 230px;
+    height: 30px;
+    margin-right: 80px;
+    margin-top: 3px;
+}
+
+
+.header-top-controls .separator {
+    width: 5px;
+    height: 30px;
+    background: url(img/header/divider.png) left center no-repeat;
+    float: left;
+}
+
+.header-top-controls .header-button {
+    width: 23px;
+    height: 20px;
+    margin: 5px 2px;
+    float: left;
+}
+
+
+.header-top-controls .button-close {
+    background-image: url(img/header/logout.png);
+}
+
+/* MAP
+----------------------------------------------------------*/
+
+.window-outer {
+    width: 976px;
+    height: 470px;
+    margin-left: 600px;
+    padding: 39px 11px 42px 11px;
+    background: url(img/login/login.png);
+    text-align: left;
+}
+
+.map-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.newVoyage-inner{
+	width: 100%;
+    height: 100%;
+}
+
+/*MAIN-TREE
+----------------------------------------------------------*/
+
+.main {
+	position: absolute;
+	left: 30px;
+}
+
+.main-header {
+    height: 50px;
+}
+
+.main .dest_form {
+	text-align: left;
+}
+
+.destination label{
+	width: 60px;
+	margin: 10px 0;
+}
+
+.destination input{
+	width: 250px;
+    background : Gray;
+    height: 21px;
+    line-height: 21px;
+    border: none;
+    color: white;
+	margin: 10px 0;
+}
+
+.destination .main_button{
+    width: auto;   
+    text-align:center;
+}
+
+/*DATEFORM
+---------------------------------------------------------------*/
+
+
+.date_form{
+    position: absolute;	
+	left: 300px;
+	width: 200px;
+	border: 1px groove #00f;
+	background: white;
+	margin: 0px;
+	padding: 20px;
+	text-align: left;
+}
+
+.date_form h3{
+    margin: 10px;
+}
+.date_form .date_radio input{
+    width: 10px;
+    margin-bottom: 10px;
+}
+
+.date_form .date_radio label{
+    margin-left: 10px;
+}
+
+.date_form .hour_select{
+    margin: 10px, 0px;
+    float:left;
+    margin-bottom: 10px;
+}
+
+.date_form .hour_select span{
+    margin-right: 15px;
+}
+
+.date_form .min_select
+{
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+.date_form .cal label
+{
+}
+
+.date_form .datepicker input
+{
+    width: 100px;
+    color: White;
+}
+
+.date_form .date-submit{
+   margin: 10px, 0px,0px,0px;
+}
+
+.date_form .date-submit input{
+    width: auto;
+}
+/*LOGON
+-----------------------------------------------------------*/
+.login-outer {
+    width: 976px;
+    height: 470px;
+    margin: 0 auto;
+    padding: 39px 11px 42px 11px;
+    background: url(img/login/login.png);
+    text-align: left;
+}
+
+.login-inner {
+}
+
+.login-controls{
+    width: 376px;
+    height: 84px;
+    left: 564px;
+    margin: 150px;
+}
+
+.login-controls .form-email {
+    width: 181px;
+    float: left;
+}
+
+.login-controls .form-password {
+    width: 181px;
+    margin-left: 195px;
+}
+
+.login-controls label {
+    width: 100%;
+}
+
+.login-controls .form-email input 
+.login-controls .form-password input {
+    width: 100%;
+    background: url(img/login/form-input.png);
+    height: 21px;
+    line-height: 21px;
+    border: none;
+    color: White;
+}
+
+.login-controls .form-rememberme {
+    margin-top: 10px;
+    color: #6e6e6e;
+    font-size: .7em;
+    float: left;
+}
+
+.login-controls .form-rememberme input {
+    background: #646464;
+}
+
+.login-controls .form-rememberme p {
+    padding: 5px 0;
+}
+
+.login-controls .form-rememberme a {
+
+}
+
+.login-controls .form-submit {
+    margin-left: 296px;
+}
+
+.login-controls .form-submit input {
+    background: url(img/login/button-login.png);
+    border: none;
+    height: 21px;
+    width: 80px;
+    line-height: 20px;
+    vertical-align: top;
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+}
+
+
+/*ADDRESS-FORM
+------------------------------------------------------------*/
+.address_form{
+    position: absolute;	
+	left: 300px;
+	width: 300px;
+	border: 1px groove #00f;
+	background: white;
+	-opacity: .7;
+	margin: 10px;
+	-text-align: left;
+}
+
+
+.address_form .address_id{
+    display: none;
+}
+
+
+
+/*EDIT-ADDRESS
+------------------------------------------------------------*/
+.edit-address{
+     width: 100%;
+    height: 100%;
+}
+ 
+.edit-address .error
+{
+    color: Red;
+    font-size:large;
+    width: 400px;
+}  
+.edit-address .edit-form {
+    width: 25em;
+    margin-bottom: .8em; 
+}
+
+.edit-address label {
+    width: 100%;
+    font-weight: bold;
+}
+
+.edit-address .edit-form input {
+    width: 100%;
+    background: White;
+    height: 21px;
+    line-height: 21px;
+    border: none;
+    color: Black;
+    margin-bottom: 10px;
+}
+
+.edit-address .edit-submit{
+    margin: 10px, 0px,0px,0px;
+}
+
+.multi-line{
+    height: 5em;
+}
+/*CLIENT-SELECT
+-----------------------------------------------------------*/
+TABLE.select-client TD,
+TABLE.select-client TH{
+    border-bottom: 1px dotted gray;
+    text-align: left;
+}
+
+TABLE.select-client{
+    border-collapse:collapse;
+    width:100%;
+}
+
+.select-client .client_cancel{
+    margin: 10px;
+}
+
+/* Stile für Validierungshilfeprogramme
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #000000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #000000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+

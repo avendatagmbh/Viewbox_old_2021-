@@ -1,0 +1,7 @@
+﻿<Window x:Class="TransDATA.Windows.DlgLogin" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:my="clr-namespace:TransDATA.Controls"
+        ResizeMode="NoResize" xmlns:loc="clr-namespace:Base.Localisation;assembly=Base" WindowStartupLocation="CenterScreen"
+        Title="{x:Static loc:ResourcesCommon.DlgLoginCaption}" SizeToContent="WidthAndHeight"
+        Icon="/TransDATA;component/Resources/TransDATA.ico" PreviewKeyDown="Window_PreviewKeyDown" Loaded="Window_Loaded">
+  <my:CtlLogin x:Name="ctlLogin" />
+</Window>

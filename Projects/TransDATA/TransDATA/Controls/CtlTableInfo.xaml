@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="TransDATA.Controls.CtlTableInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Models="clr-namespace:TransDATA.Models"
+             xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base" mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=Models:SelectedProfileModel}"
+
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Border Background="{StaticResource infoBgBrush}" Margin="0" Height="150">
+            <Grid Visibility="{Binding SelectedTable, Converter={StaticResource ValueExistsToVisibilityConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Grid.Column="0" Padding="2" Style="{StaticResource InfoElementBorder}">
+                <Grid Grid.Column="0" Grid.Row="0" Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.TableInfoTable}" Grid.Row="0" Grid.Column="0" Foreground="Black"/>
+                        <TextBlock Text="{Binding SelectedTable.Name}" Grid.Row="0" Grid.Column="2" Foreground="Black"/>
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.TableInfoCatalog}" Grid.Row="1" Grid.Column="0" Foreground="Black"/>
+                        <TextBlock Text="{Binding SelectedTable.Catalog}" Grid.Row="1" Grid.Column="2" Foreground="Black"/>
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.TableInfoSchema}" Grid.Row="2" Grid.Column="0" Foreground="Black"/>
+                        <TextBlock Text="{Binding SelectedTable.Schema}" Grid.Row="2" Grid.Column="2" Foreground="Black"/>
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.TableInfoComment}" Grid.Row="3" Grid.Column="0" Foreground="Black"/>
+                        <TextBlock Text="{Binding SelectedTable.Comment}" Grid.Row="3" Grid.Column="2" Foreground="Black"/>
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.TableInfoCount}" Grid.Row="4" Grid.Column="0" Foreground="Black"/>
+                        <TextBlock Text="{Binding SelectedTable.Count}" Grid.Row="4" Grid.Column="2" Foreground="Black"/>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="1" Padding="2" Style="{StaticResource InfoElementBorder}"
+                        Visibility="{Binding LastLogTable, Converter={StaticResource ValueExistsToVisibilityConverter}}" >
+                    <Grid Grid.Column="1" Visibility="{Binding LastLogTable, Converter={StaticResource ValueExistsToVisibilityConverter}}" Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.TableInfoLastTransfer}" Grid.Row="0" Grid.Column="0" Foreground="Black"/>
+                        <TextBlock Text="{Binding LastLogTableTimestamp}" Grid.Row="0" Grid.Column="2" Foreground="Black"/>
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.TableInfoLastTransferDuration}" Grid.Row="1" Grid.Column="0" Foreground="Black"/>
+                        <TextBlock Text="{Binding LastLogTableDuration}" Grid.Row="1" Grid.Column="2" Foreground="Black"/>
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.TableInfoLastTransferSourceCount}" Grid.Row="2" Grid.Column="0" Foreground="Black"/>
+                        <TextBlock Text="{Binding LastLogTable.Count}" Grid.Row="2" Grid.Column="2" Foreground="Black"/>
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.TableInfoLastTransferDestinationCount}" Grid.Row="3" Grid.Column="0" Foreground="Black"/>
+                        <TextBlock Text="{Binding LastLogTable.CountDest}" Grid.Row="3" Grid.Column="2" Foreground="Black"/>
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.TableInfoLastTransferFilter}" Grid.Row="4" Grid.Column="0" Foreground="Black"/>
+                        <TextBlock Text="{Binding LastLogTable.Filter}" Grid.Row="4" Grid.Column="2" Foreground="Black"/>
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.TableInfoLastTransferError}" Grid.Row="5" Grid.Column="0" Foreground="Black"/>
+                        <TextBlock Text="{Binding LastLogTable.Error}" Grid.Row="5" Grid.Column="2" Foreground="Black"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

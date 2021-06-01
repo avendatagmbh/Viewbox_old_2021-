@@ -1,0 +1,284 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.MappingTemplates.CtlTemplateDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:my1="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:Structures="clr-namespace:eBalanceKit.Structures"
+             xmlns:MappingTemplate="clr-namespace:eBalanceKitBusiness.MappingTemplate;assembly=eBalanceKitBusiness"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="400" DragOver="UserControlDragOver">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/MainWindow.xaml" />
+                <ResourceDictionary Source="/Windows/MappingTemplates/ResourceDictionaries/TemplateTreeView.xaml" />
+                <ResourceDictionary Source="/Windows/MappingTemplates/ResourceDictionaries/Templates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Popup DataContext="{x:Null}" x:Name="DragDropPopup"
+                       IsHitTestVisible="False"
+                       Placement="RelativePoint"
+                       AllowsTransparency="True">
+            <Border Background="Transparent">
+                <Border Name="popupBorder" Margin="10,0,15,15" >
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="5" Direction="315" Opacity="0.9"/>
+                    </Border.Effect>
+
+                    <ListBox SelectionMode="Single"
+                                     Grid.Row="1" Margin="0"
+                                     Background="Transparent"
+                                     BorderBrush="Transparent"
+                                     ItemsSource="{Binding Path=Items}">
+
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="ContentTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate DataType="{x:Type MappingTemplate:MappingLineGui}">
+                                            <Border Style="{StaticResource accountBorder}" Cursor="Hand" Padding="3,1" Margin="1">
+                                                <Grid Height="16">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Text="{Binding Path=AccountLabel}" Foreground="{StaticResource BalanceAccountTextBrush}" />
+                                                    <TextBlock Text="{Binding Path=TypeDisplayString}" Foreground="{StaticResource BalanceAccountTextBrush}" 
+                                                               Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0"/>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                </Style.Resources>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+                </Border>
+            </Border>
+        </Popup>
+        
+        <Border Style="{StaticResource GroupBoxBorder}" Padding="5" CornerRadius="0">
+            <StackPanel Grid.Row="1">
+
+                <TextBlock Text="Name" />
+                <TextBox x:Name="txtName" Text="{Binding Path=Template.Name, UpdateSourceTrigger=Explicit}"/>
+
+                <TextBlock Text="Kontenplan" Margin="0,8,0,0" />
+                <TextBox x:Name="txtAccountStructure" Text="{Binding Path=Template.AccountStructure, UpdateSourceTrigger=Explicit}" />
+
+                <TextBlock Text="Kommentar" Margin="0,8,0,0" />
+                <TextBox x:Name="txtComment" Text="{Binding Path=Template.Comment, UpdateSourceTrigger=Explicit}" />
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="550" />
+                <ColumnDefinition Width="300" MinWidth="250" />
+            </Grid.ColumnDefinitions>
+
+            <!-- navigation / content -->
+            <my1:HierarchicalTabControl 
+                x:Name="nav"
+                ContentMemberPath="Content" ItemsSource="{Binding Path=NavigationTree}" NavAreaWidth="250" NavAreaMaxWidth="400"
+                ItemContainerStyle="{StaticResource NavigationTreeItemContainerStyle}" >
+
+                <my1:HierarchicalTabControl.ItemTemplate>
+                    <HierarchicalDataTemplate DataType="{x:Type Structures:NavigationTreeEntry}" ItemsSource="{Binding Path=Children}">
+                        <Border Name="Border" Style="{StaticResource NavigationTreeItemBg}" 
+                                Margin="0,1,4,1" BorderBrush="Transparent" BorderThickness="0" CornerRadius="5">
+                            <TextBlock x:Name="Header" Style="{StaticResource NavigationTreeHeaderText}" Text="{Binding Header}" 
+                                           Margin="5,3" TextWrapping="Wrap"/>
+                        </Border>
+                    </HierarchicalDataTemplate>
+                </my1:HierarchicalTabControl.ItemTemplate>
+            </my1:HierarchicalTabControl>
+
+            <!-- account list -->
+            <GridSplitter Style="{StaticResource VerticalGridSplitter}" />
+
+            <Border Grid.Column="1" Style="{StaticResource GroupBoxBorder}" Padding="5" CornerRadius="0">
+                <TreeView x:Name="assignmentList" Margin="0,0,5,0" BorderBrush="Transparent"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          ItemsSource="{Binding Path=Assignments}"
+                          Background="Transparent"      
+                          AllowDrop="True"
+                          PreviewMouseMove="assignmentList_PreviewMouseMove"
+                          PreviewMouseLeftButtonDown="assignmentList_PreviewMouseLeftButtonDown"
+                          DragOver="assignmentList_DragOver"
+                          DragEnter="assignmentList_DragEnter"
+                          DragLeave="assignmentList_DragLeave"
+                          Drop="assignmentList_Drop"
+                          SelectedItemChanged="assignmentList_SelectedItemChanged"
+                          GiveFeedback="dragItem_GiveFeedback">
+                        <TreeView.Resources>
+                        <Style x:Key="{x:Type TreeViewItem}" TargetType="{x:Type TreeViewItem}">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Padding" Value="1,0,0,0"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource TreeViewItemFocusVisual}"/>
+                            <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpandedAssignments, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Setter Property="IsSelected" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsSelectedAssignments, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                                        <Grid HorizontalAlignment="Stretch">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition MinWidth="19" Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <ToggleButton 
+                                x:Name="Expander" 
+                                Style="{StaticResource ExpandCollapseToggleStyle}" 
+                                IsChecked="{Binding Path=IsExpanded, 
+                                RelativeSource={RelativeSource TemplatedParent}}"
+                                ClickMode="Press"/>
+                                            <Border Name="Bd"
+                                  Grid.Column="1"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  Padding="{TemplateBinding Padding}">
+                                                <ContentPresenter x:Name="PART_Header"
+                                    ContentSource="Header"
+                                    HorizontalAlignment="Stretch"/>
+                                            </Border>
+                                            <ItemsPresenter x:Name="ItemsHost"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="2"/>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsExpanded" Value="false">
+                                                <Setter TargetName="ItemsHost" Property="Visibility" Value="Collapsed"/>
+                                            </Trigger>
+                                            <Trigger Property="HasItems" Value="false">
+                                                <Setter TargetName="Expander" Property="Visibility" Value="Hidden"/>
+                                            </Trigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="HasHeader" Value="false"/>
+                                                    <Condition Property="Width" Value="Auto"/>
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="PART_Header" Property="MinWidth" Value="75"/>
+                                            </MultiTrigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="HasHeader" Value="false"/>
+                                                    <Condition Property="Height" Value="Auto"/>
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="PART_Header" Property="MinHeight" Value="19"/>
+                                            </MultiTrigger>
+                                            <Trigger Property="IsSelected" Value="true">
+                                                <Setter TargetName="Bd" Property="Background" Value="Transparent"/>
+                                                <Setter Property="Foreground" Value="Black"/>
+                                            </Trigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="IsSelected" Value="true"/>
+                                                    <Condition Property="IsSelectionActive" Value="false"/>
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                            </MultiTrigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+                        <HierarchicalDataTemplate DataType="{x:Type MappingTemplate:MappingHeaderGui}" ItemsSource="{Binding TemplateLines}">
+                                <Grid>
+                                    <Border Style="{StaticResource accountBorder}" />
+                                    <Border Style="{StaticResource selectionOverlayBorder}" Padding="3,1" Margin="1">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Style="{StaticResource TreeViewImage}" Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" 
+                                               Visibility="{Binding IsAssigned, Converter={StaticResource FalseToVisibilityConverter}}"
+                                               ToolTip="{Binding MissingAssignmentWarning}" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Path=AccountLabel}" Foreground="{StaticResource BalanceAccountTextBrush}" TextWrapping="Wrap" />
+                                        <CheckBox Grid.Column="2" IsChecked="{Binding IsAccountOfExchange}" ToolTip="Wechselkonto" VerticalAlignment="Center"/>
+
+                                    </Grid>
+                                </Border>
+                                </Grid>
+                            </HierarchicalDataTemplate>
+
+                            <HierarchicalDataTemplate DataType="{x:Type MappingTemplate:MappingLineGui}">
+                                <Grid Margin="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Style="{StaticResource assignmentBorder}" Padding="3,1"/>
+                                    <Border Grid.Row="1" Style="{StaticResource selectionOverlayBorder}" Cursor="Hand" Padding="3,1">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Path=ElementLabel}" Foreground="{StaticResource BalanceAccountTextBrush}" VerticalAlignment="Center" TextWrapping="Wrap" />
+
+                                            <TextBlock Grid.Column="1" Text="{Binding Path=TypeDisplayString}" Foreground="{StaticResource BalanceAccountTextBrush}" Margin="5,0,5,0" />
+                                        </Grid>
+                                    </Border>
+
+                                    <Button Grid.Column="1" ToolTip="Zuordnung Löschen" x:Name="btnDeleteAssignment" Click="btnDeleteAssignment_Click" IsTabStop="False">
+                                        <Button.Style>
+                                            <Style BasedOn="{StaticResource ImageButtonStyle}" TargetType="{x:Type Button}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementId}" Value="{x:Null}">
+                                                        <Setter Property="IsEnabled" Value="False" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                        <Image Source="/eBalanceKitResources;component/Resources/delete.png" Height="16" Width="16" />
+                                    </Button>
+                                </Grid>
+                            </HierarchicalDataTemplate>
+                        </TreeView.Resources>
+                    </TreeView>
+            </Border>
+
+        </Grid>
+
+        <!-- button bar -->
+        <Border Grid.Row="2" Style="{StaticResource ButtonBorder}">
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="{x:Static Localisation:ResourcesCommon.Save}" Height="23" Margin="5" Name="btnSave" Width="75" Click="BtnSaveClick" />
+                <Button Content="{x:Static Localisation:ResourcesCommon.Cancel}" Height="23" Margin="5" Name="btnCancel" Width="75" Click="BtnCancelClick" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

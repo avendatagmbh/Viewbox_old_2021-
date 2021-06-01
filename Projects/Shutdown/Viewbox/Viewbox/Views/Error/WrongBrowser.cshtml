@@ -1,0 +1,11 @@
+﻿@using Viewbox.Properties
+@model Viewbox.Models.WrongBrowserModel
+@{ ViewBag.Title = Resources.WrongBrowserCaption; }
+<div id="browser-dlg" class="hide">
+    @Html.Partial("_DialogPartial", Model.Dialog)
+</div>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+        jQuery('#dialog').show().html(jQuery('#browser-dlg').remove().html()).addClass("wrongBrowser");
+    });
+</script>

@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SendCaption" xml:space="preserve">
+    <value>Datenversand</value>
+  </data>
+  <data name="ShowLogs" xml:space="preserve">
+    <value>Logs anzeigen</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Zeitpunkt</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Ereignis</value>
+  </data>
+  <data name="NoNameGiven" xml:space="preserve">
+    <value>&lt;Noch kein Name eingegeben&gt;</value>
+  </data>
+  <data name="UnknownTaxonomyEntry" xml:space="preserve">
+    <value>"Unbekannter Taxonomie-Eintrag"</value>
+  </data>
+  <data name="SentDeletedDocument" xml:space="preserve">
+    <value>Ein mittlerweile gelöschtes Dokument wurde gesendet.</value>
+  </data>
+  <data name="VerificationError" xml:space="preserve">
+    <value>Es gab einen Fehler bei der Verifikation.</value>
+  </data>
+  <data name="SendError" xml:space="preserve">
+    <value>Es gab einen Fehler beim Senden.</value>
+  </data>
+  <data name="UnknownError" xml:space="preserve">
+    <value> Es gab einen unbekannten Fehler.</value>
+  </data>
+  <data name="DocumentSent" xml:space="preserve">
+    <value>Dokument "{0}" wurde gesendet.</value>
+  </data>
+  <data name="ListEntryNew" xml:space="preserve">
+    <value>Ein neuer Eintrag wurde zur Liste {0} hinzugefügt.</value>
+  </data>
+  <data name="ListEntryRemoved" xml:space="preserve">
+    <value>Ein Eintrag der Liste {0} gelöscht.</value>
+  </data>
+  <data name="ChangeManualValue" xml:space="preserve">
+    <value>Das manuell einzutragende Feld {0} wurde {1}.</value>
+  </data>
+  <data name="changed" xml:space="preserve">
+    <value>geändert</value>
+  </data>
+  <data name="added" xml:space="preserve">
+    <value>hinzugefügt</value>
+  </data>
+  <data name="removed" xml:space="preserve">
+    <value>gelöscht</value>
+  </data>
+  <data name="LogEntryLoadingNotFinished" xml:space="preserve">
+    <value>Der Log-Eintrag wurde noch nicht komplett geladen.</value>
+  </data>
+  <data name="ChangedValue" xml:space="preserve">
+    <value>Der Wert {0} wurde geändert.</value>
+  </data>
+  <data name="AccountFrom" xml:space="preserve">
+    <value>Ein Konto wurde von der Position </value>
+  </data>
+  <data name="ToPosition" xml:space="preserve">
+    <value> zur Position </value>
+  </data>
+  <data name="AccountTo" xml:space="preserve">
+    <value>Ein Konto wurde zur Position </value>
+  </data>
+  <data name="AccountsHasBeen" xml:space="preserve">
+    <value>Mehrere Konten wurden</value>
+  </data>
+  <data name="BalanceListHasBeen" xml:space="preserve">
+    <value>Eine Summen- und Saldenliste wurde</value>
+  </data>
+  <data name="TemplateHasBeen" xml:space="preserve">
+    <value>Eine Vorlage wurde</value>
+  </data>
+  <data name="ReconciliationValueHasBeen" xml:space="preserve">
+    <value>{0} wurde </value>
+  </data>
+  <data name="LastYear" xml:space="preserve">
+    <value> (letztes Jahr) </value>
+  </data>
+  <data name="CurrentYear" xml:space="preserve">
+    <value> (aktuelles Jahr) </value>
+  </data>
+  <data name="TableHasBeen" xml:space="preserve">
+    <value>Eine Tabelle wurde</value>
+  </data>
+  <data name="moved" xml:space="preserve">
+    <value>verschoben</value>
+  </data>
+  <data name="used" xml:space="preserve">
+    <value>angewendet</value>
+  </data>
+  <data name="imported" xml:space="preserve">
+    <value>importiert</value>
+  </data>
+  <data name="AccountAssignment" xml:space="preserve">
+    <value>Eine Kontozuordnung</value>
+  </data>
+  <data name="RightName" xml:space="preserve">
+    <value>Berechtigung</value>
+  </data>
+  <data name="RoleName" xml:space="preserve">
+    <value>Rolle</value>
+  </data>
+  <data name="RoleHasBeen" xml:space="preserve">
+    <value>Die Rolle {0} wurde</value>
+  </data>
+  <data name="renamed" xml:space="preserve">
+    <value>umbenannt</value>
+  </data>
+  <data name="DeletedRole" xml:space="preserve">
+    <value>bereits gelöschte Rolle</value>
+  </data>
+  <data name="RightHasBeen" xml:space="preserve">
+    <value>Berechtigung für "{0}" an "{1}" wurde</value>
+  </data>
+  <data name="UserHasBeen" xml:space="preserve">
+    <value>Der Benutzer "{0}" wurde</value>
+  </data>
+  <data name="TransferValueCalculation" xml:space="preserve">
+    <value>Überleitungsrechnung</value>
+  </data>
+  <data name="OtherReportParts" xml:space="preserve">
+    <value>sonstige Berichtsbestandteile</value>
+  </data>
+  <data name="UserUnknownHasBeen" xml:space="preserve">
+    <value>Ein Benutzer wurde</value>
+  </data>
+  <data name="FieldOfUserHasBeen" xml:space="preserve">
+    <value>Das Feld "{0}" des Benutzers "{1}" wurde</value>
+  </data>
+  <data name="SystemHasBeen" xml:space="preserve">
+    <value>Das System "{0}" wurde</value>
+  </data>
+  <data name="SystemUnknownHasBeen" xml:space="preserve">
+    <value>Ein System wurde</value>
+  </data>
+  <data name="FieldOfSystemHasBeen" xml:space="preserve">
+    <value>Das Feld "{0}" des Systems "{1}" wurde</value>
+  </data>
+  <data name="CompanyHasBeen" xml:space="preserve">
+    <value>Das Unternehmen "{0}" wurde</value>
+  </data>
+  <data name="FieldOfDocumentHasBeen" xml:space="preserve">
+    <value>Das Feld "{0}" des Dokuments "{1}" wurde</value>
+  </data>
+  <data name="DocumentUnknownHasBeen" xml:space="preserve">
+    <value>Ein Dokument wurde</value>
+  </data>
+  <data name="DocumentHasBeen" xml:space="preserve">
+    <value>Das Dokument "{0}" wurde</value>
+  </data>
+  <data name="FieldOfCompanyHasBeen" xml:space="preserve">
+    <value>Das Feld "{0}" der Firma "{1}" wurde</value>
+  </data>
+  <data name="CompanyUnknownHasBeen" xml:space="preserve">
+    <value>Ein Unternehmen wurde</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Änderung</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="Logging" xml:space="preserve">
+    <value>Logging</value>
+  </data>
+  <data name="NoEntries" xml:space="preserve">
+    <value>Keine Log-Einträge vorhanden.</value>
+  </data>
+  <data name="NotRegistered" xml:space="preserve">
+    <value>Die angegebenene Datenbank wurde noch nicht registriert.</value>
+  </data>
+  <data name="ShowLogError" xml:space="preserve">
+    <value>Beim Anzeigen der Logeinträge ist ein Fehler aufgetreten: </value>
+  </data>
+  <data name="UnknownObject" xml:space="preserve">
+    <value>unbekanntem Objekt</value>
+  </data>
+  <data name="Everything" xml:space="preserve">
+    <value>allen Objekten</value>
+  </data>
+  <data name="DocumentHaveUserRight" xml:space="preserve">
+    <value>Beim Dokument "{0}" wurde das Benutzerrecht des Benutzers "{1}"</value>
+  </data>
+  <data name="UserRight" xml:space="preserve">
+    <value>Benutzerrecht</value>
+  </data>
+  <data name="Delta" xml:space="preserve">
+    <value>Freie Überleitung</value>
+  </data>
+  <data name="ImportedValues" xml:space="preserve">
+    <value>Import Überleitung</value>
+  </data>
+  <data name="Reclassification" xml:space="preserve">
+    <value>Eine Umgliederung</value>
+  </data>
+  <data name="Taxonomy" xml:space="preserve">
+    <value>Taxonomie</value>
+  </data>
+  <data name="ValueChange" xml:space="preserve">
+    <value>Änderung der Wertansätze Transaktion</value>
+  </data>
+  <data name="ChangedTo" xml:space="preserve">
+    <value> geändert zu </value>
+  </data>
+  <data name="DeletedReconciliation" xml:space="preserve">
+    <value>Gelöschte Überleitung</value>
+  </data>
+  <data name="ExportModified" xml:space="preserve">
+    <value> Expotieren wurde {0}</value>
+  </data>
+  <data name="GrantModified" xml:space="preserve">
+    <value>Erteilen von Berechtigungen wude {0}</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>nicht gesetzt</value>
+  </data>
+  <data name="ReadModified" xml:space="preserve">
+    <value> Lesen wurde {0}</value>
+  </data>
+  <data name="SendModified" xml:space="preserve">
+    <value> Senden wurde {0}</value>
+  </data>
+  <data name="SetToDefault" xml:space="preserve">
+    <value> auf Standardwert gesetzt</value>
+  </data>
+  <data name="WriteModified" xml:space="preserve">
+    <value> Schreiben wurde {0}</value>
+  </data>
+  <data name="Forbidden" xml:space="preserve">
+    <value>verboten</value>
+  </data>
+  <data name="Granted" xml:space="preserve">
+    <value>erlaubt</value>
+  </data>
+  <data name="DeletedCompany" xml:space="preserve">
+    <value>gelöschtes Unternehmen</value>
+  </data>
+  <data name="DeletedSystem" xml:space="preserve">
+    <value>gelöschtes System</value>
+  </data>
+  <data name="DeletedFinancialYearOrCompany" xml:space="preserve">
+    <value>Geschäftsjahr eines gelöschten Unternehmens</value>
+  </data>
+  <data name="NoReportSelected" xml:space="preserve">
+    <value>Es muss zuerst ein Bericht gewählt werden.</value>
+  </data>
+  <data name="TaxBalanceValue" xml:space="preserve">
+    <value>Tax balance value reconciliation</value>
+  </data>
+  <data name="ReconciliationPropertyHasBeen" xml:space="preserve">
+    <value>{0} property of reconciliation {1} has been</value>
+  </data>
+</root>

@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.FederalGazette.CtlTextParts"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:st="clr-namespace:eBalanceKit.Controls"
+             xmlns:XbrlRichTextBox="clr-namespace:eBalanceKit.Controls.RichTextEditor" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    <!--<Grid>-->
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Inhalt" FontWeight="Bold" />
+            <XbrlRichTextBox:RichTextBoxEditor x:Name="txtValue" HtmlContent="{Binding HtmlContent, Mode=TwoWay}" Grid.Row="1" Margin="0,5,0,0" IsEnabled="{Binding Value.ReportRights.WriteRestAllowed}"/>
+            <TextBlock Grid.Row="2" Margin="0,25,0,0" Text="Kommentar zur internen Verwendung" FontWeight="Bold"/>
+            <st:DeletableTextBox Margin="0,5" Grid.Row="3" Grid.ColumnSpan="3" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="40" 
+                                      x:Name="txtComment" TextWrapping="Wrap" Text="{Binding Value.Comment, UpdateSourceTrigger=LostFocus}" MaxLength="4096"
+                                      IsEnabled="{Binding Value.ReportRights.WriteRestAllowed}"/>
+        </Grid>
+    <!--</Grid>-->
+</UserControl>

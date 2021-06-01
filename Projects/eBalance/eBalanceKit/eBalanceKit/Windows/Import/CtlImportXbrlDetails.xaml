@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Import.CtlImportXbrlDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300"
+      xmlns:st="clr-namespace:eBalanceKit.Controls"
+      xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+      xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             MinHeight="300" MinWidth="200">
+    <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource GroupBoxBorder}">
+        <StackPanel>
+            <Label Content="{x:Static Localisation:ResourcesMain.System}" Name="label1" HorizontalAlignment="Center"/>
+            <AvdWpfControls:AvdComboBox Name="comboBox1" VerticalAlignment="Top" Width="183" ItemsSource="{Binding Systems}" SelectedItem="{Binding SelectedSystem}"  SelectValueMessage="{x:Static Localisation:ResourcesCommon.PleaseSelect}"/>
+            <Label Content="{x:Static Localisation:ResourcesMain.Company}" Name="label2"  HorizontalAlignment="Center" />
+            <st:DeletableTextBox x:Name="textBox1" Width="183" IsEnabled="False" Text="{Binding Company}"/>
+            <Label Content="{x:Static Localisation:ResourcesMain.FinancialYear}"  Name="label3" HorizontalAlignment="Center" />
+            <st:DeletableTextBox x:Name="textBox2" VerticalAlignment="Top" Width="183" IsEnabled="False" Text="{Binding FinancialYear}"/>
+            <Label Content="{x:Static Localisation:ResourcesMain.Report}" Name="label4" HorizontalAlignment="Center"/>  
+            <st:DeletableTextBox x:Name="textBox3" VerticalAlignment="Top" Width="183" Text="{Binding ReportName}"/>
+        </StackPanel>
+    </Border>
+</UserControl>

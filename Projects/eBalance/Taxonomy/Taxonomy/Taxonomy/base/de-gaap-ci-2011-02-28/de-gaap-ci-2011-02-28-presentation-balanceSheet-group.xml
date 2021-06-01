@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://www.xbrl.de/de/fr/gaap/ci/role/balanceSheet" xlink:type="simple" xlink:href="de-gaap-ci-2011-02-28.xsd#role_balanceSheet"/>
+  <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/balanceSheet">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.ass.fixAss.intan.goodwill" xlink:label="bs.ass.fixAss.intan.goodwill" xlink:title="bs.ass.fixAss.intan.goodwill"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.ass.fixAss.intan.goodwill.fromConsolidation" xlink:label="bs.ass.fixAss.intan.goodwill.fromConsolidation" xlink:title="bs.ass.fixAss.intan.goodwill.fromConsolidation"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.ass.fixAss.intan.goodwill" xlink:to="bs.ass.fixAss.intan.goodwill.fromConsolidation" xlink:title="presentation: bs.ass.fixAss.intan.goodwill to bs.ass.fixAss.intan.goodwill.fromConsolidation" order="2.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.eqLiab.equity" xlink:label="bs.eqLiab.equity" xlink:title="bs.eqLiab.equity"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.eqLiab.equity.consolSurplus" xlink:label="bs.eqLiab.equity.consolSurplus" xlink:title="bs.eqLiab.equity.consolSurplus"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.eqLiab.equity" xlink:to="bs.eqLiab.equity.consolSurplus" xlink:title="presentation: bs.eqLiab.equity to bs.eqLiab.equity.consolSurplus" order="10.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.eqLiab.equity.minorityInterest" xlink:label="bs.eqLiab.equity.minorityInterest" xlink:title="bs.eqLiab.equity.minorityInterest"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.eqLiab.equity" xlink:to="bs.eqLiab.equity.minorityInterest" xlink:title="presentation: bs.eqLiab.equity to bs.eqLiab.equity.minorityInterest" order="15.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.eqLiab.otherSpecRes" xlink:label="bs.eqLiab.otherSpecRes" xlink:title="bs.eqLiab.otherSpecRes"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.eqLiab.otherSpecRes.consolSurplus" xlink:label="bs.eqLiab.otherSpecRes.consolSurplus" xlink:title="bs.eqLiab.otherSpecRes.consolSurplus"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.eqLiab.otherSpecRes" xlink:to="bs.eqLiab.otherSpecRes.consolSurplus" xlink:title="presentation: bs.eqLiab.otherSpecRes to bs.eqLiab.otherSpecRes.consolSurplus" order="5.0"/>
+  </presentationLink>
+</linkbase>

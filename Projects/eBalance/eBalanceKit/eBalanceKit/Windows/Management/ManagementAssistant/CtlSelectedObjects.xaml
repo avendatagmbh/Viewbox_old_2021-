@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Management.ManagementAssistant.CtlSelectedObjects"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0">
+          <TextBlock Visibility="{Binding SelectedSystem, Converter={StaticResource ValueExistsToVisibilityConverter}, Mode=OneWay}">
+            <Run Text="{x:Static Localisation:ResourcesMain.System}" />
+            <Run Text=": " />
+            <Run Text="{Binding SelectedSystem.Name}" />
+            <Run Text="   " />
+            </TextBlock>
+
+          <TextBlock Visibility="{Binding SelectedCompany, Converter={StaticResource ValueExistsToVisibilityConverter}, Mode=OneWay}">
+            <Run Text="{x:Static Localisation:ResourcesMain.Company}" />
+            <Run Text=": " />
+            <Run Text="{Binding SelectedCompany.Name}" />
+            <Run Text="   " />
+            </TextBlock>
+            
+            <TextBlock Visibility="{Binding SelectedFinancialYear, Converter={StaticResource ValueExistsToVisibilityConverter}, Mode=OneWay}">
+            <Run Text="{x:Static Localisation:ResourcesMain.FinancialYear}" />
+            <Run Text=": " />
+            <Run Text="{Binding SelectedFinancialYear.FYear}" />
+            <Run Text="   " />
+            </TextBlock>
+        </TextBlock>
+    </Grid>
+</UserControl>

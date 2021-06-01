@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DbTemplate ServerName="Oracle">
+  <Enquote>
+    <Left>"</Left>
+    <Right>"</Right>
+  </Enquote>
+  <ConnectionStringParameter>
+    <Param Caption="Username" Caption_de="Benutzername" Name="Uid" IsUserProperty="True"/>
+    <Param Caption="Password" Caption_de="Passwort" Name="Pwd" IsPasswordProperty="True"/>
+    <Param Caption="Database" Caption_de="Datenbank" Name="Database" IsDatabaseProperty="True"/>
+  </ConnectionStringParameter>
+  <Syntax>
+    <!--
+    
+    public virtual void SetConnectionString(string host, string user, string password) {
+            ConnectionString =
+                (host.Length > 0 ? "Server=" + host + ";" : string.Empty) +
+                (user.Length > 0 || password.Length > 0 ? "UID=" + user + ";PWD=" + password + ";" : string.Empty); // either both or none of parameters UID and PWD are used
+        }
+    
+    Einlesen von Tabellen Struktur:
+    
+    List<SchemaTable> lSchemas = sourceDb.GetSchemaTableList();
+    List<DbFieldInfo> lColumnInfos = sourceDb.GetFieldInfos(oSchemaTable.Schema, oSchemaTable.Table);
+    
+    public override List<SchemaTable> GetSchemaTableList()
+        {
+            List<SchemaTable> oResult = new List<SchemaTable>();
+
+            DataTable oSchemaTable = null;
+            try
+            {
+                oSchemaTable = this.mDbCommand.Connection.GetSchema("Tables");
+                foreach (DataRow oRow in oSchemaTable.Rows)
+                {
+                    if (oRow.Field<object>(1) != null &&
+                        oRow.Field<object>(1).ToString().Equals(this.DbConfig.DbName) &&
+                        oRow.Field<object>(2) != null)
+                    {
+                        oResult.Add(new SchemaTable(oRow.Field<object>(1).ToString(),
+                                                    oRow.Field<object>(2).ToString()));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return oResult.Distinct().ToList();
+        }
+    
+    
+    public override List<DbFieldInfo> GetFieldInfos(string database, string table)
+        {
+            //string sSQL = "SELECT * FROM \"" + database + "\".\"" + table + "\"";
+            string sSQL = "SELECT COLUMN_NAME,DATA_TYPE,DATA_LENGTH FROM sys.all_tab_columns WHERE OWNER='"
+                + database + "' AND TABLE_NAME='" + table + "'";
+
+            List<DbFieldInfo> lFieldInfos = new List<DbFieldInfo>();
+            DbDataReader oReader = null;
+            //DataTable oDataTable = null;
+
+            try
+            {
+                mDbCommand.CommandText = sSQL;
+                //oReader = mDbCommand.ExecuteReader(CommandBehavior.SchemaOnly);
+                oReader = mDbCommand.ExecuteReader();
+
+                while (oReader.Read())
+                {
+
+                    //if (oReader.HasRows) oReader.Read();
+                    //oDataTable = oReader.GetSchemaTable();
+
+                    //if (oReader.FieldCount == 0)
+                    //{
+                    //    MessageBox.Show(sSQL + System.Environment.NewLine +  "oReader.FieldCount == 0");
+                    //}
+
+                    DbFieldInfo oFieldInfo = null;
+                    string sColumn = oReader[0].ToString();
+
+                    switch (oReader[1].ToString())
+                    {
+                        case "FLOAT":
+                        case "DECIMAL":
+                        case "NUMBER":
+                        case "DOUBLE":
+                        case "DOUBLE PRECISION":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbNumeric);
+                            break;
+
+                        case "INT":
+                        case "ROWID":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbInt);
+                            break;
+
+                        case "VARCHAR":
+                        case "VARCHAR2":
+                        case "CHAR":
+                        case "NCHAR":
+                        case "NVARCHAR2":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbText);
+                            break;
+
+                        case "DATE":
+                        case "DATETIME":
+                        case "TIMESTAMP":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbDateTime);
+                            break;
+
+                        case "BLOB":
+                        case "LONG RAW":
+                        case "LONG":
+                        case "RAW":
+                        case "CLOB":
+                        case "NCLOB":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbBinary);
+                            break;
+
+                        case "XMLTYPE":
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbXML);
+                            break;
+
+                        default:
+                            oFieldInfo = new DbFieldInfo(sColumn, DbFieldTypes.DbText);
+                            break;
+                    }
+
+                    oFieldInfo.OriginalType = oReader[1].ToString();
+                    oFieldInfo.MaxLength = int.Parse(oReader[2].ToString());                    
+
+                    lFieldInfos.Add(oFieldInfo);
+                }
+            }
+    
+    Datenabzug:
+    
+    public System.Data.Common.DbDataReader GetTextReaderFromTable(string database, string tableName, List<string> fieldNames)
+        {
+            List<DbFieldInfo> lInfos = GetFieldInfos(database, tableName);
+
+            string sOutput = "SELECT ";
+            foreach (string field in fieldNames)
+            {
+                //sOutput += "CAST(" + Enquote(field) + " AS VARCHAR2(50)) AS " + field + ", ";
+                //sOutput += "CAST(" + Enquote(field) + " AS VARCHAR2(50)), ";
+                foreach (DbFieldInfo info in lInfos)
+                {
+                    if (info.Name.Equals(field))
+                    {
+                        switch (info.OriginalType)
+                        {
+                            //case "RAW":
+                            //    sOutput += "CAST(" + Enquote(field) + " AS VARCHAR2(" + (info.MaxLength * 2) + ")), ";
+                            //    break;
+                            case "DATE":
+                            case "DATETIME":
+                            case "TIMESTAMP":
+                                sOutput += "to_char(" + Enquote(field) + ",'dd.mm.yyyy hh24:mi:ss'), ";
+                                break;
+                            case "FLOAT":
+                            case "DECIMAL":
+                            case "NUMBER":
+                            case "DOUBLE":
+                            case "DOUBLE PRECISION":
+                            case "INT":
+                            case "ROWID":
+                                sOutput += "CAST(" + Enquote(field) + " AS VARCHAR2(" + (info.MaxLength + 1) + ")), ";
+                                break;
+                            case "BLOB":
+                            case "LONG RAW":
+                            case "LONG":
+                            case "RAW":
+                            case "CLOB":
+                            case "NCLOB":
+                                //sOutput += "dbms_lob.substr(" + Enquote(field) + "," + info.MaxLength + "), ";
+                                sOutput += Enquote(field) + ", ";
+                                //sOutput += "CAST(" + Enquote(field) + " AS VARCHAR2(" + info.MaxLength + ")), ";
+                                //System.Diagnostics.Debug.WriteLine(info.OriginalType);
+                                break;
+                            case "VARCHAR":
+                            case "VARCHAR2":
+                            case "CHAR":
+                            case "NCHAR":
+                            case "NVARCHAR2":
+                                sOutput += Enquote(field) + ", ";
+                                System.Diagnostics.Debug.WriteLine(info.OriginalType);
+                                break;
+                            case "XMLTYPE":
+                                sOutput += "sys.xmltype.getstringval(" + field + "), ";
+                                break;
+                            default:
+                                MessageBox.Show("Name: " + info.Name + System.Environment.NewLine +
+                                                "Typ: " + info.OriginalType + System.Environment.NewLine +
+                                                "NumScale: " + info.NumericScale + System.Environment.NewLine +
+                                                "MaxLength: " + info.MaxLength + System.Environment.NewLine +
+                                                "Typ: " + info.Type.ToString());
+                                sOutput += "CAST(" + Enquote(field) + " AS VARCHAR2(" + info.MaxLength + ")), ";
+                                System.Diagnostics.Debug.WriteLine(info.OriginalType);
+                                break;
+                        }
+                    }
+                }
+            }
+            sOutput = sOutput.Remove(sOutput.Length - 2);
+            if (tableName.ToLower().EndsWith("acl")) MessageBox.Show(sOutput + " FROM " + Enquote(database) + "." + Enquote(tableName) + System.Environment.NewLine + lInfos.Count +
+                System.Environment.NewLine + lInfos[0].Name + System.Environment.NewLine + fieldNames[0]);
+            return ExecuteReader(sOutput + " FROM " + Enquote(database) + "." + Enquote(tableName));
+        }
+      -->
+  </Syntax>
+</DbTemplate>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="eBalanceKitManagement.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:eBalanceKitManagement.Controls"
+        xmlns:CustomResources="clr-namespace:CustomResources;assembly=CustomResources"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        WindowStartupLocation="CenterScreen"
+        Title="{x:Static CustomResources:CustomStrings.ProductNameManagement}" Height="768" Width="1024" Icon="/CustomResources;component/Resources/logo1.png" Closed="Window_Closed">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TabControl Name="tbMain">
+            <TabItem Header="{x:Static Localisation:ResourcesLogging.Logging}" Name="tabLogging">
+                <c:CtlLogging Grid.Row="0"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

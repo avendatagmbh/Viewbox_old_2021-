@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.BalanceList.CtlEditBalListTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"        
+             xmlns:ebkc="clr-namespace:eBalanceKitControls;assembly=eBalanceKitControls"
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600">
+
+    <Border Style="{StaticResource GroupBoxBorder}" Padding="5">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <TextBlock Text="Name" />
+                <TextBox Grid.Row="1" Text="{Binding Name, UpdateSourceTrigger=LostFocus}"/>
+
+                <TextBlock Grid.Row="2" Text="Kommentar" Margin="0,8,0,0" />
+                <TextBox Grid.Row="3" Text="{Binding Comment, UpdateSourceTrigger=LostFocus}" />
+
+                <TabControl Grid.Row="4" Margin="0,5,0,0" Padding="0">
+                    <ebkc:EbkTabItem Caption="{x:Static loc:ResourcesBalanceList.ImportConfigCaption}" ImageSource="/eBalanceKitResources;component/Resources/SplitAccount.png">
+                        <Border Style="{StaticResource GroupBoxBorder}" Padding="5">
+                        </Border>
+                    </ebkc:EbkTabItem>
+
+                    <ebkc:EbkTabItem Caption="{x:Static loc:ResourcesBalanceList.AccountGroupsCaption}" ImageSource="/eBalanceKitResources;component/Resources/GroupAccount.png">
+                        <Border Style="{StaticResource GroupBoxBorder}" Padding="5">
+                        </Border>
+                    </ebkc:EbkTabItem>
+
+                    <ebkc:EbkTabItem Caption="{x:Static loc:ResourcesBalanceList.SplittedAccountsCaption}" ImageSource="/eBalanceKitResources;component/Resources/SplitAccount.png">
+                        <Border Style="{StaticResource GroupBoxBorder}" Padding="5">
+                        </Border>
+                    </ebkc:EbkTabItem>
+
+                    <ebkc:EbkTabItem Caption="{x:Static loc:ResourcesBalanceList.HiddenAccountsCaption}" ImageSource="/eBalanceKitResources;component/Resources/deletedAccounts.png">
+                        <Border Style="{StaticResource GroupBoxBorder}" Padding="5">
+                        </Border>
+                    </ebkc:EbkTabItem>
+                </TabControl>
+
+            </Grid>
+
+            <Separator Grid.Row="1" Margin="-5,2.5,-5,5" />
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <wpfc:ImageButton2 ImageSource="/eBalanceKitResources;component/Resources/Left.png"
+                               Caption="{x:Static loc:ResourcesCommon.Back}" Click="ImageButton_Click" />
+
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://www.xbrl.de/de/fr/gaap/ci/role/balanceSheet" xlink:type="simple" xlink:href="de-gaap-ci-2011-02-28.xsd#role_balanceSheet"/>
+  <calculationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/balanceSheet">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.ass.fixAss.intan" xlink:label="bs.ass.fixAss.intan"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.ass.fixAss.intan.selfmade" xlink:label="newItem" xlink:title="newItem"/>
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="bs.ass.fixAss.intan" xlink:to="newItem" xlink:title="calculation: bs.ass.fixAss.intan to newItem" use="prohibited" priority="1" order="0.5" weight="1.0"/>
+  </calculationLink>
+</linkbase>

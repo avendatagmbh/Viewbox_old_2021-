@@ -1,0 +1,8 @@
+﻿<Window x:Class="eBalanceKit.Windows.Security.DlgRoleRights"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Title="{Binding Title}" Height="600" Width="800" WindowStartupLocation="CenterOwner"
+        xmlns:Security="clr-namespace:eBalanceKit.Windows.Security" Icon="/eBalanceKitResources;component/Resources/Key.png" ShowInTaskbar="False" PreviewKeyDown="Window_PreviewKeyDown">
+    <Security:CtlRoleRights x:Name="ctlRoleRights" Ok="CtlRoleRights_Ok" Cancel="CtlRoleRights_Cancel" />
+</Window>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSchema"
+    targetNamespace="http://tempuri.org/DataSchema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/DataSchema.xsd"
+    xmlns:mstns="http://tempuri.org/DataSchema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="period" type="xs:string">
+  </xs:element>
+
+  <xs:element name="year">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Year" type="xs:string" minOccurs="1" maxOccurs="1"></xs:element>
+        <xs:element name="AllPeriodsCount" type="xs:string" minOccurs="1" maxOccurs="1"></xs:element>
+        <xs:element ref="period"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="company">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Identifier" type="xs:string" minOccurs="1" maxOccurs="1"></xs:element>
+        <xs:element name="AllYearsCount" type="xs:string" minOccurs="1" maxOccurs="1"></xs:element>
+        <xs:element ref="year"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="dataconfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AllCompaniesCount" type="xs:string" minOccurs="1" maxOccurs="1"></xs:element>
+        <xs:element ref="company"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

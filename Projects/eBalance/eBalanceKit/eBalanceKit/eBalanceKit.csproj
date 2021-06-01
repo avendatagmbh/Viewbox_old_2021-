@@ -1,0 +1,2028 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2D3C3FBC-CED6-4333-8611-C09F0E9DC297}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eBalanceKit</RootNamespace>
+    <AssemblyName>eBalanceKit</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomResources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Assemblies\32Bit\AvenDATA\eBalanceKit_CustomResources\AvenDATA\CustomResources.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\Assemblies\32Bit\External\MySQLData\6.3.6\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\BalanceList\BalanceListFilter.xaml.cs">
+      <DependentUpon>BalanceListFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\BalListImpAssistPage1.xaml.cs">
+      <DependentUpon>BalListImpAssistPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\BalListImpAssistPage2.xaml.cs">
+      <DependentUpon>BalListImpAssistPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\BalListImpAssistPageColumnSelection.xaml.cs">
+      <DependentUpon>BalListImpAssistPageColumnSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\BalListImpAssistPageSummary.xaml.cs">
+      <DependentUpon>BalListImpAssistPageSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\BalListInfo.xaml.cs">
+      <DependentUpon>BalListInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\CtlAccountReferenceList.xaml.cs">
+      <DependentUpon>CtlAccountReferenceList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\CtlExampleCsv.xaml.cs">
+      <DependentUpon>CtlExampleCsv.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\DlgExampleCsv.xaml.cs">
+      <DependentUpon>DlgExampleCsv.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\HeaderFilter.xaml.cs">
+      <DependentUpon>HeaderFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\PresentationTreeFilter.xaml.cs">
+      <DependentUpon>PresentationTreeFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\CtlBalanceList.xaml.cs">
+      <DependentUpon>CtlBalanceList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\CtlGroupAccount.xaml.cs">
+      <DependentUpon>CtlGroupAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\CtlSortBalanceList.xaml.cs">
+      <DependentUpon>CtlSortBalanceList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\ImportDataPreview.xaml.cs">
+      <DependentUpon>ImportDataPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\BalListImpAssistPageBase.cs" />
+    <Compile Include="Controls\BalanceList\SimplifiedPresentationTreeFilter.xaml.cs">
+      <DependentUpon>SimplifiedPresentationTreeFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Company\CtlCompanyFinancialYears.xaml.cs">
+      <DependentUpon>CtlCompanyFinancialYears.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Company\CtlCompanyFinancialYearsModel.cs" />
+    <Compile Include="Controls\Company\CtlCompanyInfo.xaml.cs">
+      <DependentUpon>CtlCompanyInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BalanceList\CtlBalanceListManager.xaml.cs">
+      <DependentUpon>CtlBalanceListManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Company\ImportCompanyDetailsAssistant\CtlImportCompany3.xaml.cs">
+      <DependentUpon>CtlImportCompany3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Company\ImportCompanyDetailsAssistant\CtlImportCompany4.xaml.cs">
+      <DependentUpon>CtlImportCompany4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Company\ImportCompanyDetailsAssistant\CtlImportCompany5.xaml.cs">
+      <DependentUpon>CtlImportCompany5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Company\TaxIdInfo.xaml.cs">
+      <DependentUpon>TaxIdInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlElsterServerInfo.xaml.cs">
+      <DependentUpon>CtlElsterServerInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlElsterServerInfoText.xaml.cs">
+      <DependentUpon>CtlElsterServerInfoText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlErrorMessage.xaml.cs">
+      <DependentUpon>CtlErrorMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlErrorMessageWithPopup.xaml.cs">
+      <DependentUpon>CtlErrorMessageWithPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlExternCall.xaml.cs">
+      <DependentUpon>CtlExternCall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlGlobalOptions.xaml.cs">
+      <DependentUpon>CtlGlobalOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlHBSTDetail.xaml.cs">
+      <DependentUpon>CtlHBSTDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlHelp.xaml.cs">
+      <DependentUpon>CtlHelp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlInfo.xaml.cs">
+      <DependentUpon>CtlInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlInfoSlideout.xaml.cs">
+      <DependentUpon>CtlInfoSlideout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlNavTab.xaml.cs">
+      <DependentUpon>CtlNavTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlProblemOverview.xaml.cs">
+      <DependentUpon>CtlProblemOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlTaxonomyTreeViewConfig.xaml.cs">
+      <DependentUpon>CtlTaxonomyTreeViewConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlValueDetails.xaml.cs">
+      <DependentUpon>CtlValueDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Document\CtlDocumentDataGrid.xaml.cs">
+      <DependentUpon>CtlDocumentDataGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Document\CtlDocumentProperties.xaml.cs">
+      <DependentUpon>CtlDocumentProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Document\CtlReportOverview.xaml.cs">
+      <DependentUpon>CtlReportOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlErrorListViewer.xaml.cs">
+      <DependentUpon>CtlErrorListViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Help\CtlElsterInfo.xaml.cs">
+      <DependentUpon>CtlElsterInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Help\CtlManual.xaml.cs">
+      <DependentUpon>CtlManual.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MonetaryNodeInfoIconsReconciliation.xaml.cs">
+      <DependentUpon>MonetaryNodeInfoIconsReconciliation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Legend.xaml.cs">
+      <DependentUpon>Legend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MonetaryNodeInfoIcons.xaml.cs">
+      <DependentUpon>MonetaryNodeInfoIcons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlMonetarySources.xaml.cs">
+      <DependentUpon>CtlMonetarySources.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XbrlVisualisation\CtlKKE_LimitedPartners.xaml.cs">
+      <DependentUpon>CtlKKE_LimitedPartners.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XbrlVisualisation\CtlKKE_UnlimitedPartners.xaml.cs">
+      <DependentUpon>CtlKKE_UnlimitedPartners.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XbrlVisualisation\XbrlListView.xaml.cs">
+      <DependentUpon>XbrlListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtlTaxonomyTreeView.xaml.cs">
+      <DependentUpon>CtlTaxonomyTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Document\CtlEditDocument.xaml.cs">
+      <DependentUpon>CtlEditDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XbrlVisualisation\XbrlTwoColStackPanel.cs" />
+    <Compile Include="Controls\XbrlVisualisation\XbrlBasePanel.xaml.cs">
+      <DependentUpon>XbrlBasePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XbrlVisualisation\XbrlStackPanel.cs" />
+    <Compile Include="Controls\XbrlVisualisation\XbrlTextPanel.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\EnumMatchToBooleanConverter.cs" />
+    <Compile Include="Converters\EnumMatchToVisibilityConverter.cs" />
+    <Compile Include="Converters\FileNotExistsToStringConverter.cs" />
+    <Compile Include="Converters\FileReadAllowedToBoolConverter.cs" />
+    <Compile Include="Converters\FileValideToBoolConverter.cs" />
+    <Compile Include="Converters\FileWriteAllowedToBool.cs" />
+    <Compile Include="Converters\NullToFalseConverter.cs" />
+    <Compile Include="Converters\StringIsNullOrEmptyToBoolConverter.cs" />
+    <Compile Include="Converters\ValueNotExistsToBoolConverter.cs" />
+    <Compile Include="Converters\ValueExistsToBoolConverter.cs" />
+    <Compile Include="Converters\MandatoryTypeAccountBalancesToVisibilityConverter.cs" />
+    <Compile Include="Converters\StringToColDescriptionConverter.cs" />
+    <Compile Include="Converters\ValueNotExistsToVisibilityConverter.cs" />
+    <Compile Include="Converters\ValueExistsToVisibilityConverter.cs" />
+    <Compile Include="Converters\StringToDecimalConverter.cs" />
+    <Compile Include="Converters\XbrlElementValueTypeToImageConverter.cs" />
+    <Compile Include="Controls\BalanceList\CtlSplitAccount.xaml.cs">
+      <DependentUpon>CtlSplitAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventArgs\DragDropEventArgs.cs" />
+    <Compile Include="GlobalResources.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Models\Assistants\BalListImportAssistantModel.cs" />
+    <Compile Include="Models\Assistants\ProfileNameModel.cs" />
+    <Compile Include="Models\CompanyDisplayValueTreeModel.cs" />
+    <Compile Include="Models\CtlBalanceListModel.cs" />
+    <Compile Include="Models\DisplayValueTreeModel.cs" />
+    <Compile Include="Models\Document\EditDocumentModel.cs" />
+    <Compile Include="Models\ExternCallModel.cs" />
+    <Compile Include="Models\GlobalOptionsModel.cs" />
+    <Compile Include="Models\GlobalSearch\GlobalSearchModel.cs" />
+    <Compile Include="Models\Import\ImportCompanyDetailsModel.cs" />
+    <Compile Include="Models\Import\ImportModel.cs" />
+    <Compile Include="Models\MainWindowModel.cs" />
+    <Compile Include="Models\TaxonomyViewModel.cs" />
+    <Compile Include="ResourceDictionaries\DlgEditBalanceListResources.cs" />
+    <Compile Include="ResourceDictionaries\HyperCube.xaml.cs" />
+    <Compile Include="ResourceDictionaries\TaxonomyAndBalanceListBase.cs" />
+    <Compile Include="ResourceDictionaries\TaxonomyTreeView.xaml.cs" />
+    <Compile Include="Structures\AccountListDragDropData.cs" />
+    <Compile Include="Structures\NavigationTreeEntryBase.cs" />
+    <Compile Include="Structures\NavigationTree.cs" />
+    <Compile Include="Structures\NavigationTreeEntry.cs" />
+    <Compile Include="Structures\TaxonomyUIElements.cs" />
+    <Compile Include="Structures\ValueTreeWrapper.cs" />
+    <Compile Include="TemplateSelectors\BalanceListTemplateSelector.cs" />
+    <Compile Include="TemplateSelectors\BalanceTreeReferenceListTemplateSelector.cs" />
+    <Compile Include="TemplateSelectors\BalanceTreeTemplateSelector.cs" />
+    <Compile Include="TemplateSelectors\GlobalSearchTemplateSelector.cs" />
+    <Compile Include="Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIHelpers.cs" />
+    <Compile Include="Windows\AuditMode\CtlAuditCorrections.xaml.cs">
+      <DependentUpon>CtlAuditCorrections.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AuditMode\CtlTaxAudit.xaml.cs">
+      <DependentUpon>CtlTaxAudit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AuditMode\DlgTaxAudit.xaml.cs">
+      <DependentUpon>DlgTaxAudit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AuditMode\Models\CheckableAuditCorrection.cs" />
+    <Compile Include="Windows\AuditMode\Models\CheckableAuditCorrectionTransaction.cs" />
+    <Compile Include="Windows\AuditMode\Models\CheckableAuditCorrectionTree.cs" />
+    <Compile Include="Windows\AuditMode\Models\CheckableReconciliation.cs" />
+    <Compile Include="Windows\AuditMode\Models\CheckableReconciliationTransaction.cs" />
+    <Compile Include="Windows\AuditMode\Models\CheckableReconciliationTree.cs" />
+    <Compile Include="Windows\AuditMode\Models\DocumentNode.cs" />
+    <Compile Include="Windows\AuditMode\Models\FinancialYearNode.cs" />
+    <Compile Include="Windows\AuditMode\Models\ISelectNextYearNode.cs" />
+    <Compile Include="Windows\AuditMode\Models\SelectNextYearNodeBase.cs" />
+    <Compile Include="Windows\AuditMode\Models\SelectNextYearTree.cs" />
+    <Compile Include="Windows\AuditMode\Models\TransferAuditCorrectionResults.cs" />
+    <Compile Include="Windows\AuditMode\Models\TransferAuditCorrectionsModel.cs" />
+    <Compile Include="Windows\BalanceList\BalListImportAssistant.xaml.cs">
+      <DependentUpon>BalListImportAssistant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BalanceList\BalListTemplatesModel.cs" />
+    <Compile Include="Windows\BalanceList\CtlBalListTemplateMain.xaml.cs">
+      <DependentUpon>CtlBalListTemplateMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BalanceList\CtlEditBalanceList.xaml.cs">
+      <DependentUpon>CtlEditBalanceList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BalanceList\CtlEditBalListTemplate.xaml.cs">
+      <DependentUpon>CtlEditBalListTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BalanceList\CtlReimport.xaml.cs">
+      <DependentUpon>CtlReimport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BalanceList\DlgAccountReferenceList.xaml.cs">
+      <DependentUpon>DlgAccountReferenceList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BalanceList\DlgProfileName.xaml.cs">
+      <DependentUpon>DlgProfileName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgEditText.xaml.cs">
+      <DependentUpon>DlgEditText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgEnterPin.xaml.cs">
+      <DependentUpon>DlgEnterPin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgEnterPin1.xaml.cs">
+      <DependentUpon>DlgEnterPin1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BalanceList\DlgGroupAccount.xaml.cs">
+      <DependentUpon>DlgGroupAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgGlobalOptions.xaml.cs">
+      <DependentUpon>DlgGlobalOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgHelp.xaml.cs">
+      <DependentUpon>DlgHelp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgOpenResourcePdf.xaml.cs">
+      <DependentUpon>DlgOpenResourcePdf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgTools.xaml.cs">
+      <DependentUpon>DlgTools.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\GlobalSearch\CtlGlobalSearch.xaml.cs">
+      <DependentUpon>CtlGlobalSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\GlobalSearch\CtlGlobalSearchContent.xaml.cs">
+      <DependentUpon>CtlGlobalSearchContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\DlgImportOrSampleFileSelectionCompany.xaml.cs">
+      <DependentUpon>DlgImportOrSampleFileSelectionCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\Models\CustomCreateCompanyArgs.cs" />
+    <Compile Include="Windows\Import\Models\ImportCompanyDataModel.cs" />
+    <Compile Include="Windows\Management\Add\DlgAddCompany.xaml.cs">
+      <DependentUpon>DlgAddCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Add\DlgAddReport.xaml.cs">
+      <DependentUpon>DlgAddReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Add\DlgAddSystem.xaml.cs">
+      <DependentUpon>DlgAddSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Add\Models\AddCompanyModel.cs" />
+    <Compile Include="Windows\Management\Add\Models\AddReportModel.cs" />
+    <Compile Include="Windows\Management\Add\Models\AddSystemModel.cs" />
+    <Compile Include="Windows\Management\Delete\Converter\ClassTypeToImageSourceConverter.cs" />
+    <Compile Include="Windows\Management\Delete\CtlDeleteReport.xaml.cs">
+      <DependentUpon>CtlDeleteReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Delete\CtlDeleteListItem.xaml.cs">
+      <DependentUpon>CtlDeleteListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Delete\DlgDeleteReport.xaml.cs">
+      <DependentUpon>DlgDeleteReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Delete\DlgDeleteList.xaml.cs">
+      <DependentUpon>DlgDeleteList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Delete\Models\CheckableItemWrapper.cs" />
+    <Compile Include="Windows\Management\Delete\Models\DeleteCompanyModel.cs" />
+    <Compile Include="Windows\Management\Delete\Models\DeleteReportModel.cs" />
+    <Compile Include="Windows\Management\Delete\Models\DeleteSystemModel.cs" />
+    <Compile Include="Windows\Management\Edit\CtlEditCompany.xaml.cs">
+      <DependentUpon>CtlEditCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Edit\CtlEditSystem.xaml.cs">
+      <DependentUpon>CtlEditSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Edit\DlgEditCompany.xaml.cs">
+      <DependentUpon>DlgEditCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Edit\DlgEditReport.xaml.cs">
+      <DependentUpon>DlgEditReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Edit\DlgEditSystem.xaml.cs">
+      <DependentUpon>DlgEditSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Edit\Models\EditSystemModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Add\CtlReportSpecificData.xaml.cs">
+      <DependentUpon>CtlReportSpecificData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\Add\CtlDocumentBaseData.xaml.cs">
+      <DependentUpon>CtlDocumentBaseData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\Add\CtlNameComment.xaml.cs">
+      <DependentUpon>CtlNameComment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\Add\CtlReportOverview.xaml.cs">
+      <DependentUpon>CtlReportOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\Add\DlgAddCompany.xaml.cs">
+      <DependentUpon>DlgAddCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\Add\DlgAddReport.xaml.cs">
+      <DependentUpon>DlgAddReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\Add\DlgAddSystem.xaml.cs">
+      <DependentUpon>DlgAddSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\Add\DlgNameComment.xaml.cs">
+      <DependentUpon>DlgNameComment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\Add\Models\AddCompanyModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Add\Models\AddObjectModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Add\Models\AddReportModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Add\Models\AddSystemModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Converter\ListBoxItemSelectedToBoolConverter.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\CtlBalanceListInfo.xaml.cs">
+      <DependentUpon>CtlBalanceListInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlBalanceListManager.xaml.cs">
+      <DependentUpon>CtlBalanceListManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\Converter\ObjectTypeDictContainsKeyToVisibilityConverter.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\CtlAskNewAvailable.xaml.cs">
+      <DependentUpon>CtlAskNewAvailable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlBalanceListSummary.xaml.cs">
+      <DependentUpon>CtlBalanceListSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlFinancialYear.xaml.cs">
+      <DependentUpon>CtlFinancialYear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlNotExistingCreateNew.xaml.cs">
+      <DependentUpon>CtlNotExistingCreateNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlSelectedObjects.xaml.cs">
+      <DependentUpon>CtlSelectedObjects.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlSelectFinancialYear.xaml.cs">
+      <DependentUpon>CtlSelectFinancialYear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlSelection.xaml.cs">
+      <DependentUpon>CtlSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlSelectionEntry.xaml.cs">
+      <DependentUpon>CtlSelectionEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlSelectItem.xaml.cs">
+      <DependentUpon>CtlSelectItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlSelectListboxEntry.xaml.cs">
+      <DependentUpon>CtlSelectListboxEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlWelcomePage.xaml.cs">
+      <DependentUpon>CtlWelcomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\CtlYesNo.xaml.cs">
+      <DependentUpon>CtlYesNo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\DlgManagementAssistant.xaml.cs">
+      <DependentUpon>DlgManagementAssistant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\DlgSelectObject.xaml.cs">
+      <DependentUpon>DlgSelectObject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\ManagementAssistant\Model\AskingBalanceListImportModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Model\AskingBalanceListTestlistModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Model\AskingCompanyModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Model\AskingDocumentModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Model\AskingModelBase.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Model\AskingRepeatModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Model\AskingSystemModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Model\IAskingModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Model\ManagementAssistantModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Model\SelectionModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Model\SelectObjectModel.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\Converter\ObjectTypeDictContainsKeyToBoolConverter.cs" />
+    <Compile Include="Windows\Management\ManagementAssistant\ObjectTypes.cs" />
+    <Compile Include="Windows\Management\Management\Converter\ClassTypeToImageSourceConverter.cs" />
+    <Compile Include="Windows\Management\Management\Converter\ClassTypeToImageTooltipConverter.cs" />
+    <Compile Include="Windows\Management\Management\Converter\ClassTypeToNameCaptionConverter.cs" />
+    <Compile Include="Windows\Management\Management\CtlReportManagement.xaml.cs">
+      <DependentUpon>CtlReportManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Management\CtlManagementListItem.xaml.cs">
+      <DependentUpon>CtlManagementListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Management\CtlManagementItems.xaml.cs">
+      <DependentUpon>CtlManagementItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Management\DlgReportManagement.xaml.cs">
+      <DependentUpon>DlgReportManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Management\DlgManagementList.xaml.cs">
+      <DependentUpon>DlgManagementList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Management\DlgUserManagement.xaml.cs">
+      <DependentUpon>DlgUserManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Management\Management\Models\CompanyManagementModel.cs" />
+    <Compile Include="Windows\Management\Management\Models\IReportTreeItem.cs" />
+    <Compile Include="Windows\Management\Management\Models\ReportManagementModel.cs" />
+    <Compile Include="Windows\Management\Management\Models\ReportTreeLeaf.cs" />
+    <Compile Include="Windows\Management\Management\Models\ReportTreeNode.cs" />
+    <Compile Include="Windows\Reconciliation\CtlReconciliationChange.xaml.cs">
+      <DependentUpon>CtlReconciliationChange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\CtlReconciliationDetailsView.xaml.cs">
+      <DependentUpon>CtlReconciliationDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\CtlReconciliationListItem.xaml.cs">
+      <DependentUpon>CtlReconciliationListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\CtlReferenceListTreeView.xaml.cs">
+      <DependentUpon>CtlReferenceListTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DlgAddReconciliationAssistant.xaml.cs">
+      <DependentUpon>DlgAddReconciliationAssistant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DlgChangeReconciliation.xaml.cs">
+      <DependentUpon>DlgChangeReconciliation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DlgChangeReconciliations.xaml.cs">
+      <DependentUpon>DlgChangeReconciliations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DlgDeleteReconciliation.xaml.cs">
+      <DependentUpon>DlgDeleteReconciliation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DlgInputMode.xaml.cs">
+      <DependentUpon>DlgInputMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DlgReconciliation.xaml.cs">
+      <DependentUpon>DlgReconciliation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DlgReconciliationProperties.xaml.cs">
+      <DependentUpon>DlgReconciliationProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DlgReferenceList.xaml.cs">
+      <DependentUpon>DlgReferenceList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DragDropPopup.xaml.cs">
+      <DependentUpon>DragDropPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditPresentationTreeDetails\CtlEditHyperCubeText.xaml.cs">
+      <DependentUpon>CtlEditHyperCubeText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Export\CtlReportConfig.xaml.cs">
+      <DependentUpon>CtlReportConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Export\CtlReportPartSelection.xaml.cs">
+      <DependentUpon>CtlReportPartSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Export\DlgExport.xaml.cs">
+      <DependentUpon>DlgExport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgInfo.xaml.cs">
+      <DependentUpon>DlgInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgProxy.xaml.cs">
+      <DependentUpon>DlgProxy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgSelectBusinessClass.xaml.cs">
+      <DependentUpon>DlgSelectBusinessClass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\Import\DlgImportOrSampleFileSelectionReconciliation.xaml.cs">
+      <DependentUpon>DlgImportOrSampleFileSelectionReconciliation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\Models\AddReconciliationModel.cs" />
+    <Compile Include="Windows\Reconciliation\Models\DeleteReconciliationModel.cs" />
+    <Compile Include="Windows\Reconciliation\Models\ChangeReconciliationModel.cs" />
+    <Compile Include="Windows\Reconciliation\TemplateSelectors\ReconciliationTypeTemplateSelector.cs" />
+    <Compile Include="Windows\TaxonomyUpgrade\DlgShowCompanyUpgradeResults.xaml.cs">
+      <DependentUpon>DlgShowCompanyUpgradeResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TaxonomyUpgrade\DlgShowReportUpgradeResults.xaml.cs">
+      <DependentUpon>DlgShowReportUpgradeResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditPresentationTreeDetails\CtlEditListTreeView.xaml.cs">
+      <DependentUpon>CtlEditListTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditPresentationTreeDetails\DlgEditDateDetails.xaml.cs">
+      <DependentUpon>DlgEditDateDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditPresentationTreeDetails\DlgEditHyperCubeDetails.xaml.cs">
+      <DependentUpon>DlgEditHyperCubeDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditPresentationTreeDetails\DlgEditListDetails.xaml.cs">
+      <DependentUpon>DlgEditListDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditPresentationTreeDetails\DlgEditMonetaryDetails.xaml.cs">
+      <DependentUpon>DlgEditMonetaryDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditPresentationTreeDetails\DlgEditNumericDetails.xaml.cs">
+      <DependentUpon>DlgEditNumericDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditPresentationTreeDetails\DlgEditTextDetails.xaml.cs">
+      <DependentUpon>DlgEditTextDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditPresentationTreeDetails\PresentationTreeDetailModel.cs" />
+    <Compile Include="Windows\Export\DlgExportHypercube.xaml.cs">
+      <DependentUpon>DlgExportHypercube.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FederalGazette\DlgFederalGazetteLogin.xaml.cs">
+      <DependentUpon>DlgFederalGazetteLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FederalGazette\DlgFederalGazettePreview.xaml.cs">
+      <DependentUpon>DlgFederalGazettePreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FederalGazette\DlgCompanyList.xaml.cs">
+      <DependentUpon>DlgCompanyList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FederalGazette\FederalGazetteCtls\CtlFederalGazetteClient.xaml.cs">
+      <DependentUpon>CtlFederalGazetteClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FederalGazette\FederalGazetteCtls\CtlFederalGazetteReportSettings.xaml.cs">
+      <DependentUpon>CtlFederalGazetteReportSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FederalGazette\Model\DlgFederalGazettePreviewModel.cs" />
+    <Compile Include="Windows\FederalGazette\Model\NavigationTreeEntryBaseFg.cs" />
+    <Compile Include="Windows\FederalGazette\Model\NavigationTreeEntryFg.cs" />
+    <Compile Include="Windows\FederalGazette\Model\NavigationTreeFg.cs" />
+    <Compile Include="Windows\Import\Ctl3dOrder.xaml.cs">
+      <DependentUpon>Ctl3dOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\CtlAssignmentColumn.xaml.cs">
+      <DependentUpon>CtlAssignmentColumn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\CtlAssignmentRow.xaml.cs">
+      <DependentUpon>CtlAssignmentRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\CtlAssignmentSummary.xaml.cs">
+      <DependentUpon>CtlAssignmentSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\CtlAssignmentTemplateCreation.xaml.cs">
+      <DependentUpon>CtlAssignmentTemplateCreation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\CtlCsvConfigLimiterCharset.xaml.cs">
+      <DependentUpon>CtlCsvConfigLimiterCharset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\CtlFileSelection.xaml.cs">
+      <DependentUpon>CtlFileSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\CtlImportSummary.xaml.cs">
+      <DependentUpon>CtlImportSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\CtlTemplateList.xaml.cs">
+      <DependentUpon>CtlTemplateList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\CtlTemplateSelection.xaml.cs">
+      <DependentUpon>CtlTemplateSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\CtlTemplateSummary.xaml.cs">
+      <DependentUpon>CtlTemplateSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\DlgAssignment.xaml.cs">
+      <DependentUpon>DlgAssignment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\DlgImport.xaml.cs">
+      <DependentUpon>DlgImport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\DlgImportCompanyDetails.xaml.cs">
+      <DependentUpon>DlgImportCompanyDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\DlgImportHyperCube.xaml.cs">
+      <DependentUpon>DlgImportHyperCube.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\DlgTemplateConfig.xaml.cs">
+      <DependentUpon>DlgTemplateConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Import\NotEmptyListToVisibilityConverter.cs" />
+    <Compile Include="Windows\MappingTemplates\CtlCreateTemplate.xaml.cs">
+      <DependentUpon>CtlCreateTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\CtlCurrentTemplates.xaml.cs">
+      <DependentUpon>CtlCurrentTemplates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\CtlTemplateDetails.xaml.cs">
+      <DependentUpon>CtlTemplateDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\CtlTemplateList.xaml.cs">
+      <DependentUpon>CtlTemplateList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\CtlTemplateTreeView.xaml.cs">
+      <DependentUpon>CtlTemplateTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\DlgApplyTemplateErrors.xaml.cs">
+      <DependentUpon>DlgApplyTemplateErrors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\DlgApplyTemplates.xaml.cs">
+      <DependentUpon>DlgApplyTemplates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\DlgCreateTemplate.xaml.cs">
+      <DependentUpon>DlgCreateTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\DlgExportDeletedElements.xaml.cs">
+      <DependentUpon>DlgExportDeletedElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\DlgExportTemplate.xaml.cs">
+      <DependentUpon>DlgExportTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\DlgImportTemplate.xaml.cs">
+      <DependentUpon>DlgImportTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\DlgExtendTemplate.xaml.cs">
+      <DependentUpon>DlgExtendTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\DlgExtendTemplateResult.xaml.cs">
+      <DependentUpon>DlgExtendTemplateResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\DlgShowTaxonomyUpdate.xaml.cs">
+      <DependentUpon>DlgShowTaxonomyUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\DlgTemplateDetails.xaml.cs">
+      <DependentUpon>DlgTemplateDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\DlgTemplates.xaml.cs">
+      <DependentUpon>DlgTemplates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MappingTemplates\Models\DlgTemplatesModel.cs" />
+    <Compile Include="Windows\MappingTemplates\Models\NavigationTreeMappingTemplates.cs" />
+    <Compile Include="Windows\MappingTemplates\Models\TemplateDetailModel.cs" />
+    <Compile Include="Windows\MappingTemplates\Models\TemplateGUIDragDropData.cs" />
+    <Compile Include="Windows\MappingTemplates\Models\TemplateListModel.cs" />
+    <Compile Include="Windows\MappingTemplates\TemplateSelectors\TemplateTreeTemplateSelector.cs" />
+    <Compile Include="Windows\Reconciliation\Converters\ReconciliationTransactionTypeToTooltipTextConverter.cs" />
+    <Compile Include="Windows\Reconciliation\Converters\ReconciliationTransactionTypeToImageSourceConverter.cs" />
+    <Compile Include="Windows\Reconciliation\Converters\TransferKindToLabelConverter.cs" />
+    <Compile Include="Windows\Reconciliation\CtlImportPreviousYearValues.xaml.cs">
+      <DependentUpon>CtlImportPreviousYearValues.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\CtlMainArea.xaml.cs">
+      <DependentUpon>CtlMainArea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\CtlReconciliationDetailList.xaml.cs">
+      <DependentUpon>CtlReconciliationDetailList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\CtlReconciliationList.xaml.cs">
+      <DependentUpon>CtlReconciliationList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\CtlReconciliations.xaml.cs">
+      <DependentUpon>CtlReconciliations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\CtlReferenceList.xaml.cs">
+      <DependentUpon>CtlReferenceList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\CtlTreeView.xaml.cs">
+      <DependentUpon>CtlTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DetailViews\ImportedValuesDetails.xaml.cs">
+      <DependentUpon>ImportedValuesDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DetailViews\PreviousYearDetails.xaml.cs">
+      <DependentUpon>PreviousYearDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DetailViews\ReconciliationDetailsView.xaml.cs">
+      <DependentUpon>ReconciliationDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DlgImportPreviousYearValues.xaml.cs">
+      <DependentUpon>DlgImportPreviousYearValues.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DragDropData.cs" />
+    <Compile Include="Windows\Reconciliation\DragDropHelperItems\DeltaReconciliationItem.xaml.cs">
+      <DependentUpon>DeltaReconciliationItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DragDropHelperItems\ImportedValueReconciliationItem.xaml.cs">
+      <DependentUpon>ImportedValueReconciliationItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DragDropHelperItems\ReclassificationDest.xaml.cs">
+      <DependentUpon>ReclassificationDest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\DragDropHelperItems\ReclassificationSource.xaml.cs">
+      <DependentUpon>ReclassificationSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TaxonomyUpgrade\DlgTaxonomyUpgradeInfo.xaml.cs">
+      <DependentUpon>DlgTaxonomyUpgradeInfo.xaml</DependentUpon>
+    </Compile>
+    <None Include="Windows\Reconciliation\DragDropHelperItems\ValueChangeBalanceAssets.xaml.cs">
+      <DependentUpon>ValueChangeBalanceAssets.xaml</DependentUpon>
+    </None>
+    <None Include="Windows\Reconciliation\DragDropHelperItems\ValueChangeBalanceLiabilities.xaml.cs">
+      <DependentUpon>ValueChangeBalanceLiabilities.xaml</DependentUpon>
+    </None>
+    <None Include="Windows\Reconciliation\DragDropHelperItems\ValueChangeIncomeStatement.xaml.cs">
+      <DependentUpon>ValueChangeIncomeStatement.xaml</DependentUpon>
+    </None>
+    <Compile Include="Windows\Reconciliation\Import\CtlImportErrors.xaml.cs">
+      <DependentUpon>CtlImportErrors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\Import\CtlImportOpenFile.xaml.cs">
+      <DependentUpon>CtlImportOpenFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\Import\CtlImportPreview.xaml.cs">
+      <DependentUpon>CtlImportPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\Import\DlgReconciliationImport.xaml.cs">
+      <DependentUpon>DlgReconciliationImport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\ReclassificationOverview.xaml.cs">
+      <DependentUpon>ReclassificationOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\ReconciliationResources.cs" />
+    <Compile Include="Windows\Reconciliation\TemplateSelectors\DeltaReconciliationDetailTemplateSelector.cs" />
+    <Compile Include="Windows\Reconciliation\TemplateSelectors\ImportedValuesDetailTemplateSelector.cs" />
+    <Compile Include="Windows\Reconciliation\TemplateSelectors\PrevoiusYearDetailTemplateSelector.cs" />
+    <Compile Include="Windows\Reconciliation\TemplateSelectors\SimplifiedTreeViewItemTemplateSelector.cs" />
+    <Compile Include="Windows\Reconciliation\TemplateSelectors\TreeViewItemTemplateSelector.cs" />
+    <Compile Include="Windows\Reconciliation\test.xaml.cs">
+      <DependentUpon>test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reconciliation\TreeViewOptionsPopup.xaml.cs">
+      <DependentUpon>TreeViewOptionsPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlActiveDirectoryUserImport.xaml.cs">
+      <DependentUpon>CtlActiveDirectoryUserImport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlChangePassword.xaml.cs">
+      <DependentUpon>CtlChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlCompanyList.xaml.cs">
+      <DependentUpon>CtlCompanyList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlEditDomainUser.xaml.cs">
+      <DependentUpon>CtlEditDomainUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlEditRole.xaml.cs">
+      <DependentUpon>CtlEditRole.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlEditUser.xaml.cs">
+      <DependentUpon>CtlEditUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlEffectiveRights.xaml.cs">
+      <DependentUpon>CtlEffectiveRights.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlEffectiveRightsByElement.xaml.cs">
+      <DependentUpon>CtlEffectiveRightsByElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlEffectiveRightsByType.xaml.cs">
+      <DependentUpon>CtlEffectiveRightsByType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlRightObjectTree.xaml.cs">
+      <DependentUpon>CtlRightObjectTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlRoleRights.xaml.cs">
+      <DependentUpon>CtlRoleRights.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlRoleRightsByElement.xaml.cs">
+      <DependentUpon>CtlRoleRightsByElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlRoleRightsByType.xaml.cs">
+      <DependentUpon>CtlRoleRightsByType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\CtlSecurityManagement.xaml.cs">
+      <DependentUpon>CtlSecurityManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\DlgChangePassword.xaml.cs">
+      <DependentUpon>DlgChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\DlgEditRole.xaml.cs">
+      <DependentUpon>DlgEditRole.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\DlgEffectiveRights.xaml.cs">
+      <DependentUpon>DlgEffectiveRights.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\DlgRoleRights.xaml.cs">
+      <DependentUpon>DlgRoleRights.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgSendData.xaml.cs">
+      <DependentUpon>DlgSendData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BalanceList\DlgSplitAccount.xaml.cs">
+      <DependentUpon>DlgSplitAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BalanceList\DlgEditBalanceList.xaml.cs">
+      <DependentUpon>DlgEditBalanceList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\DlgEditUser.xaml.cs">
+      <DependentUpon>DlgEditUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\DlgActiveDirectoryUserImport.xaml.cs">
+      <DependentUpon>DlgActiveDirectoryUserImport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Security\Models\ActiveDirectoryUserImportModel.cs" />
+    <Compile Include="Windows\Security\Models\CtlEffectiveRightsModel.cs" />
+    <Compile Include="Windows\Security\Models\CtlRoleRightsByTypeModel.cs" />
+    <Compile Include="Windows\Security\Models\CtlSecurityManagementModel.cs" />
+    <Compile Include="Windows\Security\Models\RoleRightTreeViewModel.cs" />
+    <Page Include="Controls\BalanceList\BalanceListFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\BalListImpAssistPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\BalListImpAssistPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\BalListImpAssistPageColumnSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\BalListImpAssistPageSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\BalListInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\CtlAccountReferenceList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\CtlExampleCsv.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\DlgExampleCsv.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\HeaderFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\PresentationTreeFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\CtlBalanceList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\BalanceList\CtlGroupAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\CtlSortBalanceList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\ImportDataPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\SimplifiedPresentationTreeFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Company\CtlCompanyFinancialYears.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Company\CtlCompanyInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\CtlBalanceListManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Company\ImportCompanyDetailsAssistant\CtlImportCompany3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Company\ImportCompanyDetailsAssistant\CtlImportCompany4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Company\ImportCompanyDetailsAssistant\CtlImportCompany5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Company\TaxIdInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlElsterServerInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlElsterServerInfoText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlErrorMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlErrorMessageWithPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlExternCall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlGlobalOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlHBSTDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlHelp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlInfoSlideout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlNavTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlProblemOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlTaxonomyTreeViewConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlValueDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Document\CtlDocumentDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Document\CtlDocumentProperties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Document\CtlReportOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlErrorListViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Help\CtlElsterInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Help\CtlManual.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MonetaryNodeInfoIconsReconciliation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Legend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MonetaryNodeInfoIcons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlMonetarySources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\XbrlVisualisation\CtlKKE_LimitedPartners.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\XbrlVisualisation\CtlKKE_UnlimitedPartners.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\XbrlVisualisation\XbrlListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CtlTaxonomyTreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Document\CtlEditDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\XbrlVisualisation\XbrlBasePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BalanceList\CtlSplitAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\AppResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\DlgEditBalanceListResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\HyperCube.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\RoleDialogResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\SecurityResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\TaxonomyAndBalanceListBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\DetailViews.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\TaxonomyTreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AuditMode\CtlAuditCorrections.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\AuditMode\CtlTaxAudit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AuditMode\DlgTaxAudit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BalanceList\BalListImportAssistant.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BalanceList\CtlBalListTemplateMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BalanceList\CtlEditBalanceList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BalanceList\CtlEditBalListTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BalanceList\CtlReimport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BalanceList\DlgAccountReferenceList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BalanceList\DlgProfileName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgEditText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgEnterPin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgEnterPin1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BalanceList\DlgGroupAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgGlobalOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgHelp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgOpenResourcePdf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgTools.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\GlobalSearch\CtlGlobalSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\GlobalSearch\CtlGlobalSearchContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\DlgImportOrSampleFileSelectionCompany.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\Add\DlgAddCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\Add\DlgAddReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\Add\DlgAddSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\Delete\CtlDeleteReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\Delete\CtlDeleteListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\Delete\DlgDeleteReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\Delete\DlgDeleteList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\Edit\CtlEditCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\Edit\CtlEditSystem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\Edit\DlgEditCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\Edit\DlgEditReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\Edit\DlgEditSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\Add\CtlReportSpecificData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\Add\CtlDocumentBaseData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\Add\CtlNameComment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\Add\CtlReportOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\Add\DlgAddCompany.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\Add\DlgAddReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\Add\DlgAddSystem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\Add\DlgNameComment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlBalanceListInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlBalanceListManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlAskNewAvailable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlBalanceListSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlFinancialYear.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlNotExistingCreateNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlSelectedObjects.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlSelectFinancialYear.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlSelectionEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlSelectItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlSelectListboxEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlWelcomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\CtlYesNo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\DlgManagementAssistant.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\ManagementAssistant\DlgSelectObject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\Management\CtlReportManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\Management\CtlManagementListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\Management\CtlManagementItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Management\Management\DlgReportManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\Management\DlgManagementList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Management\Management\DlgUserManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\CtlReconciliationChange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\CtlReconciliationDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\CtlReconciliationListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\CtlReferenceListTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DlgAddReconciliationAssistant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Reconciliation\DlgChangeReconciliation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DlgChangeReconciliations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DlgDeleteReconciliation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DlgInputMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DlgReconciliation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DlgReconciliationProperties.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Reconciliation\DlgReferenceList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DragDropPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditPresentationTreeDetails\CtlEditHyperCubeText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Export\CtlReportConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Export\CtlReportPartSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Export\DlgExport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgProxy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgSelectBusinessClass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\Import\DlgImportOrSampleFileSelectionReconciliation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TaxonomyUpgrade\DlgShowCompanyUpgradeResults.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TaxonomyUpgrade\DlgShowReportUpgradeResults.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditPresentationTreeDetails\CtlEditListTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditPresentationTreeDetails\DlgEditDateDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditPresentationTreeDetails\DlgEditHyperCubeDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditPresentationTreeDetails\DlgEditListDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditPresentationTreeDetails\DlgEditMonetaryDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditPresentationTreeDetails\DlgEditNumericDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditPresentationTreeDetails\DlgEditTextDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Export\DlgExportHypercube.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FederalGazette\DlgFederalGazetteLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FederalGazette\DlgFederalGazettePreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FederalGazette\DlgCompanyList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FederalGazette\FederalGazetteCtls\CtlFederalGazetteClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FederalGazette\FederalGazetteCtls\CtlFederalGazetteReportSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\Ctl3dOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\CtlAssignmentColumn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\CtlAssignmentRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\CtlAssignmentSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\CtlAssignmentTemplateCreation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\CtlCsvConfigLimiterCharset.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\CtlFileSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\CtlImportSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\CtlTemplateList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\CtlTemplateSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\CtlTemplateSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\DlgAssignment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\DlgImport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\DlgImportCompanyDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\DlgImportHyperCube.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\DlgTemplateConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Import\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\CtlCreateTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\CtlCurrentTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\CtlTemplateDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\CtlTemplateList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\CtlTemplateTreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\MappingTemplates\DlgApplyTemplateErrors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\DlgApplyTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\DlgCreateTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\DlgExportDeletedElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\DlgExportTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\MappingTemplates\DlgImportTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\MappingTemplates\DlgExtendTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\DlgExtendTemplateResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\DlgShowTaxonomyUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\DlgTemplateDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MappingTemplates\DlgTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\MappingTemplates\ResourceDictionaries\Templates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\MappingTemplates\ResourceDictionaries\TemplateTreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Reconciliation\CtlImportPreviousYearValues.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\CtlMainArea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\CtlReconciliationDetailList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\CtlReconciliationList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\CtlReconciliations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\CtlReferenceList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\CtlTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DetailViews\ImportedValuesDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DetailViews\PreviousYearDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DetailViews\ReconciliationDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Reconciliation\DlgImportPreviousYearValues.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DragDropHelperItems\DeltaReconciliationItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DragDropHelperItems\ImportedValueReconciliationItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DragDropHelperItems\ReclassificationDest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\DragDropHelperItems\ReclassificationSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <None Include="Windows\Reconciliation\DragDropHelperItems\ValueChangeBalanceAssets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Include="Windows\Reconciliation\DragDropHelperItems\ValueChangeBalanceLiabilities.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Include="Windows\Reconciliation\DragDropHelperItems\ValueChangeIncomeStatement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <Page Include="Windows\Reconciliation\Import\CtlImportErrors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\Import\CtlImportOpenFile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\Import\CtlImportPreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Reconciliation\Import\DlgReconciliationImport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\ReclassificationOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\ReconciliationResources.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Reconciliation\test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Reconciliation\TreeViewOptionsPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Security\CtlActiveDirectoryUserImport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Security\CtlChangePassword.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\CtlCompanyList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Security\CtlEditDomainUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\CtlEditRole.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\CtlEditUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\CtlEffectiveRights.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\CtlEffectiveRightsByElement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\CtlEffectiveRightsByType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\CtlRightObjectTree.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\CtlRoleRights.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\CtlRoleRightsByElement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\CtlRoleRightsByType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\CtlSecurityManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Security\DlgChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Security\DlgEditRole.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Security\DlgEffectiveRights.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Security\DlgRoleRights.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgSendData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BalanceList\DlgSplitAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BalanceList\DlgEditBalanceList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Security\DlgEditUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Security\DlgActiveDirectoryUserImport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\TaxonomyUpgrade\DlgTaxonomyUpgradeInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdCommon\AvdCommon.csproj">
+      <Project>{89148742-F482-479E-8831-579F54FDF08A}</Project>
+      <Name>AvdCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdWpfControls\AvdWpfControls.csproj">
+      <Project>{E3B12F3F-E420-48FA-B991-FA1FF8D603F2}</Project>
+      <Name>AvdWpfControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdWpfStyles\AvdWpfStyles.csproj">
+      <Project>{FED8686B-7BE7-432C-B1F6-FA5900F6BAC2}</Project>
+      <Name>AvdWpfStyles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\PdfGenerator\PdfGenerator\PdfGenerator.csproj">
+      <Project>{0867E9E0-6D5D-4E8A-A42F-ED839B22707F}</Project>
+      <Name>PdfGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\eBalanceKitBase\eBalanceKitBase.csproj">
+      <Project>{E2CEEA3B-3845-427E-998E-08ED35B18D29}</Project>
+      <Name>eBalanceKitBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\eBalanceKitBusiness\eBalanceKitBusiness\eBalanceKitBusiness.csproj">
+      <Project>{6B330A1B-FEB4-4FD5-A3F0-0C0631F38578}</Project>
+      <Name>eBalanceKitBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EricWrapper\EricWrapper.csproj">
+      <Project>{DEB7D8F7-5F31-47A6-BFE5-EF46BD2A386D}</Project>
+      <Name>EricWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Taxonomy\Taxonomy\Taxonomy.csproj">
+      <Project>{5E4B032D-3B2E-4E6D-B2D7-88499B01604D}</Project>
+      <Name>Taxonomy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eBalanceKitControls\eBalanceKitControls.csproj">
+      <Project>{A3877D87-361A-475D-9282-BEB83EAAE924}</Project>
+      <Name>eBalanceKitControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eBalanceKitResources\eBalanceKitResources.csproj">
+      <Project>{05CDF0E9-D91A-47A7-A4E2-E46B1F489425}</Project>
+      <Name>eBalanceKitResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eFederalGazette\eFederalGazette.csproj">
+      <Project>{0A90B76A-93C6-4F12-BDC0-CC458F40A149}</Project>
+      <Name>eFederalGazette</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

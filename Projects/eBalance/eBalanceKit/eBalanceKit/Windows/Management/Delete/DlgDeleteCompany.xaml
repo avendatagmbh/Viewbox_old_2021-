@@ -1,0 +1,37 @@
+﻿<Window x:Class="eBalanceKit.Windows.Management.Delete.DlgDeleteCompany"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my1="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Icon="/eBalanceKitResources;component/Resources/deleteCompany16.png"
+        WindowStartupLocation="CenterOwner"
+        Title="Unternehmen löschen" Height="300" Width="360">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Margin="50,20,0,0" VerticalAlignment="Center" Text="Unternehmen" Grid.Row="0" FontWeight="Bold" />
+            <my1:AvdComboBox Grid.Row="1" Width="170" Margin="50,10,0,0"
+                      HorizontalAlignment="Left"
+                                          ItemsSource="{Binding Path=Items}"
+                                          SelectedItem="{Binding Path=SelectedItem,Mode=TwoWay}"
+                                          DisplayMemberPath="DisplayString" SelectValueMessage="{x:Static Localisation:ResourcesCommon.PleaseSelect}" />
+            <StackPanel Margin="50,10,50,0">
+                <StackPanel Orientation="Horizontal"  Visibility="{Binding MessageVisible, Converter={StaticResource TrueToVisibilityConverter}}">
+                    <Image Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" Width="16"/>
+                    <TextBlock TextWrapping="Wrap" Margin="5,0,0,0" Text="{Binding Message}" MaxWidth="220"/>
+                </StackPanel>
+                <my1:BulletItem Text="{Binding ReportMessage}" Margin="20,5,0,0" Visibility="{Binding ReportMessage, Converter={StaticResource ValueExistsToVisibilityConverter}}"/>
+            </StackPanel>
+        </StackPanel>
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}">
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="Ok" Height="23" Margin="5" Name="btnTestConnection" Width="75" Click="btnOkClick" IsEnabled="{Binding SelectedItem, Converter={StaticResource ValueExistsToBoolConverter}}"/>
+                <Button Content="Ab_brechen" Height="23" Margin="0,5,5,5" Name="btnCancel" Width="75" Click="btnCancelClick" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,9 @@
+﻿<Window x:Class="eBalanceKit.Windows.Security.DlgEditRole"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Title="{x:Static loc:ResourcesCommon.EditRoleCaption}" Width="400"
+        xmlns:Security="clr-namespace:eBalanceKit.Windows.Security" ResizeMode="NoResize" SizeToContent="Height" WindowStartupLocation="CenterOwner" 
+        Icon="/eBalanceKitResources;component/Resources/UserRole.png">
+    <Security:CtlEditRole/>
+</Window>

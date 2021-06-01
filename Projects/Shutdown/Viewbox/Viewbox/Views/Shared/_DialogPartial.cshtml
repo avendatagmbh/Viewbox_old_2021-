@@ -1,0 +1,43 @@
+﻿@model Viewbox.Models.DialogModel
+           
+<!-- _DialogPartial.cshtml -->
+@if (!String.IsNullOrWhiteSpace(Model.Link))
+{
+    <div class="link hide">@Model.Link</div>
+}
+else
+{
+    <div class="dialog-bg"></div>
+    <div class="dialog-box @Model.DialogType @Model.Class">
+        <span class="hide key">@Model.Key</span>
+        <div class="dialog-icon"></div>
+        <div class="dialog-text">
+            <h2>@Model.Title</h2>
+            <span>@Html.Raw(Model.Content)</span>
+            @if (Model.InputName != null)
+            {
+                <form method="post">
+                    <input type="@(String.IsNullOrEmpty(Model.InputType) ? "text" : Model.InputType)" name="@Model.InputName" value="@Model.InputValue" maxlength="@(Model.InputLength > 0 ? Model.InputLength : 256)" />
+                    @foreach (var h in Model.HiddenFields)
+                    {
+                        <input type="hidden" name="@h.Item1" id="@h.Item1" value="@h.Item2" />
+                    }
+                </form>
+            }
+        </div>
+        <div class="dialog-buttons">
+            <a href="#" class="dialog-btn template"><span class="left"></span><span class="right"></span><span class="text"></span></a>
+            @foreach (var Button in Model.Buttons)
+            {
+                if( !string.IsNullOrEmpty(Button.Id) )
+                {
+                    <a href="@Button.Url" class="dialog-btn" id="@Button.Id"><span class="data">@Button.Data</span><span class="left"></span><span class="right"></span><span class="text">@Button.Caption</span></a>
+                }
+                else
+                {
+                    <a href="@Button.Url" class="dialog-btn"><span class="data">@Button.Data</span><span class="left"></span><span class="right"></span><span class="text">@Button.Caption</span></a>   
+                } 
+            }
+        </div>
+    </div>
+}

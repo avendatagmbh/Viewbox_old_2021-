@@ -1,0 +1,10 @@
+﻿<Window x:Class="eBalanceKit.Windows.FederalGazette.DlgFederalGazetteClientList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:FederalGazette="clr-namespace:eBalanceKit.Controls.FederalGazette"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Title="{x:Static Localisation:ResourcesFederalGazette.ClientList}" Height="300" Width="300">
+    <Grid>
+        <FederalGazette:CtlFederalGazetteClientList x:Name="ctlClientList" />
+    </Grid>
+</Window>

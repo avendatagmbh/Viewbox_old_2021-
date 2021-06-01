@@ -1,0 +1,23 @@
+﻿<Window x:Class="EricTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Eric Test Project" Height="350" Width="525" WindowState="Maximized" PreviewKeyDown="Window_PreviewKeyDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">
+            <TextBox HorizontalAlignment="Left" Name="tbXbrlFileName" MinWidth="250" VerticalAlignment="Top" Text="{Binding XbrlFile, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+            <Button Content="search" HorizontalAlignment="Left" Name="button2" VerticalAlignment="Top" Click="btnSelectFile_Click" Margin="5" />
+            <Button Content="save" HorizontalAlignment="Left" Name="btSave" VerticalAlignment="Top" Click="btSave_Click" Margin="5" />
+        </StackPanel>
+        <Button Content="validate" Name="btValidate" VerticalAlignment="Top" Click="button1_Click" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="1" Margin="50,5" />
+        <TextBox Name="Xbrl" Text="{Binding XbrlContent, UpdateSourceTrigger=PropertyChanged}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" AcceptsTab="True" Grid.Row="1" Grid.ColumnSpan="4" />
+    </Grid>
+</Window>

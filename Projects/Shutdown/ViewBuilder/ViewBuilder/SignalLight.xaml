@@ -1,0 +1,21 @@
+<UserControl x:Class="ViewBuilder.SignalLight"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Converters="clr-namespace:ViewBuilder.Converters"
+             mc:Ignorable="d"  Height="Auto" Width="Auto"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             >
+
+    <UserControl.Resources>
+        <Converters:EnumToVisibilityConverter x:Key="EnumToVisibilityConverter" />
+    </UserControl.Resources>
+
+    <Grid Height="16" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTipService.ShowDuration="10000" MouseEnter="Grid_MouseEnter">
+        <Image Visibility="{Binding Path=State, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=Green, Mode=OneWay}" Source="/Resources\SignalLightGreen.png" />
+        <Image Visibility="{Binding Path=State, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=Yellow, Mode=OneWay}" Source="/Resources\SignalLightYellow.png" />
+        <Image Visibility="{Binding Path=State, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=Red, Mode=OneWay}" Source="/Resources\SignalLightRed.png" />
+    </Grid>
+
+</UserControl>

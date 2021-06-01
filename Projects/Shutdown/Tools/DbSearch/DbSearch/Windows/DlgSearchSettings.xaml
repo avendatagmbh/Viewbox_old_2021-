@@ -1,0 +1,33 @@
+﻿<Window x:Class="DbSearch.Windows.DlgSearchSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sucheeinstellungen" SizeToContent="Height" Width="650" Icon="/Resources/logo.png"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label>Blacklist: Namen der auszuschließenden Tabellen festlegen (mit Semikolon trennen)</Label>
+        <TextBox Grid.Row="1" Text="{Binding BlacklistTables}"/>
+        <Label Grid.Row="2">Whitelist: Namen der einzuschließenden Tabellen festlegen (mit Semikolon trennen)</Label>
+        <TextBox Grid.Row="3" Text="{Binding WhitelistTables}"/>
+        <Label Grid.Row="4" Foreground="Red">Achtung: Sobald eine Tabelle in der Whitelist angegeben wurde, wird die Blacklist ignoriert.</Label>
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <TextBox>Einstellungen übernehmen aus folgender Abfrage</TextBox>
+            <ComboBox Margin="5,0,0,0" MinWidth="150" SelectedItem="{Binding SelectedQuery}" DisplayMemberPath="Name" ItemsSource="{Binding Queries}"/>
+            <Button Margin="5,0,0,0" Command="{Binding TransferSettingsFromQueryCommand}">übernehmen</Button>
+        </StackPanel>
+        <Border Grid.Row="6" Grid.ColumnSpan="2"  Margin="0,5,0,0" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="_OK" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="btnOk_Click" />
+                <Button Content="A_bbrechen" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

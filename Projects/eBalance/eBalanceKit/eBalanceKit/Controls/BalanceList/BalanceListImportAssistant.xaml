@@ -1,0 +1,164 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.BalanceList.BalanceListImportAssistant"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:eBalanceKit.Controls.BalanceList"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <AvdWpfControls:AssistantControl Name="assistantControl" ShowSteps="False" CancelButtonVisibility="Collapsed" IsNavigationButtonVisible="False">
+            <AvdWpfControls:AssistantControl.ReplaceFooter>
+                <Border Grid.Row="2" Margin="0,0,0,0" Style="{StaticResource ButtonBorder}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Orientation="Horizontal" Grid.Column="2">
+                            <Button Content="{x:Static Localisation:ResourcesCommon.Back}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnPrevious" MinWidth="75" Click="BtnPreviousClick" >
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                        <Setter Property="IsEnabled" Value="True" />
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding RunningSeperate}" Value="True" />
+                                                    <Condition Binding="{Binding IsFirstPage}" Value="True" />
+                                                </MultiDataTrigger.Conditions>
+                                                <MultiDataTrigger.Setters>
+                                                    <Setter Property="IsEnabled" Value="False" />
+                                                </MultiDataTrigger.Setters>
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Content="{x:Static Localisation:ResourcesCommon.Next}" Height="23" Margin="5" Name="btnNext" MinWidth="75" Click="BtnNextClick" >
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                        <Setter Property="IsEnabled" Value="True" />
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding IsLastPage}" Value="True" />
+                                                    <Condition Binding="{Binding RunningSeperate}" Value="True" />
+                                                </MultiDataTrigger.Conditions>
+                                                <MultiDataTrigger.Setters>
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </MultiDataTrigger.Setters>
+                                            </MultiDataTrigger>
+                                            <DataTrigger Binding="{Binding Importer.Config.CsvFileName, Converter={StaticResource EmptyStringIsFalse}}" Value="False">
+                                                <Setter Property="IsEnabled" Value="False" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsBalanceListNameInvalid}" Value="True">
+                                                <Setter Property="IsEnabled" Value="False" />
+                                            </DataTrigger>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding HasErrors}" Value="True" />
+                                                    <Condition Binding="{Binding NextIsLastPage}" Value="True" />
+                                                </MultiDataTrigger.Conditions>
+                                                <MultiDataTrigger.Setters>
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </MultiDataTrigger.Setters>
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button
+                                Click="BtnFinishClick"
+                                Content="{x:Static Localisation:ResourcesCommon.Import}"
+                                Height="23"
+                                HorizontalAlignment="Left"
+                                Margin="5"
+                                MinWidth="75"
+                                Name="btnFinish"
+                                VerticalAlignment="Top">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding RunningSeperate}" Value="True" />
+                                                    <Condition Binding="{Binding IsLastPage}" Value="True" />
+                                                </MultiDataTrigger.Conditions>
+                                                <MultiDataTrigger.Setters>
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </MultiDataTrigger.Setters>
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="5,0" HorizontalAlignment="Right">
+                            <Button Content="{x:Static Localisation:ResourcesCommon.Cancel}" Height="23" Margin="5" Name="btnCancel" MinWidth="75" Click="BtnCancelClick" />
+
+                            <Button Content="{x:Static Localisation:ResourcesBalanceList.SaveAsProfile}" Height="23" Margin="5" Name="btnSaveProfile" MinWidth="75" Click="BtnSaveProfileOnClick" Visibility="{Binding IsLastPage, Converter={StaticResource TrueToVisibilityConverter}}"/>
+
+                            <ToggleButton
+                                Click="btnInvertValues_Click"
+                                Content="{x:Static Localisation:ResourcesBalanceList.InvertValues}"
+                                Height="23"
+                                IsEnabled="True"
+                                Name="btnInvertValues"
+                                Margin="5"
+                                MinWidth="75"
+                                Visibility="{Binding IsLastPage, Converter={StaticResource TrueToVisibilityConverter}}"
+                                />
+                            
+                            <Button
+                                Click="btnViewErrors_Click"
+                                Content="{x:Static Localisation:ResourcesBalanceList.ViewImportErrors}"
+                                Height="23"
+                                MinWidth="75"
+                                Margin="5"
+                                Name="btnViewErrors"
+                                >
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding HasErrors}" Value="True" />
+                                                    <Condition Binding="{Binding NextIsLastPage}" Value="True" />
+                                                </MultiDataTrigger.Conditions>
+                                                <MultiDataTrigger.Setters>
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </MultiDataTrigger.Setters>
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <!-- Visibility="{Binding IsLastPageAnd, Converter={StaticResource TrueToVisibilityConverter}}"/ -->
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </AvdWpfControls:AssistantControl.ReplaceFooter>
+            <AvdWpfControls:AssistantTabItem IsSummaryPage="True" Header="{Binding Header}">
+                <my:BalListImpAssistPage1 x:Name="page1" />
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem IsSummaryPage="True" Header="{Binding Header}">
+                <my:BalListImpAssistPage2 x:Name="page2" />
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem IsSummaryPage="True" Header="{Binding Header}">
+                <my:BalListImpAssistPageColumnSelection x:Name="columnPage"/>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem IsSummaryPage="True" Header="{Binding Header}">
+                <my:BalListImpAssistError x:Name="errorPage"/>
+            </AvdWpfControls:AssistantTabItem>
+            <AvdWpfControls:AssistantTabItem IsSummaryPage="True" Header="{Binding Header}">
+                <my:BalListImpAssistPageSummary x:Name="summaryPage"/>
+            </AvdWpfControls:AssistantTabItem>
+        </AvdWpfControls:AssistantControl>
+    </Grid>
+</UserControl>

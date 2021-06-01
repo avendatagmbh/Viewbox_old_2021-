@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Reconciliation.ReclassificationOverview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:Controls="clr-namespace:eBalanceKit.Controls" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{x:Static Localisation:ResourcesReconciliation.ReconciliationReclassificationSource}" />
+        <TextBlock Grid.Row="1" Text="{x:Static Localisation:ResourcesReconciliation.ReconciliationReclassificationDest}" />
+
+        <TextBlock Grid.Column="2" Text="{Binding SelectedPosition1.Label}">
+            <TextBlock.ToolTip>
+                <Controls:CtlInfo DataContext="{Binding SelectedPosition1}" />
+            </TextBlock.ToolTip>
+        </TextBlock>
+
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding SelectedPosition2.Label}">
+            <TextBlock.ToolTip>
+                <Controls:CtlInfo DataContext="{Binding SelectedPosition2}" />
+            </TextBlock.ToolTip>
+        </TextBlock>
+    </Grid>
+</UserControl>

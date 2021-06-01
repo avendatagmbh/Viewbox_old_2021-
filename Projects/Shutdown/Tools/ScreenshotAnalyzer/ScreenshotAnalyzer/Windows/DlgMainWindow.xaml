@@ -1,0 +1,105 @@
+﻿<Window x:Class="ScreenshotAnalyzer.Windows.DlgMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"             
+        xmlns:avd="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        xmlns:Localisation="clr-namespace:ScreenshotAnalyzer.Resources.Localisation"
+        xmlns:Controls="clr-namespace:ScreenshotAnalyzer.Controls"
+        xmlns:Converter="clr-namespace:ScreenshotAnalyzer.Converter" Title="ScreenshotAnalyzer" WindowState="Maximized"
+        Height="500" Width="800" Icon="/Resources/logo.ico" Closing="Window_Closing">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/MainWindowResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" MaxWidth="500" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"  x:Name="SettingsGridRow" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Height="55" Grid.ColumnSpan="3">
+            <Border Padding="2" Background="{StaticResource headerBgBrush}">
+                <DockPanel Grid.Row="0">
+
+                    <!-- gets focus after button click -->
+                  <DockPanel.Resources>
+                    <Converter:IntToBoolConverter x:Key="intToBoolConverter" />
+                  </DockPanel.Resources>
+                  <Control x:Name="dummyButtonControl" />
+
+                    <avd:ImageButton Margin="1,0" x:Name="btnExtractText" ImageSource="/Resources/textdocument.png" Style="{StaticResource HeaderImageButton}" Caption="{x:Static Localisation:ResourcesGui.DlgMainWindow_btnExtractText_Caption}" Width="100" HorizontalAlignment="Left" 
+                                     IsEnabled="{Binding SelectedScreenshotGroup.Screenshots.Count, Converter={StaticResource intToBoolConverter}}" Click="btnExtractText_Click" />
+                    <avd:ImageButton Margin="1,0" x:Name="btnExtractTextForAll" ImageSource="/Resources/textdocuments.png" Style="{StaticResource HeaderImageButton}" Caption="{x:Static Localisation:ResourcesGui.DlgMainWindow_btnExtractTextForAll_Caption}" Width="150" HorizontalAlignment="Left" 
+                                     IsEnabled="{Binding SelectedScreenshotGroup.Screenshots.Count, Converter={StaticResource intToBoolConverter}}" Click="btnExtractTextForAll_Click" />
+                    <avd:ImageButton Margin="1,0" x:Name="btnUseSelectionForAll" ImageSource="/Resources/copyrectangles.png" Style="{StaticResource HeaderImageButton}" Caption="{x:Static Localisation:ResourcesGui.DlgMainWindow_btnUseSelectionForAll_Caption}" Width="150" HorizontalAlignment="Left" 
+                                     IsEnabled="{Binding SelectedScreenshotGroup.Screenshots.Count, Converter={StaticResource intToBoolConverter}}" Click="btnUseSelectionForAll_Click" />
+                    <avd:ImageButton Margin="1,0" x:Name="btnUseExportAccess" ImageSource="/Resources/ExportAccess.png" Style="{StaticResource HeaderImageButton}" Caption="{x:Static Localisation:ResourcesGui.DlgMainWindow_btnUseExportAccess_Caption}" Width="170" HorizontalAlignment="Left" 
+                                     IsEnabled="{Binding SelectedScreenshotGroup.Screenshots.Count, Converter={StaticResource intToBoolConverter}}" Click="btnUseExportAccess_Click" />
+                    <avd:ImageButton Margin="1,0" x:Name="btnInfo" ImageSource="/Resources/info1.png" Style="{StaticResource HeaderImageButton}" Caption="{x:Static Localisation:ResourcesGui.DlgMainWindow_btnInfo_Caption}" HorizontalAlignment="Left" Click="btnInfo_Click" />
+                    <avd:ImageButton Margin="1,0" x:Name="btnExit" ImageSource="/Resources/shutdown16.png" Style="{StaticResource HeaderImageButton}" Caption="{x:Static Localisation:ResourcesGui.BtnExit}" Click="btnExit_Click" HorizontalAlignment="Right"/>
+                </DockPanel>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="3" Padding="2" Style="{StaticResource ButtonBorder}" BorderBrush="#fcd48e" BorderThickness="0,1,0,0">
+
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+
+                    <!-- profile selection -->
+                    <StackPanel Margin="2" Visibility="{Binding Profiles.Count, Converter={StaticResource emptyListToVisibilityConverter}}" >
+                        <TextBlock Text="{x:Static Localisation:ResourcesGui.DlgMainWindow_Profile}" Margin="2,0,0,0" Foreground="#222"/>
+                        <avd:AvdComboBox x:Name="cboProfile" MinWidth="150" ItemsSource="{Binding Profiles, Mode=OneWay}"
+                                              SelectedItem="{Binding Path=SelectedProfile, Mode=TwoWay}"
+                                              DisplayMemberPath="DisplayString"
+                                              SelectValueMessage="{x:Static Localisation:ResourcesGui.DlgMainWindow_Select}" />
+                        <Button Name="btnUpdateDatabase" Content="{x:Static Localisation:ResourcesGui.DlgMainWindow_btnUpdateDatabase_UpgradeDatabase}" Visibility="{Binding SelectedProfile.DatabaseTooOld, Converter={StaticResource trueToVisibilityConverter}}"/>
+                    </StackPanel>
+                    <!--<StackPanel Margin="2" Visibility="{Binding SelectedProfile.Tables.Count, Converter={StaticResource emptyListToVisibilityConverter}}" >-->
+                    <StackPanel Margin="2" Visibility="{Binding TableExists, Converter={StaticResource trueToVisibilityConverter}}" >
+                        <TextBlock Text="{x:Static Localisation:ResourcesGui.DlgMainWindow_ScreenshotGroup}" Margin="2,0,0,0" Foreground="#222"/>
+                        <avd:AvdComboBox MinWidth="150" ItemsSource="{Binding SelectedProfile.Tables, Mode=OneWay}"
+                                              SelectedItem="{Binding Path=SelectedTable, Mode=TwoWay}"
+                                              DisplayMemberPath="DisplayString"
+                                              SelectValueMessage="{x:Static Localisation:ResourcesGui.DlgMainWindow_Select}" />
+                    </StackPanel>
+
+
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- navigation / content -->
+        <avd:HierarchicalTabControl Grid.Column="0" Grid.Row="2" 
+                x:Name="nav" ItemsSource="{Binding Path=NavigationTree}"
+                ContentMemberPath="Content" NavAreaWidth="300"
+                ItemContainerStyle="{StaticResource NavigationTreeItemContainerStyle}"
+                ItemTemplate="{StaticResource NavigationTreeItemTemplate}">
+
+        </avd:HierarchicalTabControl>
+
+        <GridSplitter Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"  Width="3" Margin="0,24,0,0" />
+
+        <!-- Right sidebar -->
+        <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource GroupBoxBorder}" Margin="3,0,0,0">
+            <Grid >
+                <Controls:CtlScreenshotList x:Name="ctlScreenshotList" Visibility="{Binding Screenshots, Converter={StaticResource valueExistsToVisibilityConverter}}"/>
+            </Grid>
+        </Border>
+        
+    </Grid>
+
+
+</Window>

@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05CDF0E9-D91A-47A7-A4E2-E46B1F489425}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eBalanceKitResources</RootNamespace>
+    <AssemblyName>eBalanceKitResources</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Documents\ResourceMappingForUpdate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceMappingForUpdate.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\GlobalOptions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalOptions.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesAuditCorrections.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesAuditCorrections.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesCommon.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesCommon.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesCommon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesCommon.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesCompanyImport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesCompanyImport.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesExport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesExport.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesExternalTools.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesExternalTools.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesGlobalSearch.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesGlobalSearch.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesHelp.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesHelp.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesHelp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesHelp.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesBalanceList.Designer.cs">
+      <DependentUpon>ResourcesBalanceList.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Localisation\ResourcesHyperCube.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesHyperCube.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesHyperCube.Designer.cs">
+      <DependentUpon>ResourcesHyperCube.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Localisation\ResourcesLogging.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesLogging.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesLogin.Designer.cs">
+      <DependentUpon>ResourcesLogin.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Localisation\ResourcesMain.Designer.cs">
+      <DependentUpon>ResourcesMain.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Localisation\ResourcesManamgement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesManamgement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesPdfExport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesPdfExport.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesReconciliation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesReconciliation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesSend.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesSend.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesTaxonomy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesTaxonomy.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesValidationErrors.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesValidationErrors.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localisation\ResourcesValidationErrors.Designer.cs">
+      <DependentUpon>ResourcesValidationErrors.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Localisation\ResourcesValidationSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesValidationSource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\accountBalancesWished.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\accounts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\background_header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Calculator16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CollapseTreeView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\deletedAccounts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documents\dummy.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\ReconciliationImportPreviousYear.png" />
+    <Resource Include="Resources\DeleteImportedReconciliation48.png" />
+    <Resource Include="Resources\DeleteReconciliation48.png" />
+    <Resource Include="Resources\DeletePreviousYearValues48.png" />
+    <None Include="TestData\balance_list.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Resources\ReconciliationPreviousYearChecked.png" />
+    <Resource Include="Resources\FinancialYears48.png" />
+    <Resource Include="Resources\Report48.png" />
+    <Resource Include="Resources\Company48.png" />
+    <Resource Include="Resources\System48.png" />
+    <Resource Include="Resources\Users48.png" />
+    <Resource Include="Resources\ImportCompany16.png" />
+    <Resource Include="Resources\ImportCompany48.png" />
+    <Resource Include="Resources\Import48.png" />
+    <None Include="Documents\Handbuch.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Documents\Hinweis zum Aenderungsnachweis Taxonomie 5.0 zu 5.1.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\design\accounts.xcf" />
+    <None Include="Resources\design\AD.xcf" />
+    <None Include="Resources\design\ApplyTemplate.xcf" />
+    <None Include="Resources\design\ExcelPdf.xcf" />
+    <None Include="Resources\design\ExcelPdf1.xcf" />
+    <None Include="Resources\design\ExpandCollapseTreeView.xcf" />
+    <None Include="Resources\design\ExportTemplate.xcf" />
+    <None Include="Resources\design\ImportTemplate.xcf" />
+    <None Include="Resources\design\list_buttons.xcf" />
+    <None Include="Resources\design\MergeTemplates.xcf" />
+    <None Include="Resources\design\notPermittedFor.xcf" />
+    <None Include="Resources\design\RemoveFilter.xcf" />
+    <None Include="Resources\design\reset.xcf" />
+    <None Include="Resources\design\SelectSendAccountsState.xcf" />
+    <None Include="Resources\design\SendAccounts.xcf" />
+    <None Include="Resources\design\sort.xcf" />
+    <None Include="Resources\design\sum.xcf" />
+    <None Include="Resources\design\sum1.xcf" />
+    <None Include="Resources\design\UpdateTemplate.xcf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\docBlank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\docText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EditBalanceListCommon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EditPen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EffectiveRights.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ExpandTreeView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Filter16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GroupAccount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Info1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\management.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\new-document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\notPermittedForCommercial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\notPermittedForFiscal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PenDoc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pinpad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RefreshDocument.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RemoveFilter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Replace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\send_data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SendAccounts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SendAccountsD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SendAllAccounts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SendNoAccounts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SendWishedAccounts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Sort16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SplitAccount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SplittedAccounts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sumManualComputed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sumManualComputedB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sumManualComputedD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sumManualComputedL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sumManualComputedW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sumNeg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sumPos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sumRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\templates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UseForCFMapping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\User1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UserGroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UserRole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\validate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ValidationError.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ValidationWarn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\xbrl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TaxIdInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ExportTemplate.png" />
+    <Resource Include="Resources\ImportTemplate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\splitterH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\splitterV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplyTemplate.png" />
+    <Resource Include="Resources\ExtendTemplate.png" />
+    <Resource Include="Resources\UpdateTemplate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IsSelectedBalanceListItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AdminD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\xbrlSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ReconciliationDelta.png" />
+    <Resource Include="Resources\ReconciliationReclassification.png" />
+    <Resource Include="Resources\ReconciliationValueChange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Certificate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Documents\ResourceMappingForUpdate.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\ResourceMappingForUpdate.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceMappingForUpdate.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesSend.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesAuditCorrections.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesAuditCorrections.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesAuditCorrections.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesCompanyImport.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\GlobalOptions.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\GlobalOptions.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalOptions.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesCompanyImport.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesCompanyImport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesExport.de.resx" />
+    <EmbeddedResource Include="Localisation\ResourcesExport.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesExport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesExternalTools.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesExternalTools.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesExternalTools.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesGlobalSearch.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesGlobalSearch.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesGlobalSearch.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesLogging.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesLogging.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesLogging.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesManamgement.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesManamgement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesManamgement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesPdfExport.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesHelp.de.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesHelp.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesHelp.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesHelp.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesBalanceList.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesBalanceList.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesBalanceList.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesCommon.de.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesCommon.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesCommon.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>ResourcesCommon.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesHyperCube.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesHyperCube.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesHyperCube.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesHyperCube.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesLogin.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesLogin.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesLogin.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesMain.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesMain.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesMain.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesPdfExport.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesPdfExport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesReconciliation.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesReconciliation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesReconciliation.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesSend.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesSend.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesTaxonomy.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesTaxonomy.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesTaxonomy.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesValidationErrors.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesValidationErrors.de.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesValidationErrors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesValidationErrors.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation\ResourcesValidationSource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesValidationSource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PortInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DE.png" />
+    <Resource Include="Resources\EN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CopyReport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ReconciliationReclassificationDest.png" />
+    <Resource Include="Resources\ReconciliationReclassificationSource.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AssignPositionToReconciliation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AssignDestPositionToReconciliation.png" />
+    <Resource Include="Resources\AssignSourcePositionToReconciliation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SuSa_Example.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SearchColored.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TreeItemAssignedToSelectedIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LightBlueRound16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ReconciliationImport.png" />
+    <Resource Include="Resources\ReconciliationPreviousYear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\InvoiceStamped24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\List24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\headv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AssignPosition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AuditCorrection24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\login_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\toolConfig.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\toolDatabase.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\toolLogViewer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tools32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pdf32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\excel32.png" />
+    <Resource Include="Resources\excel48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Xbrl32.png" />
+    <Resource Include="Resources\Xbrl48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pdf64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AddCompany48.png" />
+    <Resource Include="Resources\AddReport48.png" />
+    <Resource Include="Resources\AddSystem48.png" />
+    <Resource Include="Resources\DeleteCompany48.png" />
+    <Resource Include="Resources\DeleteReport48.png" />
+    <Resource Include="Resources\DeleteSystem48.png" />
+    <Resource Include="Resources\SetupAssistant48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CompanyManagement48.png" />
+    <Resource Include="Resources\ReportManagement48.png" />
+    <Resource Include="Resources\SystemManagement48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Management48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UserManagement48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UserManagement16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AddCompany16.png" />
+    <Resource Include="Resources\AddReport16.png" />
+    <Resource Include="Resources\AddSystem16.png" />
+    <Resource Include="Resources\CompanyManagement16.png" />
+    <Resource Include="Resources\DeleteCompany16.png" />
+    <Resource Include="Resources\DeleteReport16.png" />
+    <Resource Include="Resources\DeleteSystem16.png" />
+    <Resource Include="Resources\Management16.png" />
+    <Resource Include="Resources\ReportManagement16.png" />
+    <Resource Include="Resources\SetupAssistant16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SystemManagement16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

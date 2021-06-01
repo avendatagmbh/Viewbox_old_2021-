@@ -1,0 +1,20 @@
+﻿<Window x:Class="SchemaAnalzser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Text="SchemaAnalyzer V0.0.1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+            <TextBlock Text="testproject for key / foreign key detection" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+            <Button x:Name="btnAnalyseSchema" Content="Start Analyzis" Click="BtnAnalyseSchemaClick" />
+        </StackPanel>
+    </Grid>
+</Window>

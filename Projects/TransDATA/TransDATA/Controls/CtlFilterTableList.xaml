@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="TransDATA.Controls.CtlFilterTableList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{x:Static Localisation:ResourcesCommon.CtlFilterTableListCaption}" />
+            <Separator />
+            <RadioButton Content="{x:Static Localisation:ResourcesCommon.CtlFilterTableListAll}" IsChecked="{Binding FilterType, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=All, UpdateSourceTrigger=PropertyChanged}"/>
+            <RadioButton Content="{x:Static Localisation:ResourcesCommon.CtlFilterTableListNotTransfered}" IsChecked="{Binding FilterType, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=NotTransfered, UpdateSourceTrigger=PropertyChanged}"/>
+            <RadioButton Content="{x:Static Localisation:ResourcesCommon.CtlFilterTableListOk}" IsChecked="{Binding FilterType, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=TransferedOk, UpdateSourceTrigger=PropertyChanged}" />
+            <RadioButton Content="{x:Static Localisation:ResourcesCommon.CtlFilterTableListCountDifference}" IsChecked="{Binding FilterType, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=TransferedCountDifference, UpdateSourceTrigger=PropertyChanged}" />
+            <RadioButton Content="{x:Static Localisation:ResourcesCommon.CtlFilterTableListError}" IsChecked="{Binding FilterType, Mode=TwoWay, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=TransferedError, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>     
+    </Grid>
+</UserControl>

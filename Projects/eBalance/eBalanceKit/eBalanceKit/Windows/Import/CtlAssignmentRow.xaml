@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Import.CtlAssignmentRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel>
+        <Popup Name="PopUp" 
+               Placement="MousePoint" StaysOpen="False"
+               AllowsTransparency="True" PopupAnimation="Slide" Opened="PopUp_Opened" KeyDown="PopUp_KeyUp" Closed="PopUp_Closed">
+            <ListBox Height="327" HorizontalAlignment="Left" Margin="12,30,0,0" Name="listEntries" VerticalAlignment="Top" Width="442"  
+                     ItemsSource="{Binding}" MouseUp="listEntries_MouseUp" SelectionChanged="listEntries_SelectionChanged" >
+                <ListBox.Resources>
+                    <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver,RelativeSource={RelativeSource Self}}" 
+                         Value="True">
+                                <Setter Property="Background" Value="Yellow" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=AssignmentFlag}" Value="True">
+                                <!--<Setter Property="IsEnabled" Value="False" />-->
+                                <Setter Property="Background" Value="Green" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=AssignmentFlag}" Value="Null">
+                                <Setter Property="Background" Value="Fuchsia" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.Resources>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="{Binding Path=Header}" Foreground="Black"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </Popup>
+        <DataGrid AutoGenerateColumns="False" Name="dataGrid1"
+                  DataContext="{Binding Path=CsvData}" ItemsSource="{Binding Path=Rows}"
+                  CanUserSortColumns="False" CanUserDeleteRows="False" CanUserAddRows="False" 
+                  CanUserReorderColumns="False" CanUserResizeRows="False" 
+                  SelectionMode="Single" SelectionUnit="Cell" IsReadOnly="True" 
+                  MouseUp="dataGrid1_MouseUp" SelectionChanged="dataGrid1_SelectionChanged" SelectedCellsChanged="dataGrid1_SelectedCellsChanged" KeyDown="dataGrid1_KeyDown" PreviewKeyDown="dataGrid1_PreviewKeyDown">
+            <DataGrid.RowHeaderTemplate>
+                <DataTemplate>
+                    <Border Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=DataGridRowHeader}}" MaxHeight="60">
+                        <TextBlock Text="{Binding}" ToolTip="{Binding}" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowHeaderTemplate>
+
+            
+            <DataGrid.RowHeaderStyle>
+                <Style TargetType="DataGridRowHeader">
+                    <Setter Property="Width" Value="100" />
+                    <Setter Property="MaxHeight" Value="60" />
+                    <Setter Property="Content" Value="{Binding Header}" />
+                    <!--<Setter Property="ContentTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" ToolTip="{Binding}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>-->
+                </Style>
+            </DataGrid.RowHeaderStyle>
+            
+            <DataGrid.ItemTemplate>
+                <DataTemplate >
+                    <TextBlock Text="{Binding DisplayString}" TextWrapping="Wrap" MaxHeight="60"/>
+                </DataTemplate>
+            </DataGrid.ItemTemplate>
+
+            <DataGrid.ColumnHeaderStyle>
+
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Width" Value="200" />
+                    <Setter Property="ToolTip" Value="{Binding Text}" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="MaxHeight" Value="60" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding AssignmentFlag}" Value="True">
+                            <Setter Property="Background" Value="Red" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+
+        </DataGrid>
+    </StackPanel>
+
+</UserControl>

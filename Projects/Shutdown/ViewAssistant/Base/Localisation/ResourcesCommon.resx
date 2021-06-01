@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessMerger_MergeFiles" xml:space="preserve">
+    <value>Merge files</value>
+  </data>
+  <data name="AccessMerger_OutputDirectory" xml:space="preserve">
+    <value>Output directory</value>
+  </data>
+  <data name="AccessMerger_OutputFileLabel" xml:space="preserve">
+    <value>Output file label</value>
+  </data>
+  <data name="AccessMerger_OutputFileName" xml:space="preserve">
+    <value>Output file</value>
+  </data>
+  <data name="AccessMerger_OutputTablesWithLabels" xml:space="preserve">
+    <value>Output tables contains input filename.</value>
+  </data>
+  <data name="AccessMerger_SourceDirectory" xml:space="preserve">
+    <value>Source directory</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ApplicationArchitecture" xml:space="preserve">
+    <value>{0}-bit application</value>
+  </data>
+  <data name="AssistantControl_Assistant" xml:space="preserve">
+    <value>Profile management</value>
+  </data>
+  <data name="AssistantControl_Bukrs" xml:space="preserve">
+    <value>Bukrs</value>
+  </data>
+  <data name="AssistantControl_CommonData" xml:space="preserve">
+    <value>Common data</value>
+  </data>
+  <data name="AssistantControl_ConfigureDataSource" xml:space="preserve">
+    <value>Configure data source</value>
+  </data>
+  <data name="AssistantControl_ConfigureDefaultProperties" xml:space="preserve">
+    <value>Configure default properties</value>
+  </data>
+  <data name="AssistantControl_ConfigureOutput" xml:space="preserve">
+    <value>Configure output</value>
+  </data>
+  <data name="AssistantControl_ConfigureViewboxDb" xml:space="preserve">
+    <value>Configure Viewbox database</value>
+  </data>
+  <data name="AssistantControl_Database" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="AssistantControl_DatabaseType" xml:space="preserve">
+    <value>Database type</value>
+  </data>
+  <data name="AssistantControl_DatasourceType" xml:space="preserve">
+    <value>Select data source type</value>
+  </data>
+  <data name="AssistantControl_Gjahr" xml:space="preserve">
+    <value>Gjahr</value>
+  </data>
+  <data name="AssistantControl_Mandt" xml:space="preserve">
+    <value>Mandt</value>
+  </data>
+  <data name="AssistantControl_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="AssistantControl_Port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="AssistantControl_ProcessThreads" xml:space="preserve">
+    <value>Process threads</value>
+  </data>
+  <data name="AssistantControl_ProfileName" xml:space="preserve">
+    <value>Profile name</value>
+  </data>
+  <data name="AssistantControl_Server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="AssistantControl_SourceType" xml:space="preserve">
+    <value>Source type</value>
+  </data>
+  <data name="AssistantControl_Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>&lt; Back</value>
+  </data>
+  <data name="BigFileSizeMergingException" xml:space="preserve">
+    <value>Merging is failed because size of files is bigger than 2 GB. </value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="BtnAccessCopyFiles" xml:space="preserve">
+    <value>Copy files</value>
+  </data>
+  <data name="BtnAccessLinkingFile" xml:space="preserve">
+    <value>Link to files</value>
+  </data>
+  <data name="BtnAccessMergeFile" xml:space="preserve">
+    <value>Merge files</value>
+  </data>
+  <data name="BtnAccessOperations" xml:space="preserve">
+    <value>Access operations</value>
+  </data>
+  <data name="BtnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="BtnDatabaseStructureAnalyze" xml:space="preserve">
+    <value>Analyze Db</value>
+  </data>
+  <data name="BtnEditProfileCaption" xml:space="preserve">
+    <value>Edit profile</value>
+  </data>
+  <data name="BtnGenerateScripts" xml:space="preserve">
+    <value>Generate view scripts</value>
+  </data>
+  <data name="BtnInfoAboutViewAssistant" xml:space="preserve">
+    <value>About ViewAssistant</value>
+  </data>
+  <data name="BtnInfoCaption" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="BtnInfoCurrentProfileSummary" xml:space="preserve">
+    <value>Current profile summary</value>
+  </data>
+  <data name="BtnMetaToViewbox" xml:space="preserve">
+    <value>Migrate metadata</value>
+  </data>
+  <data name="BtnMetaToViewboxOpt" xml:space="preserve">
+    <value>Migrate metadata with optimizations</value>
+  </data>
+  <data name="BtnProfilesCaption" xml:space="preserve">
+    <value>Profiles</value>
+  </data>
+  <data name="BtnRefresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="BtnRefreshAll" xml:space="preserve">
+    <value>Refresh all</value>
+  </data>
+  <data name="BtnTestConnectionCaption" xml:space="preserve">
+    <value>Test connection</value>
+  </data>
+  <data name="BtnTransferData" xml:space="preserve">
+    <value>Transfer data</value>
+  </data>
+  <data name="BtnUpload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ColumnLength" xml:space="preserve">
+    <value>Length:</value>
+  </data>
+  <data name="ColumnList_Filter1" xml:space="preserve">
+    <value>Filter 1:</value>
+  </data>
+  <data name="ColumnList_Filter2" xml:space="preserve">
+    <value>Filter 2:</value>
+  </data>
+  <data name="ColumnOverview" xml:space="preserve">
+    <value>Column overview</value>
+  </data>
+  <data name="Columnselection" xml:space="preserve">
+    <value>Column selection</value>
+  </data>
+  <data name="Common_ValueNotSet" xml:space="preserve">
+    <value>&lt;not set&gt;</value>
+  </data>
+  <data name="ConnectionState_Connected" xml:space="preserve">
+    <value>Connected</value>
+  </data>
+  <data name="ConnectionState_NotConnected" xml:space="preserve">
+    <value>Not connected</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CopyFileError" xml:space="preserve">
+    <value>Coping files is finished but coping following files is failed:</value>
+  </data>
+  <data name="CopyFileFinishedSuccessfully" xml:space="preserve">
+    <value>Coping files is finished.</value>
+  </data>
+  <data name="CopyFilesCommand" xml:space="preserve">
+    <value>Copy files</value>
+  </data>
+  <data name="CreateLoc" xml:space="preserve">
+    <value>Create localizations</value>
+  </data>
+  <data name="CreateLocIfEmpty" xml:space="preserve">
+    <value>Create localizations where empty</value>
+  </data>
+  <data name="CreatingFileError" xml:space="preserve">
+    <value>Creating the following file(s) thrown errors:</value>
+  </data>
+  <data name="DatabaseConnectionFailed" xml:space="preserve">
+    <value>Could not connect to database.</value>
+  </data>
+  <data name="DatabaseConnectionOk" xml:space="preserve">
+    <value>The database connection has been successfully established.</value>
+  </data>
+  <data name="DatabaseType" xml:space="preserve">
+    <value>Database type</value>
+  </data>
+  <data name="DatasetOverview" xml:space="preserve">
+    <value>Dataset overview</value>
+  </data>
+  <data name="DatasetPreviewCount" xml:space="preserve">
+    <value>Datasetcount for preview</value>
+  </data>
+  <data name="Datasets" xml:space="preserve">
+    <value>datasets</value>
+  </data>
+  <data name="DefaultProperties" xml:space="preserve">
+    <value>Default properties</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DlgAccessProcess" xml:space="preserve">
+    <value>Access process</value>
+  </data>
+  <data name="DlgDataPreviewTitle" xml:space="preserve">
+    <value>Data preview</value>
+  </data>
+  <data name="DlgMainCaption" xml:space="preserve">
+    <value>ViewAssistant</value>
+  </data>
+  <data name="DlgProfilesCaption" xml:space="preserve">
+    <value>Profile management</value>
+  </data>
+  <data name="DlgSummaryTitle" xml:space="preserve">
+    <value>Profile summary</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EmptyTables" xml:space="preserve">
+    <value>Empty tables</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax:</value>
+  </data>
+  <data name="FilledTables" xml:space="preserve">
+    <value>Tables</value>
+  </data>
+  <data name="FillingEveryFieldCompulsory" xml:space="preserve">
+    <value>Filling every field is compulsory.</value>
+  </data>
+  <data name="FilterList" xml:space="preserve">
+    <value>filter list</value>
+  </data>
+  <data name="FinalColumns" xml:space="preserve">
+    <value>Final table's columns</value>
+  </data>
+  <data name="FinalTables" xml:space="preserve">
+    <value>Final tables</value>
+  </data>
+  <data name="GeneratingScriptFinished" xml:space="preserve">
+    <value>Generating view scripts is finished!</value>
+  </data>
+  <data name="Keep" xml:space="preserve">
+    <value>Keep</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LinkingFileCommand" xml:space="preserve">
+    <value>Link to files</value>
+  </data>
+  <data name="LinkingFilesFailed" xml:space="preserve">
+    <value>Linking files is failed!</value>
+  </data>
+  <data name="LinkingFilesSuccessful" xml:space="preserve">
+    <value>Linking files is finished successfully.</value>
+  </data>
+  <data name="LocalizationSettings" xml:space="preserve">
+    <value>Localization settings</value>
+  </data>
+  <data name="LogDirectory" xml:space="preserve">
+    <value>Log directory</value>
+  </data>
+  <data name="MergeFileCommand" xml:space="preserve">
+    <value>Merge files</value>
+  </data>
+  <data name="MergingFilesFailed" xml:space="preserve">
+    <value>Merging files is failed!</value>
+  </data>
+  <data name="MergingFilesSuccessful" xml:space="preserve">
+    <value>Merging files is finished successfully.</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NewAssistant" xml:space="preserve">
+    <value>New profile</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next &gt;</value>
+  </data>
+  <data name="NoName" xml:space="preserve">
+    <value>no name</value>
+  </data>
+  <data name="NotSelectedProfile" xml:space="preserve">
+    <value>There is not selected profile. </value>
+  </data>
+  <data name="NotSelectedViewBoxTables" xml:space="preserve">
+    <value>There are not selected viewbox tables.</value>
+  </data>
+  <data name="Of" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="OnColumnNames" xml:space="preserve">
+    <value>On column names</value>
+  </data>
+  <data name="OnlyForTheEmptyOnes" xml:space="preserve">
+    <value>Only for the empty ones</value>
+  </data>
+  <data name="OnTableNames" xml:space="preserve">
+    <value>On table names</value>
+  </data>
+  <data name="OutputDbProperties" xml:space="preserve">
+    <value>Output database properties</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Tel:</value>
+  </data>
+  <data name="RequestDeleteProfile" xml:space="preserve">
+    <value>Should the profile '{0}' really be deleted?</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SearchBox_LabelText" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="SortList" xml:space="preserve">
+    <value>sort list</value>
+  </data>
+  <data name="SourceColumns" xml:space="preserve">
+    <value>Source table's columns</value>
+  </data>
+  <data name="SourceDbProperties" xml:space="preserve">
+    <value>Source database properties</value>
+  </data>
+  <data name="SourceTables" xml:space="preserve">
+    <value>Source tables</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>step</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Support:</value>
+  </data>
+  <data name="TableInfoCatalog" xml:space="preserve">
+    <value>Catalog:</value>
+  </data>
+  <data name="TableInfoComment" xml:space="preserve">
+    <value>Comment:</value>
+  </data>
+  <data name="TableInfoCount" xml:space="preserve">
+    <value>Datasets:</value>
+  </data>
+  <data name="TableInfoLastTransfer" xml:space="preserve">
+    <value>Last transfer:</value>
+  </data>
+  <data name="TableInfoLastTransferDestinationCount" xml:space="preserve">
+    <value>Datasets destination:</value>
+  </data>
+  <data name="TableInfoLastTransferDuration" xml:space="preserve">
+    <value>Duration:</value>
+  </data>
+  <data name="TableInfoLastTransferError" xml:space="preserve">
+    <value>Error:</value>
+  </data>
+  <data name="TableInfoLastTransferFilter" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="TableInfoLastTransferSourceCount" xml:space="preserve">
+    <value>Datasets source:</value>
+  </data>
+  <data name="TableInfoSchema" xml:space="preserve">
+    <value>Schema:</value>
+  </data>
+  <data name="TableInfoTable" xml:space="preserve">
+    <value>Table:</value>
+  </data>
+  <data name="Tableselection" xml:space="preserve">
+    <value>Table selection</value>
+  </data>
+  <data name="TotalProgress" xml:space="preserve">
+    <value>Total Progress:</value>
+  </data>
+  <data name="UpgradeDatabase" xml:space="preserve">
+    <value>Update the Viewbox database</value>
+  </data>
+  <data name="UpgradeMsg" xml:space="preserve">
+    <value>The Viewbox database is out of date. The database should be updated, if not, then the current version of the View Builder cannot be used.</value>
+  </data>
+  <data name="UppercaseFirstLetters" xml:space="preserve">
+    <value>Uppercase first letters</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version {0}.{1}.{2}.{3}</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="ViewboxColumns" xml:space="preserve">
+    <value>Viewbox table's columns</value>
+  </data>
+  <data name="ViewboxDbProperties" xml:space="preserve">
+    <value>ViewBox database properties</value>
+  </data>
+  <data name="ViewboxTables" xml:space="preserve">
+    <value>Viewbox tables</value>
+  </data>
+  <data name="WhiteSpaceSupportedInTables" xml:space="preserve">
+    <value>Replace whitespaces of table name in output file.  </value>
+  </data>
+  <data name="ShowOnlyRelevantTables" xml:space="preserve">
+    <value>Show only relevant tables</value>
+  </data>
+  <data name="HideRowCounts" xml:space="preserve">
+    <value>Hide row counts</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="ContainsSpecCharOrWhiteSpace" xml:space="preserve">
+    <value>Name contains special characters or whitespaces!</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="RenameSettings" xml:space="preserve">
+    <value>Rename settings</value>
+  </data>
+  <data name="Profiles" xml:space="preserve">
+    <value>Profiles</value>
+  </data>
+</root>

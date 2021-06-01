@@ -1,0 +1,71 @@
+﻿/* EXPORT MAIN LAYOUT */
+#Documents .content-inner { position: absolute!important; }
+
+#Documents .main-content { width: 800px!important; }
+
+#Documents .search-results { text-align: left; }
+
+#Documents .search-results a { display: block; }
+
+#Documents .search-results a:hover {
+    background: #eeeeee;
+    text-decoration: none;
+}
+
+#Documents .search-results .document-info {
+    border-bottom: 1px solid #cccccc;
+    padding: 10px;
+}
+
+#Documents .search-results .fileicon {
+    background: center center no-repeat;
+    float: left;
+    height: 48px;
+    width: 48px;
+}
+
+#Documents .search-results .fileicon.pdf { background-image: url(img/icons/file-pdf.png); }
+
+#Documents .search-results .meta {
+    margin-left: 60px;
+    padding: 3px 0;
+}
+
+#Documents .search-results .meta .name { font-weight: bold; }
+
+#Documents .search-results .meta .value { }
+/* SEARCH */
+
+#Documents .searchform { }
+
+#Documents .searchform form { margin: 15px 30px; }
+
+#Documents .searchform .parameter {
+    border-bottom: 1px solid #cccccc;
+    padding: 15px 0;
+    text-align: left;
+}
+
+#Documents .searchform .parameter .caption { font-weight: bold; }
+
+#Documents .searchform .parameter input {
+    border: 1px solid #cccccc;
+    height: 21px;
+    line-height: 21px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+#Documents .searchform .button {
+    padding: 10px 0;
+    text-align: right;
+}
+
+#Documents .searchform .button input {
+    background: url(img/find-button.png);
+    border: none;
+    color: White;
+    font-weight: bold;
+    height: 20px;
+    width: 67px;
+}

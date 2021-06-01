@@ -1,0 +1,513 @@
+﻿<Window x:Class="ViewAssistant.Windows.DlgMain" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base"
+    xmlns:Controls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+    xmlns:MyControls="clr-namespace:ViewAssistant.Controls"
+    xmlns:Models="clr-namespace:ViewAssistantBusiness.Models;assembly=ViewAssistantBusiness"
+    WindowStartupLocation="CenterScreen" WindowState="Maximized" Closing="Window_Closing" mc:Ignorable="d" 
+    d:DesignWidth="800" d:DesignHeight="500" Width="1024" Height="768" MinWidth="800" MinHeight="600" 
+    Icon="/Resources/icon_about_viewassistant.png">    
+    <Control.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/TMain.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Control.Resources>
+    <Window.Title>
+        <Binding Path="CurrentProfile" Mode="OneWay" Converter="{StaticResource SelectedProfileToWindowTitleConverter}" />
+    </Window.Title>
+    <Border Background="{StaticResource NewDesignBlueBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" x:Name="InfoGridRow" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- header navigation -->
+            <Border Grid.Row="0" Padding="10" Background="{StaticResource RibbonHeaderBrush}">
+                <StackPanel Orientation="Horizontal" Grid.Column="0">
+                    <Control x:Name="FocusDummyButton" />
+
+                    <Controls:AvdMenuExpander x:Name="profileExpander" Margin="0, 0, 10, 0" VerticalAlignment="Center" Width="100" Height="60" ImageSource="/Resources/icon_main_profiles.png" Caption="{x:Static Localisation:ResourcesCommon.Profiles}" IsEnabled="{Binding CanDoAnything}">
+                        <!-- setup assistant -->
+                        <Controls:AvdMenuExpanderItem ImageSource="/Resources/icon_new_profile.png" ImageHeight="21" Caption="{x:Static Localisation:ResourcesCommon.NewAssistant}" Click="NewProfileButtonClick"/>
+                        <Controls:AvdMenuSeparator></Controls:AvdMenuSeparator>
+                    </Controls:AvdMenuExpander>
+
+                    <Controls:AvdMenuButton x:Name="btnProfiles" Margin="0, 0, 10, 0" VerticalAlignment="Center" Width="100" Height="60" ImageSource="/Resources/icon_main_edit_profile.png" Caption="{x:Static Localisation:ResourcesCommon.BtnEditProfileCaption}" Click="EditProfileButtonClick"  IsEnabled="{Binding CanDoAnything}"/>
+                    <Controls:AvdMenuButton x:Name="btnRefreshAll" Margin="0, 0, 10, 0" VerticalAlignment="Center" Width="100" Height="60" ImageSource="/Resources/icon_refresh_small.png" Caption="{x:Static Localisation:ResourcesCommon.BtnRefreshAll}" Click="btnRefreshAll_Click"  IsEnabled="{Binding CanDoAnythingInSourceState}"/>
+
+                    <Controls:AvdMenuButton Margin="0, 0, 10, 0" VerticalAlignment="Center" Width="100" Height="60" Command="{Binding RenameingForAllCommand, Mode=OneWay}" ImageSource="/Resources/rename_24x24.png" Caption="{x:Static Localisation:ResourcesCommon.Rename}" IsEnabled="{Binding CanDoAnythingInSourceState}"/>
+
+                    <Controls:AvdMenuButton x:Name="btnMetaToViewbox" Margin="0, 0, 10, 0" VerticalAlignment="Center" Width="130" Height="60" ImageSource="/Resources/icon_migrate_small.png" Caption="{x:Static Localisation:ResourcesCommon.BtnMetaToViewbox}" Click="btnMetaToViewbox_Click"  IsEnabled="{Binding CanDoAnythingInSourceState}"/>
+                    <Controls:AvdMenuButton x:Name="btnMetaToViewboxOPt" Margin="0, 0, 10, 0" VerticalAlignment="Center" Width="200" Height="60" ImageSource="/Resources/icon_migrate_small.png" Caption="{x:Static Localisation:ResourcesCommon.BtnMetaToViewboxOpt}" Click="btnMetaToViewboxOpt_Click"  IsEnabled="{Binding CanDoAnythingInSourceState}"/>
+
+                    <Controls:AvdMenuButton Margin="0, 0, 10, 0" VerticalAlignment="Center" Width="130" Height="60" ImageSource="/Resources/globe_24x24.png" Caption="{x:Static Localisation:ResourcesCommon.CreateLoc}"  IsEnabled="{Binding CanDoAnythingInViewboxState}" Command="{Binding Path=CreateLocalisationsForAllCommand, Mode=OneWay}"/>
+
+                    <Controls:AvdMenuButton x:Name="btnTransferData" Margin="0, 0, 10, 0" VerticalAlignment="Center" Width="100" Height="60" ImageSource="/Resources/icon_transfer_small.png" Caption="{x:Static Localisation:ResourcesCommon.BtnTransferData}" Click="btnTransferData_Click"  IsEnabled="{Binding CanDoAnythingInViewboxState}"/>
+                    <Controls:AvdMenuButton x:Name="btnGenerateScripts" Margin="0, 0, 10, 0" VerticalAlignment="Center" Width="130" Height="60" ImageSource="/Resources/icon_generate_viewscripts.png" Caption="{x:Static Localisation:ResourcesCommon.BtnGenerateScripts}" Click="btnGenerateScripts_Click"  IsEnabled="{Binding CanDoAnythingInFinalState}"/>
+
+                    <Controls:AvdMenuExpander Name="accessOperators" Margin="0,0,10,0" VerticalAlignment="Center" Width="140" Height="60" ImageSource="/Resources/icon_access_operations.png" Caption="{x:Static Localisation:ResourcesCommon.BtnAccessOperations}" Visibility="{Binding Source={x:Static Models:AccessMergerModel.IsSuitableAccessInstalled}, Converter={StaticResource ShowMergingFunction}}">
+                        <!-- setup assistant -->
+                        <Controls:AvdMenuExpanderItem ImageSource="/Resources/icon_merge_files.png" ImageHeight="21" Caption="{x:Static Localisation:ResourcesCommon.BtnAccessMergeFile}" Click="BtnAccessMergeFileClick" />
+                        <Controls:AvdMenuExpanderItem ImageSource="/Resources/icon_copy_files.png" ImageHeight="21" Caption="{x:Static Localisation:ResourcesCommon.BtnAccessCopyFiles}" Click="BtnAccessCopyFilesClick" />
+                        <Controls:AvdMenuExpanderItem ImageSource="/Resources/icon_link_to_files.png" ImageHeight="21" Caption="{x:Static Localisation:ResourcesCommon.BtnAccessLinkingFile}" Click="BtnAccessLinkingFileClick" />
+                    </Controls:AvdMenuExpander>
+
+                    <Controls:AvdMenuExpander Name="infoExpander" Margin="0,0,10,0" VerticalAlignment="Center" Width="100" Height="60" ImageSource="/Resources/icon_main_info.png" Caption="{x:Static Localisation:ResourcesCommon.BtnInfoCaption}">
+                        <!-- setup assistant -->
+                        <Controls:AvdMenuExpanderItem ImageSource="/Resources/icon_about_ViewAssistant.png" ImageHeight="21" Caption="{x:Static Localisation:ResourcesCommon.BtnInfoAboutViewAssistant}" Click="BtnInfoClick"/>
+                        <Controls:AvdMenuSeparator></Controls:AvdMenuSeparator>
+                        <Controls:AvdMenuExpanderItem ImageSource="/Resources/icon_current_profile_settings.png" ImageHeight="21" Caption="{x:Static Localisation:ResourcesCommon.BtnInfoCurrentProfileSummary}" Click="BtnProfileSettingsClick" />
+                    </Controls:AvdMenuExpander>
+
+                    <Controls:AvdMenuButton x:Name="btnLogDir" Margin="0, 0, 10, 0" VerticalAlignment="Center" Width="100" Height="60" ImageSource="/Resources/icon_main_log_dir.png" Caption="{x:Static Localisation:ResourcesCommon.LogDirectory}" Click="LogDirectoryClick" />
+
+                </StackPanel>
+            </Border>
+
+            <!-- main area -->
+            <Border Grid.Row="3" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"  />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="2*"  />
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Padding="0">
+                        <Grid Margin="0,0,5,0" Name="_ctlSource" Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Padding="5" Style="{StaticResource HeadlineBorder}" Background="{StaticResource NewDesignDeepBlueBrush}" BorderBrush="{StaticResource NewDesignDeepBlueBrush}" BorderThickness="0,1,0,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <TextBlock VerticalAlignment="Center" Grid.Column="0" Text="{x:Static Localisation:ResourcesCommon.SourceTables}" Margin="2,0,0,0" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />
+                                    <Label Padding="0" Grid.Column="1" Margin="2,0,10,0" ContentStringFormat="({0})" Content="{Binding Path=Items.Count, Mode=OneWay, ElementName=lbSourceTables}" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />
+                                    <Image Grid.Column="2" Width="16" Source="/Resources/alert_24x24.png" Margin="0,0,5,0" Visibility="{Binding HasSourceWarning, Converter={StaticResource HasErrorWarningConverter}}">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding SourceWarning}"/>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <Image Grid.Column="3" Width="16" Source="/Resources/error_24x24.png" Margin="0,0,5,0" Visibility="{Binding HasSourceError, Converter={StaticResource HasErrorWarningConverter}}">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding SourceError}"/>
+                                        </Image.ToolTip>
+                                    </Image>
+                                </Grid>
+                            </Border>
+                            <Grid Grid.Row="1" Background="{StaticResource AvdMenuBackground}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="3*" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="2*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" Margin="5,5,5,5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <ProgressBar Grid.Column="0"  Maximum="{Binding SourceProgress.Maximum}" 
+                                                 Minimum="{Binding SourceProgress.Minimum}" 
+                                                 Value="{Binding SourceProgress.Progress, Mode=OneWay}" 
+                                                 Height="20" Width="Auto"
+                                                 Margin="0, 0, 10, 0" 
+                                                 ></ProgressBar>
+                                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding SourceProgress.Description}"></TextBlock>
+
+                                    <Controls:ImageButton Name="btnRefreshSpurce" Grid.Column="2" ImageSource="/Resources/icon_refresh_small.png" Caption="{x:Static Localisation:ResourcesCommon.BtnRefresh}" Width="80" Height="24" Click="btnRefreshSource_Click" IsEnabled="{Binding SourceProgressIsNotBusy}">
+                                    </Controls:ImageButton>
+                                    <Controls:ImageButton Name="btnCancelSource" Grid.Column="2" Grid.Row="1" ImageSource="/Resources/cancel_24x24.png" Caption="{x:Static Localisation:ResourcesCommon.BtnCancel}" Width="80" Height="24" Click="btnCancelSource_Click" Margin="0,5,0,0"  IsEnabled="{Binding SourceProgressIsBusy}">
+                                    </Controls:ImageButton>
+                                    <CheckBox x:Name="chbSourceTablesSelectAll" Grid.Row="1" Grid.Column="0" IsChecked="{Binding SelectAllSource}" Content="{x:Static Localisation:ResourcesCommon.SelectAll}" Margin="0,12,0,0" IsEnabled="{Binding SourceProgressIsNotBusy}"/>
+                                </Grid>
+                                <Separator Grid.Row="1" />
+
+                                <ListBox Grid.Row="2" Name="lbSourceTables" 
+                                         Background="{StaticResource AvdMenuBackground}" BorderBrush="Transparent" 
+                                         BorderThickness="0" SelectedItem="{Binding SelectedSourceTable, Mode=TwoWay}" Padding="0" 
+                                         Visibility="{Binding ShowFilledTables, Converter={StaticResource ShowFilledTablesConverter}}" Margin="0,3,0,0" 
+                                         ItemTemplate="{StaticResource SourceTableItem}" ItemsSource="{Binding SourceTables, Mode=TwoWay}" 
+                                         ScrollViewer.HorizontalScrollBarVisibility="Visible" VirtualizingStackPanel.IsVirtualizing="True" 
+                                         VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.IsDeferredScrollingEnabled="True"
+                                         MyControls:ListBoxBehavior.ScrollSelectedIntoView="True">
+
+                                    <ListBox.ItemContainerStyle>
+                                        <Style TargetType="ListBoxItem">
+                                            <Setter Property="IsEnabled" Value="{Binding ElementName=chbSourceTablesSelectAll, Path=IsEnabled}"/>
+                                            <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                            <Setter Property="Padding" Value="0" />
+                                            <Style.Resources>
+                                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                                            </Style.Resources>
+                                        </Style>
+                                    </ListBox.ItemContainerStyle>
+                                </ListBox>
+                                <Border Grid.Row="3" Height="30" Padding="5" Style="{StaticResource HeadlineBorder}" Background="{StaticResource NewDesignDeepBlueBrush}" BorderBrush="{StaticResource NewDesignDeepBlueBrush}" BorderThickness="0,1,0,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock VerticalAlignment="Center" Grid.Column="0" Text="{x:Static Localisation:ResourcesCommon.SourceColumns}" Margin="2,0,0,0" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />
+                                        <Label VerticalAlignment="Center" Padding="0" Grid.Column="1" Margin="2,0,10,0" ContentStringFormat="({0})" Content="{Binding Path=Items.Count, Mode=OneWay, ElementName=lbSourceColumns}" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />                 
+                                    </StackPanel>
+                                </Border>
+                                <Grid Grid.Row="4" Background="{StaticResource AvdMenuBackground}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Separator Grid.Row="0" />
+
+
+                                    <ListBox Grid.Row="1" Name="lbSourceColumns" 
+                                         Background="{StaticResource AvdMenuBackground}" BorderBrush="Transparent" 
+                                         BorderThickness="0" SelectedItem="{Binding SelectedSourceColumn, Mode=TwoWay}" Padding="0" 
+                                         Visibility="{Binding ShowFilledTables, Converter={StaticResource ShowFilledTablesConverter}}" Margin="0,3,0,0" 
+                                         ItemTemplate="{StaticResource SourceColumnItem}" ItemsSource="{Binding SelectedSourceTable.SourceColumns}" 
+                                         ScrollViewer.HorizontalScrollBarVisibility="Visible" VirtualizingStackPanel.IsVirtualizing="True" 
+                                         VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.IsDeferredScrollingEnabled="True"
+                                         MyControls:ListBoxBehavior.ScrollSelectedIntoView="True"
+                                         >
+
+                                        <ListBox.ItemContainerStyle>
+                                            <Style TargetType="ListBoxItem">
+                                                <Setter Property="IsEnabled" Value="{Binding ElementName=chbSourceTablesSelectAll, Path=IsEnabled}"/>
+                                                <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                                <Setter Property="Padding" Value="0" />
+                                                <Style.Resources>
+                                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                                                </Style.Resources>
+                                            </Style>
+                                        </ListBox.ItemContainerStyle>
+                                    </ListBox>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="1" Padding="0">
+                        <Grid Margin="0,0,5,0" Name="_ctlViewbox" Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Padding="5" Style="{StaticResource HeadlineBorder}" Background="{StaticResource NewDesignDeepBlueBrush}" BorderBrush="{StaticResource NewDesignDeepBlueBrush}" BorderThickness="0,1,0,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{x:Static Localisation:ResourcesCommon.ViewboxTables}" Margin="2,0,0,0" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />
+                                    <Label Padding="0" Grid.Column="1" Margin="2,0,10,0" ContentStringFormat="({0})" Content="{Binding Path=Items.Count, Mode=OneWay, ElementName=lbViewboxTables}" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />
+                                    <Image Grid.Column="2" Width="16" Source="/Resources/alert_24x24.png" Margin="0,0,5,0" Visibility="{Binding HasViewboxWarning, Converter={StaticResource HasErrorWarningConverter}}">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding ViewboxWarning}"/>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <Image Grid.Column="3" Width="16" Source="/Resources/error_24x24.png" Margin="0,0,5,0" Visibility="{Binding HasViewboxError, Converter={StaticResource HasErrorWarningConverter}}">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding ViewboxError}"/>
+                                        </Image.ToolTip>
+                                    </Image>
+                                </Grid>
+                            </Border>
+                            <Grid Grid.Row="1" Background="{StaticResource AvdMenuBackground}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="3*" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="2*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" Margin="5,5,5,5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <ProgressBar Grid.Column="0"  Maximum="{Binding ViewboxProgress.Maximum}" 
+                                                 Minimum="{Binding ViewboxProgress.Minimum}" 
+                                                 Value="{Binding ViewboxProgress.Progress, Mode=OneWay}" 
+                                                 Height="20" Width="Auto"
+                                                 Margin="0, 0, 10, 0" 
+                                                 ></ProgressBar>
+                                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding ViewboxProgress.Description}"></TextBlock>
+
+                                    <Controls:ImageButton Name="btnRefreshViewbox" Grid.Column="2" ImageSource="/Resources/icon_refresh_small.png" Caption="{x:Static Localisation:ResourcesCommon.BtnRefresh}" Width="80" Height="24" Click="btnRefreshViewbox_Click" IsEnabled="{Binding ViewboxProgressIsNotBusy}">
+                                    </Controls:ImageButton>
+                                    <Controls:ImageButton Name="btnCancelViewbox" Grid.Column="2" Grid.Row="1" ImageSource="/Resources/cancel_24x24.png" Caption="{x:Static Localisation:ResourcesCommon.BtnCancel}" Width="80" Height="24" Click="btnCancelViewbox_Click" Margin="0,5,0,0" IsEnabled="{Binding ViewboxProgressIsBusy}">
+                                    </Controls:ImageButton>
+                                    <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                                        <CheckBox x:Name="chbViewboxTablesSelectAll" IsChecked="{Binding SelectAllViewbox}" Content="{x:Static Localisation:ResourcesCommon.SelectAll}" Margin="0,12,0,0" IsEnabled="{Binding ViewboxProgressIsNotBusy}"/>
+                                        <CheckBox IsChecked="{Binding ShowOnlyRelevantViewboxTables}" Content="{x:Static Localisation:ResourcesCommon.ShowOnlyRelevantTables}" Margin="5,12,0,0"/>
+                                    </StackPanel>
+                                    
+                                </Grid>
+                                <Separator Grid.Row="1" />
+
+                                <ListBox Grid.Row="2" Name="lbViewboxTables" 
+                                         Background="{StaticResource AvdMenuBackground}" BorderBrush="Transparent" 
+                                         BorderThickness="0" SelectedItem="{Binding SelectedViewboxTable, Mode=TwoWay}" Padding="0" 
+                                         Visibility="{Binding ShowFilledTables, Converter={StaticResource ShowFilledTablesConverter}}" Margin="0,3,0,0" 
+                                         ItemTemplate="{StaticResource ViewboxTableItem}" ItemsSource="{Binding ViewboxTables, Mode=OneWay}" 
+                                         ScrollViewer.HorizontalScrollBarVisibility="Visible" VirtualizingStackPanel.IsVirtualizing="True" 
+                                         VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.IsDeferredScrollingEnabled="True"
+                                         MyControls:ListBoxBehavior.ScrollSelectedIntoView="True">
+
+                                    <ListBox.ItemContainerStyle>
+                                        <Style TargetType="ListBoxItem">
+                                            <Setter Property="IsEnabled" Value="{Binding ElementName=chbViewboxTablesSelectAll, Path=IsEnabled}"/>
+                                            <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                            <Setter Property="Padding" Value="0" />
+                                            <Style.Resources>
+                                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                                            </Style.Resources>
+                                        </Style>
+                                    </ListBox.ItemContainerStyle>
+                                </ListBox>
+                                <Border Grid.Row="3" Height="30" Padding="5" Style="{StaticResource HeadlineBorder}" Background="{StaticResource NewDesignDeepBlueBrush}" BorderBrush="{StaticResource NewDesignDeepBlueBrush}" BorderThickness="0,1,0,0" IsEnabled="{Binding ElementName=chbViewboxTablesSelectAll, Path=IsEnabled}">
+                                    <Grid VerticalAlignment="Center">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock VerticalAlignment="Center" Grid.Column="0" Text="{x:Static Localisation:ResourcesCommon.ViewboxColumns}" Margin="2,0,0,0" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />
+                                        <Label VerticalAlignment="Center" Padding="0" Grid.Column="1" Margin="2,0,10,0" ContentStringFormat="({0})" Content="{Binding Path=Items.Count, Mode=OneWay, ElementName=lbViewboxColumns}" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />
+                                        <Button Grid.Column="2" Name="btnAddSpecial" Height="20" VerticalAlignment="Center" HorizontalAlignment="Right" Click="btnAddSpecial_Click">Add special column</Button>
+                                    </Grid>
+                                </Border>
+                                <Grid Grid.Row="4">
+
+                                    <Grid Grid.Row="0" Background="{StaticResource AvdMenuBackground}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Separator Grid.Row="0" />
+
+                                        <ListBox Grid.Row="1" Name="lbViewboxColumns" 
+                                         Background="{StaticResource AvdMenuBackground}" BorderBrush="Transparent" 
+                                         BorderThickness="0" SelectedItem="{Binding SelectedViewboxColumn, Mode=TwoWay}" Padding="0" 
+                                         Visibility="{Binding ShowFilledTables, Converter={StaticResource ShowFilledTablesConverter}}" Margin="0,3,0,0" 
+                                         ItemTemplate="{StaticResource ViewboxColumnItem}" ItemsSource="{Binding SelectedViewboxTable.ViewboxColumns}" 
+                                         ScrollViewer.HorizontalScrollBarVisibility="Visible" VirtualizingStackPanel.IsVirtualizing="True" 
+                                         VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.IsDeferredScrollingEnabled="True"
+                                         MyControls:ListBoxBehavior.ScrollSelectedIntoView="True"
+                                         >
+                                            
+                                            <ListBox.ItemContainerStyle>
+                                                <Style TargetType="ListBoxItem">
+                                                    <Setter Property="IsEnabled" Value="{Binding ElementName=chbViewboxTablesSelectAll, Path=IsEnabled}"/>
+                                                    <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                                    <Setter Property="Padding" Value="0" />
+                                                    <Style.Resources>
+                                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                                                    </Style.Resources>
+                                                </Style>
+                                            </ListBox.ItemContainerStyle>
+                                        </ListBox>
+                                        <Separator Grid.Row="2" />
+                                        <ListBox Grid.Row="3" Name="lbViewboxSpecialColumns" 
+                                         Background="{StaticResource AvdMenuBackground}" BorderBrush="Transparent" 
+                                         BorderThickness="0" SelectedItem="{Binding SelectedViewboxColumn, Mode=TwoWay}" Padding="0" 
+                                         Visibility="{Binding SelectedViewboxTable.HasViewboxSpecialColumn, Converter={StaticResource ShowSpecialConverter}}" Margin="0,3,0,0" 
+                                         ItemTemplate="{StaticResource ViewboxSpecialColumnItem}" ItemsSource="{Binding SelectedViewboxTable.ViewboxSpecialColumns}" 
+                                         ScrollViewer.HorizontalScrollBarVisibility="Visible" VirtualizingStackPanel.IsVirtualizing="True" 
+                                         VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.IsDeferredScrollingEnabled="True"
+                                         MyControls:ListBoxBehavior.ScrollSelectedIntoView="True" Height="100"
+                                         >
+
+                                            <ListBox.ItemContainerStyle>
+                                                <Style TargetType="ListBoxItem">
+                                                    <Setter Property="IsEnabled" Value="{Binding ElementName=chbViewboxTablesSelectAll, Path=IsEnabled}"/>
+                                                    <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                                    <Setter Property="Padding" Value="0" />
+                                                    <Style.Resources>
+                                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                                                    </Style.Resources>
+                                                </Style>
+                                            </ListBox.ItemContainerStyle>
+                                        </ListBox>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+
+
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="2" Padding="0">
+                        <Grid Margin="0,0,5,0" Name="_ctlFinal" Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Padding="5" Style="{StaticResource HeadlineBorder}" Background="{StaticResource NewDesignDeepBlueBrush}" BorderBrush="{StaticResource NewDesignDeepBlueBrush}" BorderThickness="0,1,0,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{x:Static Localisation:ResourcesCommon.FinalTables}" Margin="2,0,0,0" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />
+                                    <Label Padding="0" Grid.Column="1" Margin="2,0,10,0" ContentStringFormat="({0})" Content="{Binding Path=Items.Count, Mode=OneWay, ElementName=lbFinalTables}" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />
+                                    <Image Grid.Column="2" Width="16" Source="/Resources/error_24x24.png" Margin="0,0,5,0" Visibility="{Binding HasFinalError, Converter={StaticResource HasErrorWarningConverter}}">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding FinalError}"/>
+                                        </Image.ToolTip>
+                                    </Image>
+                                </Grid>
+                            </Border>
+                            <Grid Grid.Row="1" Background="{StaticResource AvdMenuBackground}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="3*" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="2*" />
+
+                                </Grid.RowDefinitions>
+
+
+                                <Grid Grid.Row="0" Margin="5,5,5,5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <CheckBox Grid.Row="1" Grid.Column="0" IsChecked="{Binding ShowOnlyRelevantFinalTables}" Content="{x:Static Localisation:ResourcesCommon.ShowOnlyRelevantTables}" Margin="0,12,0,0"/>
+                                    
+                                    <ProgressBar Grid.Column="0"  Maximum="{Binding FinalProgress.Maximum}" 
+                                                 Minimum="{Binding FinalProgress.Minimum}" 
+                                                 Value="{Binding FinalProgress.Progress, Mode=OneWay}" 
+                                                 Height="20" Width="Auto"
+                                                 Margin="0, 0, 10, 0" 
+                                                 ></ProgressBar>
+                                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FinalProgress.Description}"></TextBlock>
+
+                                    <Controls:ImageButton Name="btnRefreshFinal" Grid.Column="2" ImageSource="/Resources/icon_refresh_small.png" Caption="{x:Static Localisation:ResourcesCommon.BtnRefresh}" Width="80" Height="24" Click="btnRefreshFinal_Click">
+                                    </Controls:ImageButton>
+                                    <Controls:ImageButton Name="btnCancelFinal" Grid.Column="2" Grid.Row="1" ImageSource="/Resources/cancel_24x24.png" Caption="{x:Static Localisation:ResourcesCommon.BtnCancel}" Width="80" Height="24" Click="btnCancelFinal_Click" Margin="0,5,0,0">
+                                    </Controls:ImageButton>
+                                </Grid>
+
+                                <Separator Grid.Row="1" />
+
+                                <ListBox Grid.Row="2" Name="lbFinalTables" 
+                                         Background="{StaticResource AvdMenuBackground}" BorderBrush="Transparent" 
+                                         BorderThickness="0" SelectedItem="{Binding SelectedFinalTable, Mode=TwoWay}" Padding="0" 
+                                         Visibility="{Binding ShowFilledTables, Converter={StaticResource ShowFilledTablesConverter}}" Margin="0,3,0,0" 
+                                         ItemTemplate="{StaticResource FinalTableItem}" ItemsSource="{Binding FinalTables, Mode=OneWay}" 
+                                         ScrollViewer.HorizontalScrollBarVisibility="Visible" VirtualizingStackPanel.IsVirtualizing="True" 
+                                         VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.IsDeferredScrollingEnabled="True"
+                                         MyControls:ListBoxBehavior.ScrollSelectedIntoView="True">
+
+                                    <ListBox.ItemContainerStyle>
+                                        <Style TargetType="ListBoxItem">
+                                            <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                            <Setter Property="Padding" Value="0" />
+                                            <Style.Resources>
+                                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                                            </Style.Resources>
+                                        </Style>
+                                    </ListBox.ItemContainerStyle>
+                                </ListBox>
+
+                                <Border Grid.Row="3" Height="30" Padding="5" Style="{StaticResource HeadlineBorder}" Background="{StaticResource NewDesignDeepBlueBrush}" BorderBrush="{StaticResource NewDesignDeepBlueBrush}" BorderThickness="0,1,0,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock VerticalAlignment="Center" Grid.Column="0" Text="{x:Static Localisation:ResourcesCommon.FinalColumns}" Margin="2,0,0,0" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />
+                                        <Label VerticalAlignment="Center" Padding="0" Grid.Column="1" Margin="2,0,10,0" ContentStringFormat="({0})" Content="{Binding Path=Items.Count, Mode=OneWay, ElementName=lbFinalColumns}" Foreground="{StaticResource HeaderTextBrush}" Grid.Row="0" />
+                                    </StackPanel>
+                                </Border>
+                                <Grid Grid.Row="4" Background="{StaticResource AvdMenuBackground}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Separator Grid.Row="0" />
+
+                                    <ListBox Grid.Row="1" Name="lbFinalColumns" 
+                                         Background="{StaticResource AvdMenuBackground}" BorderBrush="Transparent" 
+                                         BorderThickness="0" SelectedItem="{Binding SelectedFinalColumn, Mode=TwoWay}" Padding="0" 
+                                         Visibility="{Binding ShowFilledTables, Converter={StaticResource ShowFilledTablesConverter}}" Margin="0,3,0,0" 
+                                         ItemTemplate="{StaticResource FinalColumnItem}" ItemsSource="{Binding SelectedFinalTable.FinalColumns}" 
+                                         ScrollViewer.HorizontalScrollBarVisibility="Visible" VirtualizingStackPanel.IsVirtualizing="True" 
+                                         VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.IsDeferredScrollingEnabled="True"
+                                         MyControls:ListBoxBehavior.ScrollSelectedIntoView="True"
+                                         >
+
+                                        <ListBox.ItemContainerStyle>
+                                            <Style TargetType="ListBoxItem">
+                                                <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                                <Setter Property="Padding" Value="0" />
+                                                <Style.Resources>
+                                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                                                </Style.Resources>
+                                            </Style>
+                                        </ListBox.ItemContainerStyle>
+                                    </ListBox>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="5" Padding="2" Background="{StaticResource NewDesignDeepBlueBrush}" BorderThickness="0" Grid.RowSpan="1" Height="25" />
+        </Grid>
+    </Border>
+
+</Window>

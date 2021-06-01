@@ -1,0 +1,11 @@
+﻿<Window x:Class="eBalanceKit.Windows.DlgGroupAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" SizeToContent="Height" MouseLeftButtonDown="Window_MouseLeftButtonDown" 
+        xmlns:loc="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        ShowInTaskbar="False" ResizeMode="NoResize" WindowStyle="SingleBorderWindow" 
+        Title="{x:Static loc:ResourcesBalanceList.DlgEditAccountGroupCaption}" Width="400" xmlns:my="clr-namespace:eBalanceKit.Controls.BalanceList"
+        KeyDown="Window_KeyDown" Icon="/eBalanceKitResources;component/Resources/GroupAccount.png">
+    <Grid>
+        <my:CtlGroupAccount x:Name="ctlGroupAccount" />
+    </Grid>
+</Window>

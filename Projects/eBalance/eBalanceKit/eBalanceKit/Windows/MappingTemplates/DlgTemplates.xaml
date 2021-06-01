@@ -1,0 +1,65 @@
+﻿<Window x:Class="eBalanceKit.Windows.MappingTemplates.DlgTemplates"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ShowInTaskbar="False" WindowStartupLocation="CenterOwner"
+        Title="{x:Static Localisation:ResourcesCommon.DlgTemplatesCaption}" Height="600" Width="540" KeyDown="WindowKeyDown"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:MappingTemplates="clr-namespace:eBalanceKit.Windows.MappingTemplates"
+        xmlns:my1="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        xmlns:eBalanceKitControls="clr-namespace:eBalanceKitControls;assembly=eBalanceKitControls"
+        Icon="/CustomResources;component/Resources/logo1.png">
+       
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Padding="2" Background="{StaticResource headerBgBrush}">
+            <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Top">
+                <my1:AvdMenuButton Caption="{x:Static Localisation:ResourcesCommon.New}" Command="{Binding AddCommand}"  ImageSource="/eBalanceKitResources;component/Resources/add.png" IsEnabled="{Binding IsCreateTemplateEditAllowed}"/>
+                <my1:AvdMenuButton Caption="{x:Static Localisation:ResourcesCommon.Edit}" Command="{Binding EditCommand}" ImageSource="/eBalanceKitResources;component/Resources/edit.png" IsEnabled="{Binding IsEditTemplateAllowed}" />
+                <my1:AvdMenuButton Caption="{x:Static Localisation:ResourcesCommon.Delete}" Command="{Binding DeleteCommand}" ImageSource="/eBalanceKitResources;component/Resources/delete.png" IsEnabled="{Binding IsDeleteTemplateAllowed}" />
+                <my1:AvdMenuSeparator />
+                <my1:AvdMenuButton Caption="{x:Static Localisation:ResourcesCommon.ExtendTemplate}" Command="{Binding ExtendCommand}" ImageSource="/eBalanceKitResources;component/Resources/ExtendTemplate.png" IsEnabled="{Binding IsExtendTemplateAllowed}" />
+                <my1:AvdMenuButton Caption="{x:Static Localisation:ResourcesCommon.ApplyTemplate}" Command="{Binding ApplyCommand}" ImageSource="/eBalanceKitResources;component/Resources/ApplyTemplate.png" IsEnabled="{Binding IsApplyTemplateAllowed}" />
+                <my1:AvdMenuSeparator />
+                <my1:AvdMenuButton Caption="{x:Static Localisation:ResourcesExport.Export}" Command="{Binding ExportCommand}" ImageSource="/eBalanceKitResources;component/Resources/ExportTemplate.png" IsEnabled="{Binding IsExportTemplateAllowed}" />
+                <my1:AvdMenuButton Caption="{x:Static Localisation:ResourcesCommon.Import}" Command="{Binding ImportCommand}" ImageSource="/eBalanceKitResources;component/Resources/ImportTemplate.png" />
+                <my1:AvdMenuSeparator />
+            </StackPanel>
+        </Border>
+        <!-- main -->
+        <Border Grid.Row="1" Style="{StaticResource GroupBoxBorder}" Padding="5" CornerRadius="0">
+            <Grid>
+                <MappingTemplates:CtlCurrentTemplates Visibility="{Binding HasObsoleteTemplates, Converter={StaticResource FalseToVisibilityConverter}}" />
+                <TabControl Padding="0" Background="Transparent" BorderBrush="Transparent" Visibility="{Binding HasObsoleteTemplates, Converter={StaticResource TrueToVisibilityConverter}}" SelectedIndex="{Binding SelectedTabIndex}">
+
+                    <TabItem Header="aktuelle Vorlagen">
+                        <MappingTemplates:CtlCurrentTemplates />
+                    </TabItem>
+                    
+                    <TabItem Header="alte Vorlagen">
+                        <MappingTemplates:CtlTemplateList DataContext="{Binding ObsoleteTemplates}" />
+                    </TabItem>
+                </TabControl>
+
+            </Grid>
+        </Border>
+
+        <!-- button bar -->
+        <Border Grid.Row="2" Style="{StaticResource ButtonBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <Button Content="{x:Static Localisation:ResourcesCommon.Ok}" Height="23" Margin="5" Name="btnOk" Width="75" Click="BtnOkClick" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

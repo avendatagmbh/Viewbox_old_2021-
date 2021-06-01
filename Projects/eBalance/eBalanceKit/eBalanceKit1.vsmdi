@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestLists xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestList name="Testlisten" id="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <RunConfiguration id="3aaa9aae-8d56-4345-a92f-0d2a7759d4e5" name="Lokal" storage="local.testsettings" type="Microsoft.VisualStudio.TestTools.Common.TestRunConfiguration, Microsoft.VisualStudio.QualityTools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestList>
+  <TestList name="PdfExport" id="f6a33c44-0a72-4249-9399-744092b234f0" parentListId="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <TestLinks>
+      <TestLink id="c962a50f-deeb-cbda-09f3-ad23f77f7e45" name="GetValidFileNameTest" storage="ebalancekitbusiness.test\bin\debug\ebalancekitbusiness.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="4b7362b5-6c00-af31-5542-3b741bdc0255" name="GetValidFilePathTest" storage="ebalancekitbusiness.test\bin\debug\ebalancekitbusiness.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="3eba7da2-2bf2-18ea-2c01-6c3e829c12f6" name="GetFileDestinationTestFalse" storage="ebalancekitbusiness.test\bin\debug\ebalancekitbusiness.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="ccc240a7-e0a5-f1b9-02e6-f89ab48fcd87" name="GetValidFileNameTestNetworkShare" storage="ebalancekitbusiness.test\bin\debug\ebalancekitbusiness.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="898dc75e-b9a1-e8e6-3bc4-4e21d3920a89" name="GetFileDestinationTestUnc" storage="ebalancekitbusiness.test\bin\debug\ebalancekitbusiness.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="17a947f6-8784-2ac5-2e27-9d26f5d7432f" name="GetValidFilePathTestFalse" storage="ebalancekitbusiness.test\bin\debug\ebalancekitbusiness.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="1b7e66c0-680d-f3d9-73b1-0d17f10c96d4" name="GetValidFilePathTestNetworkShare" storage="ebalancekitbusiness.test\bin\debug\ebalancekitbusiness.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="107030f0-ce21-9529-b9d9-6b7e7d3dee40" name="GetValidFileNameTestFalse" storage="ebalancekitbusiness.test\bin\debug\ebalancekitbusiness.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    </TestLinks>
+  </TestList>
+</TestLists>

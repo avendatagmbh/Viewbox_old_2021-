@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PreviewNoData" xml:space="preserve">
+    <value>Daten konnten nicht empfangen werden.</value>
+  </data>
+  <data name="PreviewNotAvailable" xml:space="preserve">
+    <value>Keine Vorschau verfügbar</value>
+  </data>
+  <data name="ProgressCaptionLoading" xml:space="preserve">
+    <value>Abfragen des Bundesanzeigers ...</value>
+  </data>
+  <data name="TabAnhangHeader" xml:space="preserve">
+    <value>Anhang</value>
+  </data>
+  <data name="TabBilanzHeader" xml:space="preserve">
+    <value>Bilanz</value>
+  </data>
+  <data name="TabCompanySizeHeader" xml:space="preserve">
+    <value>Größe des Unternehmens</value>
+  </data>
+  <data name="Large" xml:space="preserve">
+    <value>Groß</value>
+  </data>
+  <data name="Medium" xml:space="preserve">
+    <value>Mittel</value>
+  </data>
+  <data name="Small" xml:space="preserve">
+    <value>Klein</value>
+  </data>
+  <data name="TabGuVHeader" xml:space="preserve">
+    <value>GuV</value>
+  </data>
+  <data name="TabLageberichtHeader" xml:space="preserve">
+    <value>Lagebericht</value>
+  </data>
+  <data name="TabReportOptionsColAnhang" xml:space="preserve">
+    <value>Anhang</value>
+  </data>
+  <data name="TabReportOptionsColBilanz" xml:space="preserve">
+    <value>Bilanz</value>
+  </data>
+  <data name="TabReportOptionsColGuv" xml:space="preserve">
+    <value>GuV</value>
+  </data>
+  <data name="TabReportOptionsColLagebericht" xml:space="preserve">
+    <value>Lagebericht</value>
+  </data>
+  <data name="TabReportOptionsColReportHeader" xml:space="preserve">
+    <value>Berichtsbestandteil</value>
+  </data>
+  <data name="TabReportOptionsColValueHeader" xml:space="preserve">
+    <value>Übermitteln?</value>
+  </data>
+  <data name="TabReportOptionsHeader" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>eBilanz-Kit / Assistent für die Offenlegung beim Bundesanzeiger</value>
+  </data>
+  <data name="OvertakeDataQuestion" xml:space="preserve">
+    <value>die Daten aus der E-Bilanz für den Bundesanzeiger übernehmen?
+    (Die Daten sind nachträglich noch änderbar.)</value>
+  </data>
+  <data name="OvertakeDataCaption" xml:space="preserve">
+    <value>Werte kopieren</value>
+  </data>
+  <data name="ClientList" xml:space="preserve">
+    <value>Liste der Einsenderkunden</value>
+  </data>
+  <data name="ReadCompanies" xml:space="preserve">
+    <value>Unternehmen aulesen</value>
+  </data>
+  <data name="ExportButton" xml:space="preserve">
+    <value>Export als PDF</value>
+  </data>
+  <data name="ConfigCompanySize" xml:space="preserve">
+    <value>Größe des Unternehmens:</value>
+  </data>
+  <data name="ConfigCompanySizeLargeToolTip" xml:space="preserve">
+    <value>Große Unternehmen gem. §267 HGB.</value>
+  </data>
+  <data name="ConfigCompanySizeMediumToolTip" xml:space="preserve">
+    <value>Mittelgroße Unternehmen gem. §267 HGB.</value>
+  </data>
+  <data name="ConfigCompanySizeSmallToolTip" xml:space="preserve">
+    <value>Kleine Unternehmen gem. §267 HGB</value>
+  </data>
+  <data name="ConfigTitle" xml:space="preserve">
+    <value>Auswahl der Unternehmensgröße</value>
+  </data>
+  <data name="BalanceClosingDateIssue">
+    <value xml:space="preserve">Es dürfen nur Berichte offengelegt werden für bereits abgeschlossene Geschäftsjahre.</value>
+  </data>
+  <data name="AssistantTooltip">
+    <value xml:space="preserve">Assistent zur Offenlegung des Berichts beim Bundesanzeiger</value>
+  </data>
+  <data name="FederalGazette">
+    <value xml:space="preserve">Bundesanzeiger</value>
+  </data>
+  <data name="ErrorOfWebservice">
+    <value xml:space="preserve">Beim Ausführen einer Anfrage durch den Bundesanzeiger-Webservice wurde folgender Fehler gemeldet:</value>
+  </data>
+  <data name="TosQuery">
+    <value xml:space="preserve">Ich habe die "Allgemeine Geschäftsbedingungen für entgeltliche Einreichung und Publikation im Bundesanzeiger" gelesen und akzeptiere diese</value>
+  </data>
+  <data name="TosHint">
+    <value xml:space="preserve">Nachfolgend müssen Sie bestätigen, dass Sie die "Allgemeine Geschäftsbedingungen für entgeltliche Einreichung und Publikation im Bundesanzeiger" gelesen und verstanden haben.
+Zu finden sind die jeweils aktuellen AGB unter http://www.bundesanzeiger.de/agb. </value>
+  </data>
+  <data name="HeaderTos">
+    <value xml:space="preserve">AGB akzeptieren</value>
+  </data>
+</root>

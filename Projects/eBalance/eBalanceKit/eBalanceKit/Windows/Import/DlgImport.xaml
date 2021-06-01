@@ -1,0 +1,113 @@
+﻿<Window x:Class="eBalanceKit.Windows.Import.DlgImport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        xmlns:templ="clr-namespace:eBalanceKit.Windows.Import"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:my="clr-namespace:AvdCommon.Rules.Gui.Converters;assembly=AvdCommon"
+        xmlns:Converters="clr-namespace:eBalanceKit.Converters" Title="DlgImport" Height="452" Width="717">
+    <Window.Resources>
+        <Converters:NullToFalseConverter x:Key="myNullToFalseConverter" />
+    </Window.Resources>
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+        <AvdWpfControls:AssistantControl Grid.Row="0" Name="tabControl1" Ok="OkClick" OkButtonCaption="Dddd" OkButtonEnabled="True">
+            <TabItem Name="tbFileSelection" Header="{x:Static Localisation:ResourcesHyperCube.tbFileSelection}">
+                <templ:CtlFileSelection x:Name="ctlFileSelection" />
+            </TabItem>
+            <TabItem Name="tbTemplateSelection" Header="{x:Static Localisation:ResourcesHyperCube.tbHeaderTemplateSelection}">
+                <templ:CtlTemplateSelection x:Name="ctlTemplateSelection" DataContext="{Binding Importer}" />
+            </TabItem>
+            <!--Enabled if Importer.TemplateGenerator is not null (User clicked NEW)-->
+            <TabItem Header="{x:Static Localisation:ResourcesHyperCube.tbHeaderTemplateData}" Name="tbTemplateData"  
+                     IsEnabled="{Binding Path=Importer.TemplateGenerator, Converter={StaticResource ValueExistsToBoolConverter}}">
+                <!--<TabItem.Resources>
+                    <Style TargetType="TabItem">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=Importer.TemplateGenerator}" Value="null">
+                                <Setter Property="IsEnabled" Value="false" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TabItem.Resources>-->
+               
+                
+                <!--<TabItem.IsEnabled>
+                    <!- -IsEnabled="{Binding Path=Importer.TemplateGenerator, Converter={StaticResource myNullToFalseConverter}}"- ->
+                    
+                </TabItem.IsEnabled>-->
+                <templ:CtlAssignmentTemplateCreation x:Name="ctlAssignmentTemplateCreation1" DataContext="{Binding Importer}" />
+            </TabItem>
+            <TabItem Header="{x:Static Localisation:ResourcesHyperCube.tbHeaderCsvConfig}" Name="tbCsvConfig" IsEnabled="{Binding Path=Importer.TemplateGenerator, Converter={StaticResource myNullToFalseConverter}}">
+                <templ:CtlCsvConfigLimiterCharset x:Name="ctlCsvConfig" DataContext="{Binding Importer}" />
+            </TabItem>
+            <TabItem Header="{x:Static Localisation:ResourcesHyperCube.tbHeaderColumnAssignment}" Name="tbAssignment" IsEnabled="{Binding Path=Importer.TemplateGenerator, Converter={StaticResource myNullToFalseConverter}}">
+                <templ:CtlAssignmentColumn x:Name="ctlAssignmentGrid1" DataContext="{Binding Importer}"/>
+            </TabItem>
+            <TabItem Header="{x:Static Localisation:ResourcesHyperCube.tbHeaderRowAssignment}" Name="tbAssignment2" IsEnabled="{Binding Path=Importer.TemplateGenerator, Converter={StaticResource myNullToFalseConverter}}">
+                <templ:CtlAssignmentRow x:Name="ctlAssignmentGrid2" DataContext="{Binding Importer}"/>
+            </TabItem>
+            <!--<TabItem Header="{x:Static Localisation:ResourcesHyperCube.tbHeaderTemplateSummary}" Name="tbTemplateSummary" IsEnabled="{Binding Path=Importer.TemplateGenerator, Converter={StaticResource myNullToFalseConverter}}">
+                <templ:CtlTemplateSummary x:Name="ctlAssignmentSummaryGrid" DataContext="{Binding Importer}" />
+            </TabItem>-->
+            <TabItem Header="{x:Static Localisation:ResourcesHyperCube.tbHeaderImportPreview}" Name="tbTemplateSummary">
+                <templ:CtlTemplateSummary x:Name="ctlAssignmentSummaryGrid" DataContext="{Binding Importer}" />
+            </TabItem>
+            <TabItem Header="{x:Static Localisation:ResourcesHyperCube.tbHeaderImportSummary}" Name="tbSummary">
+                <templ:CtlImportSummary x:Name="x" DataContext="{Binding Importer}" />
+            </TabItem>
+        </AvdWpfControls:AssistantControl>
+        <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.Row="1" HorizontalAlignment="Right">
+            <Button Content="{x:Static Localisation:ResourcesCommon.Back}" Height="23" Margin="10,0,0,0"
+                    Name="btBack" VerticalAlignment="Top" Width="75" Click="btBack_Click">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <!--<Setter Property="IsEnabled" Value="{Binding ElementName=tabControl1, Path=BackAllowed}" />-->
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=tabControl1, Path=BackAllowed}" Value="false">
+                                <Setter Property="IsEnabled" Value="false" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=tabControl1, Path=SelectedIndex}" Value="7">
+                                <Setter Property="IsEnabled" Value="false" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=tabControl1, Path=SelectedIndex}" Value="8">
+                                <Setter Property="IsEnabled" Value="false" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Height="23" Margin="10,0,0,0" Name="btNext" VerticalAlignment="Top" Width="75"
+                         Click="btNext_Click">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <!--<Setter Property="IsEnabled" Value="True" />IsEnabled="{Binding ElementName=tabControl1, Path=NextAllowed}"-->
+                        <Setter Property="Content" Value="{x:Static Localisation:ResourcesCommon.Next}" />
+                        <Style.Triggers>
+                            <!--<DataTrigger Binding="{Binding Path=Importer.CsvSourceValidation}" Value="false">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>-->
+                            <DataTrigger Binding="{Binding Path=Importer.Config.CsvFileName, Converter={StaticResource ValueExistsToBoolConverter}}" Value="False">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=tabControl1, Path=NextAllowed}" Value="false">
+                                <Setter Property="IsEnabled" Value="false" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=tabControl1, Path=SelectedIndex}" Value="5">
+                                <Setter Property="Content" Value="{x:Static Localisation:ResourcesHyperCube.btSave}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=tabControl1, Path=SelectedIndex}" Value="6">
+                                <Setter Property="Content" Value="{x:Static Localisation:ResourcesHyperCube.btImport}" />
+                                <Setter Property="Margin" Value="25,0,25,0" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <!--<Button Content="{x:Static Localisation:ResourcesCommon.Save}" Margin="10,0,0,0" Height="23" HorizontalAlignment="Left" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click_1" />-->
+        </StackPanel>
+    </Grid>
+</Window>

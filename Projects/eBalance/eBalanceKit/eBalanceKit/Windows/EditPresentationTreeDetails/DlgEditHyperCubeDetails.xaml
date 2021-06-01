@@ -1,0 +1,68 @@
+﻿<Window x:Class="eBalanceKit.Windows.EditPresentationTreeDetails.DlgEditHyperCubeDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:HyperCubes="clr-namespace:eBalanceKitControls.HyperCubes;assembly=eBalanceKitControls"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:eBalanceKitControls="clr-namespace:eBalanceKitControls;assembly=eBalanceKitControls"
+        Icon="/eBalanceKitResources;component/Resources/EditPen.png"
+        Title="DlgEditHyperCubeDetails" Height="600" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--<Border Padding="2" Background="{StaticResource headerBgBrush}">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Button Style="{StaticResource ImageButtonStyle1}" x:Name="BtnTemplate" Margin="1,0" Click="BtnTemplateClick" Visibility="{Binding CurrentDocument, Converter={StaticResource valueExistsToVisibilityConverter}}" >
+                    <StackPanel>
+                        <Image Height="24" Width="24" Source="/eBalanceKitResources;component/Resources/UpdateTemplate.png" />
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.BtnTemplates}" Style="{StaticResource ImageButtonText}" />
+                    </StackPanel>
+                </Button>
+                
+                <Button Style="{StaticResource ImageButtonStyle1}" x:Name="BtnImport" Margin="1,0" Click="BtnImportClick" Visibility="{Binding CurrentDocument, Converter={StaticResource valueExistsToVisibilityConverter}}"
+                         IsEnabled="{Binding ImportAllowed}" >
+                    <StackPanel>
+                        <Image Height="24" Width="24" Source="/eBalanceKitResources;component/Resources/ImportTemplate.png" />
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.Import}" Style="{StaticResource ImageButtonText}" />
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource ImageButtonStyle1}" x:Name="BtnExport" Margin="1,0" Click="BtnExportClick" Visibility="{Binding CurrentDocument, Converter={StaticResource valueExistsToVisibilityConverter}}"
+                        IsEnabled="{Binding Cube.Document.ReportRights.ExportAllowed}">
+                    <StackPanel>
+                        <Image Height="24" Width="24" Source="/eBalanceKitResources;component/Resources/ExportTemplate.png" />
+                        <TextBlock Text="{x:Static Localisation:ResourcesCommon.Export}" Style="{StaticResource ImageButtonText}" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Border>-->
+        
+        <HyperCubes:HyperCubeTable x:Name="ctlHyperCubeTable" Grid.Row="1" Visibility="Collapsed" />
+        <HyperCubes:HyberCube3DCube x:Name="ctlHyperCube3DCube" Grid.Row="1" Visibility="Collapsed" />
+
+        <Separator Grid.Row="2" Margin="0,2" />
+        
+        <!-- comment -->
+        <StackPanel Grid.Row="3" Margin="5,0">
+            <TextBlock Grid.Row="1" Margin="0,8,0,0" Text="Kommentar" />
+            <TextBox Grid.Row="2" Grid.ColumnSpan="3" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="40" 
+                                x:Name="txtComment" TextWrapping="Wrap" Text="{Binding Cube.Comment, UpdateSourceTrigger=LostFocus}" MaxLength="4096"
+                                IsEnabled="{Binding Cube.Document.ReportRights.WriteRestAllowed}"/>
+            <TextBlock Grid.Row="3" Grid.ColumnSpan="3" Text="Nur für interne Verwendung, Feld wird beim Senden des Reports und beim XBRL-Export nicht übertragen."
+                                TextWrapping="Wrap" Foreground="#777" FontSize="10" FontStyle="Italic" />
+        </StackPanel>
+        
+        <!-- button bar -->
+        <Border Grid.Row="4" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal" Margin="5">
+                <Button Content="_OK" Height="23" HorizontalAlignment="Left" Name="btnOk" VerticalAlignment="Top" Width="75" Click="BtnOkClick" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

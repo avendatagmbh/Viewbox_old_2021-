@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC7A8C15-6E4B-4A4E-9DA1-23C82B987BA2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViewBuilder</RootNamespace>
+    <AssemblyName>ViewBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Viewbox deploy\ViewBuilder\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\AvenDATA.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>902B1441F21F277AB430E386BB7370837ABF56BD</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ViewBuilder_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="gudusoft.gsqlparser">
+      <HintPath>..\..\..\..\Assemblies\32Bit\External\guduSoft\gudusoft.gsqlparser\2.2.7\gudusoft.gsqlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\Assemblies\64Bit\External\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>..\..\..\..\Assemblies\32Bit\External\Microsoft\Ribbons\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary">
+      <HintPath>..\..\..\..\Assemblies\32Bit\External\Microsoft\Ribbons\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ConnectionStateToSignalStateConverter.cs" />
+    <Compile Include="Converters\EnumToVisibilityConverter.cs" />
+    <Compile Include="Converters\ProgressToVisibilityConverter2.cs" />
+    <Compile Include="Converters\ProgressToVisibilityConverter.cs" />
+    <Compile Include="Converters\StringToEnabledConverter.cs" />
+    <Compile Include="Converters\StringToNullConverter.cs" />
+    <Compile Include="Converters\ViewStateToImageConverter.cs" />
+    <Compile Include="Helpers\AssemblyHelper.cs" />
+    <Compile Include="Models\AddFinancialYearsModel.cs" />
+    <Compile Include="Models\ExtendedColumnInformationModel.cs" />
+    <Compile Include="Models\MetadataUpdate\CheckConsistencyModel.cs" />
+    <Compile Include="Models\CreateViewboxDbModel.cs" />
+    <Compile Include="Models\DlgSapBillSchemaImportViewModel.cs" />
+    <Compile Include="Models\DlgScriptErrorsModel.cs" />
+    <Compile Include="Models\EditOptimizationsModel.cs" />
+    <Compile Include="Models\LogOptionsModel.cs" />
+    <Compile Include="Models\MainWindowModel.cs" />
+    <Compile Include="Models\ManageFakesModel.cs" />
+    <Compile Include="Models\ManageLayersModel.cs" />
+    <Compile Include="Models\MetadataUpdate\DlgDifferencesModel.cs" />
+    <Compile Include="Models\MetadataUpdate\ResolvingColumnsEventArgs.cs" />
+    <Compile Include="Models\MetadataUpdate\ResolvingTablesEventArgs.cs" />
+    <Compile Include="Models\RelationsModel.cs" />
+    <Compile Include="Models\MetadataUpdate\ColumnDifferenceModel.cs" />
+    <Compile Include="Models\MetadataUpdate\ISelectable.cs" />
+    <Compile Include="Models\MetadataUpdate\TableDifferenceModel.cs" />
+    <Compile Include="Models\Settings.cs" />
+    <Compile Include="SignalLight.xaml.cs">
+      <DependentUpon>SignalLight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Structures\ExtendedColumnInformationCsvItem.cs" />
+    <Compile Include="Structures\ProgressDialogHelper.cs" />
+    <Compile Include="Structures\RelayCommand.cs" />
+    <Compile Include="Structures\ViewscriptUpdater.cs" />
+    <Compile Include="Windows\Controls\ConfigDatabase.xaml.cs">
+      <DependentUpon>ConfigDatabase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Controls\CtlViewscriptDetails.xaml.cs">
+      <DependentUpon>CtlViewscriptDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Controls\ProfileSelector.xaml.cs">
+      <DependentUpon>ProfileSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgArchivingTableSelector.xaml.cs">
+      <DependentUpon>DlgArchivingTableSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgConfigApplication.xaml.cs">
+      <DependentUpon>DlgConfigApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgCreateViewboxDb.xaml.cs">
+      <DependentUpon>DlgCreateViewboxDb.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgEditLanguages.xaml.cs">
+      <DependentUpon>DlgEditLanguages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgEditUser.xaml.cs">
+      <DependentUpon>DlgEditUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgExtendedColumnInformation.xaml.cs">
+      <DependentUpon>DlgExtendedColumnInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgLogOptions.xaml.cs">
+      <DependentUpon>DlgLogOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgManageFakes.xaml.cs">
+      <DependentUpon>DlgManageFakes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgRelations.xaml.cs">
+      <DependentUpon>DlgRelations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgReportDetailsPrompt.xaml.cs">
+      <DependentUpon>DlgReportDetailsPrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgSapBillSchemaImport.xaml.cs">
+      <DependentUpon>DlgSapBillSchemaImport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgScriptErrors.xaml.cs">
+      <DependentUpon>DlgScriptErrors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgViewError.xaml.cs">
+      <DependentUpon>DlgViewError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgViewscriptDetails.xaml.cs">
+      <DependentUpon>DlgViewscriptDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgWindowBase.cs" />
+    <Compile Include="Windows\MetadataUpdate\DlgDifferences.xaml.cs">
+      <DependentUpon>DlgDifferences.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Optimizations\DlgAddFinancialYears.xaml.cs">
+      <DependentUpon>DlgAddFinancialYears.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Optimizations\DlgEditOptimizations.xaml.cs">
+      <DependentUpon>DlgEditOptimizations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Optimizations\DlgManageLayers.xaml.cs">
+      <DependentUpon>DlgManageLayers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PopupControl.xaml.cs">
+      <DependentUpon>PopupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PopupProgressBar.xaml.cs">
+      <DependentUpon>PopupProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PopupProfileSelection.xaml.cs">
+      <DependentUpon>PopupProfileSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgUserManagement.xaml.cs">
+      <DependentUpon>DlgUserManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgEditProfile.xaml.cs">
+      <DependentUpon>DlgEditProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgProfileSelection.xaml.cs">
+      <DependentUpon>DlgProfileSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgScriptSource.xaml.cs">
+      <DependentUpon>DlgScriptSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgConfigMail.xaml.cs">
+      <DependentUpon>DlgConfigMail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PopupViewscriptDetails.xaml.cs">
+      <DependentUpon>PopupViewscriptDetails.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Resources\src\SignalLight.xcf" />
+    <None Include="Resources\ViewStates\ViewStates.xcf" />
+    <Resource Include="Resources\Qute\Thumbs.db" />
+    <None Include="Resources\src\edit.xcf" />
+    <None Include="Resources\src\shutdown.xcf" />
+    <None Include="Resources\src\view.xcf" />
+    <None Include="Resources\src\viewbuilder_logo.xcf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SignalLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Controls\ConfigDatabase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Controls\CtlViewscriptDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Controls\ProfileSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgArchivingTableSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgConfigApplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgCreateViewboxDb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgEditLanguages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgEditUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgExtendedColumnInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgLogOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgManageFakes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgRelations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgReportDetailsPrompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgSapBillSchemaImport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgScriptErrors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgViewError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgViewscriptDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MetadataUpdate\DlgDifferences.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Optimizations\DlgAddFinancialYears.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Optimizations\DlgEditOptimizations.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Optimizations\DlgManageLayers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PopupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PopupProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\PopupProfileSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgUserManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgEditProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgProfileSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgScriptSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgConfigMail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PopupViewscriptDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AvenDATA.ico" />
+    <Resource Include="Resources\close_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
+    <Resource Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdCommon\AvdCommon.csproj">
+      <Project>{89148742-F482-479E-8831-579F54FDF08A}</Project>
+      <Name>AvdCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\AvdWpfControls\AvdWpfControls.csproj">
+      <Project>{E3B12F3F-E420-48FA-B991-FA1FF8D603F2}</Project>
+      <Name>AvdWpfControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\LogHelper\LogHelper\AV.Log.LogHelper.csproj">
+      <Project>{1AFE5981-7268-4249-AFFA-77E42495886E}</Project>
+      <Name>AV.Log.LogHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\SqlParser\SqlParser.csproj">
+      <Project>{74D9A8FB-4CD1-4AED-9476-AF2E6D3DB4A0}</Project>
+      <Name>SqlParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\ViewBuilderBusiness\ViewBuilderBusiness.csproj">
+      <Project>{C6EE0AD2-212A-433D-8A01-E0217F5737EA}</Project>
+      <Name>ViewBuilderBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Tools\ViewboxMassTableArchivingTool\ViewboxMassTableArchivingTool\ViewboxMassTableArchivingTool.csproj">
+      <Project>{0B6E6387-9CB1-4420-88E4-B27BDD172C89}</Project>
+      <Name>ViewboxMassTableArchivingTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\IndexDb\IndexDb\IndexDb.csproj">
+      <Project>{8362D3C1-21B0-46E4-B7F2-B11B958029A0}</Project>
+      <Name>IndexDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\SystemDb\SystemDb.csproj">
+      <Project>{A7FA3A52-0DDD-456B-BF7A-CED14D0AE0DF}</Project>
+      <Name>SystemDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\ViewboxDb\ViewboxDb.csproj">
+      <Project>{6E5FB80C-3B10-475B-ACF3-640D6D3399B0}</Project>
+      <Name>ViewboxDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tools\DbComparisonV2\DBComparisonBusiness\DBComparisonBusiness.csproj">
+      <Project>{8920FBEF-30A9-4A3A-91C5-7FCA3597A6A1}</Project>
+      <Name>DBComparisonBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tools\SQLParser\SQLParser2.csproj">
+      <Project>{BA1782EF-56DA-4872-BCB2-3F1A339E8243}</Project>
+      <Name>SQLParser2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectDb\ProjectDb.csproj">
+      <Project>{C00DDC5B-0724-4F6C-B033-045FBFA8B2A8}</Project>
+      <Name>ProjectDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewBuilderCommon\ViewBuilderCommon.csproj">
+      <Project>{4EA26943-7052-4D92-8708-1B1466536988}</Project>
+      <Name>ViewBuilderCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\database16.png" />
+    <Resource Include="Resources\database32.png" />
+    <Resource Include="Resources\database64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\database128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Qute\Address-book-open16.png" />
+    <Resource Include="Resources\Qute\Address-book-open24.png" />
+    <Resource Include="Resources\Qute\Address-book-open30.png" />
+    <Resource Include="Resources\Qute\Address-book16.png" />
+    <Resource Include="Resources\Qute\Address-book24.png" />
+    <Resource Include="Resources\Qute\Address-book30.png" />
+    <Resource Include="Resources\Qute\Advanced16.png" />
+    <Resource Include="Resources\Qute\Advanced24.png" />
+    <Resource Include="Resources\Qute\Advanced30.png" />
+    <Resource Include="Resources\Qute\Apply16.png" />
+    <Resource Include="Resources\Qute\Apply24.png" />
+    <Resource Include="Resources\Qute\Apply30.png" />
+    <Resource Include="Resources\Qute\Attach16.png" />
+    <Resource Include="Resources\Qute\Attach24.png" />
+    <Resource Include="Resources\Qute\Attach30.png" />
+    <Resource Include="Resources\Qute\Back16.png" />
+    <Resource Include="Resources\Qute\Back24.png" />
+    <Resource Include="Resources\Qute\Back30.png" />
+    <Resource Include="Resources\Qute\Balloon16.png" />
+    <Resource Include="Resources\Qute\Balloon24.png" />
+    <Resource Include="Resources\Qute\Balloon30.png" />
+    <Resource Include="Resources\Qute\Clock16.png" />
+    <Resource Include="Resources\Qute\Clock24.png" />
+    <Resource Include="Resources\Qute\Clock30.png" />
+    <Resource Include="Resources\Qute\Copy16.png" />
+    <Resource Include="Resources\Qute\Copy24.png" />
+    <Resource Include="Resources\Qute\Copy30.png" />
+    <Resource Include="Resources\Qute\Cut16.png" />
+    <Resource Include="Resources\Qute\Cut24.png" />
+    <Resource Include="Resources\Qute\Cut30.png" />
+    <Resource Include="Resources\Qute\Delete16.png" />
+    <Resource Include="Resources\Qute\Delete24.png" />
+    <Resource Include="Resources\Qute\Delete30.png" />
+    <Resource Include="Resources\Qute\Document16.png" />
+    <Resource Include="Resources\Qute\Document24.png" />
+    <Resource Include="Resources\Qute\Document30.png" />
+    <Resource Include="Resources\Qute\Downloads16.png" />
+    <Resource Include="Resources\Qute\Downloads24.png" />
+    <Resource Include="Resources\Qute\Downloads30.png" />
+    <Resource Include="Resources\Qute\Envelope-front16.png" />
+    <Resource Include="Resources\Qute\Envelope-front24.png" />
+    <Resource Include="Resources\Qute\Envelope-front30.png" />
+    <Resource Include="Resources\Qute\Envelope-open16.png" />
+    <Resource Include="Resources\Qute\Envelope-open24.png" />
+    <Resource Include="Resources\Qute\Envelope-open30.png" />
+    <Resource Include="Resources\Qute\Envelope16.png" />
+    <Resource Include="Resources\Qute\Envelope24.png" />
+    <Resource Include="Resources\Qute\Envelope30.png" />
+    <Resource Include="Resources\Qute\Error16.png" />
+    <Resource Include="Resources\Qute\Error24.png" />
+    <Resource Include="Resources\Qute\Error30.png" />
+    <Resource Include="Resources\Qute\Folder16.png" />
+    <Resource Include="Resources\Qute\Folder24.png" />
+    <Resource Include="Resources\Qute\Folder30.png" />
+    <Resource Include="Resources\Qute\Fonts16.png" />
+    <Resource Include="Resources\Qute\Fonts24.png" />
+    <Resource Include="Resources\Qute\Fonts30.png" />
+    <Resource Include="Resources\Qute\Forward16.png" />
+    <Resource Include="Resources\Qute\Forward24.png" />
+    <Resource Include="Resources\Qute\Forward30.png" />
+    <Resource Include="Resources\Qute\Get mail16.png" />
+    <Resource Include="Resources\Qute\Get mail24.png" />
+    <Resource Include="Resources\Qute\Get mail30.png" />
+    <Resource Include="Resources\Qute\Glasses16.png" />
+    <Resource Include="Resources\Qute\Glasses24.png" />
+    <Resource Include="Resources\Qute\Glasses30.png" />
+    <Resource Include="Resources\Qute\Globe16.png" />
+    <Resource Include="Resources\Qute\Globe24.png" />
+    <Resource Include="Resources\Qute\Globe30.png" />
+    <Resource Include="Resources\Qute\Help16.png" />
+    <Resource Include="Resources\Qute\Help24.png" />
+    <Resource Include="Resources\Qute\Help30.png" />
+    <Resource Include="Resources\Qute\History16.png" />
+    <Resource Include="Resources\Qute\History24.png" />
+    <Resource Include="Resources\Qute\History30.png" />
+    <Resource Include="Resources\Qute\Home16.png" />
+    <Resource Include="Resources\Qute\Home24.png" />
+    <Resource Include="Resources\Qute\Home30.png" />
+    <Resource Include="Resources\Qute\Junk16.png" />
+    <Resource Include="Resources\Qute\Junk24.png" />
+    <Resource Include="Resources\Qute\Junk30.png" />
+    <Resource Include="Resources\Qute\Key16.png" />
+    <Resource Include="Resources\Qute\Key24.png" />
+    <Resource Include="Resources\Qute\Key30.png" />
+    <Resource Include="Resources\Qute\Landscape-orientation16.png" />
+    <Resource Include="Resources\Qute\Landscape-orientation24.png" />
+    <Resource Include="Resources\Qute\Landscape-orientation30.png" />
+    <Resource Include="Resources\Qute\Lock16.png" />
+    <Resource Include="Resources\Qute\Lock24.png" />
+    <Resource Include="Resources\Qute\Lock30.png" />
+    <Resource Include="Resources\Qute\Message16.png" />
+    <Resource Include="Resources\Qute\Message24.png" />
+    <Resource Include="Resources\Qute\Message30.png" />
+    <Resource Include="Resources\Qute\Monitor16.png" />
+    <Resource Include="Resources\Qute\Monitor24.png" />
+    <Resource Include="Resources\Qute\Monitor30.png" />
+    <Resource Include="Resources\Qute\Move16.png" />
+    <Resource Include="Resources\Qute\Move24.png" />
+    <Resource Include="Resources\Qute\Move30.png" />
+    <Resource Include="Resources\Qute\New folder16.png" />
+    <Resource Include="Resources\Qute\New folder24.png" />
+    <Resource Include="Resources\Qute\New folder30.png" />
+    <Resource Include="Resources\Qute\Note16.png" />
+    <Resource Include="Resources\Qute\Note24.png" />
+    <Resource Include="Resources\Qute\Note30.png" />
+    <Resource Include="Resources\Qute\Options16.png" />
+    <Resource Include="Resources\Qute\Options24.png" />
+    <Resource Include="Resources\Qute\Options30.png" />
+    <Resource Include="Resources\Qute\Paste16.png" />
+    <Resource Include="Resources\Qute\Paste24.png" />
+    <Resource Include="Resources\Qute\Paste30.png" />
+    <Resource Include="Resources\Qute\Pen16.png" />
+    <Resource Include="Resources\Qute\Pen24.png" />
+    <Resource Include="Resources\Qute\Pen30.png" />
+    <Resource Include="Resources\Qute\Person16.png" />
+    <Resource Include="Resources\Qute\Person24.png" />
+    <Resource Include="Resources\Qute\Person30.png" />
+    <Resource Include="Resources\Qute\Portrait-orientation16.png" />
+    <Resource Include="Resources\Qute\Portrait-orientation24.png" />
+    <Resource Include="Resources\Qute\Portrait-orientation30.png" />
+    <Resource Include="Resources\Qute\Print16.png" />
+    <Resource Include="Resources\Qute\Print24.png" />
+    <Resource Include="Resources\Qute\Print30.png" />
+    <Resource Include="Resources\Qute\Privacy16.png" />
+    <Resource Include="Resources\Qute\Privacy24.png" />
+    <Resource Include="Resources\Qute\Privacy30.png" />
+    <Resource Include="Resources\Qute\Properties16.png" />
+    <Resource Include="Resources\Qute\Properties24.png" />
+    <Resource Include="Resources\Qute\Properties30.png" />
+    <Resource Include="Resources\Qute\Question16.png" />
+    <Resource Include="Resources\Qute\Question24.png" />
+    <Resource Include="Resources\Qute\Question30.png" />
+    <Resource Include="Resources\Qute\Quote16.png" />
+    <Resource Include="Resources\Qute\Quote24.png" />
+    <Resource Include="Resources\Qute\Quote30.png" />
+    <Resource Include="Resources\Qute\Reload16.png" />
+    <Resource Include="Resources\Qute\Reload24.png" />
+    <Resource Include="Resources\Qute\Reload30.png" />
+    <Resource Include="Resources\Qute\Rename16.png" />
+    <Resource Include="Resources\Qute\Rename24.png" />
+    <Resource Include="Resources\Qute\Rename30.png" />
+    <Resource Include="Resources\Qute\Search document16.png" />
+    <Resource Include="Resources\Qute\Search document24.png" />
+    <Resource Include="Resources\Qute\Search document30.png" />
+    <Resource Include="Resources\Qute\Search16.png" />
+    <Resource Include="Resources\Qute\Search24.png" />
+    <Resource Include="Resources\Qute\Search30.png" />
+    <Resource Include="Resources\Qute\Send16.png" />
+    <Resource Include="Resources\Qute\Send24.png" />
+    <Resource Include="Resources\Qute\Send30.png" />
+    <Resource Include="Resources\Qute\Spell-check16.png" />
+    <Resource Include="Resources\Qute\Spell-check24.png" />
+    <Resource Include="Resources\Qute\Spell-check30.png" />
+    <Resource Include="Resources\Qute\Star-gold16.png" />
+    <Resource Include="Resources\Qute\Star-gold24.png" />
+    <Resource Include="Resources\Qute\Star-gold30.png" />
+    <Resource Include="Resources\Qute\Star-silver16.png" />
+    <Resource Include="Resources\Qute\Star-silver24.png" />
+    <Resource Include="Resources\Qute\Star-silver30.png" />
+    <Resource Include="Resources\Qute\Star16.png" />
+    <Resource Include="Resources\Qute\Star24.png" />
+    <Resource Include="Resources\Qute\Star30.png" />
+    <Resource Include="Resources\Qute\Stop16.png" />
+    <Resource Include="Resources\Qute\Stop24.png" />
+    <Resource Include="Resources\Qute\Stop30.png" />
+    <Resource Include="Resources\Qute\Theme16.png" />
+    <Resource Include="Resources\Qute\Theme24.png" />
+    <Resource Include="Resources\Qute\Theme30.png" />
+    <Resource Include="Resources\Qute\Trash16.png" />
+    <Resource Include="Resources\Qute\Trash24.png" />
+    <Resource Include="Resources\Qute\Trash30.png" />
+    <Resource Include="Resources\Qute\Wand16.png" />
+    <Resource Include="Resources\Qute\Wand24.png" />
+    <Resource Include="Resources\Qute\Wand30.png" />
+    <Resource Include="Resources\Qute\Warning16.png" />
+    <Resource Include="Resources\Qute\Warning24.png" />
+    <Resource Include="Resources\Qute\Warning30.png" />
+    <Resource Include="Resources\Qute\Write16.png" />
+    <Resource Include="Resources\Qute\Write24.png" />
+    <Resource Include="Resources\Qute\Write30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\shutdown16.png" />
+    <Resource Include="Resources\shutdown24.png" />
+    <Resource Include="Resources\shutdown36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\viewbuilder.ico" />
+    <Resource Include="Resources\viewbuilder128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ViewStates\viewstate_rdy.png" />
+    <Resource Include="Resources\ViewStates\viewstate_copy.png" />
+    <Resource Include="Resources\ViewStates\viewstate_copy_err.png" />
+    <Resource Include="Resources\ViewStates\viewstate_create.png" />
+    <Resource Include="Resources\ViewStates\viewstate_create_err.png" />
+    <Resource Include="Resources\ViewStates\viewstate_idx.png" />
+    <Resource Include="Resources\ViewStates\viewstate_idx_err.png" />
+    <Resource Include="Resources\ViewStates\viewstate_ok.png" />
+    <Resource Include="Resources\pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mysqldump.exe" />
+    <None Include="Resources\difference32.png" />    <Resource Include="Resources\ViewStates\viewstate_chk_prop.png" />
+    <Resource Include="Resources\ViewStates\viewstate_chk_prop_err.png" />
+    <Resource Include="Resources\ViewStates\viewstate_distinct.png" />
+    <Resource Include="Resources\ViewStates\viewstate_distinct_err.png" />
+    <Resource Include="Resources\ViewStates\viewstate_index.png" />
+    <Resource Include="Resources\ViewStates\viewstate_index_err.png" />
+    <Resource Include="Resources\ViewStates\viewstate_where.png" />
+    <Resource Include="Resources\ViewStates\viewstate_where_err.png" />
+    <Resource Include="Resources\Refresh16.png" />
+    <Resource Include="Resources\close_small.png" />
+    <Resource Include="Resources\Lightning32.png" />
+    <Resource Include="Resources\Relations32.png" />
+    <Resource Include="Resources\eye.png" />
+    <Resource Include="Resources\Folder.png" />
+    <Resource Include="Resources\validate.png" />
+    <Resource Include="Resources\ValidationError.png" />
+    <Resource Include="Resources\ValidationWarn.png" />
+    <Resource Include="Resources\SignalLightRed.png" />
+    <Resource Include="Resources\SignalLightYellow.png" />
+    <Resource Include="Resources\SignalLightGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(SolutionDir)..\..\..\Assemblies\64Bit\External\TortoiseSVN\subwcrev.exe" "$(ProjectDir)." "$(ProjectDir)AssemblyInfo_temp.cs" "$(ProjectDir)Properties\AssemblyInfo.cs"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

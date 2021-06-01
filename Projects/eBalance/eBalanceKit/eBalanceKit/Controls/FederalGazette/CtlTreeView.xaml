@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.FederalGazette.CtlTreeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:wpfc="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:BalanceList="clr-namespace:eBalanceKit.Controls.BalanceList"
+             xmlns:FedGazCfg="clr-namespace:eBalanceKit.Windows.FederalGazette.FederalGazetteCtls"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/FederalGazetteResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Padding="5" Style="{StaticResource GroupBoxBorder}" CornerRadius="0,0,5,5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!--<wpfc:TogglePopup HorizontalAlignment="Left" VerticalAlignment="Center" Width="26" ImageSource="/eBalanceKitResources;component/Resources/Filter16.png" ImageHeight="16"
+                                  DataContext="{Binding Filter}">
+                    <BalanceList:PresentationTreeFilter />
+                </wpfc:TogglePopup>-->
+                    <BalanceList:HeaderFilter Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" MaxWidth="400" MinWidth="100" DataContext="{Binding PresentationTree.Filter}"/>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" >
+                        <wpfc:ImageButton Margin="8,0,0,0" Name="BtnExpandAllNodes" ToolTip="{x:Static Localisation:ResourcesCommon.ShowAllNodes}" ImageSource="/eBalanceKitResources;component/Resources/ExpandTreeView.png" Click="BtnExpandAllNodes_Click" />
+                        <wpfc:ImageButton Margin="8,0,0,0" Name="BtnCollapseAllNodes" ToolTip="{x:Static Localisation:ResourcesCommon.HideAllNodes}" ImageSource="/eBalanceKitResources;component/Resources/CollapseTreeView.png" Click="BtnCollapseAllNodes_Click" />
+                    <wpfc:TogglePopup Margin="8,0,0,0" ImageSource="/eBalanceKitResources;component/Resources/Cog.png" ImageHeight="16" VerticalAlignment="Center">
+                        <FedGazCfg:CtlFederalGazetteConfig/>
+                    </wpfc:TogglePopup>
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource GroupBoxBorder}" CornerRadius="5,5,0,0" DataContext="{Binding PresentationTree}">
+                <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled" x:Name="treeViewScrollViewer">
+                    <wpfc:AvdTreeView Margin="5" 
+                                      Name="treeView" 
+                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                                      ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                                      ItemsSource="{Binding .}"                                      
+                                      ItemTemplateSelector="{StaticResource TreeViewItemTemplateSelector}"
+                                      Background="Transparent" 
+                                      BorderThickness="0"
+                                      SelectedItemChanged="treeView_SelectedItemChanged"                                       
+                                      KeyDown="treeView_KeyDown">
+                        <wpfc:AvdTreeView.Resources>
+                            <Style TargetType="{x:Type TreeViewItem}">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Padding" Value="1,0,0,0"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                                <Setter Property="IsSelected" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsSelected, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Setter Property="Visibility" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource TrueToVisibilityConverter}}"/>
+                                <Setter Property="Template" Value="{StaticResource ExpandedTreeViewItem}" />
+                            </Style>
+                        </wpfc:AvdTreeView.Resources>
+                    </wpfc:AvdTreeView>
+                </ScrollViewer>
+            </Border>
+
+        </Grid>
+</UserControl>

@@ -1,0 +1,13 @@
+﻿<Window x:Class="TransDATA.Windows.DlgHistorySelector" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:loc="clr-namespace:Base.Localisation;assembly=Base"
+        WindowStartupLocation="CenterOwner" 
+        Title="{x:Static loc:ResourcesCommon.DlgHistorySelectorCaption}"
+        ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight" 
+        MinWidth="350" 
+        Icon="/TransDATA;component/Resources/Profiles.png" 
+        xmlns:my="clr-namespace:TransDATA.Controls"
+        PreviewKeyDown="WindowPreviewKeyDown">
+    <my:CtlHistorySelector />
+</Window>

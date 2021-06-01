@@ -1,0 +1,13 @@
+﻿<Window x:Class="eBalanceKit.Windows.BalanceList.DlgAccountReferenceList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:BalanceList="clr-namespace:eBalanceKit.Controls.BalanceList"
+        Height="500" Width="700" MinHeight="300" MinWidth="300"
+        ResizeMode="CanResize" WindowStartupLocation="CenterOwner"
+        Icon="/eBalanceKitResources;component/Resources/ReconciliationImport.png" PreviewKeyDown="Window_PreviewKeyDown" 
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Title="{x:Static Localisation:ResourcesCommon.ReferenceList}">
+    <Grid>
+        <BalanceList:CtlAccountReferenceList Ok="CtlAccountReferenceList_Ok" Cancel="CtlAccountReferenceList_Cancel" />
+    </Grid>
+</Window>

@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NewReconciliationAssistant" xml:space="preserve">
+    <value>assistant for new reconliliation.</value>
+  </data>
+  <data name="ReconciliationDelta" xml:space="preserve">
+    <value>Custom reconciliation</value>
+  </data>
+  <data name="ReconciliationReclassification" xml:space="preserve">
+    <value>Reclassification</value>
+  </data>
+  <data name="Reconciliations" xml:space="preserve">
+    <value>Reconciliations</value>
+  </data>
+  <data name="ReconciliationSelectTypeCaption" xml:space="preserve">
+    <value>Select reconciliation type</value>
+  </data>
+  <data name="ReconciliationValueChange" xml:space="preserve">
+    <value>Value change</value>
+  </data>
+  <data name="ReconciliationDeltaShort" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="ReconciliationReclassificationShort" xml:space="preserve">
+    <value>Reclassification</value>
+  </data>
+  <data name="ReconciliationValueChangeShort" xml:space="preserve">
+    <value>Value change</value>
+  </data>
+  <data name="SetReconciliationComment" xml:space="preserve">
+    <value>enter comment</value>
+  </data>
+  <data name="SetReconciliationReclassificationDest" xml:space="preserve">
+    <value>set destination of the reclassification</value>
+  </data>
+  <data name="SetReconciliationReclassificationSource" xml:space="preserve">
+    <value>set position which should be reclassified</value>
+  </data>
+  <data name="AmountCaption" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="CommentCaption" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="ReconciliationReclassificationDest" xml:space="preserve">
+    <value>Destination of the reclassification</value>
+  </data>
+  <data name="ReconciliationReclassificationSource" xml:space="preserve">
+    <value>Position which should be reclassified</value>
+  </data>
+  <data name="SetReconciliationAmountAndComment" xml:space="preserve">
+    <value>enter amount and comment</value>
+  </data>
+  <data name="NewReconciliation" xml:space="preserve">
+    <value>New reconciliation</value>
+  </data>
+  <data name="DeleteException" xml:space="preserve">
+    <value>Could not delete reconciliation dataset: </value>
+  </data>
+  <data name="DeleteTransactionException" xml:space="preserve">
+    <value>Could not delete transaction: </value>
+  </data>
+  <data name="LoadException" xml:space="preserve">
+    <value>Could not load reconciliation datasets: </value>
+  </data>
+  <data name="SaveException" xml:space="preserve">
+    <value>Could not save reconciliation dataset: </value>
+  </data>
+  <data name="SaveTransactionException" xml:space="preserve">
+    <value>Could not save transaction: </value>
+  </data>
+  <data name="DeletePosition" xml:space="preserve">
+    <value>delete Position</value>
+  </data>
+  <data name="PositionsCaption" xml:space="preserve">
+    <value>Positions</value>
+  </data>
+  <data name="BalanceListAssets" xml:space="preserve">
+    <value>Assets</value>
+  </data>
+  <data name="BalanceListLiabilities" xml:space="preserve">
+    <value>Liabilities</value>
+  </data>
+  <data name="IncomeStatement" xml:space="preserve">
+    <value>Income Statement</value>
+  </data>
+  <data name="Sum" xml:space="preserve">
+    <value>sum: </value>
+  </data>
+  <data name="EmptyReconciliationName" xml:space="preserve">
+    <value>&lt;no name&gt;</value>
+  </data>
+  <data name="NameCaption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ReconciliationDeltaTooltip" xml:space="preserve">
+    <value>custom reclassification</value>
+  </data>
+  <data name="ReconciliationReclassificationDestTooltip" xml:space="preserve">
+    <value>Reclassification (destination position)</value>
+  </data>
+  <data name="ReconciliationReclassificationSourceTooltip" xml:space="preserve">
+    <value>Reclassification (source position)</value>
+  </data>
+  <data name="ReconciliationValueChangeTooltip" xml:space="preserve">
+    <value>value change</value>
+  </data>
+  <data name="AssignDestinationPositionTooltip" xml:space="preserve">
+    <value>set position as destination for selected reclassification</value>
+  </data>
+  <data name="AssignPositionTooltip" xml:space="preserve">
+    <value>add position to selected reconciliation dataset</value>
+  </data>
+  <data name="AssignSourcePositionTooltip" xml:space="preserve">
+    <value>set position as source for selected reclassification</value>
+  </data>
+  <data name="EmptyCustomReconciliationNote" xml:space="preserve">
+    <value>empty reconciliation - new positions can be added using drag&amp;drop</value>
+  </data>
+  <data name="ReconciliationKindCaption" xml:space="preserve">
+    <value>Kind of reconciliation</value>
+  </data>
+  <data name="ShowCommercialBalanceValues" xml:space="preserve">
+    <value>Show commercial balance values</value>
+  </data>
+  <data name="ShowEnterPreviousYearValuesTextbox" xml:space="preserve">
+    <value>Enter previous year values</value>
+  </data>
+  <data name="ShowReconciliationValues" xml:space="preserve">
+    <value>Show reconciliation values</value>
+  </data>
+  <data name="ShowTaxBalanceValues" xml:space="preserve">
+    <value>Show tax balance values</value>
+  </data>
+  <data name="TransferKindChangeVlaue" xml:space="preserve">
+    <value>Value change</value>
+  </data>
+  <data name="TransferKindReclassification" xml:space="preserve">
+    <value>Reclassification</value>
+  </data>
+  <data name="TransferKindReclassificationChangeValue" xml:space="preserve">
+    <value>Reclassification with value change</value>
+  </data>
+  <data name="CommentInfo" xml:space="preserve">
+    <value>Optional comment of the reconciliation fact.  Value will be transfered when sending the report to the financial administration.</value>
+  </data>
+  <data name="EmptyListNote" xml:space="preserve">
+    <value>No dataset found for this reconciliation type. Click on the "New" button to create a new reconciliation dataset.</value>
+  </data>
+  <data name="NameInfo" xml:space="preserve">
+    <value>Only for internal use. Value will not be transfered when sending the report to the financial administration.</value>
+  </data>
+  <data name="NoItemSelectedNote" xml:space="preserve">
+    <value>Select a dataset to edit details.</value>
+  </data>
+  <data name="RequestDeletePosition" xml:space="preserve">
+    <value>Really remove reconciliation for position "{0}"?</value>
+  </data>
+  <data name="SetPosPerDragAndDrop" xml:space="preserve">
+    <value>Assign position using drag and drop</value>
+  </data>
+  <data name="AssignedReconciliationIsSelectedIconTooltip" xml:space="preserve">
+    <value>reconciliation is assigned to the currently selected reconciliation dataset</value>
+  </data>
+  <data name="CommercialBalanceValue" xml:space="preserve">
+    <value>commercial balance value</value>
+  </data>
+  <data name="ContainsComputedReconciliationValue" xml:space="preserve">
+    <value>this position contains a computed reconciliation value</value>
+  </data>
+  <data name="ContainsManualReconciliationValue" xml:space="preserve">
+    <value>this position contains a manual reconciliation value</value>
+  </data>
+  <data name="PreviousYearValue" xml:space="preserve">
+    <value>Reconciliation value previous year</value>
+  </data>
+  <data name="PreviousYearValueCaption" xml:space="preserve">
+    <value>reconciliation value previous year:</value>
+  </data>
+  <data name="ReconciliationIsSelectedIconTooltip" xml:space="preserve">
+    <value>position contains reconciliation for the currently selected reconciliation dataset</value>
+  </data>
+  <data name="TaxBalanceValue" xml:space="preserve">
+    <value>tax balance value</value>
+  </data>
+  <data name="ReconciliationValue" xml:space="preserve">
+    <value>reconciliation value</value>
+  </data>
+  <data name="RequestDeleteReconciliation" xml:space="preserve">
+    <value>Really remove reconciliation dataset "{0}"?</value>
+  </data>
+  <data name="ReconciliationImportedValues" xml:space="preserve">
+    <value>Imported values</value>
+  </data>
+  <data name="ReconciliationImportedValuesShort" xml:space="preserve">
+    <value>Imported values</value>
+  </data>
+  <data name="ReconciliationImportedValuesTooltip" xml:space="preserve">
+    <value>imported values</value>
+  </data>
+  <data name="ReconciliationPreviousYearValues" xml:space="preserve">
+    <value>Previous year values</value>
+  </data>
+  <data name="ReconciliationPreviousYearValuesShort" xml:space="preserve">
+    <value>Previous year values</value>
+  </data>
+  <data name="ReconciliationPreviousYearValuesTooltip" xml:space="preserve">
+    <value>Previous year values</value>
+  </data>
+  <data name="ReconciliationWarningNoAssignedPosition" xml:space="preserve">
+    <value>No position has been assigned.</value>
+  </data>
+  <data name="ReconciliationWarningNoAssignedTransaction" xml:space="preserve">
+    <value>No assigned position is existing for this reconciliation.</value>
+  </data>
+  <data name="ReconciliationWarningNoAssignedValue" xml:space="preserve">
+    <value>No value has been entered.</value>
+  </data>
+  <data name="ReconciliationWarningNoComercialBalanceValue" xml:space="preserve">
+    <value>The assigned source position does not contain a commercial balance value.</value>
+  </data>
+  <data name="ReconciliationWarningWarningInAssignedTransaction" xml:space="preserve">
+    <value>Warning within an assigned position.</value>
+  </data>
+  <data name="DeleteAllPreviousYearValuesCaption" xml:space="preserve">
+    <value>Delete All</value>
+  </data>
+  <data name="PreviousYearValueInfoPart1" xml:space="preserve">
+    <value>Previous year values can be entered directly in the adjacent tree view. To enter these values you need to enable the Option "Enter previous year values" in the configuration (</value>
+  </data>
+  <data name="PreviousYearValueInfoPart2" xml:space="preserve">
+    <value>).</value>
+  </data>
+  <data name="RequestDeleteAllPreviousYearValues" xml:space="preserve">
+    <value>Really delete all previous year values?</value>
+  </data>
+  <data name="RequestDeletePreviousYearValue" xml:space="preserve">
+    <value>Really remove previous year value for position "{0}"?</value>
+  </data>
+  <data name="TabHeaderSumCaption" xml:space="preserve">
+    <value>Sum: </value>
+  </data>
+  <data name="AssignmentNotPossibleInformationCaption" xml:space="preserve">
+    <value>Assignment not possible</value>
+  </data>
+  <data name="ImportPreviousYearCaption" xml:space="preserve">
+    <value>Import of previous year values</value>
+  </data>
+  <data name="TransactionAssignmentErrorPositionIsReclassificationSource" xml:space="preserve">
+    <value>Could not assign position because it is already assigned as source for a reclassification.</value>
+  </data>
+  <data name="TransactionAssignmentErrorPositionIsAlreadyAssigned" xml:space="preserve">
+    <value>Could not assign position because it is already assigned to the current reconciliation</value>
+  </data>
+  <data name="TransactionAssignmentErrorReclassivicationIllegalGroup" xml:space="preserve">
+    <value>Source and destination of the reclassification must both be contained in the same balance sheet side (assets, libilities) or both contained in the income statement.</value>
+  </data>
+  <data name="ReconciliationFileNotFound" xml:space="preserve">
+    <value>File not found: {0}</value>
+  </data>
+  <data name="ReconciliationIsSelectedForReferenceListTooltip" xml:space="preserve">
+    <value>Position is selected for creating reference list</value>
+  </data>
+  <data name="ParameterMissing" xml:space="preserve">
+    <value>Parameter missing</value>
+  </data>
+  <data name="ExistingPreviousValuesWarning" xml:space="preserve">
+    <value>The current report already contains previous year reconciliation values. If you continue, all existing previous year values will be replaced with the imported values.</value>
+  </data>
+  <data name="ExistingPreviousValuesWarningCaption" xml:space="preserve">
+    <value>Continue import?</value>
+  </data>
+  <data name="ImportNotPossible" xml:space="preserve">
+    <value>Import not possible</value>
+  </data>
+  <data name="NoExistingReportsWithPreviousYearValues" xml:space="preserve">
+    <value>There are no existing previous year reports with reconciliation values.</value>
+  </data>
+  <data name="SelectedPreviousYearReport" xml:space="preserve">
+    <value>Select previous year report</value>
+  </data>
+  <data name="SelectPreviousYearReport" xml:space="preserve">
+    <value>Select previous year report</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="ProgressSaveReferenceList" xml:space="preserve">
+    <value>Reference list is being saved ...</value>
+  </data>
+  <data name="ReferenceListPositionDescription" xml:space="preserve">
+    <value>Position description</value>
+  </data>
+  <data name="ReferenceListPositionId" xml:space="preserve">
+    <value>Position-ID</value>
+  </data>
+  <data name="ReferenceListCreationError" xml:space="preserve">
+    <value>An error occurred while creating the refrence list CSV</value>
+  </data>
+  <data name="ProgressImportData" xml:space="preserve">
+    <value>Data are being imported ...</value>
+  </data>
+  <data name="ReconciliationWarningNoAssignedBalanceSheetPosition" xml:space="preserve">
+    <value>No balance sheet position has been assigned.</value>
+  </data>
+  <data name="ReconciliationWarningNoAssignedISPosition" xml:space="preserve">
+    <value>No income statement position has been assigned.</value>
+  </data>
+  <data name="TransactionAssignmentErrorOnlyOneBalanceSheetPosAllowed" xml:space="preserve">
+    <value>It is not possible to assign more than one balance sheet position to a value change reconciliation.</value>
+  </data>
+  <data name="ReconciliationImportValuesTitle" xml:space="preserve">
+    <value>Reconciliation value import</value>
+  </data>
+  <data name="ImportNextButton" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="ImportPreviousButton" xml:space="preserve">
+    <value>Prev.</value>
+  </data>
+  <data name="RequestDeleteImportedValueNotAllowed" xml:space="preserve">
+    <value>Removing input values are not allowed!</value>
+  </data>
+  <data name="EmptyImportedReconciliationNote" xml:space="preserve">
+    <value>empty reconciliation - new positions can only be added using import</value>
+  </data>
+  <data name="ImportSuccessfulMessage" xml:space="preserve">
+    <value>Data import was successful</value>
+  </data>
+  <data name="InvalidFormatError" xml:space="preserve">
+    <value>Invalid file format</value>
+  </data>
+  <data name="TransferKindError" xml:space="preserve">
+    <value>Transfer kind conversion error</value>
+  </data>
+  <data name="ReconciliationImport" xml:space="preserve">
+    <value>Reconciliation import</value>
+  </data>
+  <data name="UnknownFileFormat" xml:space="preserve">
+    <value>Unknown file format</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="LabelCaption" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="TypeOfReconciliation" xml:space="preserve">
+    <value>Type of reconciliation</value>
+  </data>
+  <data name="ProgressExportData" xml:space="preserve">
+    <value>Data are being exported ...</value>
+  </data>
+  <data name="ReconciliationAuditCorrection" xml:space="preserve">
+    <value>Audit Corrections</value>
+  </data>
+  <data name="ReconciliationAuditCorrectionPreviousYear" xml:space="preserve">
+    <value>Audit Corrections (previous year)</value>
+  </data>
+  <data name="ReconciliationAuditCorrectionPreviousYearShort" xml:space="preserve">
+    <value>Audit Corrections (py)</value>
+  </data>
+  <data name="ReconciliationAuditCorrectionPreviousYearTooltip" xml:space="preserve">
+    <value>corrections from tax audits for previous year values</value>
+  </data>
+  <data name="ReconciliationAuditCorrectionShort" xml:space="preserve">
+    <value>Audit Corrections</value>
+  </data>
+  <data name="ReconciliationAuditCorrectionTooltip" xml:space="preserve">
+    <value>corrections from tax audits</value>
+  </data>
+  <data name="AuditCorrectionPreviousYearValueCaption" xml:space="preserve">
+    <value>correction of previous year value:</value>
+  </data>
+  <data name="RequestDeletePreviousYearCorrectionValue" xml:space="preserve">
+    <value>Really remove previous year correction value for position "{0}"?</value>
+  </data>
+  <data name="RequestDeleteAllPreviousYearCorrectionValues" xml:space="preserve">
+    <value>Really delete all previous year correction values?</value>
+  </data>
+  <data name="ReferenceListFileName" xml:space="preserve">
+    <value>{0}_Balance</value>
+  </data>
+  <data name="ReferenceListPreviousYearValue" xml:space="preserve">
+    <value>Previous year value</value>
+  </data>
+  <data name="ReferenceListReconciliationDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ReferenceListReconciliationName" xml:space="preserve">
+    <value>Name of reconciliation</value>
+  </data>
+  <data name="ReferenceListReconciliationValue" xml:space="preserve">
+    <value>Reconciliation value</value>
+  </data>
+  <data name="ReferenceListValue" xml:space="preserve">
+    <value>Balance value</value>
+  </data>
+  <data name="ReferenceListFileNameProfitAndLoss" xml:space="preserve">
+    <value>{0}_ProfitAndLoss</value>
+  </data>
+  <data name="ReferenceListTaxValue" xml:space="preserve">
+    <value>Tax value</value>
+  </data>
+  <data name="ReconciliationName" xml:space="preserve">
+    <value>Name of reconciliation</value>
+  </data>
+  <data name="DeleteAllReconciliation" xml:space="preserve">
+    <value>Do you really want to delete all imported reconciliations?</value>
+  </data>
+  <data name="DeleteReconciliation" xml:space="preserve">
+    <value>Delete Reconciliation</value>
+  </data>
+  <data name="QuestionDeleteAllImportedValues" xml:space="preserve">
+    <value>Do you want to delete all imported values?</value>
+  </data>
+  <data name="QuestionDeleteAllPreviousYearValues" xml:space="preserve">
+    <value>Do you want to delete all previous year values?</value>
+  </data>
+  <data name="ReconciliationDialogTitle" xml:space="preserve">
+    <value>Reconciliation</value>
+  </data>
+  <data name="AddReconciliationDlgCaption" xml:space="preserve">
+    <value>Add new reconciliation</value>
+  </data>
+  <data name="AuditCorrectionsPreviousYear" xml:space="preserve">
+    <value>Correction of previous year value</value>
+  </data>
+  <data name="PreviousYearValues" xml:space="preserve">
+    <value>Reconciliation value previous year</value>
+  </data>
+  <data name="ReconciliationTransaction" xml:space="preserve">
+    <value>Reconciliation transaction</value>
+  </data>
+  <data name="DragDestinationItemHereCaption" xml:space="preserve">
+    <value>Drag the destination item here from the tree to edit.</value>
+  </data>
+  <data name="DragItemsHereCaption" xml:space="preserve">
+    <value>Drag an item here from the tree to edit.</value>
+  </data>
+  <data name="DragSourceItemHereCaption" xml:space="preserve">
+    <value>Drag the source item here from the tree to edit.</value>
+  </data>
+  <data name="ChooseTransactionsToDeleteCaption" xml:space="preserve">
+    <value>Choose transactions to delete</value>
+  </data>
+  <data name="NewReconciliationGeneralCaption" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="NewReconciliationSelectionCaption" xml:space="preserve">
+    <value>Selection of reconciliation type</value>
+  </data>
+  <data name="ReconciliationMenuDeleteImportedValueCaption" xml:space="preserve">
+    <value>Delete imported reconciliations</value>
+  </data>
+  <data name="ReconciliationMenuDeleteImportedValueDescription" xml:space="preserve">
+    <value>Deletes all imported reconciliations</value>
+  </data>
+  <data name="ReconciliationMenuDeletePreviousYearValueCaption" xml:space="preserve">
+    <value>Delete previous year values</value>
+  </data>
+  <data name="ReconciliationMenuDeletePreviousYearValueDescription" xml:space="preserve">
+    <value>Deletes all previous year values</value>
+  </data>
+  <data name="ReconciliationMenuDeleteReconciliationCaption" xml:space="preserve">
+    <value>Delete reconciliation</value>
+  </data>
+  <data name="ReconciliationMenuDeleteReconciliationDescription" xml:space="preserve">
+    <value>Allows selection of one or more transactions to delete.</value>
+  </data>
+  <data name="ReconciliationMenuImportPreviousYearValuesCaption" xml:space="preserve">
+    <value>Import previous year values</value>
+  </data>
+  <data name="ReconciliationMenuImportPreviousYearValuesDescription" xml:space="preserve">
+    <value>Allows import previous year values</value>
+  </data>
+  <data name="ReconciliationMenuImportReconciliationCaption" xml:space="preserve">
+    <value>Reconciliation import</value>
+  </data>
+  <data name="ReconciliationMenuImportReconciliationDescription" xml:space="preserve">
+    <value>Imports reconciliation from a CSV file</value>
+  </data>
+  <data name="ChangeInputMode" xml:space="preserve">
+    <value>Change input mode</value>
+  </data>
+  <data name="QuestionDeleteAllCurrentYearReconciliations" xml:space="preserve">
+    <value>All reconciliations of current year will be deleted, do you want to proceed?</value>
+  </data>
+  <data name="QuestionDeleteAllTaxBalanceValueReconciliations" xml:space="preserve">
+    <value>All tax balance value reconciliations will be deleted, do you want to proceed?</value>
+  </data>
+  <data name="UpdateReconciliation" xml:space="preserve">
+    <value>Update reconciliation</value>
+  </data>
+  <data name="ImportPreviousYearValuesTooltip" xml:space="preserve">
+    <value>Import previous year values available when previous year reports are present</value>
+  </data>
+  <data name="ReconciliationTaxBalanceValueTooltip" xml:space="preserve">
+    <value>Tax balance value reconciliation</value>
+  </data>
+  <data name="ReconciliationTaxBalanceValue" xml:space="preserve">
+    <value>Tax balance value</value>
+  </data>
+  <data name="ReconciliationTaxBalanceValueShort" xml:space="preserve">
+    <value>Tax balance value</value>
+  </data>
+  <data name="Reconciliation" xml:space="preserve">
+    <value>Reconciliation</value>
+  </data>
+  <data name="NoSelectedReconciliation" xml:space="preserve">
+    <value>No selected reconciliation</value>
+  </data>
+  <data name="AreYouSureDeleteReconciliation" xml:space="preserve">
+    <value>Are you sure to delete the selected reconciliation?</value>
+  </data>
+  <data name="ReconciliationDeleteSuccessful" xml:space="preserve">
+    <value>The delete of selected reconciliation was successful</value>
+  </data>
+  <data name="DeleteReconciliationSuccessfulTitle" xml:space="preserve">
+    <value>Delete successful</value>
+  </data>
+  <data name="ReconciliationAssistantImportButtonCaption" xml:space="preserve">
+    <value>Import reconciliation CSV-Files</value>
+  </data>
+  <data name="ReconciliationAssistantText" xml:space="preserve">
+    <value>What do you want to do?</value>
+  </data>
+  <data name="ReconciliationAssistantTitle" xml:space="preserve">
+    <value>Reconciliation assistant</value>
+  </data>
+  <data name="ReconciliationAssistantWelcome" xml:space="preserve">
+    <value>Welcome to the reconciliation import assistant</value>
+  </data>
+  <data name="MessagePrevYearHasNoTransactions" xml:space="preserve">
+    <value>Previous year report has no reconciliation transactions therefore import is not possible</value>
+  </data>
+  <data name="MenuItemAvailibleWhenDataPresentTooltip" xml:space="preserve">
+    <value>Menu item will be available when corresponding data are present</value>
+  </data>
+</root>

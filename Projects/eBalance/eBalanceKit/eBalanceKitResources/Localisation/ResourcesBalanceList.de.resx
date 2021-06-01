@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountGroupsCaption" xml:space="preserve">
+    <value>Kontogruppen</value>
+  </data>
+  <data name="AccountListCaption" xml:space="preserve">
+    <value>Konten</value>
+  </data>
+  <data name="BtnAddBalanceListTooltip" xml:space="preserve">
+    <value>neue Summen- und Saldenliste importieren</value>
+  </data>
+  <data name="BtnCloseCaption" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="BtnCreateAccountGroupTooltip" xml:space="preserve">
+    <value>neue Kontogruppe anlegen</value>
+  </data>
+  <data name="BtnDeleteAccountGroupTooltip" xml:space="preserve">
+    <value>Kontogruppen löschen</value>
+  </data>
+  <data name="BtnDeleteBalanceListTooltip" xml:space="preserve">
+    <value>ausgewählte Summen- und Saldenliste löschen</value>
+  </data>
+  <data name="BtnDeleteSplitAccountGroupTooltip" xml:space="preserve">
+    <value>Kontoaufteilung löschen</value>
+  </data>
+  <data name="BtnEditAccountGroupTooltip" xml:space="preserve">
+    <value>Kontogruppe bearbeiten</value>
+  </data>
+  <data name="BtnEditBalanceListTooltip" xml:space="preserve">
+    <value>ausgewählte Summen- und Saldenliste bearbeiten</value>
+  </data>
+  <data name="BtnEditSplitAccountGroupTooltip" xml:space="preserve">
+    <value>Kontoaufteilung bearbeiten</value>
+  </data>
+  <data name="BtnReimportBalanceList" xml:space="preserve">
+    <value>Erneut einlesen</value>
+  </data>
+  <data name="BtnReimportBalanceListTooltip" xml:space="preserve">
+    <value>Summen- und Saldenliste neu einlesen</value>
+  </data>
+  <data name="ChooseProfile" xml:space="preserve">
+    <value>Wählen Sie ein gespeichertes Profil zum vereinfachten Import der CSV Datei oder importieren Sie ohne Vorlage</value>
+  </data>
+  <data name="CommentCaption" xml:space="preserve">
+    <value>Kommentar</value>
+  </data>
+  <data name="CommentCaption1" xml:space="preserve">
+    <value>Kommentar:</value>
+  </data>
+  <data name="CommonCaption" xml:space="preserve">
+    <value>Allgemein</value>
+  </data>
+  <data name="DlgEditAccountGroupCaption" xml:space="preserve">
+    <value>Kontogruppe bearbeiten</value>
+  </data>
+  <data name="DlgEditBalanceListCaption" xml:space="preserve">
+    <value>Summen- und Saldenliste bearbeiten</value>
+  </data>
+  <data name="HiddenAccountsCaption" xml:space="preserve">
+    <value>ausgeblendete Konten</value>
+  </data>
+  <data name="ImportConfigCaption" xml:space="preserve">
+    <value>Importeinstellungen</value>
+  </data>
+  <data name="NameCaption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NameCaption1" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="NumberOfAccountsCaption" xml:space="preserve">
+    <value>Anzahl der Konten: </value>
+  </data>
+  <data name="ProfileNameCaption" xml:space="preserve">
+    <value>Name des Profils</value>
+  </data>
+  <data name="RequestDeleteBalanceList" xml:space="preserve">
+    <value>Wollen Sie die Summen- und Saldenliste wirklich löschen?</value>
+  </data>
+  <data name="SaveAsProfile" xml:space="preserve">
+    <value>Als Profil speichern</value>
+  </data>
+  <data name="SourceCaption" xml:space="preserve">
+    <value>Quelle: </value>
+  </data>
+  <data name="SplittedAccountsCaption" xml:space="preserve">
+    <value>Kontoaufteilungen</value>
+  </data>
+  <data name="TemplatesCaption" xml:space="preserve">
+    <value>Vorlagen für Summen- und Saldenlisten</value>
+  </data>
+  <data name="VirtualAccountComment" xml:space="preserve">
+    <value>Dies ist ein fiktives Konto das den Wert der Taxonomieposition {0} enthält.</value>
+  </data>
+  <data name="VirtualBalanceListName" xml:space="preserve">
+    <value>berechnete Konten</value>
+  </data>
+  <data name="VirtualBalanceListComment" xml:space="preserve">
+    <value>SuSa mit berechneten Konten</value>
+  </data>
+  <data name="VirtualAccountDefaultName" xml:space="preserve">
+    <value>berechnetes Konto</value>
+  </data>
+  <data name="SplitAccount" xml:space="preserve">
+    <value>Konto aufteilen</value>
+  </data>
+  <data name="VirtualAccountAssignmentAllowedTo_bs_eqLiab" xml:space="preserve">
+    <value>der Passiva der Bilanz</value>
+  </data>
+  <data name="BalListImportAssistant_BtnSaveProfileOnClick_Successfully_saved_import_profile_" xml:space="preserve">
+    <value>Importprofil erfolgreich gespeichert.</value>
+  </data>
+  <data name="BalListImportAssistant_NavigateNext_TooFewColumnsToUseImportProfile" xml:space="preserve">
+    <value>Im gespeicherten Profil gab es eine Spalte an Position {0}, in der ausgewählten CSV Datei existieren aber nur {1} Spalten. Daher kann diese CSV Datei nicht mit dem ausgewählten Profil eingespielt werden.</value>
+  </data>
+  <data name="AssignedTo" xml:space="preserve">
+    <value>Zugeordnet zu:</value>
+  </data>
+  <data name="ModifySelectedBalanceList" xml:space="preserve">
+    <value>ausgewählte Summen- und Saldenliste bearbeiten</value>
+  </data>
+  <data name="ModificationNotAllowed" xml:space="preserve">
+    <value>Bearbeitung dieser SuSa nicht erlaubt</value>
+  </data>
+  <data name="AccountBelongsToCurrentlySelectedTooltip" xml:space="preserve">
+    <value>Konto gehört zur aktuell ausgewählten Summen- und Saldenliste</value>
+  </data>
+  <data name="CreditAbbreviation" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="CreditSide" xml:space="preserve">
+    <value>Haben-Position</value>
+  </data>
+  <data name="DebitAbbreviation" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="DebitSide" xml:space="preserve">
+    <value>Soll-Position</value>
+  </data>
+  <data name="MainAccount" xml:space="preserve">
+    <value>Hauptkonto: </value>
+  </data>
+  <data name="NumberOfAssignedAccounts" xml:space="preserve">
+    <value>Anzahl zugeordneter Konten: </value>
+  </data>
+  <data name="LoadReferenceListException" xml:space="preserve">
+    <value>Referenzliste konnten nicht geladen werden:</value>
+  </data>
+  <data name="UnknownAccountType" xml:space="preserve">
+    <value>Unbekannter Kontotyp: </value>
+  </data>
+  <data name="ReferenceListAccountNote" xml:space="preserve">
+    <value>Kontobezeichnung</value>
+  </data>
+  <data name="ReferenceListAccountNumber" xml:space="preserve">
+    <value>Kontonummer</value>
+  </data>
+  <data name="BtnCreateTemplateTooltip" xml:space="preserve">
+    <value>Neue Vorlage erstellen</value>
+  </data>
+  <data name="LoadingPositions" xml:space="preserve">
+    <value>Lade Positionen...</value>
+  </data>
+  <data name="BalanceInTwoColsLabel" xml:space="preserve">
+    <value>Spalten Saldo-Soll und Saldo-Haben</value>
+  </data>
+  <data name="BalanceSettingsLabel" xml:space="preserve">
+    <value>Saldoeinstellungen</value>
+  </data>
+  <data name="BalanceWithDcFlagOneColLabel" xml:space="preserve">
+    <value>Spalte Gesamtsaldo (Soll-/Haben Kennzeichen in gemeinsamer Spalte)</value>
+  </data>
+  <data name="BalanceWithDcFlagTwoColsLabel" xml:space="preserve">
+    <value>Spalte Gesamtsaldo (Soll-/Haben Kennzeichen in getrennten Spalten)</value>
+  </data>
+  <data name="HeadLineFirst" xml:space="preserve">
+    <value>Überschriften in erster Zeile</value>
+  </data>
+  <data name="IndexLabel" xml:space="preserve">
+    <value>Indexspalte importieren (optionale Zusatzspalte für Sortierung, falls nicht vorhanden Sortierung nach Importreihenfolge)</value>
+  </data>
+  <data name="NotesLabel" xml:space="preserve">
+    <value>Anmerkungen importieren</value>
+  </data>
+  <data name="PleaseSelectLabel" xml:space="preserve">
+    <value>Bitte wählen Sie die Struktur der CSV-Datei aus. Bei korrekter Auswahl sehen Sie in der Vorschau die einzelnen Spalten der CSV-Datei</value>
+  </data>
+  <data name="SetCsvOptionsLabel" xml:space="preserve">
+    <value>Festlegen der CSV-Struktur</value>
+  </data>
+  <data name="TaxonomyColumnExistsLabel" xml:space="preserve">
+    <value>Kontozuordnung importieren</value>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>- Kontobezeichnung</value>
+  </data>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>- Kontonummer</value>
+  </data>
+  <data name="BalListImportAssistantTitle" xml:space="preserve">
+    <value>Import Assistent für Summen- und Saldenliste</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Bitte überprüfen Sie noch einmal, ob alle Spaltenzuordnungen und die Anzahl der Konten korrekt sind.</value>
+  </data>
+  <data name="ColumnChoice" xml:space="preserve">
+    <value>Auswahl Spalte </value>
+  </data>
+  <data name="ColumnMappings" xml:space="preserve">
+    <value>Spaltenzuordnungen</value>
+  </data>
+  <data name="CurrentColumn" xml:space="preserve">
+    <value>Aktuelle gewählte Spalte: </value>
+  </data>
+  <data name="ExampleLong" xml:space="preserve">
+    <value>Beispiel wie es in der eBilanz-Kit Vorschau oder in Excel angezeigt wird</value>
+  </data>
+  <data name="ExampleShort" xml:space="preserve">
+    <value>Beispiel CSV-Datei ansehen</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>CSV-Datei</value>
+  </data>
+  <data name="FileContent" xml:space="preserve">
+    <value>The content of the file</value>
+  </data>
+  <data name="FileNotExist" xml:space="preserve">
+    <value>Die angegebene Datei existiert nicht.</value>
+  </data>
+  <data name="FileSelectionLabel" xml:space="preserve">
+    <value>Dateiauswahl</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Hinweis:</value>
+  </data>
+  <data name="HintContent" xml:space="preserve">
+    <value>Der unten angegebene Stichtag kann ggf. über Definition der Geschäftsjahre in der Verwaltung der Unternehmensstammdaten korrigiert werden.</value>
+  </data>
+  <data name="MarkIncomeExpense" xml:space="preserve">
+    <value>- Kennzeichen Soll-/Haben</value>
+  </data>
+  <data name="MarkLong" xml:space="preserve">
+    <value>(optional, kann ggf. auch in zwei getrennten Spalten angegeben werden)</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Übersicht </value>
+  </data>
+  <data name="PleaseSelectColumn" xml:space="preserve">
+    <value>Bitte wählen Sie eine Spalte aus, indem Sie die betreffende Spalte anklicken.</value>
+  </data>
+  <data name="SelectCsv" xml:space="preserve">
+    <value>Bitte wählen Sie eine CSV-Datei aus.</value>
+  </data>
+  <data name="SelectCsvIncluding" xml:space="preserve">
+    <value>Bitte wählen Sie die CSV-Datei mit der zu importierenden Summen- und Saldenliste aus. Folgende Felder müssen in der CSV-Datei enthalten sein:</value>
+  </data>
+  <data name="SignedBalanceLabel" xml:space="preserve">
+    <value>Spalte Gesamtsaldo (vorzeichenbehaftet)</value>
+  </data>
+  <data name="SignedLong" xml:space="preserve">
+    <value>(vorzeichenbehaftet, mit Soll-/Habenkennzeichen oder in separaten Spalten "Saldo Soll", "Saldo Haben")</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Bitte wählen Sie zunächst eine Spalte aus.</value>
+  </data>
+  <data name="SumOfAccountLabel" xml:space="preserve">
+    <value>Summe der Konten: </value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="TooBig" xml:space="preserve">
+    <value>Die angegebene Datei ist zu groß die maximale Größe ist 20MB vermutlich haben Sie nicht die richtige Datei ausgewählt</value>
+  </data>
+  <data name="TotalBalance" xml:space="preserve">
+    <value>- Gesamtsaldo</value>
+  </data>
+  <data name="AssignmentInfo" xml:space="preserve">
+    <value>Es konnten {0} Konten zugeordnet und {1} nicht zugeordnet werden.</value>
+  </data>
+  <data name="ColumnToNameBalance" xml:space="preserve">
+    <value>Gesamtsaldo (mit Soll/Haben Kennzeichen)</value>
+  </data>
+  <data name="ColumnToNameComment" xml:space="preserve">
+    <value>Zusätzliche Informationen</value>
+  </data>
+  <data name="ColumnToNameExpense" xml:space="preserve">
+    <value>Gesamtsaldo Soll</value>
+  </data>
+  <data name="ColumnToNameIncome" xml:space="preserve">
+    <value>Gesamtsaldo Haben</value>
+  </data>
+  <data name="ColumnToNameIndex" xml:space="preserve">
+    <value>Indexspalte</value>
+  </data>
+  <data name="ColumnToNameMarkExpense" xml:space="preserve">
+    <value>Kennzeichen Soll</value>
+  </data>
+  <data name="ColumnToNameMarkIncome" xml:space="preserve">
+    <value>Kennzeichen Haben</value>
+  </data>
+  <data name="ColumnToNameMarkIncomeExpense" xml:space="preserve">
+    <value>Kennzeichen Soll/Haben</value>
+  </data>
+  <data name="ColumnToNameName" xml:space="preserve">
+    <value>Kontoname</value>
+  </data>
+  <data name="ColumnToNameSigned" xml:space="preserve">
+    <value>Gesamtsaldo (vorzeichenbehaftet)</value>
+  </data>
+  <data name="ColumnToNameTaxonomy" xml:space="preserve">
+    <value>Spalte für Taxonomiezuordnung</value>
+  </data>
+  <data name="ImportError" xml:space="preserve">
+    <value>Fehler beim Importieren der Daten: </value>
+  </data>
+  <data name="UnknownTaxonomyPosition" xml:space="preserve">
+    <value>Das Konto "{0}" konnte nicht zur Taxonomie hinzugefügt werden, da es keine Taxonomieposition namens "{1}" gibt.</value>
+  </data>
+  <data name="InvalidAccountNumber" xml:space="preserve">
+    <value>Ungültige Kontonummer in Zeile {0}: '{1}'</value>
+  </data>
+  <data name="InvalidCreditRow" xml:space="preserve">
+    <value>Ungültiger Saldowert (Haben) in Zeile {0}: '{1}'</value>
+  </data>
+  <data name="InvalidDebitRow" xml:space="preserve">
+    <value>Ungültiger Saldowert (Soll) in Zeile {0}: '{1}'</value>
+  </data>
+  <data name="InvalidValue" xml:space="preserve">
+    <value>Ungültiger Saldowert in Zeile {0}: '{1}'</value>
+  </data>
+  <data name="NotUnique" xml:space="preserve">
+    <value>Die Kontonummer {0} ist mehrfach vorhanden.</value>
+  </data>
+  <data name="CreditRegularExpression" xml:space="preserve">
+    <value>c|C|h|H</value>
+  </data>
+  <data name="DefaultBalanceListName" xml:space="preserve">
+    <value>Summen- und Saldenliste</value>
+  </data>
+  <data name="TestBalanceList" xml:space="preserve">
+    <value>Beispiel-SuSa verwenden</value>
+  </data>
+  <data name="NotAssignedAccounts_Count" xml:space="preserve">
+    <value>Nicht zugeordnete Konten ({0})</value>
+  </data>
+  <data name="AssignedAccounts_Count" xml:space="preserve">
+    <value>Zugeordnete Konten ({0})</value>
+  </data>
+</root>

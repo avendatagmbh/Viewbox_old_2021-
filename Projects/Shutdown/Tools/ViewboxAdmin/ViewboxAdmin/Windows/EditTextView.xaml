@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="ViewboxAdmin.Windows.EditTextView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+             xmlns:converters="clr-namespace:ViewboxAdmin.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" xmlns:my="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:ViewModels="clr-namespace:ViewboxAdmin.ViewModels">
+    <UserControl.Resources>
+        <DataTemplate x:Key="language">
+            <Label Content="{Binding LanguageName}"></Label>
+        </DataTemplate>
+        <converters:DebugConverter x:Key="debugconverter"></converters:DebugConverter>
+        <converters:EnumToBoolConverter x:Key="enumtoboolconverter"></converters:EnumToBoolConverter>
+        <Style x:Key="editor" TargetType="TextBox">
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="Background" Value="LightBlue"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="Foreground" Value="Red" />
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                 </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Content="Test" Height="23" HorizontalAlignment="Left" Margin="156,146,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Path=Items}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="ID" Width="SizeToCells" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Path=Id}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            <DataGridTemplateColumn Header="Name" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Path=Name}" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="TEXT" Width="SizeToCells" IsReadOnly="false">
+                    <DataGridTemplateColumn.CellTemplate >
+                        <DataTemplate>
+                            <TextBox   Text="{Binding Path=Text, UpdateSourceTrigger=LostFocus}" Style="{StaticResource ResourceKey=editor}">
+                                <!--, Converter={StaticResource ResourceKey=debugconverter}, diag:PresentationTraceSources.TraceLevel=High-->
+                                </TextBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Column="1">
+            <GroupBox Header="Language">
+        <ComboBox HorizontalAlignment="Center"  Name="comboBox1" VerticalAlignment="Center" Width="120" 
+                  SelectedValue="{Binding SelectedLanguage, Mode=TwoWay}" 
+                  ItemsSource="{Binding Languages}" DisplayMemberPath="LanguageName"/>
+            </GroupBox>
+            <GroupBox Header="Select" >
+            <StackPanel Height="154" Width="160">
+                    <RadioButton Content="TableObjects" Height="16" Name="radioButton1" 
+                                 IsChecked="{Binding TablesWithLocalizedText, 
+                        Converter={StaticResource ResourceKey=enumtoboolconverter},
+                        ConverterParameter={x:Static ViewModels:TablesWithLocalizedTextEnum.Tableobjects}}"/>
+                    <RadioButton Content="Optimizations" Height="16"  Name="radioButton2" IsChecked="{Binding TablesWithLocalizedText, 
+                        Converter={StaticResource ResourceKey=enumtoboolconverter},
+                        ConverterParameter={x:Static ViewModels:TablesWithLocalizedTextEnum.Optimizations}}" />
+                    <RadioButton Content="Category" Height="16"  Name="radioButton3" IsChecked="{Binding TablesWithLocalizedText, 
+                        Converter={StaticResource ResourceKey=enumtoboolconverter},
+                        ConverterParameter={x:Static ViewModels:TablesWithLocalizedTextEnum.Category}}"  />
+                    <RadioButton Content="Collections" Height="16"  Name="radioButton4" IsChecked="{Binding TablesWithLocalizedText, 
+                        Converter={StaticResource ResourceKey=enumtoboolconverter},
+                        ConverterParameter={x:Static ViewModels:TablesWithLocalizedTextEnum.Collections}}" />
+                    <RadioButton Content="Parameter" Height="16" Name="radioButton5" IsChecked="{Binding TablesWithLocalizedText, 
+                        Converter={StaticResource ResourceKey=enumtoboolconverter},
+                        ConverterParameter={x:Static ViewModels:TablesWithLocalizedTextEnum.Parameter}}" />
+                    <RadioButton Content="Property" Height="16" Name="radioButton6" IsChecked="{Binding TablesWithLocalizedText, 
+                        Converter={StaticResource ResourceKey=enumtoboolconverter},
+                        ConverterParameter={x:Static ViewModels:TablesWithLocalizedTextEnum.Property}}" />
+                    <RadioButton Content="Scheme" Height="16" Name="radioButton7" IsChecked="{Binding TablesWithLocalizedText, 
+                        Converter={StaticResource ResourceKey=enumtoboolconverter},
+                        ConverterParameter={x:Static ViewModels:TablesWithLocalizedTextEnum.Scheme}}" />
+                    <RadioButton Content="Column" Height="16" Name="radioButton8" IsChecked="{Binding TablesWithLocalizedText, 
+                        Converter={StaticResource ResourceKey=enumtoboolconverter},
+                        ConverterParameter={x:Static ViewModels:TablesWithLocalizedTextEnum.Column}}" />
+                    <RadioButton Content="OptimizationGroupTexts" Height="16" Name="radioButton9" IsChecked="{Binding TablesWithLocalizedText, 
+                        Converter={StaticResource ResourceKey=enumtoboolconverter},
+                        ConverterParameter={x:Static ViewModels:TablesWithLocalizedTextEnum.OptimizationGroupTexts}}" />
+                </StackPanel>
+        </GroupBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

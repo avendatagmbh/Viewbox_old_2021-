@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="eBalanceKitBusiness.Reconciliation.DbMapping.DbEntityReconciliationTransaction">
+    <Position X="5.75" Y="0.5" Width="2.5" />
+    <AssociationLine Name="Document" Type="eBalanceKitBusiness.Structures.DbMapping.Document">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.404" Y="0.058" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAQECAAAgAAAAAAA=</HashCode>
+      <FileName>Reconciliation\DbMapping\DbEntityReconciliationTransaction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Document" />
+      <Property Name="DbEntityReconciliation" />
+      <Property Name="TransactionType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="eBalanceKitBusiness.Reconciliation.DbMapping.DbEntityReconciliation">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <Members>
+      <Method Name="DbEntityReconciliation" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Document" Type="eBalanceKitBusiness.Structures.DbMapping.Document" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="1.733" />
+        <Point X="3.25" Y="3.096" />
+        <Point X="3.5" Y="3.096" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.909" Y="0.745" Height="0.182" Width="1.115" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="ReconciliationType" Type="eBalanceKitBusiness.Reconciliation.Enums.ReconciliationTypes" FixedFromPoint="true">
+      <Path>
+        <Point X="2.062" Y="1.733" />
+        <Point X="2.062" Y="4.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AACAAAAEAAAAAAAAAAAAAAAAAAAAAAACAAAEAAAAAAA=</HashCode>
+      <FileName>Reconciliation\DbMapping\DbEntityReconciliation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Document" />
+      <Property Name="ReconciliationType" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Transactions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.Document" Collapsed="true">
+    <Position X="3.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>2BAepGCcEYK0TIwFQx9EEATwEhA+BAhoakHOdADBAFE=</HashCode>
+      <FileName>Structures\DbMapping\Document.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="eBalanceKitBusiness.Reconciliation.Interfaces.ReconciliationTypes.IValueChange">
+    <Position X="9.75" Y="3.5" Width="2.25" />
+    <AssociationLine Name="BalanceAssetsTransaction" Type="eBalanceKitBusiness.Reconciliation.Interfaces.IReconciliationTransaction" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.719" Y="5.117" />
+        <Point X="10.719" Y="6.796" />
+        <Point X="11" Y="6.796" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.389" Y="1.332" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="BalanceLiabilitiesTransaction" Type="eBalanceKitBusiness.Reconciliation.Interfaces.IReconciliationTransaction" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.375" Y="5.117" />
+        <Point X="10.375" Y="7.24" />
+        <Point X="11" Y="7.24" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.138" Y="1.308" Height="0.162" Width="1.732" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="IncomeStatementTransaction" Type="eBalanceKitBusiness.Reconciliation.Interfaces.IReconciliationTransaction" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.031" Y="5.117" />
+        <Point X="10.031" Y="7.61" />
+        <Point X="11" Y="7.61" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.743" Y="1.2" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAJAAIAAEAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reconciliation\Interfaces\ReconciliationTypes\IValueChange.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BalanceAssetsTransaction" />
+      <Property Name="BalanceLiabilitiesTransaction" />
+      <Property Name="IncomeStatementTransaction" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.Reconciliation.Interfaces.ReconciliationTypes.IReclassification">
+    <Position X="12.75" Y="3.5" Width="2" />
+    <AssociationLine Name="SourceTransaction" Type="eBalanceKitBusiness.Reconciliation.Interfaces.IReconciliationTransaction" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.906" Y="4.925" />
+        <Point X="13.906" Y="7.536" />
+        <Point X="13" Y="7.536" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="DestinationTransaction" Type="eBalanceKitBusiness.Reconciliation.Interfaces.IReconciliationTransaction" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.453" Y="4.925" />
+        <Point X="13.453" Y="7.092" />
+        <Point X="13" Y="7.092" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAEBAAAAAAAABAAA=</HashCode>
+      <FileName>Reconciliation\Interfaces\ReconciliationTypes\IReclassification.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SourceTransaction" />
+      <Property Name="DestinationTransaction" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.Reconciliation.Interfaces.ReconciliationTypes.IReconciliation">
+    <Position X="12.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAEAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Reconciliation\Interfaces\ReconciliationTypes\IReconciliation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.Reconciliation.Interfaces.ReconciliationTypes.IDeltaReconciliation">
+    <Position X="15.5" Y="3.5" Width="1.75" />
+    <AssociationLine Name="Transactions" Type="eBalanceKitBusiness.Reconciliation.Interfaces.IReconciliationTransaction" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.375" Y="4.733" />
+        <Point X="16.375" Y="8.35" />
+        <Point X="13" Y="8.35" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reconciliation\Interfaces\ReconciliationTypes\IDeltaReconciliation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Transactions" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.Reconciliation.Interfaces.IReconciliationTransaction">
+    <Position X="11" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAgAAAABAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Reconciliation\Interfaces\IReconciliationTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="eBalanceKitBusiness.Reconciliation.Enums.ReconciliationTypes">
+    <Position X="0.75" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAIAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reconciliation\Enums\ReconciliationTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="eBalanceKitBusiness.Reconciliation.Enums.TransactionTypes">
+    <Position X="7" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAgAAAAAAAAACAAAAAAAAAIAEBAAAAAAAAAA=</HashCode>
+      <FileName>Reconciliation\Enums\TransactionTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

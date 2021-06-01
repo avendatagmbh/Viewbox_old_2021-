@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.ValueMappings.ValueMappingBase" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABASgAgEGgAAIAAAAAqEAAAQRAAEAAAgAFBgEAQAAAA=</HashCode>
+      <FileName>Structures\DbMapping\ValueMappings\ValueMappingBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.ValueMappings.ValueMappingBaseCompany" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="2" />
+    <AssociationLine Name="Company" Type="eBalanceKitBusiness.Structures.DbMapping.Company" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="2.125" />
+        <Point X="1.833" Y="2.125" />
+        <Point X="1.833" Y="3" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.263" Y="0.946" Height="0.182" Width="0.905" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Structures\DbMapping\ValueMappings\ValueMappingBaseCompany.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Company" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.ValueMappings.ValueMappingBaseDocument" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="2" />
+    <AssociationLine Name="Document" Type="eBalanceKitBusiness.Structures.DbMapping.Document" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.75" Y="2.062" />
+        <Point X="7.917" Y="2.062" />
+        <Point X="7.917" Y="3" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.05" Y="1.016" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAgAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Structures\DbMapping\ValueMappings\ValueMappingBaseDocument.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Document" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.Document" Collapsed="true">
+    <Position X="6.75" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>2BAaoGCcEYKkTAwEAxtEEARUEhA8BAhoYEHMFADBBFE=</HashCode>
+      <FileName>Structures\DbMapping\Document.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.Company" Collapsed="true">
+    <Position X="1.25" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAACoECIQAAAAIQECBJBUAQAAAAACAAgAMUEBABAABA=</HashCode>
+      <FileName>Structures\DbMapping\Company.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.ValueMappings.ValuesGAAP" Collapsed="true">
+    <Position X="3.75" Y="5.25" Width="2" />
+    <InheritanceLine Type="eBalanceKitBusiness.Structures.DbMapping.ValueMappings.ValueMappingBaseDocument" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.188" Y="2.441" />
+        <Point X="6.188" Y="5.688" />
+        <Point X="5.75" Y="5.688" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAQAAAAAAAAAAAAEAAAAQAAAA=</HashCode>
+      <FileName>Structures\DbMapping\ValueMappings\ValuesGAAP.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.ValueMappings.ValuesGCD" Collapsed="true">
+    <Position X="6.75" Y="5.25" Width="2" />
+    <InheritanceLine Type="eBalanceKitBusiness.Structures.DbMapping.ValueMappings.ValueMappingBaseDocument" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.188" Y="2.441" />
+        <Point X="6.188" Y="5.688" />
+        <Point X="6.75" Y="5.688" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAQAAAAAAAAAAAAEAAAAQAAAA=</HashCode>
+      <FileName>Structures\DbMapping\ValueMappings\ValuesGCD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.ValueMappings.ValuesGCD_Company" Collapsed="true">
+    <Position X="1.25" Y="5.25" Width="1.75" />
+    <InheritanceLine Type="eBalanceKitBusiness.Structures.DbMapping.ValueMappings.ValueMappingBaseCompany" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="2.441" />
+        <Point X="3.25" Y="5.625" />
+        <Point X="3" Y="5.625" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAQAAAAAAAAAAAAEAAAAQAAAA=</HashCode>
+      <FileName>Structures\DbMapping\ValueMappings\ValuesGCD_Company.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="eBalanceKitBusiness.Interfaces.IValueMappingDocument">
+    <Position X="0.75" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IValueMappingDocument.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.IValueMapping">
+    <Position X="3.75" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAECAAAAAAAAAqAQAAQBAAAAAAgAAAgAAAAAAA=</HashCode>
+      <FileName>Interfaces\IValueMapping.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="eBalanceKitBusiness.Interfaces.IValueMappingCompany">
+    <Position X="7.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Interfaces\IValueMappingCompany.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

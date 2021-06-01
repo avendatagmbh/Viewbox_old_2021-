@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="ViewBuilder.Windows.Controls.ProfileSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="473" d:DesignWidth="367" Loaded="UserControl_Loaded">
+    <Grid>
+    
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- main window -->
+        <Border Style="{StaticResource GroupBoxBorder}" Grid.Row="0" Margin="0,0,0,0" Grid.ColumnSpan="2">
+            <Grid Margin="0,2,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Content="Profile" Padding="1" Margin="5,5,0,0" />
+
+                <Border Style="{StaticResource GroupBoxBorderNoShadow}" Grid.Row="1" Margin="5,0,5,0">
+                    <ListBox
+                        Background="{StaticResource DefaultBorderBg}"
+                        BorderBrush="Transparent"
+                        BorderThickness="0"
+                        ItemsSource="{Binding}" 
+                        Name="lstProfilenames" 
+                        SelectionChanged="lstProfilenames_SelectionChanged"
+                        SelectedItem="{Binding Path=LastProfile, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" MouseDoubleClick="lstProfilenames_MouseDoubleClick">
+                    </ListBox>
+                </Border>
+
+                <StackPanel Margin="3,3,0,3" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Button Style="{StaticResource ImageButtonStyle}" Name="btnAddProfile" Margin="3" Click="btnAddProfile_Click">
+                        <Image Width="15" Source="/ViewBuilder;component/Resources/add.png" />
+                    </Button>
+
+                    <Button Name="btnDeleteProfile" Margin="3" Click="btnDeleteProfile_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ImageButtonStyle}">
+                                <Setter Property="IsEnabled" Value="True" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SelectedIndex,ElementName=lstProfilenames}" Value="-1">
+                                        <Setter Property="IsEnabled" Value="False" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Image Width="15" Source="/ViewBuilder;component/Resources/delete.png" />
+                    </Button>
+
+                    <Button Name="btnEditProfile" Margin="3" Click="btnEditProfile_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ImageButtonStyle}">
+                                <Setter Property="IsEnabled" Value="True" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SelectedIndex,ElementName=lstProfilenames}" Value="-1">
+                                        <Setter Property="IsEnabled" Value="False" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Image Width="15" Source="/ViewBuilder;component/Resources/edit.png" />
+                    </Button>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Style="{StaticResource GroupBoxBorder}" Grid.Row="1" Margin="0,2,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label Content="Beschreibung" Padding="1" Margin="5,5,0,0" />
+
+                <TextBox 
+                    Grid.Row="1"
+                    Margin="5,0,5,5" Height="45" Padding="0" TextWrapping="Wrap" IsTabStop="False" 
+                    Background="{StaticResource ReadOnlyTextBg}" 
+                    VerticalScrollBarVisibility="Auto"                     
+                    Name="txtProfileDescription" 
+                    IsReadOnly="True" />
+            </Grid>
+        </Border>
+
+
+    </Grid>
+</UserControl>

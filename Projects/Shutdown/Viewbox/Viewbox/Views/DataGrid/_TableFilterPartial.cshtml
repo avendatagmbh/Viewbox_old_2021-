@@ -1,0 +1,301 @@
+﻿@model Viewbox.Models.DataGridModel
+@using SystemDb
+@using Viewbox
+@using Viewbox.Properties
+<div class="tabfunctions">
+    <ul class="dropdown big functions position-functions" id="tabfunctions">
+        <li><a class="tab dropdown-btn" href="#">@Resources.Functions</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <div class="box table-group">
+                        <div class="top">
+                            <h4>@Resources.Functions</h4>
+                            <div class="close-popup" style="top: 32px;right: 20px;"></div>
+                            <div class="tabbar">
+                                <a href="#" class="tabheader table-group selected ">@Resources.SQLFunctions</a>
+                                @if(ViewboxSession.User.IsSuper) {
+                                    <a href="#" class="tabheader table-join">@Resources.Join</a>
+                                }
+                                <a href="#" class="tabheader table-transactionnumber ">@Resources.TransactionId</a>
+                                @if(ViewboxSession.User.IsSuper) {
+                                    <a href="#" class="tabheader table-relations ">@Resources.Relations</a>
+                                    <a href="#" class="tabheader table-deleterelations ">@Resources.DeleteRelations</a>
+                                }
+                                
+                            </div>
+                        </div>
+                        <div class="middle">
+                            <ul class="tabcontent table-group">
+                                <li>
+                                    @using(Html.BeginForm("Group", "DataGrid")) {
+                                        <input type="hidden" name="id" value="@Model.TableInfo.Id" />
+                                        <div class="content columns">
+                                            <ul class="left">
+                                                <li class="template">
+                                                    <input type="hidden" />
+                                                    <input type="text" class="text dropdown selected colids placeholder empty" placeholder="@Resources.Column" value="@Resources.Column" />
+                                                </li>
+                                                <li>
+                                                    <input type="hidden" />
+                                                    <input type="text" class="text dropdown selected colids placeholder empty" placeholder="@Resources.Column" value="@Resources.Column" />
+                                                </li>
+                                            </ul>
+                                            <ul class="main">
+                                                <li>
+                                                    <input type="checkbox" value="@ViewboxDb.AggregationFunction.Count" name="aggfunc" id="aggfunc0" />
+                                                    <label for="aggfunc0">@Resources.AggCount</label>
+                                                </li>                                                
+                                                <li>
+                                                    <input type="checkbox" value="@ViewboxDb.AggregationFunction.Max" name="aggfunc" id="aggfunc2" />
+                                                    <label for="aggfunc2">@Resources.AggMax</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="@ViewboxDb.AggregationFunction.Min" name="aggfunc" id="aggfunc3" />
+                                                    <label for="aggfunc3">@Resources.AggMin</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="@ViewboxDb.AggregationFunction.Avg" name="aggfunc" id="aggfunc4" />
+                                                    <label for="aggfunc4">@Resources.AggAvg</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="@ViewboxDb.AggregationFunction.Std" name="aggfunc" id="aggfunc5" />
+                                                    <label for="aggfunc5">@Resources.AggStd</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="@ViewboxDb.AggregationFunction.Variance" name="aggfunc" id="aggfunc6" />
+                                                    <label for="aggfunc6">@Resources.AggVariance</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+             
+																			
+                                        <ul class="content">
+                                            <li><span>
+                                                    <input type="hidden" name="saveGroup" id="saveGroup" />
+                                                    <label><input type="checkbox" name="checkbox" class="check" id="save_result_group_cb">&nbsp;@Resources.SaveResult:</label>
+                                                </span>
+                                                <input type="text" class="text full placeholder" placeholder="@Resources.InsertName" value="@Resources.InsertName" name="tableName" id="tableGroupName" />
+                                            </li>
+                                        </ul>
+										<input type="submit" class="button submit" value="@Resources.Submit" />
+                                    }
+                                </li>
+                            </ul>
+                            <ul class="tabcontent table-transactionnumber">
+                                <li>
+                                    @using(Html.BeginForm("TransactionNumberChange", "DataGrid")) {
+                                        <ul class="content">
+                                            <li>
+                                                <div class="left">@Resources.Table:</div>
+                                                <input type="hidden" name="id" value="@Model.TableInfo.Id" />
+                                                <div class="main">@Model.TableInfo.GetDescription()</div>
+                                            </li>
+                                        </ul>
+                                        <ul class="content">
+                                            <li>
+                                                <div class="left transaction-label">@Resources.TransactionId:</div>
+                                                <div class="main"><input type="text" name="transactionNumber" value="@Model.TableInfo.TransactionNumber" /></div>
+                                            </li>
+                                        </ul>
+                                        <input type="submit" class="button submit" value="@Resources.Submit" />
+                                    }
+                                </li>
+                            </ul>
+                            @if(ViewboxSession.User.IsSuper) {
+                                <ul class="tabcontent table-relations relation-specific">
+                                    <li>
+                                        @using(Html.BeginForm("Relations", "DataGrid")) {
+                                            <ul class="content">
+                                                <li>
+                                                    <div class="left">@String.Format(Resources.ResourceCount, 1, Resources.Table):</div>
+                                                    <input type="hidden" name="id" value="@Model.TableInfo.Id" />
+                                                    <div class="main">@Model.TableInfo.GetDescription()</div>
+                                                </li>
+                                            </ul>
+                                            
+                                            
+                                            <ul class="content">
+                                                <li>
+                                                    <div class="left">@String.Format(Resources.ResourceCount, 2, Resources.Table):</div>
+                                                    <div class="main dropdown-parent">
+                                                        <input type="hidden" name="joinTableId" id="relationtable2Id" value="" />
+                                                        <input id="table_select_" type="text" placeholder="@Resources.SelectTable"
+                                                               class="text full dropdown placeholder empty" value="@Resources.SelectTable" />
+                                                        @Html.Action("TableObjectList", "DataGrid",
+                                                                     new RouteValueDictionary(
+                                                                         new { type = ViewboxSession.ViewCount > 0 ? TableType.View : TableType.Table, page = 0 }
+                                                                         )
+                                                             )
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            
+                                            <ul class="content">
+                                                <li><span>&nbsp;</span> <span class="details">@String.Format(Resources.ResourceCount, 1, Resources.Table)</span>
+                                                    <span class="details short">&nbsp;</span> <span class="details">@String.Format(Resources.ResourceCount, 2, Resources.Table)</span>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <span>@Resources.RelateOver:</span></div>
+                                                    <div style="margin-left: 160px;">
+                                                        <div class="table-relation-condition replace">
+                                                            <input type="hidden" name="" class="column1" value="" />
+                                                            <div class="column-container">
+                                                                <input type="text" class="text dropdown placeholder empty column1" placeholder="@String.Format(Resources.Column + "{0}", 1)" value="@String.Format(Resources.Column + "{0}", 1)" />
+                                                            </div>
+                                                            <input type="hidden" name="" class="dir" value="" />
+                                                            <div class="sort-container">
+                                                                &nbsp;=&nbsp;</div>
+                                                            <input type="hidden" name="" class="column2" value="" />
+                                                            <div class="column-container">
+                                                                <input type="text" class="text dropdown placeholder empty relation-column2" placeholder="@String.Format(Resources.Column + "{0}", "2")" value="@String.Format(Resources.Column + "{0}", "2")" />
+                                                            </div>
+                                                            <div class="delete">x</div>
+                                                        </div>
+                                                        <input type="button" class="button add-new-relation-condition" value="@Resources.AddNewRelationCondition" />
+                                                        <div id="join-column-dropdown2">
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                
+                                            <input type="submit" class="button submit" value="@Resources.Submit" />
+                                        
+                                        }
+                                    </li>
+                                </ul>
+                                
+                                <ul class="tabcontent table-deleterelations relation-specific">
+                                    <li>
+                                        @using(Html.BeginForm("DeleteRelations", "DataGrid")) {
+                                            <ul class="content">
+                                                <li>
+                                                    <div class="left">@Resources.Table :</div>
+                                                    <input type="hidden" name="id" value="@Model.TableInfo.Id" />
+                                                    <div class="main">@Model.TableInfo.GetDescription()</div>
+                                                </li>
+                                            </ul>
+                                            <ul class="content">
+                                                <li>
+                                                    <div>
+                                                        <span class="nofloat">@Resources.TableRelations :</span>
+                                                    </div>
+                                                    <div class="scroll deleterelcontainer">
+                                                        <div class="deleterelations relcontainer">
+                                                            @{
+                                                                int i = 0;
+                                                                foreach (IRelation relation in Model.TableInfo.Relations) {
+                                                                    <span class="nofloat"><input type="checkbox" name="relations" value="@relation.RelationId"/>@String.Format(Resources.ResourceCount, ++i, Resources.Relation)</span>
+                                                                    <span class="nofloat"><ul class="deleterelations">
+                                                                                                  @foreach (IColumnConnection cc in relation) {
+                                                                                                      <li style="margin: 0; line-height: 12px">@cc.Source.GetDescription() -> ( @cc.Target.Table.GetDescription() ) @cc.Target.GetDescription()</li>
+                                                                                                  }
+                                                                                              </ul></span>
+                                                                }
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <input type="submit" class="button submit" value="@Resources.Delete" />
+                                        }    
+                                    </li>    
+                                </ul>
+                            }
+                            
+                            @if(ViewboxSession.User.IsSuper) {
+                                <ul class="tabcontent table-join join-specific">
+                                    <li>
+                                        @using(Html.BeginForm("Join", "DataGrid")) {
+                                            <ul class="content">
+                                                <li>
+                                                    <div class="left">@String.Format(Resources.ResourceCount, 1, Resources.Table):</div>
+                                                    <input type="hidden" name="id" value="@Model.TableInfo.Id" />
+                                                    <div class="main">@Model.TableInfo.GetDescription()</div>
+                                                </li>
+                                            </ul>
+                                            <ul class="content">
+                                                <li>
+                                                    <div class="left">@String.Format(Resources.ResourceCount, 2, Resources.Table):</div>
+                                                    <div class="main dropdown-parent">
+                                                        <input type="hidden" name="joinTableId" id="jointable2Id" value="" />
+                                                        <input id="table_select" type="text" placeholder="@Resources.SelectTable"
+                                                               class="text full dropdown placeholder empty" value="@Resources.SelectTable" />
+                                                        @Html.Action("TableObjectList", "DataGrid",
+                                                                     new RouteValueDictionary(
+                                                                        new { type = ViewboxSession.ViewCount > 0 ? TableType.View : TableType.Table, page = 0 }
+                                                                         )
+                                                             )
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul class="content">
+                                                <li><span>&nbsp;</span> <span class="details">@String.Format(Resources.ResourceCount, 1, Resources.Table)</span>
+                                                    <span class="details short">&nbsp;</span> <span class="details">@String.Format(Resources.ResourceCount, 2, Resources.Table)</span>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <span>@Resources.JoinOver:</span></div>
+                                                    <div style="margin-left: 160px;">
+                                                        <div class="table-join-condition replace">
+                                                            <input type="hidden" name="" class="column1" value="" />
+                                                            <div class="column-container">
+                                                                <input type="text" class="text dropdown placeholder empty column1" placeholder="@String.Format(Resources.Column + "{0}", 1)" value="@String.Format(Resources.Column + "{0}", 1)" /></div>
+                                                            <input type="hidden" name="" class="dir" value="" />
+                                                            <div class="sort-container">
+                                                                &nbsp;=&nbsp;</div>
+                                                            <input type="hidden" name="" class="column2" value="" />
+                                                            <div class="column-container">
+                                                                <input type="text" class="text dropdown placeholder empty join-column2" placeholder="@String.Format(Resources.Column + "{0}", "2")" value="@String.Format(Resources.Column + "{0}", "2")" /></div>
+                                                            <div class="delete">x</div>
+                                                        </div>
+                                                        <input type="button" class="button add-new-join-condition" value="@Resources.AddNewJoinCondition"/>
+                                                        <div id="relation-column-dropdown2">
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul class="content">
+                                                <li class="connect1"><span>@Resources.Kind:</span>
+                                                    <input type="radio" name="type" id="jointype0" value="@ViewboxDb.JoinType.Inner" checked />
+                                                    <label for="jointype0">@Resources.InnerJoin</label>
+                                                </li>
+                                                <li class="connect2"><span>&nbsp;</span>
+                                                    <input type="radio" name="type" id="jointype1" value="@ViewboxDb.JoinType.OnlyLeft" />
+                                                    <label for="jointype1">@String.Format(Resources.OnlyLeftJoin, String.Format(Resources.ResourceCount, 1, Resources.Table))</label>
+                                                </li>
+                                                <li class="connect3"><span>&nbsp;</span>
+                                                    <input type="radio" name="type" id="jointype2" value="@ViewboxDb.JoinType.OnlyRight" />
+                                                    <label for="jointype2">@String.Format(Resources.OnlyLeftJoin, String.Format(Resources.ResourceCount, 2, Resources.Table))</label>
+                                                </li>
+                                                <li class="connect4"><span>&nbsp;</span>
+                                                    <input type="radio" name="type" id="jointype3" value="@ViewboxDb.JoinType.Left" />
+                                                    <label for="jointype3">@String.Format(Resources.LeftJoin, String.Format(Resources.ResourceCount, 1, Resources.Table))</label>
+                                                </li>
+                                                <li class="connect5"><span>&nbsp;</span>
+                                                    <input type="radio" name="type" id="jointype4" value="@ViewboxDb.JoinType.Right" />
+                                                    <label for="jointype4">@String.Format(Resources.RightJoin, String.Format(Resources.ResourceCount, 2, Resources.Table))</label>
+                                                </li>
+                                            </ul>
+                                            <ul class="content">
+                                                <li><span>
+                                                        <input type="hidden" name="saveJoin" id="saveJoin" />
+                                                        <label><input type="checkbox" name="checkbox" class="check" id="save_result_join_cb">&nbsp;@Resources.SaveResult:</label>
+                                                    </span>
+                                                    <input type="text" class="text full placeholder" placeholder="@Resources.InsertName" value="@Resources.InsertName" name="tableName" id="tableJoinName" />
+                                                </li>
+                                            </ul>
+                                            <input type="submit" class="button submit" value="@Resources.Submit" />
+                                        }
+                                    </li>
+                                </ul>
+                            }
+                        </div>
+                        <div class="bottom">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

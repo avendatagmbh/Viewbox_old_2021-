@@ -1,0 +1,124 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.GlobalSearch.CtlGlobalSearchContent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:Utils="clr-namespace:AvdWpfControls.Utils;assembly=AvdWpfControls"
+        xmlns:TemplateSelectors="clr-namespace:eBalanceKit.TemplateSelectors"
+        xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:GlobalSearch="clr-namespace:eBalanceKit.Windows.GlobalSearch">
+
+    <UserControl.Resources>
+
+        <TemplateSelectors:GlobalSearchTemplateSelector x:Key="GlobalSearchTemplateSelector" />
+        <Style TargetType="{x:Type TreeViewItem}">
+            <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Setter Property="IsSelected" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <!--<Setter Property="Visibility" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsVisible, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource TrueToVisibilityConverter}}"/>-->
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="1,0,0,0"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Template" Value="{StaticResource ExpandedTreeViewItem}" />
+        </Style>
+
+        <Style x:Key="ResultItemBorder" TargetType="{x:Type Border}" BasedOn="{StaticResource ListBoxItemBaseBorder}">
+            <Setter Property="BorderBrush" Value="#deb84b"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#f6deae" Offset="0.0" />
+                        <GradientStop Color="#deb84b" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="NodeItemBorder" TargetType="{x:Type Border}" BasedOn="{StaticResource ListBoxItemBaseBorder}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="Silver" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#CCC" Offset="0.0" />
+                        <GradientStop Color="#EEE" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <HierarchicalDataTemplate x:Key="ResultItem" ItemsSource="{Binding Children}">
+            <Grid>
+                <Border Style="{StaticResource ResultItemBorder}" />
+                
+                <Border Style="{StaticResource SelectionOverlayBorder}">
+                    <StackPanel>
+                        <AvdWpfControls:HighlightableTextBlock Text="{Binding .}" HighlightFilter="{Binding DataContext.SearchString, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=GlobalSearch:CtlGlobalSearchContent}}" />
+                        <AvdWpfControls:HighlightableTextBlock Text="{Binding TaxonomyId}" HighlightFilter="{Binding DataContext.SearchString, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=GlobalSearch:CtlGlobalSearchContent}}" SingleLine="True"
+                                                                Visibility="{Binding DataContext.SearchInId, Converter={StaticResource TrueToVisibilityConverter}, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=GlobalSearch:CtlGlobalSearchContent}}"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="NodeItem" ItemsSource="{Binding Children}">
+            <Grid>
+                <Border Style="{StaticResource NodeItemBorder}" />
+                <Border Style="{StaticResource SelectionOverlayBorder}">
+                    <TextBlock Text="{Binding .}" TextWrapping="Wrap" />
+                </Border>
+            </Grid>
+        </HierarchicalDataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Grid.Row="0" Text="{x:Static Localisation:ResourcesGlobalSearch.SearchLabel}" Margin="0,0,0,2" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <ComboBox MinWidth="150" IsEditable="True" VerticalAlignment="Center" x:Name="SearchComboBox" ItemsSource="{Binding HistoryManager.SearchHistoryStrings}" 
+                     Text="{Binding SearchString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Utils:EnterKeyMapper.Button="{Binding ElementName=btnSearch}" 
+                          KeyUp="SearchComboBoxKeyUp" SelectionChanged="SearchComboBoxSelectionChanged" IsTextSearchEnabled="False" />
+                    <AvdWpfControls:ImageButton2
+                ImageSource="/eBalanceKitResources;component/Resources/SearchColored.png"
+                Grid.Column="1" Margin="5,0,0,0" 
+                Caption="{x:Static Localisation:ResourcesGlobalSearch.BtnSearch}" x:Name="btnSearch" 
+                Command="{Binding SearchCommand}" IsEnabled="{Binding CanSearch}" />
+
+                </Grid>
+            
+            <Grid Margin="0,5,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" >
+                    <RadioButton Name="chkSearchInId" IsChecked="{Binding SearchInId, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="{x:Static Localisation:ResourcesGlobalSearch.SearchInId}" />
+                    <RadioButton Name="chkSearchInLabel" Margin="5,0,0,0" IsChecked="{Binding SearchInLabel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Content="{x:Static Localisation:ResourcesGlobalSearch.SearchInLabel}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" >
+                        <AvdWpfControls:ImageButton Margin="8,0,0,0" Click="BtnExpandAllNodesClick" ToolTip="{x:Static Localisation:ResourcesCommon.ShowAllNodes}" ImageSource="/eBalanceKitResources;component/Resources/ExpandTreeView.png" />
+                        <AvdWpfControls:ImageButton Margin="8,0,0,0" Click="BtnCollapseAllNodesClick" ToolTip="{x:Static Localisation:ResourcesCommon.HideAllNodes}" ImageSource="/eBalanceKitResources;component/Resources/CollapseTreeView.png" />
+                    </StackPanel>
+                </Grid>
+
+            <Separator Margin="0,5" />
+        </StackPanel>
+
+        <TreeView BorderThickness="0" Background="Transparent"
+                  Grid.Row="1" ItemsSource="{Binding Searcher.ResultTreeRoots}" SelectedItemChanged="TreeViewSelectedItemChanged" 
+                  ItemTemplateSelector="{StaticResource GlobalSearchTemplateSelector}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="TransDATA.Controls.Config.CtlInputConfigWithSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:Base.Localisation;assembly=Base"
+             xmlns:Config="clr-namespace:TransDATA.Controls.Config"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls" mc:Ignorable="d" d:DesignHeight="300"
+             d:DesignWidth="300">
+  <Grid DataContext="{Binding Converter={StaticResource MyDebugConverter}, ConverterParameter=CtlInputConfigWithSelector}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <TextBlock Grid.Row="0" Text="{x:Static Localisation:ResourcesCommon.InputType}" />
+    <Grid Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <ComboBox Name="cbConfigType" Grid.Column="0" Width="150" HorizontalAlignment="Left"
+                ItemsSource="{Binding InputConfigTypes}" SelectedItem="{Binding SelectedInputConfigType, Mode=TwoWay}"
+                DisplayMemberPath="Name" />
+      <AvdWpfControls:ImageButton Grid.Column="1" ImageSource="/TransDATA;component/Resources/Folder.png"
+                                  Margin="5,2,2,0" Click="OpenHistoryButtonClick" />
+    </Grid>
+        <Config:CtlInputConfigPanel x:Name="ctlInputCfg" Grid.Row="2" 
+                                DataContext="{Binding Profile, Converter={StaticResource MyDebugConverter}, ConverterParameter=CtlInputConfigWithSelector_CtlInputConfigPanel}" />
+  </Grid>
+</UserControl>

@@ -1,0 +1,112 @@
+-> V1.6.0
+	neue Tabellen:
+            "templates_account_groups", "templates_account_splittings", 
+            "reconciliations", "reconciliation_transactions",
+            "hypercube_dimension_keys", "hyper_cube_dimension_ordinals",
+            "report_federal_gazette", "hypercube_items", "hypercube_dimensions",
+            "values_gaap_fg", "hypercubes", "federal_gazette_info", "log_report_1",
+            "log_report_1_value_change", "hypercube_import_templates"
+
+	geänderte Tabellen:		
+            "transfer_hbst_heads" wurde zu "reconciliations" (genaue Information von mid)
+			"transfer_hbst_lines" wurde zu "reconciliation_transactions" (genaue Information von mid)
+        log_send --> id wurde zu BigInt
+
+
+-> V1.5
+	neue Tabellen:
+	----------------------------------------------------------
+	- taxonomy_info
+
+	geänderte Tabellen:
+	----------------------------------------------------------
+	- documents und assignment_template_heads: neue Spalte taxonomy_info_id
+	  (default: Verweis auf gaap Taxonomie)
+
+	- values_xxx: Ersetzen xbrl_elem_id (alphanumerischer Wert ==> numerische interne Id)
+
+	- taxonomy_ids: 
+		"taxonomy_id" umbenannt in "xbrl_element_id"
+		neue Spalte "taxonomy_id" für Verweis auf die verwentete Taxonomiedate
+		
+-> V1.4
+	Erweiterung "accounts": neue Spalten "group_id", "user_defined", "hidden", "in_tray"
+	Erweiterung "accounts", "splitted_accounts", "account_groups": neue Spalten "hidden", "in_tray", "sort_index"
+	values_gaap, values_gcd: Spalte gelöscht: is_manual_value
+	
+	Tabelle document_rights kann gelöscht werden, nachdem die entsprechenden Rechte zum neuen System migriert wurden (dafür Benutzerrolle anlegen und die Rechte setzen)
+	Neue Tabellen: rights, roles, user_roles
+
+	Neue Spalte "salt" in Tabelle Users. Standard-Salt entsprach bislang dem Benutzerkürzel, wodurch eine Änderung des Kürzels zu einem ungültigem Passwort führt
+
+	documents: umbenennung creator_id --> owner_id
+
+V1.2.1 -> V1.2.2
+	Lösche Tabellen "group_id", "splitted_accounts", "log_main", "log_send", "log_value_change", "log_admin" und erstelle sie neu
+
+V1.2.0 -> V1.2.1
+					if (this.DCFlag == null) {
+					return this.Amount;
+				} else {
+					switch (this.DCFlag) {
+
+						case "C":
+						case "c":
+						case "H":
+						case "h":
+							// credit/Haben
+							return (-1) * this.Amount;
+
+						default:
+							// debit/Soll
+							return this.Amount;
+					}
+				}
+
+	26.06.2011:
+	----------------------------------------
+	Tabelle "accounts"
+	Spalte "dc_flag" (Soll/Haben KZ) fällt weg, Wert wird jetzt direkt beim Import auf positive/negative Werte abgebildet
+	Migration: Wert in Spalte "amount" negieren, wenn Wert in Spalte "dc_flag" in ("C", "c", "H"; "h") [credit amount / Haben Saldo] enthalten ist
+	
+	Begründung: 
+	Unterscheidung hat u.U. zu Inkonsistenzen bei der Anzeige geführt und war relativ fehleranfällig, da Programmintern eine Unterscheidung 
+	zwischen vorzeichenlosen (Anzeige GUI, ggf. PDF-Export) und vorzeichenbehafteten (interne Berechnungen) Werten notwendig war
+	----------------------------------------
+
+	accounts: 
+		renamed column "additional_info" into "comment"
+		dropped group_id
+	splitted_accounts, account_groups: changed structure (table could be dropped if exist, since no data has been stored in previous versions)
+	assignment_template_lines: Need to update debit_element_id, credit_element_id columns to include the de-gaap-ci_
+
+V1.1.9 -> V1.2.0
+	neue Spalte in taxonomy_ids (number / interne Positionsnummer)
+	Zuordnungen stehen in der Datei Taxonomy\\TaxonomyPosNumbers.txt (siehe auch TaxonomyIdManager.IdNumberDict)
+
+	neue Spalte amount_percent in Tabelle splitted_accounts
+
+	Tabelle "account"
+	Spalte "balance" umbenannt in "amount"
+	
+	Spalte "assigned_element_id" ersetzt durch "assigned_element_id" (notwendig für effizienteren Zugriff und Vermeidung reduntanter Text-Ids)
+	- Zuordnung der neuen IDs über Dictionary GaapTaxonomy.ElementsByName und Einträge in TaxonomyIdAssignment
+	- in TaxonomyIdAssignment müssen nur die in der Spalte "assigned_element_id" enthaltenen Werte erzeugt werden, 
+	  alle weiteren werden ggf. in der TaxonomyIdManager.Init() Methode erzeugt)
+	- In der Tabelle TaxonomyIdAssignment sind die IDs der Elemente gespeichert, wohingegen das Feld assigned_element_id nur den Namen enthält.
+	  Zuordnung Name --> Id über GAAP_Taxonomy.ElementsByName[<assigned_element_id>].Id
+
+	Neue Tabellen:
+	taxonomy_ids (Klasse TaxonomyIdAssignment - Zuordunung interne numerische ID <--> TaxonomyId (Zeichenkette))
+	account_groups (Klasse AccountGroup)
+	splittet_accounts (Klasse SplittedAccount)
+
+	Tabelle "balance_lists"
+		Hat jetzt eine neue Spalte "document_id", die auf das Dokument verweist (früher war es eine 1:1 Beziehung)
+		Neue Spalte "name" mit einem Namen
+		Neue Spalte "comment" mit einem Namen
+	Tabelle "documents"
+		Die Spalte balance_list_id wurde gelöscht
+
+V1.1.6 -> V1.1.9
+	Überleitungsrechnung von values_gaap nach transfer_hbst kopieren

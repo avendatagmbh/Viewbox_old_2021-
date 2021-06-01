@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="ScreenshotAnalyzer.Controls.CtlSelectOcrAreas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ZoomAndPan="clr-namespace:ZoomAndPan;assembly=ZoomAndPan"
+             xmlns:Localisation="clr-namespace:ScreenshotAnalyzer.Resources.Localisation" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500" x:Name="ctlSelectOcrAreas" MouseLeftButtonDown="ctlSelectOcrAreas_MouseLeftButtonDown" MouseLeftButtonUp="ctlSelectOcrAreas_MouseLeftButtonUp" MouseMove="ctlSelectOcrAreas_MouseMove" DataContextChanged="ctlSelectOcrAreas_DataContextChanged" MouseRightButtonDown="ctlSelectOcrAreas_MouseRightButtonDown" MouseRightButtonUp="ctlSelectOcrAreas_MouseRightButtonUp" KeyDown="ctlSelectOcrAreas_KeyDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" Name="firstColumn" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <ZoomAndPan:ZoomAndPanControl x:Name="zoomAndPanControl">
+            <Canvas Name="imageArea" MouseWheel="imageArea_MouseWheel" Width="{Binding ActualWidth, ElementName=ctlSelectOcrAreas}" Height="{Binding ActualHeight, ElementName=ctlSelectOcrAreas}">
+                <Image Name="imgScreenshot" Source="{Binding Screenshot.Path}" Width="{Binding ActualWidth, ElementName=zoomAndPanControl}"/>
+            </Canvas>
+        </ZoomAndPan:ZoomAndPanControl>
+        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="5">
+            <!--<Button Name="btnSelectAnchor" Click="btnSelectAnchor_Click" HorizontalContentAlignment="Stretch">
+                <TextBlock Text="1. Ankerpunkt selektieren" TextAlignment="Left" HorizontalAlignment="Left" />
+            </Button>
+            <Button Name="btnSelectOcrArea"  Click="btnSelectOcrArea_Click" HorizontalContentAlignment="Stretch">
+                <TextBlock Text="2. Text selektieren" TextAlignment="Left" HorizontalAlignment="Left" />
+            </Button>
+            <Button Name="btnSelectRectangle" Click="btnSelectRectangle_Click" HorizontalContentAlignment="Stretch">
+                <TextBlock Text="3. Rechtecke bearbeiten" TextAlignment="Left" HorizontalAlignment="Left" />
+            </Button>-->
+            <Label Margin="0,0,0,0" FontStyle="Italic" FontWeight="DemiBold" FontSize="14" Content="{x:Static Localisation:ResourcesGui.CtlSelectOcrAreas_EditModes}"/>
+            
+            <RadioButton GroupName="EditMode" Name="rbSelectAnchor" Checked="rbSelectAnchor_Checked" FontSize="14" Content="{x:Static Localisation:ResourcesGui.CtlSelectOcrAreas_rbSelectAnchor_Text}"/>
+            <RadioButton GroupName="EditMode" Name="rbSelectOcrArea" Checked="rbSelectOcrArea_Checked" FontSize="14" Content="{x:Static Localisation:ResourcesGui.CtlSelectOcrAreas_rbSelectOcrArea_Text}"/>
+            <RadioButton GroupName="EditMode" Name="rbSelectRectangle" Checked="rbSelectRectangle_Checked" FontSize="14" Content="{x:Static Localisation:ResourcesGui.CtlSelectOcrAreas_rbSelectRectangle_Text}"/>
+            <Label Margin="0,10,0,0" FontStyle="Italic" FontWeight="DemiBold" FontSize="14">Legende</Label>
+            
+            <Canvas>
+                <Rectangle Canvas.Top="10" Canvas.Left="10" Width="20" Height="20" Stroke="Blue" />
+                <TextBlock Canvas.Top="10" Canvas.Left="40" Text="{x:Static Localisation:ResourcesGui.CtlSelectOcrAreas_AnchorRect}"/>
+                <Rectangle Canvas.Top="40" Canvas.Left="10" Width="20" Height="20" Stroke="Red" />
+                <TextBlock Canvas.Top="40" Canvas.Left="40" Text="{x:Static Localisation:ResourcesGui.CtlSelectOcrAreas_TextRect}"/>
+                <Rectangle Canvas.Top="70" Canvas.Left="10" Width="20" Height="20" Stroke="Green" />
+                <TextBlock Canvas.Top="70" Canvas.Left="40" Text="{x:Static Localisation:ResourcesGui.CtlSelectOcrAreas_SelectedRect}"/>
+            </Canvas>
+            <!--<Button Name="btnUseSelectionForAll" Click="btnUseSelectionForAll_Click">Auswahl Für alle benutzen</Button>
+            <Button Name="btnExtractText" Content="Text extrahieren" Click="btnExtractText_Click" />
+            <Button Name="btnExtractTextForAll" Content="Text extrahieren für alle" Click="btnExtractTextForAll_Click" />-->
+        </StackPanel>
+    </Grid>
+</UserControl>

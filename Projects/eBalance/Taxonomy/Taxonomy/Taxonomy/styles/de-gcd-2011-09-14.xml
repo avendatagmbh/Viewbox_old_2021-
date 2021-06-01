@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<style>
+
+  <!--
+    The following elements and subelements of these are not included in the value tree.
+    The period values could be received from the Document.FinancialYear property.
+    -->
+  <elements>
+    <element name="de-gcd_genInfo.report.period.fiscalYearBegin" isPersistant="false" />
+    <element name="de-gcd_genInfo.report.period.fiscalYearEnd" isPersistant="false" />
+    <element name="de-gcd_genInfo.report.period.balSheetClosingDate" isPersistant="false" />
+    <element name="de-gcd_genInfo.report.period.fiscalPreciousYearBegin" isPersistant="false" />
+    <element name="de-gcd_genInfo.report.period.fiscalPreciousYearEnd" isPersistant="false" />
+    <element name="de-gcd_genInfo.report.period.balSheetClosingDatePreviousYear" isPersistant="false" />
+    
+    <element name="de-gcd_genInfo.report.id.reportElement.reportElements.SGE" legalFormPersG="true" legalFormEU="false" legalFormOther="false" />
+    <element name="de-gcd_genInfo.report.id.reportElement.reportElements.SGEP" legalFormPersG="true" legalFormEU="true" legalFormOther="false" />
+    <element name="de-gcd_genInfo.report.id.reportElement.reportElements.KKE" legalFormPersG="true" legalFormEU="false" legalFormOther="false" />
+  </elements>
+</style>

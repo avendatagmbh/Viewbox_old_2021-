@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<style>
+  <typedefs>
+    <list>de-gaap-ci_kke.unlimitedPartners</list>
+    <list>de-gaap-ci_kke.unlimitedPartners.sumEquityAccounts.kinds</list>
+    <list>de-gaap-ci_kke.limitedPartners</list>
+    <list>de-gaap-ci_kke.limitedPartners.sumEquityAccounts.kinds</list>
+    <list>de-gaap-ci_nt.ass.DRS12_24</list>
+    <list>de-gaap-ci_nt.particip.listRow</list>
+    <list>de-gaap-ci_nt.genInfo.DRS13_29</list>
+    <list>de-gaap-ci_nt.genInfo.DRS13_32</list>
+    <list>de-gaap-ci_nt.genInfo.DRS10_41</list>
+    <list>de-gaap-ci_nt.genInfo.derivatetFinancialinstruments</list>
+    <list>de-gaap-ci_nt.genInfo.FinancialInstrFinAssMas</list>
+    <list>de-gaap-ci_nt.relationships.salariesActiveMembers.BoardsSpecification.personal</list>
+    <list>de-gaap-ci_nt.relationships.salariesFormerMembers.BoardsSpecification.personal</list>
+    <list>de-gaap-ci_nt.relationships.ShareholdersKapCoSpec</list>
+    <list>de-gaap-ci_nt.segmGeographical</list>
+    <list>de-gaap-ci_nt.segmGeographical.OtherImportant</list>
+    <list>de-gaap-ci_nt.segmGeographical.Business</list>
+    <list>de-gaap-ci_nt.segmGeographical.ratio</list>
+    <list>de-gaap-ci_nt.segmBusiness</list>
+    <list>de-gaap-ci_nt.segmBusiness.OtherImportant</list>
+    <list>de-gaap-ci_nt.segmBusiness.geographical</list>
+    <list>de-gaap-ci_nt.segmBusiness.ratio</list>
+    <list>de-gaap-ci_hbst.transfer</list>
+    <list>de-gaap-ci_hbst.transfer.bsAss</list>
+    <list>de-gaap-ci_hbst.transfer.bsEqLiab</list>
+    <list>de-gaap-ci_hbst.transfer.isChangeNetIncome</list>
+    <list>de-gaap-ci_detailedInformation.accountBalances</list>
+    <list>de-gaap-ci_bs.eqLiab.equity.subscribed.limitedLiablePartners.details</list>
+    <list>de-gaap-ci_bs.eqLiab.equity.subscribed.unlimitedLiablePartners.details</list>
+    <list>de-gcd_genInfo.company.id.contactAddress</list>
+    <list>de-gcd_genInfo.company.id.shareholder</list>
+    <list>de-gcd_genInfo.doc.author</list>
+    <list>de-gaap-ci_ntBanks.trusteeship</list>
+    <list>de-gaap-ci_ntBanks.segmGeo</list>
+    <list>de-gaap-ci_ntBanks.boardMembers</list>
+    <list>de-gaap-ci_nt.ass.DRS12_24</list>
+    <multiple_choice>de-gcd_genInfo.report.id.reportElement</multiple_choice>
+  </typedefs>
+</style>

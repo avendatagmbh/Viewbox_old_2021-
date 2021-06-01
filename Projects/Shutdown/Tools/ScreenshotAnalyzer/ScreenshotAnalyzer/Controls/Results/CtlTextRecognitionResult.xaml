@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="ScreenshotAnalyzer.Controls.Results.CtlTextRecognitionResult"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localisation="clr-namespace:ScreenshotAnalyzer.Resources.Localisation" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" DataContextChanged="UserControl_DataContextChanged">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="{x:Static Localisation:ResourcesGui.CtlTextRecognitionResult_OverviewInfoString}" />
+        <DataGrid   Grid.Row="1"
+            AutoGenerateColumns="False"
+                        Name="dgvTextTable" 
+                        VerticalAlignment="Top"
+                        ItemsSource="{Binding RecognitionResult.TextTable.Rows}"
+                        CanUserAddRows="False"
+                        CanUserDeleteRows="False"
+                        HeadersVisibility="Column"
+                        IsReadOnly="True" 
+                        ScrollViewer.CanContentScroll="True" 
+                        ScrollViewer.VerticalScrollBarVisibility="Auto">
+        </DataGrid>
+    </Grid>
+</UserControl>

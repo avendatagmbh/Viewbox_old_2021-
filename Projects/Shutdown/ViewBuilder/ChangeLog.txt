@@ -1,0 +1,35 @@
+* Delimiter können in Kommentaren und in Strings vorhanden sein - vorher wurden die Statements dann falsch gesplittet
+* Bessere Fehlerbehandlung
+
+Version 2012-03-27
+* Optimierungskriterien können eingespielt/geändert werden
+* Relationen können eingespielt werden, es werden direkt Indizes erstellt
+* Es wird eine Warnung ausgegeben, wenn Spalten als float oder double in der Datenbank eingetragen sind, wahrscheinlich sollten es eher decimals sein
+* Kleinere Bugfixes
+
+Version 2012-03-20
+* Wegoptimierte Spalten werden mit in die Temp Datenbank übernommen
+* DELIMITER kann jetzt auch klein geschrieben werden im -- ##PROCEDURE## Teil
+
+Version 2012-03-16
+* Abbrechen bricht nun auch SQL Statements ab
+* Fehler beim Erstellen von Indizes wurden nicht durchgereicht
+* Wenn schon Relationen eingespielt waren, dann gab es Fehler beim hinzufügen von Views
+* Viewbox Datenbanken können konsolidiert werden
+* Fixed "no active transaction" Fehler
+* Viewbox ist aus dem Viewbuilder heraus startbar (wenn der Webdev Server installiert ist. Sollte das nicht der Fall sein, dann kann dies möglicherweise von der IT nachgeholt werden - muss noch geklärt werden)
+	Zu beachten ist, dass lediglich das System als Optimierungskriterium angelegt wird, alle weiteren werden in der nächsten Version des Viewbuilder anlegbar sein.
+* Update der Metadaten löscht nicht mehr die Parameter bei dynamischen Viewskripten
+
+Version 2012-02-20
+* Viewbox Datenbank wurde nicht korrekt befüllt
+* Möglichkeit Basistabellen hinzuzufügen
+* Fehler beim Erstellen der Viewboxdatenbank gefixt
+* Neue Sektion -- ##TEMP_STATEMENTS## eingefügt. Diese wird VOR dem Erstellen des Views auf der Temp Datenbank ausgeführt. 
+	Die Sektion -- ##PROCEDURE_TEMP## wird bei einer Stored Procedure VOR der Prozedur ausgeführt, allerdings auf der Basis-Datenbank!
+* Tabellen die mit einem _ beginnen werden jetzt korrekt in die TempViewDb eingespielt
+* Zeitanzeige korrigiert
+* Kleinere Gui Verbesserungen
+* Fehlermeldungen von Vieweinspielungen im Popup nicht lesbar – maximale Größe gesetzt
+* Delimiter werden in der TEMP_STATEMENTS Sektion korrekt erkannt und benutzt
+* Vor dem Start wird geprüft ob sich die Skripte verändert haben und ggf. neu eingelesen

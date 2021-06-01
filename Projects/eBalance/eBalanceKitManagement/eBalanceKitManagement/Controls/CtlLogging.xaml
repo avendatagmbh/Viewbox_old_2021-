@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="eBalanceKitManagement.Controls.CtlLogging"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:c="clr-namespace:eBalanceKitManagement.Controls"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:c1="clr-namespace:AvdWpfControls.Converters;assembly=AvdWpfControls" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" DataContextChanged="UserControl_DataContextChanged">
+    <UserControl.Resources>
+        <c1:BoolToVisibilityConverter x:Key="TrueToVisibilityConverter" VisibleValue="True" HiddenState="Collapsed" />
+        <c1:VisibilityToBoolConverter x:Key="HiddenToTrueConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TabControl Name="tabControl">
+            <TabItem x:Name="tab1" Header="{x:Static Localisation:ResourcesCommon.General}">
+                <c:CtlLogValueChangeDataGrid DataContext="{Binding AdminLogConfig}"/>
+            </TabItem>
+
+            <TabItem x:Name="tab2" Header="{x:Static Localisation:ResourcesCommon.Reports}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <c:CtlReportDataGrid />
+                    <GridSplitter Background="Silver" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+                    <c:CtlLogValueChangeDataGrid Grid.Row="1" DataContext="{Binding ReportLogConfig}"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem x:Name="tab3" Header="{x:Static Localisation:ResourcesLogging.SendCaption}">
+                <c:CtlLogDataGrid DataContext="{Binding SendLogConfig}"/>
+            </TabItem>
+        </TabControl>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <!--<Button Margin="0,5,0,5" Name="btnPreviousPage" Grid.Row="1" Content="&lt;&lt;" Click="btnPreviousPage_Click"></Button>-->
+                <Button Margin="0,5,5,5" Name="btnShowLogs" Click="btnShowLogs_Click" Grid.Row="1" Content="{x:Static Localisation:ResourcesLogging.ShowLogs}"/>
+                <Button Margin="0,5,5,5" Name="btnExportCsv" Click="btnExportCsv_Click" Grid.Row="1" Content="{x:Static Localisation:ResourcesExport.ExportLabelCsv}"/>
+                <!--<Button Margin="0,5,0,5" Name="btnNextPage" Grid.Row="1" Click="btnNextPage_Click">>></Button>-->
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</UserControl>

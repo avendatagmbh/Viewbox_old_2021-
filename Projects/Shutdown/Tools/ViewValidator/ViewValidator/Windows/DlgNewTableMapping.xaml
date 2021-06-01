@@ -1,0 +1,93 @@
+﻿<Window x:Class="ViewValidator.Windows.DlgNewTableMapping"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:ViewValidator.Controls.Profile"
+        Title="Neue View hinzufügen" Width="700" WindowStartupLocation="CenterOwner" SizeToContent="Height"
+        Icon="/Resources\viewvalidator.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Style="{StaticResource GroupBoxBorderNoShadow}" Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" MinWidth="200"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Content="Aktuell gewählte View-Tabelle" Grid.Row="0" Grid.Column="0"/>
+                <Label Content="Aktuell gewählte Verprobungs-Tabelle" Grid.Row="1" Grid.Column="0"/>
+                <TextBox Grid.Row="0" Grid.Column="1" IsReadOnly="True" Text="{Binding SelectedTableView}" Height="18"/>
+                <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True" Text="{Binding SelectedTableValidation}" Height="18"/>
+            </Grid>
+        </Border>
+        <controls:CtlNewTableMappingPage1 Grid.Row="1" x:Name="ctlPage1" Visibility="{Binding Page1Visibility}" MinHeight="500" MaxHeight="700"/>
+        <controls:CtlNewTableMappingPage2 Grid.Row="1" x:Name="ctlPage2" Visibility="{Binding Page2Visibility}" MinHeight="500" MaxHeight="700"/>
+        <!-- bottom -->
+        <Border Grid.Row="2" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                    <TextBlock FontSize="24" Text="Schritt "/>
+                    <TextBlock FontSize="24" Text="{Binding Path=CurrentPage}"/>
+                    <TextBlock FontSize="24" Text=" / "/>
+                    <TextBlock FontSize="24" Text="{Binding Path=PageCount}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <Button Content="_Zurück" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnPrevious" VerticalAlignment="Top" Width="75" Click="btnPrevious_Click" >
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                <Setter Property="IsEnabled" Value="True" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsFirstPage}" Value="True">
+                                        <Setter Property="IsEnabled" Value="False" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button Content="_Weiter" Height="23" Margin="5" Name="btnNext" Width="75" Click="btnNext_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                <Setter Property="Visibility" Value="Visible" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsLastPage}" Value="True">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+                    <Button Content="_Hinzufügen" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnFinish" VerticalAlignment="Top" Width="75" Click="btnFinish_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                <Setter Property="Visibility" Value="Visible" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsLastPage}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button Content="Ab_brechen" Height="23" Margin="5" Name="btnCancel" Width="75" Click="btnCancel_Click" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.BalanceList.BalanceList" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.75" Width="2.25" />
+    <Members>
+      <Field Name="_accountGroups" Hidden="true" />
+      <Field Name="_accounts" Hidden="true" />
+      <Field Name="_exactSearch" Hidden="true" />
+      <Field Name="_filter" Hidden="true" />
+      <Field Name="_importDate" Hidden="true" />
+      <Field Name="_importedFrom" Hidden="true" />
+      <Field Name="_importedFromId" Hidden="true" />
+      <Field Name="_searchAccountNames" Hidden="true" />
+      <Field Name="_searchAccountNumbers" Hidden="true" />
+      <Field Name="_source" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>YBoCoAAEgkkIzhgBcwCEkAZCkBAQsIiWgAAoEAAAhAQ=</HashCode>
+      <FileName>Structures\DbMapping\BalanceList\_TableDefinitions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.BalanceList.SplitAccountGroup" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="0.75" Width="2.5" />
+    <Members>
+      <Field Name="_items" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BAICoIBAAAgISAAAIghABAAgwBAALAAAAAAAAAyAAEA=</HashCode>
+      <FileName>Structures\DbMapping\BalanceList\_TableDefinitions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.BalanceList.Account">
+    <Position X="2.25" Y="8.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Structures\DbMapping\BalanceList\_TableDefinitions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.BalanceList.SplittedAccount">
+    <Position X="4.5" Y="8.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACBAAAAAEAAAAggAACCAAAAAAAAAAABAAAAEAAE=</HashCode>
+      <FileName>Structures\DbMapping\BalanceList\_TableDefinitions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.BalanceList.AccountGroup">
+    <Position X="6.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAACAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Structures\DbMapping\BalanceList\_TableDefinitions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="eBalanceKitBusiness.Structures.DbMapping.BalanceList.BalanceListEntryBase">
+    <Position X="4" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACISEEECAQEAQAIEBAAAaAAAQABAAAAAEAAAhCgAE=</HashCode>
+      <FileName>Structures\DbMapping\BalanceList\_TableDefinitions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="eBalanceKitBusiness.IBalanceListEntry">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAEAAAIEAAAASAAAQABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>_interfaces\BalanceList\IBalanceListEntry.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

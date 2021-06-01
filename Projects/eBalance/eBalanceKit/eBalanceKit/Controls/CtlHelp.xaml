@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="eBalanceKit.Controls.CtlHelp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Help="clr-namespace:eBalanceKit.Controls.Help"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:Controls="clr-namespace:eBalanceKit.Controls"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="AvdWpfControls:ImageRadioButton">
+                <Setter Property="Foreground" Value="#E0E0E0" />
+                <Setter Property="ImageHeight" Value="24" />
+                <Setter Property="Margin" Value="5,0" />
+            </Style>
+        </Grid.Resources>
+            
+        <!--Link to the manual-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Padding="2" Background="{StaticResource headerBgBrush}">
+            <StackPanel Orientation="Horizontal" Margin="5">
+
+                <AvdWpfControls:ImageRadioButton ImageHeight="24" Name="rbManual" Content="{x:Static Localisation:ResourcesHelp.Manual}" IsChecked="True" 
+                ImageSource="/eBalanceKitResources;component/Resources/Pdf.png">
+                </AvdWpfControls:ImageRadioButton>
+
+                <AvdWpfControls:ImageRadioButton ImageHeight="24" Name="rbElsterOnline" Content="{x:Static Localisation:ResourcesHelp.lblCertificateDetails}"
+                ImageSource="/eBalanceKitResources;component/Resources/Certificate.png" >
+                </AvdWpfControls:ImageRadioButton>
+                
+                <AvdWpfControls:ImageRadioButton ImageHeight="24" Name="rbElsterPorts" Content="{x:Static Localisation:ResourcesHelp.lblPortInfo}"
+                ImageSource="/eBalanceKitResources;component/Resources/PortInfo.png" >
+                </AvdWpfControls:ImageRadioButton>
+                               
+            </StackPanel>
+        </Border>
+                
+        <Help:CtlManual Grid.Row="1" Visibility="{Binding ElementName=rbManual, Path=IsChecked, Converter={StaticResource TrueIsVisibleConverter1}}" Margin="5" />
+        <Help:CtlElsterInfo Grid.Row="1" Visibility="{Binding ElementName=rbElsterOnline, Path=IsChecked, Converter={StaticResource TrueIsVisibleConverter1}}" Margin="5" />
+        <Controls:CtlElsterServerInfoText Grid.Row="1" Visibility="{Binding ElementName=rbElsterPorts, Path=IsChecked, Converter={StaticResource TrueIsVisibleConverter1}}" Margin="5"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,61 @@
+Version 1.1.0.7 (28.10 09:41)
+-Fügte man hintereinander mehrere Views hinzu und wählte unterschiedliche Verprobungsdatenbanken, dann konnten durch einen Bug die alten Verprobungsdatenbanken überschrieben werden
+
+Version 1.1.0.6 (18.10 10:11)
+-Falls es die _system.procedures Tabelle nicht gibt, dann wird keine Fehlermeldung mehr ausgegeben
+-Fortschrittsanzeige hört nicht bei 1/10 der Anzeige auf, sondern läuft komplett durch
+-Wenn bei Access die "Sortierung als Zahl"-Regel angewendet wurde und die Spalte Werte enthielt, die nicht in eine Zahl umgewandelt werden können, dann gab es bis jetzt einen Fehler. Diese Werte werden jetzt ganz nach hinten sortiert.
+-Bug gefixt bei "Sortiere als String"-Regel, sie wird nun auch korrekt beim "normalen" Validieren verwendet
+-Spaltenheader ändert wieder die Farbe wenn man mit der Maus drüber fährt
+
+Version 04.10 9:18
+-Sortierung nach Zahl benutzt jetzt die CAST Operation statt nach Länge der Spalte und der Spalte selbst zu sortieren
+-Abbrechen Button beim Validieren
+-Im Fortschrittsdialog wird angezeigt welche Operation gerade durchgeführt wird
+-Es können mehrere Verprobungsdatenbanken benutzt werden, dementsprechend findet die Auswahl jetzt nicht mehr im Profil statt, sondern wenn man ein neue Tabellenzuordnung hinzufügt.
+-Es gibt eine neue Regel: Bestimmte Werte können deklariert werden, die beim Vergleichen immer als wahr gewertet werden (unabhängig davon welchen Wert der Vergleichspartner hat)
+-Spalten Header überarbeitet, dort wird jetzt einerseits der Datenbank Typ der Spalte angezeigt, sowie ob mindestens eine Regel auf die Spalte angewendet wurde
+-Bei den fehlenden Zeilen sind jetzt die Spalten von Verprobung/View gleich groß
+-Spalten können versteckt werden und bei den Spaltenzuordnungen wieder sichtbar gemacht werden
+
+Version 23.09 11:11
+-Absturz bei fehlender Tabelle gefixt
+-Umlaute bei MySQL gefixt (ÖÜ)
+-Neue Validierungsmöglichkeit hinzugefügt: Wenn im Speicher validiert wird, dann werden zuerst alle Zeilen aus der Datenbank gelesen, danach werden die Regeln angewandt und daraufhin sortiert.
+ Damit ist es also möglich die Sortierung durch Regeln zu beeinflussen. Aufpassen muss man natürlich wenn die beiden Datenbanken sehr groß sind und nicht in den Speicher passen
+-Die Sortierung wird jetzt standardmäßig durch den Datentyp der Spalte in der Datenbank festgelegt, String Spalten werden also als Strings sortiert, selbst wenn die Spalte nur Zahlen beinhaltet
+ ACHTUNG in älteren Versionen wurde versucht die Daten nach Int, bzw. DateTime zu casten und nur wenn das fehlschlägt wird als String sortiert!
+-Es können jetzt Sortierregeln zu Spalten hinzugefügt werden, diese legen explizit fest wie eine Spalte sortiert werden soll unabhängig davon welchen Typ die Datenbank aufweist.
+ Dies kann zum Beispiel nützlich sein, wenn man eine String Spalte hat, die aber ausschließlich Integer beinhaltet und von der Datenbank standardmäßig als String sortiert wird.
+
+Version 16.09 17:12
+-Bug beim Excel Export gefixt: Bei der Ausgabe wurde jeweils eine Zeile verschluckt
+-Es gab Performance Probleme beim hinzufügen von Regeln, allerdings nur dann wenn während dieser Instanz des Programms ColumnMappings hinzugefügt/gelöscht wurden. Dann wurde das Update der Datentabelle
+ entsprechend oft ausgeführt.
+
+Version 07.09 15:25
+-Der "Neue View hinzufügen" Dialog wurde komplett überarbeitet, es ist jetzt auch möglich eine View Tabelle per Hand einzugeben
+-Erklärende Texte hinzugefügt
+-Die Regel führende Nullen ist jetzt parametrisierbar: Es kann angegeben werden ob die letzte verbleibende 0 auch gelöscht werden soll
+ACHTUNG: Geändertes Standardverhalten, Standard ist jetzt, dass die 0 nicht gelöscht wird, also wird aus "0000" z.B. "0" anstatt "" wird.
+-Excel Export der Ergebnisse
+-Bei den Ergebnissen werden jetzt immer die Einträge angezeigt, nachdem alle Regeln darauf angewendet wurden.
+-Der Tooltip bei den Ergebnis-Einträgen zeigt jetzt den Wert vor Anwenden der Regeln an.
+-Neue Regel: In Datum konvertieren
+-Selbst erstellte Regeln können jetzt per Drag&Drop verschoben werden in der Liste
+-Stored Procedures sind jetzt einspielbar
+-Bug gefixt: Kommentare werden jetzt korrekt gespeichert
+-Neue Regeln: Alles groß, Alles klein, Anfangsbuchstabe jedes Wortes groß
+
+Version 02.09 16:51
+-Drag & Drop von Regeln funktioniert intuitiver: Es können Regeln aus einer Spalte entfernt werden indem man Sie an eine beliebige nicht gültige Stelle im Fenster zieht
+-Selektierte Regeln werden korrekt hervorgehoben
+-Sortierkriterien können jetzt per Doppelclick hinzugefügt werden
+-Die Tab-Reihenfolge beim "Neuen Regel Erstellen" Dialog ist jetzt besser, wenn auch noch nicht perfekt (leider keine Lösung in Sicht, da vertracktes Problem mit Child und Parent Steuerelementen)
+-Selektionen von Reihen (z.B. bei verschiedenen Zeilen) verdecken jetzt nicht mehr die Schrift
+-Das leichte Beige im Regel-Editor wird angezeigt wenn man eine Regel auf die Spalte angewendet hat und diese Regel für eine Zelle eine echte Auswirkung hat
+-Im Regelfenster kann nun mit ALT+N eine neue Regel erzeugt werden
+-"Schneide Zeichen ab" Regel hinzugefügt
+-"Konvertiere in Zeit" Regel hinzugefügt
+-Kommentare für Regeln
+-Regeln können bearbeitet werden

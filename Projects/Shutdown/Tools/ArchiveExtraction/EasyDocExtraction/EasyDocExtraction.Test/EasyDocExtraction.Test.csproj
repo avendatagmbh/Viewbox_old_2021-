@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{441A3D3E-B658-4CDF-9B68-1B5EFCCBD15E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EasyDocExtraction.Test</RootNamespace>
+    <AssemblyName>EasyDocExtraction.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\..\..\..\..\..\Assemblies\32Bit\External\MoQ\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Test_ArchivedDocumentConverter.cs" />
+    <Compile Include="Test_ArchivedItemConverter.cs" />
+    <Compile Include="Test_EasyRepository.cs" />
+    <Compile Include="Test_FieldValueConverter.cs" />
+    <Compile Include="Helper\EasyDocExtractionHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test_Base.cs" />
+    <Compile Include="Test_EasyMetadataExtractor.cs" />
+    <Compile Include="Test_FieldDefinitionConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EasyDocExtractionClient\EasyDocExtractionClient.csproj">
+      <Project>{C21B930F-333E-4FC0-9930-857AC8114502}</Project>
+      <Name>EasyDocExtractionClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyDocExtraction\EasyDocExtraction.csproj">
+      <Project>{8E24E0A2-35D4-453E-8978-805DD30F8782}</Project>
+      <Name>EasyDocExtraction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\BELEGE.001\0.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BELEGE.001\1.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BELEGE.002\2.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BELEGE.003\3.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BELEGE.004\4.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BELEGE.004\5.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BELEGE.005\6.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BELEGE.006\7.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BELEGE.008\Auftragsb-4.tif" />
+    <Content Include="Resources\BELEGE.009\Auftragsb-1.tif" />
+    <Content Include="Resources\BELEGE.010\Lieferschein5.tif" />
+    <Content Include="Resources\BELEGE.011\Lieferschein2.tif" />
+    <Content Include="Resources\BELEGE.012\Rechnung6.tif" />
+    <Content Include="Resources\BELEGE.013\Rechnung 3.tif" />
+    <Content Include="Resources\MEDIA.001\0.JPG" />
+    <Content Include="Resources\MEDIA.002\0.JPG" />
+    <Content Include="Resources\MEDIA.003\6.JPG" />
+    <Content Include="Resources\MEDIA.004\0.jpg" />
+    <Content Include="Resources\MEDIA.005\4.jpg" />
+    <Content Include="Resources\MEDIA.006\0.jpg" />
+    <Content Include="Resources\MEDIA.007\0.JPG" />
+    <Content Include="Resources\MEDIA.009\0.JPG" />
+    <Content Include="Resources\MEDIA.010\0.JPG" />
+    <Content Include="Resources\MEDIA.013\0.jpg" />
+    <Content Include="Resources\MEDIA.014\0.JPG" />
+    <Content Include="Resources\MEDIA.015\0.JPG" />
+    <Content Include="Resources\MEDIA.016\0.JPG" />
+    <Content Include="Resources\MEDIA.017\0.jpg" />
+    <Content Include="Resources\MEDIA.018\IMG_0423.JPG" />
+    <Content Include="Resources\MEDIA.018\IMG_0523.JPG" />
+    <Content Include="Resources\MEDIA.018\IMG_0535.JPG" />
+    <Content Include="Resources\MEDIA.021\681.tif" />
+    <Content Include="Resources\MEDIA.022\682.tif" />
+    <Content Include="Resources\MEDIA.023\683.tif" />
+    <Content Include="Resources\MEDIA.024\0.JPG" />
+    <Content Include="Resources\OFFICE.005\4.BMP" />
+    <Content Include="Resources\OFFICE.005\5.BMP" />
+    <Content Include="Resources\OFFICE.005\6.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\BELEGE" />
+    <None Include="Resources\CORRUPTED" />
+    <None Include="Resources\MEDIA" />
+    <None Include="Resources\MEDIA.019\0.DWG" />
+    <None Include="Resources\MEDIA.020\0.DWG" />
+    <None Include="Resources\OFFICE" />
+    <None Include="Resources\OFFICE.001\0.rtf" />
+    <None Include="Resources\OFFICE.002\1.DOC" />
+    <None Include="Resources\OFFICE.003\2.XLS" />
+    <None Include="Resources\PRIVAT" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\BELEGE.007\" />
+    <Folder Include="Resources\MEDIA.008\" />
+    <Folder Include="Resources\MEDIA.011\" />
+    <Folder Include="Resources\MEDIA.012\" />
+    <Folder Include="Resources\MEDIA.025\" />
+    <Folder Include="Resources\OFFICE.004\" />
+    <Folder Include="Resources\OFFICE.006\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

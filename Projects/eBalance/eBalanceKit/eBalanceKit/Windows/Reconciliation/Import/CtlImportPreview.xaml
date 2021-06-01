@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Reconciliation.Import.CtlImportPreview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controlsImport="clr-namespace:eBalanceKit.Controls.BalanceList"
+             xmlns:Import="clr-namespace:eBalanceKitBusiness.Import;assembly=eBalanceKitBusiness"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" MinHeight="300" MinWidth="200">
+    <Grid MinHeight="300">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"  />
+            <RowDefinition Height="Auto"  />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Margin="0,2,0,0" Style="{StaticResource GroupBoxBorder}">
+            <StackPanel Margin="5">
+                <Grid Height="Auto" Name="grid1" HorizontalAlignment="Stretch" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label Content="{x:Static Localisation:ResourcesCommon.Separator}" Margin="0" Padding="0,2,5,0" Grid.Column="0" Height="Auto" HorizontalAlignment="Left" Name="lblSeparator" VerticalAlignment="Top" />
+                    <Label Content="{x:Static Localisation:ResourcesCommon.TextDelimiter}" Margin="0" Padding="0,2,5,0" Grid.Column="1" Height="Auto" HorizontalAlignment="Left" Name="lblMark" VerticalAlignment="Top" />
+                    <Label Content="{x:Static Localisation:ResourcesCommon.Encoding}" Margin="0" Padding="0,2,5,0" Grid.Column="2" Height="Auto" HorizontalAlignment="Left" Name="lblEncoding" VerticalAlignment="Top" />
+                    <ComboBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Margin="0" MinWidth="50" IsEditable="True"  Name="cboSeperator" Text="{Binding Separator, UpdateSourceTrigger=PropertyChanged}">
+                        <ComboBoxItem Content=";" IsSelected="True" />
+                        <ComboBoxItem Content="," />
+                        <ComboBoxItem Content="|" />
+                    </ComboBox>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Margin="0"  HorizontalAlignment="Left" MinWidth="50" IsEditable="True"  Name="cboTextDelimiter" Text="{Binding TextDelimiter, UpdateSourceTrigger=PropertyChanged}">
+                        <ComboBoxItem Content="&quot;" IsSelected="True" />
+                        <ComboBoxItem Content="'" />
+                    </ComboBox>
+                    <ComboBox Grid.Row="1" Grid.Column="2" Margin="0"  Width="Auto" x:Name="cboEncoding" ItemsSource="{Binding Source={x:Static Import:Encodings.AvailableEncodings}}" HorizontalAlignment="Left" MinWidth="100"
+                                      SelectedItem="{Binding Encoding}" DisplayMemberPath="EncodingName"   />
+                </Grid>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource GroupBoxBorder}" Height="Auto">
+            <Grid Margin="5" Height="Auto" Name="grid2" HorizontalAlignment="Stretch" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Content="{x:Static Localisation:ResourcesCommon.Files}" Grid.Column="0" Margin="0" Padding="0,2,5,0" Name="lblFiles" VerticalAlignment="Center" />
+                <ComboBox Grid.Row="0" Grid.Column="1" x:Name="cboFiles" ItemsSource="{Binding Path=Preview.CsvFileNames}" 
+                                      Margin="5" SelectionChanged="CboFiles_OnSelectionChanged" />
+                <Button Grid.Row="0" Grid.Column="2" Margin="5" x:Name="btnPrev" Content="{x:Static Localisation:ResourcesReconciliation.ImportPreviousButton}" Click="btnPrev_Click" IsEnabled="{Binding Preview.IsPreviousAllowed}" ></Button>
+                <Button Grid.Row="0" Grid.Column="3" Margin="5" x:Name="btnNext" Content="{x:Static Localisation:ResourcesReconciliation.ImportNextButton}" Click="btnNext_Click" IsEnabled="{Binding Preview.IsNextAllowed}" ></Button>
+            </Grid>
+        </Border>
+        <Border Grid.Row="2" Margin="0,2,0,0" Style="{StaticResource GroupBoxBorder}" Height="Auto">
+            <Grid Height="Auto" Width="Auto" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <controlsImport:ImportDataPreview Grid.Row="0" x:Name="ctlPreview" Margin="5,10,5,5" />
+                <Separator Grid.Row="1"></Separator>
+                <Label Grid.Row="2" Content="" Height="Auto" Width="Auto" HorizontalAlignment="Left" Margin="5,0,5,5" Name="lblCurrentFile" VerticalAlignment="Top" />
+            </Grid>            
+        </Border>
+    </Grid>
+</UserControl>

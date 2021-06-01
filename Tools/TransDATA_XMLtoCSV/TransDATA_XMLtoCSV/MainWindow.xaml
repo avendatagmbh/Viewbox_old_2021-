@@ -1,0 +1,29 @@
+﻿<Window x:Class="TransDATA_XMLtoCSV.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="tbXMLFile"/>
+            <Button Content="Durchsuchen" Name="btnBrowseXMLFile" Click="btnBrowseXMLFile_Click" Grid.Column="1"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="tbCSVFile"/>
+            <Button Content="Durchsuchen" Name="btnBrowseCSVFile" Click="btnBrowseCSVFile_Click" Grid.Column="1"/>
+        </Grid>
+        <Button Content="Start" Name="btnStart" Click="btnStart_Click" Grid.Row="2" HorizontalAlignment="Right" Margin="10"/>
+    </Grid>
+</Window>

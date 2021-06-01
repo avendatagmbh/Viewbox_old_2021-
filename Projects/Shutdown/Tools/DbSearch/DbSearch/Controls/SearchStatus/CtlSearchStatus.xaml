@@ -1,0 +1,175 @@
+﻿<UserControl x:Class="DbSearch.Controls.SearchStatus.CtlSearchStatus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Enums="clr-namespace:DbSearchLogic.ProcessQueue;assembly=DbSearchLogic"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:Keys="clr-namespace:DbSearchLogic.SearchCore.Keys;assembly=DbSearchLogic" mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="700" >    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+    
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" MinHeight="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" MinHeight="100" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" MinHeight="100"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Aktuell bearbeitete Abfragen" />            
+                <DataGrid Grid.Row="1" ItemsSource="{Binding QueryInfos}" AutoGenerateColumns="false" MinHeight="300">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Abfrage" Width="Auto"  
+                                               Binding="{Binding QueryConfig.Name, Mode=OneWay}" 
+                                               IsReadOnly="True"/>
+                    
+                        <DataGridTemplateColumn Header="Fortschritt" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ProgressBar Value="{Binding State.Progress, Mode=OneWay}" Minimum="0" Maximum="100" Height="20" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Grid.Row="2" Name="btnStopThreads" Click="btnStopThreads_Click">Alle Suchen abbrechen</Button>
+            </Grid>
+            <GridSplitter Grid.Row="1" ResizeDirection="Rows" Width="Auto" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"></GridSplitter>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Threads" />
+                <DataGrid Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Threads}" AutoGenerateColumns="false" MinHeight="300">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Abfrage" Width="Auto"  
+                                                   Binding="{Binding QueryName, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+                
+                        <DataGridTextColumn Header="Beschreibung" Width="Auto"  
+                                                   Binding="{Binding Description, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Tabelle" Width="Auto"  
+                                                   Binding="{Binding CurrentTable, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+                
+                        <DataGridTextColumn Header="Spalte" Width="Auto"  
+                                                   Binding="{Binding CurrentColumn, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+                
+                        <DataGridTextColumn Header="Zeilen" Width="Auto"  
+                                                   Binding="{Binding TableCount, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+                
+                        <DataGridTextColumn Header="Zeit" Width="Auto"  
+                                                   Binding="{Binding TimeWorked, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <GridSplitter Grid.Row="3" ResizeDirection="Rows" Width="Auto" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"></GridSplitter>
+            <Grid Grid.Row="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <DataGrid Grid.Row="0" Grid.Column="0" Name="dgKeySearch" ItemsSource="{Binding InitiatedKeySearches}" AutoGenerateColumns="false" >
+                    <!--<DataGrid.RowStyle>
+                        <Style>
+                            <Setter Property="DataGridRow.IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                        </Style>
+                    </DataGrid.RowStyle>-->
+                    <DataGrid.Columns>
+                        <DataGridCheckBoxColumn Width="Auto" Binding="{Binding IsSelected, Mode=TwoWay}"  />
+                        <DataGridTemplateColumn Header="Type" Width="Auto" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Image x:Name="pictureFK" Source="..\..\Resources\foreign_key16.png">
+                                            <Image.Style>
+                                                <Style>
+                                                    <Setter Property="Image.Visibility" Value="Collapsed" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding SearchType}">
+                                                            <DataTrigger.Value>
+                                                                <Enums:KeySearchTypeEnum>ForeignKeySearch</Enums:KeySearchTypeEnum>
+                                                            </DataTrigger.Value>
+                                                            <Setter Property="Image.Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                        <Image x:Name="picturePK" Source="..\..\Resources\key16.png">
+                                            <Image.Style>
+                                                <Style>
+                                                    <Setter Property="Image.Visibility" Value="Collapsed" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding SearchType}">
+                                                            <DataTrigger.Value>
+                                                                <Enums:KeySearchTypeEnum>PrimaryKeySearch</Enums:KeySearchTypeEnum>
+                                                            </DataTrigger.Value>
+                                                            <Setter Property="Image.Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <!--<DataGridTextColumn Header="Search Type" Width="Auto"
+                                                   Binding="{Binding SearchType, Mode=OneWay}"
+                                                   IsReadOnly="True"/>-->
+                        <DataGridTextColumn Header="Context" Width="Auto"
+                                                   Binding="{Binding Info, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Started" Width="Auto"
+                                                   Binding="{Binding SearchStarted, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Status" Width="Auto"
+                                                   Binding="{Binding TaskStatus, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Status Description" Width="Auto"  
+                                                   Binding="{Binding StatusDescription, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>                
+                        <DataGridTextColumn Header="Key candidates" Width="Auto"  
+                                                   Binding="{Binding NumberOfKeyCandidates, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Keys found" Width="Auto"  
+                                                   Binding="{Binding NumberOfKeysFound, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+
+                        <DataGridTextColumn Header="Keys processed" Width="Auto"  
+                                                   Binding="{Binding NumberOfKeysProcessed, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>
+                        <!--<DataGridTextColumn Header="Progress" Width="Auto"  
+                                                   Binding="{Binding Progress, Mode=OneWay}" 
+                                                   IsReadOnly="True"/>-->
+                
+                        <DataGridTemplateColumn Header="Progress" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ProgressBar Name="progressTask" Value="{Binding Progress, Mode=OneWay}" Minimum="0" Maximum="100" Height="20" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Grid.Row="1" Name="btnRemoveSelectedSearches" Click="btnRemoveSelectedSearches_Click">Remove and stop selected</Button>
+            </Grid>
+        </Grid>
+    </Grid>    
+</UserControl>

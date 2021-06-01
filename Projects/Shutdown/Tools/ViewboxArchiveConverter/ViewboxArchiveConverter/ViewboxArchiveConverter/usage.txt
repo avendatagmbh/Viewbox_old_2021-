@@ -1,0 +1,18 @@
+﻿-a "C:\\temp\test" -t "C:\\temp\test\Thumbnails" -c true -l "c:\\temp\test\x.log" -i *.fax
+
+Convert .docx files to thumbnail:
+-a "C:\\temp\test" -t "C:\\temp\test\Thumbnails" -c true -l "c:\\temp\test\x.log" -i *.docx -f .jpg
+
+Convert .fax files to thumbnail:
+-a "C:\\temp\test" -t "C:\\temp\test\Thumbnails" -c true -l "c:\\temp\test\x.log" -i *.fax -f .jpg
+
+Convert .fax files to pdf:
+-a "C:\\temp\test" -e "C:\\temp\test\PDFs" -c true -l "c:\\temp\test\x.log" -i *.fax -f .pdf
+-a "C:\\temp\archive_test" -e "C:\\temp\archive_test\PDFs" -c true -l "c:\\temp\test\x.log" -i *.fax -f .pdf
+
+Convert .md files to pdf and thumbnail:
+-a "C:\\temp\test" -t "C:\\temp\test\Thumbnails"  -e "C:\\temp\test\PDFs" -c true -l "c:\\temp\test\x.log" -i *.md -n true
+
+Reorder files to directory structure because Windows has performance problems with directories containing more than million files (the document needs to be existing in the belegarchiv table (view))
+-r true -a "C:\\temp\test" -t "C:\\temp\test\Thumbnail" -l "c:\\temp\test\x.log" -d viewbox -y sap_wesslingen_020
+-r true -a "C:\\temp\archive_test" -t "C:\\temp\archive_test\Thumbnails" -l "c:\\temp\test\x.log" -d viewbox -y sap_wesslingen_020

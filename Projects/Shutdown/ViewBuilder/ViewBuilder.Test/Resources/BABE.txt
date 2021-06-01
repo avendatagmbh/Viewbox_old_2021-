@@ -1,0 +1,1204 @@
+
+ BABE Balance Sheet Belgium
+  |
+  |--   1000000 Aktiva                    Aktiva
+  |   |
+  |   |--   1010000 Vaste aktiva
+  |   |   |
+  |   |   |--   1011000 I. Oprichtingskosten
+  |   |   |   |
+  |   |   |   ---   CABE0000200000 - 0000209999 X|X
+  |   |   |       |
+  |   |   |       |-----0000200000 Kein Text vorhanden
+  |   |   |       |-----0000201000 Kein Text vorhanden
+  |   |   |       |-----0000202000 Kein Text vorhanden
+  |   |   |       ------0000204000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   1012000 II Immat. vaste activa
+  |   |   |   |
+  |   |   |   ---   CABE0000210000 - 0000219999 X|X
+  |   |   |       |
+  |   |   |       |-----0000210000 Kein Text vorhanden
+  |   |   |       |-----0000211000 Kein Text vorhanden
+  |   |   |       |-----0000212000 Kein Text vorhanden
+  |   |   |       ------0000213000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   1013000 III. Mat. vaste aktiva
+  |   |   |   |
+  |   |   |   |--   1013010 A. Terreinen en gebouwen
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000220000 - 0000229999 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000220000 Kein Text vorhanden
+  |   |   |   |       |-----0000220090 Kein Text vorhanden
+  |   |   |   |       |-----0000221000 Kein Text vorhanden
+  |   |   |   |       |-----0000221090 Kein Text vorhanden
+  |   |   |   |       |-----0000222000 Kein Text vorhanden
+  |   |   |   |       ------0000223000 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   |--   1013020 B. Installaties
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000230000 - 0000239999 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000230000 Kein Text vorhanden
+  |   |   |   |       ------0000230090 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   |--   1013030 C. Meubilair
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000240000 - 0000249999 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000240000 Kein Text vorhanden
+  |   |   |   |       |-----0000240090 Kein Text vorhanden
+  |   |   |   |       |-----0000240100 Kein Text vorhanden
+  |   |   |   |       ------0000240190 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   |--   1013040 D. leasing
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000250000 - 0000259999 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000250000 Kein Text vorhanden
+  |   |   |   |       |-----0000251000 Kein Text vorhanden
+  |   |   |   |       ------0000252000 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   |--   1013050 D. Overige mat. vaste aktiva
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000260000 - 0000269999 X|X
+  |   |   |   |       |
+  |   |   |   |       ------0000260000 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   ---   1013060 F. Activa in aanbouw
+  |   |   |       |
+  |   |   |       ---   CABE0000270000 - 0000279999 X|X
+  |   |   |           |
+  |   |   |           |-----0000270000 Kein Text vorhanden
+  |   |   |           ------0000270090 Kein Text vorhanden
+  |   |   |
+  |   |   ---   1014000 IV. Financiel vaste aktiva
+  |   |       |
+  |   |       |--   1014010 A. VErbonden ondernemingen
+  |   |       |   |
+  |   |       |   |--   1014011 1. deelnemingen
+  |   |       |   |   |
+  |   |       |   |   ---   CABE0000280000 - 0000280999 X|X
+  |   |       |   |       |
+  |   |       |   |       |-----0000280000 Kein Text vorhanden
+  |   |       |   |       |-----0000280100 Kein Text vorhanden
+  |   |       |   |       |-----0000280800 Kein Text vorhanden
+  |   |       |   |       ------0000280900 Kein Text vorhanden
+  |   |       |   |
+  |   |       |   ---   1014012 2. vorderingen
+  |   |       |       |
+  |   |       |       ---   CABE0000281000 - 0000281999 X|X
+  |   |       |           |
+  |   |       |           |-----0000281000 Kein Text vorhanden
+  |   |       |           |-----0000281100 Kein Text vorhanden
+  |   |       |           |-----0000281200 Kein Text vorhanden
+  |   |       |           |-----0000281700 Kein Text vorhanden
+  |   |       |           ------0000281900 Kein Text vorhanden
+  |   |       |
+  |   |       |--   1014020 B. ondern met deelneming
+  |   |       |   |
+  |   |       |   |--   1014021 1. deelnemingen
+  |   |       |   |   |
+  |   |       |   |   ---   CABE0000282000 - 0000282999 X|X
+  |   |       |   |       |
+  |   |       |   |       |-----0000282000 Kein Text vorhanden
+  |   |       |   |       |-----0000282100 Kein Text vorhanden
+  |   |       |   |       |-----0000282800 Kein Text vorhanden
+  |   |       |   |       ------0000282900 Kein Text vorhanden
+  |   |       |   |
+  |   |       |   ---   1014022 2. vorderingen
+  |   |       |       |
+  |   |       |       ---   CABE0000283000 - 0000283999 X|X
+  |   |       |           |
+  |   |       |           |-----0000283000 Kein Text vorhanden
+  |   |       |           |-----0000283100 Kein Text vorhanden
+  |   |       |           |-----0000283200 Kein Text vorhanden
+  |   |       |           |-----0000283700 Kein Text vorhanden
+  |   |       |           ------0000283900 Kein Text vorhanden
+  |   |       |
+  |   |       ---   1014030 C. Andere
+  |   |           |
+  |   |           |--   1014031 1. aandelen
+  |   |           |   |
+  |   |           |   ---   CABE0000284000 - 0000284999 X|X
+  |   |           |       |
+  |   |           |       |-----0000284000 Kein Text vorhanden
+  |   |           |       |-----0000284100 Kein Text vorhanden
+  |   |           |       |-----0000284800 Kein Text vorhanden
+  |   |           |       ------0000284900 Kein Text vorhanden
+  |   |           |
+  |   |           ---   1014032 2. vorderingen
+  |   |               |
+  |   |               |--   CABE0000285000 - 0000285999 X|X
+  |   |               |   |
+  |   |               |   |-----0000285000 Kein Text vorhanden
+  |   |               |   |-----0000285100 Kein Text vorhanden
+  |   |               |   |-----0000285200 Kein Text vorhanden
+  |   |               |   |-----0000285700 Kein Text vorhanden
+  |   |               |   ------0000285900 Kein Text vorhanden
+  |   |               |
+  |   |               ---   CABE0000288000 - 0000288999 X|X
+  |   |                   |
+  |   |                   ------0000288000 Kein Text vorhanden
+  |   |
+  |   ---   1020000 Vlottende aktiva
+  |       |
+  |       |--   1021000 V. Vorderingen > 1 J
+  |       |   |
+  |       |   |--   1021010 A. handelsvorderingen
+  |       |   |   |
+  |       |   |   ---   CABE0000290000 - 0000290999 X|X
+  |       |   |       |
+  |       |   |       |-----0000290000 Kein Text vorhanden
+  |       |   |       |-----0000290100 Kein Text vorhanden
+  |       |   |       |-----0000290600 Kein Text vorhanden
+  |       |   |       |-----0000290700 Kein Text vorhanden
+  |       |   |       ------0000290900 Kein Text vorhanden
+  |       |   |
+  |       |   ---   1021020 B. Overige
+  |       |       |
+  |       |       ---   CABE0000291000 - 0000291999 X|X
+  |       |           |
+  |       |           |-----0000291000 Kein Text vorhanden
+  |       |           |-----0000291100 Kein Text vorhanden
+  |       |           |-----0000291700 Kein Text vorhanden
+  |       |           ------0000291900 Kein Text vorhanden
+  |       |
+  |       |--   1022000 VI. Voorraden en bestellingen
+  |       |   |
+  |       |   |--   1022010 A. Voorraden
+  |       |   |   |
+  |       |   |   |--   1022011 1. grond stoffen
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000300000 - 0000319999 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000300000 Kein Text vorhanden
+  |       |   |   |       |-----0000300999 Kein Text vorhanden
+  |       |   |   |       |-----0000301010 Kein Text vorhanden
+  |       |   |   |       |-----0000309000 Kein Text vorhanden
+  |       |   |   |       |-----0000310000 Kein Text vorhanden
+  |       |   |   |       |-----0000310010 Kein Text vorhanden
+  |       |   |   |       ------0000319000 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   |--   1022012 2. Goed. in bewerkinge
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000320000 - 0000329999 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000320000 Kein Text vorhanden
+  |       |   |   |       ------0000329000 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   |--   1022013 3. gereed produkt
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000330000 - 0000339999 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000330000 Kein Text vorhanden
+  |       |   |   |       ------0000339000 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   |--   1022014 4. handelsgoed
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000340000 - 0000349999 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000340000 Kein Text vorhanden
+  |       |   |   |       ------0000349000 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   |--   1022015 5. Onr. goed.
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000350000 - 0000359999 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000350000 Kein Text vorhanden
+  |       |   |   |       ------0000359000 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   ---   1022016 6. vooruitbetalingen
+  |       |   |       |
+  |       |   |       ---   CABE0000360000 - 0000369999 X|X
+  |       |   |           |
+  |       |   |           |-----0000360000 Kein Text vorhanden
+  |       |   |           ------0000369000 Kein Text vorhanden
+  |       |   |
+  |       |   ---   1022020 B. Bestellungen
+  |       |       |
+  |       |       ---   CABE0000370000 - 0000379999 X|X
+  |       |           |
+  |       |           |-----0000370000 Kein Text vorhanden
+  |       |           |-----0000371000 Kein Text vorhanden
+  |       |           ------0000379000 Kein Text vorhanden
+  |       |
+  |       |--   1023000 VII. Vorderingen < 1 j
+  |       |   |
+  |       |   |--   1023010 A. handelsvorderingen
+  |       |   |   |
+  |       |   |   |--   CABE0000400000 - 0000400999 X|_
+  |       |   |   |   |
+  |       |   |   |   |-----0000400000 Kein Text vorhanden
+  |       |   |   |   |-----0000400010 Kein Text vorhanden
+  |       |   |   |   |-----0000400020 Kein Text vorhanden
+  |       |   |   |   |-----0000400030 Kein Text vorhanden
+  |       |   |   |   |-----0000400060 Kein Text vorhanden
+  |       |   |   |   |-----0000400080 Kein Text vorhanden
+  |       |   |   |   ------0000400090 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   |--   CABE0000401000 - 0000409999 X|X
+  |       |   |   |   |
+  |       |   |   |   |-----0000401000 Kein Text vorhanden
+  |       |   |   |   |-----0000404000 Kein Text vorhanden
+  |       |   |   |   |-----0000404100 Kein Text vorhanden
+  |       |   |   |   |-----0000404200 Kein Text vorhanden
+  |       |   |   |   |-----0000406000 Kein Text vorhanden
+  |       |   |   |   |-----0000406310 Kein Text vorhanden
+  |       |   |   |   |-----0000406320 Kein Text vorhanden
+  |       |   |   |   |-----0000406330 Kein Text vorhanden
+  |       |   |   |   |-----0000407000 Kein Text vorhanden
+  |       |   |   |   ------0000409000 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   ---   CABE0000440000 - 0000440999 X|_
+  |       |   |       |
+  |       |   |       |-----0000440000 Kein Text vorhanden
+  |       |   |       |-----0000440020 Kein Text vorhanden
+  |       |   |       |-----0000440030 Kein Text vorhanden
+  |       |   |       |-----0000440040 Kein Text vorhanden
+  |       |   |       |-----0000440050 Kein Text vorhanden
+  |       |   |       |-----0000440060 Kein Text vorhanden
+  |       |   |       |-----0000440080 Kein Text vorhanden
+  |       |   |       ------0000440090 Kein Text vorhanden
+  |       |   |
+  |       |   ---   1023020 B. OVerige
+  |       |       |
+  |       |       ---   CABE0000410000 - 0000419999 X|X
+  |       |           |
+  |       |           |-----0000410000 Kein Text vorhanden
+  |       |           |-----0000411000 Kein Text vorhanden
+  |       |           |-----0000411060 Kein Text vorhanden
+  |       |           |-----0000412000 Kein Text vorhanden
+  |       |           |-----0000412500 Kein Text vorhanden
+  |       |           |-----0000412800 Kein Text vorhanden
+  |       |           |-----0000414000 Kein Text vorhanden
+  |       |           |-----0000416000 Kein Text vorhanden
+  |       |           |-----0000416100 Kein Text vorhanden
+  |       |           |-----0000416110 Kein Text vorhanden
+  |       |           |-----0000416120 Kein Text vorhanden
+  |       |           |-----0000416130 Kein Text vorhanden
+  |       |           |-----0000416140 Kein Text vorhanden
+  |       |           |-----0000416150 Kein Text vorhanden
+  |       |           |-----0000416160 Kein Text vorhanden
+  |       |           |-----0000416170 Kein Text vorhanden
+  |       |           |-----0000416200 Kein Text vorhanden
+  |       |           |-----0000416300 Kein Text vorhanden
+  |       |           |-----0000416301 Kein Text vorhanden
+  |       |           |-----0000416310 Kein Text vorhanden
+  |       |           |-----0000416320 Kein Text vorhanden
+  |       |           |-----0000416330 Kein Text vorhanden
+  |       |           |-----0000416340 Kein Text vorhanden
+  |       |           |-----0000416350 Kein Text vorhanden
+  |       |           |-----0000416360 Kein Text vorhanden
+  |       |           |-----0000416400 Kein Text vorhanden
+  |       |           |-----0000416500 Kein Text vorhanden
+  |       |           |-----0000416900 Kein Text vorhanden
+  |       |           |-----0000417000 Kein Text vorhanden
+  |       |           |-----0000418000 Kein Text vorhanden
+  |       |           |-----0000418001 Kein Text vorhanden
+  |       |           |-----0000418002 Kein Text vorhanden
+  |       |           ------0000419000 Kein Text vorhanden
+  |       |
+  |       |--   1024000 VII Geldbeleggingen
+  |       |   |
+  |       |   |--   1024010 A. eigen aandele
+  |       |   |   |
+  |       |   |   ---   CABE0000500000 - 0000509999 X|X
+  |       |   |       |
+  |       |   |       ------0000500000 Kein Text vorhanden
+  |       |   |
+  |       |   ---   1024020 B. Overige beleggingen
+  |       |       |
+  |       |       ---   CABE0000510000 - 0000539999 X|X
+  |       |           |
+  |       |           |-----0000510000 Kein Text vorhanden
+  |       |           |-----0000511000 Kein Text vorhanden
+  |       |           |-----0000519000 Kein Text vorhanden
+  |       |           |-----0000520000 Kein Text vorhanden
+  |       |           |-----0000529000 Kein Text vorhanden
+  |       |           |-----0000530000 Kein Text vorhanden
+  |       |           |-----0000531000 Kein Text vorhanden
+  |       |           |-----0000531100 Kein Text vorhanden
+  |       |           |-----0000531200 Kein Text vorhanden
+  |       |           |-----0000531300 Kein Text vorhanden
+  |       |           |-----0000532000 Kein Text vorhanden
+  |       |           ------0000539000 Kein Text vorhanden
+  |       |
+  |       |--   1025000 IX liquide middelen
+  |       |   |
+  |       |   |--   CABE0000540000 - 0000579999 X|X
+  |       |   |   |
+  |       |   |   |-----0000540000 Kein Text vorhanden
+  |       |   |   |-----0000550000 Kein Text vorhanden
+  |       |   |   |-----0000550001 Kein Text vorhanden
+  |       |   |   |-----0000550009 Kein Text vorhanden
+  |       |   |   |-----0000550010 Kein Text vorhanden
+  |       |   |   |-----0000550020 Kein Text vorhanden
+  |       |   |   |-----0000550030 Kein Text vorhanden
+  |       |   |   |-----0000550055 Kein Text vorhanden
+  |       |   |   |-----0000550065 Kein Text vorhanden
+  |       |   |   |-----0000560000 Kein Text vorhanden
+  |       |   |   |-----0000561000 Kein Text vorhanden
+  |       |   |   |-----0000570000 Kein Text vorhanden
+  |       |   |   |-----0000570500 Kein Text vorhanden
+  |       |   |   ------0000578000 Kein Text vorhanden
+  |       |   |
+  |       |   ---   CABE0000580000 - 0000589999 X|X
+  |       |       |
+  |       |       ------0000580000 Kein Text vorhanden
+  |       |
+  |       ---   1026000 X. overlopende rekeningen
+  |           |
+  |           ---   CABE0000490000 - 0000491999 X|X
+  |               |
+  |               |-----0000490000 Kein Text vorhanden
+  |               ------0000491000 Kein Text vorhanden
+  |
+  |--   2000000 Passiva                   Passiva
+  |   |
+  |   |--   2010000 Kapitaal en reserves
+  |   |   |
+  |   |   |--   2011000 I. Kapitaal
+  |   |   |   |
+  |   |   |   |--   2011010 A. geplaatst kapitaal
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000100000 - 0000100999 X|X
+  |   |   |   |       |
+  |   |   |   |       ------0000100000 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   ---   2011020 B. niet opgevraagd
+  |   |   |       |
+  |   |   |       ---   CABE0000101000 - 0000109999 X|X
+  |   |   |           |
+  |   |   |           ------0000101000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   2012000 II.  UITGIFTEPREMIES
+  |   |   |   |
+  |   |   |   ---   CABE0000110000 - 0000119999 X|X
+  |   |   |       |
+  |   |   |       ------0000110000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   2013000 III. herwaarderingmeerw;
+  |   |   |   |
+  |   |   |   ---   CABE0000120000 - 0000129999 X|X
+  |   |   |       |
+  |   |   |       |-----0000120000 Kein Text vorhanden
+  |   |   |       |-----0000121000 Kein Text vorhanden
+  |   |   |       |-----0000122000 Kein Text vorhanden
+  |   |   |       |-----0000123000 Kein Text vorhanden
+  |   |   |       ------0000124000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   2014000 IV Reserves
+  |   |   |   |
+  |   |   |   |--   2014010 A. Wettelijke reserve
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000130000 - 0000130999 X|X
+  |   |   |   |       |
+  |   |   |   |       ------0000130000 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   |--   2014020 B. onbeschikbare reserves
+  |   |   |   |   |
+  |   |   |   |   |--   2014021 1. Voor eigen aandelen
+  |   |   |   |   |   |
+  |   |   |   |   |   ---   CABE0000131000 - 0000131099 X|X
+  |   |   |   |   |       |
+  |   |   |   |   |       ------0000131000 Kein Text vorhanden
+  |   |   |   |   |
+  |   |   |   |   ---   2014022 2. andere
+  |   |   |   |       |
+  |   |   |   |       ---   CABE0000131100 - 0000131199 X|X
+  |   |   |   |           |
+  |   |   |   |           ------0000131100 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   |--   2014030 C. Belastingvrije reserves
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000132000 - 0000132999 X|X
+  |   |   |   |       |
+  |   |   |   |       ------0000132000 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   ---   2014040 D. beschikbare reserves
+  |   |   |       |
+  |   |   |       ---   CABE0000133000 - 0000133999 X|X
+  |   |   |           |
+  |   |   |           ------0000133000 Kein Text vorhanden
+  |   |   |
+  |   |   |-----2015000 V. Overgedragen Winst /verlies  Bilanzergebnis Verlust
+  |   |   |-----1       Kein Text vorhanden             Bilanzergebnis Gewinn
+  |   |   ---   2016000 VI. Kapitaalsubsidies
+  |   |       |
+  |   |       ---   CABE0000150000 - 0000159999 X|X
+  |   |           |
+  |   |           ------0000150000 Kein Text vorhanden
+  |   |
+  |   |--   2020000 Voorzieningen en uitgest bel.
+  |   |   |
+  |   |   |--   2021000 VII.A voor risicos enkosten
+  |   |   |   |
+  |   |   |   |--   2021010 1. pensioenen
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000160000 - 0000160999 X|X
+  |   |   |   |       |
+  |   |   |   |       ------0000160000 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   |--   2021020 2. belastingen
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000161000 - 0000161999 X|X
+  |   |   |   |       |
+  |   |   |   |       ------0000161000 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   |--   2021030 3. herstellingswerken
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000162000 - 0000162999 X|X
+  |   |   |   |       |
+  |   |   |   |       ------0000162000 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   ---   2021040 4. overige
+  |   |   |       |
+  |   |   |       ---   CABE0000163000 - 0000165999 X|X
+  |   |   |           |
+  |   |   |           |-----0000163000 Kein Text vorhanden
+  |   |   |           |-----0000164000 Kein Text vorhanden
+  |   |   |           ------0000165000 Kein Text vorhanden
+  |   |   |
+  |   |   ---   2022000 B. uitgestelde belastingen
+  |   |       |
+  |   |       ---   CABE0000168000 - 0000169999 X|X
+  |   |           |
+  |   |           |-----0000168000 Kein Text vorhanden
+  |   |           |-----0000168100 Kein Text vorhanden
+  |   |           |-----0000168200 Kein Text vorhanden
+  |   |           |-----0000168700 Kein Text vorhanden
+  |   |           ------0000168800 Kein Text vorhanden
+  |   |
+  |   ---   2030000 Schulden
+  |       |
+  |       |--   2031000 VIII. Schulden > 1J
+  |       |   |
+  |       |   |--   2031010 A. financ. schulden
+  |       |   |   |
+  |       |   |   |--   2031011 1. achtegestelde leningen
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000170000 - 0000170199 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000170000 Kein Text vorhanden
+  |       |   |   |       ------0000170100 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   |--   2031012 2. niet achtergestelde lening
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000171000 - 0000171999 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000171000 Kein Text vorhanden
+  |       |   |   |       ------0000171100 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   |--   2031013 3. leasing
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000172000 - 0000172999 X|X
+  |       |   |   |       |
+  |       |   |   |       ------0000172000 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   |--   2031014 4. Kredietinstellingen
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000173000 - 0000173999 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000173000 Kein Text vorhanden
+  |       |   |   |       |-----0000173100 Kein Text vorhanden
+  |       |   |   |       ------0000173200 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   ---   2031015 5. overige
+  |       |   |       |
+  |       |   |       ---   CABE0000174000 - 0000174999 X|X
+  |       |   |           |
+  |       |   |           ------0000174000 Kein Text vorhanden
+  |       |   |
+  |       |   |--   2031020 B. handelsschulden
+  |       |   |   |
+  |       |   |   |--   2031021 1. leveranciers
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000175000 - 0000175099 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000175000 Kein Text vorhanden
+  |       |   |   |       ------0000175010 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   ---   2031022 2. te betalen wissels
+  |       |   |       |
+  |       |   |       ---   CABE0000175100 - 0000175199 X|X
+  |       |   |           |
+  |       |   |           ------0000175100 Kein Text vorhanden
+  |       |   |
+  |       |   |--   2031030 C. ontvangen vooruitbetalingen
+  |       |   |   |
+  |       |   |   ---   CABE0000176000 - 0000176999 X|X
+  |       |   |       |
+  |       |   |       ------0000176000 Kein Text vorhanden
+  |       |   |
+  |       |   ---   2031040 D. overige
+  |       |       |
+  |       |       ---   CABE0000178000 - 0000179999 X|X
+  |       |           |
+  |       |           |-----0000178000 Kein Text vorhanden
+  |       |           ------0000179000 Kein Text vorhanden
+  |       |
+  |       |--   2032000 IX. Schulden < 1J
+  |       |   |
+  |       |   |--   2032010 A. huidige portie
+  |       |   |   |
+  |       |   |   ---   CABE0000420000 - 0000429999 X|X
+  |       |   |       |
+  |       |   |       ------0000420000 Kein Text vorhanden
+  |       |   |
+  |       |   |--   2032020 B. fin. schulden
+  |       |   |   |
+  |       |   |   |--   2032021 1. kredietinst.
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000430000 - 0000433999 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000430000 Kein Text vorhanden
+  |       |   |   |       |-----0000430100 Kein Text vorhanden
+  |       |   |   |       |-----0000430200 Kein Text vorhanden
+  |       |   |   |       |-----0000430300 Kein Text vorhanden
+  |       |   |   |       |-----0000431000 Kein Text vorhanden
+  |       |   |   |       |-----0000432000 Kein Text vorhanden
+  |       |   |   |       ------0000433000 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   ---   2032022 2. overige
+  |       |   |       |
+  |       |   |       ---   CABE0000439000 - 0000439999 X|X
+  |       |   |           |
+  |       |   |           |-----0000439000 Kein Text vorhanden
+  |       |   |           |-----0000439100 Kein Text vorhanden
+  |       |   |           |-----0000439110 Kein Text vorhanden
+  |       |   |           ------0000439120 Kein Text vorhanden
+  |       |   |
+  |       |   |--   2032030 C. HANDELSSCHULDEN
+  |       |   |   |
+  |       |   |   |--   2032031 1. leveranciers
+  |       |   |   |   |
+  |       |   |   |   |--   CABE0000400000 - 0000400999 _|X
+  |       |   |   |   |   |
+  |       |   |   |   |   |-----0000400000 Kein Text vorhanden
+  |       |   |   |   |   |-----0000400010 Kein Text vorhanden
+  |       |   |   |   |   |-----0000400020 Kein Text vorhanden
+  |       |   |   |   |   |-----0000400030 Kein Text vorhanden
+  |       |   |   |   |   |-----0000400060 Kein Text vorhanden
+  |       |   |   |   |   |-----0000400080 Kein Text vorhanden
+  |       |   |   |   |   ------0000400090 Kein Text vorhanden
+  |       |   |   |   |
+  |       |   |   |   |--   CABE0000440000 - 0000440999 _|X
+  |       |   |   |   |   |
+  |       |   |   |   |   |-----0000440000 Kein Text vorhanden
+  |       |   |   |   |   |-----0000440020 Kein Text vorhanden
+  |       |   |   |   |   |-----0000440030 Kein Text vorhanden
+  |       |   |   |   |   |-----0000440040 Kein Text vorhanden
+  |       |   |   |   |   |-----0000440050 Kein Text vorhanden
+  |       |   |   |   |   |-----0000440060 Kein Text vorhanden
+  |       |   |   |   |   |-----0000440080 Kein Text vorhanden
+  |       |   |   |   |   ------0000440090 Kein Text vorhanden
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000444000 - 0000444999 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000444000 Kein Text vorhanden
+  |       |   |   |       |-----0000444010 Kein Text vorhanden
+  |       |   |   |       |-----0000444020 Kein Text vorhanden
+  |       |   |   |       |-----0000444030 Kein Text vorhanden
+  |       |   |   |       |-----0000444040 Kein Text vorhanden
+  |       |   |   |       |-----0000444050 Kein Text vorhanden
+  |       |   |   |       |-----0000444060 Kein Text vorhanden
+  |       |   |   |       |-----0000444070 Kein Text vorhanden
+  |       |   |   |       ------0000444080 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   ---   2032032 2. Wissels
+  |       |   |       |
+  |       |   |       ---   CABE0000441000 - 0000441999 X|X
+  |       |   |           |
+  |       |   |           ------0000441000 Kein Text vorhanden
+  |       |   |
+  |       |   |--   2032040 D. Ontvangen vooruitbetalingen
+  |       |   |   |
+  |       |   |   ---   CABE0000460000 - 0000469999 X|X
+  |       |   |       |
+  |       |   |       ------0000460000 Kein Text vorhanden
+  |       |   |
+  |       |   |--   2032050 E. mbt belastingen etc
+  |       |   |   |
+  |       |   |   |--   2032051 1. belastingen
+  |       |   |   |   |
+  |       |   |   |   ---   CABE0000450000 - 0000453999 X|X
+  |       |   |   |       |
+  |       |   |   |       |-----0000450000 Kein Text vorhanden
+  |       |   |   |       |-----0000450500 Kein Text vorhanden
+  |       |   |   |       |-----0000450800 Kein Text vorhanden
+  |       |   |   |       |-----0000451000 Kein Text vorhanden
+  |       |   |   |       |-----0000451060 Kein Text vorhanden
+  |       |   |   |       |-----0000452000 Kein Text vorhanden
+  |       |   |   |       |-----0000452500 Kein Text vorhanden
+  |       |   |   |       |-----0000452800 Kein Text vorhanden
+  |       |   |   |       ------0000453000 Kein Text vorhanden
+  |       |   |   |
+  |       |   |   ---   2032052 2. Bezoldigingen
+  |       |   |       |
+  |       |   |       ---   CABE0000454000 - 0000459999 X|X
+  |       |   |           |
+  |       |   |           |-----0000454000 Kein Text vorhanden
+  |       |   |           |-----0000455000 Kein Text vorhanden
+  |       |   |           |-----0000455100 Kein Text vorhanden
+  |       |   |           |-----0000456000 Kein Text vorhanden
+  |       |   |           ------0000459000 Kein Text vorhanden
+  |       |   |
+  |       |   ---   2032060 F. overige schulden
+  |       |       |
+  |       |       ---   CABE0000470000 - 0000489999 X|X
+  |       |           |
+  |       |           |-----0000470000 Kein Text vorhanden
+  |       |           |-----0000471000 Kein Text vorhanden
+  |       |           |-----0000472000 Kein Text vorhanden
+  |       |           |-----0000473000 Kein Text vorhanden
+  |       |           |-----0000480000 Kein Text vorhanden
+  |       |           |-----0000486100 Kein Text vorhanden
+  |       |           |-----0000486200 Kein Text vorhanden
+  |       |           |-----0000488000 Kein Text vorhanden
+  |       |           |-----0000488100 Kein Text vorhanden
+  |       |           |-----0000489000 Kein Text vorhanden
+  |       |           ------0000489300 Kein Text vorhanden
+  |       |
+  |       ---   2033000 X. overl. rek
+  |           |
+  |           ---   CABE0000492000 - 0000499999 X|X
+  |               |
+  |               |-----0000492000 Kein Text vorhanden
+  |               |-----0000493000 Kein Text vorhanden
+  |               |-----0000499000 Kein Text vorhanden
+  |               |-----0000499010 Kein Text vorhanden
+  |               |-----0000499060 Kein Text vorhanden
+  |               |-----0000499110 Kein Text vorhanden
+  |               |-----0000499120 Kein Text vorhanden
+  |               ------0000499130 Kein Text vorhanden
+  |
+  |--   3000000 Resultatenrekening
+  |   |
+  |   |--   3010000  I. Bedrijfsopbrengsten
+  |   |   |
+  |   |   |--   3011000 A. omzet
+  |   |   |   |
+  |   |   |   ---   CABE0000700000 - 0000709999 X|X
+  |   |   |       |
+  |   |   |       |-----0000700000 Kein Text vorhanden
+  |   |   |       ------0000708000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3012000 B. stockwijzigingen
+  |   |   |   |
+  |   |   |   ---   CABE0000710000 - 0000719999 X|X
+  |   |   |       |
+  |   |   |       |-----0000712000 Kein Text vorhanden
+  |   |   |       |-----0000712010 Kein Text vorhanden
+  |   |   |       |-----0000712011 Kein Text vorhanden
+  |   |   |       |-----0000712020 Kein Text vorhanden
+  |   |   |       |-----0000712030 Kein Text vorhanden
+  |   |   |       |-----0000713000 Kein Text vorhanden
+  |   |   |       |-----0000713010 Kein Text vorhanden
+  |   |   |       |-----0000713011 Kein Text vorhanden
+  |   |   |       |-----0000713020 Kein Text vorhanden
+  |   |   |       |-----0000713030 Kein Text vorhanden
+  |   |   |       |-----0000715000 Kein Text vorhanden
+  |   |   |       |-----0000717000 Kein Text vorhanden
+  |   |   |       |-----0000717100 Kein Text vorhanden
+  |   |   |       ------0000719999 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3013000 C. Geprod. vaste activa
+  |   |   |   |
+  |   |   |   ---   CABE0000720000 - 0000729999 X|X
+  |   |   |       |
+  |   |   |       ------0000720000 Kein Text vorhanden
+  |   |   |
+  |   |   ---   3014000 D. overige
+  |   |       |
+  |   |       ---   CABE0000740000 - 0000749999 X|X
+  |   |           |
+  |   |           |-----0000740000 Kein Text vorhanden
+  |   |           |-----0000741000 Kein Text vorhanden
+  |   |           |-----0000742000 Kein Text vorhanden
+  |   |           |-----0000743000 Kein Text vorhanden
+  |   |           |-----0000747200 Kein Text vorhanden
+  |   |           |-----0000747210 Kein Text vorhanden
+  |   |           |-----0000747220 Kein Text vorhanden
+  |   |           |-----0000747230 Kein Text vorhanden
+  |   |           |-----0000748010 Kein Text vorhanden
+  |   |           |-----0000748200 Kein Text vorhanden
+  |   |           |-----0000748500 Kein Text vorhanden
+  |   |           |-----0000749010 Kein Text vorhanden
+  |   |           |-----0000749020 Kein Text vorhanden
+  |   |           |-----0000749030 Kein Text vorhanden
+  |   |           |-----0000749099 Kein Text vorhanden
+  |   |           |-----0000749100 Kein Text vorhanden
+  |   |           |-----0000749110 Kein Text vorhanden
+  |   |           |-----0000749120 Kein Text vorhanden
+  |   |           |-----0000749130 Kein Text vorhanden
+  |   |           |-----0000749580 Kein Text vorhanden
+  |   |           |-----0000749680 Kein Text vorhanden
+  |   |           |-----0000749690 Kein Text vorhanden
+  |   |           |-----0000749700 Kein Text vorhanden
+  |   |           |-----0000749800 Kein Text vorhanden
+  |   |           |-----0000749850 Kein Text vorhanden
+  |   |           |-----0000749900 Kein Text vorhanden
+  |   |           |-----0000749910 Kein Text vorhanden
+  |   |           ------0000749950 Kein Text vorhanden
+  |   |
+  |   |--   3020000  II bedrijfskosten
+  |   |   |
+  |   |   |--   3021000 A. Handelsgoederen, ...
+  |   |   |   |
+  |   |   |   |--   3021010 1. Aankopen
+  |   |   |   |   |
+  |   |   |   |   ---   CABE0000600000 - 0000608999 X|X
+  |   |   |   |       |
+  |   |   |   |       |-----0000600000 Kein Text vorhanden
+  |   |   |   |       |-----0000600010 Kein Text vorhanden
+  |   |   |   |       |-----0000600020 Kein Text vorhanden
+  |   |   |   |       |-----0000600030 Kein Text vorhanden
+  |   |   |   |       |-----0000600031 Kein Text vorhanden
+  |   |   |   |       |-----0000600032 Kein Text vorhanden
+  |   |   |   |       |-----0000600033 Kein Text vorhanden
+  |   |   |   |       |-----0000600060 Kein Text vorhanden
+  |   |   |   |       |-----0000600070 Kein Text vorhanden
+  |   |   |   |       |-----0000600071 Kein Text vorhanden
+  |   |   |   |       |-----0000600072 Kein Text vorhanden
+  |   |   |   |       |-----0000600073 Kein Text vorhanden
+  |   |   |   |       |-----0000601000 Kein Text vorhanden
+  |   |   |   |       |-----0000601010 Kein Text vorhanden
+  |   |   |   |       |-----0000601020 Kein Text vorhanden
+  |   |   |   |       |-----0000601030 Kein Text vorhanden
+  |   |   |   |       |-----0000601031 Kein Text vorhanden
+  |   |   |   |       |-----0000601032 Kein Text vorhanden
+  |   |   |   |       |-----0000601033 Kein Text vorhanden
+  |   |   |   |       |-----0000601060 Kein Text vorhanden
+  |   |   |   |       |-----0000601070 Kein Text vorhanden
+  |   |   |   |       |-----0000601071 Kein Text vorhanden
+  |   |   |   |       |-----0000601072 Kein Text vorhanden
+  |   |   |   |       |-----0000601073 Kein Text vorhanden
+  |   |   |   |       |-----0000602000 Kein Text vorhanden
+  |   |   |   |       |-----0000603000 Kein Text vorhanden
+  |   |   |   |       |-----0000603010 Kein Text vorhanden
+  |   |   |   |       |-----0000604000 Kein Text vorhanden
+  |   |   |   |       |-----0000604060 Kein Text vorhanden
+  |   |   |   |       |-----0000604070 Kein Text vorhanden
+  |   |   |   |       |-----0000604071 Kein Text vorhanden
+  |   |   |   |       |-----0000604072 Kein Text vorhanden
+  |   |   |   |       |-----0000604073 Kein Text vorhanden
+  |   |   |   |       |-----0000604074 Kein Text vorhanden
+  |   |   |   |       |-----0000605000 Kein Text vorhanden
+  |   |   |   |       ------0000608000 Kein Text vorhanden
+  |   |   |   |
+  |   |   |   ---   3021020 2. voorr. wijz.
+  |   |   |       |
+  |   |   |       ---   CABE0000609000 - 0000609999 X|X
+  |   |   |           |
+  |   |   |           |-----0000609000 Kein Text vorhanden
+  |   |   |           |-----0000609010 Kein Text vorhanden
+  |   |   |           |-----0000609020 Kein Text vorhanden
+  |   |   |           |-----0000609030 Kein Text vorhanden
+  |   |   |           |-----0000609031 Kein Text vorhanden
+  |   |   |           |-----0000609040 Kein Text vorhanden
+  |   |   |           |-----0000609050 Kein Text vorhanden
+  |   |   |           |-----0000609060 Kein Text vorhanden
+  |   |   |           |-----0000609070 Kein Text vorhanden
+  |   |   |           |-----0000609071 Kein Text vorhanden
+  |   |   |           |-----0000609080 Kein Text vorhanden
+  |   |   |           |-----0000609090 Kein Text vorhanden
+  |   |   |           |-----0000609100 Kein Text vorhanden
+  |   |   |           |-----0000609110 Kein Text vorhanden
+  |   |   |           |-----0000609120 Kein Text vorhanden
+  |   |   |           |-----0000609130 Kein Text vorhanden
+  |   |   |           |-----0000609131 Kein Text vorhanden
+  |   |   |           |-----0000609140 Kein Text vorhanden
+  |   |   |           |-----0000609150 Kein Text vorhanden
+  |   |   |           |-----0000609160 Kein Text vorhanden
+  |   |   |           |-----0000609170 Kein Text vorhanden
+  |   |   |           |-----0000609171 Kein Text vorhanden
+  |   |   |           |-----0000609180 Kein Text vorhanden
+  |   |   |           |-----0000609190 Kein Text vorhanden
+  |   |   |           |-----0000609400 Kein Text vorhanden
+  |   |   |           |-----0000609460 Kein Text vorhanden
+  |   |   |           |-----0000609470 Kein Text vorhanden
+  |   |   |           |-----0000609471 Kein Text vorhanden
+  |   |   |           |-----0000609480 Kein Text vorhanden
+  |   |   |           |-----0000609490 Kein Text vorhanden
+  |   |   |           |-----0000609500 Kein Text vorhanden
+  |   |   |           ------0000609999 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3022000 B. diensten
+  |   |   |   |
+  |   |   |   ---   CABE0000610000 - 0000619999 X|X
+  |   |   |       |
+  |   |   |       |-----0000610000 Kein Text vorhanden
+  |   |   |       |-----0000610610 Kein Text vorhanden
+  |   |   |       |-----0000612000 Kein Text vorhanden
+  |   |   |       |-----0000613310 Kein Text vorhanden
+  |   |   |       |-----0000613311 Kein Text vorhanden
+  |   |   |       |-----0000613312 Kein Text vorhanden
+  |   |   |       |-----0000613313 Kein Text vorhanden
+  |   |   |       |-----0000613314 Kein Text vorhanden
+  |   |   |       |-----0000613315 Kein Text vorhanden
+  |   |   |       |-----0000613316 Kein Text vorhanden
+  |   |   |       |-----0000619400 Kein Text vorhanden
+  |   |   |       |-----0000619498 Kein Text vorhanden
+  |   |   |       |-----0000619499 Kein Text vorhanden
+  |   |   |       |-----0000619500 Kein Text vorhanden
+  |   |   |       |-----0000619510 Kein Text vorhanden
+  |   |   |       |-----0000619520 Kein Text vorhanden
+  |   |   |       |-----0000619580 Kein Text vorhanden
+  |   |   |       |-----0000619590 Kein Text vorhanden
+  |   |   |       |-----0000619700 Kein Text vorhanden
+  |   |   |       |-----0000619800 Kein Text vorhanden
+  |   |   |       |-----0000619850 Kein Text vorhanden
+  |   |   |       |-----0000619860 Kein Text vorhanden
+  |   |   |       |-----0000619900 Kein Text vorhanden
+  |   |   |       |-----0000619910 Kein Text vorhanden
+  |   |   |       |-----0000619950 Kein Text vorhanden
+  |   |   |       |-----0000619998 Kein Text vorhanden
+  |   |   |       ------0000619999 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3023000 C. Bezoldigingen
+  |   |   |   |
+  |   |   |   ---   CABE0000620000 - 0000629999 X|X
+  |   |   |       |
+  |   |   |       |-----0000620000 Kein Text vorhanden
+  |   |   |       |-----0000620100 Kein Text vorhanden
+  |   |   |       |-----0000620200 Kein Text vorhanden
+  |   |   |       |-----0000620300 Kein Text vorhanden
+  |   |   |       |-----0000620400 Kein Text vorhanden
+  |   |   |       |-----0000621000 Kein Text vorhanden
+  |   |   |       |-----0000622000 Kein Text vorhanden
+  |   |   |       |-----0000623000 Kein Text vorhanden
+  |   |   |       |-----0000624000 Kein Text vorhanden
+  |   |   |       |-----0000624100 Kein Text vorhanden
+  |   |   |       ------0000625000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3024000 D. afschrijv.
+  |   |   |   |
+  |   |   |   ---   CABE0000630000 - 0000630999 X|X
+  |   |   |       |
+  |   |   |       |-----0000630000 Kein Text vorhanden
+  |   |   |       |-----0000630100 Kein Text vorhanden
+  |   |   |       |-----0000630200 Kein Text vorhanden
+  |   |   |       |-----0000630800 Kein Text vorhanden
+  |   |   |       ------0000630900 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3025000 E. +/- stocks,..
+  |   |   |   |
+  |   |   |   ---   CABE0000631000 - 0000634999 X|X
+  |   |   |       |
+  |   |   |       |-----0000631000 Kein Text vorhanden
+  |   |   |       |-----0000631100 Kein Text vorhanden
+  |   |   |       |-----0000632000 Kein Text vorhanden
+  |   |   |       |-----0000632100 Kein Text vorhanden
+  |   |   |       |-----0000633000 Kein Text vorhanden
+  |   |   |       |-----0000633100 Kein Text vorhanden
+  |   |   |       |-----0000634000 Kein Text vorhanden
+  |   |   |       ------0000634100 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3026000 F. +/- risikos
+  |   |   |   |
+  |   |   |   ---   CABE0000635000 - 0000637999 X|X
+  |   |   |       |
+  |   |   |       |-----0000635000 Kein Text vorhanden
+  |   |   |       |-----0000635100 Kein Text vorhanden
+  |   |   |       |-----0000636000 Kein Text vorhanden
+  |   |   |       |-----0000636100 Kein Text vorhanden
+  |   |   |       |-----0000637000 Kein Text vorhanden
+  |   |   |       ------0000637100 Kein Text vorhanden
+  |   |   |
+  |   |   ---   3027000 H. ANDERE BEDRIJFSKOSTEN
+  |   |       |
+  |   |       ---   CABE0000640000 - 0000649999 X|X
+  |   |           |
+  |   |           |-----0000640000 Kein Text vorhanden
+  |   |           |-----0000641000 Kein Text vorhanden
+  |   |           |-----0000642000 Kein Text vorhanden
+  |   |           |-----0000643000 Kein Text vorhanden
+  |   |           |-----0000648010 Kein Text vorhanden
+  |   |           |-----0000649000 Kein Text vorhanden
+  |   |           ------0000649010 Kein Text vorhanden
+  |   |
+  |   |-----3030000  III. bedrijfs W / V
+  |   |--   3040000  IV financ. opbrengsten
+  |   |   |
+  |   |   |--   3041000 A. uit fin vaste act.
+  |   |   |   |
+  |   |   |   ---   CABE0000750000 - 0000750999 X|X
+  |   |   |       |
+  |   |   |       ------0000750000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3042000 B. uit vlott. aktiva
+  |   |   |   |
+  |   |   |   ---   CABE0000751000 - 0000752999 X|X
+  |   |   |       |
+  |   |   |       |-----0000751000 Kein Text vorhanden
+  |   |   |       |-----0000751200 Kein Text vorhanden
+  |   |   |       |-----0000751500 Kein Text vorhanden
+  |   |   |       |-----0000752000 Kein Text vorhanden
+  |   |   |       |-----0000752100 Kein Text vorhanden
+  |   |   |       |-----0000752200 Kein Text vorhanden
+  |   |   |       ------0000752300 Kein Text vorhanden
+  |   |   |
+  |   |   ---   3043000 C. overige
+  |   |       |
+  |   |       ---   CABE0000753000 - 0000759999 X|X
+  |   |           |
+  |   |           |-----0000753000 Kein Text vorhanden
+  |   |           |-----0000754000 Kein Text vorhanden
+  |   |           |-----0000754100 Kein Text vorhanden
+  |   |           |-----0000754200 Kein Text vorhanden
+  |   |           |-----0000755000 Kein Text vorhanden
+  |   |           |-----0000756000 Kein Text vorhanden
+  |   |           |-----0000756010 Kein Text vorhanden
+  |   |           |-----0000756020 Kein Text vorhanden
+  |   |           |-----0000756030 Kein Text vorhanden
+  |   |           |-----0000757010 Kein Text vorhanden
+  |   |           |-----0000757060 Kein Text vorhanden
+  |   |           |-----0000758000 Kein Text vorhanden
+  |   |           |-----0000759010 Kein Text vorhanden
+  |   |           |-----0000759030 Kein Text vorhanden
+  |   |           ------0000759060 Kein Text vorhanden
+  |   |
+  |   |--   3050000  V. Fin. kosten
+  |   |   |
+  |   |   |--   3051000 A. kosten van schulden
+  |   |   |   |
+  |   |   |   ---   CABE0000650000 - 0000650999 X|X
+  |   |   |       |
+  |   |   |       |-----0000650000 Kein Text vorhanden
+  |   |   |       |-----0000650050 Kein Text vorhanden
+  |   |   |       |-----0000650100 Kein Text vorhanden
+  |   |   |       |-----0000650200 Kein Text vorhanden
+  |   |   |       ------0000650300 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3052000 B. waarde verminderingen
+  |   |   |   |
+  |   |   |   ---   CABE0000651000 - 0000651999 X|X
+  |   |   |       |
+  |   |   |       |-----0000651000 Kein Text vorhanden
+  |   |   |       |-----0000651100 Kein Text vorhanden
+  |   |   |       |-----0000651200 Kein Text vorhanden
+  |   |   |       ------0000651300 Kein Text vorhanden
+  |   |   |
+  |   |   ---   3053000 C. overige
+  |   |       |
+  |   |       ---   CABE0000652000 - 0000659999 X|X
+  |   |           |
+  |   |           |-----0000652000 Kein Text vorhanden
+  |   |           |-----0000652100 Kein Text vorhanden
+  |   |           |-----0000652200 Kein Text vorhanden
+  |   |           |-----0000652300 Kein Text vorhanden
+  |   |           |-----0000653000 Kein Text vorhanden
+  |   |           |-----0000654000 Kein Text vorhanden
+  |   |           |-----0000654100 Kein Text vorhanden
+  |   |           |-----0000655000 Kein Text vorhanden
+  |   |           |-----0000656000 Kein Text vorhanden
+  |   |           |-----0000656010 Kein Text vorhanden
+  |   |           |-----0000656020 Kein Text vorhanden
+  |   |           |-----0000657010 Kein Text vorhanden
+  |   |           |-----0000657060 Kein Text vorhanden
+  |   |           |-----0000658000 Kein Text vorhanden
+  |   |           |-----0000659010 Kein Text vorhanden
+  |   |           |-----0000659020 Kein Text vorhanden
+  |   |           |-----0000659030 Kein Text vorhanden
+  |   |           ------0000659060 Kein Text vorhanden
+  |   |
+  |   |-----3060000  VI.  gewone W/V
+  |   |--   3070000  VII.  uitz. opbrengsten
+  |   |   |
+  |   |   |--   3071000 A. afschrijv wijz vast akt.
+  |   |   |   |
+  |   |   |   ---   CABE0000760000 - 0000760999 X|X
+  |   |   |       |
+  |   |   |       |-----0000760000 Kein Text vorhanden
+  |   |   |       ------0000760100 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3072000 B. wijz; financ vaste aktiva
+  |   |   |   |
+  |   |   |   ---   CABE0000761000 - 0000761999 X|X
+  |   |   |       |
+  |   |   |       ------0000761000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3073000 C. risikos en ksoten
+  |   |   |   |
+  |   |   |   ---   CABE0000762000 - 0000762999 X|X
+  |   |   |       |
+  |   |   |       ------0000762000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3074000 D. Meerwaarden vaste activa
+  |   |   |   |
+  |   |   |   ---   CABE0000763000 - 0000763999 X|X
+  |   |   |       |
+  |   |   |       ------0000763000 Kein Text vorhanden
+  |   |   |
+  |   |   ---   3075000 E. uitzonderlijke
+  |   |       |
+  |   |       ---   CABE0000764000 - 0000769999 X|X
+  |   |           |
+  |   |           ------0000764000 Kein Text vorhanden
+  |   |
+  |   |--   3080000  VIII. uitz. kosten
+  |   |   |
+  |   |   |--   3081000 A. afschr. vast aktiva
+  |   |   |   |
+  |   |   |   ---   CABE0000660000 - 0000660999 X|X
+  |   |   |       |
+  |   |   |       |-----0000660000 Kein Text vorhanden
+  |   |   |       |-----0000660100 Kein Text vorhanden
+  |   |   |       ------0000660200 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3082000 B. fin vast aktiva
+  |   |   |   |
+  |   |   |   ---   CABE0000661000 - 0000661999 X|X
+  |   |   |       |
+  |   |   |       ------0000661000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3083000 C. risikos
+  |   |   |   |
+  |   |   |   ---   CABE0000662000 - 0000662999 X|X
+  |   |   |       |
+  |   |   |       ------0000662000 Kein Text vorhanden
+  |   |   |
+  |   |   |--   3084000 D. Minderwaarden
+  |   |   |   |
+  |   |   |   ---   CABE0000663000 - 0000663999 X|X
+  |   |   |       |
+  |   |   |       ------0000663000 Kein Text vorhanden
+  |   |   |
+  |   |   ---   3085000 E. andere
+  |   |       |
+  |   |       ---   CABE0000664000 - 0000669999 X|X
+  |   |           |
+  |   |           |-----0000664000 Kein Text vorhanden
+  |   |           |-----0000668010 Kein Text vorhanden
+  |   |           |-----0000668020 Kein Text vorhanden
+  |   |           ------0000669000 Kein Text vorhanden
+  |   |
+  |   |-----3090000  IX. w/v voor belasting
+  |   |--   3100000  IX. BIS uitgestelde belast.
+  |   |   |
+  |   |   ---   CABE0000680000 - 0000680999 X|X
+  |   |       |
+  |   |       ------0000680000 Kein Text vorhanden
+  |   |
+  |   |--   3110000   B. Overboeking
+  |   |   |
+  |   |   ---   CABE0000780000 - 0000780999 X|X
+  |   |       |
+  |   |       ------0000780000 Kein Text vorhanden
+  |   |
+  |   |--   3120000  X. Belastingen op het result.
+  |   |   |
+  |   |   |--   3121000 A. belastingen
+  |   |   |   |
+  |   |   |   ---   CABE0000670000 - 0000679999 X|X
+  |   |   |       |
+  |   |   |       |-----0000670000 Kein Text vorhanden
+  |   |   |       |-----0000670100 Kein Text vorhanden
+  |   |   |       |-----0000670200 Kein Text vorhanden
+  |   |   |       |-----0000671000 Kein Text vorhanden
+  |   |   |       |-----0000671100 Kein Text vorhanden
+  |   |   |       |-----0000671200 Kein Text vorhanden
+  |   |   |       |-----0000672000 Kein Text vorhanden
+  |   |   |       ------0000673000 Kein Text vorhanden
+  |   |   |
+  |   |   ---   3122000 B. regularisering
+  |   |       |
+  |   |       ---   CABE0000770000 - 0000779999 X|X
+  |   |           |
+  |   |           |-----0000771000 Kein Text vorhanden
+  |   |           |-----0000771100 Kein Text vorhanden
+  |   |           |-----0000771200 Kein Text vorhanden
+  |   |           ------0000773000 Kein Text vorhanden
+  |   |
+  |   |-----30130000 XI. Winst /verlies
+  |   |--   3140000  XII.  Onttrekking
+  |   |   |
+  |   |   |--   CABE0000689000 - 0000689999 X|X
+  |   |   |   |
+  |   |   |   ------0000689000 Kein Text vorhanden
+  |   |   |
+  |   |   ---   CABE0000789000 - 0000789999 X|X
+  |   |       |
+  |   |       ------0000789000 Kein Text vorhanden
+  |   |
+  |   |-----30141000 XIII. Te bestemmen W/V
+  |   ---   3150000  W/V boekjaar
+  |       |
+  |       |--   30151000 A. te bestemmen
+  |       |   |
+  |       |   |-----3015110 1. W/V vh boekjaar     GuV Ergebnis
+  |       |   ------3015120 2. vh vorige boekjaar
+  |       |
+  |       |--   30152000 B. onttrekking
+  |       |   |
+  |       |   |-----30152100 1.
+  |       |   ------30152200 2.
+  |       |
+  |       |--   30153000 C.
+  |       |   |
+  |       |   |-----30153100 1.
+  |       |   |-----30153200 2.
+  |       |   ------30153300 3.
+  |       |
+  |       |--   30154000 D.
+  |       |   |
+  |       |   |-----30154100 1.
+  |       |   ------30154200 2.
+  |       |
+  |       |-----30155000 E.
+  |       ---   30156000 F.
+  |           |
+  |           |-----30156100 1.
+  |           |-----30156200 2.
+  |           ------30156300 3.
+  |
+  |--   4000000 Rekeningen van klasse 0
+  |   |
+  |   ---   CABE0000000000 - 0000099999 X|X
+  |       |
+  |       |-----0000000100 Kein Text vorhanden
+  |       |-----0000001000 Kein Text vorhanden
+  |       |-----0000010000 Kein Text vorhanden
+  |       |-----0000011000 Kein Text vorhanden
+  |       |-----0000011100 Kein Text vorhanden
+  |       |-----0000012000 Kein Text vorhanden
+  |       |-----0000013000 Kein Text vorhanden
+  |       |-----0000020000 Kein Text vorhanden
+  |       |-----0000021000 Kein Text vorhanden
+  |       |-----0000022000 Kein Text vorhanden
+  |       |-----0000023000 Kein Text vorhanden
+  |       |-----0000030000 Kein Text vorhanden
+  |       |-----0000031000 Kein Text vorhanden
+  |       |-----0000032000 Kein Text vorhanden
+  |       |-----0000033000 Kein Text vorhanden
+  |       |-----0000040000 Kein Text vorhanden
+  |       |-----0000041000 Kein Text vorhanden
+  |       |-----0000050000 Kein Text vorhanden
+  |       |-----0000051000 Kein Text vorhanden
+  |       |-----0000052000 Kein Text vorhanden
+  |       |-----0000053000 Kein Text vorhanden
+  |       |-----0000060000 Kein Text vorhanden
+  |       |-----0000061000 Kein Text vorhanden
+  |       |-----0000062000 Kein Text vorhanden
+  |       |-----0000063000 Kein Text vorhanden
+  |       |-----0000064000 Kein Text vorhanden
+  |       |-----0000065000 Kein Text vorhanden
+  |       |-----0000066000 Kein Text vorhanden
+  |       |-----0000067000 Kein Text vorhanden
+  |       |-----0000070000 Kein Text vorhanden
+  |       |-----0000070100 Kein Text vorhanden
+  |       |-----0000070200 Kein Text vorhanden
+  |       |-----0000071000 Kein Text vorhanden
+  |       |-----0000072000 Kein Text vorhanden
+  |       |-----0000073000 Kein Text vorhanden
+  |       |-----0000074000 Kein Text vorhanden
+  |       |-----0000075000 Kein Text vorhanden
+  |       ------0000090000 Kein Text vorhanden
+  |
+  |--   5000000 Rekeningen klasse 8 en 9
+  |   |
+  |   ------CABE0000800000 - 0000999999 X|X
+  |
+  ------9000000 Niet toegewezen           Nicht zugeordnet

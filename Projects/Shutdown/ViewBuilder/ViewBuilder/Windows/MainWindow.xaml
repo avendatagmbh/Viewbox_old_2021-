@@ -1,0 +1,778 @@
+﻿<Window x:Class="ViewBuilder.Windows.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:my="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+		xmlns:c1="clr-namespace:ViewBuilder.Converters"
+		xmlns:c3="clr-namespace:Project.Converters;assembly=ProjectDb"
+		xmlns:Converters="clr-namespace:AvdWpfControls.Converters;assembly=AvdWpfControls"
+		xmlns:converters2="clr-namespace:ViewBuilder.Converters"
+		xmlns:EventArgs="clr-namespace:ViewBuilderBusiness.EventArgs;assembly=ViewBuilderBusiness"
+		xmlns:ViewBuilder="clr-namespace:ViewBuilder" Title="ViewBuilder" 
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d"
+		xmlns:Properties="clr-namespace:ViewBuilder.Properties"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+		xmlns:Models="clr-namespace:ViewBuilder.Models"
+		xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+		xmlns:Structures="clr-namespace:ProjectDb.Structures;assembly=ProjectDb"
+		d:DataContext="{d:DesignInstance Type=Models:MainWindowModel}"
+		Height="800" 
+		Width="906"
+		WindowStartupLocation="CenterScreen"
+		Background="{StaticResource WindowsBgBrush}"
+		WindowStyle="SingleBorderWindow" Icon="/ViewBuilder;component/Resources/AvenDATA.ico" Closed="Window_Closed" 
+		WindowState="Maximized" PreviewMouseDown="Window_PreviewMouseDown" Closing="Window_Closing">
+
+	<Window.Resources>
+		<c1:ViewStateToImageConverter x:Key="viewStateToImageConverter" />
+		<c3:ViewscriptStatesToStringConverter x:Key="viewscriptStatesToStringConverter" />
+		<c1:ProgressToVisibilityConverter x:Key="progressToVisibilityConverter" />
+		<c1:ProgressToVisibilityConverter2 x:Key="progressToVisibilityConverter2" />
+		<Converters:BoolToBrushConverter x:Key="viewscriptBackgroundColorConverter" True="LightGreen" False="Transparent"/>
+		<Converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" HiddenState="Collapsed" VisibleValue="True" />
+		<Converters:IntToProgressConverter x:Key="intToProgressConverter" />
+		<Converters:EmptyStringToVisibilityConverter x:Key="emptyStringToVisibilityConverter" />
+		<Converters:ValueExistsToBoolConverter x:Key="valueExistsToBoolConverter" ExistsToTrue="True"/>
+		<converters2:StringToEnabledConverter x:Key="StringToEnabledConverter" />
+	</Window.Resources>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="305" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		
+		<!-- ribbon -->
+		<Border Grid.ColumnSpan="2">
+			<Border.BitmapEffect>
+				<DropShadowBitmapEffect ShadowDepth="4" Opacity="0.75" Direction="315" />
+			</Border.BitmapEffect>
+			<my:Ribbon x:Name="Ribbon" SelectedIndex="0" ShowQuickAccessToolBarOnTop="False">
+				
+				<my:Ribbon.QuickAccessToolBar>
+					<my:RibbonQuickAccessToolBar Visibility="Collapsed">
+						<my:RibbonQuickAccessToolBar.CustomizeMenuButton>
+							<my:RibbonMenuButton Visibility="Collapsed" />
+						</my:RibbonQuickAccessToolBar.CustomizeMenuButton>
+					</my:RibbonQuickAccessToolBar>
+				</my:Ribbon.QuickAccessToolBar>
+				
+				<my:Ribbon.ApplicationMenu>
+					<my:RibbonApplicationMenu Visibility="Collapsed">
+					</my:RibbonApplicationMenu>
+				</my:Ribbon.ApplicationMenu>
+
+				<my:RibbonTab x:Name="ribbonTabStart" Header="Start">
+					<my:RibbonGroup x:Name="ribbonGroupCommon" Header="Allgemein">
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsIdle}" x:Name="btnQuit" Label="Beenden" SmallImageSource="/ViewBuilder;component/Resources/shutdown16.png" Click="btnQuit_Click" />
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsIdle}" x:Name="btnSelectProfile" Label="Profilauswahl" SmallImageSource="/ViewBuilder;component/Resources/Qute/Address-book16.png" Click="btnSelectProfile_Click" />
+					</my:RibbonGroup>
+
+					<my:RibbonGroup x:Name="ribbonTabConfig" Header="Einstellungen">
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsIdle}" x:Name="btnEditProfile" Label="Profil" LargeImageSource="/ViewBuilder;component/Resources/Qute/Address-book30.png" Click="btnEditProfile_Click" />
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsIdle}" x:Name="btnSelectScriptSource" Label="Viewscripte" LargeImageSource="/ViewBuilder;component/Resources/Qute/Document30.png" Click="btnSelectScriptSource_Click" />
+						<!--<my:RibbonButton x:Name="btnConfigMail" Label="E-Mail" LargeImageSource="/ViewBuilder;component/Resources/Qute/Envelope30.png" Click="btnConfigMail_Click" />-->
+					</my:RibbonGroup>
+					
+					<my:RibbonGroup x:Name="ribbonTabViews" Header="Sonstiges">
+						<!--<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsIdle}" x:Name="btnCreateLog" Label="Log erzeugen" LargeImageSource="/ViewBuilder;component/Resources/pdf.png" Click="btnCreateLog_Click" />-->
+						<!--<my:RibbonButton IsEnabled="False" x:Name="btnOpenEditor" Label="Vieweditor" LargeImageSource="/ViewBuilder;component/Resources/Qute/Write30.png" />-->
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsIdle}" x:Name="btnCreateTmpViewDb" Label="Tmp.View-Db erzeugen" LargeImageSource="/ViewBuilder;component/Resources/database32.png" Click="btnCreateTmpViewDb_Click" />
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsIdle}" x:Name="btnCreateViewboxDb" Label="Viewbox-Db erzeugen" LargeImageSource="/ViewBuilder;component/Resources/database32.png" Click="btnCreateViewboxDb_Click" />
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsIdle}" x:Name="btnCreateIndex" Label="Index-Db erzeugen" LargeImageSource="/ViewBuilder;component/Resources/database32.png" Click="btnCreateIndex_Click" />
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsReady}" Label="Basistabellen hinzufügen" LargeImageSource="/ViewBuilder;component/Resources/add.png" Click="btnAddFakes_Click" />
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsReady}" Label="SAP balance" LargeImageSource="/ViewBuilder;component/Resources/add.png" Click="btnSapBillSchemaImport_Click" />
+						<my:RibbonButton x:Name="btnStartViewbox" Label="Viewbox starten" LargeImageSource="/ViewBuilder;component/Resources/eye.png" Click="btnStartViewbox_Click" />
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsReady}" Label="Optimierungskriterien" LargeImageSource="/ViewBuilder;component/Resources/Lightning32.png" Click="btnEditOptimizations_Click" />
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsReady}" Label="Relationen" LargeImageSource="/ViewBuilder;component/Resources/Relations32.png" Click="btnAddRelations_Click" />
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsReady}" Label="Extended column informations" LargeImageSource="/ViewBuilder;component/Resources/Relations32.png" Click="btnGetExtendedColumnInformations_Click" />
+						<!--<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsReady}" Label="Datentypen prüfen" LargeImageSource="/ViewBuilder;component/Resources/Relations32.png" Click="btnCheckDatatypes_Click" />-->
+						<!--<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsIdle}" x:Name="btnReorderTables" Label="Order-Area" LargeImageSource="/ViewBuilder;component/Resources/Relations32.png" Click="btnReorderTables_Click" />-->						
+					</my:RibbonGroup>
+					<my:RibbonGroup x:Name="ribbonTabReports" Header="Reports">
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsReady}" Label="Report" LargeImageSource="/ViewBuilder;component/Resources/pdf.png" Click="btnGeneratePDFReport_Click" />
+					</my:RibbonGroup>
+					<my:RibbonGroup x:Name="ribbonTabMetadata" Header="Metadata">
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsReady}" Label="Update texts" LargeImageSource="/ViewBuilder;component/Resources/Qute/Address-book-open30.png" Click="btnUpdateLanguageMetadata_Click" />
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsReady}" Label="Empty/distinct generation" LargeImageSource="/ViewBuilder;component/Resources/Qute/Note30.png" Click="btnGenerateEmptyDistinct_Click" />
+					</my:RibbonGroup>
+					<my:RibbonGroup>
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsReady}" Label="Check differences" LargeImageSource="/ViewBuilder;component/Resources/Qute/Search30.png" Click="btnCheckDifferences_Click" />
+					</my:RibbonGroup>
+					<my:RibbonGroup>
+						<my:RibbonButton IsEnabled="{Binding ViewBuilder.IsReady}" Label="Archiving setup" LargeImageSource="/ViewBuilder;component/Resources/Qute/Advanced30.png" Click="btnOpenTableArchivingSetupDialog_Click" />
+					</my:RibbonGroup>
+				</my:RibbonTab>
+
+			</my:Ribbon>
+		</Border>
+
+		<GridSplitter Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"  Width="3" Margin="0,24,0,0" />
+		
+		<!-- main window -->
+		<Border Grid.Row="1" Grid.Column="0" Margin="0,3,0,0" Grid.RowSpan="2" Background="Transparent" BorderBrush="Transparent">
+			<TabControl Margin="0" Padding="0">
+				<TabItem Header="Viewscripte" Name="tabScripts">
+					<Grid>
+
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+						
+						<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+							<Button Style="{StaticResource ImageButtonStyleWithBg}" Width="Auto" Height="Auto" Name="btnRefresScripts" Click="btnRefresScripts_Click">
+								<Grid>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="Auto" />
+										<RowDefinition Height="Auto" />
+									</Grid.RowDefinitions>
+									<Image Width="24" Source="/ViewBuilder;component/Resources/Qute/Reload30.png" Height="24" Margin="20,0" VerticalAlignment="Top" HorizontalAlignment="Center" />
+									<Label Grid.Row="1" Padding="1" Content="Aktualisieren" FontFamily="Segoe UI" FontSize="11" HorizontalAlignment="Center" Opacity="0.75" />
+								</Grid>
+							</Button>
+							
+							<Button Style="{StaticResource ImageButtonStyleWithBg}" Width="Auto" Height="Auto" Name="btnAddDeleteEntries" Click="btnAddDeleteEntries_Click">
+								<Grid>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="Auto" />
+										<RowDefinition Height="Auto" />
+									</Grid.RowDefinitions>
+									<Image Width="24" Source="/ViewBuilder;component/Resources/Qute/Advanced24.png" Height="24" Margin="20,0" VerticalAlignment="Top" HorizontalAlignment="Center" />
+									<Label Grid.Row="1" Padding="1" Content="Löschen+Hinzufügen der Einträge" FontFamily="Segoe UI" FontSize="11" HorizontalAlignment="Center" Opacity="0.75" />
+								</Grid>
+							</Button>
+
+							<Button Name="btnCreateIndexForViews" Width="Auto" Height="Auto" Click="btnCreateIndexForViews_Click" Style="{StaticResource ImageButtonStyleWithBg}" 
+									IsEnabled="{Binding ViewBuilder.IsReady}" >
+								<Grid>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="Auto" />
+										<RowDefinition Height="Auto" />
+									</Grid.RowDefinitions>
+
+									<Image Width="24" Source="/ViewBuilder;component/Resources/Qute/Downloads24.png" Height="24" Margin="20,0" VerticalAlignment="Top" HorizontalAlignment="Center" />
+									<Label Grid.Row="1" Padding="1" Content="Generate index data" FontFamily="Segoe UI" FontSize="11" HorizontalAlignment="Center" Opacity="0.75" />
+								</Grid>
+							</Button>
+
+							<Button Name="btnParseScripts" Width="Auto" Height="Auto" Click="btnParseScripts_Click"  Style="{StaticResource ImageButtonStyleWithBg}" >
+								<Grid>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="Auto" />
+										<RowDefinition Height="Auto" />
+									</Grid.RowDefinitions>
+
+									<Image Width="24" Source="/ViewBuilder;component/Resources/refresh.png" Height="24" Margin="20,0" VerticalAlignment="Top" HorizontalAlignment="Center" />
+									<Label Grid.Row="1" Padding="1" Content="Parse scripts" FontFamily="Segoe UI" FontSize="11" HorizontalAlignment="Center" Opacity="0.75" />
+								</Grid>
+							</Button>
+
+						</StackPanel>
+						
+						<Border Margin="5,0,5,5" Style="{StaticResource GroupBoxBorderNoShadow}" Grid.Row="1">
+							<DataGrid    
+								x:Name="dgViewscripts"
+								BorderBrush="Transparent"
+								Background="{StaticResource DefaultBorderBg}"                        
+								ItemsSource="{Binding Path=Profile.Viewscripts, Mode=OneWay}" 
+								AutoGenerateColumns="False"
+								CanUserResizeRows="False" 
+								CanUserSortColumns="True"
+								CanUserAddRows="False"
+								HorizontalGridLinesBrush="#40000000" 
+								VerticalGridLinesBrush="#40000000" 
+								SelectionMode="Single" 
+								SelectionUnit="FullRow"                                    
+								HeadersVisibility="Column"
+								>
+
+								<DataGrid.Resources>
+									<Style TargetType="{x:Type DataGridCell}">
+										<EventSetter Event="PreviewMouseLeftButtonDown" Handler="DataGridCell_PreviewMouseLeftButtonDown"></EventSetter>
+										<EventSetter Event="PreviewKeyDown" Handler="DataGridCell_PreviewMouseKeyDown"></EventSetter>
+
+										<EventSetter Event="MouseEnter" Handler="dgViewscriptCell_MouseEnter" />
+										<EventSetter Event="MouseLeave" Handler="dgViewscriptCell_MouseLeave" />
+										<EventSetter Event="MouseMove" Handler="dgViewscriptCell_MouseMove" />
+
+										<Setter Property="Background" Value="{Binding Path=IsHovered, Mode=OneWay, Converter={StaticResource viewscriptBackgroundColorConverter}}" />
+										<Style.Triggers>
+											<Trigger Property="IsSelected" Value="True">
+												<Setter Property="Background" Value="{StaticResource SelectedBackgroundBrush}" />
+											</Trigger>
+										</Style.Triggers>
+									</Style>
+
+								</DataGrid.Resources>
+
+								<DataGrid.Columns>
+
+									<DataGridTemplateColumn Width="Auto" CanUserResize="False" x:Name="dgScriptsCol_IsChecked">
+										<DataGridTemplateColumn.Header>
+											<CheckBox 
+											HorizontalAlignment="Center" 
+											VerticalAlignment="Center" 
+											IsChecked="{Binding IsCheckedHeaderState, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+											x:Name="chkIsViewCheckedHeader" 
+											Unchecked="chkIsViewCheckedHeader_Unchecked" 
+											Checked="chkIsViewCheckedHeader_Checked" />
+										</DataGridTemplateColumn.Header>
+										<DataGridTemplateColumn.CellTemplate>
+											<DataTemplate>
+												<CheckBox
+												HorizontalAlignment="Center" 
+												VerticalAlignment="Center" 
+												IsChecked="{Binding Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+												x:Name="chkIsChecked" Click="chkIsChecked_Click" />
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+									</DataGridTemplateColumn>
+
+									<DataGridTemplateColumn Width="Auto">
+										<DataGridTemplateColumn.CellTemplate>
+											<DataTemplate>
+												<Border Padding="1">
+													<Image 
+													Width="16" 
+													Source="{Binding Path=State, Converter={StaticResource viewStateToImageConverter}}" />
+												</Border>
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+									</DataGridTemplateColumn>
+
+									<DataGridTemplateColumn Width="Auto">
+										<DataGridTemplateColumn.CellTemplate>
+											<DataTemplate>
+												<AvdWpfControls:ImageButton x:Name="btnInfo" ImageSource="/Resources/Qute/Help24.png" Click="btnInfo_Click" />
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+									</DataGridTemplateColumn>
+
+									<DataGridTemplateColumn >
+										<DataGridTemplateColumn.CellTemplate>
+											<DataTemplate>
+												<Border Padding="1">
+													<Grid>
+														<Grid.ColumnDefinitions>
+															<ColumnDefinition Width="Auto" />
+														</Grid.ColumnDefinitions>
+														<!--<Image Grid.Column="0" Width="12" Source="/Resources/validate.png" Visibility="{Binding NoErrors, Converter={StaticResource boolToVisibilityConverter}}"/>-->
+														<Image Grid.Column="0" Width="12" Source="/Resources/validate.png" Visibility="{Binding NoErrors, Converter={StaticResource boolToVisibilityConverter}}"/>
+														<Image Grid.Column="0" Width="12" Source="/Resources/ValidationError.png" Visibility="{Binding LastError, Converter={StaticResource emptyStringToVisibilityConverter}}"/>
+														<Image Grid.Column="0" Width="12" Source="/Resources/ValidationWarn.png" Visibility="{Binding Warnings, Converter={StaticResource emptyStringToVisibilityConverter}}"/>
+													</Grid>
+												</Border>
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+									</DataGridTemplateColumn>
+
+
+									<DataGridTemplateColumn Header="Name" Width="Auto" IsReadOnly="True" SortMemberPath="Name">
+										<DataGridTemplateColumn.CellTemplate>
+											<DataTemplate>
+												<TextBlock Text="{Binding Path=Name}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+									</DataGridTemplateColumn>
+
+									<DataGridTemplateColumn Header="Beschreibung" Width="Auto" IsReadOnly="True" SortMemberPath="Description">
+										<DataGridTemplateColumn.CellTemplate>
+											<DataTemplate>
+												<TextBlock Text="{Binding Path=Description}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+									</DataGridTemplateColumn>
+
+									<DataGridTemplateColumn Header="Prozedur Informationen" Width="Auto" IsReadOnly="True">
+										<DataGridTemplateColumn.CellTemplate>
+											<DataTemplate>
+												<StackPanel Orientation="Horizontal">
+													<CheckBox IsChecked="{Binding ProcedureInfo.ExecuteCreateTempTables, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Visibility="{Binding HasStoredProcedure, Converter={StaticResource boolToVisibilityConverter}}">Temptabellen neu erstellen</CheckBox>
+													<CheckBox IsChecked="{Binding ProcedureInfo.ExecuteStoredProcedure, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Visibility="{Binding HasStoredProcedure, Converter={StaticResource boolToVisibilityConverter}}" Margin="5,0,0,0">Prozedur neu erstellen</CheckBox>
+													<CheckBox IsChecked="{Binding ProcedureInfo.OnlyMetadata, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0">Only metadata refresh</CheckBox>
+												</StackPanel>
+												
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+									</DataGridTemplateColumn>
+
+									<DataGridTemplateColumn Header="ParsingState" Width="Auto" IsReadOnly="True" SortMemberPath="ParsingState">
+										<DataGridTemplateColumn.CellTemplate>
+											<DataTemplate>
+												<TextBlock Text="{Binding Path=ParsingState}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+									</DataGridTemplateColumn>
+
+									<DataGridTemplateColumn Header="ParsingError" Width="Auto">
+										<DataGridTemplateColumn.CellTemplate>
+											<DataTemplate>
+												<AvdWpfControls:ImageButton x:Name="btnParsingErrorInfo" ImageSource="/Resources/Qute/Help24.png" Click="btnParsingErrorInfo_Click" IsEnabled="{Binding ParsingError, Converter={StaticResource StringToEnabledConverter}}"/>
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+									</DataGridTemplateColumn>
+
+								</DataGrid.Columns>
+							</DataGrid>
+						</Border>
+					</Grid>
+				</TabItem>
+				
+				<TabItem Header="eingespielte Views" Name="tabViews">
+					<Border Grid.Row="1">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+								<Button Name="btnDeleteView" IsEnabled="{Binding SelectedView, Converter={StaticResource valueExistsToBoolConverter}}" Style="{StaticResource ImageButtonStyleWithBg}" Width="Auto" Height="Auto" Click="btnDeleteView_Click">
+									<Grid>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+										</Grid.RowDefinitions>
+
+										<Image Width="24" Source="/ViewBuilder;component/Resources/Qute/Trash30.png" Height="24" Margin="20,0" VerticalAlignment="Top" HorizontalAlignment="Center" />
+										<Label Grid.Row="1" Padding="1" Content="Löschen" FontFamily="Segoe UI" FontSize="11" HorizontalAlignment="Center" Opacity="0.75" />
+									</Grid>
+								</Button>
+								<Button Name="btnUpdateMetadata" IsEnabled="{Binding SelectedView, Converter={StaticResource valueExistsToBoolConverter}}" Style="{StaticResource ImageButtonStyleWithBg}" Width="Auto" Height="Auto" Click="btnUpdateMetadata_Click">
+									<Grid>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+										</Grid.RowDefinitions>
+
+										<Image Width="24" Source="/ViewBuilder;component/Resources/refresh.png" Height="24" Margin="20,0" VerticalAlignment="Top" HorizontalAlignment="Center" />
+										<Label Grid.Row="1" Padding="1" Content="Aktualisieren der Metadaten" FontFamily="Segoe UI" FontSize="11" HorizontalAlignment="Center" Opacity="0.75" />
+									</Grid>
+								</Button>
+								<Button Name="btnUpdateAllMetadata" Width="Auto" Height="Auto" Click="btnUpdateAllMetadata_Click" Style="{StaticResource ImageButtonStyleWithBg}" >
+									<Grid>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+										</Grid.RowDefinitions>
+
+										<Image Width="24" Source="/ViewBuilder;component/Resources/refresh.png" Height="24" Margin="20,0" VerticalAlignment="Top" HorizontalAlignment="Center" />
+										<Label Grid.Row="1" Padding="1" Content="Aktualisieren aller Metadaten" FontFamily="Segoe UI" FontSize="11" HorizontalAlignment="Center" Opacity="0.75" />
+									</Grid>
+								</Button>
+							</StackPanel>
+
+							<Border Margin="5,0,5,5" Style="{StaticResource GroupBoxBorderNoShadow}" Grid.Row="1">
+								<DataGrid 
+										Background="{StaticResource DefaultBorderBg}"
+										BorderBrush="Transparent"
+										Name="dgViews"                                         
+										AutoGenerateColumns="False" 
+										CanUserResizeRows="False" 
+										CanUserSortColumns="True"
+										CanUserAddRows="False"
+										CanUserDeleteRows="False"
+										HorizontalGridLinesBrush="#40000000" 
+										VerticalGridLinesBrush="#40000000" 
+										SelectionMode="Extended" SelectionUnit="FullRow" HeadersVisibility="Column"
+										ItemsSource="{Binding Path=Profile.Views}"
+										SelectedItem="{Binding Path=SelectedView}"
+									ClipboardCopyMode="IncludeHeader"
+									CopyingRowClipboardContent="DgViews_OnCopyingRowClipboardContent"
+									DataContext="{Binding}">
+									
+									<!--!!!! NOTE !!!!
+									Changes in binding path values should be reflected in the method DgViews_OnCopyingRowClipboardContent -->
+									
+									<DataGrid.Columns>
+										<DataGridTemplateColumn Header="Name" Width="Auto" IsReadOnly="True" SortMemberPath="Name">
+											<DataGridTemplateColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock Text="{Binding Path=Name}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+												</DataTemplate>
+											</DataGridTemplateColumn.CellTemplate>
+										</DataGridTemplateColumn>
+
+										<DataGridTemplateColumn Header="Beschreibung" Width="Auto" IsReadOnly="True" SortMemberPath="Description">
+											<DataGridTemplateColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock Text="{Binding Path=Description}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+												</DataTemplate>
+											</DataGridTemplateColumn.CellTemplate>
+										</DataGridTemplateColumn>
+
+										<DataGridTemplateColumn Header="Bearbeiter" Width="Auto" IsReadOnly="True" SortMemberPath="Agent">
+											<DataGridTemplateColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock Text="{Binding Path=Agent}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+												</DataTemplate>
+											</DataGridTemplateColumn.CellTemplate>
+										</DataGridTemplateColumn>
+
+										<DataGridTemplateColumn Header="Zeitstempel" Width="Auto" IsReadOnly="True" SortMemberPath="CreationTimestampDisplayString">
+											<DataGridTemplateColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock Text="{Binding Path=CreationTimestampDisplayString}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+												</DataTemplate>
+											</DataGridTemplateColumn.CellTemplate>
+										</DataGridTemplateColumn>
+
+										<DataGridTemplateColumn Header="Dauer" Width="Auto" IsReadOnly="True" SortMemberPath="DurationDisplayString">
+											<DataGridTemplateColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock Text="{Binding Path=DurationDisplayString}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+												</DataTemplate>
+											</DataGridTemplateColumn.CellTemplate>
+										</DataGridTemplateColumn>
+									</DataGrid.Columns>
+								</DataGrid>
+							</Border>
+						</Grid>
+					</Border>
+				</TabItem>
+
+				<TabItem Header="history Views" Name="tabViewsHistory">
+					<Border Grid.Row="1">
+						<DataGrid 
+							Background="{StaticResource DefaultBorderBg}"
+							BorderBrush="Transparent"
+							Name="dgViewsHistory"                                         
+							AutoGenerateColumns="False" 
+							CanUserResizeRows="False" 
+							CanUserSortColumns="True"
+							CanUserAddRows="False"
+							CanUserDeleteRows="False"
+							HorizontalGridLinesBrush="#40000000" 
+							VerticalGridLinesBrush="#40000000" 
+							SelectionMode="Extended" SelectionUnit="FullRow" HeadersVisibility="Column"
+							ItemsSource="{Binding Path=Profile.ViewsHistory}"
+							DataContext="{Binding}">
+
+							<!--!!!! NOTE !!!!
+									Changes in binding path values should be reflected in the method DgViews_OnCopyingRowClipboardContent -->
+
+							<DataGrid.Columns>
+								<DataGridTemplateColumn Header="Name" Width="Auto" IsReadOnly="True" SortMemberPath="Name">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding Path=Name}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+
+								<DataGridTemplateColumn Header="Beschreibung" Width="Auto" IsReadOnly="True" SortMemberPath="Description">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding Path=Description}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+
+								<DataGridTemplateColumn Header="Bearbeiter" Width="Auto" IsReadOnly="True" SortMemberPath="Agent">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding Path=Agent}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+
+								<DataGridTemplateColumn Header="Zeitstempel" Width="Auto" IsReadOnly="True" SortMemberPath="CreationTimestampDisplayString">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding Path=CreationTimestampDisplayString}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+
+								<DataGridTemplateColumn Header="Dauer" Width="Auto" IsReadOnly="True" SortMemberPath="DurationDisplayString">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding Path=DurationDisplayString}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+
+								<DataGridTemplateColumn Header="State" Width="Auto" IsReadOnly="True" SortMemberPath="ViewScriptState">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding Path=ViewScriptState}" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+
+								<DataGridTemplateColumn  Header="Error" Width="55" CanUserResize="False">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<AvdWpfControls:ImageButton x:Name="btnError" ImageSource="/Resources/Qute/Help24.png" Click="btnError_Click" IsEnabled="{Binding Error, Converter={StaticResource StringToEnabledConverter}}"/>
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+
+								<DataGridTemplateColumn  Header="Warning" Width="55" CanUserResize="False">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<AvdWpfControls:ImageButton x:Name="btnWarning" ImageSource="/Resources/Qute/Help24.png" Click="btnWarning_Click" IsEnabled="{Binding Warnings, Converter={StaticResource StringToEnabledConverter}}"/>
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Border>
+				</TabItem>
+				
+			</TabControl>
+		</Border>        
+
+		<!-- info panel -->
+		<Border Grid.Row="1" Grid.Column="1" Style="{StaticResource GroupBoxBorder}" Margin="3,25,0,0">
+			<Grid Width="Auto">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<Image Margin="5,5,5,0" Height="40" HorizontalAlignment="Left" Width="Auto" Source="/ViewBuilder;component/Resources/logo.png" />
+				<Label Opacity="0.95" Padding="0" Content="Version ?.?.?" Grid.Row="1"  Grid.Column="1" Height="Auto" HorizontalAlignment="Left" Margin="7,4,7,3" Name="lblVersion" VerticalAlignment="Top" FontSize="11" FontFamily="Arial" FontStyle="Italic" />
+				<Label Opacity="0.95" Padding="0" Content="Date: 01.02.2013" Grid.Row="1"  Grid.Column="2" Height="Auto" HorizontalAlignment="Right" Margin="7,4,7,3" Name="lblAssemblyDate" VerticalAlignment="Top" FontSize="11" FontFamily="Arial" FontStyle="Italic" />
+				<ScrollViewer Margin="5,0,5,5" Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+					<StackPanel>
+
+						<Border Style="{StaticResource GroupBoxBorderNoShadow}" Margin="0,5,0,0" Padding="2">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+
+								<Border Grid.Row="0" Padding="2" Margin="0,2,0,0">
+									<Grid>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+										</Grid.RowDefinitions>
+										<StackPanel Grid.Row="0" Orientation="Horizontal">
+											<Image Height="16" VerticalAlignment="Center" Source="/ViewBuilder;component/Resources/Qute/Address-book16.png" />
+											<TextBlock Grid.Row="0" Text="Profil" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri" FontStyle="Normal" />
+										</StackPanel>
+										<TextBlock TextWrapping="Wrap"  Grid.Row="1" Grid.Column="0" Text="{Binding Path=Profile.Name}" Padding="1" FontSize="12" FontFamily="Calibri"/>
+									</Grid>
+								</Border>
+
+								<Border Grid.Row="1" Padding="2" Margin="0,2,0,0">
+									<Grid>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+										</Grid.RowDefinitions>
+										<StackPanel Grid.Row="0" Orientation="Horizontal">
+											<Image Height="16" VerticalAlignment="Center" Source="/ViewBuilder;component/Resources/Qute/Person16.png" />
+											<TextBlock Text="Benutzer" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri"/>
+										</StackPanel>
+										<TextBlock TextWrapping="Wrap" Grid.Row="1" Grid.Column="0" Text="{Binding Path=Profile.AssignedUser.DisplayString}" Margin="0,0,0,0" Padding="1" FontSize="12" FontFamily="Calibri"/>
+									</Grid>
+								</Border>
+
+								<Border Grid.Row="2" Padding="2" Margin="0,2,0,0">
+									<Grid>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+										</Grid.RowDefinitions>
+										<StackPanel Grid.Row="0" Orientation="Horizontal">
+											<Image Height="16" VerticalAlignment="Center" Source="/ViewBuilder;component/Resources/database16.png" />
+											<TextBlock Text="Datenbank" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri" />
+										</StackPanel>
+										<TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=Profile.DbConfig.DbName}" Margin="0,0,0,0" Padding="1" FontSize="12" FontFamily="Calibri" TextWrapping="Wrap" />
+									</Grid>
+								</Border>
+
+							</Grid>
+
+						</Border>
+
+						<Border Style="{StaticResource GroupBoxBorderNoShadow}" Margin="0,5,0,0" Padding="2">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="60" />
+									<ColumnDefinition Width="60" />
+									<ColumnDefinition Width="60" />
+									<ColumnDefinition Width="60" />
+									<ColumnDefinition Width="60" />
+								</Grid.ColumnDefinitions>
+								<Label Grid.Row="0" Grid.ColumnSpan="2" Content="Datenbankstatus" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri"/>
+
+								<Label Grid.Row="1" Grid.Column="0" Content="Projekt" Padding="1" FontSize="12" FontFamily="Calibri" />
+								<ViewBuilder:SignalLight x:Name="prjDbSignal" Grid.Row="2" Grid.Column="0" Opacity="0.9">
+									<Control.BitmapEffect>
+										<DropShadowBitmapEffect ShadowDepth="4" Opacity="0.5" Direction="315" />
+									</Control.BitmapEffect>
+								</ViewBuilder:SignalLight>
+								
+								<Label Grid.Row="1" Grid.Column="1" Content="System" Padding="1" FontSize="12" FontFamily="Calibri" />
+								<ViewBuilder:SignalLight x:Name="sysDbSignal" Grid.Row="2" Grid.Column="1" Opacity="0.9">
+									<Control.BitmapEffect>
+										<DropShadowBitmapEffect ShadowDepth="4" Opacity="0.5" Direction="315" />
+									</Control.BitmapEffect>
+								</ViewBuilder:SignalLight>
+
+								<Label Grid.Row="1" Grid.Column="2" Content="Daten" Padding="1" FontSize="12" FontFamily="Calibri" />
+								<ViewBuilder:SignalLight x:Name="dataDbSignal" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Opacity="0.9">
+									<Control.BitmapEffect>
+										<DropShadowBitmapEffect ShadowDepth="4" Opacity="0.5" Direction="315" />
+									</Control.BitmapEffect>
+								</ViewBuilder:SignalLight>
+
+								<Label Grid.Row="1" Grid.Column="3" Content="Viewbox" Padding="1" FontSize="12" FontFamily="Calibri" />
+								<ViewBuilder:SignalLight x:Name="viewboxDbSignal" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3" Opacity="0.9">
+									<Control.BitmapEffect>
+										<DropShadowBitmapEffect ShadowDepth="4" Opacity="0.5" Direction="315" />
+									</Control.BitmapEffect>
+								</ViewBuilder:SignalLight>
+
+
+								<Label Grid.Row="1" Grid.Column="4" Content="Index" Padding="1" FontSize="12" FontFamily="Calibri" />
+								<ViewBuilder:SignalLight x:Name="indexDbSignal" VerticalAlignment="Center" Grid.Row="2" Grid.Column="4" Opacity="0.9">
+									<Control.BitmapEffect>
+										<DropShadowBitmapEffect ShadowDepth="4" Opacity="0.5" Direction="315" />
+									</Control.BitmapEffect>
+								</ViewBuilder:SignalLight>
+
+							</Grid>
+						</Border>
+
+						<Border Style="{StaticResource GroupBoxBorderNoShadow}" Margin="0,5,0,0" Padding="2">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+
+								<Label Grid.Row="0" HorizontalAlignment="Right" Content="Viewscripte:" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri"/>
+								<Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=Profile.Viewscripts.Count}" Padding="1" FontSize="12" FontFamily="Calibri"/>
+								
+								<Label Grid.Row="1" HorizontalAlignment="Right" Content="eingesp. Views:" Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri"/>
+								<Label Grid.Row="1" Grid.Column="1" Content="{Binding Profile.Views.Count}" Padding="1" FontSize="12" FontFamily="Calibri"/>
+							</Grid>
+						</Border>
+
+						<Border Visibility="{Binding Path=ViewBuilder.IsRunning, Converter={StaticResource boolToVisibilityConverter}, Mode=OneWay}" Style="{StaticResource GroupBoxBorderNoShadow}" Margin="0,5,0,0" Padding="2">
+							<StackPanel>
+								<TextBlock Text="Fortschritt Vieweinspielung"  Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri"/>
+								<Grid>
+									<ProgressBar Height="16" Value="{Binding Path=ViewBuilder.State.Percent, Mode=OneWay}" />
+									<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0" Margin="0,-1,0,0" Text="{Binding Path=ViewBuilder.State.ProgressDisplayString}" />
+								</Grid>
+								<StackPanel Orientation="Horizontal">
+									<TextBlock Padding="1" Text="Laufzeit: " />
+									<TextBlock Padding="1" Text="{Binding Path=ViewBuilder.State.DurationDisplayString}" />
+								</StackPanel>
+							</StackPanel>
+						</Border>
+
+						<Border Visibility="{Binding Path=IsCheckingIndexDb, Converter={StaticResource boolToVisibilityConverter}, Mode=OneWay}" Style="{StaticResource GroupBoxBorderNoShadow}" Margin="0,5,0,0" Padding="2">
+							<StackPanel>
+								<TextBlock Text="Checking indexdata"  Padding="1" FontSize="12" FontWeight="Bold" FontFamily="Calibri"/>
+								<Grid>
+									<ProgressBar Height="16" Value="{Binding Path=IndexCalculator.Progress, Mode=OneWay}" />
+									<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0" Margin="0,-1,0,0" Text="{Binding Path=IndexCalculator.Progress, Converter={StaticResource intToProgressConverter}, Mode=OneWay}" />
+								</Grid>
+								<StackPanel Orientation="Horizontal">
+									<TextBlock Padding="1" Text="State: " />
+									<TextBlock Padding="1" Text="{Binding Path=IndexCalculator.Description}" />
+								</StackPanel>
+							</StackPanel>
+						</Border>
+						
+						<ListBox
+							ItemsSource="{Binding Path=Workers}" 
+							x:Name="Workers" 
+							Background="Transparent" 
+							BorderBrush="Transparent"
+							BorderThickness="0" 
+							Padding="0"
+							Margin="0"
+							HorizontalAlignment="Stretch"
+							ItemContainerStyle="{StaticResource ListboxItemNoSelection}">
+
+							<ListBox.ItemTemplate>
+								<DataTemplate DataType="{x:Type EventArgs:WorkerState}">
+									<Border Style="{StaticResource GroupBoxBorderNoShadow}" Padding="2" Margin="0,5,0,0" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave">
+										<Grid>
+											<Grid.RowDefinitions>
+												<RowDefinition Height="Auto" />
+												<RowDefinition Height="Auto" />
+												<RowDefinition Height="Auto" />
+												<RowDefinition Height="Auto" />
+												<RowDefinition Height="Auto" />
+											</Grid.RowDefinitions>
+
+											<Label Grid.Row="0" Padding="1" Content="{Binding Path=TaskName, Mode=OneWay}" />
+											<ProgressBar x:Name="progress" Visibility="{Binding Path=Percent, Converter={StaticResource progressToVisibilityConverter}, Mode=OneWay}" Grid.Row="1" Grid.ColumnSpan="2" Value="{Binding Path=Percent, Mode=OneWay}" />
+											<TextBlock Visibility="{Binding Path=Percent, Converter={StaticResource progressToVisibilityConverter}, Mode=OneWay}" Grid.Row="1" Padding="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=PreparationProgressText, Mode=OneWay}" />
+
+											<TextBlock Visibility="{Binding Path=Percent, Converter={StaticResource progressToVisibilityConverter2}, Mode=OneWay}" Grid.Row="2" Padding="1" Text="{Binding Path=JobInfo.Name, Mode=OneWay}" />
+											<StackPanel Visibility="{Binding Path=Percent, Converter={StaticResource progressToVisibilityConverter2}, Mode=OneWay}" Grid.Row="3" Orientation="Horizontal">
+												<Image Width="16" Height="16" Source="{Binding Path=JobInfo.State, Converter={StaticResource viewStateToImageConverter}}" />
+												<TextBlock  Margin="1,0,0,0" Padding="1" Text="{Binding Path=JobInfo.State, Mode=OneWay, Converter={StaticResource viewscriptStatesToStringConverter}}" />
+											</StackPanel>
+
+											<StackPanel Visibility="{Binding Path=Percent, Converter={StaticResource progressToVisibilityConverter2}, Mode=OneWay}" Grid.Row="4" Orientation="Horizontal">
+												<TextBlock Padding="1" Text="Laufzeit: " />
+												<TextBlock Padding="1" Text="{Binding Path=JobInfo.DurationDisplayString, Mode=OneWay}" />
+											</StackPanel>
+
+										</Grid>
+									</Border>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+					</StackPanel>
+				</ScrollViewer>
+
+			</Grid>
+		</Border>
+
+		<!-- button bar -->
+		<StackPanel Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="5" Orientation="Horizontal" Grid.Column="1">
+			<!--<Button Name="btnTemp" Click="btnTemp_Click">Temp</Button>-->
+			<Button 
+				IsEnabled="{Binding ViewBuilder.IsReady}" 
+				Content="_Start" 
+				Height="23" Width="75" 
+				Margin="3" 
+				Name="btnCreateViews" 
+				Click="btnCreateViews_Click"/>
+			<Button 
+				IsEnabled="{Binding ViewBuilder.NotCancelled}"
+				Content="Ab_brechen" 
+				Height="23" Width="75" 
+				Margin="3" 
+				Name="btnCancel" 
+				Click="btnCancel_Click" />
+		</StackPanel>
+	</Grid>
+</Window>

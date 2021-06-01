@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="Taxonomy.IPresentationTree">
+    <Position X="2" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAEAAAAAEAA=</HashCode>
+      <FileName>Interfaces\PresentationTree\IPresentationTree.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="RootEntries" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="Taxonomy.IPresentationTreeNode">
+    <Position X="5" Y="3.75" Width="2" />
+    <AssociationLine Name="Children" Type="Taxonomy.IPresentationTreeEntry">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.88" Y="0.081" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAACAAAAAAAgAEAAAAAAAAAAAAAABBAAAAAAA=</HashCode>
+      <FileName>Interfaces\PresentationTree\IPresentationTreeNode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PresentationTree" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Children" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="Taxonomy.IPresentationTreeEntry">
+    <Position X="5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAFAAAAAAAAAAgAAAAgAAAIAAAAAAAAAAQAAAAAIAAA=</HashCode>
+      <FileName>Interfaces\PresentationTree\IPresentationTreeEntry.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Parents" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

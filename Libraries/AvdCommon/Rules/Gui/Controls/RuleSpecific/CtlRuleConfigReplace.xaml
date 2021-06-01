@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="AvdCommon.Rules.Gui.Controls.RuleSpecific.CtlRuleConfigReplace"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300"
+             DataContextChanged="UserControl_DataContextChanged">
+  <Grid>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="15" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <CheckBox Grid.Row="0" Grid.ColumnSpan="3" Name="cbUseRegex" Unchecked="cbUseRegex_Unchecked"
+              Checked="cbUseRegex_Checked" IsChecked="{Binding RuleWithParameters.UseRegularExpression}">
+      Benutze regulären Ausdruck
+    </CheckBox>
+    <CheckBox Grid.Row="1" Grid.ColumnSpan="3" Name="cbCaseSensitive" Unchecked="cbUseRegex_Unchecked"
+              Checked="cbUseRegex_Checked" IsChecked="{Binding RuleWithParameters.CaseSensitive}">
+      Groß- und Kleinschreibung einbeziehen
+    </CheckBox>
+    <TextBlock Grid.Row="2" Grid.Column="0">
+      Regex Muster oder alter String
+    </TextBlock>
+    <TextBox Grid.Row="2" Grid.Column="2" Name="txtOldString" TextChanged="txtOldString_TextChanged"
+             Text="{Binding RuleWithParameters.OldString, UpdateSourceTrigger=PropertyChanged}" />
+    <TextBlock Grid.Row="3" Grid.Column="0">Erstze mit String</TextBlock>
+    <TextBox Grid.Row="3" Grid.Column="2" Name="txtNewString" TextChanged="txtNewString_TextChanged"
+             Text="{Binding RuleWithParameters.NewString, UpdateSourceTrigger=PropertyChanged}" />
+  </Grid>
+</UserControl>

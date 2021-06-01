@@ -1,0 +1,136 @@
+﻿<Window x:Class="DbSearch.Windows.DlgMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"             
+        xmlns:avd="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+        xmlns:loc="clr-namespace:DbSearch.Localisation" xmlns:Search="clr-namespace:DbSearch.Controls.Search"
+        xmlns:Threading="clr-namespace:DbSearchLogic.SearchCore.Threading;assembly=DbSearchLogic"
+        xmlns:Utils="clr-namespace:AvdWpfControls.Utils;assembly=AvdWpfControls" Title="DbSearch" WindowState="Maximized"
+        
+        xmlns:coreView="clr-namespace:DbSearch.Windows"
+
+        Height="500" Width="1172" Icon="/Resources/logo.ico" Closing="Window_Closing" DragOver="Window_DragOver" Drop="Window_Drop" PreviewKeyDown="Window_PreviewKeyDown">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/MainWindowResources.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/AvdCommon;component/Rules/Gui/ResourceDictionaries/RuleTreeViewResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" MaxWidth="500" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"  x:Name="SettingsGridRow" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Height="55" Grid.ColumnSpan="3">
+            <Border Padding="2" Background="{StaticResource headerBgBrush}">
+                <DockPanel Grid.Row="0">
+
+                    <!-- gets focus after button click -->
+                    <Control x:Name="dummyButtonControl" />
+
+                    <avd:ImageButton Margin="0,0" x:Name="btnImportQueries" ImageSource="/Resources/add.png" Style="{StaticResource HeaderImageButton}" Caption="Importiere Abfragen" Width="120" Click="btnImportQueries_Click" />
+                    <avd:ImageButton Margin="0,0" x:Name="btnAddEmptyQuery" ImageSource="/Resources/add.png" Style="{StaticResource HeaderImageButton}" Caption="Leere Abfrage hinzufügen" Width="150" Click="btnAddEmptyQuery_Click" />
+                    <avd:ImageButton Margin="0,0" x:Name="btnSearchAll" ImageSource="/Resources/search16.png" Style="{StaticResource HeaderImageButton}" Caption="Alle suchen" Width="120" Click="btnSearchAll_Click" />
+                    <avd:ImageButton Margin="0,0" x:Name="btnInfo" ImageSource="/Resources/info1.png" Style="{StaticResource HeaderImageButton}" Caption="Info" HorizontalAlignment="Left" Click="btnInfo_Click" />
+                    <avd:ImageButton Margin="0,0" x:Name="btnDistinct" ImageSource="/Resources/Parcel32.png" Style="{StaticResource HeaderImageButton}" Caption="Distincten der Db" HorizontalAlignment="Left" Width="100" Click="btnDistinct_Click" />
+
+                    <avd:ImageButton Margin="0,0,0,0" x:Name="btnSearchQuery" ImageSource="/Resources/search16.png" Style="{StaticResource HeaderImageButton}" Caption="Ausgewählte Abfrage suchen" Width="175" Click="btnSearchQuery_Click" Visibility="{Binding EnableQueryRelated, Converter={StaticResource trueToVisibilityConverter}}"/>
+                    <avd:ImageButton Margin="0,0,0,0" x:Name="btnCreateScript" ImageSource="/Resources/ExportScript.png" Style="{StaticResource HeaderImageButton}" Caption="Skript exportieren" Width="175" Command="{Binding ExportScriptCommand}" Visibility="{Binding EnableQueryRelated, Converter={StaticResource trueToVisibilityConverter}}" />
+                    <avd:ImageButton Margin="0,0,0,0" x:Name="btnSaveQuery" ImageSource="/Resources/Save.png" Style="{StaticResource HeaderImageButton}" Caption="Ausgewählte Abfrage speichern" Width="175" Click="btnSaveQuery_Click" Visibility="{Binding EnableQueryRelated, Converter={StaticResource trueToVisibilityConverter}}" />
+                    <avd:ImageButton Margin="0,0,0,0" x:Name="btnFindOptimalRows" ImageSource="/Resources/OptimalRows.png" Style="{StaticResource HeaderImageButton}" Caption="Optimale Zeilen finden" Width="135" Click="btnFindOptimalRows_Click" Visibility="{Binding EnableQueryRelated, Converter={StaticResource trueToVisibilityConverter}}"/>
+                    <avd:ImageButton Margin="0,0,0,0" x:Name="btnFindKeys" ImageSource="/Resources/ValidationDatabase.png" Style="{StaticResource HeaderImageButton}" Caption="Start Key Search" Width="135" Click="BtnFindKeys_OnClick"/>
+                    <avd:ImageButton Margin="0,0,0,0" x:Name="btnFindForeignKeys" ImageSource="/Resources/ValidationDatabase.png" Style="{StaticResource HeaderImageButton}" Caption="Start Foreign Key Search" Width="135" Click="BtnFindForeignKeys_OnClick"/>
+                    <avd:ImageButton Margin="0,0" x:Name="btnExit" ImageSource="/Resources/shutdown16.png" Style="{StaticResource HeaderImageButton}" Caption="{x:Static loc:ResourcesGui.BtnExit}" Click="btnExit_Click" HorizontalAlignment="Right"/>
+                </DockPanel>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="3" Padding="2" Style="{StaticResource ButtonBorder}" BorderBrush="#fcd48e" BorderThickness="0,1,0,0">
+
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+
+                    <!-- profile selection -->
+                    <StackPanel Margin="2" Visibility="{Binding Profiles, Converter={StaticResource emptyListToVisibilityConverter}}" >
+                        <TextBlock Text="Profil" Margin="2,0,0,0" Foreground="#222"/>
+                        <avd:AvdComboBox x:Name="cboProfile" MinWidth="150" ItemsSource="{Binding Profiles, Mode=OneWay}"
+                                              SelectedItem="{Binding Path=SelectedProfile, Mode=TwoWay}"
+                                              DisplayMemberPath="DisplayString"
+                                              SelectValueMessage="Bitte auswaehlen..." />
+                        <Button Name="btnUpdateDatabase" Content="Datenbank upgraden" Visibility="{Binding SelectedProfile.DatabaseTooOld, Converter={StaticResource trueToVisibilityConverter}}" Click="btnUpdateDatabase_Click"/>
+                    </StackPanel>
+
+                    <!--<StackPanel Margin="2" Visibility="{Binding SelectedProfile.Queries.Items, Converter={StaticResource emptyListToVisibilityConverter}}" >-->
+                    <StackPanel Margin="2" Visibility="{Binding HasQueries, Converter={StaticResource trueToVisibilityConverter}}" >
+                        <TextBlock Text="Abfrage" Margin="2,0,0,0" Foreground="#222"/>
+                        <avd:AvdComboBox x:Name="cboSelectedQuery" MinWidth="150" ItemsSource="{Binding SelectedProfile.Queries.Items, Mode=OneWay}"
+                                              SelectedItem="{Binding Path=SelectedQuery, Mode=OneWay}"
+                                              DisplayMemberPath="Name"
+                                              SelectValueMessage="Bitte auswaehlen..." DropDownClosed="cboSelectedQuery_DropDownClosed" />
+                    </StackPanel>
+                    <StackPanel Margin="2" >
+                        <TextBlock Text="Anzahl der Threads" />
+                        <avd:NumericUpDown Minimum="0" Maximum="12" Value="{Binding MaxThreads, Mode=TwoWay}" />
+                        <!--<TextBox Text="{Binding Source={x:Static Threading:ThreadManager.MaxThreads}}" Utils:NumericBehavior.AcceptOnlyNumerics="True"/>-->
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- navigation / content -->
+        <avd:HierarchicalTabControl Grid.Column="0" Grid.Row="2" 
+                x:Name="nav" ItemsSource="{Binding Path=NavigationTree}"
+                ContentMemberPath="Content" NavAreaWidth="300"
+                ItemContainerStyle="{StaticResource NavigationTreeItemContainerStyle}"
+                ItemTemplate="{StaticResource NavigationTreeItemTemplate}">
+
+        </avd:HierarchicalTabControl>
+
+        <GridSplitter Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"  Width="3" Margin="0,24,0,0" />
+
+        <!-- Right sidebar -->
+        <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource GroupBoxBorder}" Margin="3,0,0,0">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Expander Header="Regeln">
+                    <Search:CtlRuleList DataContext="{Binding RuleListModel}" Margin="5,5,5,0"/>
+                </Expander>
+                <Expander Header="Zugeordnete Spalten" Grid.Row="1">
+                    <Search:CtlTableMappings DataContext="{Binding SelectedSearchModel.TableMappingsModel}" Grid.Row="1" Margin="5,5,5,0"/>
+                </Expander>
+                <Expander Header="Spaltenübersicht" Grid.Row="2" IsExpanded="True">
+                        <Search:CtlColumnOverview DataContext="{Binding SelectedSearchModel.ColumnOverviewModel}" Grid.Row="2" Margin="5,5,5,0"/>
+                </Expander>
+            </Grid>
+        </Border>
+        
+        <Expander Margin="0,0,0,0" Grid.Row="4" Grid.ColumnSpan="3" IsExpanded="True" x:Name="detailExpander" Style="{StaticResource ExpanderDown}"
+                  ExpandDirection="Down" Background="#ccc"
+                  >
+            <!--Visibility="{Binding SearchNavigationEntry.IsSelected, Converter={StaticResource TrueToVisibilityConverter}}"-->
+            <Expander.Header>
+                Info
+            </Expander.Header>
+            <Search:CtlInfo DataContext="{Binding InfoModel}"/>
+        </Expander>
+
+    </Grid>
+
+
+</Window>

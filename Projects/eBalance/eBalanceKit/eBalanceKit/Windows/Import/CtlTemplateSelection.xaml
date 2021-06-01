@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="eBalanceKit.Windows.Import.CtlTemplateSelection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:import="clr-namespace:eBalanceKit.Windows.Import"
+             xmlns:my="clr-namespace:AvdCommon.Rules.Gui.Converters;assembly=AvdCommon"
+             xmlns:Converters="clr-namespace:eBalanceKit.Converters" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Control.Resources>
+        <Converters:NullToFalseConverter x:Key="myNullToFalseConverter" />
+    </Control.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <import:CtlTemplateList x:Name="ctlTemplateList" DataContext="{Binding .}" />
+
+        <Separator Margin="-5,5,-5,0" Grid.Row="1" />
+        <WrapPanel Grid.Row="2" >
+
+            <!-- add template --><!--IsEnabled="{Binding IsCreateTemplateEditAllowed}"-->
+            <AvdWpfControls:ImageButton2 Name="btnAddTemplate" Width="Auto" Margin="0,5,5,0"
+                                        
+                                        ImageSource="/eBalanceKitResources;component/Resources/add.png" Caption="{x:Static Localisation:ResourcesCommon.New}" 
+                                        Click="btnAddTemplate_Click">
+            </AvdWpfControls:ImageButton2>
+
+            <!-- edit template -->
+            <AvdWpfControls:ImageButton2 Name="btnEditTemplate" Width="Auto" Margin="0,5,5,0"
+                                        IsEnabled="{Binding Templates.SelectedTemplate, Converter={StaticResource myNullToFalseConverter}}"
+                                        ImageSource="/eBalanceKitResources;component/Resources/edit.png" Caption="{x:Static Localisation:ResourcesCommon.Edit}" 
+                                        Click="btnEditTemplate_Click">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="IsEnabled" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=lstTemplates, Path=SelectedIndex}" Value="-1">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=TemplateGenerator}" Value="null">
+                                <Setter Property="IsEnabled" Value="false" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </AvdWpfControls:ImageButton2>
+
+            <!-- delete template -->
+            <AvdWpfControls:ImageButton2 Name="btnDeleteTemplate" Width="Auto" Margin="0,5,5,0"
+                                                     IsEnabled="{Binding Templates.SelectedTemplate, Converter={StaticResource myNullToFalseConverter}}"
+                                                     ImageSource="/eBalanceKitResources;component/Resources/delete.png" Caption="{x:Static Localisation:ResourcesCommon.Delete}" Click="btnDeleteTemplate_Click">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="IsEnabled" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SelectedIndex,ElementName=lstTemplates}" Value="-1">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=TemplateGenerator}" Value="null">
+                                <Setter Property="IsEnabled" Value="false" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </AvdWpfControls:ImageButton2>
+
+            <!--<AvdWpfControls:ImageButton2 Name="btnImportTemplate" Width="Auto" Click="BtnImportTemplateClick" Margin="0,5,5,0"
+                                                     ImageSource="/eBalanceKitResources;component/Resources/ImportTemplate.png" Caption="{x:Static Localisation:ResourcesCommon.Import}" />
+
+            <AvdWpfControls:ImageButton2 Name="btnExportTemplate" Width="Auto" Click="BtnExportTemplateClick" Margin="0,5,5,0"
+                                                     IsEnabled="{Binding SelectedValue, ElementName=lstTemplates, Converter={StaticResource ValueExistsToBoolConverter}}" 
+                                                     ImageSource="/eBalanceKitResources;component/Resources/ExportTemplate.png" Caption="{x:Static Localisation:ResourcesCommon.Export}" />-->
+
+        </WrapPanel>
+    </Grid>
+</UserControl>

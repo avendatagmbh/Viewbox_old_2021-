@@ -1,0 +1,74 @@
+﻿<Window x:Class="eBalanceKit.Windows.TaxonomyUpgrade.DlgShowCompanyUpgradeResults"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        xmlns:Structures="clr-namespace:eBalanceKitBusiness.Structures;assembly=eBalanceKitBusiness"
+        Icon="/CustomResources;component/Resources/logo1.png"
+        Title="Ergebnisse des Taxonomie-Upgrades für Firmenstammdaten" Height="400" Width="800" WindowStartupLocation="CenterOwner" Closing="WindowClosing" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource GroupBoxBorder}" Padding="5" CornerRadius="0">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock TextWrapping="Wrap">
+                    Die Taxonomieversion der Firmenstammdaten wurde aktualisiert. Sollten hierbei befüllte Positionen weggefallen sein, 
+                    können Sie die ursprünglichen Werte in der folgenden Übersicht einsehen und bei Bedarf als PDF-Datei speichern.
+                </TextBlock>
+                
+                <Separator Margin="-5,2,-5,5" Grid.Row="1" />
+                
+                <TreeView Grid.Row="2"  BorderBrush="Transparent" Background="Transparent" ItemsSource="{Binding Results}"
+                  ScrollViewer.CanContentScroll="False" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                    <TreeView.Resources>
+                        <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource TreeViewItemBaseStyle}">
+                            <Setter Property="IsSelected" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Style>
+
+                        <HierarchicalDataTemplate DataType="{x:Type Structures:CompanyUpgradeResult}" ItemsSource="{Binding DeletedValues}">
+                            <Grid>
+                                <Border Style="{StaticResource GroupBoxBorder}" Padding="5,2" Margin="0,0,0,5" />
+                                <Border Style="{StaticResource SelectionOverlayBorder}" Padding="5,2" Margin="0,0,0,5">
+                                    <TextBlock Text="{Binding Company.Name}"/>
+                                </Border>
+                            </Grid>
+                        </HierarchicalDataTemplate>
+
+                        <DataTemplate DataType="{x:Type Structures:UpgradeMissingValue}">
+                            <Grid>
+                                <Border Style="{StaticResource GroupBoxBorder}" Padding="5,2" Margin="0,0,0,5" />
+                                <Border Style="{StaticResource SelectionOverlayBorder}" Padding="5,2" Margin="0,0,0,5">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Element.MandatoryLabel}" TextWrapping="Wrap" Visibility="{Binding Element, Converter={StaticResource ValueExistsToVisibilityConverter}}"/>
+                                        <TextBlock Text="{Binding Element.Name}" TextWrapping="Wrap" Visibility="{Binding Element, Converter={StaticResource ValueExistsToVisibilityConverter}}"/>
+                                        <TextBlock Text="{Binding Value}" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </TreeView.Resources>
+                </TreeView>
+            </Grid>
+        </Border>
+        
+        <!-- button bar -->
+        <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="Info" Height="23" HorizontalAlignment="Stretch" Margin="5,5,470,5" Name="btnInfo" VerticalAlignment="Top" MinWidth="75" Click="BtnInfoClick" />
+                <Button Content="{x:Static Localisation:ResourcesCommon.SaveAsPdf}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnSave" VerticalAlignment="Top" MinWidth="75" Click="BtnSaveClick" />
+                <Button Content="{x:Static Localisation:ResourcesCommon.Ok}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnOk" VerticalAlignment="Top" MinWidth="75" Click="BtnOkClick" />
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿<Window x:Class="FilePefixer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="File-Rename by mag" Width="525" SizeToContent="Height">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Quellordner" Grid.Row="0"/>
+        <Label Content="Präfix" Grid.Row="2"/>
+        <TextBox Name="tbSource" Grid.Row="1"/>
+        <TextBox Name="tbPrefix" Grid.Row="3"/>
+        <CheckBox Name="cbDelete" Content="Text löschen?" Grid.Row="4" HorizontalAlignment="Left"/>
+        <Button Content="Start" Click="Button_Click" HorizontalAlignment="Right" Grid.Row="4" Width="75"/>
+    </Grid>
+</Window>

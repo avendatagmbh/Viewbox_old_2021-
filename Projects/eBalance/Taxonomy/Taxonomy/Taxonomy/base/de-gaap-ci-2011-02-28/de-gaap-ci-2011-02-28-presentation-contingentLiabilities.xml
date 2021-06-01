@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) XBRL Deutschland e.V. - see www.xbrl.de-->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://www.xbrl.de/de/fr/gaap/ci/role/contingentLiabilities" xlink:type="simple" xlink:href="de-gaap-ci-2011-02-28.xsd#role_contingentLiabilities"/>
+  <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/contingentLiabilities">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab" xlink:label="bs.contingLiab"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.notes" xlink:label="bs.contingLiab.notes"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.notes" use="optional" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.guarantees" xlink:label="bs.contingLiab.guarantees"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.guarantees" use="optional" order="2.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.guaranteesNotes" xlink:label="bs.contingLiab.guaranteesNotes"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.guaranteesNotes" use="optional" order="3.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.warranty" xlink:label="bs.contingLiab.warranty"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.warranty" use="optional" order="4.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.collateralisation" xlink:label="bs.contingLiab.collateralisation"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.collateralisation" use="optional" order="5.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.SurplusFromLiableCapital" xlink:label="bs.contingLiab.SurplusFromLiableCapital" xlink:title="bs.contingLiab.SurplusFromLiableCapital"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.SurplusFromLiableCapital" xlink:title="presentation: bs.contingLiab to bs.contingLiab.SurplusFromLiableCapital" order="7.0"/>
+  </presentationLink>
+  <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.de/de/fr/gaap/ci/role/contingentLiabilities">
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.notes" xlink:label="bs.contingLiab.notes" xlink:title="bs.contingLiab.notes"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.notes.assoc" xlink:label="bs.contingLiab.notes.assoc" xlink:title="bs.contingLiab.notes.assoc"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab.notes" xlink:to="bs.contingLiab.notes.assoc" xlink:title="presentation: bs.contingLiab.notes to bs.contingLiab.notes.assoc" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.warranty" xlink:label="bs.contingLiab.warranty" xlink:title="bs.contingLiab.warranty"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.warranty.assoc" xlink:label="bs.contingLiab.warranty.assoc" xlink:title="bs.contingLiab.warranty.assoc"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab.warranty" xlink:to="bs.contingLiab.warranty.assoc" xlink:title="presentation: bs.contingLiab.warranty to bs.contingLiab.warranty.assoc" use="optional" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.collateralisation" xlink:label="bs.contingLiab.collateralisation" xlink:title="bs.contingLiab.collateralisation"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.collateralisation.assoc" xlink:label="bs.contingLiab.collateralisation.assoc" xlink:title="bs.contingLiab.collateralisation.assoc"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab.collateralisation" xlink:to="bs.contingLiab.collateralisation.assoc" xlink:title="presentation: bs.contingLiab.collateralisation to bs.contingLiab.collateralisation.assoc" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab" xlink:label="bs.contingLiab" xlink:title="bs.contingLiab"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.guaranteesNotesCheques" xlink:label="bs.contingLiab.guaranteesNotesCheques" xlink:title="bs.contingLiab.guaranteesNotesCheques"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.guaranteesNotesCheques" xlink:title="presentation: bs.contingLiab to bs.contingLiab.guaranteesNotesCheques" order="1.5"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.guaranteesNotesCheques.assoc" xlink:label="bs.contingLiab.guaranteesNotesCheques.assoc" xlink:title="bs.contingLiab.guaranteesNotesCheques.assoc"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab.guaranteesNotesCheques" xlink:to="bs.contingLiab.guaranteesNotesCheques.assoc" xlink:title="presentation: bs.contingLiab.guaranteesNotesCheques to bs.contingLiab.guaranteesNotesCheques.assoc" order="1.0"/>
+    <loc xlink:type="locator" xlink:href="de-gaap-ci-2011-02-28.xsd#de-gaap-ci_bs.contingLiab.trusteeship" xlink:label="bs.contingLiab.trusteeship" xlink:title="bs.contingLiab.trusteeship"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="bs.contingLiab" xlink:to="bs.contingLiab.trusteeship" xlink:title="presentation: bs.contingLiab to bs.contingLiab.trusteeship" order="6.0"/>
+  </presentationLink>
+</linkbase>

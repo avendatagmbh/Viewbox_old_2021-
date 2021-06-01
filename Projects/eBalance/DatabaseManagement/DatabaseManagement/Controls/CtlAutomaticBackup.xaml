@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="DatabaseManagement.Controls.CtlAutomaticBackup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+    <Grid>
+        <!--<Grid.Style>
+            <Style>
+                <Setter Property="Margin" Value="5" />
+            </Style>
+        </Grid.Style>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="100" />
+            <ColumnDefinition Width="*" MinWidth="250" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.ColumnSpan="2">Backup im regelmäßigen Interval durchführen</Label>
+        <RadioButton Grid.Row="1" Grid.Column="0" IsChecked="{Binding Path=Config.Type, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Daily}">Täglich</RadioButton>
+        <RadioButton Grid.Row="2" Grid.Column="0" Name="rdWeek" IsChecked="{Binding Path=Config.Type, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Weekly}">Wöchentlich</RadioButton>
+        <Grid Grid.Row="2" Grid.Column="1" Name="daysOfWeek" VerticalAlignment="Stretch" Visibility="{Binding ElementName=rdWeek, Path=IsChecked, Converter={StaticResource trueToVisibilityConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <!--Will be filled in Code-->
+        </Grid>
+        <RadioButton Grid.Row="3" Grid.Column="0" IsChecked="{Binding Path=Config.Type, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Monthly}">Monatlich</RadioButton>
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Label>Beginn: </Label>
+            <Label>am</Label>
+            <AvdWpfControls:SearchableDatePicker Name="StartDate" SelectedDate="{Binding StartDate}" DisplayDateStart="{x:Static System:DateTime.Now}" />
+            <Label>um</Label>
+            <AvdWpfControls:NumericUpDown Maximum="23" Minimum="0" Name="StartTimer" Value="{Binding StartTime, Mode=TwoWay}" MinWidth="30"/>
+            <Label>Uhr</Label>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,5,0,0">
+            <Label Content="Ordnerpfad" Grid.Row="5" Grid.Column="0" />
+            <TextBox Text="{Binding SaveFolder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinWidth="200" Height="23"/>
+            <Button Style="{StaticResource ImageButtonStyle}" Click="BtnSelectFolderPath">
+                <Image Width="16" Source="/;component/Resources/Folder.png" />
+            </Button>
+        </StackPanel>
+       <!--<StackPanel Grid.Row="7" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" >
+            <Button Content="Start" IsEnabled="{Binding ServiceStarted, Converter={StaticResource BoolInverter}}" Command="{Binding ServiceStartCommand}" />
+            <Button Content="Stop" IsEnabled="{Binding ServiceStarted}" Command="{Binding ServiceStopCommand}"/>
+            <Button Content="Restart" IsEnabled="{Binding ServiceStarted}" Command="{Binding ServiceRestartCommand}" />
+        </StackPanel>-->
+        
+        <Border Grid.Row="6" Grid.ColumnSpan="2" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock VerticalAlignment="Center" Margin="5"
+                                       Visibility="{Binding ServiceInstalledStarted, Converter={StaticResource falseToVisibilityConverter}}">
+            <TextBlock.Inlines>
+                <Image Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/ValidationWarn.png" Width="15" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       ToolTip="{x:Static Localisation:ResourcesExternalTools.ServiceNotRunning}" />
+                <Run Text="{x:Static Localisation:ResourcesExternalTools.ServiceNotRunning}" />
+            </TextBlock.Inlines>
+                </TextBlock>
+                <TextBlock Margin="5" Visibility="{Binding ServiceInstalledStarted, Converter={StaticResource trueToVisibilityConverter}}">
+                    <TextBlock.Inlines>
+                        <Image Margin="0,0,2,0" Source="/eBalanceKitResources;component/Resources/validate.png" Width="15" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                               ToolTip="{x:Static Localisation:ResourcesExternalTools.ServiceRunning}" />
+                        <Run Text="{x:Static Localisation:ResourcesExternalTools.ServiceRunning}" />
+                    </TextBlock.Inlines>
+                </TextBlock>
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <AvdWpfControls:ImageButton2 Name="btnInstall" ImageSource="/eBalanceKitResources;component/Resources/management.png" Caption="{x:Static Localisation:ResourcesCommon.InstallService}"  
+                           Margin="5" Visibility="{Binding ServiceInstalled, Converter={StaticResource falseToVisibilityConverter}}" IsEnabled="{Binding InstallerExisting}"
+                            Command="{Binding ServiceInstallCommand}">
+                    </AvdWpfControls:ImageButton2>
+                    <AvdWpfControls:ImageButton2 Name="btnSave" ImageSource="/eBalanceKitResources;component/Resources/validate.png" Caption="{x:Static Localisation:ResourcesCommon.Save}"  
+                           Margin="5"
+                            Command="{Binding SaveCommand}">
+                    </AvdWpfControls:ImageButton2>
+                </StackPanel>
+                
+            </Grid>
+            
+        </Border>
+    </Grid>
+</UserControl>

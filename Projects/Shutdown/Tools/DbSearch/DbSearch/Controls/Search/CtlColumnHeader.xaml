@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="DbSearch.Controls.Search.CtlColumnHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:AvdWpfControls="clr-namespace:AvdWpfControls;assembly=AvdWpfControls"
+             xmlns:Converter="clr-namespace:DbSearch.Converter"
+             xmlns:Converter1="clr-namespace:AvdCommon.Converter;assembly=AvdCommon"
+             xmlns:Profile="clr-namespace:DbSearch.Controls.Profile"
+             xmlns:Search="clr-namespace:DbSearch.Controls.Search" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" KeyDown="UserControl_KeyDown" Style="{StaticResource ColumnHeaderStyle}" DataContextChanged="UserControl_DataContextChanged">
+    <UserControl.Resources>
+        <Converter:CommentToImageSourceConverter x:Key="commentToImageSourceConverter" />
+        <Converter1:ColumnTypeToImageSourceConverter x:Key="columnTypeToImageSourceConverter" />
+    </UserControl.Resources>
+
+    <Grid MinWidth="120">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="txtName" Grid.Column="0" Text="{Binding Column.Name}" />
+            <Profile:Circle Grid.Column="1" Width="20" Height="20" HorizontalAlignment="Right" Fill="{Binding Column.MappedTo, Converter={StaticResource mappingToBrushConverter}}"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="{Binding Column.DbColumnInfo.Type, Converter={StaticResource columnTypeToImageSourceConverter}}" HorizontalAlignment="Left"/>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right">
+                <AvdWpfControls:ImageButton Grid.Row="1" Grid.Column="1" Name="btnRules" ImageSource="/Resources/Attach16.png" Width="12" HorizontalAlignment="Left" Margin="5,0,5,0" Click="btnRules_Click">
+                    <AvdWpfControls:ImageButton.Style>
+                        <Style><Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=Column.RuleSet.AllRules.Count}" Value="0">
+                                <Setter Property="AvdWpfControls:ImageButton.Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers></Style>
+                    </AvdWpfControls:ImageButton.Style>
+                </AvdWpfControls:ImageButton>
+                    
+                <AvdWpfControls:ImageButton Name="btnHideColumn" ImageSource="/Resources/eye.png" Width="16" Click="btnHideColumn_Click" />
+                <AvdWpfControls:ImageButton Name="btnEditComment" ImageSource="{Binding Column.Comment, Converter={StaticResource commentToImageSourceConverter}}" ImageHeight="16" Grid.Row="2" Click="btnEditComment_Click" />
+
+                <Popup Name="rulesPopup" PlacementTarget="{Binding ElementName=btnRules}" Placement="Relative" VerticalOffset="20" HorizontalOffset="0"
+                    PopupAnimation="Slide" StaysOpen="false" Closed="commentPopup_Closed">
+                    <!--<Popup.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=Column.RuleSet.AllRules.Count}" Value="0">
+                                    <Setter Property="Popup.Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Popup.Style>-->
+                    <Border Background="White" BorderBrush="Silver" BorderThickness="2" CornerRadius="3" Padding="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label>Regeln</Label>
+                        <Search:CtlRuleListBox Grid.Row="1" x:Name="ctlRuleListBox" DataContext="{Binding RuleListBoxModel}"/>
+                    </Grid>
+                    </Border>
+                </Popup>
+                
+                <Popup Name="commentPopup" PlacementTarget="{Binding ElementName=btnEditComment}" Placement="Relative" VerticalOffset="20" HorizontalOffset="0"
+                PopupAnimation="Slide" AllowsTransparency="True" StaysOpen="false" Closed="commentPopup_Closed" >
+                        
+                    <Border Style="{StaticResource GroupBoxBorder1}" Background="Transparent" MinWidth="300" CornerRadius="5" Padding="5">
+                        <Border.Effect>
+                            <DropShadowEffect/>
+                        </Border.Effect>
+                        <Border BorderBrush="Silver" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" MinHeight="75"/>
+                                </Grid.RowDefinitions>
+                                <Border Background="#EEE" Padding="5,2" CornerRadius="3,3,0,00">
+                                    <TextBlock>Kommentar eingeben</TextBlock>
+                                </Border>
+                                <TextBox x:Name="txtComment" Text="{Binding Column.Comment}"  Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+                            </Grid>
+                        </Border>
+                    </Border>
+                </Popup>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

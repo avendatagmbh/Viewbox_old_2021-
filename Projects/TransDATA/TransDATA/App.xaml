@@ -1,0 +1,15 @@
+﻿<Application x:Class="TransDATA.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" StartupUri="Windows/DlgLogin.xaml" Startup="ApplicationStartup"
+             Exit="ApplicationExit">
+
+  <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/AvdWpfStyles;component/Default.xaml" />
+                <ResourceDictionary Source="/ResourceDictionaries/AppResources.xaml" />
+                <ResourceDictionary Source="/ResourceDictionaries/NavigationResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

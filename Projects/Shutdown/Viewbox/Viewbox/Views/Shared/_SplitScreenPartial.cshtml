@@ -1,0 +1,18 @@
+﻿@model Viewbox.Helper.PassThroughTwoViews
+<!-- _SplitScreenPartial.cshtml -->	   
+<div class="content-box">
+    <div class="content-outer">
+        <div class="content-inner main-content">
+            @(Model.ModelOne != null
+               ? Html.Partial(Model.PartialOne, Model.ModelOne)
+               : Html.Partial(Model.PartialOne)
+                  )
+        </div>
+        <div class="content-inner right-content">
+            @(Model.ModelTwo != null
+               ? Html.Partial(Model.PartialTwo, Model.ModelTwo)
+               : Html.Partial(Model.PartialTwo)
+                  )
+        </div>
+    </div>
+</div>

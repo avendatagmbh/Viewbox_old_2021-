@@ -1,0 +1,71 @@
+﻿@using SystemDb
+@using Viewbox.Properties
+@model Viewbox.Models.ITableObjectList
+<div class="content-box">
+    <div class="content-outer">
+        <div class="content-inner overview-content @(Model.Count == 0 ? "no-data" : "full-width")">
+            @Html.Partial("_CategoryTabsPartialNew", Model)
+            <div class="table-head">
+                <table class="overview-header">
+                    <thead>
+                        <tr>
+                            <th class="todescription">
+                                <div class="sort-column">@Resources.Description</div>
+                                <div class="sorting">
+                                    <a href="@Url.Action("Sort", new { sortColumn = 1, direction = ViewboxDb.SortDirection.Ascending, page = Model.CurrentPage, size = Model.PerPage, json = true })" class="ascending"></a>
+                                    <a href="@Url.Action("Sort", new { sortColumn = 1, direction = ViewboxDb.SortDirection.Descending, page = Model.CurrentPage, size = Model.PerPage, json = true })" class="descending"></a>
+                                </div>
+                            </th>
+                            <th class="tono">
+                                <div class="sort-column">@Resources.TransactionId</div> 
+                                <div class="sorting">
+                                    <a href="@Url.Action("Sort", new { sortColumn = 2, direction = ViewboxDb.SortDirection.Ascending, page = Model.CurrentPage, size = Model.PerPage, json = true })" class="ascending"></a>
+                                    <a href="@Url.Action("Sort", new { sortColumn = 2, direction = ViewboxDb.SortDirection.Descending, page = Model.CurrentPage, size = Model.PerPage, json = true })" class="descending"></a>
+                                </div>
+                            </th>
+                            <th class="toname">
+                                <div class="sort-column">@Resources.Name</div>
+                                <div class="sorting">
+                                    <a href="@Url.Action("Sort", new { sortColumn = 3, direction = ViewboxDb.SortDirection.Ascending, page = Model.CurrentPage, size = Model.PerPage, json = true })" class="ascending"></a>
+                                    <a href="@Url.Action("Sort", new { sortColumn = 3, direction = ViewboxDb.SortDirection.Descending, page = Model.CurrentPage, size = Model.PerPage, json = true })" class="descending"></a>
+                                </div>
+                            </th>
+                            @if (Model.Type != TableType.Issue)
+                            {
+                                <th class="torowcount">
+                                    <div class="sort-column">@Resources.RowCount</div> 
+                                    <div class="sorting">
+                                        <a href="@Url.Action("Sort", new { sortColumn = 4, direction = ViewboxDb.SortDirection.Ascending, page = Model.CurrentPage, size = Model.PerPage, json = true })" class="ascending"></a>
+                                        <a href="@Url.Action("Sort", new { sortColumn = 4, direction = ViewboxDb.SortDirection.Descending, page = Model.CurrentPage, size = Model.PerPage, json = true })" class="descending"></a>
+                                    </div>
+                                </th>
+                            } 
+                            @if (Model.Count > 0)
+                            {
+                                <th class="toaktion"></th>
+                                if (Model.Type != TableType.Table)
+                                {
+                                    <th class="toarrow"></th>
+                                }
+                            }
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            @if (Model.Type != TableType.Table && Model.Count > 0)
+            {
+                <div class="parameter-content">FILTER-CONTAINER</div>
+            }
+            <div class="tab-content">
+                <table>
+                    <tbody>@Html.Partial("_TableObjectsOverviewListPartialNew", Model)</tbody>
+                </table>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+<div class="hide" id="wait-dlg">
+    @Html.Partial("_DialogPartial", Model.GetWaitDialog(Resources.ChangeOrder));
+</div>

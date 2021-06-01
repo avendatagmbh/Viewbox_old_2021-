@@ -1,0 +1,11 @@
+﻿@using Viewbox
+@model Viewbox.Models.IssueList
+@{
+    ViewBag.Title = Model.LabelCaption;
+    var model = new Helper.PassThroughView("_ShowOneTableObjectOverview", Model);
+}
+@section HeadSection {
+    @*@Styles.Render("~/Content/viewoptions-css")*@
+    @Styles.Render("~/Content/ViewOptions.css")
+}
+@Html.Partial("_AppPagePartial", model)

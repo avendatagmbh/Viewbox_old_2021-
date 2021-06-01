@@ -1,0 +1,64 @@
+﻿<Window x:Class="eBalanceKit.Windows.MappingTemplates.DlgShowTaxonomyUpdate"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localisation="clr-namespace:eBalanceKitResources.Localisation;assembly=eBalanceKitResources"
+        Title="{x:Static Localisation:ResourcesCommon.DlgShowTemplateTaxonomyUpdateResults}"        
+        MinWidth="600" MinHeight="400" SizeToContent="Height" Icon="/eBalanceKitResources;component/Resources/UpdateTemplate.png" 
+        WindowStartupLocation="CenterOwner" ResizeMode="CanResize" ShowInTaskbar="False" Closing="Window_Closing">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- main -->
+        <Border Style="{StaticResource GroupBoxBorder}" Padding="5" CornerRadius="0">
+            <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="1" Name="txtNoChanges" Text="Keine Änderung" Visibility="Collapsed" Foreground="#FF6F6F6F" FontSize="36" Margin="155,126" />
+                    <StackPanel Grid.Row="1" Name="stckpnlList">
+                        <TextBlock Text="gelöschte Zuordnungen" Margin="5,0,0,0" />
+                        <Separator Margin="0,2,0,5" />
+
+                        <ListBox ItemsSource="{Binding Path=DeletedEntries}" Name="lstChangedTaxonomy" MinHeight="300" Padding="5" 
+                                 Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Border Style="{StaticResource GroupBoxBorder}" Padding="5,2" Margin="0,0,0,5" />
+                                        <Border Style="{StaticResource SelectionOverlayBorder}" Padding="5,2" Margin="0,0,0,5">
+                                        <StackPanel>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="{Binding Account}" />
+                                                <TextBlock Grid.Column="1" Text="{Binding Type}" Visibility="{Binding Type, Converter={StaticResource ValueExistsToVisibilityConverter}}"/>
+                                            </Grid>
+                                            <TextBlock Text="{Binding PreviousAssignment.MandatoryLabel}" Visibility="{Binding PreviousAssignment, Converter={StaticResource ValueExistsToVisibilityConverter}}"/>
+                                            <TextBlock Text="{Binding PreviousAssignment.Name}" Visibility="{Binding PreviousAssignment, Converter={StaticResource ValueExistsToVisibilityConverter}}" />
+                                        </StackPanel>
+                                        </Border>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Grid>
+        </Border>
+
+        <!-- button bar -->
+        <Border Grid.Row="1" Margin="0,2,0,0" Style="{StaticResource ButtonBorder}">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="{x:Static Localisation:ResourcesCommon.SaveAsPdf}" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5" Name="btnSave" VerticalAlignment="Top" MinWidth="75" Click="BtnSaveClick" />
+                <Button Content="{x:Static Localisation:ResourcesCommon.Ok}" Height="23" HorizontalAlignment="Left" Margin="5" Name="btnOk" VerticalAlignment="Top" Width="75" Click="BtnOkClick" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

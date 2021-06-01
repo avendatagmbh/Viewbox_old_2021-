@@ -1,0 +1,20 @@
+﻿<Window x:Class="ViewboxDatabaseCreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:ViewboxDatabaseCreator.Controls" Title="MainWindow" Height="450" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Controls:DatabaseChoice Grid.Column="0" DataContext="{Binding DatabaseModelSource}"/>
+        <Controls:DatabaseChoice Grid.Column="1" DataContext="{Binding DatabaseModelDestination}"/>
+        <Button Grid.Row="1" Grid.ColumnSpan="2" Name="btnCreateViewboxDb" Click="btnCreateViewboxDb_Click">Erstelle Viewbox Datenbank aus Sourcedatenbank</Button>
+        <!--<Button Grid.Row="2" Grid.ColumnSpan="2" Name="btnTest" Click="btnTest_Click">Erstelle Views von jeder Tabelle</Button>-->
+    </Grid>
+</Window>

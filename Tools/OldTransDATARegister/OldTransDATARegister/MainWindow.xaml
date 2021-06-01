@@ -1,0 +1,26 @@
+﻿<Window x:Class="OldTransDATARegister.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TransDATA Registrierung" Width="400" SizeToContent="Height" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="5">
+        <TextBlock Text="Firma" />
+        <TextBox x:Name="txtCompany" />
+
+        <TextBlock Text="Name" Margin="0,5,0,0"/>
+        <TextBox x:Name="txtName" />
+
+        <TextBlock Text="Vorname" Margin="0,5,0,0"/><TextBox x:Name="txtForename" />
+
+        <TextBlock Text="Code von TransDATA" Margin="0,5,0,0"/>
+        <TextBox x:Name="txtTDKey" />
+
+        <TextBlock Text="Freischaltcode" Margin="0,5,0,0"/>
+        <TextBox x:Name="txtKey" IsReadOnly="True" Background="Silver"/>
+        
+        <Separator Margin="0,5" />
+        
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">            
+            <Button Content="Registrieren" Width="75" Margin="0,5,0,0" Click="Button_Click" />
+        </StackPanel>
+    </StackPanel>
+</Window>

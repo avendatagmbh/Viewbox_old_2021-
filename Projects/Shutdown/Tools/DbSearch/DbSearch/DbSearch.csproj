@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88AF04D0-8B4E-4FE7-96AD-15B0B637C0BB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DbSearch</RootNamespace>
+    <AssemblyName>DbSearch</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|x86'">
+    <OutputPath>bin\x86\x64\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\DbSearch.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\DbSearch.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\DbSearch.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|x64'">
+    <OutputPath>bin\x64\x64\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\DbSearch.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\Assemblies\64Bit\External\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\Keys\CtlKeyResults.xaml.cs">
+      <DependentUpon>CtlKeyResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converter\DataTypeConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\CtlListView.xaml.cs">
+      <DependentUpon>CtlListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\Circle.cs" />
+    <Compile Include="Controls\Profile\CtlCircle.xaml.cs">
+      <DependentUpon>CtlCircle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\CtlMysqlDatabaseChoice.xaml.cs">
+      <DependentUpon>CtlMysqlDatabaseChoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\CtlProfileDetails.xaml.cs">
+      <DependentUpon>CtlProfileDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile\CtlQueries.xaml.cs">
+      <DependentUpon>CtlQueries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Result\CtlResults.xaml.cs">
+      <DependentUpon>CtlResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Result\Mapping.xaml.cs">
+      <DependentUpon>Mapping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchStatus\CtlSearchStatus.xaml.cs">
+      <DependentUpon>CtlSearchStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search\CtlColumnHeader.xaml.cs">
+      <DependentUpon>CtlColumnHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search\CtlColumnOverview.xaml.cs">
+      <DependentUpon>CtlColumnOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search\CtlInfo.xaml.cs">
+      <DependentUpon>CtlInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search\CtlRuleList.xaml.cs">
+      <DependentUpon>CtlRuleList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search\CtlRuleListBox.xaml.cs">
+      <DependentUpon>CtlRuleListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search\CtlSearch.xaml.cs">
+      <DependentUpon>CtlSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search\CtlSearchMatrix.xaml.cs">
+      <DependentUpon>CtlSearchMatrix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search\CtlSearchParams.xaml.cs">
+      <DependentUpon>CtlSearchParams.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search\CtlTableMappings.xaml.cs">
+      <DependentUpon>CtlTableMappings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\BoolInversionConverter.cs" />
+    <Compile Include="Converter\CommentToImageSourceConverter.cs" />
+    <Compile Include="Converter\IsVisibleToBackgroundConverter.cs" />
+    <Compile Include="Converter\IsVisibleToOpacityConverter.cs" />
+    <Compile Include="Converter\MappingToBrushConverter.cs" />
+    <Compile Include="Converter\StatusToBackgroundConverter.cs" />
+    <Compile Include="Converter\ValueExistsToBoolConverter.cs" />
+    <Compile Include="Localisation\ResourcesGui.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesGui.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ColorManager.cs" />
+    <Compile Include="Manager\ProfileModelManager.cs" />
+    <Compile Include="Models\AddEmptyQueryModel.cs" />
+    <Compile Include="Models\TableListModel.cs" />
+    <Compile Include="Models\ListView\IListViewModel.cs" />
+    <Compile Include="Models\ListView\ListViewModelBase.cs" />
+    <Compile Include="Models\ListView\ListViewProfileModel.cs" />
+    <Compile Include="Models\MainWindowModel.cs" />
+    <Compile Include="Models\Profile\DatabaseModel.cs" />
+    <Compile Include="Models\Profile\ImportQueriesModel.cs" />
+    <Compile Include="Models\Profile\ProfileModel.cs" />
+    <Compile Include="Models\Profile\QueriesModel.cs" />
+    <Compile Include="Models\Result\AddMappingsModel.cs" />
+    <Compile Include="Models\Result\ExportScriptModel.cs" />
+    <Compile Include="Models\Result\HitsInDatabaseModel.cs" />
+    <Compile Include="Models\Result\ResultsModel.cs" />
+    <Compile Include="Models\Result\TableMappingsModel.cs" />
+    <Compile Include="Models\Rules\RuleListBoxModel.cs" />
+    <Compile Include="Models\Rules\RuleListModel.cs" />
+    <Compile Include="Models\SearchStatus\SearchStatusModel.cs" />
+    <Compile Include="Models\Search\ColumnHeaderModel.cs" />
+    <Compile Include="Models\Search\ColumnOverviewModel.cs" />
+    <Compile Include="Models\Search\InfoModel.cs" />
+    <Compile Include="Models\Search\SearchModel.cs" />
+    <Compile Include="Models\Search\SearchParamsModel.cs" />
+    <Compile Include="Models\Search\SearchSettingsModel.cs" />
+    <Compile Include="Models\SelectThreadNumberModel.cs" />
+    <Compile Include="Structures\Navigation\NavigationTree.cs" />
+    <Compile Include="Structures\Navigation\NavigationTreeEntry.cs" />
+    <Compile Include="Structures\Results\ColoredRowEntry.cs" />
+    <Compile Include="Structures\Results\ColumnResultView.cs" />
+    <Compile Include="Structures\Results\ColumnHitInfoView.cs" />
+    <Compile Include="Structures\Win32Helper.cs" />
+    <Compile Include="TemplateSelectors\KeyTemplateSelector.cs" />
+    <Compile Include="Windows\DlgSelectTable.xaml.cs">
+      <DependentUpon>DlgSelectTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgAddEmptyQuery.xaml.cs">
+      <DependentUpon>DlgAddEmptyQuery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgAddMappings.xaml.cs">
+      <DependentUpon>DlgAddMappings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgAssignColumns.xaml.cs">
+      <DependentUpon>DlgAssignColumns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgExportScript.xaml.cs">
+      <DependentUpon>DlgExportScript.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgHitsInDatabase.xaml.cs">
+      <DependentUpon>DlgHitsInDatabase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgInfo.xaml.cs">
+      <DependentUpon>DlgInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgMainWindow.xaml.cs">
+      <DependentUpon>DlgMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\DlgSearchSettings.xaml.cs">
+      <DependentUpon>DlgSearchSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DlgSelectThreadNumber.xaml.cs">
+      <DependentUpon>DlgSelectThreadNumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Profile\DlgImportQueries.xaml.cs">
+      <DependentUpon>DlgImportQueries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Profile\DlgNewProfile.xaml.cs">
+      <DependentUpon>DlgNewProfile.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\CtlListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Keys\CtlKeyResults.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\CtlCircle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\CtlMysqlDatabaseChoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Profile\CtlProfileDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Profile\CtlQueries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Result\CtlResults.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Result\Mapping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SearchStatus\CtlSearchStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Search\CtlColumnHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Search\CtlColumnOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Search\CtlInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Search\CtlRuleList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Search\CtlRuleListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Search\CtlSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Search\CtlSearchMatrix.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Search\CtlSearchParams.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Search\CtlTableMappings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\AppResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\DetailViews.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\KeyResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\MainWindowResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DlgSelectTable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DlgAddEmptyQuery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgAddMappings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgAssignColumns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgExportScript.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgHitsInDatabase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DlgMainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DlgSearchSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DlgSelectThreadNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Profile\DlgImportQueries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Profile\DlgNewProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Localisation\ResourcesGui.en.resx" />
+    <EmbeddedResource Include="Localisation\ResourcesGui.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesGui.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdCommon\AvdCommon.csproj">
+      <Project>{89148742-F482-479E-8831-579F54FDF08A}</Project>
+      <Name>AvdCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdWpfControls\AvdWpfControls.csproj">
+      <Project>{E3B12F3F-E420-48FA-B991-FA1FF8D603F2}</Project>
+      <Name>AvdWpfControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\AvdWpfStyles\AvdWpfStyles.csproj">
+      <Project>{FED8686B-7BE7-432C-B1F6-FA5900F6BAC2}</Project>
+      <Name>AvdWpfStyles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\DbAccess\DbAccess.csproj">
+      <Project>{53CD0B45-9B49-4CAC-B5D8-F8C73671B6B1}</Project>
+      <Name>DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\LogHelper\LogHelper\AV.Log.LogHelper.csproj">
+      <Project>{1AFE5981-7268-4249-AFFA-77E42495886E}</Project>
+      <Name>AV.Log.LogHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Libraries\Utils\Utils.csproj">
+      <Project>{10E662B9-E973-4EBF-BB42-E340D52AFE11}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DbSearchBase\DbSearchBase.csproj">
+      <Project>{7675B5FD-9CC3-4B88-A75C-7154CCDD3B48}</Project>
+      <Name>DbSearchBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DbSearchDatabase\DbSearchDatabase.csproj">
+      <Project>{57ED24CB-1B7C-4F5E-8C14-0E321944E64E}</Project>
+      <Name>DbSearchDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DbSearchLogic\DbSearchLogic.csproj">
+      <Project>{2790FBA2-1F3C-4EC7-96C9-6015D9C17DF6}</Project>
+      <Name>DbSearchLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\shutdown16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.ico" />
+    <Resource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
+    <Resource Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ValidationDatabase.png" />
+    <Resource Include="Resources\ViewDatabase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\docBlank.png" />
+    <Resource Include="Resources\docText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\avendata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Search16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Clock24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\numeric.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OptimalRows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\background_header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Info1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Attach16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Reload24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Parcel32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ExportScript.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\table16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\foreign_key16.png" />
+    <Resource Include="Resources\key16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\table_refresh16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\open_key16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

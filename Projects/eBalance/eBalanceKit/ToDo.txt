@@ -1,0 +1,143 @@
+        <TextBlock Text="ToDo" FontSize="96" Foreground="Red" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="8" Opacity="0.8" BlurRadius="16" />
+            </TextBlock.Effect>
+        </TextBlock>
+
+- Option "Kontensalden senden" für andere Tree-Views:
+    - Rekursion bei Auswahl? Probleme mit SendAccountBalancesRecursiveGetIds? IValueEntry
+- Listen (z.B. im Angang / dynamische Erzeugung oder Angabe von Control?)
+- Letztes ausgewähltes Element bei Nav-Wechsel wieder selektieren (z.B. über globales Dictonary < Menueintrag, Element >)
+----------------------------
+
+- beschränkt/unbeschränkt haftende Gesellschafter: Name in Liste (kann leer sein!)
+- Fehler bei Firmenstammdaten: Übernehmen, nicht alle Pflichfelder gefüllt
+- Prüfung ShareHolder.Name != null
+- Übersicht über alle Fehler / Report?
+
+Offene Probleme bei Generierung des XBRL-Testexportes:
+// Fehler bei Angabe von BF4 (derzeit auskommentiert)
+<de-gcd:genInfo.company.id.parent>
+    <de-gcd:genInfo.company.id.parent.idNo>
+        <de-gcd:genInfo.company.id.idNo.type.companyId.ST13 contextRef="D-2012" xsi:nil="true" />
+        <de-gcd:genInfo.company.id.idNo.type.companyId.STID contextRef="D-2012" xsi:nil="true" />
+        <de-gcd:genInfo.company.id.idNo.type.companyId.BF4 contextRef="D-2012" xsi:nil="true" />
+    </de-gcd:genInfo.company.id.parent.idNo>
+</de-gcd:genInfo.company.id.parent>
+  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Registration:
+AvenDATA
+E452-7FC2-4A7E-C2B4
+857F-40B7-045C-0778
+
+Gültige Steuernr: 5117050051729
+
+- Validierung Überleitungsrechnung
+    * Alle Markierten Konten verwendet?
+    * Doppelte Einträge?
+    * Einträge ohne zugeordnete Bilanz/GuV Position?
+    * Einträge ohne angegebene Wertänderung?
+    * Prüfung von Bilanz/GuV nach Anwendung der Überleitungsrechnung (Aktiva = Passiva, alle berechneten Positionen rechnerisch OK?)
+
+-----------------------------------------------------
+weitere Features
+-----------------------------------------------------
+- Multiuser
+- Signieren der Exporte
+- Backupfunktion
+- Erstellung Protokolle
+- Verfahrensmodell für Änderungen an den Taxonomien
+- automatische Updates
+- Cleanup-Methode um Lücken in Auto-Increment-Id Spalten der Rechtetabellen zu schließen und den  Auto-Increment Wert zurückzusetzen
+  (wird erst bei mehr als 2^31 Updates relevant)
+
+-----------------------------------------------------
+
+foreach (var value in this.Model.ValueTreeRoot.Values.Values) {
+    System.Diagnostics.Debug.WriteLine("this.Model.UIElements.Add(stackPanel1, this.Model.ValueTreeRoot.Values[\"" + value.Element.Name + "\"], \"ValueTreeRoot.Values[" + value.Element.Name + "]\");");
+}
+
+- Löschen von Elementen bestätigen
+- Rechtsform in Company.DisplayString anzeigen
+- "frühere Rechtsformen" als Liste
+- Geschäftsjahre: 
+    * Anzeige Beginn/Ende
+    * Aktualisierung der Vorjahresdaten
+    * vorhandene Geschäftsjahre bei Intervalländerung nur Löschen, wenn diese nicht mehr im Intervall liegen
+    * Sicherheitsabfrage beim Löschen, wenn bereits Dokumente zugeordnet wurden
+
+- GJahre: DropDown (bei Definition der GJahre)
+- Assistent "neues Dokument": automatische Auswahl, falls nur ein Element vorhanden ist
+- Assistent "Init": Direktes Öffnen der Dialoge
+
+
+
+============================================================
+Falsche Typen in Taxonomy:
+nt.segmGeographical.ratio.name		(monetary statt string)
+nt.particip.listRow.quota.direct	(monetary statt int)
+nt.particip.listRow.quota.indirect	(monetary statt int)
+============================================================
+Fehlerhafte Def?
+
+  <element name="nt.segmGeographical.OtherImportant"
+            id="de-gaap-ci_nt.segmGeographical.OtherImportant"
+            nillable="true"
+            substitutionGroup="xbrli:tuple">
+      <complexType>
+         <sequence/>															<-- sequence ohne zugeordnete Elemente!
+         <attribute name="id" type="ID" use="optional"/>
+      </complexType>
+  </element>
+  <element name="nt.segmGeographical.OtherImportant.name"
+            id="de-gaap-ci_nt.segmGeographical.OtherImportant.name"
+            nillable="true"
+            substitutionGroup="xbrli:item"
+            type="xbrli:stringItemType"
+            xbrli:periodType="duration"/>
+  <element name="nt.segmGeographical.OtherImportant.value"
+            id="de-gaap-ci_nt.segmGeographical.OtherImportant.value"
+            nillable="true"
+            substitutionGroup="xbrli:item"
+            type="xbrli:monetaryItemType"
+            xbrli:periodType="duration"/>
+  <element name="nt.segmGeographical.transformDiclosue"
+            id="de-gaap-ci_nt.segmGeographical.transformDiclosue"
+            nillable="true"
+            substitutionGroup="xbrli:item"
+            type="xbrli:stringItemType"
+            xbrli:periodType="duration"/>
+  <element name="nt.segmGeographical.Business"
+            id="de-gaap-ci_nt.segmGeographical.Business"
+            nillable="true"
+            substitutionGroup="xbrli:tuple">
+
+########################
+Zum Vergleich korrekte Def.:
+  <element name="nt.segmBusiness.OtherImportant"
+            id="de-gaap-ci_nt.segmBusiness.OtherImportant"
+            nillable="true"
+            substitutionGroup="xbrli:tuple">
+      <complexType>
+         <sequence>
+            <element minOccurs="0" ref="de-gaap-ci:nt.segmBusiness.OtherImportant.name"/>
+            <element minOccurs="0" ref="de-gaap-ci:nt.segmBusiness.OtherImportant.value"/>
+         </sequence>
+         <attribute name="id" type="ID" use="optional"/>
+      </complexType>
+  </element>
+  <element name="nt.segmBusiness.OtherImportant.name"
+            id="de-gaap-ci_nt.segmBusiness.OtherImportant.name"
+            nillable="true"
+            substitutionGroup="xbrli:item"
+            type="xbrli:stringItemType"
+            xbrli:periodType="duration"/>
+  <element name="nt.segmBusiness.OtherImportant.value"
+            id="de-gaap-ci_nt.segmBusiness.OtherImportant.value"
+            nillable="true"
+            substitutionGroup="xbrli:item"
+            type="xbrli:monetaryItemType"
+            xbrli:periodType="duration"/>
+  <element name="nt.segmBusiness.transformDiclosue"
