@@ -15,3 +15,9 @@ E:\Aakash\Refactor_v2\Projects\Shutdown\Viewbox\GhostScriptSharp\obj\Debug\Ghost
 E:\Aakash\Refactor_v2\Projects\Shutdown\Viewbox\GhostScriptSharp\obj\Debug\GhostscriptSharp.csproj.CoreCompileInputs.cache
 E:\Aakash\Refactor_v2\Projects\Shutdown\Viewbox\GhostScriptSharp\obj\Debug\GhostscriptSharp.dll
 E:\Aakash\Refactor_v2\Projects\Shutdown\Viewbox\GhostScriptSharp\obj\Debug\GhostscriptSharp.pdb
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\GhostScriptSharp\bin\Debug\GhostscriptSharp.dll
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\GhostScriptSharp\bin\Debug\GhostscriptSharp.pdb
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\GhostScriptSharp\obj\Debug\GhostscriptSharp.csprojAssemblyReference.cache
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\GhostScriptSharp\obj\Debug\GhostscriptSharp.csproj.CoreCompileInputs.cache
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\GhostScriptSharp\obj\Debug\GhostscriptSharp.dll
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\GhostScriptSharp\obj\Debug\GhostscriptSharp.pdb

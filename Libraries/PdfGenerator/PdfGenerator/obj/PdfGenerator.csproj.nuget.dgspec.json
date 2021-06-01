@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Aakash\\Refactor_v2\\Libraries\\PdfGenerator\\PdfGenerator\\PdfGenerator.csproj": {}
+    "E:\\Aakash\\viewbox_old_2021-\\Libraries\\PdfGenerator\\PdfGenerator\\PdfGenerator.csproj": {}
   },
   "projects": {
-    "E:\\Aakash\\Refactor_v2\\Libraries\\PdfGenerator\\PdfGenerator\\PdfGenerator.csproj": {
+    "E:\\Aakash\\viewbox_old_2021-\\Libraries\\PdfGenerator\\PdfGenerator\\PdfGenerator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Aakash\\Refactor_v2\\Libraries\\PdfGenerator\\PdfGenerator\\PdfGenerator.csproj",
+        "projectUniqueName": "E:\\Aakash\\viewbox_old_2021-\\Libraries\\PdfGenerator\\PdfGenerator\\PdfGenerator.csproj",
         "projectName": "PdfGenerator",
-        "projectPath": "E:\\Aakash\\Refactor_v2\\Libraries\\PdfGenerator\\PdfGenerator\\PdfGenerator.csproj",
+        "projectPath": "E:\\Aakash\\viewbox_old_2021-\\Libraries\\PdfGenerator\\PdfGenerator\\PdfGenerator.csproj",
         "packagesPath": "C:\\Users\\AakashVyas\\.nuget\\packages\\",
-        "outputPath": "E:\\Aakash\\Refactor_v2\\Libraries\\PdfGenerator\\PdfGenerator\\obj\\",
+        "outputPath": "E:\\Aakash\\viewbox_old_2021-\\Libraries\\PdfGenerator\\PdfGenerator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

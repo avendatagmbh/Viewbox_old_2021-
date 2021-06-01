@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\WebServiceInterfaces\\WebServiceInterfaces.csproj",
+      "projectUniqueName": "E:\\Aakash\\viewbox_old_2021-\\Projects\\Shutdown\\Libraries\\WebServiceInterfaces\\WebServiceInterfaces.csproj",
       "projectName": "WebServiceInterfaces",
-      "projectPath": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\WebServiceInterfaces\\WebServiceInterfaces.csproj",
+      "projectPath": "E:\\Aakash\\viewbox_old_2021-\\Projects\\Shutdown\\Libraries\\WebServiceInterfaces\\WebServiceInterfaces.csproj",
       "packagesPath": "C:\\Users\\AakashVyas\\.nuget\\packages\\",
-      "outputPath": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\WebServiceInterfaces\\obj\\",
+      "outputPath": "E:\\Aakash\\viewbox_old_2021-\\Projects\\Shutdown\\Libraries\\WebServiceInterfaces\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

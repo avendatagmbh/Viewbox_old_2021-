@@ -14,3 +14,11 @@ E:\Aakash\Refactor_v2\Libraries\PdfGenerator\PdfGenerator\obj\Debug\net40\PdfGen
 E:\Aakash\Refactor_v2\Libraries\PdfGenerator\PdfGenerator\obj\Debug\net40\PdfGenerator.csproj.CopyComplete
 E:\Aakash\Refactor_v2\Libraries\PdfGenerator\PdfGenerator\obj\Debug\net40\PdfGenerator.dll
 E:\Aakash\Refactor_v2\Libraries\PdfGenerator\PdfGenerator\obj\Debug\net40\PdfGenerator.pdb
+E:\Aakash\viewbox_old_2021-\Libraries\PdfGenerator\PdfGenerator\bin\Debug\net40\PdfGenerator.dll
+E:\Aakash\viewbox_old_2021-\Libraries\PdfGenerator\PdfGenerator\bin\Debug\net40\PdfGenerator.pdb
+E:\Aakash\viewbox_old_2021-\Libraries\PdfGenerator\PdfGenerator\bin\Debug\net40\itextsharp.dll
+E:\Aakash\viewbox_old_2021-\Libraries\PdfGenerator\PdfGenerator\obj\Debug\net40\PdfGenerator.csprojAssemblyReference.cache
+E:\Aakash\viewbox_old_2021-\Libraries\PdfGenerator\PdfGenerator\obj\Debug\net40\PdfGenerator.csproj.CoreCompileInputs.cache
+E:\Aakash\viewbox_old_2021-\Libraries\PdfGenerator\PdfGenerator\obj\Debug\net40\PdfGenerator.csproj.CopyComplete
+E:\Aakash\viewbox_old_2021-\Libraries\PdfGenerator\PdfGenerator\obj\Debug\net40\PdfGenerator.dll
+E:\Aakash\viewbox_old_2021-\Libraries\PdfGenerator\PdfGenerator\obj\Debug\net40\PdfGenerator.pdb

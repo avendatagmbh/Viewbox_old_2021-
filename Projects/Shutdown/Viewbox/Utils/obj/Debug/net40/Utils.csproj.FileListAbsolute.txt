@@ -10,3 +10,9 @@ E:\Aakash\Refactor_v2\Projects\Shutdown\Viewbox\Utils\obj\Debug\net40\Utils.cspr
 E:\Aakash\Refactor_v2\Projects\Shutdown\Viewbox\Utils\obj\Debug\net40\Utils.csproj.CoreCompileInputs.cache
 E:\Aakash\Refactor_v2\Projects\Shutdown\Viewbox\Utils\obj\Debug\net40\Utils.dll
 E:\Aakash\Refactor_v2\Projects\Shutdown\Viewbox\Utils\obj\Debug\net40\Utils.pdb
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\Utils\bin\Debug\net40\Utils.dll
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\Utils\bin\Debug\net40\Utils.pdb
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\Utils\obj\Debug\net40\Utils.csprojAssemblyReference.cache
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\Utils\obj\Debug\net40\Utils.csproj.CoreCompileInputs.cache
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\Utils\obj\Debug\net40\Utils.dll
+E:\Aakash\viewbox_old_2021-\Projects\Shutdown\Viewbox\Utils\obj\Debug\net40\Utils.pdb

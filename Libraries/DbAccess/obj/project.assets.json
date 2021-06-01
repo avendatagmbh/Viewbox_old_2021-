@@ -1217,11 +1217,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Aakash\\Refactor_v2\\Libraries\\DbAccess\\DbAccess.csproj",
+      "projectUniqueName": "E:\\Aakash\\viewbox_old_2021-\\Libraries\\DbAccess\\DbAccess.csproj",
       "projectName": "DbAccess",
-      "projectPath": "E:\\Aakash\\Refactor_v2\\Libraries\\DbAccess\\DbAccess.csproj",
+      "projectPath": "E:\\Aakash\\viewbox_old_2021-\\Libraries\\DbAccess\\DbAccess.csproj",
       "packagesPath": "C:\\Users\\AakashVyas\\.nuget\\packages\\",
-      "outputPath": "E:\\Aakash\\Refactor_v2\\Libraries\\DbAccess\\obj\\",
+      "outputPath": "E:\\Aakash\\viewbox_old_2021-\\Libraries\\DbAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1242,8 +1242,8 @@
         "net472": {
           "targetAlias": "net472",
           "projectReferences": {
-            "E:\\Aakash\\Refactor_v2\\Libraries\\LogHelper\\LogHelper\\AV.Log.LogHelper.csproj": {
-              "projectPath": "E:\\Aakash\\Refactor_v2\\Libraries\\LogHelper\\LogHelper\\AV.Log.LogHelper.csproj"
+            "E:\\Aakash\\viewbox_old_2021-\\Libraries\\LogHelper\\LogHelper\\AV.Log.LogHelper.csproj": {
+              "projectPath": "E:\\Aakash\\viewbox_old_2021-\\Libraries\\LogHelper\\LogHelper\\AV.Log.LogHelper.csproj"
             }
           }
         }

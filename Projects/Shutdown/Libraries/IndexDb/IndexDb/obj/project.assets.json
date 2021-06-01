@@ -1258,11 +1258,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\IndexDb\\IndexDb\\IndexDb.csproj",
+      "projectUniqueName": "E:\\Aakash\\viewbox_old_2021-\\Projects\\Shutdown\\Libraries\\IndexDb\\IndexDb\\IndexDb.csproj",
       "projectName": "IndexDb",
-      "projectPath": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\IndexDb\\IndexDb\\IndexDb.csproj",
+      "projectPath": "E:\\Aakash\\viewbox_old_2021-\\Projects\\Shutdown\\Libraries\\IndexDb\\IndexDb\\IndexDb.csproj",
       "packagesPath": "C:\\Users\\AakashVyas\\.nuget\\packages\\",
-      "outputPath": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\IndexDb\\IndexDb\\obj\\",
+      "outputPath": "E:\\Aakash\\viewbox_old_2021-\\Projects\\Shutdown\\Libraries\\IndexDb\\IndexDb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1283,17 +1283,17 @@
         "net472": {
           "targetAlias": "net472",
           "projectReferences": {
-            "E:\\Aakash\\Refactor_v2\\Libraries\\DbAccess\\DbAccess.csproj": {
-              "projectPath": "E:\\Aakash\\Refactor_v2\\Libraries\\DbAccess\\DbAccess.csproj"
+            "E:\\Aakash\\viewbox_old_2021-\\Libraries\\DbAccess\\DbAccess.csproj": {
+              "projectPath": "E:\\Aakash\\viewbox_old_2021-\\Libraries\\DbAccess\\DbAccess.csproj"
             },
-            "E:\\Aakash\\Refactor_v2\\Libraries\\LogHelper\\LogHelper\\AV.Log.LogHelper.csproj": {
-              "projectPath": "E:\\Aakash\\Refactor_v2\\Libraries\\LogHelper\\LogHelper\\AV.Log.LogHelper.csproj"
+            "E:\\Aakash\\viewbox_old_2021-\\Libraries\\LogHelper\\LogHelper\\AV.Log.LogHelper.csproj": {
+              "projectPath": "E:\\Aakash\\viewbox_old_2021-\\Libraries\\LogHelper\\LogHelper\\AV.Log.LogHelper.csproj"
             },
-            "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\SystemDb\\SystemDb.csproj": {
-              "projectPath": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Libraries\\SystemDb\\SystemDb.csproj"
+            "E:\\Aakash\\viewbox_old_2021-\\Projects\\Shutdown\\Libraries\\SystemDb\\SystemDb.csproj": {
+              "projectPath": "E:\\Aakash\\viewbox_old_2021-\\Projects\\Shutdown\\Libraries\\SystemDb\\SystemDb.csproj"
             },
-            "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Viewbox\\Utils\\Utils.csproj": {
-              "projectPath": "E:\\Aakash\\Refactor_v2\\Projects\\Shutdown\\Viewbox\\Utils\\Utils.csproj"
+            "E:\\Aakash\\viewbox_old_2021-\\Projects\\Shutdown\\Viewbox\\Utils\\Utils.csproj": {
+              "projectPath": "E:\\Aakash\\viewbox_old_2021-\\Projects\\Shutdown\\Viewbox\\Utils\\Utils.csproj"
             }
           }
         }
