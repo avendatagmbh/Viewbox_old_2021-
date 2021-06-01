@@ -1,0 +1,159 @@
+﻿@using SystemDb
+@using SystemDb.Compatibility
+@using Microsoft.Ajax.Utilities
+@using Viewbox
+@using Viewbox.Properties
+@using Viewbox.Models
+
+@helper PrintOptimization(IOptimization opt, int level, IRole iRole)
+{
+    int i = 0;
+    string ulclass = "children level" + level.ToString();
+    if (level > 1)
+    {
+        ulclass += " hide";
+    }
+    <ul class="@ulclass">
+        @foreach (var childOpt in opt.Children)
+        {
+            string lielement = "element" + i.ToString();
+            string aclass = "expand-optimization";
+            if (childOpt.Children.Count == 0)
+            {
+                aclass += " opened";
+            }
+            <li class="@lielement">
+                @Html.Hidden("settings[" + childOpt.Id + "].Key", childOpt.Id, new { @class = "opt-id" })
+
+                <a class="@aclass">@String.Format("({0}) {1}", childOpt.Value, childOpt.GetDescription())</a>
+                <input type="checkbox" @(childOpt.IsAllowedInRightsMode(iRole) ? "checked" : "") name="@String.Format("settings[" + childOpt.Id + "].Value")" class="optimization-visibility" />
+                @if (childOpt.Children.Count > 0)
+                {
+                    @PrintOptimization(childOpt, level + 1, iRole)
+                }
+            </li>
+        }
+    </ul>
+}
+
+<div id="loading" style="z-index: 1000; text-align: center; margin-top: 250px; position: relative; display: block;">
+    <img src="../../Content/img/gif-load.gif" />
+</div>
+<div class="role-settings" style="z-index: -1000; display: none;">
+    @if (ViewboxSession.RightsMode)
+    {
+        int i = 0;
+        int j = 0;
+        <div id="role-tabs">
+            <ul>
+                <li><a href="#role-tabs-1">@Resources.Optimization</a></li>
+                <li><a href="#role-tabs-2">@Resources.Views / @Resources.Issues</a></li>
+                <li><a href="#role-tabs-3">@Resources.Tables</a></li>
+            </ul>
+            <div id="role-tabs-1">
+                @using (Html.BeginForm("UpdateOptimizationRoles", "UserManagement", new { id = ViewboxSession.RightsModeCredential.Id }))
+                {
+                    var iRole = ViewboxApplication.Database.SystemDb.Roles.FirstOrDefault(x => x.Id == ViewboxSession.RightsModeCredential.Id);
+                    <ul class="role-tree opt-role">
+                        @foreach (var optSystem in ViewboxApplication.Database.SystemDb.Optimizations.Where(o => o.Level == 1))
+                        {
+                            if (@optSystem.GetDescription().ToLower().EndsWith("_dynamic"))
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                <li class="root">
+                                    @Html.Hidden("settings[" + optSystem.Id + "].Key", optSystem.Id, new { @class = "opt-id" })
+                                    <a class="expand-optimization">@optSystem.GetDescription()</a>
+                                    <input type="checkbox" @(optSystem.IsAllowedInRightsMode(iRole) ? "checked" : "") name="@String.Format("settings[" + optSystem.Id + "].Value")" class="optimization-visibility" />
+
+                                    @PrintOptimization(optSystem, 1, iRole)
+                                </li>
+                            }
+                        }
+                    </ul>
+                    <div class="buttons">
+                        <input type="button" value="@Resources.Submit" />
+                    </div>
+                }
+            </div>
+            <div id="role-tabs-2">
+                @using (Html.BeginForm("UpdateTableObjectRoles", "UserManagement", new { id = ViewboxSession.RightsModeCredential.Id }))
+                {
+                    <ul class="role-tree views">
+                        <li class="root">
+                            <a>@Resources.View</a>
+                            @Html.CheckBox("isVisible", ViewboxSession.IsTableTypeAllowedInRightsMode(TableType.View))
+                            <hr />
+                        </li>
+                        <li>
+                            <ul class="children">
+                                @foreach (var v in ViewboxApplication.Database.SystemDb.Views.OrderBy(t => t.Database).ThenBy(t => t.GetDescription()))
+                                {
+                                    <li>
+                                        @Html.Hidden("settings[" + i + "].Key", v.Id)
+                                        @Html.CheckBox("settings[" + (i++) + "].Value", v.IsAllowedInRightsMode(), new { @class = "table-visibility" })
+                                        <a>@v.Database - @v.GetDescription()</a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="role-tree issues">
+                        <li class="root">
+                            <a>@Resources.Issue</a>
+                            @Html.CheckBox("isVisible", ViewboxSession.IsTableTypeAllowedInRightsMode(TableType.Issue))
+                            <hr />
+                        </li>
+                        <li>
+                            <ul class="children">
+                                @foreach (var r in ViewboxApplication.Database.SystemDb.Issues.OrderBy(t => t.Database).ThenBy(t => t.GetDescription()))
+                                {
+                                    <li>
+                                        @Html.Hidden("settings[" + i + "].Key", r.Id)
+                                        @Html.CheckBox("settings[" + (i++) + "].Value", r.IsAllowedInRightsMode(), new { @class = "table-visibility" })
+                                        <a>@r.Database - @r.GetDescription()</a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="buttons">
+                        <input type="submit" value="@Resources.Submit" />
+                    </div>
+                }
+            </div>
+            <div id="role-tabs-3" style="position:relative;">
+                @using (Html.BeginForm("UpdateTableObjectRoles", "UserManagement", new { id = ViewboxSession.RightsModeCredential.Id }))
+                {
+                    <ul class="role-tree views">
+                        <li class="root">
+                            <a>@Resources.All @Resources.Tables</a>
+                            @Html.CheckBox("tableVisibility", ViewboxSession.IsTableTypeAllowedInRightsMode(TableType.Table))
+                            <hr />
+                        </li>
+                        <li class="search-box">
+                            @Html.TextBox("search-tables", "", new { id = "search-tables", placeholder = Resources.TableSearch })
+                        </li>
+                        <li>
+                            <ul class="children">
+                                @foreach (var v in ViewboxApplication.Database.SystemDb.Tables.OrderBy(t => t.Database).ThenBy(t => t.GetDescription()))
+                                {
+                                    <li>
+                                        @Html.Hidden("settings[" + i + "].Key", v.Id)
+                                        @Html.CheckBox("settings[" + (i++) + "].Value", v.IsAllowedInRightsMode(), new { @class = "table-visibility" })
+                                        <a>@v.Database - @v.GetDescription()</a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="buttons">
+                        <input type="submit" value="@Resources.Submit" />
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>

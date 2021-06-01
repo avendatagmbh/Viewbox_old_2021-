@@ -1,0 +1,13 @@
+﻿@using Viewbox.Properties
+@model Viewbox.Models.UpdateModel
+
+@{ ViewBag.Title = Resources.UpdateModelCaption; }
+<div id="updateMode-dlg" class="hide">
+    @Html.Partial("_DialogPartial", Model.Dialog)
+</div>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        jQuery("#page").hide();
+        jQuery('#dialog').show().html(jQuery('#updateMode-dlg').html()).addClass("update-url");
+    });
+</script>

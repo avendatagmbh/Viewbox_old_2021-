@@ -1,0 +1,153 @@
+﻿@model Viewbox.Models.RelationModelNew
+@using SystemDb
+@using Viewbox
+@using Viewbox.Properties
+
+<div class="clicknclick-box2">
+    <div class='background-arrow'></div>
+    <div class="content contentrelationpartial">
+        <div class="head">
+            <div>@Model.LabelCaption</div>
+            <div class="close"></div>
+        </div>
+        <div class="search-panel">
+            <div class="back">@Resources.Back</div>
+            <input class="visible" type="hidden" value="" />
+            <div class="search-clicknclick-panel">
+                <div class="bg-left"></div>
+                <input class="field bg-middle placeholder" autocomplete="off" name="search_clicknclick" type="text"
+                       value="@Resources.SearchPhrase" placeholder="@Resources.SearchPhrase" />
+                <div class="bg-right"></div>
+            </div>
+        </div>
+        <div class="scroll-left">
+            <div class="container-left">
+                @{
+                    var relDict = (from r in Model.Relations.GetRelationPartialDictionary() orderby r.Key.Count select r).ToList();
+                    var onlyClickedOptionPossible = true;//relDict.Count == 1 && relDict[0].Key.Count == 1;
+                }
+                @if (relDict.Count > 1 || (relDict.Count == 1 && relDict[0].Key.Count > 1))
+                {
+                    <div class="first-description">
+                        @String.Format(Resources.RelationDescription, Model.Column.GetDescription())
+                    </div>
+                }
+                @foreach (var rel in relDict)
+                {
+                    var colDescForInfoBtn = "";
+                    if (rel.Key.Count == 1)
+                    {
+                        colDescForInfoBtn = Resources.DontConnect;
+                    }
+                    else
+                    {
+                        if ((rel.Value.Values.FirstOrDefault().FirstOrDefault() as IColumnConnection).RelationType == RelationType.Dynamic)
+                        {
+                            var colDescriptions = (from id in rel.Key where ViewboxSession.Columns[id].IsVisible != false orderby ViewboxSession.Columns[id].GetDescription() select ViewboxSession.Columns[id].GetDescription()).ToList();
+                            colDescForInfoBtn = rel.Key.Count == 2 ? String.Format(Resources.ConnectWithColumn, String.Join(",", colDescriptions)) : String.Format(Resources.ConnectWithColumns, String.Join(",", colDescriptions));
+                        }
+                        else
+                        {
+                            var colDescriptions = (from id in rel.Key where id != Model.Column.Id orderby ViewboxSession.Columns[id].GetDescription() select ViewboxSession.Columns[id].GetDescription()).ToList();
+                            colDescForInfoBtn = rel.Key.Count == 2 ? String.Format(Resources.ConnectWithColumn, String.Join(",", colDescriptions)) : String.Format(Resources.ConnectWithColumns, String.Join(",", colDescriptions));
+                        }
+                    }
+                    <div class="option @(onlyClickedOptionPossible ? "active" : "")">
+                        <div class="row_no">@Model.RowNo</div>
+                        @*@if (!onlyClickedOptionPossible)
+                          {
+                            <div class="description">
+                                <a>
+                                @if (rel.Key.Count == 1)
+                                {
+                                    <text>@Resources.DontConnect</text>
+                                }
+                                else
+                                {
+                                    if ((rel.Value.Values.FirstOrDefault().FirstOrDefault() as IColumnConnection).RelationType == RelationType.Dynamic)
+                                    {
+                                        var colDescriptions = (from id in rel.Key where ViewboxSession.Columns[id].IsVisible != false orderby ViewboxSession.Columns[id].GetDescription() select ViewboxSession.Columns[id].GetDescription()).ToList();
+                                        <text>@(rel.Key.Count == 2 ? String.Format(Resources.ConnectWithColumn, String.Join(",", colDescriptions)) : String.Format(Resources.ConnectWithColumns, String.Join(",", colDescriptions)))</text>
+                                    }
+                                    else
+                                    {
+                                    var colDescriptions = (from id in rel.Key where id != Model.Column.Id orderby ViewboxSession.Columns[id].GetDescription() select ViewboxSession.Columns[id].GetDescription()).ToList();
+                                    <text>@(rel.Key.Count == 2 ? String.Format(Resources.ConnectWithColumn, String.Join(",", colDescriptions)) : String.Format(Resources.ConnectWithColumns, String.Join(",", colDescriptions));)</text>
+                                    }
+                                }
+                                </a>
+                            </div>
+                        }*@
+                        @foreach (var r in rel.Value)
+                        {
+                            bool isDynamic = (ViewboxSession.TableObjects[r.Key.Id] as IIssue) != null && ((ViewboxSession.TableObjects[r.Key.Id] as IIssue).IssueType == IssueType.StoredProcedure || (ViewboxSession.TableObjects[r.Key.Id] as IIssue).IssueType == IssueType.Filter);
+                            <div class="table">
+                                <a class="name">@r.Key.GetDescription()</a>
+                                <a class="infobtn"></a>
+                                @Html.Partial("_TooltipPartial", colDescForInfoBtn)
+                                @{
+                            int relationType = 0;
+                            string relationExtInfo = "";
+                            bool candc = true;
+                                }
+                                @foreach (var cc in r.Value)
+                                {
+                                    <div class="source">@cc.Source.Id</div>
+                                    <div class="target">@cc.Target.Id</div>
+                                    <div class="ordinal">@cc.Source.Ordinal</div>
+                                    {
+                                        relationType = (int)cc.RelationType;
+                                        relationExtInfo = cc.ExtInfo;
+                                    }
+                                }
+                                @if (isDynamic)
+                                {
+                                    <div class="link">@Url.Action("BuildDynamicClickAndClickDialog", new { id = r.Key.Id })</div>
+                                }
+                                else
+                                {
+                                    <div class="link">@Url.Action("SortAndFilter", new { id = r.Key.Id, relationType, relationExtInfo, candc })</div>
+                                }
+                                <div class="is_new_tab">@(r.Key.Id > 0 && ViewboxSession.TableObjects[r.Key.Id].Type == TableType.Archive && ViewboxApplication.HideDocumentsMenu ? "true" : "false")</div>
+                                <div class="is_dynamic">@(isDynamic ? "true" : "false")</div>
+                                <div class="is_belegarchiv">@(relationType == 3 ? "true" : "false")</div>
+                            </div>
+                        }
+                        <div class="no-tables"><div class="innerBox">@String.Format(Resources.NoTables, Resources.Tables)</div></div>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div class='background-arrow-down'></div>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery("a.infobtn").on("mousemove", function (e) {
+        var tooltip = jQuery(this).next().clone();
+        var body_tooltip = jQuery('body > .tooltip-container');
+        if (body_tooltip.length > 0) tooltip = body_tooltip;
+        else tooltip.appendTo('body');
+        if (tooltip.hasClass('hide')) tooltip.removeClass('hide');
+        var screenWidth = $('body').width();
+        var screenHeight = $("body").height();
+
+        if (screenHeight > e.pageY + tooltip.height() + 20) {
+            tooltip.css("top", e.pageY + 10);
+        } else {
+            tooltip.css("top", e.pageY - tooltip.height() - 10);
+        }
+
+        if (screenWidth > e.pageX + tooltip.width() + 20) {
+            tooltip.css("left", e.pageX + 10);
+        } else {
+            tooltip.css("left", e.pageX - tooltip.width() - 10);
+        }
+    });
+    jQuery("a.infobtn").on("mouseout", function () {
+        var tooltip = jQuery(this).next();
+        var body_tooltip = jQuery('body > .tooltip-container');
+        if (body_tooltip.length > 0) tooltip = body_tooltip.remove();
+        if (!tooltip.hasClass('hide')) tooltip.addClass('hide');
+    });
+</script>

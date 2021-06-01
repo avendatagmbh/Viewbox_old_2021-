@@ -1,0 +1,14 @@
+﻿@using Viewbox
+@{
+    ViewBag.Title = Model.LabelCaption;
+    var model = new Helper.PassThroughView("_UserManagementPartial", Model);
+}
+@*@section HeadSection {
+        @Styles.Render("~/Content/usermanagement-css")
+    }*@
+@section HeadSection {
+
+    <link href="~/Content/ViewOptions.css" rel="stylesheet" />
+    <link href="~/Content/DataGrid.css" rel="stylesheet" />
+}
+@Html.Partial("_AppPagePartial", model)

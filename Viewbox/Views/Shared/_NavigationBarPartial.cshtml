@@ -1,0 +1,199 @@
+@using SystemDb
+@using Viewbox
+@using Viewbox.Properties
+
+@{
+    var controller = ViewContext.RouteData.Values["Controller"].ToString();
+
+    var count = 3;
+    var opt = ViewboxSession.Optimizations.FirstOrDefault();
+    if (opt == null || ViewboxSession.IssueCount == 0 || ViewboxSession.HideIssuesButton) { count--; }
+    if (opt == null || ViewboxSession.ViewCount == 0 || ViewboxSession.HideViewsButton) { count--; }
+    if (opt == null || ViewboxSession.TableCount == 0 || ViewboxSession.HideTablesButton) { count--; }
+    int rightCount = 3;
+    if (!ViewboxSession.User.AllowedExport && !ViewboxSession.User.IsSuper)
+    {
+        rightCount--;
+    }
+    if (opt == null || ((ViewboxSession.Archives.Count == 0 || ViewboxSession.Archives.All(a => a.Database.ToLower() != opt.FindValue(OptimizationType.System).ToLower())) && (ViewboxSession.ArchiveDocuments.Count == 0 || ViewboxSession.ArchiveDocuments.All(a => a.Database.ToLower() != opt.FindValue(OptimizationType.System).ToLower()))) || ViewboxApplication.HideDocumentsMenu) { rightCount--; }
+}
+<!-- _NavigationBarPartial.cshtml -->
+
+<div class="tabfunctions" style="float: left">
+    <ul>
+        @if (opt != null && ViewboxSession.TableCount > 0 && !ViewboxSession.HideTablesButton && false)
+        {
+            <a class="tab @(controller == "LotusNotes" ? "actualController" : "")" id="LotusNotesTab" href="/LotusNotes/Index">
+        @*@Resources.LotusNotes*@
+            </a>
+            @*if (ViewboxSession.RightsMode)
+            {
+                RightType typeRight;
+                String rightClass = String.Empty;
+                int leftOffset = 298;
+                if (count == 1)
+                {
+                    leftOffset = 134;
+                }
+                if (count == 2)
+                {
+                    leftOffset = 227;
+                }
+                if (count == 3)
+                {
+                    leftOffset = 272;
+                }
+                typeRight = ViewboxSession.IsTableTypeAllowedInRightsMode(TableType.Table) ? RightType.None : RightType.Read;
+                    rightClass = (typeRight == RightType.None) ? "readable" : "navigation-not-readable";
+                    <a class="icon tabletyperight-switch @rightClass" style="position: absolute; display: block; top: 3px; width:21px; height:21px; left: @leftOffset.ToString()px" href="@Url.Action("UpdateTableTypeRightNavigationBar", "UserManagement", new { type = TableType.Table, right = typeRight })">
+                    </a>
+                    @Html.Partial("_TooltipPartial", String.Format(Resources.ChangeRightsOnAllType, Resources.Tables, typeRight.ToString()))
+            }*@
+        }
+        
+        @*@if (opt != null && !ViewboxSession.HideTablesButton && ViewboxSession.GetIssueViewTableCount(TableType.Table) > 0)*@
+    @if (opt != null && ViewboxSession.IsRoleAllowedToSeeTheTableType(TableType.Table) && !ViewboxSession.HideTablesButton)
+    {
+        if(ViewboxApplication.Database.SystemDb.Tables.Any(v => v.Database.ToLower() == opt.FindValue(OptimizationType.System).ToLower()))
+        {
+            <a class="tab @(controller == "TableList" ? "actualController" : "")" data-id="TabTables" id="TablesTab" href="@Url.Action("Index", "TableList")">@Resources.Tables</a>
+            @*if (ViewboxSession.RightsMode)
+            {
+                RightType typeRight;
+                String rightClass = String.Empty;
+                int leftOffset = 298;
+                if (count == 1)
+                {
+                    leftOffset = 134;
+                }
+                if (count == 2)
+                {
+                    leftOffset = 227;
+                }
+                if (count == 3)
+                {
+                    leftOffset = 272;
+                }
+                typeRight = ViewboxSession.IsTableTypeAllowedInRightsMode(TableType.Table) ? RightType.None : RightType.Read;
+                rightClass = (typeRight == RightType.None) ? "readable" : "navigation-not-readable";
+                <a class="icon tabletyperight-switch @rightClass" style="position: absolute; display: block; top: 3px; width:21px; height:21px; left: @leftOffset.ToString()px" href="@Url.Action("UpdateTableTypeRightNavigationBar", "UserManagement", new { type = TableType.Table, right = typeRight })">
+                </a>
+                @Html.Partial("_TooltipPartial", String.Format(Resources.ChangeRightsOnAllType, Resources.Tables, typeRight.ToString()))
+            }*@
+        }
+    }
+
+        @*@if (opt != null && !ViewboxSession.HideViewsButton && ViewboxSession.GetIssueViewTableCount(TableType.View) > 0)*@
+    @if (opt != null && ViewboxSession.IsRoleAllowedToSeeTheTableType(TableType.View) && !ViewboxSession.HideViewsButton)
+    {
+        if (ViewboxApplication.Database.SystemDb.Views.Any(v => v.Database.ToLower() == opt.FindValue(OptimizationType.System).ToLower()))
+        { 
+            <a class="tab @(controller == "ViewList" ? "actualController" : "")" href="@Url.Action("Index", "ViewList")">@Resources.Views</a>
+            @*if (ViewboxSession.RightsMode)
+            {
+                RightType typeRight;
+                String rightClass = String.Empty;
+                int leftOffset = 188;
+                if (count == 1)
+                {
+                    leftOffset = 14;
+                }
+                if (count == 2 && ViewboxSession.IssueCount == 0)
+                {
+                    leftOffset = 60;
+                }
+                if (count == 2 && ViewboxSession.IssueCount > 0)
+                {
+                    leftOffset = 242;
+                }
+                if (count == 3 && ViewboxSession.IssueCount == 0)
+                {
+                    leftOffset = 15;
+                }
+                if (count == 3 && ViewboxSession.IssueCount > 0)
+                {
+                    leftOffset = 149;
+                }
+                typeRight = ViewboxSession.IsTableTypeAllowedInRightsMode(TableType.View) ? RightType.None : RightType.Read;
+                rightClass = (typeRight == RightType.None) ? "readable" : "navigation-not-readable";
+                <a class="icon tabletyperight-switch @rightClass" style="position: absolute; display: block; top: 3px; width:21px; height:21px; left: @leftOffset.ToString()px" href="@Url.Action("UpdateTableTypeRightNavigationBar", "UserManagement", new { type = TableType.View, right = typeRight })">
+                </a>
+                @Html.Partial("_TooltipPartial", String.Format(Resources.ChangeRightsOnAllType, Resources.Views, typeRight.ToString()))
+            }*@
+        }
+    }
+@*        @if (opt != null && !ViewboxSession.HideIssuesButton && ViewboxSession.GetIssueViewTableCount(TableType.Issue) > 0)*@
+    @if (opt != null && ViewboxSession.IsRoleAllowedToSeeTheTableType(TableType.Issue) && !ViewboxSession.HideTablesButton)
+    {
+        if (ViewboxApplication.Database.SystemDb.Issues.Any(v => v.Database.ToLower() == opt.FindValue(OptimizationType.System).ToLower()))
+        { 
+            <a class="tab @(controller == "IssueList" ? "actualController" : "")" href="@Url.Action("Index", "IssueList")">@Resources.Issues</a>
+            @*if (ViewboxSession.RightsMode)
+            {
+                RightType typeRight;
+                String rightClass = String.Empty;
+                typeRight = ViewboxSession.IsTableTypeAllowedInRightsMode(TableType.Issue) ? RightType.None : RightType.Read;
+                rightClass = (typeRight == RightType.None) ? "readable" : "navigation-not-readable";
+                <a class="icon tabletyperight-switch @rightClass" style="position: absolute; display: block; top: 3px; width:21px; height:21px; left: 25px;" href="@Url.Action("UpdateTableTypeRightNavigationBar", "UserManagement", new { type = TableType.Issue, right = typeRight })">
+                </a>
+                @Html.Partial("_TooltipPartial", String.Format(Resources.ChangeRightsOnAllType, Resources.Issues, typeRight.ToString()))
+            }*@
+         }
+     }
+    </ul>
+</div>
+
+<div class="tabfunctions">
+    <ul>
+        <a class="tab @(controller == "Settings" ? "actualController" : "")" href="@Url.Action("Index", "Settings")">@Resources.Settings</a>
+        @if ((ViewboxSession.User.AllowedExport || ViewboxSession.User.IsSuper) && (ViewboxSession.GetIssueViewTableCount(TableType.Issue) > 0 || ViewboxSession.GetIssueViewTableCount(TableType.View) > 0 || ViewboxSession.GetIssueViewTableCount(TableType.Table) > 0))
+        {
+            <a class="tab @(controller == "Export" ? "actualController" : "")" href="@Url.Action("Index", "Export")">@Resources.Export</a>
+        }
+
+        @if (ViewboxSession.ArchiveDocuments.Count > 0 && opt != null && !ViewboxApplication.HideDocumentsMenu && ViewboxSession.ArchiveDocuments.Any(a => a.Database.ToLower() == opt.FindValue(OptimizationType.System).ToLower()))
+        {
+            <a class="tab @(controller == "ArchiveDocuments" ? "actualController" : "")" href="@Url.Action("Index", "ArchiveDocuments")">@Resources.DocumentArchive</a>
+            if (ViewboxSession.RightsMode && ViewboxSession.RightsModeCredential.Type == CredentialType.Role)
+            {
+                RightType typeRight;
+                String rightClass = String.Empty;
+                int leftOffset = 665;
+                if (rightCount == 2)
+                {
+                    leftOffset = 708;
+                }
+                typeRight = ViewboxSession.IsTableTypeAllowedInRightsMode(TableType.ArchiveDocument) ? RightType.None : RightType.Read;
+                rightClass = (typeRight == RightType.None) ? "readable" : "navigation-not-readable";
+                <a class="icon tabletyperight-switch @rightClass" style="width: 21px; height: 21px; position: absolute;" href="@Url.Action("UpdateTableTypeRightNavigationBar", "UserManagement", new { type = TableType.Archive, right = typeRight })">
+                </a>
+                @Html.Partial("_TooltipPartial", String.Format(Resources.ChangeRightsOnAllType, Resources.DocumentArchive, typeRight.ToString()))
+            }
+        }
+
+        @if (ViewboxSession.Archives.Count > 0 && opt != null && !ViewboxApplication.HideDocumentsMenu && ViewboxSession.Archives.Any(a => a.Database.ToLower() == opt.FindValue(OptimizationType.System).ToLower()))
+        {
+            <a class="tab @(controller == "Documents" ? "actualController" : "")" href="@Url.Action("Index", "Documents")">@Resources.DocumentArchive</a>
+            if (ViewboxSession.RightsMode && ViewboxSession.RightsModeCredential.Type == CredentialType.Role)
+            {
+                RightType typeRight;
+                String rightClass = String.Empty;
+                int leftOffset = 665;
+                if (rightCount == 2)
+                {
+                    leftOffset = 708;
+                }
+                typeRight = ViewboxSession.IsTableTypeAllowedInRightsMode(TableType.Archive) ? RightType.None : RightType.Read;
+                rightClass = (typeRight == RightType.None) ? "readable" : "navigation-not-readable";
+                <a class="icon tabletyperight-switch @rightClass" style="width: 21px; height: 21px; position: absolute;" href="@Url.Action("UpdateTableTypeRightNavigationBar", "UserManagement", new { type = TableType.Archive, right = typeRight })">
+                </a>
+                @Html.Partial("_TooltipPartial", String.Format(Resources.ChangeRightsOnAllType, Resources.DocumentArchive, typeRight.ToString()))
+            }
+        }
+
+        @if (ViewboxApplication.FileSystems.Any(x => x.Database == ViewboxSession.SelectedSystem))
+        {
+            <a class="tab @(controller == "FileSystem" ? "actualController" : "")" href="@Url.Action("Index", "FileSystem")">@Resources.FileSystem</a>
+        }
+    </ul>
+</div>

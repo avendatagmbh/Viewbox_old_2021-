@@ -1,0 +1,29 @@
+﻿@using SystemDb
+@using Viewbox
+@using Viewbox.Properties
+@model Viewbox.Models.LoginUser
+<div id="LogoutUserSettings">
+    <h3 class="users">@Resources.User</h3>
+    <ul class="users">
+        @foreach (IUser user in Model.Users.OrderBy((u) => { return u.Name; }))
+        {
+            if (user.IsOnline /*&& user.SessionID != ViewboxSession.User.SessionID*/) 
+            {
+                String logRightClass = String.Empty; 
+                <li class="user @logRightClass">
+                 <span class="admin"></span><span class="name">
+                  @( user.GetName() + (user.IsADUser ? " (AD)" : String.Empty))
+                 </span>
+                  <a class="right delete" href="@Url.Action("LogOutUser", "UserManagement", new { id = @user.Id })">@Resources.Remove</a>
+                </li>
+            }  
+        }
+    </ul>
+    
+</div>
+<div class="hide" id="logout-confirm-dlg">
+    @Html.Partial("_DialogPartial", Model.GetConfirmDialog(Resources.LogoutUsers));
+</div>
+<div class="hide" id="logout-wait-dlg">
+    @Html.Partial("_DialogPartial", Model.GetWaitDialog(Resources.LogoutUsers));
+</div>

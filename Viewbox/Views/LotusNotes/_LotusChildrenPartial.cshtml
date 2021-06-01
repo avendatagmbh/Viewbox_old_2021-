@@ -1,0 +1,21 @@
+﻿@model Viewbox.Models.LotusNodeCollection
+
+@if (Model.Nodes.Count > 0)
+{
+    foreach (var node in Model.Nodes)
+    {
+        <div class="node child" style="display:none;">
+            <div class="sorterfeld"><span>@(node.BU == String.Empty ? node.SorterFeld : String.Empty)</span></div>
+            <div class="bu"><span>@(node.Dokart == String.Empty ? node.BU : String.Empty)</span></div>
+            <div class="dokart"><span>@(node.Kategorie == String.Empty ? node.Dokart : String.Empty)</span></div>
+            <div class="kategorie"><span>@(node.DokDatum == String.Empty ? node.Kategorie : String.Empty)</span></div>
+            <div class="dokdatum"><span>@node.DokDatum</span></div>
+            <div class="children node"></div>
+            <input type="hidden" id="sorterfeld" value="@node.SorterFeld">
+            <input type="hidden" id="bu" value="@node.BU">
+            <input type="hidden" id="dokart" value="@node.Dokart">
+            <input type="hidden" id="kategorie" value="@node.Kategorie">
+            <input type="hidden" id="dokdatum" value="@node.DokDatum">
+        </div>
+    }
+}

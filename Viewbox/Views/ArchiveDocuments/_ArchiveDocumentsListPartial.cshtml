@@ -1,0 +1,119 @@
+﻿@using System.Data
+@using SystemDb
+@using Viewbox
+@using Viewbox.Properties
+@model Viewbox.Models.ArchiveDocumentsModel
+@if (Model.Table != null)
+{
+    <table class="overview">
+        <thead>
+            <tr>
+                @foreach (var Column in Model.Table.Columns)
+                {
+                    var Class = "col_" + Column.Ordinal;
+                    if (!Column.IsVisible)
+                    {
+                        Class += " hide";
+                    }
+                    <th class='@Class datagrid-value'>
+                        <div class="sort-column">@Column.GetDescription(ViewboxSession.Language)</div>
+                        <div class="item-id">@Column.Id</div>
+                        <div class="sorting">
+                            <a href="@Url.Action("Sort", new { id = Column.Id, tableId = Model.Table.Id, direction = ViewboxDb.SortDirection.Ascending })" class="ascending"></a>
+                            <a href="@Url.Action("Sort", new { id = Column.Id, tableId = Model.Table.Id, direction = ViewboxDb.SortDirection.Descending })" class="descending"></a>
+                        </div>
+                    </th>
+                }
+                <th class='datagrid-value'>
+                    <div class="sort-column">
+                        @Resources.Download</div>
+                </th>
+            </tr>
+        </thead>
+        @if (Model.Documents != null)
+        {
+            <tbody>
+                @foreach (DataRow Row in Model.Documents.Rows)
+                {
+                    <tr>
+                        @{
+                            int ord = 1;
+                            foreach (var Column in Model.Table.Columns)
+                            {
+                                var Class = "col_" + Column.Ordinal;
+                                if (!Column.IsVisible)
+                                {
+                                    Class += " hide";
+                                }
+                                string value = Row[ord].ToString();
+                                if (Row[ord] == DBNull.Value)
+                                {
+                                    Class += " null";
+                                    value = "∅";
+                                }
+                                else if (Row[ord].GetType() == typeof (byte[]))
+                                {
+                                    var array = Row[ord] as byte[];
+                                    value = String.Empty;
+                                    for (int j = 0; j < array.Length; j++)
+                                    {
+                                        if (j > 0)
+                                        {
+                                            value += (j%16) > 0 ? " " : Environment.NewLine;
+                                        }
+                                        value += String.Format("{0:X2}", array[j]);
+                                    }
+                                }
+                                else if (0 < (Column.DataType & SqlType.Numeric))
+                                {
+                                    Class += " number";
+                                    if (value.StartsWith("-"))
+                                    {
+                                        Class += " negative";
+                                    }
+                                    if (Column.DataType == SqlType.Decimal)
+                                    {
+                                        IProperty property = ViewboxApplication.FindProperty("thousand");
+                                        string decimals = new String('0', Column.MaxLength);
+                                        string format = "{0:#,0." + decimals + "}";
+                                        if (property != null && property.Value == "false")
+                                        {
+                                            format = "{0:#0." + decimals + "}";
+                                        }
+                                        value = String.Format(format, Row[ord]);
+                                    }
+                                }
+                                ord++;
+                                if (Column.Name.ToLower() == "identifier")
+                                {
+                                    <td class='@Class datagrid-value'>
+                                        @using (Html.BeginForm("DownloadByFileName", "Documents", new {downloadName = value}))
+                                        {
+                                            <input type="submit" class="submit cancel" value="@Resources.Download" />
+                                        }
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td class='@Class datagrid-value'>@value
+                                    </td>
+                                }
+                            }
+                        }
+                        @{
+                            var id = Model.Table.Columns.FirstOrDefault(w => w.Name.ToLower() == "id");
+                            if (id != null)
+                            {
+                                <td class='datagrid-value'>
+                                    <div class="download-blueline-documents">
+                                        <a href="@Url.Action("Download", "ArchiveDocuments", new {id = Row[id.Ordinal]})">Download</a>
+                                    </div>
+                                </td>
+                            }
+                        }
+                    </tr>
+                }
+            </tbody>
+        }
+    </table>
+}

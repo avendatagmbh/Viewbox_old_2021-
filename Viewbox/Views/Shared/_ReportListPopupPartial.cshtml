@@ -1,0 +1,192 @@
+﻿@model Viewbox.Models.IssueList
+@using SystemDb
+@using SystemDb.Internal
+@using Viewbox
+@using Viewbox.Properties
+@using SysDb = SystemDb.Internal
+<!-- _ReportListPopupPartial.cshtml -->
+
+<div id="main-report-list" class="dropdown-main"
+     data-columnfiltercontentaction="ColumnValueList"
+     data-maincontentaction="IndexList"
+     data-tabletype="Issue"
+     style="display: none; height: 550px; right: -74px; top: -8px; width: 1000px;">
+    <div class="triangleright"></div>
+    <div class="outer-container-mask" style="height: 596px;">
+        <div class="outer-container" style="height: 550px;">
+            <h4>@Resources.Issues</h4>
+            <div class="close-reportlist"></div>
+            <div class="inner-container" style="height: 100%;">
+                <div style="border-bottom: 1px solid gray; height: 30px;">
+                    <div class="search-opt-panel">
+                        <div class="bg-left"></div>
+                        <div id="searchForm">
+                            <input class="bg-middle placeholder" style="width: 930px;" name="search" type="text"
+                                   value="@(String.IsNullOrEmpty(Model.SearchPhrase) ? Resources.SearchPhrase : Model.SearchPhrase)" placeholder="@Resources.SearchPhrase" />
+                            <input type="button" class="submit" value="" />
+                        </div>
+                    </div>
+                </div>
+                <table style="height: 30px; text-align: left; width: 980px;">
+                    <tr class="reportsorting">
+                        <td style="width: 150px;">
+                            <div style="float: left;">Id</div>
+                            <div style="float: left;">
+                                <a href="@Url.Action("IndexList", "IssueList", new { direction = ViewboxDb.SortDirection.Ascending, sortColumn = 1 })" class="report-ascending @(Model.SortColumn == 1 && Model.Direction == ViewboxDb.SortDirection.Ascending ? "activ" : "")"></a>
+                                <a href="@Url.Action("IndexList", "IssueList", new { direction = ViewboxDb.SortDirection.Descending, sortColumn = 1 })" class="report-descending @(Model.SortColumn == 1 && Model.Direction == ViewboxDb.SortDirection.Descending ? "activ" : "")"></a>
+                            </div>
+                        </td>
+                        <td style="width: 600px;">
+                            <div style="float: left;">@Resources.Name</div>
+                            <div style="float: left;">
+                                <a href="@Url.Action("IndexList", "IssueList", new { direction = ViewboxDb.SortDirection.Ascending, sortColumn = 2 })" class="report-ascending @(Model.SortColumn == 2 && Model.Direction == ViewboxDb.SortDirection.Ascending ? "activ" : "")"></a>
+                                <a href="@Url.Action("IndexList", "IssueList", new { direction = ViewboxDb.SortDirection.Descending, sortColumn = 2 })" class="report-descending @(Model.SortColumn == 2 && Model.Direction == ViewboxDb.SortDirection.Descending ? "activ" : "")"></a>
+                            </div>
+                        </td>
+                        <td class="toobjecttype" style="width: 200px;">
+                            <div style="float: right; padding-right: 10px;">
+                                <a href="@Url.Action("IndexList", "IssueList", new { direction = ViewboxDb.SortDirection.Ascending, sortColumn = 4 })" class="report-ascending @(Model.SortColumn == 4 && Model.Direction == ViewboxDb.SortDirection.Ascending ? "activ" : "")"></a>
+                                <a href="@Url.Action("IndexList", "IssueList", new { direction = ViewboxDb.SortDirection.Descending, sortColumn = 4 })" class="report-descending @(Model.SortColumn == 4 && Model.Direction == ViewboxDb.SortDirection.Descending ? "activ" : "")"></a>
+                            </div>
+                            <div style="float: right;"><div class="column-filter @(!String.IsNullOrEmpty(ViewboxSession.User.Settings[UserSettingsType.Report_ObjectTypeFilter]) || !String.IsNullOrEmpty(ViewboxSession.User.Settings[UserSettingsType.Extended_ObjectType])? "selected" : "")"></div> @Resources.Module</div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="scroll main-table" id="drag-wrapper">
+                    <table id="destinationTable" class="destination-table">
+                        @foreach (IIssue fav in Model.FavoriteIssues)
+                        {
+                            var classname = String.Empty;
+                            if (fav == Model.SelectedTableObject)
+                            {
+                                classname = "aktiv";
+                            }
+                            if (Model.RightsMode)
+                            {
+                                classname += fav.IsAllowedInRightsMode() ? " readable" : " not-readable";
+                            }
+                            <tr class="@classname gray-on-mouseover reportresultrow draggable">
+                                @Html.Hidden("isDynamic", (fav.Type == TableType.Issue && fav.RowCount != -1) ? "isDynamic" : "isStatic")
+                                <td class="tono" style="width: 150px;">
+                                    <div class="drag-drop-button" style="margin-top: 3px;"></div>
+                                    <div data-tableid="@fav.Id" style="float: left;">@fav.TransactionNumber</div>
+                                </td>
+                                <td class="toname view" style="width: 600px; word-wrap: break-word;">
+                                    <a class="viewoptions" href="@Url.Action("ShowOne", "IssueList", new { id = fav.Id })">
+                                        @fav.GetDescription().ToUpper()
+                                    </a>
+                                </td>
+                                <td class="@(ViewboxSession.User.IsSuper ? "toparams3" : "") text-right" style="width: 200px;">
+                                    <span style="height: 100%; padding: 5px">@fav.GetObjectType()</span>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                    <div class="hide sortColumn">@Model.SortColumn</div>
+                    <div class="hide sortDirection">@Model.Direction</div>
+
+                    <div id="destinationDiv" class="destination-div">
+                        <p style="margin: 26px 0; padding: 0; text-align: center;">@Html.Raw(String.Format(Resources.FavoritesHelp, "<img src='" + @Url.Content("~/Content/img/buttons/button-drag-and-drop.png") + "'></img>"))</p>
+                    </div>
+
+                    <table id="sourceTable" style="width: 100%;">
+                        @{
+                            String ViewType = "";
+                        }
+                        @foreach (ITableObject TableObject in Model.TableObjects)
+                        {
+                            if (TableObject.IsFavorite)
+                            {
+                                continue;
+                            }
+                            var classname = String.Empty;
+                            if (TableObject == Model.SelectedTableObject)
+                            {
+                                classname = "aktiv";
+                            }
+                            if (Model.RightsMode)
+                            {
+                                classname += TableObject.IsAllowedInRightsMode() ? " readable" : " not-readable";
+                            }
+                            if (Model.SortColumn == 4 && TableObject.GetObjectType() != ViewType)
+                            {
+                                ViewType = TableObject.GetObjectType();
+                                <tr><td colspan="6" style="padding: 5px 0;"><div class="typegroup">@ViewType</div></td></tr>
+                            }
+                            <tr class="@classname gray-on-mouseover reportresultrow draggable">
+                                @Html.Hidden("isDynamic", (TableObject.Type == TableType.Issue && TableObject.RowCount != -1) ? "isDynamic" : "isStatic")
+                                <td class="tono" style="width: 150px;">
+                                    <div class="drag-drop-button" style="margin-top: 3px;"></div>
+                                    <div data-tableid="@TableObject.Id" style="float: left;">@TableObject.TransactionNumber</div>
+                                </td>
+                                <td class="toname view" style="width: 600px; word-wrap: break-word;">
+                                    <a class="viewoptions" href="@Url.Action("ShowOne", "IssueList", new { id = TableObject.Id })">
+                                        @TableObject.GetDescription().ToUpper()
+                                    </a>
+                                </td>
+                                <td class="@(ViewboxSession.User.IsSuper ? "toparams3" : "") text-right" style="width: 200px;">
+                                    <span style="height: 100%; padding: 5px">@TableObject.GetObjectType()</span>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                    <table style="width: 100%">
+                        <tr>
+                            <td colspan="6" class="reportNavControls" style=" border-bottom: none;">
+                                <div class="nav-controls">
+                                    @if (Model.Count > Model.PerPage)
+                                    {
+                                        var lastpage = Model.Count % Model.PerPage == 0 ? (Model.Count / Model.PerPage) - 1 : (Model.Count / Model.PerPage);
+                                        if (Model.CurrentPage > 0)
+                                        {
+                                            <span class="iconx first activefirst" nav="activefirst"></span>
+                                            <span class="iconx back activeback" nav="activeback"></span>
+                                        }
+                                        else
+                                        {
+                                            <span class="iconx first"></span>
+                                            <span class="iconx back"></span>
+                                        }
+                                        if (Model.Count > 0)
+                                        {
+                                            <span>@((Model.From + 1).ToString("#,0")) -</span>
+                                            <span class="current">@((Model.To + 1).ToString("#,0"))</span>
+                                            <span>/</span>
+                                            <span class="count">@Model.Count.ToString("#,0")</span>
+                                            <span>@Model.LabelNumberOfRows</span>
+                                            if (Model.Count > 25)
+                                            {
+                                                <span> | </span>
+                                                <span>@Resources.Page :</span>
+                                                @Html.TextBox("pageIssueCount", Model.CurrentPage + 1, new { @class = "pagecount" })
+                                                @Html.Hidden("maxPagesCount", Model.LastPage)
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <span>@Model.LabelNoData</span>
+                                        }
+                                        if (Model.CurrentPage < Model.LastPage)
+                                        {
+                                            <span class="iconx next activenext" nav="activenext"></span>
+                                            <span class="iconx last activelast" nav="activelast" navlast="@lastpage"></span>
+                                        }
+                                        else
+                                        {
+                                            <span class="iconx next"></span>
+                                            <span class="iconx last"></span>
+                                        }
+                                    }
+                                    <div class="hide page">@Model.CurrentPage</div>
+                                    <div class="hide size">@Model.PerPage</div>
+                                    <div class="hide sortColumn">@Model.SortColumn</div>
+                                    <div class="hide direction">@Model.Direction</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

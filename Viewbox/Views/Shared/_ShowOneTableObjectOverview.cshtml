@@ -1,0 +1,114 @@
+﻿@using SystemDb
+@using Viewbox
+@using Viewbox.Properties
+@using Viewbox.Models
+@model ITableObjectList
+@{
+    IEnumerable<ITableObject> tableObjects = Model.TableObjects is IEnumerable<IIssue> ? ((IssueList)Model).SelectedIssues : Model.TableObjects;
+    var TableObject = tableObjects.FirstOrDefault();
+}
+<!-- _ShowOneTableObjectOverview.cshtml -->
+<div class="content-box" id="partialonereportview">
+    <div class="content-outer">
+        <div class="content-inner">
+            <div class="header">
+                @Html.Partial("_ReportListPartial", Model)
+            </div>
+            @Html.Partial("_ReportListPopupPartial", (Model as IssueList))
+            <div class="tab-content-inner-report">
+                @if (TableObject != null)
+                {
+                    <div class="onereportparamset-header">
+                        @if (ViewboxApplication.TableCruds.ContainsTable(TableObject))
+                        {
+                            <div class="right table-cruds">
+                                @foreach (var crud in ViewboxApplication.TableCruds[TableObject])
+                                {
+                                    <div class="right button-crud" ref-id="@crud.Id" ref-table-id="@crud.OnTable.Id">
+                                        @crud.Title
+                                    </div>
+                                }
+                            </div>
+                        }
+                        <div class="reporttablename">
+                            <span>
+                                @TableObject.TransactionNumber
+                                @TableObject.GetDescription().ToUpper()
+                            </span>
+
+                            @if (ViewboxSession.User.UserName.ToLower() == "avendata_qs" || ViewboxSession.User.UserName.ToLower() == "avendata_admin")
+                            {
+                                <input class="tr-number" type="hidden" value="@TableObject.TransactionNumber" />
+                                <input class="last-name" type="hidden" value="@TableObject.GetDescription()" />
+                                <input class="edit-name" type="text" value="@TableObject.GetDescription()" style="display: none;font-weight: normal;" />
+                                <a class="rename-issue" data-state="rename">@Resources.Rename</a>
+                                <a class="rename-issue" style="display:none" data-state="done">@Resources.Done</a>
+                                <a class="rename-issue" style="display: none;" data-state="cancel">@Resources.Cancel</a>
+                            }
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                }
+                @Html.Partial("_ShowOneTableObjectOverviewPartial", Model)
+            </div>
+            @if (TableObject != null)
+            {
+                <div class="report-issue-count-container" style="display: none;">
+                    <div class="left">@Resources.IssueRecordCount &nbsp;</div>
+                    <div id="GetIssueRecordCount" class="left">
+                    </div>
+                </div>
+                <div class="report-button-container">
+                    <div class="execute-report showviewoptions" id="open-report">@Resources.OpenReport</div>
+                    <div class="execute-report" id="clear-report">@Resources.ClearReport</div>
+                    @if (ViewboxSession.User.UserName == "avendata_qs" || ViewboxSession.User.UserName == "avendata_admin")
+                    {
+                        <div class="execute-report showdownloadxml" id="showdownload-xml">@Resources.DownloadParameterXml</div>
+                    }
+                </div>
+            }
+            <div class="dropdown-main" id="distinct-popup" style="display: none; width: 280px; z-index: 1000;">
+                <div class="distinct-main">
+                    <div class="triangleleft">
+                    </div>
+                    <div class="triangleright">
+                    </div>
+                    <div class="outer-container-mask">
+                        <div class="outer-container" style="height: 272px;">
+                            <div class="close-reportlist">
+                            </div>
+                            <div class="inner-container" style="height: 272px;">
+                                <div class="report-distinct-menu">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="triangleleftdown">
+                    </div>
+                    <div class="trianglerightdown">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dropdown-main" id="crud-popup" style="display: none; width: 420px; z-index: 999;">
+    <div class="distinct-main">
+        <div class="outer-container-mask">
+            <div class="outer-container">
+                <div id="dropdown-title">
+                </div>
+                <div class="close-reportlist">
+                </div>
+                <div class="inner-container">
+                    <div id="crud-popup-inner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hide" id="wait-dlg">
+    @Html.Partial("_DialogPartial", Model.GetWaitDialog(Resources.ChangeOrder))
+</div>

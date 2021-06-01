@@ -1,0 +1,82 @@
+﻿@using Viewbox.Properties
+@model Viewbox.Models.ADImportModel
+     
+<div class="dialog-bg"></div>
+<div class="dialog-outer-box">
+    <div class="dialog-box-top"></div>
+    <div class="dialog-box-middle @Model.DialogType @Model.Class">
+        <div class="dialog-icon"></div>
+        <div class="dialog-text">
+            <h2>@Model.Title</h2>
+            <span>@Model.Content</span><br /><br />
+            @if (Model.Inputs.Count > 0 || Model.Select != null || Model.HiddenFields.Count > 0)
+            {
+                <form method="post">
+                    @if (Model.Select != null)
+                    {
+                        <div class="textleft">
+                            <span class="label">@Model.Select.Item1</span>
+                            <select name="@Model.Select.Item2">
+                                @for (int i = 0; i < Model.Select.Item3.Count; i++)
+                                {
+                                    <option 
+                                        @if (Model.Select.Item4.Count >= i)
+                                        {
+                                            <text> value="@Model.Select.Item4[i]" </text>
+                                        }
+                                        @if (i == Model.Select.Item5)
+                                        {
+                                            <text> selected</text>
+                                        }
+                                        >@Model.Select.Item3[i]</option>
+                                }
+                            </select>
+                        </div>
+                    }
+                
+                    @if (Model.Inputs != null && Model.Inputs.Count > 0)
+                    {
+                        <div class="textleft">
+                            @foreach (var i in Model.Inputs)
+                            {
+                                <span class="label">@i.Item1</span>
+                                <input type="@i.Item2" name="@i.Item3" value="@i.Item4" maxlength="@i.Item5" class="ad-input-field" />
+                                <br />
+                            }
+                        </div>
+                    }
+                
+                    <div class="textleft">
+                        <a class="dialog-btn ad-users" href="#">
+                            <span class="left"></span>
+                            <span class="right"></span>
+                            <span class="text">@Resources.ShowAdUsers</span>
+                        </a>
+                    </div>
+                
+                    <div class="middle users" id="ad-user-list">
+                        <h2>@Resources.AdUserList</h2>
+                        @Html.Partial("_ADUserListPartial", Model.Users)
+                    
+                        <h2>@Resources.ImportingAdUsers</h2>
+                        <div class="sorting-users">
+                            <div class="droparea">
+                            </div>
+                        </div>
+                    </div>
+                    @foreach (var h in Model.HiddenFields)
+                    {
+                        <input type="hidden" name="@h.Item1" value="@h.Item2" class="@h.Item3" />
+                    }
+                </form>
+            }
+        </div>
+        <div class="dialog-buttons">
+            @foreach (var Button in Model.Buttons)
+            {
+                <a href="#" class="dialog-btn"><span class="data">@Button.Data</span><span class="left"></span><span class="right"></span><span class="text">@Button.Caption</span></a>
+            }
+        </div>
+    </div>
+    <div class="dialog-box-bottom"></div>
+</div>

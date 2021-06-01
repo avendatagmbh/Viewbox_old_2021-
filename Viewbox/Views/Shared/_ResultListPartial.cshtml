@@ -1,0 +1,76 @@
+﻿@using SystemDb
+@using Viewbox.Properties
+@using Viewbox
+@model Viewbox.Models.ITableObjectList
+<!-- _ResultListPartial.cshtml -->
+<table style="width: 100%;">
+    <tr>
+        <td class="reportseparator">
+            <div class="search-opt-panel">
+                <div class="bg-left"></div>
+                @using (Html.BeginForm("IndexList", "IssueList"))
+                {
+                    <input class="field bg-middle placeholder" name="search" type="text" value="@((ViewboxSession.IssueSortAndFilterSettings != null && !String.IsNullOrEmpty(ViewboxSession.IssueSortAndFilterSettings.Filter)) ? ViewboxSession.IssueSortAndFilterSettings.Filter : Model.LabelSearch)" placeholder="@Model.LabelSearch" />
+                    <input type="submit" class="submit" value="" />
+                }
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div id="showOneReportItem" class="scroll" style="height: 400px;">
+                <table style="width: 100%;">
+                    @foreach (var TableObject in Model.TableObjects)
+                    {
+                        var Issue = TableObject as IIssue;
+                        var classname = String.Empty;
+                        if (TableObject == Model.SelectedTableObject)
+                        {
+                            classname = "aktiv";
+                        }
+                        if (Model.RightsMode)
+                        {
+                            classname += TableObject.IsAllowedInRightsMode() ? " readable" : " not-readable";
+                        }
+                        <tr class="@classname reportresultrow">
+                            @if (Model.RightsMode)
+                            {
+                                var right = TableObject.IsAllowedInRightsMode() ? RightType.None : RightType.Read;
+                                <td class="rights"><a class="right-switch" href="@Url.Action("UpdateReportListObjectRight", "UserManagement", new
+                                                                                                       {
+                                                                                                           id = TableObject.Id, right,
+                                                                                                           json = true,
+                                                                                                           search = Model.SearchPhrase,
+                                                                                                           page = Model.CurrentPage,
+                                                                                                           size = Model.PerPage,
+                                                                                                           showEmpty = Model.ShowEmpty,
+                                                                                                           sortColumn = Model.SortColumn,
+                                                                                                           direction = Model.Direction == null ? ViewboxDb.SortDirection.Ascending : Model.Direction,
+                                                                                                           catRefresh = true
+                                                                                                       })"></a>
+                                    @Html.Partial("_TooltipPartial", ViewboxSession.GetRightInfo(TableObject.Id, UpdateRightType.TableObject, TableObject.IsAllowedInRightsMode()))
+                                </td>
+                            }
+                            <td class="tono"><div>@TableObject.TransactionNumber</div></td>
+                            <td class="toname view" style="width: 250px; word-wrap: break-word;" >
+                                <a class="viewoptions" style="width: 250px;" href="@Url.Action("ShowOne", "IssueList", new {id = TableObject.Id, showHidden = !TableObject.IsVisible})">
+                                    @TableObject.GetDescription().ToUpper()
+                                </a>
+                            </td>
+                            <td class="toparams3 text-right">
+                                @{
+                                    if (Issue.UserDefined && (ViewboxSession.User.IsSuper || ViewboxSession.User.CanGrant))
+                                    {
+                                        <div class="delete"><span class="hide">@Issue.Id</span><a>@Resources.Remove</a></div>
+                                        <div class="edit"><span class="hide">@Issue.Id</span><a>@Resources.Edit</a></div>
+                                    }
+                                }
+                            </td>
+                        </tr>
+                    }
+                </table>
+                        
+            </div>
+        </td>
+    </tr>
+</table>

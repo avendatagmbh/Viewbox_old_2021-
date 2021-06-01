@@ -1,0 +1,76 @@
+﻿@model Viewbox.Models.NotificationModel
+@using Viewbox.Properties
+<!-- _NotificationPartial.cshtml -->
+<div id="notification-container" class="hide notification-container">
+    <div class="head">
+        <h4>@Resources.Jobs</h4>
+        <div class="close-popup" style="top: 30px;right: 12px;"></div>
+        <div class="tabbar">
+            <a class="tabheader latest selected">@Resources.Latest</a>
+            <a class="tabheader history" href="#">@Resources.History</a>
+        </div>
+    </div>
+    <div class="middle latest">
+        <div class="content_latest">
+            @{
+               var latest = new List<Viewbox.Models.NotificationModel.INotification>(Model.Where(n => n.Active));
+               var history = new List<Viewbox.Models.NotificationModel.INotification>(Model.Where(n => !n.Active));
+               }
+            <div class="hide max-entries">@Model.MaxEntriesLatest</div>
+            <div class="hide count-latest">@latest.Count(w=>w.Visible)</div>
+            @for (int i = 0; i < latest.Count; i++ ) {
+                if (i >= Model.MaxEntriesLatest) { continue; }
+                <div class="box @(i == 0 ? "no-border" : "") @(latest[i].Visible ? "" : "hide")">
+                    <div class="top">@(Viewbox.ViewboxSession.Language.CountryCode == "en"
+                                        ? latest[i].Date.ToString("dd.MM. hh:mm tt")
+                                        : latest[i].Date.ToString("dd.MM. HH:mm") + " " + Resources.Clock): @latest[i].Title</div>
+                    <div class="content">
+                        <span class="hide key">@latest[i].Key</span>
+                        <a class="link" href="@latest[i].Link">
+                            <span class="@latest[i].Type logo"></span>
+                            @if (latest[i].IsEmpty) {
+                                <span class="no-result">@Viewbox.Properties.Resources.NoResult:</span><br />
+                            }
+                            <span class="text">@latest[i].Description</span>
+                            <span class="type">@latest[i].Type</span>
+                        </a>
+                    </div>
+                </div>
+            }
+            <div class="empty @(latest.Count == 0 ? "" : "hide")">
+                <a class="text">@Resources.NoNotifications</a>
+            </div>
+            <div class="more @(latest.Count > Model.MaxEntriesLatest ? "" : "hide")">
+                <a class="text">@Resources.MoreNotifications</a>
+            </div>
+        </div>
+        <div class="content_history">
+            <div class="hide max-entries">@Model.MaxEntriesHistory</div>
+            @for (int i = 0; i < history.Count; i++ ) {
+                if (i >= Model.MaxEntriesHistory) { continue; }
+                <div class="box @(i == 0 ? "no-border" : "") @(history[i].Visible ? "" : "hide")">
+                    <div class="top">@(Viewbox.ViewboxSession.Language.CountryCode == "en"
+                                        ? history[i].Date.ToString("dd.MM. hh:mm tt")
+                                        : history[i].Date.ToString("dd.MM. HH:mm") + " " + Resources.Clock): @history[i].Title</div>
+                    <div class="content">
+                        <span class="hide key">@history[i].Key</span>
+                        <a class="link" href="@history[i].Link">
+                            <span class="@history[i].Type logo"></span>
+                            @if (history[i].IsEmpty) {
+                                <span class="no-result">@Resources.NoResult:</span><br />
+                            }
+                            <span class="text">@history[i].Description</span>
+                        </a>
+                    </div>
+                </div>
+            }
+            <div class="empty @(history.Count == 0 ? "" : "hide")">
+                <a class="text">@Resources.NoNotifications</a>
+            </div>
+            <div class="more @(history.Count > Model.MaxEntriesHistory ? "" : "hide")">
+                <a class="text">@Resources.MoreNotifications</a>
+            </div>
+        </div>
+    </div>
+    <div class="bottom"></div>
+</div>

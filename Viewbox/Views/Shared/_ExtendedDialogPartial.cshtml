@@ -1,0 +1,71 @@
+﻿@model Viewbox.Models.DialogModel
+<!-- _ExtendedDialogPartial.cshtml -->
+<div class="dialog-bg"></div>
+<div class="dialog-outer-box">
+    <div class="dialog-box-top"></div>
+    <div class="dialog-box-middle @Model.DialogType @Model.Class">
+        <span class="hide key">@Model.Key</span>
+        <div class="dialog-icon"></div>
+        <div class="dialog-text">
+            <h2>@Model.Title</h2>
+            <span>@Html.Raw(Model.Content)</span><br /><br />
+            @if (Model.Inputs.Count > 0 || Model.Select != null || Model.HiddenFields.Count > 0)
+            {
+                <form method="post" id="dialogform" @(!String.IsNullOrEmpty(Model.FormAction) ? "action=" + Url.Action(Model.FormAction) : "")>
+                    @if (Model.Select != null)
+                    {
+                        foreach (Tuple<string, string, List<string>, List<string>, int> select in Model.Select)
+                        {
+                            <div class="textcenter"><span>@select.Item1</span>
+                                <select name="@select.Item2">
+                                    @for (int i = 0; i < select.Item3.Count; i++)
+                                    {
+                                        <option 
+                                            @if (select.Item4.Count >= i)
+                                            {
+                                                <text> value="@select.Item4[i]" </text>
+                                            }
+                                            @if (i == select.Item5)
+                                            {
+                                                <text> selected</text>
+                                            }
+                                            >@select.Item3[i]</option>
+                                    }
+                                </select></div>
+                            <br />
+                        }
+                    }
+                    @{
+                        foreach (var i in Model.Inputs)
+                        {
+                            if (Model.InputMessages.ContainsKey(i.Item3) && !String.IsNullOrEmpty(Model.InputMessages[i.Item3]))
+                            {
+                                <span>@Html.Raw(Model.InputMessages[i.Item3])</span>
+                                <br />
+                            }
+                            <span>@i.Item1</span>
+                            <input type="@i.Item2" name="@i.Item3" value="@i.Item4" maxlength="@i.Item5" />
+                            if (i.Item6 == 1)
+                            {
+                                @Html.CheckBox("freeselection", false, new { @title = "Free Selection", @class = "freeselection" })
+                            }
+                            <br />
+                        }
+                        foreach (var h in Model.HiddenFields)
+                        {
+                            <input type="hidden" name="@h.Item1" value="@h.Item2" class="@h.Item3" />
+                        }
+                    }
+                </form>
+            }
+        </div>
+        <div class="dialog-buttons">
+            <a href="#" class="dialog-btn template"><span class="left"></span><span class="right"></span><span class="text"></span></a>
+            @foreach (var Button in Model.Buttons)
+            {
+                <a href="#" class="dialog-btn"><span class="data">@Button.Data</span><span class="left"></span><span class="right"></span><span class="text">@Button.Caption</span></a>
+            }
+        </div>
+    </div>
+    <div class="dialog-box-bottom"></div>
+</div>

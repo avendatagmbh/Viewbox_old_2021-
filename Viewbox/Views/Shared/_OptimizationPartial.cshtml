@@ -1,0 +1,102 @@
+﻿@using System.Web.Configuration
+@using SystemDb
+@using Viewbox.Properties
+@using Viewbox
+@model Viewbox.Models.OptimizationModel
+<!-- _OptimizationPartial.cshtml -->
+@{
+    bool isOptValueAndDeatailInOneRow = false;
+    bool.TryParse(WebConfigurationManager.AppSettings["IsOptValueAndDeatailInOneRow"], out isOptValueAndDeatailInOneRow);
+    if (Model.Optimizations.Count > 0)
+    {
+        
+        bool NeedTwooRow = false;
+        int i = 0;
+        do
+        {
+            var value = Model.Optimizations[i].GetValue();
+            var descr = Model.Optimizations[i].GetDescription();
+            if (value != descr)
+            {
+                NeedTwooRow = true;
+            }
+            i++;
+        } while (!NeedTwooRow && i < Model.Optimizations.Count);
+        
+        foreach (var Opt in Model.Optimizations.OrderBy(o => o.Value))
+        {
+        var returnUrl = "";
+        if (!String.IsNullOrEmpty(Model.ReturnUrl))
+        {
+            returnUrl = Model.ReturnUrl.Replace("?isNoResult=true&", "?").Replace("?isNoResult=true", "").Replace("&isNoResult=true", "");
+            returnUrl = returnUrl.Contains("?") ? returnUrl + "&optid=" + Opt.Id : returnUrl + "?optid=" + Opt.Id;            
+        }
+        var value = Opt.GetValue();
+        var descr = Opt.GetDescription();
+        if (descr.ToLower().EndsWith("_dynamic"))
+        {
+            continue;
+        }
+        IProperty property = ViewboxApplication.FindProperty("optimization");
+        bool result = false;
+        if (property != null)
+        {
+            result = bool.Parse(property.Value);
+        }
+            var classname = Opt == Model.SelectedOptimization ? "selected" : String.Empty;
+            <li>
+                @if (ViewboxSession.User.IsSuper)
+                {
+                    <div class="optimization-manipulation">
+                        <div class="edit-optimizations">
+                            <span class="hide opt-id">@Opt.Id</span>
+                        </div>
+                    </div>
+                }
+                <a href="@(String.IsNullOrEmpty(Model.ReturnUrl) ? Model.ViewPage.OptimizationUrl(Opt.Id, ViewContext.RouteData.Values["controller"].ToString().ToLower() == "datagrid" || ViewContext.RouteData.Values["controller"].ToString().ToLower() == "tablelist" || ViewContext.RouteData.Values["controller"].ToString().ToLower() == "issuelist" || ViewContext.RouteData.Values["controller"].ToString().ToLower() == "viewlist") : returnUrl)" class="@classname">
+                        <div>
+                            @if (result)
+                            {
+                                if (isOptValueAndDeatailInOneRow)
+                                {
+                                    if (value != descr)
+                                    {
+                                        <div class="opt-value-details">@value - @descr</div>
+                                    }
+                                    else
+                                    {
+                                        <div class="opt-value-details">@descr</div>
+                                    }
+                                }
+                                else
+                                {
+                                    if (value != descr)
+                                    {
+                                        <div class="opt-value">@value</div>
+                                    }
+                                    
+                                    <div class="details">@descr</div>
+                                    if (NeedTwooRow && value == descr)
+                                    {
+                                        <div class="opt-value"></div>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                <div class="details">@value</div>
+                            }
+                        </div>
+                </a>
+            </li>
+
+        }
+    }
+    else
+    {
+        <li>
+                <div class="details">@Resources.NoResults</div>
+        </li>
+    }
+    <span class="hide opt_count">@Model.Optimizations.Count</span>
+}

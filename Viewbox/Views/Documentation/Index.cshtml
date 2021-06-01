@@ -1,0 +1,10 @@
+﻿@using Viewbox
+@model Viewbox.Models.DocumentationContent
+@{
+    ViewBag.Title = Model.LabelCaption;
+    var model = new Helper.PassThroughView("_DocumentationPartial", Model);
+}
+@section HeadSection {
+    <!-- DOCUMENTATION -->
+}
+@Html.Partial("_AppPagePartial", model)

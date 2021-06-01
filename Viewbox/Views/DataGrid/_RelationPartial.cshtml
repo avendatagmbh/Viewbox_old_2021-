@@ -1,0 +1,98 @@
+﻿@model Viewbox.Models.RelationModel
+@using SystemDb
+@using Viewbox
+@using Viewbox.Properties
+@*<div class='clicknclick-box'>
+    <div class='background-arrow'></div>
+    <div class="background-container">
+        <div class='background-left'></div>
+        <div class='background-middle'>
+            <div class="content">
+                <div class="top">
+                    <div class="head">
+                        <div>@Model.Description</div>
+                        <div class="close">
+                            <a>x</a>
+                        </div>
+                    </div>
+                    <div class="search-panel">
+                        <div class="search-clicknclick-panel">
+                            <div class="bg-left"></div>
+                            <input class="field bg-middle placeholder" autocomplete="off" name="search_clicknclick" type="text"
+                                   value="@Resources.SearchPhrase" placeholder="@Resources.SearchPhrase" />
+                            <div class="bg-right"></div>
+                        </div>
+                        <div class="back">@Resources.Back</div>
+                    </div>
+                </div>
+                <div class="scroll-left">
+                    <div class="container-left">
+                        @{
+                            var relNo = 0;
+                            var relDict = new Dictionary<ITableObject, List<IRelation>>();
+                            foreach (var rel in Model.Relations) {
+                                ITableObject target = null;
+                                foreach (var cc in rel) {
+                                    target = cc.Target.Table;
+                                }
+                                if (!relDict.ContainsKey(target)) {
+                                    relDict.Add(target, new List<IRelation> { rel });
+                                } else {
+                                    relDict[target].Add(rel);
+                                }
+                            }
+                        }
+                        @foreach (var rel in from r in relDict orderby r.Key.GetDescription() select r) {
+                            int variante = 1;
+                            relNo++;
+                            <div class="table @(relNo < relDict.Count ? "border" : "")">
+                                <div class="hide table-id">@rel.Key.Id</div>
+                                <a class="tablename" >@rel.Key.GetDescription()</a>
+                                <div class="boxes">
+                                    <div class="hide table-id">@rel.Key.Id</div>
+                                    @foreach (var r in rel.Value) {
+                                        <div class="option-box">
+                                            <div class="option-head">Variante @variante</div>
+                                            <div class="option-content">
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="outer-cell">@Model.TableObject.GetDescription()</th>
+                                                            <th class="middle-cell"></th>
+                                                            <th class="outer-cell">@rel.Key.GetDescription()</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @{
+                                                            var conds = new List<string>();
+                                                            foreach (var cc in r) {
+                                                                conds.Add(String.Format("Equal(%{0},\"{1}\")", cc.Target.Id, Model.RowValues[cc.Source.Ordinal + 1]));
+                                                                <tr>
+                                                                    <td class="outer-cell">@cc.Source.GetDescription()</td>
+                                                                    <td class="middle-cell"><div class="arrow-right"></div></td>
+                                                                    <td class="outer-cell">@cc.Target.GetDescription()</td>
+                                                                </tr>
+                                                            }
+                                                            var filter = String.Format("And({0})", String.Join(",", conds));
+                                                            variante++;
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="link">@Url.Action("SortAndFilter", new { id = rel.Key.Id, filter = filter })</div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="scroll-right">
+                    <div class="container-right"></div>
+                </div>
+            </div>
+        </div>
+        <div class='background-right'></div>
+    </div>
+    <div class='background-arrow-down'></div>
+</div>*@

@@ -1,0 +1,212 @@
+﻿/* OVERRIDES */
+#ControlCenter .main-content { width: 700px; }
+
+#ControlCenter .content-inner { position: absolute }
+
+#ControlCenter .right-content { width: 364px!important; }
+/* HISTORY */
+
+.page-content .scroll-content {
+    bottom: 0;
+    n: absolute;
+    text-align: left;
+    top: 30px;
+    width: 100%;
+}
+
+.history-entry-box {
+    background: #ececec;
+    background: #ececec;
+    border: 1px solid white;
+    border-bottom: 1px solid #deddde;
+    height: 80px;
+    overflow: hidden;
+    
+    padding: 10px;
+    vertical-align: top;
+}
+
+.history-entry-box .functions {
+    color: #F4AF37;
+    font-size: 10pt;
+    text-align: right;
+}
+
+.history-entry-box .functions a {
+    font-size: 10px;
+    font-style: italic;
+}
+
+.history-entry-box .name {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.history-entry-box .name span {
+    float: left;
+    height: 11px;
+    margin: 0 8px 0 0;
+    width: 11px;
+}
+
+.history-entry-box .name a { color: #037db0; }
+
+.history-entry-box .name ul { float: left; }
+
+.history-entry-box .name ul li {
+    background: url(img/controlcenter/li-data.gif) left no-repeat;
+    padding: 0 0 0 12px;
+}
+
+.history-entry-box .time {
+    background: url(img/controlcenter/icon-time.png);
+    color: #02455f;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    height: 38px;
+    margin: 0 20px 0 0;
+    text-align: center;
+    width: 39px;
+}
+
+.history-entry-box .time span {
+    color: #fff;
+    display: block;
+    font-size: 10px;
+    font-weight: normal;
+    margin: 0 0 3px 0;
+}
+/* JOBS */
+
+.jobs { bottom: 160px!important; }
+
+.jobs div.sort { }
+
+.jobs div.filter { }
+
+.jobs .tab-content { display: none; }
+
+.jobs.sort .tab-content.sort { display: block; }
+
+.jobs.filter .tab-content.filter { display: block; }
+
+.jobs.hidden .tab-content.columns,
+.jobs.visible .tab-content.columns { display: block; }
+
+.jobs.visible tr.hidden { display: none; }
+
+.jobs.hidden tr.visible { display: none; }
+
+.jobs table {
+    border-spacing: 1px;
+    width: 100%;
+}
+
+.jobs thead th {
+    background: url(img/tableview/table-header.png) white;
+    font-size: 10pt;
+    line-height: 20px;
+    text-align: left;
+}
+
+.jobs tbody {
+    -display: block;
+    background: white;
+    width: 100%;
+}
+
+.jobs tbody td {
+    border-bottom: 1px solid #deddde;
+    padding: 3px 5px;
+}
+
+.jobs th.colnumber { width: 50px; }
+
+.jobs td.colnumber {
+    padding-right: 5px;
+    text-align: right;
+    width: 45px;
+}
+
+.jobs .colname { text-align: left; }
+
+.jobs .visibility {
+    padding: 0px;
+    width: 21px;
+}
+
+.jobs .visibility div {
+    background: url(img/icons/search.png) center center no-repeat;
+    height: 21px;
+}
+
+.jobs .colnumber span,
+.jobs .colname span { padding: 0 5px; }
+
+.jobs .colname .description {
+    overflow: hidden;
+    white-space: normal;
+    width: 150px;
+}
+
+.jobs .visibility a {
+    background: url(img/glyphs/checkbox.png) center center no-repeat;
+    display: block;
+    height: 21px;
+    width: 21px;
+}
+
+.jobs.hidden .visibility a { background-image: url(img/glyphs/checkbox-off.png); }
+/* SYSTEM STATE */
+
+.systemstate {
+    background: #054862;
+    bottom: 0px;
+    height: 160px;
+    position: absolute;
+    width: 100%;
+}
+
+.state-box {
+    border: 1px inset;
+    bottom: 0;
+    left: 0;
+    padding: 22px;
+    position: absolute;
+    right: 0;
+    top: 10px;	
+}
+
+.state-box ul {
+    color: #fff;
+    text-align: left;
+}
+
+.state-box ul li { padding: 0 0 12px 0; }
+
+.state-box ul li img { padding: 0 0 0 20px; }
+
+.state-box ul li span { }
+
+.state-box ul li strong {
+    color: #82a9b8;
+    font-weight: bold;
+}
+
+.state-box .progress {
+    background: url(img/controlcenter/progrress-bg.png) no-repeat;
+    float: right;
+    height: 11px;
+    width: 83px;
+}
+
+.state-box .progress .value {
+    background: url(img/controlcenter/progrress.png) no-repeat;
+    float: left;
+    height: 11px;
+}
+
+.description { line-height: 21px; }
+
+.description span { color: #95c4d7; }

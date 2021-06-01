@@ -1,0 +1,28 @@
+﻿@using Viewbox
+@using Viewbox.Properties
+@model Object
+
+@{
+    Dictionary<Operator, Dictionary<string, string>> commandDictionary = new Dictionary<Operator, Dictionary<string, string>>
+                                                                             {
+                                                                                 {Operator.And, new Dictionary<string, string> {{"Symbol", "∧"}, {"TooltipText", Resources.AndFilter}, {"OpCommand", "And(\"\",\"\")"}, {"OpText1", Resources.And},}},
+                                                                                 {Operator.Or, new Dictionary<string, string> {{"Symbol", "∨"}, {"TooltipText", Resources.OrFilter}, {"OpCommand", "Or(\"\",\"\")"}, {"OpText1", Resources.Or},}},
+                                                                                 {Operator.Greater, new Dictionary<string, string> {{"Symbol", ">"}, {"TooltipText", Resources.GreaterFilter}, {"OpCommand", "Greater(%,\"\")"},}},
+                                                                                 {Operator.GreaterOrEqual, new Dictionary<string, string> {{"Symbol", "≥"}, {"TooltipText", Resources.GreaterOrEqualFilter}, {"OpCommand", "GreaterOrEqual(%,\"\")"},}},
+                                                                                 {Operator.Less, new Dictionary<string, string> {{"Symbol", "<"}, {"TooltipText", Resources.LessFilter}, {"OpCommand", "Less(%,\"\")"},}},
+                                                                                 {Operator.LessOrEqual, new Dictionary<string, string> {{"Symbol", "≤"}, {"TooltipText", Resources.LessOrEqualFilter}, {"OpCommand", "LessOrEqual(%,\"\")"},}},
+                                                                                 {Operator.Equals, new Dictionary<string, string> {{"Symbol", "="}, {"TooltipText", Resources.EqualFilter}, {"OpCommand", "Equal(%,\"\")"},}},
+                                                                                 {Operator.Like, new Dictionary<string, string> {{"Symbol", "≈"}, {"TooltipText", Resources.LikeFilter}, {"OpCommand", "Like(%,\"\")"},}},
+                                                                                 {Operator.NotEquals, new Dictionary<string, string> {{"Symbol", "≠"}, {"TooltipText", Resources.NotEqualFilter}, {"OpCommand", "NotEqual(%,\"\")"},}},
+                                                                                 {Operator.In, new Dictionary<string, string> {{"Symbol", "∈"}, {"TooltipText", Resources.InFilter}, {"OpCommand", "In(%,\"\")"},}},
+                                                                                 {Operator.Between, new Dictionary<string, string> {{"Symbol", "≤≤"}, {"TooltipText", Resources.BetweenFilter}, {"OpCommand", "Between(\"\",%,\"\")"},}},
+                                                                                 {Operator.StartsWith, new Dictionary<string, string> {{"Symbol", "=|"}, {"TooltipText", Resources.StartsWithFilter}, {"OpCommand", "StartsWith(%,\"\")"},}},
+                                                                             };
+    var op = (Operator)Model;
+    Dictionary<string, string> textDict = commandDictionary[op];
+}
+<!-- _OperatorsPartial.cshtml -->
+<div class="operator">
+    <span class="op-command">@textDict["OpCommand"]</span>
+    <div class="op-symbol">@textDict["Symbol"]</div>@Html.Partial("_TooltipPartial", textDict["TooltipText"])
+</div>

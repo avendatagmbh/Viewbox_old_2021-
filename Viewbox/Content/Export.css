@@ -1,0 +1,190 @@
+﻿/* EXPORT MAIN LAYOUT */
+#Export { }
+
+#Export .export-left {
+    background: white;
+    bottom: -12px;
+    position: absolute;
+    top: 12px;
+    width: 521px;
+}
+
+#Export .export-controls {
+    background: #054862;
+    bottom: -12px;
+    left: 533px;
+    line-height: 50%;
+    position: absolute;
+    top: 12px;
+    vertical-align: middle;
+    width: 34px;
+}
+
+#Export .export-right {
+    bottom: -12px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 521px;
+}
+
+#Export .export-controls a {
+    background: left center no-repeat;
+    bottom: 0;
+    display: block;
+    left: 3px;
+    position: absolute;
+    top: 0;
+    width: 27px;
+}
+
+#Export .export-controls a:hover { background-position: right; }
+
+#Export .export-controls a.cancel { background-image: url(img/controlcenter/arrow-left.png); }
+
+#Export .export-controls a.export { background-image: url(img/controlcenter/arrow-right.png); }
+
+#Export table {
+    border-spacing: 1px;
+    width: 100%;
+}
+
+#Export thead th {
+    background: url(img/tableview/table-header.png) white;
+    font-size: 10pt;
+    line-height: 20px;
+    text-align: left;
+}
+
+#Export tbody {
+    -display: block;
+    background: white;
+    width: 100%;
+}
+
+#Export tbody td { border-bottom: 1px solid #deddde; }
+
+#Export .colname { text-align: left; }
+/* EXPORT OBJECTS */
+
+#exportables {
+    background-color: ThreeDLighShadow;
+    border-spacing: 0;
+    text-align: left;
+}
+
+#exportables th {
+    font-size: 8pt;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: left;
+}
+
+#exportables th span { padding: 0 5px; }
+
+#exportables td {
+    font-size: 8pt;
+    line-height: 20px;
+    vertical-align: top;
+}
+
+#exportables .expander { margin: 0 !important; }
+
+#exportables .description .text { display: block; }
+
+#exportables .description .category {
+    background: url(img/controlcenter/icon-data.png) 5px 5px no-repeat;
+    padding-left: 20px;
+}
+
+#exportables .description .table {
+    background: url(img/controlcenter/icon-data.png) 5px 5px no-repeat;
+    padding-left: 20px;
+}
+
+#exportables .description .column {
+    background: url(img/controlcenter/icon-data.png) 5px 5px no-repeat;
+    padding-left: 20px;
+}
+
+#exportables .rowcount {
+    padding-right: 15px;
+    width: 85px;
+}
+
+#exportables td.rowcount { text-align: right; }
+
+#exportables .filter { width: 20px; }
+
+#exportables .table-row .filter { background: url(img/icons/filter-off.gif) 4px 2px no-repeat; }
+
+#exportables .table-row .filter:hover { background-image: url(img/icons/filter-hover.gif); }
+
+#exportables .sort { width: 20px; }
+
+#exportables .table-row .sort { background: url(img/icons/sort-off.png) 2px 2px no-repeat; }
+
+#exportables .table-row .sort:hover { background-image: url(img/icons/sort-hover.png); }
+
+#exportables .sort div,
+#exportables .filter div {
+    background: yellow;
+    border: 2px solid blue;
+    display: none;
+    height: 80px;
+    margin-left: -104px;
+    margin-top: 20px;
+    position: absolute;
+    width: 120px;
+}
+
+#exportables .table-row .sort:hover div,
+#exportables .table-row .filter:hover div { display: block; }
+
+#exportables .selection { width: 20px; }
+
+#exportables .table-row td.selection, #exportables .column-row td.selection { background: url(img/glyphs/checkbox-off.png) center 5px no-repeat; }
+
+#exportables .selected td.selection { background-image: url(img/glyphs/checkbox.png); }
+
+#exportables .loader {
+    background: url(img/controlcenter/ajax-loader.gif) no-repeat left center;
+    padding-left: 20px;
+}
+
+#exportables .table-loader .loader { margin-left: 20px; }
+
+#exportables .column-loader .loader { margin-left: 40px; }
+
+#exportables tr.template { display: none; }
+/* TREETABLE */
+
+.treeTable tr td .expander {
+    background-position: right center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 20px;
+    padding: 0;
+    width: 20px;
+}
+
+.treeTable tr.collapsed td .expander { background-image: url(img/treeview/toggle-expand-dark.png); }
+
+.treeTable tr.expanded td .expander { background-image: url(img/treeview/toggle-collapse-dark.png); }
+
+.treeTable .ui-draggable-dragging {
+    color: #000;
+    z-index: 1;
+}
+
+#exportables .description .category { margin-left: 20px; }
+
+#exportables .table-row .expander { padding-left: 20px; }
+
+#exportables .description .table { margin-left: 40px; }
+
+#exportables .column-row .expander { padding-left: 40px; }
+
+#exportables .description .column { margin-left: 60px; }

@@ -1,0 +1,19 @@
+﻿@model Viewbox.Models.DatabaseUpgradeFinishedModel
+@{
+    ViewBag.Title = Model.LabelCaption;
+}
+<div id="databaseupgradefinished-dlg" class="hide">
+    @Html.Partial("_DialogPartial", Model.Dialog)
+</div>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+        @if (Model.ErrorOccured)
+        {
+            <text>jQuery('#dialog').show().html(jQuery('#databaseupgradefinished-dlg').remove().html());</text>
+        }
+        else
+        {
+            <text>jQuery('#dialog').show().html(jQuery('#databaseupgradefinished-dlg').remove().html()).addClass("databaseUpgradeSuccessful");</text>
+        };
+    });
+</script>

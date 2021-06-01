@@ -1,0 +1,38 @@
+﻿@using System.Activities.Statements
+@using Viewbox.Properties;
+@model Viewbox.Models.ConversionProgressDialogModel
+
+<!-- _DownloadPartial.cshtml -->
+@*@Scripts.Render("~/bundles/converter-js")*@
+@Scripts.Render("~/Scripts/Converter.js")
+
+@if (!String.IsNullOrWhiteSpace(Model.Link))
+{
+    <div class="link hide">@Model.Link</div>
+}
+else
+{
+    <div class="dialog-bg"></div>
+    <div class="dialog-box Download">
+        @Html.Hidden("jobKey", Model.Key)
+        <span class="hide key">@Model.Key</span>
+        <div class="dialog-icon"></div>
+        <div class="dialog-text">
+            <h2>@Model.Title</h2>
+            <div>
+                @(Resources.DocumentsCount + ": ")
+                <span id="document-count"></span>
+            </div>
+            <progress style="width: 225px" id="document-progress" value="0" max="0"></progress>
+            <div id="page-count-text" style="display: none">
+                @(Resources.MergedPagesCount + ": ")
+                <span id="page-count" style="display: none"></span>
+            </div>
+            <progress style="width: 225px; display: none" id="converter-progress" value="0" max="0"></progress>
+            <div>
+                @(Resources.Status + ": ")
+                <span id="job-state"></span>
+            </div>
+        </div>
+    </div>
+}

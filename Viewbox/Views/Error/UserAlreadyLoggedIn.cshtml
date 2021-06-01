@@ -1,0 +1,18 @@
+﻿@model Viewbox.Models.UserAlreadyLoggedInModel
+@{
+    ViewBag.Title = Model.LabelCaption;
+}
+
+<div id="useralreadyloggedin-dlg" class="hide">
+    @Html.Partial("_DialogPartial", Model.Dialog)
+    @using (Html.BeginForm("ForceLogOn", "Account"))
+    {
+        @Html.HiddenFor(m => m.UserName);
+        @Html.HiddenFor(m => m.Password);
+    }
+</div>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+        jQuery('#dialog').show().html(jQuery('#useralreadyloggedin-dlg').remove().html()).addClass("useralreadyloggedin");
+    });
+</script>

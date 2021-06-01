@@ -1,0 +1,41 @@
+﻿@model Viewbox.Models.TableIndexModel
+           
+@*DIV Showing indexes if any (div is hidden if no indexes)*@
+<div id="columnIndexView_container" style="display: block; height: 100%; top: 1px; width: 100%;">
+    <table id="columnIndexView_header" style="float: left; position: relative;">
+        <tr style="border-top: 1px solid black">
+            <th>Column Indexes <img alt="Close Index View" src="/Content/img/icons/close.jpg" style="cursor: hand; cursor: pointer; float: right; margin: ; margin-top: 2px;" id="closeIndexViewOption" /></th>
+        </tr>
+    </table>
+    <div id="columnIndexView_content"  class="scroll" style="float: left; height: 100%;">
+        <table>
+            <tbody>
+                <tr style="background-color: ThreeDFace">
+                    <td>Index Name</td>
+                    <td>Column Name</td>
+                    <td>Column Type</td>
+                </tr>          
+                @foreach (var index in Model.TableObject.Indexes.GetByColumnName(Model.ColumnName))
+                {
+                    <tr style="background-color: ThreeDFace">
+                        <td colspan="3" align="left" data-indexName="@index.IndexName" id="tableIndexPartial_currentIndexName">
+                            @index.IndexName ( @index.IndexType )
+                        </td>
+                    </tr>
+                    foreach (var col in index.Columns)
+                    {
+                        <tr style="background-color: ThreeDLighShadow">
+                            <td></td>
+                            <td>
+                                @col.Name
+                            </td>
+                            <td>
+                                @col.DataType.ToString()
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

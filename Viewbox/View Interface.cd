@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Viewbox.ViewboxApplication">
+    <Position X="0.5" Y="4.5" Width="4.25" />
+    <Members>
+      <Field Name="_filters" Hidden="true" />
+      <Field Name="_initialized" Hidden="true" />
+      <Field Name="_languages" Hidden="true" />
+      <Field Name="_users" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Viewbox.ViewboxApplication.User">
+        <TypeIdentifier>
+          <NewMemberFileName>ViewboxApplication.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Viewbox.ViewboxApplication.Language">
+        <TypeIdentifier>
+          <NewMemberFileName>ViewboxApplication.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Viewbox.ViewboxApplication.Filter" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ViewboxApplication.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Viewbox.ViewboxApplication.FilterCategory" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ViewboxApplication.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EEAAACAACGEAQAgAAAIAAAAAAAAACIAAAAASAAABAAA=</HashCode>
+      <FileName>ViewboxApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.ViewboxSession">
+    <Position X="5.25" Y="4.75" Width="2.5" />
+    <NestedTypes>
+      <Class Name="Viewbox.ViewboxSession.TableCategory" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ViewboxSession.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Viewbox.ViewboxSession.ViewCategory" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ViewboxSession.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Viewbox.ViewboxSession.IssueCategory" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ViewboxSession.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>A0EDQIAACBAAAAAAA4IASAAgABAAAAhAEAAGgABAEAA=</HashCode>
+      <FileName>ViewboxSession.Compat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.Models.LogOnModel">
+    <Position X="19.25" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAgAAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.Models.ControlCenterData">
+    <Position X="0.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ControlCenterModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.Models.DocumentationContent">
+    <Position X="4.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DocumentationModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.Models.ExportData">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ExportModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.Models.BoxHeaderModel">
+    <Position X="9" Y="4.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAQCACQAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\HeaderModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.Models.IssueList">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <InheritanceLine Type="Viewbox.Models.ViewboxModel" FixedFromPoint="true">
+      <Path>
+        <Point X="10.5" Y="2.247" />
+        <Point X="10.5" Y="2.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IssuesModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.Models.Settings">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SettingsModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.Models.TableList">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Models\TablesModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.Models.TableData">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAEAAgAABAAAAAAAAAAAACAAAAAAAAAAIBAAAAQAAI=</HashCode>
+      <FileName>Models\TableViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.Models.ViewboxModel">
+    <Position X="9.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>BAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewboxModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewbox.Models.ViewList">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Models\ViewsModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,31 @@
+﻿@using Viewbox.Properties
+
+@model Viewbox.Models.AdminTasksModel
+<div>
+    <ul>
+        @*@if (!Model.GeneratedTable)
+        {
+            <li><div class="generate-table"><a href="@Url.Action("GenerateEmptyDistinctTable")">@Resources.GenerateEmptyDistinct</a></div></li>
+        }
+            
+        @if (!Model.AreIndexesPopulated)
+        {
+            <li><div class="generate-tables-indexes" id="populateTableIndexes"><a href="@Url.Action("PopulateIndexes")">@Resources.GenerateIndexes</a></div></li>
+        }*@
+        @*@if (!Model.ExtendedColumnsInformationGenerated)
+        {
+            <li><div class="generate-table"><a href="@Url.Action("GenerateExtendedColumnInformation")">@Resources.GenerateExtendedColumnInformation</a></div></li>
+        }
+        <li><div class="generate-table"><a href="@Url.Action("ReorderReportNumbers")">@Resources.ReorderReportNumbers</a></div></li>
+        <li><div class="get-blue-line-documents"><a href="@Url.Action("GetBlueLineDocuments")">@Resources.GetBluelineDocuments</a></div></li>*@
+        <li><div class="hide-every-unreachable-tables"><a href="@Url.Action("HideEveryUnreachableTables")">@Resources.HideEveryUnreachableTables</a></div></li>
+        @if (Viewbox.ViewboxSession.updMode == 1)
+        {
+            <li><div class="stop-update-mode"><a href="@Url.Action("UpdateMode", new { id = 0})">@Resources.StopUpdateMode</a></div></li>    
+        }
+        else
+        {
+            <li><div class="start-update-mode"><a href="@Url.Action("UpdateMode", new { id = 1})">@Resources.StartUpdateMode</a></div></li>  
+        }
+    </ul>
+</div>

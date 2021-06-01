@@ -1,0 +1,1985 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>Konto</value>
+  </data>
+  <data name="AddColumn" xml:space="preserve">
+    <value>Spalten hinzufügen</value>
+  </data>
+  <data name="AddIssue" xml:space="preserve">
+    <value>Sachverhalt hinzufügen</value>
+  </data>
+  <data name="AddTable" xml:space="preserve">
+    <value>Tabelle hinzufügen</value>
+  </data>
+  <data name="AddView" xml:space="preserve">
+    <value>View hinzufügen</value>
+  </data>
+  <data name="Column" xml:space="preserve">
+    <value>Spalte</value>
+  </data>
+  <data name="ColumnSettings" xml:space="preserve">
+    <value>Spaltenansicht</value>
+  </data>
+  <data name="ControlCenter" xml:space="preserve">
+    <value>Control Center</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="DocumentArchive" xml:space="preserve">
+    <value>Belegarchiv</value>
+  </data>
+  <data name="Documentation" xml:space="preserve">
+    <value>Dokumentation</value>
+  </data>
+  <data name="EMail" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export Center</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Passwort vergessen?</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="Hidden" xml:space="preserve">
+    <value>Unsichtbar</value>
+  </data>
+  <data name="Issues" xml:space="preserve">
+    <value>Sachverhalte</value>
+  </data>
+  <data name="IssueSearch" xml:space="preserve">
+    <value>Sachverhalt/Transaktionsnr. suchen...</value>
+  </data>
+  <data name="JobDescriptionExport" xml:space="preserve">
+    <value>Exportiere Tabellen</value>
+  </data>
+  <data name="JobDescriptionJoin" xml:space="preserve">
+    <value>Verbinde Tabelle "{0}" mit "{1}"</value>
+  </data>
+  <data name="LanguageSelection" xml:space="preserve">
+    <value>Sprachwahl</value>
+  </data>
+  <data name="Logoff" xml:space="preserve">
+    <value>Abmelden</value>
+  </data>
+  <data name="Logon" xml:space="preserve">
+    <value>Anmelden</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>Keine Datensätze für die aktuelle Selektion verfügbar</value>
+  </data>
+  <data name="NoSelection" xml:space="preserve">
+    <value>Es wurde kein Objekt ausgewählt</value>
+  </data>
+  <data name="NotLoggedIn" xml:space="preserve">
+    <value>Nicht eingeloggt</value>
+  </data>
+  <data name="NumberOfRows" xml:space="preserve">
+    <value>Datensätze</value>
+  </data>
+  <data name="Parameter" xml:space="preserve">
+    <value>Parameter</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Angemeldet bleiben</value>
+  </data>
+  <data name="Scheme" xml:space="preserve">
+    <value>Schema</value>
+  </data>
+  <data name="SearchPhrase" xml:space="preserve">
+    <value>Suchen...</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="Sort" xml:space="preserve">
+    <value>Sortierung</value>
+  </data>
+  <data name="Stats" xml:space="preserve">
+    <value>Statistik</value>
+  </data>
+  <data name="SumColumn" xml:space="preserve">
+    <value>Spalten aufsummieren</value>
+  </data>
+  <data name="Tables" xml:space="preserve">
+    <value>Tabellen</value>
+  </data>
+  <data name="TablesColumns" xml:space="preserve">
+    <value>Tabellen / Spalten</value>
+  </data>
+  <data name="TransactionId" xml:space="preserve">
+    <value>Transaktionsnr.</value>
+  </data>
+  <data name="Views" xml:space="preserve">
+    <value>Sichten / Views</value>
+  </data>
+  <data name="Visible" xml:space="preserve">
+    <value>Sichtbar</value>
+  </data>
+  <data name="Command" xml:space="preserve">
+    <value>Aktion</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Überblick</value>
+  </data>
+  <data name="ViewOptions" xml:space="preserve">
+    <value>Ansichtseinstellungen</value>
+  </data>
+  <data name="TableSearch" xml:space="preserve">
+    <value>Tabelle/Transaktionsnr. suchen...</value>
+  </data>
+  <data name="ViewSearch" xml:space="preserve">
+    <value>Sicht/Transaktionsnr. suchen...</value>
+  </data>
+  <data name="ShowHelpTopic" xml:space="preserve">
+    <value>Hilfe zu {0} anzeigen</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>Häufig gestellte Fragen</value>
+  </data>
+  <data name="FindContents" xml:space="preserve">
+    <value>Inhalte durchsuchen</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>SUCHEN</value>
+  </data>
+  <data name="ActionLog" xml:space="preserve">
+    <value>Letzte Aktionen</value>
+  </data>
+  <data name="ActionSearch" xml:space="preserve">
+    <value>Aktionen durchsuchen...</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="CPULoad" xml:space="preserve">
+    <value>Prozessorauslastung</value>
+  </data>
+  <data name="DiskLoad" xml:space="preserve">
+    <value>Festplattendurchsatz</value>
+  </data>
+  <data name="ExportData" xml:space="preserve">
+    <value>Daten-Export</value>
+  </data>
+  <data name="ExportTables" xml:space="preserve">
+    <value>Exportiere Tabellen läuft</value>
+  </data>
+  <data name="FindJobs" xml:space="preserve">
+    <value>Jobs durchsuchen</value>
+  </data>
+  <data name="Finished" xml:space="preserve">
+    <value>Beendet</value>
+  </data>
+  <data name="FreeMem" xml:space="preserve">
+    <value>Freier RAM</value>
+  </data>
+  <data name="FreeSpace" xml:space="preserve">
+    <value>Freier Speicher</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Lade ...</value>
+  </data>
+  <data name="NumberShort" xml:space="preserve">
+    <value>Nr.</value>
+  </data>
+  <data name="ObjectSearch" xml:space="preserve">
+    <value>Objekte durchsuchen</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>entfernen</value>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>hoch</value>
+  </data>
+  <data name="Low" xml:space="preserve">
+    <value>gering</value>
+  </data>
+  <data name="Mid" xml:space="preserve">
+    <value>mittel</value>
+  </data>
+  <data name="RunningJobs" xml:space="preserve">
+    <value>Laufende Jobs</value>
+  </data>
+  <data name="ExportStarted" xml:space="preserve">
+    <value>Der Export wurde gestartet. Sie können den Vorgang im ExportCenter überwachen und nach Abschluss den Download durchführen.</value>
+  </data>
+  <data name="ExportTableLabel" xml:space="preserve">
+    <value>{0}-Export von {1} {2} ...</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>Nachrichten</value>
+  </data>
+  <data name="EnterValue" xml:space="preserve">
+    <value>Wert angeben</value>
+  </data>
+  <data name="SelectColumn" xml:space="preserve">
+    <value>Spalte auswählen</value>
+  </data>
+  <data name="ExportDescription" xml:space="preserve">
+    <value>{0}-Export von {1} {2}. Startzeit: {3} ...</value>
+  </data>
+  <data name="GDPdU" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!--Versions available:
+1.1 (August-01-2002)
+--&gt;
+
+&lt;!-- Start Simple Types --&gt;
+
+&lt;!-- Supplementary Vocabulary --&gt;
+&lt;!ELEMENT Version (#PCDATA)&gt;
+&lt;!ELEMENT Location (#PCDATA)&gt;
+&lt;!ELEMENT Comment (#PCDATA)&gt;
+&lt;!ELEMENT Length (#PCDATA)&gt;
+&lt;!ELEMENT References (#PCDATA)&gt;
+&lt;!ELEMENT From (#PCDATA)&gt;
+&lt;!ELEMENT To (#PCDATA)&gt;
+
+&lt;!-- Specifying a maximum length for a VariableLength column can
+     reduce a VariableLength tables' import time. If MaxLength
+	 is not specified then we parse URL to determine the MaxLength
+	 for each column.
+	
+	 * Only applies to VariableLength tables. --&gt;
+&lt;!ELEMENT MaxLength (#PCDATA)&gt;
+
+&lt;!-- Specifies which character (if any) encapsulates a
+     VariableLength AlphaNumeric column.
+	
+	 Doublequote is the default TextEncapsulator "
+	
+	 * Only applies to VariableLength tables. (Optional) --&gt;
+&lt;!ELEMENT TextEncapsulator (#PCDATA)&gt;
+
+&lt;!-- Specifies how many	digits appear to the right of the decimal symbol.
+
+	 CAUTION: Results are undefined when importing numeric data with
+	          greater Accuracy than the Accuracy defined in index.xml			
+			
+			  For example trying to import the value 1000,25 with an
+			  accuracy of 0 might result in 1000 or an error. This
+			  behavior is specific to the implementation.
+	
+	 Zero is the default Accuracy '0' (Optional)	 	
+--&gt;
+&lt;!ELEMENT Accuracy (#PCDATA)&gt;
+
+&lt;!-- The decimal place is not always stored with numbers. If each number
+     is supposed to have decimal places use ImpliedAccuracy --&gt;
+&lt;!ELEMENT ImpliedAccuracy (#PCDATA)&gt;
+
+&lt;!-- Enables you to change how GDPdU displays dates.
+	 DD.MM.YYYY is the default Format --&gt;
+&lt;!ELEMENT Format (#PCDATA)&gt;
+
+&lt;!-- Specifies the symbol that indicates decimal values.
+     Comma is the default DecimalSymbol. ','
+	 Specified once per Table. --&gt;
+&lt;!ELEMENT DecimalSymbol (#PCDATA)&gt;
+
+&lt;!-- Specifies the symbol that groups the digits in large numbers.
+     Dot is the default DigitGroupingSymbol or ThousandsSeperator. '.'
+	 Specified once per Table --&gt;
+&lt;!ELEMENT DigitGroupingSymbol (#PCDATA)&gt;
+
+&lt;!-- Command(s) are executed in the following manner
+      * before the import process
+	  * after the import process
+	  * before a Media is imported
+	  * after a Media is imported
+--&gt;
+&lt;!ELEMENT Command (#PCDATA)&gt;
+
+&lt;!-- Only the file protocol is supported at this time.
+
+     * The standard uses relative URLs.
+       	
+	 Absolute URLs are not allowed. The following are all invalid:
+	 * http://www.somewhere.com/data/Accounts.dat
+	 * ftp://ftp.somewhere.com/data/Accounts.dat
+	 * file://localhost/Accounts.dat
+     * file:///Accounts.dat
+	
+	 The following are valid examples
+	  * Accounts.dat	
+      * data/Accounts.dat
+      * data/january/Accounts.dat
+      * ../Accounts.dat
+--&gt;
+&lt;!ELEMENT URL (#PCDATA)&gt;
+
+&lt;!-- Textual description of specified element (Optional) --&gt;
+&lt;!ELEMENT Description (#PCDATA)&gt;
+
+&lt;!-- The logical name of specified element.
+     Sometimes referred to business name.
+	
+	 If missing, URL will be used in place of Name. --&gt;
+&lt;!ELEMENT Name (#PCDATA)&gt;
+
+&lt;!-- Y2K Window Any year before Epoch is 2000+
+     Default value 30.  --&gt;
+&lt;!ELEMENT Epoch (#PCDATA)&gt;
+
+&lt;!-- Element(s) that separate columns or records.
+     Semicolon is the default ColumnDelimiter. ';'
+	 CRLF or &amp;#13;&amp;#10; is the default RecordDelimiter. --&gt;
+&lt;!ELEMENT ColumnDelimiter (#PCDATA)&gt;
+&lt;!ELEMENT RecordDelimiter (#PCDATA)&gt;
+
+&lt;!-- The number of bytes skipped before reading of URL commences.
+     Zero is the default when not specified. '0'
+--&gt;
+&lt;!ELEMENT SkipNumBytes (#PCDATA)&gt;
+
+&lt;!-- End Simple Types --&gt;
+&lt;!-- Start Complex Types --&gt;
+&lt;!-- Self-explanatory --&gt;
+&lt;!ELEMENT Range (From, (To | Length)?)&gt;
+&lt;!ELEMENT FixedRange (From, (To | Length))&gt;
+
+&lt;!-- The document element --&gt;
+&lt;!ELEMENT DataSet (Version, DataSupplier?, Command*, Media+, Command*)&gt;
+
+&lt;!-- Supported datatypes (mandatory) --&gt;
+&lt;!ELEMENT AlphaNumeric EMPTY&gt;
+&lt;!ELEMENT Date (Format?)&gt;
+&lt;!ELEMENT Numeric ((ImpliedAccuracy | Accuracy)?)&gt;
+
+&lt;!-- Supported codepages:
+     Be careful to explicitly define RecordDelimiter when using
+	 a non-default codepage.
+
+     ANSI is the default codepage when not specified --&gt;
+&lt;!ELEMENT ANSI EMPTY&gt;
+&lt;!ELEMENT Macintosh EMPTY&gt;
+&lt;!ELEMENT OEM EMPTY&gt;
+&lt;!ELEMENT UTF16 EMPTY&gt;
+&lt;!ELEMENT UTF7 EMPTY&gt;
+&lt;!ELEMENT UTF8 EMPTY&gt;
+
+&lt;!-- Supported file formats:
+     FixedLength
+	 VariableLength --&gt;
+&lt;!ELEMENT FixedLength ((Length | RecordDelimiter)?, ((FixedPrimaryKey+, FixedColumn*) | (FixedColumn+)), ForeignKey*)&gt;
+&lt;!ELEMENT FixedColumn (Name, Description?, (Numeric | AlphaNumeric | Date), Map*, FixedRange)&gt;
+&lt;!ELEMENT FixedPrimaryKey (Name, Description?, (Numeric | AlphaNumeric | Date), Map*, FixedRange)&gt;
+&lt;!ELEMENT VariableLength (ColumnDelimiter?, RecordDelimiter?, TextEncapsulator?, ((VariablePrimaryKey+, VariableColumn*) | (VariableColumn+)), ForeignKey*)&gt;
+&lt;!ELEMENT VariableColumn (Name, Description?, (Numeric | (AlphaNumeric, MaxLength?) | Date), Map*)&gt;
+&lt;!ELEMENT VariablePrimaryKey (Name, Description?, (Numeric | (AlphaNumeric, MaxLength?) | Date), Map*)&gt;
+
+&lt;!-- Description of the entity supplying the data. (Optional) --&gt;
+&lt;!ELEMENT DataSupplier (Name, Location, Comment)&gt;
+
+&lt;!-- The first Media will contain index.xml. Importing will process each media listed --&gt;
+&lt;!ELEMENT Media (Name, Command*, Table+, Command*)&gt;
+
+&lt;!-- Elements common to FixedLength &amp; VariableLength are propagated to Table. --&gt;
+&lt;!ELEMENT Table (URL, Name?, Description?, Validity?, (ANSI | Macintosh | OEM | UTF16 | UTF7 | UTF8)?, (DecimalSymbol, DigitGroupingSymbol)?, SkipNumBytes?, Range?, Epoch?, (VariableLength | FixedLength))&gt;
+
+&lt;!-- ForeignKeys denote joins or relationships between tables.
+     To successfully join two tables make sure both the PrimaryKey
+	 and the referenced column (foreignkey) are of the same datatype.
+	 Results are undefined when joining two tables with different
+	 key datatypes. Most likely an error will occur. --&gt;
+&lt;!ELEMENT ForeignKey (Name+, References)&gt;
+
+&lt;!-- Maps AlphaNumeric columns from 'From' to 'To'
+     ie. From         To
+	     ============ =============
+		 True         1
+		 True         -1
+		 False        0
+		
+	 Basically, a map is an associative container.		
+	
+	 The standard implementation only supports
+	 AlphaNumeric datatypes. The following
+	 conversions are NOT supported.
+	
+	 Numeric      -&gt; AlphaNumeric
+	 Date         -&gt; AlphaNumeric
+	 AplhaNumeric -&gt; Date
+	 AlphaNumeric -&gt; Numeric	 	 	
+--&gt;
+&lt;!ELEMENT Map (Description?, From, To)&gt;
+
+&lt;!-- Documentation for table validity. --&gt;
+&lt;!ELEMENT Validity (Range, Format?)&gt;
+
+&lt;!-- End Complex Types --&gt;</value>
+  </data>
+  <data name="AboutHelp" xml:space="preserve">
+    <value>Über Viewbox</value>
+  </data>
+  <data name="AddCategory" xml:space="preserve">
+    <value>Kategorie hinzufügen</value>
+  </data>
+  <data name="AggAvg" xml:space="preserve">
+    <value>Durchschnitt</value>
+  </data>
+  <data name="AggCount" xml:space="preserve">
+    <value>Anzahl</value>
+  </data>
+  <data name="AggMax" xml:space="preserve">
+    <value>Maximum</value>
+  </data>
+  <data name="AggMin" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="AggStd" xml:space="preserve">
+    <value>Standardabweichung</value>
+  </data>
+  <data name="AggSum" xml:space="preserve">
+    <value>Summe</value>
+  </data>
+  <data name="AggVariance" xml:space="preserve">
+    <value>Varianz</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Firma</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="DocumentNr" xml:space="preserve">
+    <value>Belegnr.</value>
+  </data>
+  <data name="DocumentPreview" xml:space="preserve">
+    <value>Belegvorschau</value>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>Belege</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Herunterladen / Download</value>
+  </data>
+  <data name="FilterText" xml:space="preserve">
+    <value>Bewegen Sie Operatoren mit klicken-und-ziehen in diesen Bereich um einen Filter zu erstellen.</value>
+  </data>
+  <data name="Functions" xml:space="preserve">
+    <value>Funktionen</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Gruppieren</value>
+  </data>
+  <data name="InnerJoin" xml:space="preserve">
+    <value>Übereinstimmung</value>
+  </data>
+  <data name="InsertName" xml:space="preserve">
+    <value>Name eingeben</value>
+  </data>
+  <data name="Join" xml:space="preserve">
+    <value>Verbinden</value>
+  </data>
+  <data name="JoinOver" xml:space="preserve">
+    <value>Verbinden über</value>
+  </data>
+  <data name="Kind" xml:space="preserve">
+    <value>Art</value>
+  </data>
+  <data name="LeftJoin" xml:space="preserve">
+    <value>Alle in {0}</value>
+  </data>
+  <data name="OnlyLeftJoin" xml:space="preserve">
+    <value>Nur in {0}</value>
+  </data>
+  <data name="OnlyRightJoin" xml:space="preserve">
+    <value>Nur in {0}</value>
+  </data>
+  <data name="ResourceCount" xml:space="preserve">
+    <value>{0}. {1}</value>
+  </data>
+  <data name="RightJoin" xml:space="preserve">
+    <value>Alle in {0}</value>
+  </data>
+  <data name="SaveResult" xml:space="preserve">
+    <value>Ergebnis speichern</value>
+  </data>
+  <data name="SelectCategory" xml:space="preserve">
+    <value>Kategorie auswählen</value>
+  </data>
+  <data name="SelectTable" xml:space="preserve">
+    <value>Tabelle auswählen</value>
+  </data>
+  <data name="SortText" xml:space="preserve">
+    <value>Bewegen Sie Spalten aus dem unteren Bereich mit klicken-und-ziehen hier in Reihenfolge und wählen eine Sortierrichtung.</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Fertig</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Tabelle</value>
+  </data>
+  <data name="AboutPartial" xml:space="preserve">
+    <value>_About.de</value>
+  </data>
+  <data name="ControlCenterPartial" xml:space="preserve">
+    <value>_ControlCenter.de</value>
+  </data>
+  <data name="DocumentsPartial" xml:space="preserve">
+    <value>_Documents.de</value>
+  </data>
+  <data name="ExportPartial" xml:space="preserve">
+    <value>_Export.de</value>
+  </data>
+  <data name="FaqPartial" xml:space="preserve">
+    <value>_Faq.de</value>
+  </data>
+  <data name="FaqRightPartial" xml:space="preserve">
+    <value>_FaqRight.de</value>
+  </data>
+  <data name="IssueListPartial" xml:space="preserve">
+    <value>_IssueList.de</value>
+  </data>
+  <data name="SettingsPartial" xml:space="preserve">
+    <value>_Settings.de</value>
+  </data>
+  <data name="TableListPartial" xml:space="preserve">
+    <value>_TableList.de</value>
+  </data>
+  <data name="ViewListPartial" xml:space="preserve">
+    <value>_ViewList.de</value>
+  </data>
+  <data name="IndexPartial" xml:space="preserve">
+    <value>_Index.de</value>
+  </data>
+  <data name="UserManagement" xml:space="preserve">
+    <value>Benutzerverwaltung</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Benutzer</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Aktion</value>
+  </data>
+  <data name="ActionFinished" xml:space="preserve">
+    <value>Aktion abgeschlossen</value>
+  </data>
+  <data name="AddRole" xml:space="preserve">
+    <value>Rolle hinzufügen</value>
+  </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>Benutzer hinzufügen</value>
+  </data>
+  <data name="Alter" xml:space="preserve">
+    <value>ändern</value>
+  </data>
+  <data name="Canceled" xml:space="preserve">
+    <value>Abgebrochen</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>beenden</value>
+  </data>
+  <data name="Display" xml:space="preserve">
+    <value>Anzeige</value>
+  </data>
+  <data name="EditingMode" xml:space="preserve">
+    <value>Bearbeitungsmodus {0}</value>
+  </data>
+  <data name="EditRights" xml:space="preserve">
+    <value>Rechte bearbeiten</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="Job" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="NoActionsRecorded" xml:space="preserve">
+    <value>Keine aufgezeichneten Aktionen vorhanden.</value>
+  </data>
+  <data name="Opened" xml:space="preserve">
+    <value>{0} geöffnet</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>Persönliche Einstellungen</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Rollen</value>
+  </data>
+  <data name="Running" xml:space="preserve">
+    <value>Läuft</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>speichern</value>
+  </data>
+  <data name="TheRole" xml:space="preserve">
+    <value>die Rolle</value>
+  </data>
+  <data name="TheUser" xml:space="preserve">
+    <value>den Nutzer</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Zeit</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="YourEmail" xml:space="preserve">
+    <value>Ihre E-Mail-Adresse</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>Ihr vollständiger Name</value>
+  </data>
+  <data name="YourPassword" xml:space="preserve">
+    <value>Ihr Passwort</value>
+  </data>
+  <data name="SaveFilterText" xml:space="preserve">
+    <value>Filter als Sachverhalt speichern?</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>und</value>
+  </data>
+  <data name="ExecuteIssueContent" xml:space="preserve">
+    <value>Ausführen des Sachverhalts</value>
+  </data>
+  <data name="LongRunningDialogText" xml:space="preserve">
+    <value>{0} kann länger dauern. Sie können die Aktion im Hintergrund ausführen lassen und werden benachrichtigt, sobald die Aktion abgeschlossen wurde.</value>
+  </data>
+  <data name="ExecuteIssueTitle" xml:space="preserve">
+    <value>Sachverhalt ausführen</value>
+  </data>
+  <data name="FilterTitle" xml:space="preserve">
+    <value>Filtern</value>
+  </data>
+  <data name="LongRunningDialogCaption" xml:space="preserve">
+    <value>In den Hintergrund</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="SortTitle" xml:space="preserve">
+    <value>Sortieren</value>
+  </data>
+  <data name="InvitationBody" xml:space="preserve">
+    <value>Sehr geehrter Nutzer,
+
+Sie wurden von {0} zur Viewbox eingeladen. 
+Um die Registrierung abzuschliessen, müssen Sie ein Passwort erstellen.
+Dazu benutzen Sie bitte den folgenden Link:
+{1}</value>
+  </data>
+  <data name="InvitationSubject" xml:space="preserve">
+    <value>Einladung zur Viewbox</value>
+  </data>
+  <data name="EmptyTables" xml:space="preserve">
+    <value>Leere {0}</value>
+  </data>
+  <data name="WrongParameterText" xml:space="preserve">
+    <value>Der Parameter {0} erfordert den Datentyp {1}. Bitte korrigieren Sie Ihre Eingabe.</value>
+  </data>
+  <data name="WrongParameterType" xml:space="preserve">
+    <value>Falscher Parametertyp</value>
+  </data>
+  <data name="GroupedTable" xml:space="preserve">
+    <value>Gruppierte Tabelle</value>
+  </data>
+  <data name="JoinedWith" xml:space="preserve">
+    <value>verbunden mit</value>
+  </data>
+  <data name="Of" xml:space="preserve">
+    <value>von</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Anzeigen</value>
+  </data>
+  <data name="ExportTypeSelection" xml:space="preserve">
+    <value>Bitte legen Sie das Exportformat fest.</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>vom</value>
+  </data>
+  <data name="ExportCancelJob" xml:space="preserve">
+    <value>{0} abgebrochen</value>
+  </data>
+  <data name="ExportDownload" xml:space="preserve">
+    <value>Download von {0} gestartet</value>
+  </data>
+  <data name="ExportMassExport" xml:space="preserve">
+    <value>{0}-Export von {1} Tabellen gestartet</value>
+  </data>
+  <data name="ExportSingleExport" xml:space="preserve">
+    <value>{0}-Export von Tabelle {1} gestartet</value>
+  </data>
+  <data name="ExportStart" xml:space="preserve">
+    <value>{0}-Export gestartet</value>
+  </data>
+  <data name="Later" xml:space="preserve">
+    <value>{0} später</value>
+  </data>
+  <data name="Shown" xml:space="preserve">
+    <value>{0} angezeigt</value>
+  </data>
+  <data name="Ascending" xml:space="preserve">
+    <value>aufsteigend</value>
+  </data>
+  <data name="BrowsedToPage" xml:space="preserve">
+    <value>zu Seite {0} geblättert</value>
+  </data>
+  <data name="Changed" xml:space="preserve">
+    <value>{0} geändert</value>
+  </data>
+  <data name="ChangedDisplaySize" xml:space="preserve">
+    <value>Anzeigegrösse auf {0} geändert</value>
+  </data>
+  <data name="Descending" xml:space="preserve">
+    <value>absteigend</value>
+  </data>
+  <data name="ExecuteIssueFailed" xml:space="preserve">
+    <value>Fehlgeschlagener Versuch einen Sachverhalt auszuführen</value>
+  </data>
+  <data name="ExecuteIssueFailedId" xml:space="preserve">
+    <value>Fehlgeschlagener Versuch den Sachverhalt mit der ID {0} auszuführen</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Gefilterte</value>
+  </data>
+  <data name="GroupFailed" xml:space="preserve">
+    <value>Fehlgeschlagener Versuch eine Tabelle zu gruppieren</value>
+  </data>
+  <data name="GroupFailedId" xml:space="preserve">
+    <value>Fehlgeschlagener Versuch die Tabelle mit der ID {0} zu gruppieren</value>
+  </data>
+  <data name="InTable" xml:space="preserve">
+    <value>in Tabelle {0}</value>
+  </data>
+  <data name="Issue" xml:space="preserve">
+    <value>Sachverhalt</value>
+  </data>
+  <data name="JoinFailed" xml:space="preserve">
+    <value>Fehlgeschlagener Versuch zwei Tabellen miteinander zu verbinden</value>
+  </data>
+  <data name="JoinFailedId" xml:space="preserve">
+    <value>Fehlgeschlagener Versuch die Tabelle mit der ID {0} und einer anderen Tabelle zu verbinden</value>
+  </data>
+  <data name="LoggedIn" xml:space="preserve">
+    <value>Eingeloggt als {0}</value>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>fehlgeschlagener Loginversuch</value>
+  </data>
+  <data name="OpenFailed" xml:space="preserve">
+    <value>Fehlgeschlagener Versuch eine Tabelle zu öffnen</value>
+  </data>
+  <data name="OpenFailedId" xml:space="preserve">
+    <value>Fehlgeschlagener Versuch die Tabelle mit der ID {0} zu öffnen</value>
+  </data>
+  <data name="SearchedFor" xml:space="preserve">
+    <value>nach {0} gesucht</value>
+  </data>
+  <data name="SetColumnVisibility" xml:space="preserve">
+    <value>Spalte {0}{1}{2} gesetzt</value>
+  </data>
+  <data name="SortAndFilterFailed" xml:space="preserve">
+    <value>Fehlgeschlagener Versuch auf einer Tabelle zu sortieren oder zu filtern</value>
+  </data>
+  <data name="SortAndFilterFailedId" xml:space="preserve">
+    <value>Fehlgeschlagener Versuch die Tabelle mit der ID {0} zu sortieren oder zu filtern</value>
+  </data>
+  <data name="Sorted" xml:space="preserve">
+    <value>Sortierte</value>
+  </data>
+  <data name="StartExecuteIssue" xml:space="preserve">
+    <value>Starte Ausführung des Sachverhalts {0}</value>
+  </data>
+  <data name="StartFilter" xml:space="preserve">
+    <value>Starte Filtern nach {0}</value>
+  </data>
+  <data name="StartGroup" xml:space="preserve">
+    <value>Starte Gruppieren anhand von {0} {1}</value>
+  </data>
+  <data name="StartJoin" xml:space="preserve">
+    <value>Starte Verbinden mit {0} über {1}</value>
+  </data>
+  <data name="StartSort" xml:space="preserve">
+    <value>Starte Sortieren nach {0}</value>
+  </data>
+  <data name="Unvisible" xml:space="preserve">
+    <value>unsichtbar</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Sicht/View</value>
+  </data>
+  <data name="WithFunction" xml:space="preserve">
+    <value>mit der Funktion {0}</value>
+  </data>
+  <data name="WithFunctions" xml:space="preserve">
+    <value>mit den Funktionen {0}</value>
+  </data>
+  <data name="ChangePasswordBody" xml:space="preserve">
+    <value>Sehr geehrter Nutzer,
+
+um Ihr Passwort zu ändern benutzen Sie bitte den folgenden Link:
+{0}</value>
+  </data>
+  <data name="ChangePasswordSubject" xml:space="preserve">
+    <value>Ändern Sie Ihr Passwort</value>
+  </data>
+  <data name="Not" xml:space="preserve">
+    <value>Nicht</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>oder</value>
+  </data>
+  <data name="In" xml:space="preserve">
+    <value>enthalten in</value>
+  </data>
+  <data name="RowCount" xml:space="preserve">
+    <value>Datensätze</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Tage</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>std</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>min</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>sek</value>
+  </data>
+  <data name="TheirEmail" xml:space="preserve">
+    <value>E-Mail-Adresse von {0}</value>
+  </data>
+  <data name="TheirName" xml:space="preserve">
+    <value>vollständiger Name von {0}</value>
+  </data>
+  <data name="TheirPassword" xml:space="preserve">
+    <value>Passwort von {0}</value>
+  </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>Keine Einträge</value>
+  </data>
+  <data name="WarningSelectColumn" xml:space="preserve">
+    <value>Sie müssen mindestens eine Spalte zum Gruppieren auswählen.</value>
+  </data>
+  <data name="GroupFailedColIds" xml:space="preserve">
+    <value>Fehlgeschlagene Gruppierung, da keine Spalten ausgewählt wurden.</value>
+  </data>
+  <data name="ExecutingAction" xml:space="preserve">
+    <value>Führe Aktion "{0}" aus.</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Bitte warten.</value>
+  </data>
+  <data name="WrongBrowserCaption" xml:space="preserve">
+    <value>Nicht unterstützer Browser</value>
+  </data>
+  <data name="WrongBrowserText" xml:space="preserve">
+    <value>Sie benutzen einen nicht unterstützen Browser. Bitte betrachten Sie die Viewbox mit einem der folgenden Browser: Mozilla Firefox ab Version 4, Internet Explorer ab Version 8, Google Chrome.</value>
+  </data>
+  <data name="ActionsFinished" xml:space="preserve">
+    <value>{0} Aktionen abgeschlossen</value>
+  </data>
+  <data name="DeadUrlCaption" xml:space="preserve">
+    <value>Nicht verfügbare Url</value>
+  </data>
+  <data name="DeadUrlText" xml:space="preserve">
+    <value>Die von Ihnen gewählte Url ist nicht (mehr) gültig.</value>
+  </data>
+  <data name="As" xml:space="preserve">
+    <value>als</value>
+  </data>
+  <data name="WrongDataType" xml:space="preserve">
+    <value>Einer der eingegebenen Werte stimmt nicht mit dem Datentyp der Spalte überein.</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="PdfFilterResult" xml:space="preserve">
+    <value>die Datenmenge filtern</value>
+  </data>
+  <data name="PdfHideColumns" xml:space="preserve">
+    <value>weitere Spalten ausblenden</value>
+  </data>
+  <data name="PdfUnclear" xml:space="preserve">
+    <value>unübersichtlich</value>
+  </data>
+  <data name="PdfVeryBig" xml:space="preserve">
+    <value>sehr gross</value>
+  </data>
+  <data name="PdfWarning" xml:space="preserve">
+    <value>Das entstehende Pdf-Dokument wird {0}. Um dies zu vermeiden, können Sie {1}. Möchten Sie trotzdem fortfahren?</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Achtung!</value>
+  </data>
+  <data name="Enlarge" xml:space="preserve">
+    <value>Anzeige vergrössern/verkleinern</value>
+  </data>
+  <data name="ExcelExport" xml:space="preserve">
+    <value>Excel-Export</value>
+  </data>
+  <data name="GDPdUExport" xml:space="preserve">
+    <value>GDPdU-Export</value>
+  </data>
+  <data name="PDFExport" xml:space="preserve">
+    <value>PDF-Export</value>
+  </data>
+  <data name="PDFBelegExport" xml:space="preserve">
+    <value>PDFBeleg-Export</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Startseite</value>
+  </data>
+  <data name="Notepad" xml:space="preserve">
+    <value>Notizzettel</value>
+  </data>
+  <data name="NewNote" xml:space="preserve">
+    <value>neue Notiz</value>
+  </data>
+  <data name="NoColumnWarning" xml:space="preserve">
+    <value>Achtung: Alle Spalten sind ausgeblendet!</value>
+  </data>
+  <data name="AndFilter" xml:space="preserve">
+    <value>und</value>
+  </data>
+  <data name="BetweenFilter" xml:space="preserve">
+    <value>zwischen</value>
+  </data>
+  <data name="EqualFilter" xml:space="preserve">
+    <value>gleich</value>
+  </data>
+  <data name="GreaterFilter" xml:space="preserve">
+    <value>grösser</value>
+  </data>
+  <data name="GreaterOrEqualFilter" xml:space="preserve">
+    <value>grösser oder gleich</value>
+  </data>
+  <data name="InFilter" xml:space="preserve">
+    <value>enthalten in</value>
+  </data>
+  <data name="LessFilter" xml:space="preserve">
+    <value>kleiner</value>
+  </data>
+  <data name="LessOrEqualFilter" xml:space="preserve">
+    <value>kleiner oder gleich</value>
+  </data>
+  <data name="LikeFilter" xml:space="preserve">
+    <value>ungefähr</value>
+  </data>
+  <data name="NotEqualFilter" xml:space="preserve">
+    <value>ungleich</value>
+  </data>
+  <data name="NotFilter" xml:space="preserve">
+    <value>nicht</value>
+  </data>
+  <data name="OrFilter" xml:space="preserve">
+    <value>oder</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Benutzername</value>
+  </data>
+  <data name="YourUsername" xml:space="preserve">
+    <value>Ihr Benutzername</value>
+  </data>
+  <data name="TheirUsername" xml:space="preserve">
+    <value>Benutzername von {0}</value>
+  </data>
+  <data name="CreateUserText" xml:space="preserve">
+    <value>Bitte befüllen Sie die folgenden Felder. Die optionalen Felder können leer bleiben.</value>
+  </data>
+  <data name="CreateUserTitle" xml:space="preserve">
+    <value>Neuen Benutzer anlegen</value>
+  </data>
+  <data name="Optional" xml:space="preserve">
+    <value>optional</value>
+  </data>
+  <data name="AlreadyExisting" xml:space="preserve">
+    <value>{0} bereits registriert</value>
+  </data>
+  <data name="AlreadyExistingText" xml:space="preserve">
+    <value>Bitte geben Sie einen gültigen {0} ein.</value>
+  </data>
+  <data name="InvalidValue" xml:space="preserve">
+    <value>Ungültige Eingabe</value>
+  </data>
+  <data name="InvalidValues" xml:space="preserve">
+    <value>Ungültige Eingaben</value>
+  </data>
+  <data name="InvalidValuesText" xml:space="preserve">
+    <value>Bitte geben Sie in die Felder {0} gültige Werte ein.</value>
+  </data>
+  <data name="InvalidValueText" xml:space="preserve">
+    <value>Bitte geben Sie in das Feld {0} einen gültigen Wert ein. </value>
+  </data>
+  <data name="CheckPassword" xml:space="preserve">
+    <value>mit Passwort bestätigen</value>
+  </data>
+  <data name="CheckPasswordText" xml:space="preserve">
+    <value>Bitte bestätigen Sie diese Aktion durch Eingabe Ihres Passworts.</value>
+  </data>
+  <data name="CreatePassword" xml:space="preserve">
+    <value>neues Passwort erstellen</value>
+  </data>
+  <data name="CreatePasswordText" xml:space="preserve">
+    <value>Bitte erstellen Sie ein neues Passwort.</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Filter löschen</value>
+  </data>
+  <data name="SetRights" xml:space="preserve">
+    <value>Rechte setzen</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="CategoryRight" xml:space="preserve">
+    <value>Kategorierecht</value>
+  </data>
+  <data name="ColumnRight" xml:space="preserve">
+    <value>Spaltenrecht</value>
+  </data>
+  <data name="InheritedFrom" xml:space="preserve">
+    <value>(geerbt von {0})</value>
+  </data>
+  <data name="NoSuperiorObject" xml:space="preserve">
+    <value>(kein übergeordnetes Objekt)</value>
+  </data>
+  <data name="Optimization" xml:space="preserve">
+    <value>Optimierung</value>
+  </data>
+  <data name="OptimizationRight" xml:space="preserve">
+    <value>Optimierungsrecht</value>
+  </data>
+  <data name="RightHierarchy" xml:space="preserve">
+    <value>{0} von {1} {2}: {3}</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Rolle</value>
+  </data>
+  <data name="RoleRight" xml:space="preserve">
+    <value>Rollenrecht</value>
+  </data>
+  <data name="TableObjectRight" xml:space="preserve">
+    <value>Tabellenrecht</value>
+  </data>
+  <data name="UserRight" xml:space="preserve">
+    <value>Benutzerrecht</value>
+  </data>
+  <data name="HiddenTableObjects" xml:space="preserve">
+    <value>ausgeblendete {0}</value>
+  </data>
+  <data name="Hide" xml:space="preserve">
+    <value>ausblenden</value>
+  </data>
+  <data name="ExportOverview" xml:space="preserve">
+    <value>{0}-Export von {1} {2} ...</value>
+  </data>
+  <data name="NoResult" xml:space="preserve">
+    <value>kein Ergebnis</value>
+  </data>
+  <data name="ChangeOrder" xml:space="preserve">
+    <value>Reihenfolge verändern</value>
+  </data>
+  <data name="Deliverer" xml:space="preserve">
+    <value>Lieferant</value>
+  </data>
+  <data name="DocumentValue" xml:space="preserve">
+    <value>Betrag</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Monat</value>
+  </data>
+  <data name="ColumnOrder" xml:space="preserve">
+    <value>Reihenfolge</value>
+  </data>
+  <data name="ShortRunningDialogText" xml:space="preserve">
+    <value>Aktion {0} wird durchgeführt. Sie werden gleich zum Ergebnis weitergeleitet.</value>
+  </data>
+  <data name="VeryLongRunningDialogText" xml:space="preserve">
+    <value>{0} kann sehr lange dauern. Sie können die Aktion im Hintergrund ausführen lassen und werden benachrichtigt, sobald die Aktion abgeschlossen wurde.</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Benachrichtigungen</value>
+  </data>
+  <data name="NoAction" xml:space="preserve">
+    <value>Für dieses Objekt steht die Funktion "{0}" nicht zur Verfügung.</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>Historie</value>
+  </data>
+  <data name="Latest" xml:space="preserve">
+    <value>Aktuell</value>
+  </data>
+  <data name="MoreNotifications" xml:space="preserve">
+    <value>Weitere Benachrichtigungen anzeigen</value>
+  </data>
+  <data name="NoNotifications" xml:space="preserve">
+    <value>Keine Benachrichtigungen vorhanden</value>
+  </data>
+  <data name="Jobs" xml:space="preserve">
+    <value>Jobs</value>
+  </data>
+  <data name="Clock" xml:space="preserve">
+    <value>Uhr</value>
+  </data>
+  <data name="Processor" xml:space="preserve">
+    <value>Bearbeiter</value>
+  </data>
+  <data name="PdfPageFrom" xml:space="preserve">
+    <value>von</value>
+  </data>
+  <data name="Proceed" xml:space="preserve">
+    <value>Möchten Sie mit der Aktion "{0}" fortfahren?</value>
+  </data>
+  <data name="NoTables" xml:space="preserve">
+    <value>Keine {0} verfügbar</value>
+  </data>
+  <data name="ViewboxVersion" xml:space="preserve">
+    <value>Viewbox Version</value>
+  </data>
+  <data name="RepeatPassword" xml:space="preserve">
+    <value>Passwort wiederholen</value>
+  </data>
+  <data name="ViewboxDbVersion" xml:space="preserve">
+    <value>Viewbox Datenbank Version</value>
+  </data>
+  <data name="UserDefinedIssueDescriptionsCaption" xml:space="preserve">
+    <value>Bezeichnungen angeben</value>
+  </data>
+  <data name="UserDefinedIssueDescriptionsText" xml:space="preserve">
+    <value>Bitte geben Sie die Bezeichnungen für folgende Felder an:</value>
+  </data>
+  <data name="UserDefinedIssueDescriptionsTextLanguages" xml:space="preserve">
+    <value>Bitte geben Sie die Bezeichnungen für folgende Felder in der jeweiligen Sprache an:</value>
+  </data>
+  <data name="IncorrectInput" xml:space="preserve">
+    <value>Sie haben keinen korrekten Filter angegeben. Bitte korrigieren Sie ihre Eingabe.</value>
+  </data>
+  <data name="DeleteIssueTitle" xml:space="preserve">
+    <value>Sachverhalt löschen</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>bearbeiten</value>
+  </data>
+  <data name="ResetOrder" xml:space="preserve">
+    <value>Reihenfolge zurücksetzen</value>
+  </data>
+  <data name="ChosenOptimizations" xml:space="preserve">
+    <value>gewählte Optimierungskriterien</value>
+  </data>
+  <data name="ChosenParameters" xml:space="preserve">
+    <value>gewählte Parameter</value>
+  </data>
+  <data name="ExportOf" xml:space="preserve">
+    <value>Export von</value>
+  </data>
+  <data name="FilteredBy" xml:space="preserve">
+    <value>gefiltert nach</value>
+  </data>
+  <data name="SortedBy" xml:space="preserve">
+    <value>sortiert nach</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Startzeit</value>
+  </data>
+  <data name="DeleteViewTitle" xml:space="preserve">
+    <value>Sicht / View löschen</value>
+  </data>
+  <data name="CanGrant" xml:space="preserve">
+    <value>Benutzer kann Rechte vergeben</value>
+  </data>
+  <data name="IsAdmin" xml:space="preserve">
+    <value>Administrator-Rechte</value>
+  </data>
+  <data name="NormalUser" xml:space="preserve">
+    <value>Normaler Benutzer</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Seite</value>
+  </data>
+  <data name="Part" xml:space="preserve">
+    <value>Teil</value>
+  </data>
+  <data name="SpecialRights" xml:space="preserve">
+    <value>Benutzer-Status</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="CanGrantRole" xml:space="preserve">
+    <value>Rechtevergabe Rolle</value>
+  </data>
+  <data name="CreateRole" xml:space="preserve">
+    <value>Rolle hinzufügen</value>
+  </data>
+  <data name="EnterRoleName" xml:space="preserve">
+    <value>Geben Sie den Namen der Rolle an</value>
+  </data>
+  <data name="IsAdminRole" xml:space="preserve">
+    <value>Adminstrator Rolle</value>
+  </data>
+  <data name="NormalRole" xml:space="preserve">
+    <value>Standard Rolle</value>
+  </data>
+  <data name="RoleSpecialStatus" xml:space="preserve">
+    <value>Rollen-Status</value>
+  </data>
+  <data name="ActionChangingOptimizationTexts" xml:space="preserve">
+    <value>Ändern der Optimierungstexte</value>
+  </data>
+  <data name="AndFilterString" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="AndFilterText" xml:space="preserve">
+    <value>der Bedingungen müssen erfüllt sein</value>
+  </data>
+  <data name="OrFilterString" xml:space="preserve">
+    <value>Eine</value>
+  </data>
+  <data name="OrFilterText" xml:space="preserve">
+    <value>der Bedingungen muss erfüllt sein</value>
+  </data>
+  <data name="AddNewFilterCondition" xml:space="preserve">
+    <value>Hier neue Bedingung hinziehen</value>
+  </data>
+  <data name="AddNewJoinCondition" xml:space="preserve">
+    <value>Neue Bedingung hinzufügen</value>
+  </data>
+  <data name="Rights" xml:space="preserve">
+    <value>Rechte</value>
+  </data>
+  <data name="ExportWriteCsvFromBalanceAccountDescription" xml:space="preserve">
+    <value>Kontobezeichnung</value>
+  </data>
+  <data name="ExportWriteCsvFromBalanceAccountValue" xml:space="preserve">
+    <value>Kontowert</value>
+  </data>
+  <data name="ExportWriteCsvFromBalanceLabel" xml:space="preserve">
+    <value>Bezeichnung</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>&lt; zurück</value>
+  </data>
+  <data name="ErrorGettingInfos" xml:space="preserve">
+    <value>Die Informationen zu diesem Job
+konnten wegen eines Fehlers
+nicht gesammelt werden.</value>
+  </data>
+  <data name="ADImport" xml:space="preserve">
+    <value>Active-Directory-Import</value>
+  </data>
+  <data name="Domain" xml:space="preserve">
+    <value>Domäne</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importieren</value>
+  </data>
+  <data name="ADUserListText" xml:space="preserve">
+    <value>Es gibt keine Benutzer, die ihren Suchkriterien entsprechen und noch nicht in der unteren Liste zugeordnet sind.</value>
+  </data>
+  <data name="ADImportUserListText" xml:space="preserve">
+    <value>Bewegen Sie Benutzer aus dem oberen Bereich mit klicken-und-ziehen hier hinein.</value>
+  </data>
+  <data name="AdContent" xml:space="preserve">
+    <value>Hier können Sie Benutzer aus ihrem Active-Directory importieren. Wählen Sie die Domäne aus und schränken Sie die Benutzerliste durch den Filter ein.</value>
+  </data>
+  <data name="AdTitle" xml:space="preserve">
+    <value>Active-Directory-Import</value>
+  </data>
+  <data name="EmptyFilter" xml:space="preserve">
+    <value>Achtung: leerer Filter</value>
+  </data>
+  <data name="EmptyFilterText" xml:space="preserve">
+    <value>Sie haben den Filter leer gelassen. Dadurch kann das durchsuchen des Active Directories lange dauern. Möchten Sie fortfahren?</value>
+  </data>
+  <data name="AdUserList" xml:space="preserve">
+    <value>Active-Directory-Benutzerliste:</value>
+  </data>
+  <data name="ImportingAdUsers" xml:space="preserve">
+    <value>zu importierende Benutzer:</value>
+  </data>
+  <data name="ShowAdUsers" xml:space="preserve">
+    <value>Active-Directory-Benutzer anzeigen</value>
+  </data>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>Der Benutzer mit dem Kürzel {0} existiert bereits.</value>
+  </data>
+  <data name="ConnectWithColumn" xml:space="preserve">
+    <value>mit der Spalte {0} verknüpfen</value>
+  </data>
+  <data name="ConnectWithColumns" xml:space="preserve">
+    <value>mit den Spalten {0} verknüpfen</value>
+  </data>
+  <data name="DontConnect" xml:space="preserve">
+    <value>mit keiner weiteren Spalte verknüpfen</value>
+  </data>
+  <data name="RelationDescription" xml:space="preserve">
+    <value>Um die Ergebnismenge eindeutig zu gestalten, können Sie die Spalte {0} mit anderen Spalten verknüpfen. Bitte wählen Sie eine Verknüpfung aus.</value>
+  </data>
+  <data name="UnhandledExceptionMessage" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="ContactInfo" xml:space="preserve">
+    <value>Wenn der Fehler noch immer besteht, kontaktieren Sie bitte: </value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Telefonnummer</value>
+  </data>
+  <data name="ChangeRightsOnAllType" xml:space="preserve">
+    <value>Rechte ändern für alle {0} zu {1}.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unbekannt</value>
+  </data>
+  <data name="OtherUserJobs" xml:space="preserve">
+    <value>Jobs von anderen Benutzern</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>Archivieren</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Wiederherstellen</value>
+  </data>
+  <data name="ArchivedTable" xml:space="preserve">
+    <value>Archivierte Tabelle</value>
+  </data>
+  <data name="ArchiveTable" xml:space="preserve">
+    <value>Tabelle archivieren</value>
+  </data>
+  <data name="RestoreTable" xml:space="preserve">
+    <value>Tabelle wiederherstellen</value>
+  </data>
+  <data name="TableRowCount" xml:space="preserve">
+    <value>Anzahl der angezeigten Datensätze</value>
+  </data>
+  <data name="ApplySettingsForAll" xml:space="preserve">
+    <value>Einstellungen für alle Benutzer übernehmen</value>
+  </data>
+  <data name="VisibleColumns" xml:space="preserve">
+    <value>Sichbare Spalte</value>
+  </data>
+  <data name="VisibleTables" xml:space="preserve">
+    <value>Sichtbare {0}</value>
+  </data>
+  <data name="DoYouWantToCopyTableSettings" xml:space="preserve">
+    <value>Wollen Sie wirklich die Einstellungen für alle Benutzer übernehmen?</value>
+  </data>
+  <data name="DoYouWantToSwitchRightsOfAllTables" xml:space="preserve">
+    <value>Wollen Sie die Rechte aller Tabellen ändern?</value>
+  </data>
+  <data name="ExecuteTableTypeRightsChangeTitle" xml:space="preserve">
+    <value>Tabellen Rechte ändern, für alle {0}</value>
+  </data>
+  <data name="RightsChange" xml:space="preserve">
+    <value>Rechte ändern</value>
+  </data>
+  <data name="AllUserActions" xml:space="preserve">
+    <value>Alle Benutzeraktionen</value>
+  </data>
+  <data name="UserActions" xml:space="preserve">
+    <value>Benutzeraktionen</value>
+  </data>
+  <data name="ExportNewLog" xml:space="preserve">
+    <value>Exportformat {0}, mit {1}</value>
+  </data>
+  <data name="OpenedNewLog" xml:space="preserve">
+    <value>Tabele {0} geöffnet</value>
+  </data>
+  <data name="SetColumnVisibilityNewLog" xml:space="preserve">
+    <value>Spalte Sichtbarkeit in der Tabelle mit id: {0} setzen</value>
+  </data>
+  <data name="StartExecuteIssueNewLog" xml:space="preserve">
+    <value>Starte Ausführung des Sachverhalts mit Tabele: {0}</value>
+  </data>
+  <data name="StartGroupNewLog" xml:space="preserve">
+    <value>Starte Gruppieren mit Tablen id:  {0}</value>
+  </data>
+  <data name="StartJoinNewLog" xml:space="preserve">
+    <value>Starte Verbinden, Tabele mit id {0}</value>
+  </data>
+  <data name="StartSortNewLog" xml:space="preserve">
+    <value>Starte Sortieren in Tabele: {0}</value>
+  </data>
+  <data name="TableWithId" xml:space="preserve">
+    <value>Table mit id: {0}</value>
+  </data>
+  <data name="ChangeRightsUserLogs" xml:space="preserve">
+    <value>Ändern Rechte zum Benutzer logs</value>
+  </data>
+  <data name="OpenedTempTableNewLog" xml:space="preserve">
+    <value>Neue sortierte oder gefilterte Tabelle geöffnet</value>
+  </data>
+  <data name="Relations" xml:space="preserve">
+    <value>Verknüpfung</value>
+  </data>
+  <data name="FilterIsTheSame" xml:space="preserve">
+    <value>Filter erfolgreich als Sachverhalt gespeichert.</value>
+  </data>
+  <data name="ArchivedTableObjects" xml:space="preserve">
+    <value>archivierte {0}</value>
+  </data>
+  <data name="ExecuteArchiveTitle" xml:space="preserve">
+    <value>Archivieren ausführen</value>
+  </data>
+  <data name="ToDearchiveContactAnAdmin" xml:space="preserve">
+    <value>Tabelle muss dearchiviert werden, kontaktieren Sie bitte einen admin.</value>
+  </data>
+  <data name="CantChangeTransactionIdOnSortedFilteredTable" xml:space="preserve">
+    <value>Die Transaktionsnummer eines sortiertes oder gefiltertes Tabelle kann nicht ändert verden.</value>
+  </data>
+  <data name="TransactionIdChanged" xml:space="preserve">
+    <value>Transaktionsnummer geändert</value>
+  </data>
+  <data name="TransactionIdChangedTo" xml:space="preserve">
+    <value>Transaktionsnummer geändert zu {0}</value>
+  </data>
+  <data name="AddNewRelationCondition" xml:space="preserve">
+    <value>neue Verknüpfung hinzufügen</value>
+  </data>
+  <data name="RelateOver" xml:space="preserve">
+    <value>Verknüpfen mit</value>
+  </data>
+  <data name="UpdateTableTypeRights" xml:space="preserve">
+    <value>Tabellenrechte aktualisieren</value>
+  </data>
+  <data name="AddingRelation" xml:space="preserve">
+    <value>Verknüpfung hinzufügen</value>
+  </data>
+  <data name="DoYouWantToSwitchRightsOfSelectedTableTypes" xml:space="preserve">
+    <value>Wollen Sie die Rechte aller {0} ändern?</value>
+  </data>
+  <data name="ExecuteRestoringTitle" xml:space="preserve">
+    <value>Wiederherstellen ausführen</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="DeleteRelations" xml:space="preserve">
+    <value>Verknüpfungen löschen</value>
+  </data>
+  <data name="TableRelations" xml:space="preserve">
+    <value>Tabellen Verknüpfungen</value>
+  </data>
+  <data name="Relation" xml:space="preserve">
+    <value>Verknüpfung</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>liste</value>
+  </data>
+  <data name="SwitchedToTab" xml:space="preserve">
+    <value>auf {0} tab umgeschaltet</value>
+  </data>
+  <data name="With" xml:space="preserve">
+    <value>mit</value>
+  </data>
+  <data name="ColumnOrderChanged" xml:space="preserve">
+    <value>Reinfolge der Spalte {0} geändert</value>
+  </data>
+  <data name="ColumnSizesChanged" xml:space="preserve">
+    <value>Spalten Grössen in tabelle {0} geändert</value>
+  </data>
+  <data name="Invisible" xml:space="preserve">
+    <value>unsichtbar</value>
+  </data>
+  <data name="SortStarted" xml:space="preserve">
+    <value>Sortierung auf {0}, in Richtung {1} begonnen</value>
+  </data>
+  <data name="NoRelationsDeleted" xml:space="preserve">
+    <value>Keine Verknüpfungen wurden gelöscht</value>
+  </data>
+  <data name="OneRelationDeleted" xml:space="preserve">
+    <value>Eine Relation wurde gefunden</value>
+  </data>
+  <data name="RelationsDeleted" xml:space="preserve">
+    <value>{0} Verknüpfungen wurden gelöscht</value>
+  </data>
+  <data name="RelationAdded" xml:space="preserve">
+    <value>Verknüpfung hinzufügt {0}</value>
+  </data>
+  <data name="ColumnHasOneDistinct" xml:space="preserve">
+    <value>Diese Spalte ist konstant</value>
+  </data>
+  <data name="ColumnHasOnlyEmpty" xml:space="preserve">
+    <value>Diese Spalte ist immer leer</value>
+  </data>
+  <data name="AdminTasks" xml:space="preserve">
+    <value>Admin Aufgaben</value>
+  </data>
+  <data name="GenerateEmptyDistinctTable" xml:space="preserve">
+    <value>Leere Distinct Tabelle erstellen</value>
+  </data>
+  <data name="OutOfRange" xml:space="preserve">
+    <value>Der Parameter {0} muss zwischen {1} und {2} sein</value>
+  </data>
+  <data name="OutOfRangeTitle" xml:space="preserve">
+    <value>Der Parameter ist ausserhalb des gültigen Bereichs</value>
+  </data>
+  <data name="IsArchiveCheckedToolTip" xml:space="preserve">
+    <value>Element für Stapelbearbeitung auswählen</value>
+  </data>
+  <data name="ArchiveTablesTooltip" xml:space="preserve">
+    <value>Archivierung der ausgewählten Tabellen</value>
+  </data>
+  <data name="RestoreTablesTooltip" xml:space="preserve">
+    <value>Ausgewählte Tabellen wieder herstellen</value>
+  </data>
+  <data name="NewLogExportDownload" xml:space="preserve">
+    <value>Export begonnen für Job key: {0}</value>
+  </data>
+  <data name="ExecuteReport" xml:space="preserve">
+    <value>Sachverhalt ausführen</value>
+  </data>
+  <data name="ReadingDataPleaseWait" xml:space="preserve">
+    <value>Lesen von Daten, bitte warten ...</value>
+  </data>
+  <data name="ChangePage" xml:space="preserve">
+    <value>Seite wechseln</value>
+  </data>
+  <data name="ClearselectionList" xml:space="preserve">
+    <value>Auswahlliste löschen</value>
+  </data>
+  <data name="SelectFilteredItems" xml:space="preserve">
+    <value>Wähle gefilterte Items</value>
+  </data>
+  <data name="ArchivationInProgress" xml:space="preserve">
+    <value>Archivierung in Bearbeitung</value>
+  </data>
+  <data name="ArchivingInProgress" xml:space="preserve">
+    <value>Archivierung in Bearbeitung</value>
+  </data>
+  <data name="ArchivingTables" xml:space="preserve">
+    <value>{0} Tabellen werden archiviert</value>
+  </data>
+  <data name="RestorationInProgress" xml:space="preserve">
+    <value>Wiederherstellung in Bearbeitung</value>
+  </data>
+  <data name="RestoringTables" xml:space="preserve">
+    <value>{0} Tabellen werden wieder hergestellt</value>
+  </data>
+  <data name="TableBeingProcessed" xml:space="preserve">
+    <value>Tabelle ist bereits in Bearbeitung</value>
+  </data>
+  <data name="TableIsUnderPrecessing" xml:space="preserve">
+    <value>{0} ist in Bearbeitung</value>
+  </data>
+  <data name="PleaseSelectTables" xml:space="preserve">
+    <value>Bitte wählen Sie die Tabellen aus</value>
+  </data>
+  <data name="PleaseSelectTablesIfNotSelected" xml:space="preserve">
+    <value>Bitte wählen Sie die Tabellen aus. Wenn Sie schon welche ausgewählt haben, werden diese schon bearbeitet.</value>
+  </data>
+  <data name="ObjectType" xml:space="preserve">
+    <value>Bereich</value>
+  </data>
+  <data name="FavoritesHelp" xml:space="preserve">
+    <value>Sie können einen bevorzugten Sachverhalt mit dem {0} drag &amp; drop Symbol auf der linken Seite hinzufügen.</value>
+  </data>
+  <data name="NoDataFound" xml:space="preserve">
+    <value>Keine Daten gefunden</value>
+  </data>
+  <data name="LabelEnterValue" xml:space="preserve">
+    <value>geben Sie Wert ein...</value>
+  </data>
+  <data name="ClearReport" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="OpenReport" xml:space="preserve">
+    <value>Öffnen</value>
+  </data>
+  <data name="ValidatingInputs" xml:space="preserve">
+    <value>Eingaben werden überprüft</value>
+  </data>
+  <data name="ValidatingInputsPleaseWait" xml:space="preserve">
+    <value>Eingaben werden überprüft, bitte warten Sie...</value>
+  </data>
+  <data name="ExactMatch" xml:space="preserve">
+    <value>Genaue Übereinstimmung</value>
+  </data>
+  <data name="ErrorSavingIssueParametersProbablyAnotherUserIsLoggedIn" xml:space="preserve">
+    <value>Fehler beim Speichern der Sachverhalts-parameter. Ein anderer User ist wahrscheinlich gleichzeitig eingeloggt.</value>
+  </data>
+  <data name="IssueParameterGroupSaveCaption" xml:space="preserve">
+    <value>Bitte geben Sie einen Namen für die Parameter-Gruppe an.</value>
+  </data>
+  <data name="ReportParametersSavedSuccessfully" xml:space="preserve">
+    <value>Report Parameter wurden erfolgreich gespeichert.</value>
+  </data>
+  <data name="IssueParameterGroups" xml:space="preserve">
+    <value>Sachverhalt Parameter-Gruppen</value>
+  </data>
+  <data name="GenerateEmptyDistinct" xml:space="preserve">
+    <value>Generieren des leeres, deutliche Tabelle</value>
+  </data>
+  <data name="GenerateIndexes" xml:space="preserve">
+    <value>Generieren Indizes.</value>
+  </data>
+  <data name="NoAdminTasks" xml:space="preserve">
+    <value>Keine Admin-Aufgaben.</value>
+  </data>
+  <data name="ColumnFilterClear" xml:space="preserve">
+    <value>Filterung löschen</value>
+  </data>
+  <data name="ColumnFilterOpen" xml:space="preserve">
+    <value>Auswählen</value>
+  </data>
+  <data name="InsertOldPassword" xml:space="preserve">
+    <value>Altes Passwort angeben</value>
+  </data>
+  <data name="PromptForNewPassword" xml:space="preserve">
+    <value>Bitte neues Passwort angeben.</value>
+  </data>
+  <data name="ViewListHelp" xml:space="preserve">
+    <value>Ansicht Liste</value>
+  </data>
+  <data name="PasswordModification" xml:space="preserve">
+    <value>Passwort Änderung.</value>
+  </data>
+  <data name="PasswordModificationSucceeded" xml:space="preserve">
+    <value>Kennwort erfolgreich aktualisiert!</value>
+  </data>
+  <data name="TryAgain" xml:space="preserve">
+    <value>Versuchen Sie bitte noch einmal</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>Falsches Passwort, bitte versuchen Sie noch einmal.</value>
+  </data>
+  <data name="RoleAlreadyExisting" xml:space="preserve">
+    <value>Diese Rolle {0} besteht schon</value>
+  </data>
+  <data name="RoleAlreadyExistingText" xml:space="preserve">
+    <value>Bitte tragen Sie einen neuen Rollen-Namen ein.</value>
+  </data>
+  <data name="ArchiveAllInProgress" xml:space="preserve">
+    <value>Die Archivierung der Tabelle läuft.</value>
+  </data>
+  <data name="RemoveOptimization" xml:space="preserve">
+    <value>Entfernen Optimierung</value>
+  </data>
+  <data name="Indexes" xml:space="preserve">
+    <value>Indizes</value>
+  </data>
+  <data name="TemporaryColumn" xml:space="preserve">
+    <value>temporary column</value>
+    <comment>translate</comment>
+  </data>
+  <data name="TemporaryTable" xml:space="preserve">
+    <value>temporary table</value>
+    <comment>translate</comment>
+  </data>
+  <data name="OutOfMaxRange" xml:space="preserve">
+    <value>Der Parameter: {0} muss kleiner oder gleich {1} sein</value>
+  </data>
+  <data name="OutOfMinRange" xml:space="preserve">
+    <value>Der Parameter: {0} muss grösser oder gleich {1} sein</value>
+  </data>
+  <data name="GetIssueRecordCount" xml:space="preserve">
+    <value>Zeilenanzahl abfragen</value>
+  </data>
+  <data name="IssueRecordCount" xml:space="preserve">
+    <value>Zeilenanzahl:</value>
+  </data>
+  <data name="PreLoadRecordCount" xml:space="preserve">
+    <value>Vorladen</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Deaktivieren</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Aktivieren</value>
+  </data>
+  <data name="ExportRights" xml:space="preserve">
+    <value>Exportrechte</value>
+  </data>
+  <data name="NoAdditionalInformation" xml:space="preserve">
+    <value>keine Zusatzinformationen</value>
+  </data>
+  <data name="EditField" xml:space="preserve">
+    <value>Bereich bearbeiten</value>
+  </data>
+  <data name="FilterOnField" xml:space="preserve">
+    <value>Bereich filtern</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Alle anzeigen</value>
+  </data>
+  <data name="ExcelLikeFilter" xml:space="preserve">
+    <value>Excel like filter</value>
+    <comment>translate</comment>
+  </data>
+  <data name="Password_Expired_Choose_New" xml:space="preserve">
+    <value>Ihr Kennwort ist abgelaufen, bitte wählen Sie ein neues Passwort.</value>
+  </data>
+  <data name="Password_Policy" xml:space="preserve">
+    <value>Password Policy</value>
+    <comment>translate</comment>
+  </data>
+  <data name="Confirm_Password" xml:space="preserve">
+    <value>Passwort bestätigen</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Alle auswählen</value>
+  </data>
+  <data name="DownloadBluelineDocuments" xml:space="preserve">
+    <value>Blueline Dokument herunterladen</value>
+  </data>
+  <data name="GetBluelineDocuments" xml:space="preserve">
+    <value>Blueline Dokumente werden geholt</value>
+  </data>
+  <data name="ApplyForUsers" xml:space="preserve">
+    <value>Einstellungen bei anderen Usern auch anwenden.</value>
+  </data>
+  <data name="OptimizationDelete" xml:space="preserve">
+    <value>Soll die ausgewählte Optimierung tatsächlich gelöscht werden?</value>
+  </data>
+  <data name="StartsWithFilter" xml:space="preserve">
+    <value>Beginnt mit</value>
+  </data>
+  <data name="NotAssignedAccount" xml:space="preserve">
+    <value>Nicht zugeordnet</value>
+  </data>
+  <data name="DCWDescription" xml:space="preserve">
+    <value>Struktur / Konto</value>
+  </data>
+  <data name="DCWOldValue" xml:space="preserve">
+    <value>Vorjahr</value>
+  </data>
+  <data name="DCWValue" xml:space="preserve">
+    <value>GJahr</value>
+  </data>
+  <data name="DcwCurrency" xml:space="preserve">
+    <value>Berichtswährung</value>
+  </data>
+  <data name="DcwFrom" xml:space="preserve">
+    <value>Von</value>
+  </data>
+  <data name="DcwPeriod" xml:space="preserve">
+    <value>Stichtag</value>
+  </data>
+  <data name="DcwRefMandant" xml:space="preserve">
+    <value>Mandant</value>
+  </data>
+  <data name="DcwTo" xml:space="preserve">
+    <value>Bis</value>
+  </data>
+  <data name="DcwRefMandantKreis" xml:space="preserve">
+    <value>Mandantkreis</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Erstelldatum</value>
+  </data>
+  <data name="GetAllFields" xml:space="preserve">
+    <value>Möchten Sie alle Spalten exportieren (ja) oder nur die, die nicht leer und sichtbar sind (no)?</value>
+  </data>
+  <data name="NeedGJahr" xml:space="preserve">
+    <value>Dieses Sachverhalte kann nicht ausgeführt werden mit {0} = {1} Filter. Bitte füllen Sie den Filter mit einem anderen Wert.</value>
+  </data>
+  <data name="NoTableResult" xml:space="preserve">
+    <value>In der Tabelle sind keine Daten vorhanden!</value>
+  </data>
+  <data name="NoNumberInTable" xml:space="preserve">
+    <value>Keine Nummer in der Tabelle! </value>
+  </data>
+  <data name="NoNumberColumn" xml:space="preserve">
+    <value>Es gibt keine Spalten die  Nummerntyp haben.</value>
+  </data>
+  <data name="WaitForPageLoading" xml:space="preserve">
+    <value>Bitte warten Sie für das Laden der Seite.</value>
+  </data>
+  <data name="Counting" xml:space="preserve">
+    <value>Zählen...</value>
+  </data>
+  <data name="GoToExternalURL" xml:space="preserve">
+    <value>Go to external webpage</value>
+    <comment>translate</comment>
+  </data>
+  <data name="RemoveUserOrRole" xml:space="preserve">
+    <value>Löschen Benutzer oder Rolle</value>
+  </data>
+  <data name="SummaText" xml:space="preserve">
+    <value>Ziehen Sie einige Spalten aus dem Bereich unterhalb und wählen Sie die Spalten summiert.</value>
+    <comment>translate</comment>
+  </data>
+  <data name="TooManyRowsExportProblem" xml:space="preserve">
+    <value>Es gibt zu viele Zeilen um {0}-Dateien zu exportieren.</value>
+  </data>
+  <data name="WrongParameter" xml:space="preserve">
+    <value>Falscher Parameter</value>
+  </data>
+  <data name="AssignRole" xml:space="preserve">
+    <value>Berichtigung zuordnen</value>
+  </data>
+  <data name="ClearAssignment" xml:space="preserve">
+    <value>Zuordnung löschen</value>
+  </data>
+  <data name="GiveUsernameDetails" xml:space="preserve">
+    <value>Bitte geben Sie Ihre Benutzername ein.</value>
+  </data>
+  <data name="LinkToPasswordHasBeenSent" xml:space="preserve">
+    <value>Ein Link zur Einstellung des Passworts wurde versandt.</value>
+  </data>
+  <data name="NoSpecifiedUserFound" xml:space="preserve">
+    <value>Es wurde kein Nutzer zur angegebenen Benutzername gefunden.</value>
+  </data>
+  <data name="ParameterLengthIsTooLong" xml:space="preserve">
+    <value>Der angegebene Parameter ist zu lang. Bitte verwenden Sie eine kürzere Variante des Parameters.</value>
+  </data>
+  <data name="ChooseSystem" xml:space="preserve">
+    <value>Wählen Sie System!</value>
+  </data>
+  <data name="GiveSystemDetails" xml:space="preserve">
+    <value>Bitte wählen Sie ein System.</value>
+  </data>
+  <data name="PasswordConfirmationDoesntMatch" xml:space="preserve">
+    <value>Passwortbestätigung stimmt nicht.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Absenden</value>
+  </data>
+  <data name="Favourites" xml:space="preserve">
+    <value>Ihre Favoriten</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LoginUser" xml:space="preserve">
+    <value>Melden Sie sich bei</value>
+    <comment>translate</comment>
+  </data>
+  <data name="LogoutUsers" xml:space="preserve">
+    <value>Benutzer entfernt</value>
+    <comment>translate</comment>
+  </data>
+</root>

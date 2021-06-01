@@ -1,0 +1,84 @@
+﻿@using Viewbox
+@using Viewbox.Job
+@using Viewbox.Properties
+@model Viewbox.Models.IExportJobModel
+
+<table class="overview jobs">
+    <tbody>
+        
+        @if (ViewboxSession.User.IsSuper)
+        {
+            foreach (var Job in from j in Model.ExportJobs where j.Listeners.Count > 0 && !j.Listeners.Contains(ViewboxSession.User) select j)
+            {
+                if (Job != null)
+                {
+                    <tr class="@Job.Status">
+                        <td class="first"><div>@Job.StartTime</div></td>
+                        <td class="description"><div>@(Job.Descriptions.Count > 0 ? Job.Descriptions[ViewboxSession.Language.CountryCode] : Resources.Unknown)</div></td>
+                        <td class="since"><div>@Model.LabelRuntime(Job)</div></td>
+                        <td class="user">@(Job.Owners.Count > 0 ? Job.Owners[0].UserName : Resources.Unknown)</td>
+                        <td class="flag"><div></div></td>
+                        <td class="action">
+                            <div class="outer-container">
+                                <div>
+                                    @if (Job.Status == Base.JobStatus.Running)
+                                    {
+                                        using (Html.BeginForm("CancelOtherUserJob", "Export", new { key = Job.Key }))
+                                        {
+                                            <input type="submit" class="submit-cancel cancel" value="" />
+                                        }
+                                    }
+                                    else if (Job.Status == Base.JobStatus.Finished)
+                                    {
+                                        using (Html.BeginForm("Download", "Export", new { key = Job.Key }))
+                                        {
+                                            <input type="submit" class="submit-download cancel" value="" />
+                                        }
+                                    }
+                                </div>
+                                <div class="delete"><div class="hide key">@Job.Key</div></div>
+                            </div>
+                        </td>
+                        <td class="tooltip" style="display: none;">@Html.Partial("_TooltipPartial", ViewboxSession.GetJobInfo(Job.Key))</td>
+                    </tr>
+                }
+            }
+        }
+        @foreach (var Job in Model.ExportJobs.Where(j => j.Listeners.Contains(ViewboxSession.User)))
+        {
+            if (Job != null)
+            {
+                <tr class="@Job.Status">
+                    <td class="first"><div>@Job.StartTime</div></td>
+                    <td class="description"><div>@(Job.Descriptions.Count > 0 ? Job.Descriptions[ViewboxSession.Language.CountryCode] : Resources.Unknown)</div></td>
+                    <td class="since"><div>@Model.LabelRuntime(Job)</div></td>
+                    <td class="user">@(Job.Owners.Count > 0 ? Job.Owners[0].UserName : Resources.Unknown)</td>
+                    <td class="flag"><div></div></td>
+                    <td class="action">
+                        <div class="outer-container">
+                            <div>
+                                @if (Job.Status == Base.JobStatus.Running)
+                                {
+                                    using (Html.BeginForm("CancelJob", "Export", new { key = Job.Key }))
+                                    {
+                                        <input type="submit" class="submit-cancel cancel" value="" />
+                                    }
+                                }
+                                else if (Job.Status == Base.JobStatus.Finished)
+                                {
+                                    using (Html.BeginForm("Download", "Export", new { key = Job.Key }))
+                                    {
+                                        <input type="submit" class="submit-download cancel" value="" />
+                                    }
+                                }
+                            </div>
+                            <div class="delete"><div class="hide key">@Job.Key</div></div>
+                        </div>
+                    </td>
+                    <td class="tooltip" style="display: none;">@Html.Partial("_TooltipPartial", ViewboxSession.GetJobInfo(Job.Key))</td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>

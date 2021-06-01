@@ -1,0 +1,45 @@
+﻿@model Viewbox.Models.DocumentsModelNew
+@using Viewbox.Properties
+@using Viewbox
+<div class="content-box">
+    <div class="content-outer">
+        <div class="content-inner @(ViewboxApplication.UseDocumentsPreview ? "left" : "") beleg">
+            <div class="header">
+                <h3>@Resources.Documents</h3>
+                <input type="hidden" id="thisUrl" name="thisUrl" value="@this.GetUrl(new UrlParam("start", 0))" />
+                <div class="nav-controls">
+                    @Html.Partial("_NavigationControlsPartialNew", Model)
+                </div>
+            </div>
+            <div class="tab-content without-tab scroll" style="background-color:#EEEEEE;">
+                @Html.Partial("_DocumentsListPartialNew", Model)
+            </div>
+            <div id="data-grid-column-filter" class="text-filter">
+                @if (Model.Table != null)
+                {
+                    <form action="@Url.Action("Filter", new {id = Model.Table.Id})">
+                        <input type="hidden" name="column" id="column" />
+                        <p>@Resources.Filter</p>
+                        <input type="text" name="filter" id="filter" />
+                        <input type="submit" class="ok-button" value="OK" />
+                    </form>
+                }
+            </div>
+        </div>
+
+        @if (!ViewboxApplication.UseDocumentsPreview)
+        {
+            <div class="hide" id="document-detail"></div>
+        }
+        @if (Model != null && Model.Table != null && Model.Table.OptimizationHidden == 1)
+        {
+            // JUSST FOR EON :DDD
+            <script>
+                $(document).ready(function () {
+                    $(".SplitTable").parent().hide();
+                    $(".SortColumn").parent().hide();
+                });
+            </script>
+        }
+    </div>
+</div>

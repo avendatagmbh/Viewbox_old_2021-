@@ -1,0 +1,28 @@
+﻿@model Viewbox.Helper.PassThroughTwoViews
+<div class="content-outer">
+    <div class="content-inner full-content">
+        @(Model.ModelOne != null
+               ? Html.Partial(Model.PartialOne, Model.ModelOne)
+               : Html.Partial(Model.PartialOne)
+              )
+    </div>
+</div>
+<div class="content-inner layered-content extended-border">
+    <div class="border-tl"></div>
+    <div class="border-tc"></div>
+    <div class="border-tr"></div>
+    <div class="border-ml"></div>
+    <div class="border-mr"></div>
+    <div class="border-bl"></div>
+    <div class="border-bc"></div>
+    <div class="border-br"></div>
+    <div class="border-content">
+        @(Model.ModelTwo != null
+               ? Html.Partial(Model.PartialTwo, Model.ModelTwo)
+               : Html.Partial(Model.PartialTwo)
+              )
+    </div>
+</div>
+<div class="layer-handle">
+    <a href="#"><img src="@Url.Content("~/Content/img/layer-handle-ext.png")" alt="Erweitert" title="Erweitert" /></a>
+</div>

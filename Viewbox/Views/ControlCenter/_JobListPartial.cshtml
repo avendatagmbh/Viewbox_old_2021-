@@ -1,0 +1,105 @@
+﻿@using Viewbox
+@using Viewbox.Job
+@using Viewbox.Properties
+@model Viewbox.Models.ControlCenterModel
+															
+<table class="overview jobs">
+    <thead>
+        <tr>
+            <th class="first"><div>@Resources.StartTime</div></th>
+            <th><div>@Resources.Description</div></th>
+            <th class="since"><div>@Resources.Running</div></th>
+            <th class="user">@Resources.User</th>
+            <th class="flag action" colspan="2"><div>@Resources.Action</div></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.User.IsSuper)
+        {
+            foreach (var Job in Model.AllJobs)
+            {
+                if (!Job.Descriptions[ViewboxSession.Language.CountryCode].ToLower().Contains(Model.SearchPhrase.ToLower()))
+                {
+                    continue;
+                }
+                <tr class="@(Job.Status)1">
+                    <td class="first"><div>@Job.StartTime</div></td>
+                    <td class="description"><div style="width: 100px;" >@Job.Descriptions[ViewboxSession.Language.CountryCode]</div></td>
+                    <td class="since"><div>@Model.LabelRuntime(Job)</div></td>
+                    <td class="user">@(Job.Owners.Count > 0 ? Job.Owners[0].UserName : Resources.Unknown)</td>
+                    <td class="flag"><div></div></td>
+                    <td class="action">
+                        <div class="outer-container">
+                            <div>
+                                @if (Job.Status == Base.JobStatus.Running)
+                                {
+                                    using (Html.BeginForm("CancelOtherUserJob", "ControlCenter", new {key = Job.Key}))
+                                    {
+                                        <input type="submit" class="submit-cancel cancel" value="" />
+                                    }
+                                }
+                                else if (Job.Status == Base.JobStatus.Finished)
+                                {
+                                    using (Html.BeginForm("Result", "ControlCenter", new {key = Job.Key}))
+                                    {
+                                        <input type="submit" class="submit-show cancel" value="" />
+                                    }
+                                }
+                            </div>
+                            <div class="delete"><div class="hide key">@Job.Key</div></div>
+                        </div>
+                    </td>
+                    @{
+                        var jobInfo = ViewboxSession.GetJobInfo(Job.Key);
+                        if (!String.IsNullOrEmpty(jobInfo))
+                        {
+                            <td class="tooltip" style="display: none;">@Html.Partial("_TooltipPartial", jobInfo)</td>
+                        }
+                    }
+                </tr>
+            }
+        }
+        @foreach (var Job in Model.Jobs)
+        {
+            if (!Job.Descriptions[ViewboxSession.Language.CountryCode].ToLower().Contains(Model.SearchPhrase.ToLower()))
+            {
+                continue;
+            }
+            <tr class="@Job.Status">
+                <td class="first"><div>@Job.StartTime</div></td>
+                <td class="description"><div style="width: 150px;">@Job.Descriptions[ViewboxSession.Language.CountryCode]</div></td>
+                <td class="since"><div>@Model.LabelRuntime(Job)</div></td>
+                <td class="user">@(Job.Owners.Count > 0 ? Job.Owners[0].UserName : Resources.Unknown)</td>
+                <td class="flag"><div id="progress"></div></td>
+                <td class="action">
+                    <div class="outer-container">
+                        <div>
+                            @if (Job.Status == Base.JobStatus.Running)
+                            {
+                                using (Html.BeginForm("CancelJob", "ControlCenter", new {key = Job.Key}))
+                                {
+                                    <input type="submit" class="submit-cancel cancel" value="" />
+                                }
+                            }
+                            else if (Job.Status == Base.JobStatus.Finished)
+                            {
+                                using (Html.BeginForm("Result", "ControlCenter", new {key = Job.Key}))
+                                {
+                                    <input type="submit" class="submit-show cancel" value="" />
+                                }
+                            }
+                        </div>
+                        <div class="delete"><div class="hide key">@Job.Key</div></div>
+                    </div>
+                </td>
+                @{
+                    var jobInfo = ViewboxSession.GetJobInfo(Job.Key);
+                    if (!String.IsNullOrEmpty(jobInfo))
+                    {
+                        <td class="tooltip" style="display: none;">@Html.Partial("_TooltipPartial", jobInfo)</td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>

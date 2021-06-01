@@ -1,0 +1,93 @@
+﻿@using Viewbox;
+@using Viewbox.Properties;
+@using SystemDb;
+@model  Viewbox.Models.FileSystemModel
+<div class="header">
+    <h3>@Resources.FileSystemDirs</h3>
+    @*<div class="search-panel">
+        <div class="bg-left"></div>
+            <input class="field bg-middle placeholder" id="folderFilter" name="folderFilter" type="text" value="@Resources.SearchPhrase" placeholder="@Resources.SearchPhrase" />
+            <input type="submit" class="submit" value="" disabled />
+    </div>*@
+</div>
+<div class="treebody scroll">
+    <ul class="theTree">
+        @foreach (var item in Model.Directories)
+        {
+            if (item.Children != null && item.Children.Count() != 0)
+            {
+                <li>
+                    <div class="clickHere"></div>
+                    <span class="folder">
+                        <img src="../../Content/images/folder_grey.png" />
+                        <a class="dirLink">
+                            @item.Name
+                            <div class="item-id">@item.Id</div>
+                        </a>
+                    </span>
+                @BuildTree(item.Children)
+                </li>
+            }
+            else
+            { 
+                <li>
+                    <span class="folder">
+                        <img src="../../Content/images/folder_grey.png" />
+                        <a class="dirLink">
+                            @item.Name
+                            <div class="item-id">@item.Id</div>
+                        </a>
+                    </span>
+                </li>
+            }
+        }
+    </ul>
+</div>
+@helper BuildTree(List<IDirectoryObject> children)
+{
+    <ul class="closed">
+        @foreach (var child in children)
+        {
+            if (child.Children != null && child.Children.Count() != 0)
+            {
+                <li>
+                    <div class="clickHere"></div>
+                    <span class="folder">
+                        <img src="../../Content/images/folder_grey.png" />
+                        <a class="dirLink">
+                            @child.Name
+                            <div class="item-id">@child.Id</div>
+                        </a>
+                    </span>
+                    @BuildTree(child.Children)
+                </li>
+            }
+            else
+            {
+                <li>
+                    <span class="folder">
+                        <img src="../../Content/images/folder_grey.png" />
+                        <a class="dirLink">
+                            @child.Name
+                            <div class="item-id">@child.Id</div>
+                        </a>
+                    </span>
+                </li>
+            }
+        }
+    </ul>
+}
+
+
+<script>
+    //function setDirsContainer() {
+    //    var displayHeight = $(".content-inner").height() - ($("#searcHeader").height() + 1);
+    //    $("#DirectoriesContainer").height(displayHeight);
+    //}
+    function setDirTableBody() {
+        var displayHeight = $("#DirectoriesContainer").height() - ($(".header").height() + 1);
+        $(".treebody").height(displayHeight);
+    }
+    //setDirsContainer();
+    setDirTableBody();
+</script>

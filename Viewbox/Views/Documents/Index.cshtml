@@ -1,0 +1,11 @@
+﻿@using Viewbox
+@model Viewbox.Models.DocumentsModel
+@{
+    ViewBag.Title = Model.LabelCaption;
+    var model = new Helper.PassThroughView("_DocumentsPartial", Model);
+}
+@section HeadSection {
+    @*@Scripts.Render("~/bundles/documents-js")*@
+    @Scripts.Render("~/Scripts/jquery.zoom.js")
+}
+@Html.Partial("_AppPagePartial", model)

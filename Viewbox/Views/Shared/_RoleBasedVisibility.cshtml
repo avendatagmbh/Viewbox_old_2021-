@@ -1,0 +1,69 @@
+﻿@using SystemDb
+@using Viewbox.Properties
+@using Viewbox
+@using Viewbox.Models
+@using ViewboxDb
+@using vdb = ViewboxDb
+@{
+    var dataGridModel = Model as DataGridModel;
+    var tableInfo = dataGridModel != null ? dataGridModel.TableObject : Model as TableObject;
+    var tableObject = dataGridModel != null ? dataGridModel.TableInfo : (tableInfo == null) ? Model as ITableObject : tableInfo.Table;
+    var issue = tableObject as IIssue;
+    int roleId = ViewboxSession.RightsModeCredential.Type == CredentialType.Role ? ViewboxApplication.Roles[ViewboxSession.RightsModeCredential.Id].Id : -1;
+}
+<!-- _RoleBasedVisibility.cshtml -->
+@if (tableObject != null && ViewboxSession.RightsMode && roleId != -1)
+{
+    <ul class="dropdown big view2" id="rolebasedvisibilityoptions">
+        <li class="panel">
+            @Html.Partial("_TooltipPartial", "Role Based Visibility Options")
+            <a class="icon process right dropdown-btn"></a>
+            <ul class="dropdown-menu">
+                <li class="column-view-props visible">
+                    <div class="box">
+                        <div class="top">
+                            <h4>Role Based Visibility Options</h4>
+                            <div class="close-popup" style="right: 30px; top: 32px;">
+                            </div>
+                        </div>
+                        <div class="middle summa" id="rolebased">
+                            <div class="rolebasedvisibility">
+                                <table class="bot-sum">
+                                    <div class="hide currentTableId">@tableObject.Id</div>
+                                    <tbody>
+                                        @if (tableObject.RoleBasedFilters != null)
+                                        {
+                                            foreach (var role in tableObject.RoleBasedFilters.Where(r => r.Key == roleId))
+                                            {
+                                                foreach (var col in role.Value)
+                                                {
+                                                    var column = ViewboxSession.Columns.FirstOrDefault(x => x.Id == col.Item1);
+                                                    if (column != null)
+                                                    {
+                                                        string columnName = column.GetDescription() + " :";
+                                                        foreach (var filter in col.Item2)
+                                                        {
+                                                            <tr>
+                                                                <td class="item-id">@column.Id</td>
+                                                                <td class="colname2"><div class="description">@columnName</div></td>
+                                                                <td class="colname3"><div class="description">@filter</div></td>
+                                                                <td class="row-rights-on"></td>
+                                                            </tr>
+                                                            columnName = string.Empty;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+}
