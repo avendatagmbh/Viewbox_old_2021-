@@ -1,2 +1,0 @@
-- SQL-Injektion
-- SysDB IMPORT: Typ aus QuellDB ermitteln 
